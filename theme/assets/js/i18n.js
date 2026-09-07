@@ -99,12 +99,14 @@
         ["Bộ Lọc & Sắp Xếp", "Filters & Sorting"],
         ["BỘ LỌC", "FILTERS"],
         ["Bộ Lọc", "Filters"],
+        ["Xóa Tất Cả Bộ Lọc", "Clear All Filters"],
+        ["Xóa tất cả bộ lọc", "Clear all filters"],
         ["Xóa Tất Cả", "Clear All"],
         ["Xóa tất cả", "Clear all"],
-        ["Clear all filters", "Clear all filters"],
+        ["Áp Dụng Bộ Lọc", "Apply Filters"],
+        ["Áp dụng bộ lọc", "Apply filters"],
         ["Áp Dụng", "Apply"],
         ["Áp dụng", "Apply"],
-        ["Apply filters", "Apply filters"],
         ["Sắp Xếp Theo", "Sort By"],
         ["Sắp xếp theo:", "Sort by:"],
         ["Sắp xếp theo", "Sort by"],
@@ -872,6 +874,55 @@
                 if (enMap[txt]) btn.textContent = enMap[txt];
             }
         });
+
+        // Translate Sort Options dynamically populated by vendor script
+        const sortSelects = document.querySelectorAll('#faceted-nav-sort, [data-sort]');
+        const sortViMap = {
+            'Featured': 'Nổi Bật',
+            'FEATURED': 'NỔI BẬT',
+            'Best Selling': 'Bán Chạy Nhất',
+            'BEST SELLING': 'BÁN CHẠY NHẤT',
+            'Price, Low to High': 'Giá: Thấp Đến Cao',
+            'PRICE, LOW TO HIGH': 'GIÁ: THẤP ĐẾN CAO',
+            'Price, High to Low': 'Giá: Cao Đến Thấp',
+            'PRICE, HIGH TO LOW': 'GIÁ: CAO ĐẾN THẤP',
+            'Alphabetically, A-Z': 'Tên: A Đến Z',
+            'ALPHABETICALLY, A-Z': 'TÊN: A ĐẾN Z',
+            'Alphabetically, Z-A': 'Tên: Z Đến A',
+            'ALPHABETICALLY, Z-A': 'TÊN: Z ĐẾN A',
+            'Date, Old to New': 'Cũ Nhất',
+            'DATE, OLD TO NEW': 'CŨ NHẤT',
+            'Date, New to Old': 'Mới Nhất',
+            'DATE, NEW TO OLD': 'MỚI NHẤT'
+        };
+        const sortEnMap = {
+            'Nổi Bật': 'Featured',
+            'NỔI BẬT': 'FEATURED',
+            'Bán Chạy Nhất': 'Best Selling',
+            'BÁN CHẠY NHẤT': 'BEST SELLING',
+            'Giá: Thấp Đến Cao': 'Price, Low to High',
+            'GIÁ: THẤP ĐẾN CAO': 'PRICE, LOW TO HIGH',
+            'Giá: Cao Đến Thấp': 'Price, High to Low',
+            'GIÁ: CAO ĐẾN THẤP': 'PRICE, HIGH TO LOW',
+            'Tên: A Đến Z': 'Alphabetically, A-Z',
+            'TÊN: A ĐẾN Z': 'ALPHABETICALLY, A-Z',
+            'Tên: Z Đến A': 'Alphabetically, Z-A',
+            'TÊN: Z ĐẾN A': 'ALPHABETICALLY, Z-A',
+            'Cũ Nhất': 'Date, Old to New',
+            'CŨ NHẤT': 'DATE, OLD TO NEW',
+            'Mới Nhất': 'Date, New to Old',
+            'MỚI NHẤT': 'DATE, NEW TO OLD'
+        };
+        sortSelects.forEach(function(sel) {
+            Array.from(sel.options).forEach(function(opt) {
+                const txt = (opt.textContent || '').trim();
+                if (lang === 'vi') {
+                    if (sortViMap[txt]) opt.textContent = sortViMap[txt];
+                } else {
+                    if (sortEnMap[txt]) opt.textContent = sortEnMap[txt];
+                }
+            });
+        });
     }
 
     // Public API
@@ -932,7 +983,9 @@
     const targetContainers = [
         document.querySelector('[data-collection-template-products]'),
         document.querySelector('[data-filters-featured]'),
-        document.querySelector('.c-featured-collections')
+        document.querySelector('.c-featured-collections'),
+        document.querySelector('#faceted-nav-sort'),
+        document.querySelector('[data-faceted-wrapper]')
     ].filter(Boolean);
 
     targetContainers.forEach(container => {

@@ -2425,6 +2425,17 @@ h5, h6,
    ========================================================================== */
 
 /* 1. Grid Layout for Collections Page */
+.c-collection-template__wrapper {
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+}
+
+.c-collection-template__products-list,
+.o-products-list,
+[data-collection-template-products],
 .o-products-list__products,
 .c-product-grid {
     display: grid !important;
@@ -2432,27 +2443,50 @@ h5, h6,
     gap: 36px 24px !important;
     align-items: start !important;
     width: 100% !important;
+    max-width: 1320px !important;
+    margin: 0 auto 3rem !important;
+    padding: 0 !important;
+}
+
+.c-collection-template__products-list .o-product-thumbnail,
+.o-products-list .o-product-thumbnail,
+.o-products-list__products .o-product-thumbnail {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
 }
 
 @media (max-width: 1199px) {
+    .c-collection-template__products-list,
+    .o-products-list,
+    [data-collection-template-products],
     .o-products-list__products,
     .c-product-grid {
         grid-template-columns: repeat(3, 1fr) !important;
+        gap: 28px 20px !important;
     }
 }
 
 @media (max-width: 899px) {
+    .c-collection-template__products-list,
+    .o-products-list,
+    [data-collection-template-products],
     .o-products-list__products,
     .c-product-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 24px 16px !important;
+        gap: 20px 14px !important;
     }
 }
 
 @media (max-width: 549px) {
+    .c-collection-template__products-list,
+    .o-products-list,
+    [data-collection-template-products],
     .o-products-list__products,
     .c-product-grid {
         grid-template-columns: 1fr !important;
+        gap: 16px !important;
     }
 }
 
