@@ -615,6 +615,13 @@
 
     function initLanguage() {
         try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            if (urlLang === 'en' || urlLang === 'vi') {
+                currentLang = urlLang;
+                localStorage.setItem(STORAGE_KEY, urlLang);
+                return;
+            }
             const saved = localStorage.getItem(STORAGE_KEY);
             if (saved === 'en' || saved === 'vi') {
                 currentLang = saved;

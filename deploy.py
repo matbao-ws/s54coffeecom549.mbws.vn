@@ -45,6 +45,79 @@ def print_header():
     print(f"      Target: https://{DOMAIN}/ ({FTP_HOST})")
     print("=" * 65)
 
+def sync_direct_ftp(force_all=False):
+    print(f"[1/3] Connecting to FTP server {FTP_HOST}...")
+    ftp = ftplib.FTP(FTP_HOST, timeout=60)
+    ftp.login(FTP_USER, FTP_PASS)
+    print("      [OK] FTP authenticated as " + FTP_USER)
+
+    existing_dirs = {REMOTE_DIR}
+
+    def ensure_remote_dir(remote_dir_path):
+        if not remote_dir_path or remote_dir_path in existing_dirs:
+            return
+        parts = remote_dir_path.strip("/").split("/")
+        curr = ""
+        for p in parts:
+            curr += "/" + p
+            if curr in existing_dirs:
+                continue
+            try:
+                ftp.cwd(curr)
+                existing_dirs.add(curr)
+            except Exception:
+                try:
+                    ftp.mkd(curr)
+                    existing_dirs.add(curr)
+                except Exception:
+                    pass
+
+    print(f"[2/3] Analyzing local vs remote files (mode: {'full' if force_all else 'smart-diff'})...")
+    files_to_sync = []
+
+    for root, dirs, files in os.walk(BASE_DIR):
+        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+        rel_dir = os.path.relpath(root, BASE_DIR)
+        if rel_dir == '.':
+            rel_dir = ''
+
+        for file in files:
+            if file in EXCLUDE_FILES or file.endswith(('.log', '.tmp', '.zip')):
+                continue
+            rel_path = os.path.join(rel_dir, file).replace('\\', '/') if rel_dir else file
+            local_path = os.path.join(root, file)
+            local_size = os.path.getsize(local_path)
+            remote_path = f"{REMOTE_DIR}/{rel_path}"
+
+            if not force_all:
+                try:
+                    remote_size = ftp.size(remote_path)
+                    if remote_size == local_size:
+                        continue
+                except Exception:
+                    pass
+
+            files_to_sync.append((local_path, remote_path, rel_path, local_size))
+
+    print(f"      Identified {len(files_to_sync)} file(s) needing update.")
+
+    if not files_to_sync:
+        print("      ✨ All production files are already up to date!")
+        ftp.quit()
+        return True
+
+    print(f"[3/3] Uploading {len(files_to_sync)} file(s) directly via FTP...")
+    for idx, (local_path, remote_path, rel_path, local_size) in enumerate(files_to_sync, 1):
+        remote_dir = os.path.dirname(remote_path)
+        ensure_remote_dir(remote_dir)
+        with open(local_path, "rb") as f:
+            ftp.storbinary(f"STOR {remote_path}", f)
+        print(f"      [{idx}/{len(files_to_sync)}] Synced {rel_path} ({local_size:,} bytes)")
+
+    ftp.quit()
+    print("      [OK] FTP direct synchronization completed successfully.")
+    return True
+
 def create_deploy_package(zip_filename="deploy.zip", code_only=False):
     mode_text = "optimized fast" if code_only else "full package"
     print(f"[1/4] Building optimized {mode_text} deployment package...")
@@ -107,7 +180,10 @@ if (!class_exists('ZipArchive')) {
 
 $zip = new ZipArchive();
 if ($zip->open($zipFile) === TRUE) {
-    $zip->extractTo(__DIR__);
+    if (!$zip->extractTo(__DIR__)) {
+        echo "ERROR: extractTo failed due to server permissions.\\n";
+        exit(1);
+    }
     $zip->close();
     echo "SUCCESS: Extracted all files successfully.\\n";
     @unlink($zipFile);
@@ -212,21 +288,34 @@ def cleanup_local(zip_path, extractor_path):
 
 def main():
     print_header()
-    code_only = '--fast' in sys.argv or '--code-only' in sys.argv
-    zip_path = create_deploy_package(code_only=code_only)
-    extractor_path = create_extractor_script()
-    try:
-        upload_via_ftp(zip_path, extractor_path)
-        if trigger_extraction():
+    use_zip = '--zip' in sys.argv
+    force_all = '--all' in sys.argv or '--force' in sys.argv
+
+    if use_zip:
+        code_only = '--fast' in sys.argv or '--code-only' in sys.argv
+        zip_path = create_deploy_package(code_only=code_only)
+        extractor_path = create_extractor_script()
+        try:
+            upload_via_ftp(zip_path, extractor_path)
+            if trigger_extraction():
+                print("\n" + "=" * 65)
+                print("  ✨ DEPLOYMENT COMPLETED SUCCESSFULLY!")
+                print(f"  Live Storefront: https://{DOMAIN}/")
+                print("=" * 65 + "\n")
+                verify_deployment()
+            else:
+                print("[-] Warning: Extraction trigger did not return SUCCESS.")
+        finally:
+            cleanup_local(zip_path, extractor_path)
+    else:
+        # Default smart direct FTP synchronization
+        success = sync_direct_ftp(force_all=force_all)
+        if success:
             print("\n" + "=" * 65)
             print("  ✨ DEPLOYMENT COMPLETED SUCCESSFULLY!")
             print(f"  Live Storefront: https://{DOMAIN}/")
             print("=" * 65 + "\n")
             verify_deployment()
-        else:
-            print("[-] Warning: Extraction trigger did not return SUCCESS.")
-    finally:
-        cleanup_local(zip_path, extractor_path)
 
 if __name__ == '__main__':
     main()
