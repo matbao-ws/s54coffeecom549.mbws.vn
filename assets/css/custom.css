@@ -2531,26 +2531,84 @@ h5, h6,
     flex-shrink: 1 !important;
 }
 
-/* 3. Original Floating Minimalist Thumbnail */
+/* ==========================================================================
+   S54 Premium Product Card & Grid System (Standard UX/UI, Spacing & Hover)
+   ========================================================================== */
+
+/* 1. Master Card Container */
+.c-collection-template__products-list .o-product-thumbnail,
+.o-products-list .o-product-thumbnail,
+.o-products-list__products .o-product-thumbnail,
+.c-featured-collections .o-product-thumbnail,
+.o-product-thumbnail.has-many-options,
 .o-product-thumbnail {
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(47, 34, 26, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 16px 14px 18px !important;
+    box-shadow: 0 2px 8px rgba(47, 34, 26, 0.04) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: space-between !important;
     text-align: center !important;
     width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
     box-sizing: border-box !important;
+    position: relative !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+    margin: 0 !important;
 }
 
+/* Card Hover - Smooth Lift & Subtle Accent Glow */
+.c-collection-template__products-list .o-product-thumbnail:hover,
+.c-collection-template__products-list .o-product-thumbnail.is-hovered,
+.o-products-list .o-product-thumbnail:hover,
+.o-products-list .o-product-thumbnail.is-hovered,
+.o-products-list__products .o-product-thumbnail:hover,
+.o-products-list__products .o-product-thumbnail.is-hovered,
+.c-featured-collections .o-product-thumbnail:hover,
+.c-featured-collections .o-product-thumbnail.is-hovered,
+.o-product-thumbnail:hover,
+.o-product-thumbnail.is-hovered {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 14px 30px rgba(47, 34, 26, 0.12) !important;
+    border-color: rgba(172, 138, 98, 0.4) !important;
+}
+
+@media only screen and (min-width: 1100px) {
+    .c-featured-collections .o-product-thumbnail,
+    .o-product-thumbnail.has-many-options,
+    .o-product-thumbnail {
+        min-height: 0 !important;
+        height: 100% !important;
+        padding: 16px 14px 18px !important;
+    }
+}
+
+@media only screen and (min-width: 1650px) {
+    .c-featured-collections .o-product-thumbnail,
+    .o-product-thumbnail.has-many-options,
+    .o-product-thumbnail {
+        min-height: 0 !important;
+        height: 100% !important;
+        padding: 18px 16px 20px !important;
+    }
+}
+
+/* Inner wrapper */
 .o-product-thumbnail__inner {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: flex-start !important;
     width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
 }
 
 .o-product-thumbnail__link {
@@ -2562,26 +2620,31 @@ h5, h6,
     width: 100% !important;
 }
 
-/* 4. Image Container - White Floating Box */
+/* 2. Image Container - Fixed Uniform Aspect Ratio & Smooth Inner Zoom */
 .o-product-thumbnail__image-container {
-    background: #FFFFFF !important;
+    background: #FAF6F1 !important;
     border-radius: 8px !important;
-    padding: 18px !important;
+    padding: 12px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     aspect-ratio: 1 / 1 !important;
     width: 100% !important;
-    max-width: 240px !important;
-    margin: 0 auto 16px auto !important;
-    box-shadow: 0 4px 18px rgba(47, 34, 26, 0.07) !important;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+    max-width: 250px !important;
+    height: auto !important;
+    padding-bottom: 0 !important;
+    margin: 0 auto 12px auto !important;
+    overflow: hidden !important;
+    position: relative !important;
     box-sizing: border-box !important;
+    transition: background-color 0.3s ease !important;
 }
 
-.o-product-thumbnail:hover .o-product-thumbnail__image-container {
-    transform: translateY(-6px) !important;
-    box-shadow: 0 14px 32px rgba(47, 34, 26, 0.13) !important;
+/* Eliminate legacy fake blur shadow */
+.o-product-thumbnail__image-container:after,
+.o-product-thumbnail:hover .o-product-thumbnail__image-container:after {
+    display: none !important;
+    content: none !important;
 }
 
 .o-product-thumbnail__image-container img,
@@ -2591,25 +2654,38 @@ h5, h6,
     object-fit: contain !important;
     background: transparent !important;
     border-radius: 0 !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transform: none !important;
 }
 
-/* 5. Original Centered Gold Pill Badge */
-.o-product-thumbnail__badge {
+/* Image on hover: smooth zoom inside container, NEVER jump translateY(-2rem) */
+.o-product-thumbnail:hover .o-product-thumbnail__image,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__image {
+    transform: scale(1.06) !important;
+}
+
+/* 3. Badge - Stays Visible On Hover Without Shift */
+.o-product-thumbnail__badge,
+.o-product-thumbnail:hover .o-product-thumbnail__badge,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__badge,
+.o-product-thumbnail:hover.quickadd-disabled .o-product-thumbnail__badge {
     position: static !important;
-    margin: 0 auto 10px auto !important;
+    margin: 0 auto 8px auto !important;
     background-color: #D68E1D !important;
     color: #FFFFFF !important;
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 11px !important;
+    font-size: 10.5px !important;
     font-weight: 700 !important;
     letter-spacing: 0.8px !important;
     text-transform: uppercase !important;
-    padding: 5px 18px !important;
+    padding: 4px 14px !important;
     border-radius: 20px !important;
     display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* 6. Title - Strictly Aligned 2-Line Baseline */
+/* 4. Title - Uniform 2-Line Alignment & Brand Color On Hover */
 .o-product-thumbnail__title {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-size: 14.5px !important;
@@ -2617,25 +2693,32 @@ h5, h6,
     line-height: 1.35 !important;
     color: #2F221A !important;
     text-align: center !important;
-    margin: 0 auto 8px auto !important;
+    margin: 0 auto 6px auto !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
     height: 40px !important;
     min-height: 40px !important;
+    max-height: 40px !important;
     max-width: 250px !important;
+    transition: color 0.25s ease !important;
 }
 
-/* 7. Rating & Reviews - Clean Single Line */
+.o-product-thumbnail:hover .o-product-thumbnail__title,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__title {
+    color: #AC8A62 !important;
+}
+
+/* 5. Rating & Reviews - Clean Single Line */
 .o-product-thumbnail__star-reviews {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 4px !important;
-    margin: 0 auto 8px auto !important;
-    height: 20px !important;
-    min-height: 20px !important;
+    margin: 0 auto 6px auto !important;
+    height: 18px !important;
+    min-height: 18px !important;
 }
 
 .oke-a11yText,
@@ -2658,64 +2741,99 @@ h5, h6,
 .o-reviews__stars svg {
     color: #D68E1D !important;
     fill: #D68E1D !important;
-    height: 13px !important;
+    height: 12px !important;
 }
 
 .oke-sr-count,
 .o-product-thumbnail__star-reviews span {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 12.5px !important;
+    font-size: 12px !important;
     font-weight: 600 !important;
     color: #2F221A !important;
-    margin-left: 3px !important;
+    margin-left: 2px !important;
 }
 
-/* 8. Product Excerpt - Uniform 2-Line Baseline */
-.o-product-thumbnail__excerpt {
+/* 6. Product Excerpt - PREVENT HOVER COLLAPSE! Stays Visible & Stably Aligned */
+.o-product-thumbnail__excerpt,
+.o-product-thumbnail:hover .o-product-thumbnail__excerpt,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__excerpt,
+.o-product-thumbnail:hover.quickadd-disabled .o-product-thumbnail__excerpt {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 13px !important;
-    line-height: 1.45 !important;
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
     color: #5C4A3E !important;
     text-align: center !important;
-    margin: 0 auto 10px auto !important;
+    margin: 0 auto 8px auto !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
-    height: 38px !important;
-    min-height: 38px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
     max-width: 240px !important;
+    opacity: 0.75 !important;
+    visibility: visible !important;
 }
 
-/* 9. Price & Add To Cart Button - Stacked Vertically with Zero Collision */
+/* 7. Content Area - Anchored At Bottom With Zero Overlap */
 .o-product-thumbnail__content {
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
-    margin-top: 4px !important;
-    gap: 10px !important;
+    justify-content: flex-end !important;
+    margin-top: auto !important;
+    gap: 8px !important;
+    min-height: 0 !important;
+    height: auto !important;
 }
 
 .o-product-thumbnail__content-inner {
     position: static !important;
     display: block !important;
     width: 100% !important;
+    margin-bottom: 2px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    height: auto !important;
 }
 
-.o-product-thumbnail__price {
+/* 8. Price - PREVENT HOVER COLLAPSE! Stays Visible With Distinct Sale/Compare Styling */
+.o-product-thumbnail__price,
+.o-product-thumbnail:hover .o-product-thumbnail__price,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__price {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 16.5px !important;
-    font-weight: 700 !important;
-    color: #D68E1D !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
     text-align: center !important;
     margin: 0 auto !important;
-    display: block !important;
-    line-height: 1 !important;
+    line-height: 1.2 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
 }
 
-.o-product-thumbnail__hover {
+.o-product-thumbnail__price-sale {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #D68E1D !important;
+}
+
+.o-product-thumbnail__price-compare {
+    font-size: 13px !important;
+    color: #8C7D73 !important;
+    text-decoration: line-through !important;
+    font-weight: 500 !important;
+}
+
+/* 9. Hover Actions Container */
+.o-product-thumbnail__hover,
+.o-product-thumbnail:hover .o-product-thumbnail__hover,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__hover {
     position: static !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -2728,6 +2846,8 @@ h5, h6,
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
 }
 
 .o-product-thumbnail__hover__pricing,
@@ -2744,154 +2864,45 @@ h5, h6,
     margin: 0 !important;
 }
 
-.o-product-thumbnail__add-btn {
+/* 10. Add To Bag Button - Perfectly Styled For Both Class Names */
+.o-product-thumbnail__btn,
+.o-product-thumbnail__add-btn,
+.o-product-thumbnail [data-add-to-cart] {
     background-color: #2F221A !important;
     color: #FAF6F1 !important;
     border: 1px solid #2F221A !important;
-    border-radius: 4px !important;
-    padding: 10px 24px !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.2px !important;
-    text-transform: uppercase !important;
-    cursor: pointer !important;
-    transition: all 0.25s ease !important;
-    min-width: 160px !important;
-    text-align: center !important;
-    display: inline-block !important;
-}
-
-.o-product-thumbnail__add-btn:hover {
-    background-color: #D68E1D !important;
-    border-color: #D68E1D !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 4px 12px rgba(214, 142, 29, 0.3) !important;
-    transform: translateY(-1px) !important;
-}
-/* ==========================================================================
-   S54 ZERO-GAP Master Thumbnail Override
-   ========================================================================== */
-.c-featured-collections .o-product-thumbnail,
-.o-products-list__product-thumbnail,
-.o-product-thumbnail.has-many-options,
-.o-product-thumbnail {
-    min-height: 0 !important;
-    max-height: none !important;
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    margin-bottom: 0 !important;
-    padding: 0 !important;
-}
-
-@media only screen and (min-width: 1100px) {
-    .c-featured-collections .o-product-thumbnail,
-    .o-product-thumbnail.has-many-options,
-    .o-product-thumbnail {
-        min-height: 0 !important;
-        height: auto !important;
-        padding: 0 !important;
-    }
-}
-
-@media only screen and (min-width: 1650px) {
-    .c-featured-collections .o-product-thumbnail,
-    .o-product-thumbnail.has-many-options,
-    .o-product-thumbnail {
-        min-height: 0 !important;
-        height: auto !important;
-        padding: 0 !important;
-    }
-}
-
-.o-product-thumbnail__inner {
-    height: auto !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding: 0 !important;
-    width: 100% !important;
-    gap: 0 !important;
-}
-
-.o-product-thumbnail__content {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-top: 10px !important;
-    gap: 8px !important;
-    min-height: 0 !important;
-    height: auto !important;
-}
-
-.o-product-thumbnail__content-inner {
-    position: static !important;
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 6px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-
-.o-product-thumbnail__price {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 15.5px !important;
-    font-weight: 700 !important;
-    color: #D68E1D !important;
-    text-align: center !important;
-    margin: 0 !important;
-    display: block !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0.5px !important;
-}
-
-.o-product-thumbnail__hover {
-    position: static !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: all !important;
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transform: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.o-product-thumbnail__add-btn {
-    background-color: #2F221A !important;
-    color: #FAF6F1 !important;
-    border: 1px solid #2F221A !important;
-    border-radius: 4px !important;
-    padding: 8px 20px !important;
+    border-radius: 6px !important;
+    padding: 10px 20px !important;
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-size: 11px !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
     text-transform: uppercase !important;
     cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    min-width: 150px !important;
+    transition: all 0.25s ease !important;
+    width: 100% !important;
+    max-width: 200px !important;
     text-align: center !important;
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
 }
 
-.o-product-thumbnail__add-btn:hover {
-    background-color: #D68E1D !important;
-    border-color: #D68E1D !important;
+.o-product-thumbnail__btn:hover,
+.o-product-thumbnail__add-btn:hover,
+.o-product-thumbnail [data-add-to-cart]:hover,
+.o-product-thumbnail:hover .o-product-thumbnail__btn,
+.o-product-thumbnail:hover .o-product-thumbnail__add-btn,
+.o-product-thumbnail:hover [data-add-to-cart],
+.o-product-thumbnail.is-hovered .o-product-thumbnail__btn,
+.o-product-thumbnail.is-hovered .o-product-thumbnail__add-btn,
+.o-product-thumbnail.is-hovered [data-add-to-cart] {
+    background-color: #AC8A62 !important;
+    border-color: #AC8A62 !important;
     color: #FFFFFF !important;
-    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(172, 138, 98, 0.35) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* Perfect Mobile Responsive Header & Topbar (No Overlap) */
