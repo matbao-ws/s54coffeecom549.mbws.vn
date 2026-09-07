@@ -57,7 +57,7 @@
 
         cart.items.forEach(item => {
             const qty = Math.max(0, parseInt(item.quantity, 10) || 1);
-            const price = typeof item.price === 'number' ? item.price : 4400;
+            const price = typeof item.price === 'number' ? item.price : 35000;
             item.quantity = qty;
             item.line_price = price * qty;
             item.final_line_price = price * qty;
@@ -115,7 +115,7 @@
                 if (item.image && !existing.image) existing.image = item.image;
             } else {
                 const newId = item.id || Date.now();
-                const price = item.price || 4400;
+                const price = item.price || 35000;
                 const newItem = {
                     id: newId,
                     variant_id: item.variant_id || newId,

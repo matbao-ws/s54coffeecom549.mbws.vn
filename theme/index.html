@@ -413,7 +413,7 @@ first.parentNode.insertBefore(script, first);
   <header class="c-header is-milk" data-header>
     <div class="c-header__topbar" data-topbar>
       <div class="c-header__topbar-messages">
-        <a href="collections-coffee.html" class="c-header__topbar-message o-subtitle">Miễn phí vận chuyển toàn quốc cho đơn từ 599.000₫ • Hotline: 0383.707.578</a>
+        <a href="collections-coffee.html" class="c-header__topbar-message o-subtitle">Miễn phí vận chuyển toàn quốc cho đơn từ 599.000₫ • Hotline: 0974.933.907</a>
       </div>
       <div class="c-lang-switcher c-lang-switcher--header" data-lang-switcher>
         <button type="button" class="c-lang-btn is-active" data-lang="vi" aria-label="Tiếng Việt">🇻🇳 VI</button>
@@ -449,9 +449,9 @@ first.parentNode.insertBefore(script, first);
 
       <ul id="c-h-add" class="c-header__additional">
         <li class="c-header__additional-item is-hotline is-desktop-only">
-          <a href="tel:0383707578" class="c-header__phone-link">
+          <a href="tel:0974933907" class="c-header__phone-link">
             <span class="c-header__phone-icon">📞</span>
-            <span class="c-header__phone-text">0383.707.578</span>
+            <span class="c-header__phone-text">0974.933.907</span>
           </a>
         </li>
         <li class="c-header__additional-item">
@@ -1049,2169 +1049,355 @@ first.parentNode.insertBefore(script, first);
     </div>
   </div>
 </section></div><div id="shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" class="shopify-section c-section c-section__featured-collections">
-<link href="assets/css/sections.featured-collections.css" rel="stylesheet" type="text/css" media="all" /><script src="assets/js/sections.featured-collections.js" type="text/javascript" defer="defer"></script><section class="c-featured-collections c-featured-collections__">
-  <div class="c-featured-collections__header"><h2 class="c-featured-collections__header-title o-heading--2">Sản Phẩm Bán Chạy Nhất</h2><div class="c-featured-collections__header-tabs is-desktop" data-featured-collection-tabs><button class="c-featured-collections__header-tab  is-active " data-tab="1" data-tab-url="/collections/all-coffee-products">Cà Phê</button><button class="c-featured-collections__header-tab " data-tab="2" data-tab-url="/collections/coffee-capsules">Viên Nén Capsule</button><button class="c-featured-collections__header-tab " data-tab="3" data-tab-url="/collections/instant-coffee">Hòa Tan</button><button class="c-featured-collections__header-tab " data-tab="4" data-tab-url="">Ly Tách</button><a class="c-featured-collections__header-tab has-arrow" href="/collections/all-coffee-products">Tất Cả Sản Phẩm<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-          </a>
+<link href="assets/css/sections.featured-collections.css" rel="stylesheet" type="text/css" media="all" /><script src="assets/js/sections.featured-collections.js" type="text/javascript" defer="defer"></script><section class="c-featured-collections s54-featured-section" style="background-color: #FAF8F5; padding: 80px 20px;">
+  <div class="o-wrapper" style="max-width: 1280px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">DANH MỤC TUYỂN CHỌN</span>
+      <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; color: #2F221A; margin: 0 0 16px 0;">Sản Phẩm Bán Chạy Nhất</h2>
+      <p style="font-size: 15px; color: #6E6259; max-width: 650px; margin: 0 auto 28px;">Khám phá các dòng cà phê hòa tan 3in1 tiện lợi, cà phê hạt rang Robusta nguyên chất và máy xay cà phê thủ công cao cấp của S54 Coffee.</p>
+      
+      <!-- Filter Tabs -->
+      <div class="s54-filter-tabs" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button type="button" class="s54-filter-btn is-active" onclick="filterS54Prods(this, 'all')" style="background: #2F221A; color: #FFFFFF; border: 1px solid #2F221A; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer;">Tất Cả Sản Phẩm</button>
+        <button type="button" class="s54-filter-btn" onclick="filterS54Prods(this, 'Cà phê hòa tan')" style="background: #FFFFFF; color: #2F221A; border: 1px solid #D8CEBE; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer;">☕ Cà Phê Hòa Tan 3in1</button>
+        <button type="button" class="s54-filter-btn" onclick="filterS54Prods(this, 'Cà phê hạt rang')" style="background: #FFFFFF; color: #2F221A; border: 1px solid #D8CEBE; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer;">🌱 Cà Phê Hạt Rang Mộc</button>
+        <button type="button" class="s54-filter-btn" onclick="filterS54Prods(this, 'Máy xay cà phê cầm tay')" style="background: #FFFFFF; color: #2F221A; border: 1px solid #D8CEBE; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer;">⚙️ Máy Xay Cà Phê Cầm Tay</button>
       </div>
-      <div class="c-featured-collections__header-tabs is-mobile">
-        <select class="c-featured-collections__header-tabs c-featured-collections__header-tabs--select"  data-featured-collection-dropdown><option value="1" data-tab-url="/collections/all-coffee-products">Coffee</option><option value="2" data-tab-url="/collections/coffee-capsules">Viên Nén Capsule</option><option value="3" data-tab-url="/collections/instant-coffee">Instant</option><option value="4" data-tab-url="">Cups</option><option value="all" data-url="/collections/all-coffee-products">Tất Cả Sản Phẩm</option></select>
-      </div>
-    
-  </div>
-  <div class="c-featured-collections__products " data-featured-collection-products>
-      
-      
-      <div class="c-featured-collections__products-list  is-active " data-products="1"><div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="42342702940335"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/robusta_1.jpg"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">ĐỘC QUYỀN ONLINE
-</div><h3 class="o-product-thumbnail__title o-heading--6">S54 Robusta Rang Mộc Nguyên Chất</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-6718616535215"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.8 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 96.8936%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.8 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.8</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (765 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.8","reviewCount":765} </script></div></div>
-        <span>(765)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Dòng blend phục vụ khách sạn & nhà hàng được ưa chuộng nhất</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                145.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_6718616535215" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="145.000₫"
-      data-product-money
-      data-product-id="42342702940335"
-    >145.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":6718616535215,
-  "available":true,
-  
-  "handle":"oro-coffee-beans-1kg",
-  "title":"S54 Robusta Rang Mộc Nguyên Chất",
-  "type":"Độc Quyền Online",
-  "vendor":"S54 COFFEE",
-  "tags":["Beans","best-suited-for_espresso","best-suited-for_Milk Blend","category_beans","online","other_specialty range","roast-profile_medium","special","Special Bar","subscription","subscription product","type_beans","type_blends","type_online exclusive"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-beans","s54-coffee-subscriptions","special-bar-beans"],
-  "badge":"ĐỘC QUYỀN ONLINE","subscriptionTag":"Subscribe \u0026 Save 25%","excerpt":"Dòng blend phục vụ khách sạn & nhà hàng được ưa chuộng nhất",
-  "thumbnailImage":[{"filename":"sb_beans_1kg_oro_f_V2_HOMEPAGE (1).png","mime_type":"image\/png","media_type":"image","alt":"","id":1675829124300,"key":"6718616535215\/1675829124300\/sb_beans_1kg_oro_f_V2_HOMEPAGE-(1).png","scope":"6718616535215","handle":"1675829124300","src":"https:\/\/cdn.accentuate.io\/6718616535215\/1675829124300\/sb_beans_1kg_oro_f_V2_HOMEPAGE-(1).png?v=1753310967133","original_src":"https:\/\/original.accentuate.io\/6718616535215\/1675829124300\/sb_beans_1kg_oro_f_V2_HOMEPAGE-(1).png?v=1753310967133","cloudinary_src":"https:\/\/cld.accentuate.io\/6718616535215\/1675829124300\/sb_beans_1kg_oro_f_V2_HOMEPAGE-(1).png?v=1753310967133\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":5650,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "1kg",
-        "values": ["1kg"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/sb_beans_1kg_oro_f_V2_4.png?v=1753311038",
-  "url":"\/products\/oro-coffee-beans-1kg",
-  "variants": [
-
-{"id":42342702940335,"title":"1kg","option1":"1kg","option2":null,"option3":null,"sku":"COVIBO1","requires_shipping":true,"taxable":false,"featured_image":{"id":41312525811887,"product_id":6718616535215,"position":1,"created_at":"2025-07-24T08:50:36+10:00","updated_at":"2025-07-24T08:50:38+10:00","alt":"S54 Robusta Rang Mộc Nguyên Chất","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/sb_beans_1kg_oro_f_V2_4.png?v=1753311038","variant_ids":[42342702940335]},"available":true,"name":"S54 Robusta Rang Mộc Nguyên Chất - 1kg","public_title":"1kg","options":["1kg"],"price":5650,"weight":1000,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631624317","featured_media":{"alt":"S54 Robusta Rang Mộc Nguyên Chất","id":32900291461295,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/sb_beans_1kg_oro_f_V2_4.png?v=1753311038"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":4238}],"price":4238,"compare_at_price":5650,"per_delivery_price":4238,"selling_plan_id":3315957935,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":4238}],"price":4238,"compare_at_price":5650,"per_delivery_price":4238,"selling_plan_id":3315990703,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":4238}],"price":4238,"compare_at_price":5650,"per_delivery_price":4238,"selling_plan_id":3316023471,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":4238}],"price":4238,"compare_at_price":5650,"per_delivery_price":4238,"selling_plan_id":3316056239,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":4238}],"price":4238,"compare_at_price":5650,"per_delivery_price":4238,"selling_plan_id":3316089007,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 6718616535215,
-  "inventory_policy": "continue",
-  "inventory_quantity": 260,
-  "compare_at_price": null,
-  "options": [
-    
-      "1kg"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="42342702940335" selected>1kg</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="6718616535215-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              1kg</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="1kg"
-                  data-swatch-position="1"
-                  title="1kg"
-                >1kg</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="6718616535215" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="43265010958511"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/arabica_beans.jpg, assets/images/s54/arabica_beans.jpg 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/arabica_beans.jpg, assets/images/s54/arabica_beans.jpg 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/arabica_beans.jpg, assets/images/s54/arabica_beans.jpg 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/arabica_beans.jpg, assets/images/s54/arabica_beans.jpg 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/arabica_beans.jpg, assets/images/s54/arabica_beans.jpg 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/arabica_beans.jpg"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">ĐỘC QUYỀN ONLINE
-</div><h3 class="o-product-thumbnail__title o-heading--6">Lab Release - Blend No. 58 Specialty Coffee Beans</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-7738713604271"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.4 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 90.6809%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.4 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.4</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (87 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.4","reviewCount":87} </script></div></div>
-        <span>(87)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Exclusive Specialty Range</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                185.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_7738713604271" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="185.000₫"
-      data-product-money
-      data-product-id="43265010958511"
-    >185.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":7738713604271,
-  "available":false,
-  
-  "handle":"lab-release-blend-no-58-beans",
-  "title":"Lab Release - Blend No. 58 Specialty Coffee Beans",
-  "type":"Độc Quyền Online",
-  "vendor":"S54 COFFEE",
-  "tags":["Beans","category_beans","New","subscription product","type_beans","type_blends","type_online exclusive","type_Specialty Beans"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-beans","s54-coffee-subscriptions","special-bar-beans"],
-  "badge":"ĐỘC QUYỀN ONLINE","subscriptionTag":"Subscribe \u0026 Save 25%","excerpt":"Exclusive Specialty Range",
-  "thumbnailImage":[{"filename":"ret_beans_1kg_lab_release_f.png","mime_type":"image\/png","media_type":"image","alt":"","id":1709092367151,"key":"7738713604271\/1709092367151\/ret_beans_1kg_lab_release_f.png","scope":"7738713604271","handle":"1709092367151","src":"https:\/\/cdn.accentuate.io\/7738713604271\/1709092367151\/ret_beans_1kg_lab_release_f.png?v=1715583534401","original_src":"https:\/\/original.accentuate.io\/7738713604271\/1709092367151\/ret_beans_1kg_lab_release_f.png?v=1715583534401","cloudinary_src":"https:\/\/cld.accentuate.io\/7738713604271\/1709092367151\/ret_beans_1kg_lab_release_f.png?v=1715583534401\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":6300,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "1kg",
-        "values": ["1kg"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/Image_5_cd5908f8-2315-45ae-9d4c-8841d843173d.png?v=1782106829",
-  "url":"\/products\/lab-release-blend-no-58-beans",
-  "variants": [
-
-{"id":43265010958511,"title":"1kg","option1":"1kg","option2":null,"option3":null,"sku":"COVIBLSR","requires_shipping":true,"taxable":false,"featured_image":null,"available":false,"name":"Lab Release - Blend No. 58 Specialty Coffee Beans - 1kg","public_title":"1kg","options":["1kg"],"price":6300,"weight":1000,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631637836","requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":4725}],"price":4725,"compare_at_price":6300,"per_delivery_price":4725,"selling_plan_id":3316777135,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":4725}],"price":4725,"compare_at_price":6300,"per_delivery_price":4725,"selling_plan_id":3316809903,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":4725}],"price":4725,"compare_at_price":6300,"per_delivery_price":4725,"selling_plan_id":3316842671,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":4725}],"price":4725,"compare_at_price":6300,"per_delivery_price":4725,"selling_plan_id":3316875439,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":4725}],"price":4725,"compare_at_price":6300,"per_delivery_price":4725,"selling_plan_id":3316908207,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7738713604271,
-  "inventory_policy": "deny",
-  "inventory_quantity": 0,
-  "compare_at_price": null,
-  "options": [
-    
-      "1kg"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="43265010958511" selected>1kg</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="7738713604271-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              1kg</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="1kg"
-                  data-swatch-position="1"
-                  title="1kg"
-                >1kg</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller  is-disabled" disabled
-                    data-quick-add-btn data-product-form-add
-                  >Hết Hàng</button><input type="hidden" name="product-id" value="7738713604271" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="42342703071407"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/instant_3in1_1.jpg"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">ĐỘC QUYỀN ONLINE
-</div><h3 class="o-product-thumbnail__title o-heading--6">Cinque Stelle® S54 Arabica Cầu Đất Thượng Hạng</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-6718616502447"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.7 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 95.3404%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.7 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.7</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (527 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.7","reviewCount":527} </script></div></div>
-        <span>(527)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Our premiere blend, served in leading restaurants</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                150.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_6718616502447" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="150.000₫"
-      data-product-money
-      data-product-id="42342703071407"
-    >150.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":6718616502447,
-  "available":true,
-  
-  "handle":"cinque-stelle-beans-1kg",
-  "title":"Cinque Stelle® S54 Arabica Cầu Đất Thượng Hạng",
-  "type":"Độc Quyền Online",
-  "vendor":"S54 COFFEE",
-  "tags":["Beans","best-suited-for_espresso","best-suited-for_Milk Blend","brew method_espresso","category_beans","coffeeday","EOFY20","feed-promoid-EOFY20","feed-promoid-welcome15","online","other_specialty range","roast-profile_medium","special","Special Bar","subscription","subscription product","type_beans","type_blends","type_online exclusive"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-beans","s54-coffee-subscriptions","special-bar-beans"],
-  "badge":"ĐỘC QUYỀN ONLINE","subscriptionTag":"Subscribe \u0026 Save 25%","excerpt":"Our premiere blend, served in leading restaurants",
-  "thumbnailImage":[{"filename":"collection.png","mime_type":"image\/png","media_type":"image","alt":"","id":1666066308823,"key":"6718616502447\/1666066308823\/collection.png","scope":"6718616502447","handle":"1666066308823","src":"https:\/\/cdn.accentuate.io\/6718616502447\/1666066308823\/collection.png?v=1680079450343","original_src":"https:\/\/original.accentuate.io\/6718616502447\/1666066308823\/collection.png?v=1680079450343","cloudinary_src":"https:\/\/cld.accentuate.io\/6718616502447\/1666066308823\/collection.png?v=1680079450343\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":6050,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "1kg",
-        "values": ["1kg"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/products\/897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b.png?v=1680079426",
-  "url":"\/products\/cinque-stelle-beans-1kg",
-  "variants": [
-
-{"id":42342703071407,"title":"1kg","option1":"1kg","option2":null,"option3":null,"sku":"COVIBCS1","requires_shipping":true,"taxable":false,"featured_image":{"id":36171980931247,"product_id":6718616502447,"position":1,"created_at":"2023-03-29T19:43:43+11:00","updated_at":"2023-03-29T19:43:46+11:00","alt":"S54 S54 Robusta Rang Mộc","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/products\/897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b.png?v=1680079426","variant_ids":[42342703071407]},"available":true,"name":"Cinque Stelle® S54 Arabica Cầu Đất Thượng Hạng - 1kg","public_title":"1kg","options":["1kg"],"price":6050,"weight":1000,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631624287","featured_media":{"alt":"S54 S54 Robusta Rang Mộc","id":28593233461423,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/products\/897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b.png?v=1680079426"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":4538}],"price":4538,"compare_at_price":6050,"per_delivery_price":4538,"selling_plan_id":3315794095,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":4538}],"price":4538,"compare_at_price":6050,"per_delivery_price":4538,"selling_plan_id":3315826863,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":4538}],"price":4538,"compare_at_price":6050,"per_delivery_price":4538,"selling_plan_id":3315859631,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":4538}],"price":4538,"compare_at_price":6050,"per_delivery_price":4538,"selling_plan_id":3315892399,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":4538}],"price":4538,"compare_at_price":6050,"per_delivery_price":4538,"selling_plan_id":3315925167,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 6718616502447,
-  "inventory_policy": "continue",
-  "inventory_quantity": 22,
-  "compare_at_price": null,
-  "options": [
-    
-      "1kg"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="42342703071407" selected>1kg</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="6718616502447-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              1kg</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="1kg"
-                  data-swatch-position="1"
-                  title="1kg"
-                >1kg</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="6718616502447" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="42342703825071"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/012_MicrosoftTeams-image-_379_.png, assets/images/012_MicrosoftTeams-image-_379_.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/012_MicrosoftTeams-image-_379_.png, assets/images/012_MicrosoftTeams-image-_379_.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/012_MicrosoftTeams-image-_379_.png, assets/images/012_MicrosoftTeams-image-_379_.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/012_MicrosoftTeams-image-_379_.png, assets/images/012_MicrosoftTeams-image-_379_.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/012_MicrosoftTeams-image-_379_.png, assets/images/012_MicrosoftTeams-image-_379_.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/012_MicrosoftTeams-image-_379_.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">ĐỘC QUYỀN ONLINE
-</div><h3 class="o-product-thumbnail__title o-heading--6">Nero S54 Arabica Cầu Đất Thượng Hạng</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-6718616830127"><div data-oke-reviews-version="0.98.2" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.8 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 96.8936%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.8 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.8</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (208 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.8","reviewCount":208} </script></div></div>
-        <span>(208)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Our darkest roast offering a bold and intense cup</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                165.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_6718616830127" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="165.000₫"
-      data-product-money
-      data-product-id="42342703825071"
-    >165.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":6718616830127,
-  "available":false,
-  
-  "handle":"nero-beans-1kg",
-  "title":"Nero S54 Arabica Cầu Đất Thượng Hạng",
-  "type":"Độc Quyền Online",
-  "vendor":"S54 COFFEE",
-  "tags":["Beans","best-suited-for_espresso","category_beans","coffeeday","EOFY20","feed-promoid-EOFY20","feed-promoid-welcome15","Feed-title-Best 1kg Coffee Beans Online Mức Độ Rang: Đậm (Dark Roast) Fresh Roasted","online","other_specialty range","roast-profile_dark","special","Special Bar","subscription","subscription product","type_beans","type_blends","type_online exclusive"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-beans","s54-coffee-subscriptions","special-bar-beans"],
-  "badge":"ĐỘC QUYỀN ONLINE","subscriptionTag":"Subscribe \u0026 Save 25%","excerpt":"Our darkest roast offering a bold and intense cup",
-  "thumbnailImage":[{"filename":"MicrosoftTeams-image (379).png","mime_type":"image\/png","media_type":"image","alt":"","id":1675829772401,"key":"6718616830127\/1675829772401\/MicrosoftTeams-image-(379).png","scope":"6718616830127","handle":"1675829772401","src":"https:\/\/cdn.accentuate.io\/6718616830127\/1675829772401\/MicrosoftTeams-image-(379).png?v=1684731530125","original_src":"https:\/\/original.accentuate.io\/6718616830127\/1675829772401\/MicrosoftTeams-image-(379).png?v=1684731530125","cloudinary_src":"https:\/\/cld.accentuate.io\/6718616830127\/1675829772401\/MicrosoftTeams-image-(379).png?v=1684731530125\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":5500,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "1kg",
-        "values": ["1kg"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/MicrosoftTeams-image_380.png?v=1684731507",
-  "url":"\/products\/nero-beans-1kg",
-  "variants": [
-
-{"id":42342703825071,"title":"1kg","option1":"1kg","option2":null,"option3":null,"sku":"COVIBN1","requires_shipping":true,"taxable":false,"featured_image":{"id":36390528188591,"product_id":6718616830127,"position":1,"created_at":"2023-05-22T14:58:26+10:00","updated_at":"2023-05-22T14:58:27+10:00","alt":"S54 Nero Coffee Beans","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/MicrosoftTeams-image_380.png?v=1684731507","variant_ids":[42342703825071]},"available":false,"name":"Nero S54 Arabica Cầu Đất Thượng Hạng - 1kg","public_title":"1kg","options":["1kg"],"price":5500,"weight":1000,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631624300","featured_media":{"alt":"S54 Nero Coffee Beans","id":28820082163887,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/MicrosoftTeams-image_380.png?v=1684731507"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":4125}],"price":4125,"compare_at_price":5500,"per_delivery_price":4125,"selling_plan_id":3316285615,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":4125}],"price":4125,"compare_at_price":5500,"per_delivery_price":4125,"selling_plan_id":3316318383,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":4125}],"price":4125,"compare_at_price":5500,"per_delivery_price":4125,"selling_plan_id":3316351151,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":4125}],"price":4125,"compare_at_price":5500,"per_delivery_price":4125,"selling_plan_id":3316416687,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":4125}],"price":4125,"compare_at_price":5500,"per_delivery_price":4125,"selling_plan_id":3316383919,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 6718616830127,
-  "inventory_policy": "deny",
-  "inventory_quantity": 0,
-  "compare_at_price": null,
-  "options": [
-    
-      "1kg"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="42342703825071" selected>1kg</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="6718616830127-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              1kg</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="1kg"
-                  data-swatch-position="1"
-                  title="1kg"
-                >1kg</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller  is-disabled" disabled
-                    data-quick-add-btn data-product-form-add
-                  >Hết Hàng</button><input type="hidden" name="product-id" value="6718616830127" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<button class="c-featured-collections__control c-featured-collections__control--prev" data-carousel-prev>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-        <button class="c-featured-collections__control c-featured-collections__control--next" data-carousel-next>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-      </div>
-      
-      
-      <div class="c-featured-collections__products-list " data-products="2"><div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="44646281412783"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/051_VittoriaSL_Esp-Black_Fr.png, assets/images/051_VittoriaSL_Esp-Black_Fr.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/051_VittoriaSL_Esp-Black_Fr.png, assets/images/051_VittoriaSL_Esp-Black_Fr.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/051_VittoriaSL_Esp-Black_Fr.png, assets/images/051_VittoriaSL_Esp-Black_Fr.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/051_VittoriaSL_Esp-Black_Fr.png, assets/images/051_VittoriaSL_Esp-Black_Fr.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/051_VittoriaSL_Esp-Black_Fr.png, assets/images/051_VittoriaSL_Esp-Black_Fr.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/051_VittoriaSL_Esp-Black_Fr.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Espresso Black Capsules</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-8117286666415"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.7 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 95.3404%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.7 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.7</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (13 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.7","reviewCount":13} </script></div></div>
-        <span>(13)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 15/15 </p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                55.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_8117286666415" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="55.000₫"
-      data-product-money
-      data-product-id="44646281412783"
-    >55.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":8117286666415,
-  "available":true,
-  
-  "handle":"espresso-black-capsules",
-  "title":"Espresso Black Capsules",
-  "type":"Nespresso* Compatible",
-  "vendor":"S54 COFFEE",
-  "tags":["best-suited-for_espresso","best-suited-for_Milk Blend","brew method_espresso","category_capsules","coffeeday","compatibility_nespresso* compatible","feed-promoid-EOFY20","feed-promoid-welcome15","format_capsules","intensity_Intense","machine-compatibility_nespresso* compatible","Nespresso* Compatible Capsules","pack-size_10 Pack","pack-size_20 Pack","retail espresso","subscription","subscription product","type_capsules","S54 COFFEE"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-capsules","s54-coffee-subscriptions"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 40%","excerpt":"Intensity 15\/15 ",
-  "thumbnailImage":[{"filename":"S54SL_Esp Black_Fr.png","mime_type":"image\/png","media_type":"image","alt":"","id":1732142932361,"key":"8117286666415\/1732142932361\/S54SL_Esp-Black_Fr.png","scope":"8117286666415","handle":"1732142932361","src":"https:\/\/cdn.accentuate.io\/8117286666415\/1732142932361\/S54SL_Esp-Black_Fr.png?v=1782876901486","original_src":"https:\/\/original.accentuate.io\/8117286666415\/1732142932361\/S54SL_Esp-Black_Fr.png?v=1782876901486","cloudinary_src":"https:\/\/cld.accentuate.io\/8117286666415\/1732142932361\/S54SL_Esp-Black_Fr.png?v=1782876901486\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":1630,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "20-capsules",
-        "values": ["20-capsules"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/EspressoBlack20pk_09310631638437_01_PRODUCT.png?v=1759196505",
-  "url":"\/products\/espresso-black-capsules",
-  "variants": [
-
-{"id":44646281412783,"title":"20 Capsules","option1":"20 Capsules","option2":null,"option3":null,"sku":"CAPCALVESB20","requires_shipping":true,"taxable":false,"featured_image":{"id":39569708548271,"product_id":8117286666415,"position":1,"created_at":"2024-11-21T09:29:03+11:00","updated_at":"2025-09-30T11:41:45+10:00","alt":"Espresso Black capsules in 20-pack packaging, front view with intense dark roast beans visible","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/EspressoBlack20pk_09310631638437_01_PRODUCT.png?v=1759196505","variant_ids":[44646281412783]},"available":true,"name":"Espresso Black Capsules - 20 Capsules","public_title":"20 Capsules","options":["20 Capsules"],"price":1630,"weight":104,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631638437","featured_media":{"alt":"Espresso Black capsules in 20-pack packaging, front view with intense dark roast beans visible","id":31795857260719,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/EspressoBlack20pk_09310631638437_01_PRODUCT.png?v=1759196505"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3320742063,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3320774831,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3320807599,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3320840367,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3320873135,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 8117286666415,
-  "inventory_policy": "deny",
-  "inventory_quantity": 47,
-  "compare_at_price": null,
-  "options": [
-    
-      "20-capsules"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="44646281412783" selected>20 Capsules</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="8117286666415-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              20 Capsules</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="20-capsules"
-                  data-swatch-position="1"
-                  title="20 Capsules"
-                >20 Capsules</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="8117286666415" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="43267511025839"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/054_VittoriaSL_Black-valley_Pod.png, assets/images/054_VittoriaSL_Black-valley_Pod.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/054_VittoriaSL_Black-valley_Pod.png, assets/images/054_VittoriaSL_Black-valley_Pod.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/054_VittoriaSL_Black-valley_Pod.png, assets/images/054_VittoriaSL_Black-valley_Pod.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/054_VittoriaSL_Black-valley_Pod.png, assets/images/054_VittoriaSL_Black-valley_Pod.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/054_VittoriaSL_Black-valley_Pod.png, assets/images/054_VittoriaSL_Black-valley_Pod.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/054_VittoriaSL_Black-valley_Pod.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Black Valley Capsules</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-7739302346927"><div data-oke-reviews-version="0.100.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.8 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 96.8936%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.8 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.8</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (107 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.8","reviewCount":107} </script></div></div>
-        <span>(107)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 15/15 </p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-               
-                35.000₫
-              </p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_7739302346927" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="35.000₫"
-      data-product-money
-      data-product-id="43267511025839"
-    >35.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":7739302346927,
-  "available":true,
-  
-  "handle":"black-valley-capsules",
-  "title":"Black Valley Capsules",
-  "type":"Nespresso* Compatible",
-  "vendor":"S54 COFFEE",
-  "tags":["best-suited-for_Milk Blend","category_capsules","compatibility_nespresso* compatible","format_capsules","intensity_Intense","machine-compatibility_nespresso* compatible","Nespresso* Compatible Capsules","pack-size_10 Pack","pack-size_20 Pack","subscription","subscription product","type_capsules"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-capsules","s54-coffee-subscriptions"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 40%","excerpt":"Intensity 15\/15 ",
-  "thumbnailImage":[{"filename":"S54SL_Black valley_Pod.png","mime_type":"image\/png","media_type":"image","alt":"","id":1709156851733,"key":"7739302346927\/1709156851733\/S54SL_Black-valley_Pod.png","scope":"7739302346927","handle":"1709156851733","src":"https:\/\/cdn.accentuate.io\/7739302346927\/1709156851733\/S54SL_Black-valley_Pod.png?v=1782876950891","original_src":"https:\/\/original.accentuate.io\/7739302346927\/1709156851733\/S54SL_Black-valley_Pod.png?v=1782876950891","cloudinary_src":"https:\/\/cld.accentuate.io\/7739302346927\/1709156851733\/S54SL_Black-valley_Pod.png?v=1782876950891\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":true,
-  "price_min":950,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "10-capsules",
-        "values": ["10-capsules"
-,"20-capsules"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Blackvalley_Pod_fc59ba2e-d1be-443c-9e72-b689520253df.png?v=1759197211",
-  "url":"\/products\/black-valley-capsules",
-  "variants": [
-
-{"id":43267511025839,"title":"10 Capsules","option1":"10 Capsules","option2":null,"option3":null,"sku":"CAPCALVRBV","requires_shipping":true,"taxable":false,"featured_image":{"id":37529140920495,"product_id":7739302346927,"position":1,"created_at":"2024-02-29T08:45:06+11:00","updated_at":"2025-09-30T11:53:31+10:00","alt":"S54 Black Valley Nespresso* Capsules","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Blackvalley_Pod_fc59ba2e-d1be-443c-9e72-b689520253df.png?v=1759197211","variant_ids":[43267511025839]},"available":true,"name":"Black Valley Capsules - 10 Capsules","public_title":"10 Capsules","options":["10 Capsules"],"price":950,"weight":52,"compare_at_price":null,"inventory_management":"shopify","barcode":null,"featured_media":{"alt":"S54 Black Valley Nespresso* Capsules","id":30028131434671,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Blackvalley_Pod_fc59ba2e-d1be-443c-9e72-b689520253df.png?v=1759197211"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319431343,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319464111,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319496879,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319529647,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319562415,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7739302346927,
-  "inventory_policy": "deny",
-  "inventory_quantity": 25,
-  "compare_at_price": null,
-  "options": [
-    
-      "10-capsules"
-
-    
-  ]},
-
-{"id":43267511124143,"title":"20 Capsules","option1":"20 Capsules","option2":null,"option3":null,"sku":"CAPCALVRBV20","requires_shipping":true,"taxable":false,"featured_image":{"id":37529141149871,"product_id":7739302346927,"position":3,"created_at":"2024-02-29T08:45:07+11:00","updated_at":"2025-09-30T11:53:31+10:00","alt":"S54 Black Valley Nespresso* Capsules","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_BlackValley_20_Pod_c2f670b6-864c-470a-aa09-d9556008aa42.png?v=1759197211","variant_ids":[43267511124143]},"available":true,"name":"Black Valley Capsules - 20 Capsules","public_title":"20 Capsules","options":["20 Capsules"],"price":1630,"weight":104,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631636983","featured_media":{"alt":"S54 Black Valley Nespresso* Capsules","id":30028131729583,"position":3,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_BlackValley_20_Pod_c2f670b6-864c-470a-aa09-d9556008aa42.png?v=1759197211"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319431343,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319464111,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319496879,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319529647,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319562415,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7739302346927,
-  "inventory_policy": "deny",
-  "inventory_quantity": 13,
-  "compare_at_price": null,
-  "options": [
-    
-      "20-capsules"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="43267511025839" selected>10 Capsules</option><option value="43267511124143" >20 Capsules</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="7739302346927-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              10 Capsules</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="10-capsules"
-                  data-swatch-position="1"
-                  title="10 Capsules"
-                >10 Capsules</button><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  "
-                  data-swatch-object
-                  data-value="20-capsules"
-                  data-swatch-position="1"
-                  title="20 Capsules"
-                >20 Capsules</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="7739302346927" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="43264985301167"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/001_VittoriaSL_Oro_Pod.png, assets/images/001_VittoriaSL_Oro_Pod.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/001_VittoriaSL_Oro_Pod.png, assets/images/001_VittoriaSL_Oro_Pod.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/001_VittoriaSL_Oro_Pod.png, assets/images/001_VittoriaSL_Oro_Pod.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/001_VittoriaSL_Oro_Pod.png, assets/images/001_VittoriaSL_Oro_Pod.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/001_VittoriaSL_Oro_Pod.png, assets/images/001_VittoriaSL_Oro_Pod.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/001_VittoriaSL_Oro_Pod.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Oro™ Capsules</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-7738705772719"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.7 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 95.3404%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.7 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.7</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (75 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.7","reviewCount":75} </script></div></div>
-        <span>(75)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 13/15</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-               
-                35.000₫
-              </p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_7738705772719" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="35.000₫"
-      data-product-money
-      data-product-id="43264985301167"
-    >35.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":7738705772719,
-  "available":true,
-  
-  "handle":"oro-capsules",
-  "title":"Oro™ Capsules",
-  "type":"Nespresso* Compatible",
-  "vendor":"S54 COFFEE",
-  "tags":["best-suited-for_espresso","best-suited-for_Milk Blend","brew method_espresso","category_capsules","compatibility_nespresso* compatible","format_capsules","intensity_Intense","machine-compatibility_nespresso* compatible","Nespresso* Compatible Capsules","pack-size_10 Pack","subscription","subscription product","type_capsules"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-capsules","s54-coffee-subscriptions"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 40%","excerpt":"Intensity 13\/15",
-  "thumbnailImage":[{"filename":"S54SL_Oro_Pod.png","mime_type":"image\/png","media_type":"image","alt":"","id":1709091207904,"key":"7738705772719\/1709091207904\/S54SL_Oro_Pod.png","scope":"7738705772719","handle":"1709091207904","src":"https:\/\/cdn.accentuate.io\/7738705772719\/1709091207904\/S54SL_Oro_Pod.png?v=1782876986018","original_src":"https:\/\/original.accentuate.io\/7738705772719\/1709091207904\/S54SL_Oro_Pod.png?v=1782876986018","cloudinary_src":"https:\/\/cld.accentuate.io\/7738705772719\/1709091207904\/S54SL_Oro_Pod.png?v=1782876986018\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":true,
-  "price_min":950,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "10-capsules",
-        "values": ["10-capsules"
-,"20-capsules"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Oro_Pod.png?v=1759272272",
-  "url":"\/products\/oro-capsules",
-  "variants": [
-
-{"id":43264985301167,"title":"10 Capsules","option1":"10 Capsules","option2":null,"option3":null,"sku":"CAPCALVORO","requires_shipping":true,"taxable":false,"featured_image":{"id":41312675496111,"product_id":7738705772719,"position":1,"created_at":"2025-07-24T09:25:17+10:00","updated_at":"2025-10-01T08:44:32+10:00","alt":"S54 Oro capsules, intense Arabica blend in Nespresso compatible pods","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Oro_Pod.png?v=1759272272","variant_ids":[43264985301167]},"available":true,"name":"Oro™ Capsules - 10 Capsules","public_title":"10 Capsules","options":["10 Capsules"],"price":950,"weight":52,"compare_at_price":null,"inventory_management":"shopify","barcode":null,"featured_media":{"alt":"S54 Oro capsules, intense Arabica blend in Nespresso compatible pods","id":32900385046703,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Oro_Pod.png?v=1759272272"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":2734882991,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":2734915759,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":2734948527,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":2734981295,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":2735014063,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7738705772719,
-  "inventory_policy": "deny",
-  "inventory_quantity": 19,
-  "compare_at_price": null,
-  "options": [
-    
-      "10-capsules"
-
-    
-  ]},
-
-{"id":43264985333935,"title":"20 Capsules","option1":"20 Capsules","option2":null,"option3":null,"sku":"CAPCALVORO20","requires_shipping":true,"taxable":false,"featured_image":{"id":41312676348079,"product_id":7738705772719,"position":3,"created_at":"2025-07-24T09:25:48+10:00","updated_at":"2025-10-01T08:44:32+10:00","alt":"S54 Oro capsules, 10-pack, intense Arabica blend","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Oro_20_Pod_367dbfa0-ae0d-4244-aa11-33adeccc682b.png?v=1759272272","variant_ids":[43264985333935]},"available":true,"name":"Oro™ Capsules - 20 Capsules","public_title":"20 Capsules","options":["20 Capsules"],"price":1630,"weight":104,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631636945","featured_media":{"alt":"S54 Oro capsules, 10-pack, intense Arabica blend","id":32900385865903,"position":3,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Oro_20_Pod_367dbfa0-ae0d-4244-aa11-33adeccc682b.png?v=1759272272"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":2734882991,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":2734915759,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":2734948527,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":2734981295,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":2735014063,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7738705772719,
-  "inventory_policy": "deny",
-  "inventory_quantity": 196,
-  "compare_at_price": null,
-  "options": [
-    
-      "20-capsules"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="43264985301167" selected>10 Capsules</option><option value="43264985333935" >20 Capsules</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="7738705772719-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              10 Capsules</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="10-capsules"
-                  data-swatch-position="1"
-                  title="10 Capsules"
-                >10 Capsules</button><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  "
-                  data-swatch-object
-                  data-value="20-capsules"
-                  data-swatch-position="1"
-                  title="20 Capsules"
-                >20 Capsules</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="7738705772719" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="43267555590319"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/069_VittoriaSL_Italian_Pod-_2_.png, assets/images/069_VittoriaSL_Italian_Pod-_2_.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/069_VittoriaSL_Italian_Pod-_2_.png, assets/images/069_VittoriaSL_Italian_Pod-_2_.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/069_VittoriaSL_Italian_Pod-_2_.png, assets/images/069_VittoriaSL_Italian_Pod-_2_.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/069_VittoriaSL_Italian_Pod-_2_.png, assets/images/069_VittoriaSL_Italian_Pod-_2_.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/069_VittoriaSL_Italian_Pod-_2_.png, assets/images/069_VittoriaSL_Italian_Pod-_2_.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/069_VittoriaSL_Italian_Pod-_2_.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Italian Capsules</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-7739317452975"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.7 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 95.3404%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.7 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.7</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (64 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.7","reviewCount":64} </script></div></div>
-        <span>(64)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 11/15 </p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-               
-                35.000₫
-              </p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_7739317452975" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="35.000₫"
-      data-product-money
-      data-product-id="43267555590319"
-    >35.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":7739317452975,
-  "available":true,
-  
-  "handle":"italian-capsules",
-  "title":"Italian Capsules",
-  "type":"Nespresso* Compatible",
-  "vendor":"S54 COFFEE",
-  "tags":["best-suited-for_espresso","best-suited-for_Milk Blend","category_capsules","compatibility_nespresso* compatible","format_capsules","intensity_Mild","machine-compatibility_nespresso* compatible","Nespresso* Compatible Capsules","pack-size_10 Pack","pack-size_20 Pack","subscription","subscription product","type_capsules"],
-  "options":["Size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","coffee-capsules","s54-coffee-subscriptions"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 40%","excerpt":"Intensity 11\/15 ",
-  "thumbnailImage":[{"filename":"S54SL_Italian_Pod (2).png","mime_type":"image\/png","media_type":"image","alt":"","id":1709158597795,"key":"7739317452975\/1709158597795\/S54SL_Italian_Pod-(2).png","scope":"7739317452975","handle":"1709158597795","src":"https:\/\/cdn.accentuate.io\/7739317452975\/1709158597795\/S54SL_Italian_Pod-(2).png?v=1782694459547","original_src":"https:\/\/original.accentuate.io\/7739317452975\/1709158597795\/S54SL_Italian_Pod-(2).png?v=1782694459547","cloudinary_src":"https:\/\/cld.accentuate.io\/7739317452975\/1709158597795\/S54SL_Italian_Pod-(2).png?v=1782694459547\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":true,
-  "price_min":950,
-  "options_with_values": [{
-        "name": "Size",
-        "position": 1,
-        "selected_value": "10-capsules",
-        "values": ["10-capsules"
-,"20-capsules"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Italian_Pod1.png?v=1782698808",
-  "url":"\/products\/italian-capsules",
-  "variants": [
-
-{"id":43267555590319,"title":"10 Capsules","option1":"10 Capsules","option2":null,"option3":null,"sku":"CAPCALVITAL","requires_shipping":true,"taxable":false,"featured_image":{"id":46480071393455,"product_id":7739317452975,"position":1,"created_at":"2026-06-29T12:06:46+10:00","updated_at":"2026-06-29T12:06:48+10:00","alt":"italian ncc capsules front","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Italian_Pod1.png?v=1782698808","variant_ids":[43267555590319]},"available":true,"name":"Italian Capsules - 10 Capsules","public_title":"10 Capsules","options":["10 Capsules"],"price":950,"weight":52,"compare_at_price":null,"inventory_management":"shopify","barcode":null,"featured_media":{"alt":"italian ncc capsules front","id":37765410062511,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Italian_Pod1.png?v=1782698808"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319759023,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319791791,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319824559,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319857327,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":570}],"price":570,"compare_at_price":950,"per_delivery_price":570,"selling_plan_id":3319890095,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7739317452975,
-  "inventory_policy": "deny",
-  "inventory_quantity": 20,
-  "compare_at_price": null,
-  "options": [
-    
-      "10-capsules"
-
-    
-  ]},
-
-{"id":43267555623087,"title":"20 Capsules","option1":"20 Capsules","option2":null,"option3":null,"sku":"CAPCALVIT20","requires_shipping":true,"taxable":false,"featured_image":{"id":46480529359023,"product_id":7739317452975,"position":4,"created_at":"2026-06-29T15:45:34+10:00","updated_at":"2026-06-29T15:45:37+10:00","alt":"italian ncc capsules 20 pack front ","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Italian_20_Pod1.png?v=1782711937","variant_ids":[43267555623087]},"available":true,"name":"Italian Capsules - 20 Capsules","public_title":"20 Capsules","options":["20 Capsules"],"price":1630,"weight":104,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631632947","featured_media":{"alt":"italian ncc capsules 20 pack front ","id":37765791875247,"position":4,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/S54SL_Italian_20_Pod1.png?v=1782711937"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319759023,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319791791,"selling_plan_group_id":"cb59d1a6823951baa3139892f039e7e5b8a82da7"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319824559,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319857327,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":978}],"price":978,"compare_at_price":1630,"per_delivery_price":978,"selling_plan_id":3319890095,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 7739317452975,
-  "inventory_policy": "deny",
-  "inventory_quantity": 116,
-  "compare_at_price": null,
-  "options": [
-    
-      "20-capsules"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="43267555590319" selected>10 Capsules</option><option value="43267555623087" >20 Capsules</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="7739317452975-Size"
-            class="o-swatches__swatch-title"
-          >Khối Lượng:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              10 Capsules</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="10-capsules"
-                  data-swatch-position="1"
-                  title="10 Capsules"
-                >10 Capsules</button><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  "
-                  data-swatch-object
-                  data-value="20-capsules"
-                  data-swatch-position="1"
-                  title="20 Capsules"
-                >20 Capsules</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="7739317452975" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<button class="c-featured-collections__control c-featured-collections__control--prev" data-carousel-prev>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-        <button class="c-featured-collections__control c-featured-collections__control--next" data-carousel-next>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-      </div>
-      
-      
-      <div class="c-featured-collections__products-list " data-products="3"><div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="44172958236847"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png, assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png, assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png, assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png, assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png, assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/008_Espresso3Vase300g_09310631638147_01_HOMEPAGE.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Espresso No.3 Instant Freeze-Dried Coffee</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-8034340765871"><div data-oke-reviews-version="0.98.2" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.8 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 96.8936%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.8 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.8</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (26 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.8","reviewCount":26} </script></div></div>
-        <span>(26)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 15/15</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                95.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_8034340765871" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="95.000₫"
-      data-product-money
-      data-product-id="44172958236847"
-    >95.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":8034340765871,
-  "available":true,
-  
-  "handle":"espresso-3-instant-coffee",
-  "title":"Espresso No.3 Instant Freeze-Dried Coffee",
-  "type":"Instant",
-  "vendor":"S54 COFFEE",
-  "tags":["category_instant","format_instant","intensity_Mild","subscription","subscription product","type_instant"],
-  "options":["size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","s54-coffee-subscriptions","instant-coffee"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 30%","excerpt":"Intensity 15\/15",
-  "thumbnailImage":[{"filename":"Espresso3Vase300g_09310631638147_01_HOMEPAGE.png","mime_type":"image\/png","media_type":"image","alt":"","id":1721103699262,"key":"8034340765871\/1721103699262\/Espresso3Vase300g_09310631638147_01_HOMEPAGE.png","scope":"8034340765871","handle":"1721103699262","src":"https:\/\/cdn.accentuate.io\/8034340765871\/1721103699262\/Espresso3Vase300g_09310631638147_01_HOMEPAGE.png?v=1728443303567","original_src":"https:\/\/original.accentuate.io\/8034340765871\/1721103699262\/Espresso3Vase300g_09310631638147_01_HOMEPAGE.png?v=1728443303567","cloudinary_src":"https:\/\/cld.accentuate.io\/8034340765871\/1721103699262\/Espresso3Vase300g_09310631638147_01_HOMEPAGE.png?v=1728443303567\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":3000,
-  "options_with_values": [{
-        "name": "size",
-        "position": 1,
-        "selected_value": "300g",
-        "values": ["300g"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/inst_300g_esp3_f.png?v=1771893127",
-  "url":"\/products\/espresso-3-instant-coffee",
-  "variants": [
-
-{"id":44172958236847,"title":"300g","option1":"300g","option2":null,"option3":null,"sku":"COVIESPFD300","requires_shipping":true,"taxable":false,"featured_image":null,"available":true,"name":"Espresso No.3 Instant Freeze-Dried Coffee - 300g","public_title":"300g","options":["300g"],"price":3000,"weight":300,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631638147","requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323363503,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323396271,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323429039,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323461807,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323494575,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 8034340765871,
-  "inventory_policy": "deny",
-  "inventory_quantity": 66,
-  "compare_at_price": null,
-  "options": [
-    
-      "300g"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="44172958236847" selected>300g</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="8034340765871-size"
-            class="o-swatches__swatch-title"
-          >size:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              300g</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="300g"
-                  data-swatch-position="1"
-                  title="300g"
-                >300g</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="8034340765871" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="44172992872623"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png, assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png, assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png, assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png, assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png, assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/026_OroNeroVase300g_09310631638208_01_HOMEPAGE.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Oro Nero® Freeze-Dried Instant Coffee</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-8034343354543"><div data-oke-reviews-version="0.98.2" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 5.0 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 100%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 5.0 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">5.0</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (16 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"5.0","reviewCount":16} </script></div></div>
-        <span>(16)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 14/15</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                95.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_8034343354543" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="95.000₫"
-      data-product-money
-      data-product-id="44172992872623"
-    >95.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":8034343354543,
-  "available":true,
-  
-  "handle":"oro-nero-instant-coffee",
-  "title":"Oro Nero® Freeze-Dried Instant Coffee",
-  "type":"Instant",
-  "vendor":"S54 COFFEE",
-  "tags":["category_instant","format_instant","intensity_Mild","subscription","subscription product","type_instant"],
-  "options":["size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","s54-coffee-subscriptions","instant-coffee"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 30%","excerpt":"Intensity 14\/15",
-  "thumbnailImage":[{"filename":"OroNeroVase300g_09310631638208_01_HOMEPAGE.png","mime_type":"image\/png","media_type":"image","alt":"","id":1721104598316,"key":"8034343354543\/1721104598316\/OroNeroVase300g_09310631638208_01_HOMEPAGE.png","scope":"8034343354543","handle":"1721104598316","src":"https:\/\/cdn.accentuate.io\/8034343354543\/1721104598316\/OroNeroVase300g_09310631638208_01_HOMEPAGE.png?v=1728443350329","original_src":"https:\/\/original.accentuate.io\/8034343354543\/1721104598316\/OroNeroVase300g_09310631638208_01_HOMEPAGE.png?v=1728443350329","cloudinary_src":"https:\/\/cld.accentuate.io\/8034343354543\/1721104598316\/OroNeroVase300g_09310631638208_01_HOMEPAGE.png?v=1728443350329\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":3000,
-  "options_with_values": [{
-        "name": "size",
-        "position": 1,
-        "selected_value": "300g",
-        "values": ["300g"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/inst_300g_oro-nero_f.png?v=1771540429",
-  "url":"\/products\/oro-nero-instant-coffee",
-  "variants": [
-
-{"id":44172992872623,"title":"300g","option1":"300g","option2":null,"option3":null,"sku":"COVIONFD300","requires_shipping":true,"taxable":false,"featured_image":{"id":39259017478319,"product_id":8034343354543,"position":1,"created_at":"2024-10-09T13:51:49+11:00","updated_at":"2026-02-20T09:33:49+11:00","alt":"Mild intensity Oro Nero instant coffee in 300g packaging","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/inst_300g_oro-nero_f.png?v=1771540429","variant_ids":[44172992872623]},"available":true,"name":"Oro Nero® Freeze-Dried Instant Coffee - 300g","public_title":"300g","options":["300g"],"price":3000,"weight":300,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631638208","featured_media":{"alt":"Mild intensity Oro Nero instant coffee in 300g packaging","id":31598247411887,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/inst_300g_oro-nero_f.png?v=1771540429"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323527343,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323560111,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323592879,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323625647,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323658415,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 8034343354543,
-  "inventory_policy": "deny",
-  "inventory_quantity": 33,
-  "compare_at_price": null,
-  "options": [
-    
-      "300g"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="44172992872623" selected>300g</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="8034343354543-size"
-            class="o-swatches__swatch-title"
-          >size:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              300g</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="300g"
-                  data-swatch-position="1"
-                  title="300g"
-                >300g</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="8034343354543" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="44172926910639"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png, assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png, assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png, assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png, assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png, assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/017_BrazilRexVase300g_09310631638161_01_HOMEPAGE.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Brazil Rex® Freeze-Dried Instant Coffee</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-8026267025583"><div data-oke-reviews-version="0.98.2" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 4.9 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 98.4468%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 4.9 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">4.9</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (18 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"4.9","reviewCount":18} </script></div></div>
-        <span>(18)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 12/15</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                95.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_8026267025583" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="95.000₫"
-      data-product-money
-      data-product-id="44172926910639"
-    >95.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":8026267025583,
-  "available":true,
-  
-  "handle":"brazil-rex-300g-instant-coffee",
-  "title":"Brazil Rex® Freeze-Dried Instant Coffee",
-  "type":"Instant",
-  "vendor":"S54 COFFEE",
-  "tags":["category_instant","format_instant","intensity_Mild","subscription","subscription product","type_instant"],
-  "options":["size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","s54-coffee-subscriptions","instant-coffee"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 30%","excerpt":"Intensity 12\/15",
-  "thumbnailImage":[{"filename":"BrazilRexVase300g_09310631638161_01_HOMEPAGE.png","mime_type":"image\/png","media_type":"image","alt":"","id":1721102520493,"key":"8026267025583\/1721102520493\/BrazilRexVase300g_09310631638161_01_HOMEPAGE.png","scope":"8026267025583","handle":"1721102520493","src":"https:\/\/cdn.accentuate.io\/8026267025583\/1721102520493\/BrazilRexVase300g_09310631638161_01_HOMEPAGE.png?v=1728443250495","original_src":"https:\/\/original.accentuate.io\/8026267025583\/1721102520493\/BrazilRexVase300g_09310631638161_01_HOMEPAGE.png?v=1728443250495","cloudinary_src":"https:\/\/cld.accentuate.io\/8026267025583\/1721102520493\/BrazilRexVase300g_09310631638161_01_HOMEPAGE.png?v=1728443250495\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":3000,
-  "options_with_values": [{
-        "name": "size",
-        "position": 1,
-        "selected_value": "300g",
-        "values": ["300g"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/inst_300g_braz_f.png?v=1771893169",
-  "url":"\/products\/brazil-rex-300g-instant-coffee",
-  "variants": [
-
-{"id":44172926910639,"title":"300g","option1":"300g","option2":null,"option3":null,"sku":"COVIBRFD300","requires_shipping":true,"taxable":false,"featured_image":null,"available":true,"name":"Brazil Rex® Freeze-Dried Instant Coffee - 300g","public_title":"300g","options":["300g"],"price":3000,"weight":300,"compare_at_price":null,"inventory_management":"shopify","barcode":"9310631638208","requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323265199,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323199663,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323232431,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323297967,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":2100}],"price":2100,"compare_at_price":3000,"per_delivery_price":2100,"selling_plan_id":3323330735,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 8026267025583,
-  "inventory_policy": "deny",
-  "inventory_quantity": 35,
-  "compare_at_price": null,
-  "options": [
-    
-      "300g"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="44172926910639" selected>300g</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="8026267025583-size"
-            class="o-swatches__swatch-title"
-          >size:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              300g</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="300g"
-                  data-swatch-position="1"
-                  title="300g"
-                >300g</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="8026267025583" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<div
-  class="o-product-thumbnail o-products-list__product c-featured-collections__product  has-quickadd"
-  data-product-thumbnail
-  data-variant-id="46840559272111"
->
-
-  <div class="o-product-thumbnail__inner">
-      <a href="product-detail.html" class="o-product-thumbnail__link"><div class="o-product-thumbnail__image-container o-media-container" data-product-form-image>
-<picture>
-      
-<source
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png, assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png 2x"/>
-      
-<source
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png, assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png 2x"/>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png, assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png, assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png 2x"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png, assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/027_INST_500g_PET_ESP_No3_F_COLLECTION.png"
-      width="500"
-      
-      class="o-product-thumbnail__image o-media"
-      
-    />
-  </picture></div><div class="o-product-thumbnail__badge o-type--2--caps">
-</div><h3 class="o-product-thumbnail__title o-heading--6">Espresso No.3 Freeze Dried Instant Coffee</h3><div class="o-product-thumbnail__star-reviews">
-           
-
-<div class="o-reviews__stars">
-  
-    
-    <div class="oke-sr-wrapper">
-      <div data-oke-star-rating data-oke-reviews-product-id="shopify-8575313051823"><div data-oke-reviews-version="0.102.0" data-oke-container="" class="okeReviews oke-sr"><div class=""><div class="oke-sr-rating"> 5.0 </div><div class="oke-sr-stars"><div class="oke-stars"><!----><div class="oke-stars-background"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-empty"></use><use x="19.85" href="#oke-star-empty"></use><use x="39.7" href="#oke-star-empty"></use><use x="59.550000000000004" href="#oke-star-empty"></use><use x="79.4" href="#oke-star-empty"></use></svg></div><div class="oke-stars-foreground" style="width: 100%;"><svg height="16" viewBox="0 0 94 14" aria-hidden="true" role="none"><use x="0" href="#oke-star-filled"></use><use x="19.85" href="#oke-star-filled"></use><use x="39.7" href="#oke-star-filled"></use><use x="59.550000000000004" href="#oke-star-filled"></use><use x="79.4" href="#oke-star-filled"></use></svg></div><span class="oke-a11yText">Đánh giá 5.0 trên 5 sao</span></div></div><div class="oke-sr-count"><span class="oke-sr-count-number">5.0</span><span class="oke-sr-label-text"> Stars</span><span class="oke-sr-total-text"> (7 Reviews)</span></div><!----></div><script type="application/json" data-oke-metafield-data=""> {"averageRating":"5.0","reviewCount":7} </script></div></div>
-        <span>(7)</span>
-      </div>
-    
-  
-</div>
-        </div><p class="o-product-thumbnail__excerpt o-paragraph--1">Intensity 15/15</p></a>
-
-      <div class="o-product-thumbnail__content">
-
-        <div class="o-product-thumbnail__content-inner"><p class="o-product-thumbnail__price  o-paragraph--3">
-              
-                195.000₫
-</p></div>
-
-        <div class="o-product-thumbnail__hover is-size-1" data-product-thumbnail-hover><form method="post" action="/cart/add" id="product_form_8575313051823" accept-charset="UTF-8" class="o-product-thumbnail__form" enctype="multipart/form-data" data-product-form="" onsubmit="event.preventDefault(); return false;"><input type="hidden" name="form_type" value="product" /><input type="hidden" name="utf8" value="✓" />
-
-<p
-  class="o-pricing o-product-thumbnail__hover__pricing  "
-  data-product-pricing
->
-  
-<span
-      class="
-        o-pricing__money o-pricing__price o-product-thumbnail__hover__pricing-money
-        o-product-thumbnail__hover__pricing-price  money
-      "
-      data-currency
-      data-money="195.000₫"
-      data-product-money
-      data-product-id="46840559272111"
-    >195.000₫</span><span
-    class="o-pricing__money o-pricing__compare o-product-thumbnail__hover__pricing-money o-product-thumbnail__hover__pricing-compare"
-    data-currency
-    data-money=""
-    data-product-compare-money
-
-  ></span></p>
-
-<div
-  class="o-swatches o-product-thumbnail__swatches
-    "
-  data-swatches
-><div class="o-variant-selector o-swatches__variant-selector no-js" data-variant-selector>
-  <script type="application/json" data-variant-selector-data>
-
-{
-  "id":8575313051823,
-  "available":true,
-  
-  "handle":"espresso-no-3-instant-coffee",
-  "title":"Espresso No.3 Freeze Dried Instant Coffee",
-  "type":"Instant",
-  "vendor":"S54 COFFEE",
-  "tags":["category_instant","coffeeday","EOFY20","feed-promoid-EOFY20","feed-promoid-welcome15","format_instant","intensity_Mild","subscription","subscription product","type_instant"],
-  "options":["size"],
-  "has_only_default_variant":false,"collections":["all-coffee-products","s54-coffee-subscriptions","instant-coffee"],
-  "badge":null,"subscriptionTag":"Subscribe \u0026 Save 30%","excerpt":"Intensity 15\/15",
-  "thumbnailImage":[{"filename":"INST_500g_PET_ESP_No3_F_COLLECTION.png","mime_type":"image\/png","media_type":"image","alt":"","id":1777616634395,"key":"8575313051823\/1777616634395\/INST_500g_PET_ESP_No3_F_COLLECTION.png","scope":"8575313051823","handle":"1777616634395","src":"https:\/\/cdn.accentuate.io\/8575313051823\/1777616634395\/INST_500g_PET_ESP_No3_F_COLLECTION.png?v=1777616634395","original_src":"https:\/\/original.accentuate.io\/8575313051823\/1777616634395\/INST_500g_PET_ESP_No3_F_COLLECTION.png?v=1777616634395","cloudinary_src":"https:\/\/cld.accentuate.io\/8575313051823\/1777616634395\/INST_500g_PET_ESP_No3_F_COLLECTION.png?v=1777616634395\u0026options=","width":674,"height":816,"aspect_ratio":0.8259803921568627}],
-  "howManyOptions":1,
-  "price_varies":false,
-  "price_min":4100,
-  "options_with_values": [{
-        "name": "size",
-        "position": 1,
-        "selected_value": "500g",
-        "values": ["500g"
-]
-      }],
-  "image":"\/\/www.s54coffee.com\/cdn\/shop\/files\/INST_500g_PET_ESP_No3_F_PRODUCTPAGE_2000x2000_c503ea51-c6d4-4df8-8bca-8433c4206cf1.png?v=1782363733",
-  "url":"\/products\/espresso-no-3-instant-coffee",
-  "variants": [
-
-{"id":46840559272111,"title":"500g","option1":"500g","option2":null,"option3":null,"sku":"COVIESFD500P","requires_shipping":true,"taxable":false,"featured_image":{"id":46428899803311,"product_id":8575313051823,"position":1,"created_at":"2026-06-25T15:02:11+10:00","updated_at":"2026-06-25T15:02:13+10:00","alt":"Espresso No.3 instant coffee in 500g PET container","width":2000,"height":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/INST_500g_PET_ESP_No3_F_PRODUCTPAGE_2000x2000_c503ea51-c6d4-4df8-8bca-8433c4206cf1.png?v=1782363733","variant_ids":[46840559272111]},"available":true,"name":"Espresso No.3 Freeze Dried Instant Coffee - 500g","public_title":"500g","options":["500g"],"price":4100,"weight":500,"compare_at_price":null,"inventory_management":"shopify","barcode":"19310631639905","featured_media":{"alt":"Espresso No.3 instant coffee in 500g PET container","id":37714771706031,"position":1,"preview_image":{"aspect_ratio":1.0,"height":2000,"width":2000,"src":"\/\/www.s54coffee.com\/cdn\/shop\/files\/INST_500g_PET_ESP_No3_F_PRODUCTPAGE_2000x2000_c503ea51-c6d4-4df8-8bca-8433c4206cf1.png?v=1782363733"}},"requires_selling_plan":false,"selling_plan_allocations":[{"price_adjustments":[{"position":1,"price":2870}],"price":2870,"compare_at_price":4100,"per_delivery_price":2870,"selling_plan_id":3323822255,"selling_plan_group_id":"4699db7252bb08a12a7dc5338a28b86b29889e15"},{"price_adjustments":[{"position":1,"price":2870}],"price":2870,"compare_at_price":4100,"per_delivery_price":2870,"selling_plan_id":3323691183,"selling_plan_group_id":"75d25d9a3fd190cbd9041ebbe463aa2ef4199fbc"},{"price_adjustments":[{"position":1,"price":2870}],"price":2870,"compare_at_price":4100,"per_delivery_price":2870,"selling_plan_id":3323723951,"selling_plan_group_id":"cb4d0a44561a8dcb7982fbcaa620f0aaa2b7f7df"},{"price_adjustments":[{"position":1,"price":2870}],"price":2870,"compare_at_price":4100,"per_delivery_price":2870,"selling_plan_id":3323756719,"selling_plan_group_id":"2a528def4f1d2102d92f2e80631d6a0705e753ac"},{"price_adjustments":[{"position":1,"price":2870}],"price":2870,"compare_at_price":4100,"per_delivery_price":2870,"selling_plan_id":3323789487,"selling_plan_group_id":"2dbb1af3a26f6123d21222d58b8ea9dd0792d74a"}],"quantity_rule":{"min":1,"max":null,"increment":1},"product_id": 8575313051823,
-  "inventory_policy": "deny",
-  "inventory_quantity": 77,
-  "compare_at_price": null,
-  "options": [
-    
-      "500g"
-
-    
-  ]}]}
-</script><select name="id" class="o-input o-variant-selector__dropdown"><option value="46840559272111" selected>500g</option></select></div>
-<div class="o-swatches__swatches has-js "><div
-          class="o-swatches__swatch is-select"
-          data-swatch
-          data-swatch-position="1"
-        >
-          <span
-            for="8575313051823-size"
-            class="o-swatches__swatch-title"
-          >size:
-            <span class="o-swatches__swatch-selected-value" data-swatch-value>
-              500g</span>
-          </span><div class="o-swatches__swatch-heading">
-              Chọn Quy Cách
-            </div><div class="o-swatches__swatch-options is-button"><button
-                  type="button"
-                  class="o-swatches__swatch-button o-btn is-smaller o-subtitle
-                  is-selected"
-                  data-swatch-object
-                  data-value="500g"
-                  data-swatch-position="1"
-                  title="500g"
-                >500g</button></div></div></div></div>
-<input type="hidden" name="quantity" value="1" data-product-form-qty><button
-                    type="submit"
-                    class="o-product-thumbnail__add-btn o-btn is-primary is-dark is-smaller "
-                    data-quick-add-btn data-product-form-add
-                  >THÊM VÀO GIỎ</button><input type="hidden" name="product-id" value="8575313051823" /><input type="hidden" name="section-id" value="template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2" /></form></div>
-
-        </div>
-
-      </div>
-    
-
-</div>
-<button class="c-featured-collections__control c-featured-collections__control--prev" data-carousel-prev>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-        <button class="c-featured-collections__control c-featured-collections__control--next" data-carousel-next>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-      </div>
-      
-      
-      <div class="c-featured-collections__products-list " data-products="4"><button class="c-featured-collections__control c-featured-collections__control--prev" data-carousel-prev>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-        <button class="c-featured-collections__control c-featured-collections__control--next" data-carousel-next>
-          <svg fill="none" class="o-btn__arrow c-featured-collections__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-        </button>
-      </div></div>
-  
-    <div class="c-featured-collections__collection-url">
-      <a class="c-featured-collections__collection-button o-btn is-primary is-smaller is-dark" href="" data-featured-collection-link>shop all</a>
     </div>
+
+    <!-- Product Grid: 4 columns on desktop, 2 on mobile -->
+    <div id="s54-home-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-bottom: 48px;">
+      
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">BÁN CHẠY NHẤT</span>
+              <a href="product-detail.html?id=200001" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/combo_5goi_dung_thu.jpg" alt="Combo 5 gói cà phê hòa tan S54 dùng thử" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200001" style="color: #2F221A; text-decoration: none;">Combo 5 gói cà phê hòa tan S54 dùng thử</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">15.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">29.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">BÁN CHẠY NHẤT</span>
+              <a href="product-detail.html?id=200002" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/combo_12goi_dung_thu.jpg" alt="Combo 12 gói cà phê hòa tan S54 dùng thử" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200002" style="color: #2F221A; text-decoration: none;">Combo 12 gói cà phê hòa tan S54 dùng thử</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">35.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">70.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">BÁN CHẠY NHẤT</span>
+              <a href="product-detail.html?id=200003" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/tui_3in1_456g.jpg" alt="Túi cà phê hòa tan 3in1 S54 Coffee 456g" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200003" style="color: #2F221A; text-decoration: none;">Túi cà phê hòa tan 3in1 S54 Coffee 456g</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">65.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">129.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hòa tan</span>
+              <a href="product-detail.html?id=200004" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/combo_2tui_3in1.jpg" alt="Combo 2 túi cà phê hòa tan 3in1 S54" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200004" style="color: #2F221A; text-decoration: none;">Combo 2 túi cà phê hòa tan 3in1 S54</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">119.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">219.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hòa tan</span>
+              <a href="product-detail.html?id=200005" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/combo_2tui_3in1.jpg" alt="Combo 3 túi cà phê hòa tan 3in1 S54" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200005" style="color: #2F221A; text-decoration: none;">Combo 3 túi cà phê hòa tan 3in1 S54</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">199.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">299.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hạt rang" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hạt rang</span>
+              <a href="product-detail.html?id=200006" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/robusta_250g.jpg" alt="Cà phê hạt rang Robusta S54 250gr" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200006" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 250gr</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê nguyên chất S54 Coffee đậm đà chuẩn vị Tây Nguyên</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">250.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">150.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hạt rang" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hạt rang</span>
+              <a href="product-detail.html?id=200007" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/robusta_500g.jpg" alt="Cà phê hạt rang Robusta S54 500gr" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200007" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 500gr</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê nguyên chất S54 Coffee đậm đà chuẩn vị Tây Nguyên</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">225.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">500.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
+              <a href="product-detail.html?id=200008" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/may_xay_vbz01_5.jpg" alt="Máy xay cà phê cầm tay VBZ01-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200008" style="color: #2F221A; text-decoration: none;">Máy xay cà phê cầm tay VBZ01-5</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ01-5 Cao Cấp Xay Cà Phê Nhanh Mịn Đều Điều Chỉnh Độ Mịn Pha Espresso Màu Đen</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">646.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">950.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
+              <a href="product-detail.html?id=200009" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/may_xay_vbz08_5.jpg" alt="Máy Xay Cà Phê Cầm Tay VBZ08-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200009" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ08-5</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ08-5 Lõi Xay Inox SUS420 CNC 5 Trục, Điều Chỉnh Độ Mịn, Thân Nhôm Kim Loại</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">720.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">900.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
+              <a href="product-detail.html?id=200010" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/may_xay_vbz03_5.jpg" alt="Máy Xay Cà Phê Cầm Tay VBZ03-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200010" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ03-5</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ03-5 Máy Xay Hạt Cà Phê Mini Xay Cà Phê Tại Nhà Điều Chỉnh Độ Mịn Cối Xay CNC Thiết Kế Nhỏ Gọn Màu Đen</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">805.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">1.150.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
+              <a href="product-detail.html?id=200011" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/may_xay_vbs02_5.jpg" alt="MÁY XAY CÀ PHÊ CẦM TAY VBS02-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200011" style="color: #2F221A; text-decoration: none;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5 Cao Cấp Cối Xay CNC 5 Trục, Điều Chỉnh Độ Mịn, Xay Cà Phê Đồng Đều</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">702.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">900.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+          <div>
+            <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
+              <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
+              <a href="product-detail.html?id=200012" style="display: block; width: 100%; height: 100%;">
+                <img src="assets/images/s54/products/may_xay_kmdj_hc.jpg" alt="Máy Xay Cà Phê Cầm Tay KMDJ-HC" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+              </a>
+            </div>
+            <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
+            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+              <a href="product-detail.html?id=200012" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay KMDJ-HC</a>
+            </h3>
+            <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay KMDJ-HC Máy Xay Hạt Cà Phê Thủ Công, 40 Mức Điều Chỉnh Độ Mịn, Lõi Gốm, Hộp Bột Thủy Tinh</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px;">
+              <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">350.000₫</span>
+              <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">500.000₫</span>
+            </div>
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+              THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+    
+    </div>
+
+    <div style="text-align: center;">
+      <a href="collections-coffee.html" style="display: inline-flex; align-items: center; gap: 8px; background: #2F221A; color: #FAF6F1; padding: 14px 36px; border-radius: 4px; font-size: 13px; font-weight: 700; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; transition: background 0.2s ease;">
+        XEM TẤT CẢ SẢN PHẨM →
+      </a>
+    </div>
+  </div>
   
+  <script>
+  function filterS54Prods(btn, cat) {
+    document.querySelectorAll('.s54-filter-btn').forEach(b => {
+      b.style.background = '#FFFFFF';
+      b.style.color = '#2F221A';
+      b.style.borderColor = '#D8CEBE';
+    });
+    btn.style.background = '#2F221A';
+    btn.style.color = '#FFFFFF';
+    btn.style.borderColor = '#2F221A';
+
+    const cards = document.querySelectorAll('.s54-product-card');
+    cards.forEach(card => {
+      if (cat === 'all' || card.getAttribute('data-category') === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+  </script>
 </section><style> #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-product-thumbnail__price {font-family: 'Plus Jakarta Sans', sans-serif;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-product-thumbnail__hover__pricing {font-family: 'Plus Jakarta Sans', sans-serif;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-subtitle {font-family: 'Plus Jakarta Sans', sans-serif; text-transform: capitalize;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-swatches__swatch {padding-left: 10px;} </style></div>
 		</wlm>
 		<div id="wlmpnf" style="display:none;">
@@ -3274,11 +1460,11 @@ first.parentNode.insertBefore(script, first);
             </li>
             <li>
               <span class="s54-footer__contact-icon">📞</span>
-              <span>Hotline: <a href="tel:0383707578">0383.707.578</a> — <a href="tel:0902873345">0902.873.345</a></span>
+              <span>Hotline: <a href="tel:0974933907">0974.933.907</a> — <a href="tel:0902873345">0902.873.345</a></span>
             </li>
             <li>
               <span class="s54-footer__contact-icon">✉️</span>
-              <span>Email: <a href="mailto:pm@goodsolutions.com.vn">pm@goodsolutions.com.vn</a></span>
+              <span>Email: <a href="mailto:infor@S54Coffee.com">infor@S54Coffee.com</a></span>
             </li>
             <li>
               <span class="s54-footer__contact-icon">🌐</span>
@@ -3332,13 +1518,13 @@ first.parentNode.insertBefore(script, first);
           <div class="s54-footer__social-wrap">
             <span class="s54-footer__social-title">Kết Nối Với Chúng Tôi:</span>
             <div class="s54-footer__social-icons">
-              <a href="https://facebook.com/goodsolutions.vn" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="Facebook">
+              <a href="https://www.facebook.com/S54COFFEE" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="Facebook">
                 <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
               </a>
-              <a href="https://zalo.me/0383707578" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="Zalo">
+              <a href="https://zalo.me/0974933907" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="Zalo">
                 <span style="font-weight: 800; font-size: 11px;">Zalo</span>
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="YouTube">
+              <a href="https://www.youtube.com/@S54COFFEE" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="YouTube">
                 <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
             </div>

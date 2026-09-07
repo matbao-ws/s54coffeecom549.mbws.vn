@@ -5,7 +5,7 @@
                 <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #FAF6F1; margin-bottom: 16px;">S54 COFFEE</h4>
                 <p style="color: #BAADA1; line-height: 1.6; margin-bottom: 12px;">CÔNG TY TNHH GIẢI PHÁP TỐT (Good Solutions Co., Ltd)</p>
                 <p style="color: #BAADA1; line-height: 1.6; margin-bottom: 8px;">📍 Số 35, Đường T8, Manhattan, Vinhomes Grand Park, TP. Thủ Đức, TP.HCM</p>
-                <p style="color: #BAADA1; line-height: 1.6; margin-bottom: 8px;">📞 Hotline: 0383.707.578 - 0902.873.345</p>
+                <p style="color: #BAADA1; line-height: 1.6; margin-bottom: 8px;">📞 Hotline: 0974.933.907</p>
                 <p style="color: #BAADA1; line-height: 1.6;">✉️ Email: contact@s54coffee.com</p>
             </div>
             <div>

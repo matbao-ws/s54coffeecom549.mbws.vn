@@ -1,6 +1,6 @@
 <header class="c-header c-header--solid" contenteditable="false">
     <div class="c-announcement-bar" style="background-color: #2F221A; color: #FAF6F1; text-align: center; padding: 6px 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px;">
-        <span>🔥 {{ app()->getLocale() === 'vi' ? 'MIỄN PHÍ GIAO HÀNG TOÀN QUỐC CHO ĐƠN TỪ 500.000₫ | HOTLINE: 0383.707.578' : 'FREE NATIONWIDE SHIPPING ON ORDERS OVER 500,000₫ | HOTLINE: 0383.707.578' }}</span>
+        <span>🔥 {{ app()->getLocale() === 'vi' ? 'MIỄN PHÍ GIAO HÀNG TOÀN QUỐC CHO ĐƠN TỪ 500.000₫ | HOTLINE: 0974.933.907' : 'FREE NATIONWIDE SHIPPING ON ORDERS OVER 500,000₫ | HOTLINE: 0974.933.907' }}</span>
     </div>
     <div class="c-header__wrapper o-wrapper">
         <div class="c-header__brand">
@@ -36,8 +36,8 @@
 
         <ul class="c-header__additional">
             <li class="c-header__additional-item is-desktop-only">
-                <a href="tel:0383707578" class="c-header__phone-link" style="color: #FAF6F1; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 6px; font-size: 13px;">
-                    <span>📞</span> <span>0383.707.578</span>
+                <a href="tel:0974933907" class="c-header__phone-link" style="color: #FAF6F1; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 6px; font-size: 13px;">
+                    <span>📞</span> <span>0974.933.907</span>
                 </a>
             </li>
             <li class="c-header__additional-item">

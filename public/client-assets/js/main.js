@@ -98,13 +98,14 @@
                         <span class="c-cart-drawer__subtotal-amount">0₫</span>
                     </div>
                     <button class="c-cart-drawer__checkout-btn">${_t('cart_checkout')}</button>
+                    <a href="cart.html" class="c-cart-drawer__view-cart" style="display: block; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline;">Xem Giỏ Hàng Chi Tiết</a>
                 </div>
             `;
             document.body.appendChild(drawer);
 
             drawer.querySelector('.c-cart-drawer__close').addEventListener('click', closeCartDrawer);
             drawer.querySelector('.c-cart-drawer__checkout-btn').addEventListener('click', () => {
-                alert(_t('cart_proceed_checkout'));
+                window.location.href = 'checkout.html';
             });
 
             drawer.addEventListener('click', (e) => {
@@ -275,7 +276,7 @@
                          document;
 
             let title = 'S54 Robusta Cà Phê Rang Mộc Thượng Hạng';
-            let price = 4400;
+            let price = 35000;
             let img = 'assets/images/s54/robusta_1.jpg';
             let id = Date.now();
             let qty = 1;
@@ -287,10 +288,12 @@
             }
 
             // Extract Price
-            const priceEl = card.querySelector('.o-product-thumbnail__price, [data-product-money], .c-product-card__price, .price, .c-product-form__pricing, .o-pricing__price');
+            const priceEl = card.querySelector('.o-product-thumbnail__price, [data-product-money], .c-product-card__price, .price, .c-product-form__pricing, .o-pricing__price, [data-money], .is-price');
             if (priceEl && priceEl.textContent) {
-                const parsed = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
-                if (!isNaN(parsed) && parsed > 0) price = Math.round(parsed * 100);
+                // In VND, prices are formatted like 35.000₫ or 350.000₫. Strip dots and non-digits to obtain exact integer amount.
+                const rawPrice = priceEl.textContent.replace(/\./g, '').replace(/[^0-9]/g, '');
+                const parsed = parseInt(rawPrice, 10);
+                if (!isNaN(parsed) && parsed > 0) price = parsed;
             }
 
             // Extract Quantity

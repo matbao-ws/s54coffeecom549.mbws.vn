@@ -10,24 +10,24 @@
     const DEFAULT_CART = {
         items: [
             {
-                id: 6718616502447,
-                variant_id: 42342703071407,
-                key: '6718616502447:42342703071407',
-                title: 'Cinque Stelle® Dòng Special Bar Thượng Hạng Cà Phê Hạt - 1kg',
-                price: 4400,
-                original_price: 4400,
-                final_price: 4400,
-                line_price: 4400,
+                id: 200003,
+                variant_id: 100003,
+                key: '200003:100003',
+                title: 'Túi Cà Phê Hòa Tan 3in1 S54 Coffee 456g',
+                price: 65000,
+                original_price: 129000,
+                final_price: 65000,
+                line_price: 65000,
                 quantity: 1,
-                image: 'assets/images/s54/robusta_1.jpg',
-                url: 'product-detail.html'
+                image: 'assets/images/s54/products/tui_3in1_456g.jpg',
+                url: 'product-detail.html?id=200003'
             }
         ],
         item_count: 1,
-        total_price: 4400,
-        original_total_price: 4400,
-        items_subtotal_price: 4400,
-        total_weight: 1000,
+        total_price: 65000,
+        original_total_price: 129000,
+        items_subtotal_price: 65000,
+        total_weight: 456,
         currency: 'VND'
     };
 
@@ -57,7 +57,7 @@
 
         cart.items.forEach(item => {
             const qty = Math.max(0, parseInt(item.quantity, 10) || 1);
-            const price = typeof item.price === 'number' ? item.price : 4400;
+            const price = typeof item.price === 'number' ? item.price : 35000;
             item.quantity = qty;
             item.line_price = price * qty;
             item.final_line_price = price * qty;
@@ -115,7 +115,7 @@
                 if (item.image && !existing.image) existing.image = item.image;
             } else {
                 const newId = item.id || Date.now();
-                const price = item.price || 4400;
+                const price = item.price || 35000;
                 const newItem = {
                     id: newId,
                     variant_id: item.variant_id || newId,

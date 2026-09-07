@@ -33,3 +33,7 @@ desktop.ini
 deploy.zip
 extractor.php
 
+# Client feedback inspection temp files
+client_feedback.html
+client_feedback.txt
+feedback_images/
