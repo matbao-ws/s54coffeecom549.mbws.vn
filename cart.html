@@ -27,7 +27,45 @@
     .s54-cart-wrapper {
         max-width: 1100px;
         margin: 0 auto;
-        padding: clamp(36px, 5vw, 60px) 24px clamp(60px, 7vw, 90px);
+        padding: clamp(28px, 4vw, 44px) 24px clamp(60px, 7vw, 90px);
+    }
+    .s54-cart-header {
+        margin-bottom: 28px;
+    }
+    .s54-cart-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: #8C7D73;
+        margin-bottom: 12px;
+    }
+    .s54-cart-breadcrumb a {
+        color: #8C7D73;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .s54-cart-breadcrumb a:hover {
+        color: #AC8A62;
+    }
+    .s54-cart-breadcrumb span {
+        color: #2F221A;
+        font-weight: 600;
+    }
+    .s54-cart-main-title {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: clamp(24px, 2.8vw, 30px) !important;
+        font-weight: 800 !important;
+        color: #2F221A !important;
+        margin: 0 0 6px 0 !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.25 !important;
+    }
+    .s54-cart-subtitle {
+        font-size: 14px;
+        color: #6E6259;
+        margin: 0;
+        line-height: 1.5;
     }
     .s54-cart-table {
         width: 100%;
@@ -188,7 +226,15 @@
   </header>
 
     <main class="s54-cart-wrapper">
-        <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 44px); font-weight: 700; margin: 0 0 24px 0;">Giỏ Hàng Của Bạn</h1>
+        <div class="s54-cart-header">
+            <nav class="s54-cart-breadcrumb">
+                <a href="index.html">Trang Chủ</a> <span>/</span> 
+                <a href="collections-coffee.html">Sản Phẩm</a> <span>/</span> 
+                <span>Giỏ Hàng</span>
+            </nav>
+            <h1 class="s54-cart-main-title">Giỏ Hàng Của Bạn</h1>
+            <p class="s54-cart-subtitle">Kiểm tra danh sách sản phẩm và tiến hành đặt hàng.</p>
+        </div>
 
         <div id="full-cart-container">
             <table class="s54-cart-table">

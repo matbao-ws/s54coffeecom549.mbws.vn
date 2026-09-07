@@ -22,151 +22,255 @@
     body.template-checkout {
         background-color: #FAF8F5 !important;
         color: #2F221A !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     }
     .s54-checkout-wrapper {
         max-width: 1140px;
         margin: 0 auto;
-        padding: clamp(36px, 4vw, 56px) 24px clamp(60px, 6vw, 90px);
+        padding: clamp(28px, 3.5vw, 44px) 20px clamp(50px, 5vw, 80px);
+    }
+    .s54-checkout-header {
+        margin-bottom: 26px;
+    }
+    .s54-checkout-breadcrumb {
+        font-size: 13px;
+        color: #8C7D73;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .s54-checkout-breadcrumb a {
+        color: #8C7D73;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .s54-checkout-breadcrumb a:hover {
+        color: #AC8A62;
+    }
+    .s54-checkout-breadcrumb span {
+        color: #2F221A;
+        font-weight: 600;
+    }
+    .s54-checkout-main-title {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: clamp(24px, 2.8vw, 30px) !important;
+        font-weight: 800 !important;
+        color: #2F221A !important;
+        margin: 0 0 6px 0 !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.25 !important;
+    }
+    .s54-checkout-subtitle {
+        font-size: 14px;
+        color: #6E6259;
+        margin: 0;
+        line-height: 1.5;
     }
     .s54-checkout-grid {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 40px;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 32px;
         align-items: flex-start;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
         .s54-checkout-grid {
             grid-template-columns: 1fr;
+            gap: 24px;
         }
     }
     .s54-checkout-card {
         background: #FFFFFF;
-        border: 1px solid #EBE7E1;
+        border: 1px solid rgba(47, 34, 26, 0.08);
         border-radius: 12px;
-        padding: 32px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        padding: 28px 26px;
+        box-shadow: 0 4px 20px rgba(47, 34, 26, 0.04);
     }
     .s54-checkout-title {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-size: 26px;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        color: #2F221A !important;
+        margin: 0 0 20px 0 !important;
+        padding-bottom: 12px !important;
+        border-bottom: 1px solid rgba(47, 34, 26, 0.07) !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        letter-spacing: -0.2px !important;
+    }
+    .s54-step-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background: #2F221A;
+        color: #FAF6F1;
+        border-radius: 50%;
+        font-size: 12px;
         font-weight: 700;
-        color: #2F221A;
-        margin: 0 0 20px 0;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #F0EBE5;
+        flex-shrink: 0;
     }
     .s54-form-group {
-        margin-bottom: 18px;
+        margin-bottom: 16px;
     }
     .s54-form-label {
         display: block;
         font-size: 13px;
         font-weight: 600;
-        color: #554940;
+        color: #3E3027;
         margin-bottom: 6px;
     }
     .s54-form-input {
         width: 100%;
-        padding: 12px 14px;
-        border: 1px solid #D8CECA;
-        border-radius: 6px;
-        font-size: 14.5px;
+        padding: 11px 14px;
+        border: 1px solid rgba(47, 34, 26, 0.16);
+        border-radius: 8px;
+        font-size: 14px;
         font-family: inherit;
-        background: #FAF8F5;
-        transition: border-color 0.2s;
+        background: #FAFAF8;
+        color: #2F221A;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
     }
     .s54-form-input:focus {
         outline: none;
-        border-color: #D68E1D;
+        border-color: #AC8A62;
         background: #FFFFFF;
+        box-shadow: 0 0 0 3px rgba(172, 138, 98, 0.14);
     }
     .s54-form-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 14px;
+    }
+    @media (max-width: 560px) {
+        .s54-form-row {
+            grid-template-columns: 1fr;
+        }
+    }
+    .s54-freeship-banner {
+        background: #FAF6F1;
+        border: 1px solid rgba(172, 138, 98, 0.25);
+        border-radius: 8px;
+        padding: 11px 14px;
+        margin-bottom: 16px;
+        font-size: 12.5px;
+        color: #2F221A;
+        line-height: 1.45;
     }
     .s54-order-item {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 12px;
         padding: 12px 0;
-        border-bottom: 1px solid #F0EBE5;
+        border-bottom: 1px solid rgba(47, 34, 26, 0.06);
+    }
+    .s54-order-item:last-child {
+        border-bottom: none;
     }
     .s54-order-item img {
-        width: 56px;
-        height: 56px;
+        width: 52px;
+        height: 52px;
         object-fit: cover;
-        border-radius: 6px;
-        border: 1px solid #EBE7E1;
+        border-radius: 8px;
+        border: 1px solid rgba(47, 34, 26, 0.08);
+        background: #FAF8F5;
+        flex-shrink: 0;
     }
     .s54-order-item-info {
         flex: 1;
+        min-width: 0;
     }
     .s54-order-item-title {
-        font-size: 14px;
+        font-size: 13.5px;
         font-weight: 600;
         color: #2F221A;
-        margin: 0 0 4px 0;
+        margin: 0 0 3px 0;
+        line-height: 1.35;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .s54-order-item-qty {
-        font-size: 12.5px;
+        font-size: 12px;
         color: #7A6D65;
     }
     .s54-order-item-price {
         font-size: 14.5px;
         font-weight: 700;
         color: #2F221A;
+        flex-shrink: 0;
+        white-space: nowrap;
     }
     .s54-summary-row {
         display: flex;
         justify-content: space-between;
-        font-size: 14.5px;
-        padding: 10px 0;
+        font-size: 14px;
+        padding: 8px 0;
         color: #554940;
     }
     .s54-summary-total {
         display: flex;
         justify-content: space-between;
-        font-size: 19px;
+        align-items: baseline;
+        font-size: 18px;
         font-weight: 700;
         color: #2F221A;
         padding-top: 14px;
-        border-top: 2px solid #EBE7E1;
-        margin-top: 10px;
+        border-top: 2px solid rgba(47, 34, 26, 0.08);
+        margin-top: 8px;
     }
     .s54-pay-option {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 12px;
-        padding: 14px;
-        border: 1px solid #EBE7E1;
+        padding: 13px 15px;
+        border: 1px solid rgba(47, 34, 26, 0.12);
         border-radius: 8px;
         margin-bottom: 10px;
         cursor: pointer;
-        transition: all 0.2s;
+        background: #FFFFFF;
+        transition: all 0.2s ease;
     }
-    .s54-pay-option:hover, .s54-pay-option.is-selected {
-        border-color: #D68E1D;
-        background: #FFFDF9;
+    .s54-pay-option:hover {
+        border-color: rgba(172, 138, 98, 0.5);
+        background: #FAF8F5;
+    }
+    .s54-pay-option.is-selected {
+        border-color: #AC8A62;
+        background: #FAF6F1;
+        box-shadow: 0 2px 8px rgba(172, 138, 98, 0.1);
+    }
+    .s54-pay-option input[type="radio"] {
+        accent-color: #AC8A62;
+        margin-top: 3px;
     }
     .s54-btn-submit {
         width: 100%;
-        padding: 16px;
+        padding: 15px 20px;
         background: #2F221A;
-        color: #FFFFFF;
+        color: #FAF6F1;
         border: none;
         border-radius: 8px;
-        font-size: 15px;
+        font-family: inherit;
+        font-size: 14px;
         font-weight: 700;
-        letter-spacing: 1px;
+        letter-spacing: 0.8px;
         text-transform: uppercase;
         cursor: pointer;
         margin-top: 20px;
-        transition: background 0.2s;
+        transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
     }
     .s54-btn-submit:hover {
-        background: #D68E1D;
+        background: #AC8A62;
+        box-shadow: 0 4px 16px rgba(172, 138, 98, 0.35);
+        transform: translateY(-2px);
     }
     </style>
 </head>
@@ -235,12 +339,23 @@
   </header>
 
     <main class="s54-checkout-wrapper">
-        <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 44px); font-weight: 700; margin: 0 0 28px 0;">Thanh Toán Đơn Hàng</h1>
+        <div class="s54-checkout-header">
+            <nav class="s54-checkout-breadcrumb">
+                <a href="index.html">Trang Chủ</a> <span>/</span> 
+                <a href="collections-coffee.html">Sản Phẩm</a> <span>/</span> 
+                <span>Thanh Toán</span>
+            </nav>
+            <h1 class="s54-checkout-main-title">Thanh Toán Đơn Hàng</h1>
+            <p class="s54-checkout-subtitle">Vui lòng kiểm tra thông tin giao hàng và chọn phương thức thanh toán.</p>
+        </div>
         
         <div class="s54-checkout-grid">
             <!-- Col 1: Customer Form & Payment -->
             <form id="checkout-form" class="s54-checkout-card" onsubmit="event.preventDefault(); handlePlaceOrder();">
-                <h2 class="s54-checkout-title">1. Thông Tin Giao Hàng</h2>
+                <h2 class="s54-checkout-title">
+                    <span class="s54-step-badge">1</span>
+                    <span>Thông Tin Giao Hàng</span>
+                </h2>
                 
                 <div class="s54-form-row">
                     <div class="s54-form-group">
@@ -279,13 +394,16 @@
                     <textarea class="s54-form-input" rows="2" placeholder="Ghi chú thêm về thời gian nhận hàng hoặc yêu cầu xay cà phê..." id="cust-note"></textarea>
                 </div>
 
-                <h2 class="s54-checkout-title" style="margin-top: 36px;">2. Phương Thức Thanh Toán</h2>
+                <h2 class="s54-checkout-title" style="margin-top: 32px;">
+                    <span class="s54-step-badge">2</span>
+                    <span>Phương Thức Thanh Toán</span>
+                </h2>
                 
                 <label class="s54-pay-option is-selected">
                     <input type="radio" name="payment_method" value="cod" checked />
                     <div>
                         <strong>Thanh toán khi nhận hàng (COD)</strong>
-                        <div style="font-size: 13px; color: #7A6D65;">Kiểm tra hàng trước khi thanh toán tiền mặt cho nhân viên giao hàng.</div>
+                        <div style="font-size: 13px; color: #7A6D65; margin-top: 2px;">Kiểm tra hàng trước khi thanh toán tiền mặt cho nhân viên giao hàng.</div>
                     </div>
                 </label>
 
@@ -293,7 +411,7 @@
                     <input type="radio" name="payment_method" value="bank_transfer" />
                     <div>
                         <strong>Chuyển khoản Ngân hàng (VietQR)</strong>
-                        <div style="font-size: 13px; color: #7A6D65;">Quét mã QR chuyển khoản tức thì 24/7 không cần nhập thông tin.</div>
+                        <div style="font-size: 13px; color: #7A6D65; margin-top: 2px;">Quét mã QR chuyển khoản tức thì 24/7 không cần nhập thông tin.</div>
                     </div>
                 </label>
 
@@ -301,24 +419,31 @@
                     <input type="radio" name="payment_method" value="vnpay" />
                     <div>
                         <strong>Cổng thanh toán VNPAY / Momo / Thẻ Quốc Tế</strong>
-                        <div style="font-size: 13px; color: #7A6D65;">Hỗ trợ thẻ ATM, Visa, MasterCard, JCB và ví điện tử.</div>
+                        <div style="font-size: 13px; color: #7A6D65; margin-top: 2px;">Hỗ trợ thẻ ATM nội địa, Visa, MasterCard, JCB và ví điện tử.</div>
                     </div>
                 </label>
 
-                <button type="submit" class="s54-btn-submit">XÁC NHẬN ĐẶT HÀNG</button>
+                <button type="submit" class="s54-btn-submit">
+                    <span>XÁC NHẬN ĐẶT HÀNG</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
             </form>
 
             <!-- Col 2: Order Summary -->
             <div class="s54-checkout-card">
-                <h2 class="s54-checkout-title">Đơn Hàng Của Bạn</h2>
+                <h2 class="s54-checkout-title">
+                    <span>Đơn Hàng Của Bạn</span>
+                    <span id="summary-items-count" style="font-size: 13px; font-weight: 600; color: #8C7D73; margin-left: auto;"></span>
+                </h2>
+                <div id="freeship-notice-wrap"></div>
                 <div id="checkout-items-list">
                     <!-- Items rendered by JS -->
                 </div>
 
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 18px;">
                     <div class="s54-summary-row">
                         <span>Tạm tính:</span>
-                        <span id="summary-subtotal">0₫</span>
+                        <span id="summary-subtotal" style="font-weight: 600; color: #2F221A;">0₫</span>
                     </div>
                     <div class="s54-summary-row">
                         <span>Phí vận chuyển:</span>
@@ -330,7 +455,7 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 24px; padding: 16px; background: #FAF8F5; border-radius: 8px; font-size: 13px; color: #6E6259; line-height: 1.6;">
+                <div style="margin-top: 22px; padding: 14px 16px; background: #FAF8F5; border-radius: 8px; font-size: 12.5px; color: #6E6259; line-height: 1.55; border: 1px solid rgba(47, 34, 26, 0.06);">
                     🔒 <strong>Cam kết bảo mật:</strong> Mọi thông tin đặt hàng của Quý khách được mã hóa an toàn theo tiêu chuẩn SSL. Cần hỗ trợ nhanh? Gọi ngay Hotline: <a href="tel:0974933907" style="color: #2F221A; font-weight: 700;">0974.933.907</a>.
                 </div>
             </div>
@@ -469,10 +594,15 @@
         const cart = window.S54Cart ? window.S54Cart.getCart() : { items: [], total_price: 0 };
         const items = cart.items || [];
         const container = document.getElementById('checkout-items-list');
+        const countEl = document.getElementById('summary-items-count');
+        const freeshipNotice = document.getElementById('freeship-notice-wrap');
         let subtotal = 0;
+        let totalItems = 0;
 
         if (items.length === 0) {
             container.innerHTML = '<p style="color: #7A6D65; text-align: center; padding: 24px 0;">Giỏ hàng của bạn đang trống. <a href="collections-coffee.html" style="color: #D68E1D; font-weight: 600;">Tiếp tục mua sắm</a></p>';
+            if (countEl) countEl.textContent = '(0 sản phẩm)';
+            if (freeshipNotice) freeshipNotice.innerHTML = '';
             document.getElementById('summary-subtotal').textContent = '0₫';
             document.getElementById('summary-total').textContent = '0₫';
             return;
@@ -492,25 +622,57 @@
             if (price === 3500) price = 35000;
             if (price === 1500) price = 15000;
             if (price === 6500) price = 65000;
-            const linePrice = price * (item.quantity || 1);
+            const qty = item.quantity || 1;
+            totalItems += qty;
+            const linePrice = price * qty;
             subtotal += linePrice;
             html += `
                 <div class="s54-order-item">
                     <img src="${item.image || 'assets/images/s54/products/tui_3in1_456g.jpg'}" alt="${item.title}" />
                     <div class="s54-order-item-info">
                         <h4 class="s54-order-item-title">${item.title}</h4>
-                        <div class="s54-order-item-qty">Số lượng: ${item.quantity}</div>
+                        <div class="s54-order-item-qty">Số lượng: ${qty}</div>
                     </div>
                     <div class="s54-order-item-price">${linePrice.toLocaleString('vi-VN')}₫</div>
                 </div>
             `;
         });
         container.innerHTML = html;
+        if (countEl) countEl.textContent = `(${totalItems} sản phẩm)`;
 
         const shipping = subtotal >= 599000 ? 0 : 30000;
+        if (freeshipNotice) {
+            if (subtotal >= 599000) {
+                freeshipNotice.innerHTML = `
+                    <div class="s54-freeship-banner" style="background:#EBF7EE; border-color:rgba(46,125,50,0.25); color:#1B5E20; display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:16px;">🎉</span>
+                        <span>Đơn hàng của bạn đủ điều kiện <strong>Miễn phí vận chuyển toàn quốc</strong>!</span>
+                    </div>`;
+            } else {
+                const diff = 599000 - subtotal;
+                freeshipNotice.innerHTML = `
+                    <div class="s54-freeship-banner" style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:16px;">🚚</span>
+                        <span>Mua thêm <strong>${diff.toLocaleString('vi-VN')}₫</strong> để được <strong>Miễn phí vận chuyển</strong>.</span>
+                    </div>`;
+            }
+        }
+
         document.getElementById('summary-subtotal').textContent = subtotal.toLocaleString('vi-VN') + '₫';
-        document.getElementById('summary-shipping').textContent = shipping === 0 ? 'Miễn phí (Đơn > 599k)' : '30.000₫';
+        document.getElementById('summary-shipping').textContent = shipping === 0 ? 'Miễn phí' : '30.000₫';
         document.getElementById('summary-total').textContent = (subtotal + shipping).toLocaleString('vi-VN') + '₫';
+    }
+
+    function initPaymentOptions() {
+        const payOptions = document.querySelectorAll('.s54-pay-option');
+        payOptions.forEach(opt => {
+            opt.addEventListener('click', function() {
+                payOptions.forEach(o => o.classList.remove('is-selected'));
+                this.classList.add('is-selected');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+            });
+        });
     }
 
     function handlePlaceOrder() {
@@ -524,7 +686,10 @@
         window.location.href = 'index.html';
     }
 
-    document.addEventListener('DOMContentLoaded', renderCheckoutSummary);
+    document.addEventListener('DOMContentLoaded', () => {
+        renderCheckoutSummary();
+        initPaymentOptions();
+    });
     </script>
 </body>
 </html>
