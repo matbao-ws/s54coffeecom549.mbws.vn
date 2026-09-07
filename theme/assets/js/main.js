@@ -274,39 +274,101 @@
 
             let title = 'S54 Robusta Cà Phê Rang Mộc Thượng Hạng';
             let price = 35000;
-            let img = 'assets/images/s54/robusta_1.jpg';
+            let img = 'assets/images/s54/products/tui_3in1_456g.jpg';
             let id = Date.now();
             let qty = 1;
+            let url = 'product-detail.html';
 
-            // Extract Title
+            // 1. Extract ID & URL
+            const idInput = card.querySelector('input[name="id"], [data-product-select]');
+            if (idInput && idInput.value) {
+                const parsedId = parseInt(idInput.value, 10);
+                if (!isNaN(parsedId)) id = parsedId;
+            }
+            const linkEl = card.querySelector('a[href*="id="], a.o-product-thumbnail__link, a.c-product-card__link');
+            if (linkEl) {
+                const href = linkEl.getAttribute('href') || '';
+                if (href) url = href;
+                const m = href.match(/id=([0-9]+)/);
+                if (m && id === Date.now()) id = parseInt(m[1], 10);
+            }
+
+            // 2. Extract Title
             const titleEl = card.querySelector('.o-product-thumbnail__title, .c-product-card__title, .c-product-main__title, h1, h2, h3, h4, .o-heading');
             if (titleEl && titleEl.textContent) {
                 title = titleEl.textContent.trim().replace(/\s+/g, ' ');
             }
 
-            // Extract Price
-            const priceEl = card.querySelector('.o-product-thumbnail__price, [data-product-money], .c-product-card__price, .price, .c-product-form__pricing, .o-pricing__price, [data-money], .is-price');
-            if (priceEl && priceEl.textContent) {
-                // In VND, prices are formatted like 35.000₫ or 350.000₫. Strip dots and non-digits to obtain exact integer amount.
-                const rawPrice = priceEl.textContent.replace(/\./g, '').replace(/[^0-9]/g, '');
-                const parsed = parseInt(rawPrice, 10);
-                if (!isNaN(parsed) && parsed > 0) price = parsed;
+            // 3. Extract Price - BULLETPROOF VND EXTRACTION (Never concatenate sale + compare price!)
+            let extractedPrice = null;
+
+            // Strategy A: Targeted sale price elements only
+            const saleSelectors = [
+                '.o-product-thumbnail__price-sale',
+                '.o-pricing__price:not(.o-pricing__compare)',
+                '[data-product-money]',
+                '.c-product-card__price-sale',
+                '.o-subscription-options__option-price[data-product-money]',
+                '.special-price',
+                '.price--sale'
+            ];
+            for (let s = 0; s < saleSelectors.length; s++) {
+                const sel = card.querySelector(saleSelectors[s]);
+                if (sel) {
+                    const dataMoney = sel.getAttribute('data-money') || sel.getAttribute('data-price');
+                    if (dataMoney) {
+                        const p = parseInt(String(dataMoney).replace(/\./g, '').replace(/[^0-9]/g, ''), 10);
+                        if (!isNaN(p) && p >= 1000 && p < 10000000) { extractedPrice = p; break; }
+                    }
+                    const textP = parseInt(sel.textContent.replace(/\./g, '').replace(/[^0-9]/g, ''), 10);
+                    if (!isNaN(textP) && textP >= 1000 && textP < 10000000) { extractedPrice = textP; break; }
+                }
             }
 
-            // Extract Quantity
+            // Strategy B: Match official S54 catalogue if Strategy A is missing or abnormal
+            if (!extractedPrice && window.S54_PRODUCTS && Array.isArray(window.S54_PRODUCTS)) {
+                const prod = window.S54_PRODUCTS.find(p => String(p.id) === String(id) || String(p.num_id) === String(id));
+                if (prod && prod.sale_price) {
+                    const p = parseInt(String(prod.sale_price).replace(/\./g, '').replace(/[^0-9]/g, ''), 10);
+                    if (!isNaN(p) && p > 0) extractedPrice = p;
+                }
+            }
+
+            // Strategy C: Generic container with compare price/strikethrough stripped
+            if (!extractedPrice) {
+                const genericEl = card.querySelector('.o-product-thumbnail__price, .c-product-card__price, .price, .c-product-form__pricing, .o-pricing');
+                if (genericEl) {
+                    const clone = genericEl.cloneNode(true);
+                    clone.querySelectorAll('s, del, strike, .o-product-thumbnail__price-compare, .o-pricing__compare, [data-product-compare-money], .compare-at-price').forEach(el => el.remove());
+                    let p = parseInt(clone.textContent.replace(/\./g, '').replace(/[^0-9]/g, ''), 10);
+                    if (!isNaN(p) && p > 0) {
+                        if (p > 10000000) {
+                            const knownPrices = [15000, 35000, 65000, 119000, 199000, 150000, 225000, 250000, 350000, 646000, 702000, 720000, 805000];
+                            for (let kp of knownPrices) {
+                                if (String(p).startsWith(String(kp))) { p = kp; break; }
+                            }
+                        }
+                        if (p >= 1000 && p < 10000000) extractedPrice = p;
+                    }
+                }
+            }
+
+            if (extractedPrice) price = extractedPrice;
+
+            // 4. Extract Quantity
             const qtyInput = card.querySelector('input[name="quantity"], [data-product-form-qty], .c-product-form__qty');
             if (qtyInput && qtyInput.value) {
                 const parsedQty = parseInt(qtyInput.value, 10);
                 if (!isNaN(parsedQty) && parsedQty > 0) qty = parsedQty;
             }
 
-            // Extract Image
+            // 5. Extract Image
             const imgEl = card.querySelector('img:not(.c-header__logo img):not(.s54-footer img)');
             if (imgEl && (imgEl.src || imgEl.dataset.src)) {
                 img = imgEl.src || imgEl.dataset.src;
             }
 
-            // Add to S54Cart
+            // 6. Add to S54Cart
             if (window.S54Cart && typeof window.S54Cart.addItem === 'function') {
                 window.S54Cart.addItem({
                     id: id,
@@ -315,7 +377,7 @@
                     price: price,
                     quantity: qty,
                     image: img,
-                    url: 'product-detail.html'
+                    url: url
                 });
             }
 

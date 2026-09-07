@@ -49,6 +49,39 @@
         return initial;
     }
 
+    function sanitizePrice(price, title) {
+        let p = typeof price === 'number' ? price : parseInt(String(price).replace(/\./g, '').replace(/[^0-9]/g, ''), 10);
+        if (isNaN(p) || p <= 0) p = 35000;
+
+        // Fix historical bug where price was divided by 10 or 100 (e.g. 3500 for 35k, 1500 for 15k, 6500 for 65k)
+        if (p > 0 && p < 1000) {
+            p = p * 1000;
+        } else if (p === 3500) {
+            p = 35000;
+        } else if (p === 1500) {
+            p = 15000;
+        } else if (p === 6500) {
+            p = 65000;
+        }
+
+        // Fix concatenated compare price bug (e.g. 65000129000, 3500070000, 1500029000, 225000500000)
+        if (p > 10000000) {
+            const str = String(p);
+            const knownPrices = [15000, 35000, 65000, 119000, 199000, 150000, 225000, 250000, 350000, 646000, 702000, 720000, 805000];
+            for (let i = 0; i < knownPrices.length; i++) {
+                if (str.startsWith(String(knownPrices[i]))) {
+                    p = knownPrices[i];
+                    break;
+                }
+            }
+            if (p > 10000000) {
+                p = parseInt(str.substring(0, 5), 10) || 35000;
+            }
+        }
+
+        return p;
+    }
+
     function recalculateTotals(cart) {
         if (!cart || !Array.isArray(cart.items)) return;
         let count = 0;
@@ -57,7 +90,10 @@
 
         cart.items.forEach(item => {
             const qty = Math.max(0, parseInt(item.quantity, 10) || 1);
-            const price = typeof item.price === 'number' ? item.price : 35000;
+            const price = sanitizePrice(item.price, item.title);
+            item.price = price;
+            item.original_price = sanitizePrice(item.original_price || price, item.title);
+            item.final_price = price;
             item.quantity = qty;
             item.line_price = price * qty;
             item.final_line_price = price * qty;
@@ -115,7 +151,7 @@
                 if (item.image && !existing.image) existing.image = item.image;
             } else {
                 const newId = item.id || Date.now();
-                const price = item.price || 35000;
+                const price = sanitizePrice(item.price || 35000, cleanTitle);
                 const newItem = {
                     id: newId,
                     variant_id: item.variant_id || newId,
