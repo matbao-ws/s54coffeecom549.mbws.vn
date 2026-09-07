@@ -2894,6 +2894,33 @@ h5, h6,
     }
 }
 
+/* Mobile Drawer Language Switcher */
+.c-lang-switcher--mobile {
+    display: flex !important;
+    gap: 8px !important;
+}
+.c-lang-switcher--mobile .c-lang-btn {
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(250,246,241,0.2) !important;
+    background: rgba(250,246,241,0.08) !important;
+    color: #FAF6F1 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+.c-lang-switcher--mobile .c-lang-btn:hover {
+    background: rgba(250,246,241,0.16) !important;
+}
+.c-lang-switcher--mobile .c-lang-btn.is-active {
+    background: #D68E1D !important;
+    border-color: #D68E1D !important;
+    color: #1F1611 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(214, 142, 29, 0.35) !important;
+}
+
 /* ========================================================
    MASTER S54 CLIENT FEEDBACK FIXES: FOOTER & REVIEWS
    ======================================================== */

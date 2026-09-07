@@ -22,7 +22,7 @@
 
     // Comprehensive Modular Translation Dictionary (VI <-> EN)
     const translationPairs = [
-        // 1. TOPBAR & GLOBAL NAVIGATION
+// 1. TOPBAR & GLOBAL NAVIGATION
         ["Miễn phí vận chuyển toàn quốc cho đơn từ 599.000₫ • Hotline: 0974.933.907", "Free nationwide shipping on orders over 599,000₫ • Hotline: (+84) 974.933.907"],
         ["MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN TỪ 599.000₫ • HOTLINE: 0974.933.907", "FREE NATIONWIDE SHIPPING ON ORDERS OVER 599,000₫ • HOTLINE: (+84) 974.933.907"],
         ["Miễn phí vận chuyển toàn quốc cho đơn từ 599.000₫ • Hotline: 0383.707.578", "Free nationwide shipping on orders over 599,000₫ • Hotline: (+84) 974.933.907"],
@@ -522,10 +522,94 @@
         ["nguồn hạt cà phê thượng hạng", "premium coffee bean supply"],
         ["Rất hân hạnh được đồng hành và hợp tác cùng Quý đối tác.", "We are honoured to accompany and partner with your business."],
         ["Chương trình đối tác bán sỉ và đại lý của S54 được thiết kế để mang lại nhiều hơn chỉ là", "The S54 wholesale and agency partnership program is designed to deliver more than just"],
-        ["“S54 Coffee – Đổi mới trong từng tách cà phê Việt. Tuyển chọn khắt khe hạt Robusta và Arabica hảo hạng từ Tây Nguyên.”", "“S54 Coffee – Innovation in every cup of Vietnamese coffee. Rigorously selected Robusta & Arabica beans from the Central Highlands.”"]
+        ["“S54 Coffee – Đổi mới trong từng tách cà phê Việt. Tuyển chọn khắt khe hạt Robusta và Arabica hảo hạng từ Tây Nguyên.”", "“S54 Coffee – Innovation in every cup of Vietnamese coffee. Rigorously selected Robusta & Arabica beans from the Central Highlands.”"],
+
+        // EXTRA COMPLETE AUDITED PAIRS
+        ["Túi cà phê hòa tan 3in1 S54 Coffee 456g", "S54 Coffee 3in1 Instant Bag 456g"],
+        ["Cà phê hạt rang Robusta S54 250gr", "S54 Roasted Robusta Beans 250g"],
+        ["Cà phê hạt rang Robusta S54 500gr", "S54 Roasted Robusta Beans 500g"],
+        ["Máy Xay Cà Phê Cầm Tay VBZ01-5", "VBZ01-5 Manual Coffee Grinder"],
+        ["MÁY XAY CÀ PHÊ CẦM TAY VBS02-5", "VBS02-5 Manual Coffee Grinder"],
+        ["Máy xay cà phê cầm tay VBS02-5", "VBS02-5 Manual Coffee Grinder"],
+        ["Cà phê hòa tan", "Instant Coffee"],
+        ["CÀ PHÊ HÒA TAN", "INSTANT COFFEE"],
+        ["Cà phê hạt rang", "Roasted Coffee Beans"],
+        ["CÀ PHÊ HẠT RANG", "ROASTED COFFEE BEANS"],
+        ["Máy xay cà phê cầm tay", "Manual Coffee Grinder"],
+        ["MÁY XAY CÀ PHÊ CẦM TAY", "MANUAL COFFEE GRINDER"],
+        ["Xóa tất cả bộ lọc", "Clear all filters"],
+        ["XÓA TẤT CẢ", "CLEAR ALL"],
+        ["Áp dụng bộ lọc", "Apply filters"],
+        ["LOẠI SẢN PHẨM", "PRODUCT TYPE"],
+        ["PHƯƠNG PHÁP PHA CHẾ", "BREWING METHOD"],
+        ["MỨC ĐỘ RANG", "ROAST PROFILE"],
+        ["Độ Đậm", "Intensity"],
+        ["ĐỘ ĐẬM", "INTENSITY"],
+        ["Phù Hợp Nhất Cho", "Best Suited For"],
+        ["QUY CÁCH ĐÓNG GÓI", "PACK SIZE"],
+        ["KHÁC", "OTHER"],
+        ["Tất Cả", "All"],
+        ["TẤT CẢ", "ALL"],
+        ["Bộ Sưu Tập", "Collections"],
+        ["BỘ SƯU TẬP", "COLLECTIONS"],
+        ["Hiển thị tất cả", "Show all"],
+        ["Đang hiển thị", "Showing"],
+        ["kết quả", "results"],
+        ["sản phẩm", "products"],
+        ["Giỏ hàng của bạn", "Your bag"],
+        ["GIỎ HÀNG CỦA BẠN", "YOUR BAG"],
+        ["Giỏ hàng của bạn đang trống", "Your bag is currently empty"],
+        ["BẮT ĐẦU MUA SẮM", "START SHOPPING"],
+        ["Tiếp Tục Mua Sắm", "Continue Shopping"],
+        ["TẠM TÍNH", "SUBTOTAL"],
+        ["Tạm Tính:", "Subtotal:"],
+        ["Tạm tính:", "Subtotal:"],
+        ["Phí Vận Chuyển:", "Shipping Fee:"],
+        ["Phí vận chuyển:", "Shipping Fee:"],
+        ["TỔNG CỘNG", "TOTAL"],
+        ["Tổng Cộng:", "Total:"],
+        ["Tổng cộng:", "Total:"],
+        ["Tiến hành thanh toán", "Proceed to checkout"],
+        ["Xem Giỏ Hàng", "View Cart"],
+        ["Xem giỏ hàng", "View cart"],
+        ["XEM GIỎ HÀNG", "VIEW CART"],
+        ["Xem Giỏ Hàng Chi Tiết", "View Cart Details"],
+        ["Xem giỏ hàng chi tiết", "View cart details"],
+        ["XEM GIỎ HÀNG CHI TIẾT", "VIEW CART DETAILS"],
+        ["Thêm vào giỏ hàng", "Add to Cart"],
+        ["Thêm Vào Giỏ Hàng", "Add to Cart"],
+        ["THÊM VÀO GIỎ HÀNG", "ADD TO CART"],
+        ["Mua ngay", "Buy Now"],
+        ["Tóm tắt đơn hàng", "Order summary"],
+        ["TÓM TẮT ĐƠN HÀNG", "ORDER SUMMARY"],
+        ["Thông tin giao hàng", "Shipping information"],
+        ["Phương thức vận chuyển", "Shipping method"],
+        ["Phương thức thanh toán", "Payment method"],
+        ["Đặt hàng ngay", "Place order now"],
+        ["Đơn hàng của bạn", "Your order"],
+        ["Quay lại giỏ hàng", "Return to cart"],
+        ["Mã giảm giá", "Discount code"],
+        ["Ngôn ngữ / Language", "Language"],
+        ["Ngôn ngữ", "Language"],
+        ["Tiếng Việt", "Vietnamese"],
+        ["🇻🇳 Tiếng Việt", "🇻🇳 Tiếng Việt"],
+        ["🇬🇧 English", "🇬🇧 English"],
+        ["Gửi Yêu Cầu Tư Vấn & Nhận Mẫu Thử", "Submit Inquiry & Request Samples"],
+        ["Gửi yêu cầu tư vấn", "Submit consultation inquiry"],
+        ["Nhận mẫu thử miễn phí", "Get free tasting samples"],
+        ["Chính sách chiết khấu đại lý", "Wholesale discount policy"],
+        ["Đăng Ký", "Subscribe"],
+        ["ĐĂNG KÝ", "SUBSCRIBE"],,
+
+        // EXTRA COMPLETE AUDITED PAIRS,
+
+        // EXTRA COMPLETE AUDITED PAIRS
     ];
 
-    let currentLang = 'vi';
+
+    // State Tracking
+    let currentDomLang = 'vi'; // Tracks language currently rendered in DOM (authoring HTML is Vietnamese)
+    let currentLang = 'vi';    // Tracks user selected language stored in localStorage
 
     function initLanguage() {
         try {
@@ -538,39 +622,41 @@
         }
     }
 
-    function translatePage(targetLang) {
-        if (targetLang !== 'vi' && targetLang !== 'en') return;
-        const fromIdx = currentLang === 'vi' ? 0 : 1;
-        const toIdx = targetLang === 'vi' ? 0 : 1;
-        currentLang = targetLang;
-
-        try {
-            localStorage.setItem(STORAGE_KEY, targetLang);
-        } catch (e) {}
-
-        document.documentElement.lang = targetLang;
-
-        // Sort pairs by search string length descending to prevent shorter substrings from corrupting longer phrases
+    function compileRules(fromIdx, toIdx) {
+        // Sort pairs by search string length descending to prevent substring collisions
         const sortedPairs = translationPairs.slice().sort((a, b) => {
             const strA = a[fromIdx] || '';
             const strB = b[fromIdx] || '';
             return strB.length - strA.length;
         });
 
-        // Pre-compile safe regular expressions for performance
-        const compiledRules = sortedPairs.map(pair => {
+        const seen = new Set();
+        return sortedPairs.map(pair => {
             const searchStr = pair[fromIdx];
             const replaceStr = pair[toIdx];
+            if (!searchStr || !replaceStr || searchStr === replaceStr) return null;
+            if (seen.has(searchStr)) return null;
+            seen.add(searchStr);
             return {
                 searchStr: searchStr,
                 replaceStr: replaceStr,
                 regex: createSafeRegex(searchStr)
             };
-        }).filter(r => r.regex !== null);
+        }).filter(r => r !== null && r.regex !== null);
+    }
 
-        // 1. Traverse and translate all DOM text nodes
+    // Subtree Translator for dynamic components (Cart Drawer, Filter Facets, Modals)
+    function translateSubtree(rootEl, targetLang, fromLang) {
+        if (!rootEl) return;
+        const srcLang = fromLang || currentDomLang;
+        if (srcLang === targetLang) return;
+        const fromIdx = srcLang === 'vi' ? 0 : 1;
+        const toIdx = targetLang === 'vi' ? 0 : 1;
+        const compiledRules = compileRules(fromIdx, toIdx);
+
+        // 1. Text nodes
         const walker = document.createTreeWalker(
-            document.body,
+            rootEl,
             NodeFilter.SHOW_TEXT,
             {
                 acceptNode: function (node) {
@@ -597,7 +683,7 @@
         textNodes.forEach(node => {
             let val = node.nodeValue;
             compiledRules.forEach(rule => {
-                if (rule.searchStr && rule.replaceStr && val.includes(rule.searchStr)) {
+                if (val.includes(rule.searchStr)) {
                     val = val.replace(rule.regex, rule.replaceStr);
                 }
             });
@@ -606,29 +692,119 @@
             }
         });
 
-        // 2. Translate inputs and placeholders
-        document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
+        // 2. Placeholders
+        rootEl.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
             let ph = el.getAttribute('placeholder');
             if (!ph) return;
             compiledRules.forEach(rule => {
-                if (ph && rule.searchStr && rule.replaceStr && ph.includes(rule.searchStr)) {
+                if (ph.includes(rule.searchStr)) {
                     ph = ph.replace(rule.regex, rule.replaceStr);
                 }
             });
             el.setAttribute('placeholder', ph);
         });
 
-        // 3. Translate buttons, aria-labels and image alt texts
-        document.querySelectorAll('img[alt]').forEach(el => {
+        // 3. Img alts
+        rootEl.querySelectorAll('img[alt]').forEach(el => {
             let alt = el.getAttribute('alt');
             if (!alt) return;
             compiledRules.forEach(rule => {
-                if (alt && rule.searchStr && rule.replaceStr && alt.includes(rule.searchStr)) {
+                if (alt.includes(rule.searchStr)) {
                     alt = alt.replace(rule.regex, rule.replaceStr);
                 }
             });
             el.setAttribute('alt', alt);
         });
+    }
+
+    function translatePage(targetLang, force) {
+        if (targetLang !== 'vi' && targetLang !== 'en') return;
+
+        // If not forcing and target matches current DOM language, just save and update switcher
+        if (!force && targetLang === currentDomLang) {
+            currentLang = targetLang;
+            try { localStorage.setItem(STORAGE_KEY, targetLang); } catch (e) {}
+            updateSwitcherUI();
+            return;
+        }
+
+        const fromIdx = currentDomLang === 'vi' ? 0 : 1;
+        const toIdx = targetLang === 'vi' ? 0 : 1;
+
+        if (fromIdx !== toIdx) {
+            const compiledRules = compileRules(fromIdx, toIdx);
+
+            // 1. Traverse and translate all DOM text nodes
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: function (node) {
+                        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                        const parent = node.parentElement;
+                        if (!parent) return NodeFilter.FILTER_REJECT;
+                        const tag = parent.tagName;
+                        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                },
+                false
+            );
+
+            const textNodes = [];
+            let curr = walker.nextNode();
+            while (curr) {
+                textNodes.push(curr);
+                curr = walker.nextNode();
+            }
+
+            textNodes.forEach(node => {
+                let val = node.nodeValue;
+                compiledRules.forEach(rule => {
+                    if (val.includes(rule.searchStr)) {
+                        val = val.replace(rule.regex, rule.replaceStr);
+                    }
+                });
+                if (val !== node.nodeValue) {
+                    node.nodeValue = val;
+                }
+            });
+
+            // 2. Translate inputs and placeholders
+            document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el => {
+                let ph = el.getAttribute('placeholder');
+                if (!ph) return;
+                compiledRules.forEach(rule => {
+                    if (ph.includes(rule.searchStr)) {
+                        ph = ph.replace(rule.regex, rule.replaceStr);
+                    }
+                });
+                el.setAttribute('placeholder', ph);
+            });
+
+            // 3. Translate buttons, aria-labels and image alt texts
+            document.querySelectorAll('img[alt]').forEach(el => {
+                let alt = el.getAttribute('alt');
+                if (!alt) return;
+                compiledRules.forEach(rule => {
+                    if (alt.includes(rule.searchStr)) {
+                        alt = alt.replace(rule.regex, rule.replaceStr);
+                    }
+                });
+                el.setAttribute('alt', alt);
+            });
+        }
+
+        currentDomLang = targetLang;
+        currentLang = targetLang;
+
+        try {
+            localStorage.setItem(STORAGE_KEY, targetLang);
+        } catch (e) {}
+
+        document.documentElement.lang = targetLang;
 
         // 4. Localize dynamic filters and collection UI elements
         localizeFilterPills();
@@ -636,7 +812,7 @@
         // 5. Update Switcher UI Buttons
         updateSwitcherUI();
 
-        // 6. Dispatch Language Changed event for dynamic components (Cart Drawer, Toasts, etc.)
+        // 6. Dispatch Language Changed event for dynamic components (Cart Drawer, Toasts, Product Detail, etc.)
         window.dispatchEvent(new CustomEvent('language:changed', { detail: { language: targetLang } }));
     }
 
@@ -702,7 +878,9 @@
     window.S54I18n = {
         setLanguage: translatePage,
         getLanguage: function () { return currentLang; },
-        translate: translatePage
+        getDomLanguage: function () { return currentDomLang; },
+        translate: translatePage,
+        translateSubtree: translateSubtree
     };
 
     // Auto-init on load
@@ -715,14 +893,14 @@
                 e.preventDefault();
                 e.stopPropagation();
                 const targetLang = btn.getAttribute('data-lang');
-                if (targetLang && targetLang !== currentLang) {
+                if (targetLang && (targetLang !== currentLang || targetLang !== currentDomLang)) {
                     translatePage(targetLang);
                 }
             }
         });
 
         if (currentLang === 'en') {
-            translatePage('en');
+            translatePage('en', true);
         } else {
             updateSwitcherUI();
             localizeFilterPills();
@@ -731,12 +909,22 @@
 
     // Observe dynamic product and filter re-rendering (collections-coffee.html & index.html)
     let debounceTimer = null;
-    const observerCallback = function () {
+    const observerCallback = function (mutations) {
         if (debounceTimer) clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
             localizeFilterPills();
             if (currentLang === 'en') {
-                translatePage('en');
+                if (mutations && mutations.length) {
+                    mutations.forEach(m => {
+                        m.addedNodes.forEach(node => {
+                            if (node.nodeType === 1) { // ELEMENT_NODE
+                                translateSubtree(node, 'en', 'vi');
+                            }
+                        });
+                    });
+                } else {
+                    translatePage('en', true);
+                }
             }
         }, 80);
     };
@@ -756,3 +944,4 @@
     setTimeout(localizeFilterPills, 300);
     setTimeout(localizeFilterPills, 1000);
 })();
+

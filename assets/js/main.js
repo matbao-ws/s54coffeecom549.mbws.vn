@@ -20,6 +20,7 @@
             cart_freeship_qualified: '🎉 Bạn đã được MIỄN PHÍ VẬN CHUYỂN!',
             cart_freeship_remaining: 'Thêm {{amount}} nữa để được MIỄN PHÍ VẬN CHUYỂN',
             cart_proceed_checkout: 'Đang chuyển đến cổng thanh toán bảo mật...',
+            cart_view_cart: 'Xem Giỏ Hàng Chi Tiết',
             cart_btn_added: 'ĐÃ THÊM!',
             cart_added_toast: '✓ Đã thêm "{{title}}" vào giỏ hàng',
             home_newsletter_success: '✓ Cảm ơn bạn! Đã đăng ký thành công với {{email}}'
@@ -33,6 +34,7 @@
             cart_freeship_qualified: '🎉 You qualify for FREE Delivery!',
             cart_freeship_remaining: 'Add {{amount}} more for FREE Shipping',
             cart_proceed_checkout: 'Proceeding to Secure Checkout...',
+            cart_view_cart: 'View Cart Details',
             cart_btn_added: 'ADDED!',
             cart_added_toast: '✓ Added "{{title}}" to your bag',
             home_newsletter_success: '✓ Thank you! Subscribed with {{email}}'
@@ -53,14 +55,7 @@
 
     function formatPrice(amount) {
         if (typeof amount !== 'number') amount = parseFloat(amount) || 0;
-        const lang = (window.S54I18n && typeof window.S54I18n.getLanguage === 'function') 
-            ? window.S54I18n.getLanguage() : 'vi';
-        if (lang === 'vi') {
-            const val = amount < 1000 ? amount * 1000 : amount;
-            return new Intl.NumberFormat('vi-VN').format(val) + '₫';
-        }
-        const usdVal = amount > 1000 ? (amount / 25000) : amount;
-        return '$' + usdVal.toFixed(2);
+        return new Intl.NumberFormat('vi-VN').format(Math.round(amount)) + '₫';
     }
 
     function getCart() {
@@ -98,7 +93,7 @@
                         <span class="c-cart-drawer__subtotal-amount">0₫</span>
                     </div>
                     <button class="c-cart-drawer__checkout-btn">${_t('cart_checkout')}</button>
-                    <a href="cart.html" class="c-cart-drawer__view-cart" style="display: block; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline;">Xem Giỏ Hàng Chi Tiết</a>
+                    <a href="cart.html" class="c-cart-drawer__view-cart" style="display: block; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline;">${_t('cart_view_cart')}</a>
                 </div>
             `;
             document.body.appendChild(drawer);
@@ -141,7 +136,7 @@
         const cart = getCart();
         const items = cart.items || [];
         const totalItems = cart.item_count !== undefined ? cart.item_count : items.reduce((sum, i) => sum + i.quantity, 0);
-        const subtotal = (cart.total_price !== undefined ? cart.total_price / 100 : items.reduce((sum, i) => sum + ((i.price / 100 || i.price) * i.quantity), 0));
+        const subtotal = (cart.total_price !== undefined ? cart.total_price : items.reduce((sum, i) => sum + (i.price * i.quantity), 0));
 
         // Update badge
         document.querySelectorAll('.c-header__cart-count, [data-cart-count], .c-icon-cart__count, .c-cart-count').forEach(badge => {
@@ -157,6 +152,9 @@
 
         const subtotalLabel = document.querySelector('.c-cart-drawer__subtotal span:first-child');
         if (subtotalLabel) subtotalLabel.textContent = _t('cart_subtotal');
+
+        const viewCartEl = document.querySelector('.c-cart-drawer__view-cart');
+        if (viewCartEl) viewCartEl.textContent = _t('cart_view_cart');
 
         const cartBody = document.querySelector('.c-cart-drawer__body');
         if (cartBody) {
@@ -176,7 +174,7 @@
                 });
             } else {
                 cartBody.innerHTML = items.map(item => {
-                    const itemPrice = item.price > 1000 ? (item.price / 100) : item.price;
+                    const itemPrice = item.price;
                     return `
                     <div class="c-cart-drawer__item" data-id="${item.id || item.key}">
                         <img src="${item.image || 'assets/images/s54/robusta_1.jpg'}" alt="${item.title}" class="c-cart-drawer__item-img">
@@ -199,14 +197,13 @@
         const freeShippingMsg = document.querySelector('.c-cart-drawer__free-shipping-text');
         const progressFill = document.querySelector('.c-cart-drawer__progress-fill');
         if (freeShippingMsg && progressFill) {
-            const rawSubtotalVnd = subtotal < 1000 ? subtotal * 1000 : subtotal;
-            if (rawSubtotalVnd >= freeShippingThreshold) {
+            if (subtotal >= freeShippingThreshold) {
                 freeShippingMsg.textContent = _t('cart_freeship_qualified');
                 progressFill.style.width = '100%';
             } else {
-                const diff = freeShippingThreshold - rawSubtotalVnd;
+                const diff = freeShippingThreshold - subtotal;
                 freeShippingMsg.textContent = _t('cart_freeship_remaining', { amount: formatPrice(diff) });
-                progressFill.style.width = `${Math.min(100, Math.max(8, (rawSubtotalVnd / freeShippingThreshold) * 100))}%`;
+                progressFill.style.width = `${Math.min(100, Math.max(8, (subtotal / freeShippingThreshold) * 100))}%`;
             }
         }
 
@@ -478,6 +475,11 @@
                     input.value = '';
                 }
             });
+        });
+
+        // Re-render Cart Drawer and pricing when language changes
+        window.addEventListener('language:changed', () => {
+            updateCartUI();
         });
     });
 })();
