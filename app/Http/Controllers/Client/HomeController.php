@@ -20,6 +20,13 @@ class HomeController extends Controller
             ->take(8)
             ->get();
 
-        return view('client.pages.home', compact('featuredProducts'));
+        $latestPosts = \App\Models\Post::where('is_active', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<=', now())
+            ->orderByDesc('published_at')
+            ->take(3)
+            ->get();
+
+        return view('client.pages.home', compact('featuredProducts', 'latestPosts'));
     }
 }

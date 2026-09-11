@@ -3103,3 +3103,262 @@ h4.s54-footer__heading {
     display: block !important;
     margin: 0 auto !important;
 }
+
+/* ==========================================================================
+   MASTER S54 UI PERFECTION FIXES (100% BULLETPROOF)
+   ========================================================================== */
+
+/* 1. Reset List Style & Bullets on all Menu & Header elements */
+.c-main-menu,
+ul.c-main-menu,
+.c-main-menu__list,
+.c-header__additional,
+ul.c-header__additional,
+.s54-mobile-drawer ul,
+.s54-mobile-drawer li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.c-main-menu li,
+.c-main-menu__item,
+.c-header__additional li,
+.c-header__additional-item {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+}
+
+.c-main-menu__link {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: #FAF6F1 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    padding: 8px 12px !important;
+    position: relative !important;
+    transition: color 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.c-main-menu__link:hover,
+.c-main-menu__item.is-active .c-main-menu__link {
+    color: #D68E1D !important;
+}
+
+.c-main-menu__link:after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 2px !important;
+    left: 12px !important;
+    right: 12px !important;
+    height: 2px !important;
+    background-color: #D68E1D !important;
+    transform: scaleX(0) !important;
+    transform-origin: center !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.c-main-menu__link:hover:after,
+.c-main-menu__item.is-active .c-main-menu__link:after {
+    transform: scaleX(1) !important;
+}
+
+/* 2. High-Contrast Typography in Dark Containers, Footers, and Heroes */
+.c-footer,
+.c-footer h1, .c-footer h2, .c-footer h3, .c-footer h4, .c-footer h5, .c-footer h6,
+.s54-footer,
+.s54-footer h1, .s54-footer h2, .s54-footer h3, .s54-footer h4, .s54-footer h5, .s54-footer h6,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: #FFFFFF !important;
+}
+
+.c-footer p, .s54-footer p, footer p,
+.c-footer li, .s54-footer li, footer li,
+.c-footer span, .s54-footer span, footer span {
+    color: #E5DDD5 !important;
+}
+
+.c-footer a, .s54-footer a, footer a {
+    color: #BAADA1 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.c-footer a:hover, .s54-footer a:hover, footer a:hover {
+    color: #D68E1D !important;
+}
+
+.s54-page-hero,
+.s54-page-hero h1, .s54-page-hero h2, .s54-page-hero h3,
+.s54-page-hero p,
+.s54-coll-hero h1, .s54-coll-hero p {
+    color: #FFFFFF !important;
+}
+
+/* 3. Sticky Header Clearance & Scroll Margins */
+.c-header {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #2F221A !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+section, [id] {
+    scroll-margin-top: 100px !important;
+}
+
+/* 4. Responsive Mobile Topbar & Header */
+@media (max-width: 1023px) {
+    .is-desktop-only {
+        display: none !important;
+    }
+    .c-header__toggle,
+    .is-mobile-only {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .c-header__wrapper {
+        padding: 10px 16px !important;
+        gap: 10px !important;
+    }
+    .c-header__brand .c-header__logo-link span {
+        font-size: 22px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .is-mobile-only,
+    .c-header__toggle,
+    .s54-mobile-drawer,
+    .s54-mobile-overlay {
+        display: none !important;
+    }
+    .is-desktop-only {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .c-header__topbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 6px 12px !important;
+        min-height: 32px !important;
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
+        background-color: #241A14 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    .c-header__topbar-messages {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+    }
+    .c-header__topbar-message {
+        font-size: 11px !important;
+        color: #FAF6F1 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: block !important;
+    }
+    .c-lang-switcher--header {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
+    .c-header__phone-link {
+        display: none !important;
+    }
+}
+
+/* 5. Mobile Slide-out Drawer Styles */
+.s54-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.s54-mobile-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.s54-mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: #241A14;
+    z-index: 10001;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow-y: auto;
+}
+
+.s54-mobile-overlay.is-active .s54-mobile-drawer {
+    transform: translateX(0);
+}
+
+.s54-mobile-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.s54-mobile-drawer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: auto;
+}
+
+.s54-mobile-drawer__link {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #FAF6F1 !important;
+    text-decoration: none !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    transition: color 0.2s ease !important;
+}
+
+.s54-mobile-drawer__link:hover,
+.s54-mobile-drawer__link.is-active {
+    color: #D68E1D !important;
+}
+
+.s54-mobile-drawer__footer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 24px;
+}
+
