@@ -1,20 +1,31 @@
 <!DOCTYPE HTML>
 <html class="js-unavailable" lang="vi" data-country="Vietnam">
 <head>
-    <script src="assets/js/cart-mock.js?v=1787726992"></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết | S54 COFFEE</title>
-    <meta name="description" content="Khám phá 5 lợi ích bất ngờ cho sức khỏe từ ly cà phê sạch rang mộc nguyên chất mỗi sáng: chống oxy hóa, đẩy lùi cơn đau đầu, hỗ trợ vận động viên và giảm mệt mỏi." />
+    <title id="page-title">Vì Sao Việt Nam Là Cường Quốc Cà Phê? | S54 COFFEE</title>
+    <meta id="page-meta-desc" name="description" content="Nhờ khí hậu ưu đãi, thổ nhưỡng đất đỏ bazán màu mỡ cùng tinh thần lao động cần cù của người nông dân, Việt Nam đã bứt phá trở thành một trong những cường quốc xuất khẩu cà phê hàng đầu thế giới." />
+    
+    <link rel="canonical" href="blog-detail.html" />
+    <meta property="og:site_name" content="S54 COFFEE">
+    <meta id="og-title" property="og:title" content="Vì Sao Việt Nam Là Cường Quốc Cà Phê? | S54 COFFEE">
+    <meta property="og:type" content="article">
+    <meta id="og-desc" property="og:description" content="Khám phá hành trình cà phê Việt Nam và chất lượng cà phê rang mộc thượng hạng S54.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta id="tw-title" name="twitter:title" content="Vì Sao Việt Nam Là Cường Quốc Cà Phê? | S54 COFFEE">
+    <meta id="tw-desc" name="twitter:description" content="Khám phá hành trình cà phê Việt Nam và chất lượng cà phê rang mộc thượng hạng S54.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <link href="assets/css/layouts.critical.css" rel="stylesheet" type="text/css" media="all" />
     <link href="assets/css/layouts.theme.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="assets/css/custom.css?v=1789111200" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/custom.css?v=1789133000" rel="stylesheet" type="text/css" media="all" />
+    
+    <script src="assets/js/cart-mock.js?v=1787726992"></script>
     
     <style id="s54-article-perfect-styles">
     body.template-article {
@@ -25,7 +36,7 @@
     .s54-article-container {
         max-width: 880px !important;
         margin: 0 auto !important;
-        padding: clamp(36px, 5vw, 64px) 24px clamp(60px, 7vw, 80px) !important;
+        padding: clamp(36px, 5vw, 64px) 24px clamp(60px, 7vw, 90px) !important;
     }
     .s54-breadcrumb {
         display: flex !important;
@@ -34,17 +45,32 @@
         font-size: 13px !important;
         color: #8C7D73 !important;
         margin-bottom: 24px !important;
+        flex-wrap: wrap !important;
     }
     .s54-breadcrumb a {
         color: #2F221A !important;
         text-decoration: none !important;
         font-weight: 600 !important;
+        transition: color 0.2s ease !important;
     }
     .s54-breadcrumb a:hover {
         color: #D68E1D !important;
     }
     .s54-article-header {
-        margin-bottom: 32px !important;
+        margin-bottom: 36px !important;
+    }
+    .s54-article-badge {
+        display: inline-block !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: #D68E1D !important;
+        background: rgba(214, 142, 29, 0.1) !important;
+        border: 1px solid rgba(214, 142, 29, 0.3) !important;
+        padding: 5px 14px !important;
+        border-radius: 20px !important;
+        margin-bottom: 16px !important;
     }
     .s54-article-title {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
@@ -52,19 +78,54 @@
         font-weight: 700 !important;
         line-height: 1.18 !important;
         color: #2F221A !important;
-        margin: 16px 0 20px 0 !important;
+        margin: 0 0 20px 0 !important;
+    }
+    .s54-article-meta-bar {
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+        font-size: 13.5px !important;
+        color: #7A6D65 !important;
+        padding-bottom: 20px !important;
+        border-bottom: 1px solid #EBE7E1 !important;
+        flex-wrap: wrap !important;
+    }
+    .s54-article-author {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        font-weight: 600 !important;
+        color: #2F221A !important;
+    }
+    .s54-article-author img {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 2px solid #D68E1D !important;
     }
     .s54-article-featured-img {
         width: 100% !important;
-        border-radius: 12px !important;
+        max-height: 520px !important;
+        object-fit: cover !important;
+        border-radius: 14px !important;
         margin-bottom: 40px !important;
         box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important;
         display: block !important;
     }
     .s54-article-body {
-        font-size: 16px !important;
+        font-size: 16.5px !important;
         line-height: 1.85 !important;
         color: #3B2E26 !important;
+    }
+    .s54-article-lead {
+        font-size: 18.5px !important;
+        line-height: 1.75 !important;
+        font-weight: 500 !important;
+        color: #241A14 !important;
+        margin-bottom: 28px !important;
+        padding-left: 20px !important;
+        border-left: 3px solid #D68E1D !important;
     }
     .s54-article-body h2 {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
@@ -76,18 +137,18 @@
         border-bottom: 2px solid #EBE7E1 !important;
     }
     .s54-article-body p {
-        margin-bottom: 22px !important;
+        margin-bottom: 24px !important;
     }
     .s54-article-quote {
         background: #FAF6F1 !important;
         border-left: 4px solid #D68E1D !important;
         padding: 24px 28px !important;
-        margin: 32px 0 !important;
-        border-radius: 0 10px 10px 0 !important;
+        margin: 36px 0 !important;
+        border-radius: 0 12px 12px 0 !important;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-style: italic !important;
         color: #2F221A !important;
-        font-size: 20px !important;
+        font-size: 21px !important;
         line-height: 1.6 !important;
     }
     .s54-article-author-box {
@@ -95,24 +156,79 @@
         padding: 28px !important;
         background: #FFFFFF !important;
         border: 1px solid #EBE7E1 !important;
-        border-radius: 10px !important;
+        border-radius: 12px !important;
         display: flex !important;
         gap: 20px !important;
         align-items: center !important;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.03) !important;
     }
-    .s54-author-avatar {
+    .s54-article-author-box img {
         width: 64px !important;
         height: 64px !important;
         border-radius: 50% !important;
-        background: #2F221A !important;
-        color: #D68E1D !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 22px !important;
-        font-weight: 700 !important;
+        object-fit: cover !important;
+        border: 2px solid #D68E1D !important;
         flex-shrink: 0 !important;
+    }
+    .s54-article-author-box h4 {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        margin: 0 0 6px 0 !important;
+        color: #2F221A !important;
+    }
+    .s54-article-author-box p {
+        font-size: 13.5px !important;
+        line-height: 1.6 !important;
+        color: #6E6259 !important;
+        margin: 0 !important;
+    }
+    
+    /* Related Articles */
+    .s54-related-section {
+        border-top: 2px solid #EBE7E1 !important;
+        margin-top: 64px !important;
+        padding-top: 48px !important;
+    }
+    .s54-related-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 24px !important;
+        margin-top: 24px !important;
+    }
+    @media (max-width: 768px) {
+        .s54-related-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+    .s54-related-card {
+        background: #FFFFFF !important;
+        border: 1px solid #EBE7E1 !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        text-decoration: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .s54-related-card:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+    }
+    .s54-related-card img {
+        width: 100% !important;
+        aspect-ratio: 16 / 10 !important;
+        object-fit: cover !important;
+    }
+    .s54-related-card__content {
+        padding: 16px !important;
+    }
+    .s54-related-card__title {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+        font-size: 17px !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
+        color: #2F221A !important;
+        margin: 0 !important;
     }
     </style>
 <style id="s54-mobile-header-fix">
@@ -311,12 +427,267 @@
 }
 </style>
 
+<style id="s54-direct-typography-override">
+/* S54 HARMONIOUS INTER TYPOGRAPHY SYSTEM */
+@font-face {
+    font-family: 'domaine';
+    src: local('Inter');
+}
+:root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+html, body, *, *::before, *::after,
+button, input, select, textarea,
+h1, h2, h3, h4, h5, h6, p, span, a, li, div {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    letter-spacing: -0.011em;
+}
+
+/* 1. Global Headings Scale: Balanced & Elegant Sans-Serif Inter */
+h1, .o-heading--1, .s54-hero-title, .c-hero-banner__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(30px, 3.8vw, 44px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.025em !important;
+}
+
+h2, .o-heading--2,
+.c-product-carousel__title,
+.c-text-and-image__text-title, .c-text-and-image__title,
+.c-featured-video__title,
+.c-featured-collections__header-title,
+.c-featured-collections__title,
+.c-article-feed__title,
+.s54-featured-section h2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(22px, 2.8vw, 32px) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h3, .o-heading--3, .c-featured-collections__tab-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(18px, 2.2vw, 24px) !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* 2. PRODUCT DETAIL PAGE TYPOGRAPHY (Standard Luxury Scale: 24px-28px, Never 56px, Never Serif) */
+.c-product-main__title,
+h1.c-product-main__title,
+#dynamic-product-title,
+.product-detail-title,
+.c-page--product h1,
+.c-product-main h1 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(22px, 2.2vw, 28px) !important;
+    line-height: 1.28 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.015em !important;
+    color: #2F221A !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    text-transform: none !important;
+}
+
+/* Product Detail Eyebrow & Badges */
+.c-product-main__badges,
+.c-product-main__badges .o-badge,
+#dynamic-product-badge,
+.c-product-vendor {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    color: #8A7B70 !important;
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+}
+
+/* Product Detail Breadcrumb (Clean relative flow, no overlapping image) */
+.c-product-main .o-breadcrumbs {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 auto 16px auto !important;
+    padding: 16px 20px 0 !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    color: #8A7B70 !important;
+    z-index: 10 !important;
+}
+
+.c-product-main .o-breadcrumbs a {
+    color: #8A7B70 !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+}
+
+.c-product-main .o-breadcrumbs a:hover {
+    color: #D68E1D !important;
+}
+
+/* Product Detail Short Intro */
+.c-product-main__description--intro,
+.c-product-main__description p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #5A4E46 !important;
+    margin-bottom: 16px !important;
+}
+
+/* Subtitles & Section Intros */
+.c-hero-banner__subtitle,
+.c-product-carousel__description p,
+.c-text-and-image__text-paragraph p,
+.c-article-feed__inner-text p,
+.c-featured-video__desc,
+.s54-featured-section p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #6E6259 !important;
+    letter-spacing: -0.005em !important;
+}
+
+/* 3. PRODUCT CARD TITLES (Harmonious 14.5px Semibold Inter) */
+.s54-product-card h3,
+.s54-product-card h3 a,
+.o-product-thumbnail h2,
+.o-product-thumbnail h2 a,
+.o-product-thumbnail h3,
+.o-product-thumbnail h3 a,
+.o-product-thumbnail__title,
+h2.o-product-thumbnail__title,
+h3.o-product-thumbnail__title,
+.c-product-carousel__product-title,
+.c-product-carousel__product-title span {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.01em !important;
+    color: #1A120B !important;
+    margin: 0 0 8px 0 !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    height: 42px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+}
+
+.s54-product-card h3 a:hover,
+.o-product-thumbnail h2 a:hover,
+.o-product-thumbnail h3 a:hover {
+    color: #D68E1D !important;
+}
+
+/* Product Card Description */
+.s54-product-card p,
+.o-product-thumbnail p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #6E6259 !important;
+    margin: 0 0 12px 0 !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    height: 38px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+/* Price Alignment */
+.o-product-thumbnail__price,
+.s54-product-card .o-product-thumbnail__price {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+    color: #D68E1D !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* 4. OTHER STOREFRONT HERO & SECTION TITLES */
+.s54-coll-hero__title,
+h1.s54-coll-hero__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(28px, 3.2vw, 38px) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+}
+
+.s54-page-hero__title,
+h1.s54-page-hero__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(28px, 3.5vw, 40px) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+}
+
+.s54-cart-main-title,
+.s54-checkout-main-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(22px, 2.5vw, 28px) !important;
+    font-weight: 700 !important;
+}
+
+.s54-checkout-title,
+h2.s54-checkout-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+/* Buttons */
+.o-btn,
+.c-hero-banner__button,
+.c-text-and-image__text-button,
+.c-product-carousel__button,
+.c-article-feed__button,
+.s54-product-card button,
+.o-product-thumbnail button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Topbar Announcement */
+.c-header__topbar-message {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+}
+</style>
 </head>
 <body class="template-article">
 
-    <div class="c-page__wrapper">
-        <div id="shopify-section-header" class="shopify-section c-section c-section__header">
-  <header class="c-header is-milk" data-header>
+    <!-- Header Block -->
+    <header class="c-header is-milk" data-header>
     <div class="c-header__topbar" data-topbar>
       <div class="c-header__topbar-messages">
         <a href="collections-coffee.html" class="c-header__topbar-message o-subtitle">Miễn phí vận chuyển toàn quốc cho đơn từ 599.000₫ • Hotline: 0974.933.907</a>
@@ -345,11 +716,11 @@
           <button class="c-main-menu__close" data-menu-close aria-label="Close Menu" style="color: #FAF6F1; background: none; border: none; font-size: 24px; cursor: pointer;">✕</button>
         </div>
         <ul class="c-main-menu__list is-level-1">
-          <li class="c-main-menu__item is-level-1"><a href="collections-coffee.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Tất Cả Sản Phẩm</span></a></li>
-          <li class="c-main-menu__item is-level-1"><a href="collections-coffee.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Cà Phê Hạt & Rang Mộc</span></a></li>
-          <li class="c-main-menu__item is-level-1"><a href="collections-coffee.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Hòa Tan & Sấy Lạnh</span></a></li>
+          <li class="c-main-menu__item is-level-1"><a href="collections-coffee.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Sản Phẩm</span></a></li>
           <li class="c-main-menu__item is-level-1"><a href="our-story.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Câu Chuyện S54</span></a></li>
+          <li class="c-main-menu__item is-level-1"><a href="blogs-news.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Tin Tức</span></a></li>
           <li class="c-main-menu__item is-level-1"><a href="wholesale.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">B2B & Đại Lý</span></a></li>
+          <li class="c-main-menu__item is-level-1"><a href="contact.html" class="c-main-menu__link is-level-1"><span class="c-main-menu__link-title">Liên Hệ</span></a></li>
         </ul>
               <div class="c-main-menu__footer is-mobile-only" style="padding: 24px 20px; border-top: 1px solid rgba(250,246,241,0.12); margin-top: 20px;">
           <div style="font-size: 11px; font-weight: 700; color: #D68E1D; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;">Ngôn ngữ / Language</div>
@@ -384,95 +755,79 @@
       </ul>
     </div>
   </header>
-</div>
 
-        <main class="s54-article-container">
-            
-            <!-- Breadcrumb Navigation -->
-            <nav class="s54-breadcrumb" aria-label="Breadcrumb">
-                <a href="index.html">Trang Chủ</a>
-                <span>›</span>
-                <a href="blogs-news.html">Tin Tức & Blog</a>
-                <span>›</span>
-                <span style="color: #6E6259;">5 Lợi Ích Của Cà Phê</span>
-            </nav>
+    <main class="s54-article-container">
+        <!-- Breadcrumb -->
+        <nav class="s54-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Trang Chủ</a>
+            <span>/</span>
+            <a href="blogs-news.html">Tin Tức & Tri Thức</a>
+            <span>/</span>
+            <span id="breadcrumb-title" style="color: #6E6259;">Vì Sao Việt Nam Là Cường Quốc Cà Phê?</span>
+        </nav>
 
-            <!-- Article Header -->
-            <header class="s54-article-header">
-                <div class="s54-post-meta">
-                    <span>☕ KIẾN THỨC CÀ PHÊ</span>
-                    <span>•</span>
-                    <span>5 PHÚT ĐỌC</span>
-                    <span>•</span>
-                    <span>26/08/2026</span>
+        <!-- Article Header -->
+        <header class="s54-article-header">
+            <div id="article-badge" class="s54-article-badge">Tin Tức & Thị Trường</div>
+            <h1 id="article-title" class="s54-article-title">Vì Sao Việt Nam Là Cường Quốc Cà Phê?</h1>
+            <div class="s54-article-meta-bar">
+                <div class="s54-article-author">
+                    <img src="assets/images/s54/s54_logo.png" alt="S54 Team" />
+                    <span>Ban Biên Tập S54 Coffee</span>
                 </div>
-                <h1 class="s54-article-title">5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết</h1>
-                <p style="font-size: 15px; color: #6E6259; line-height: 1.6; margin: 0;">
-                    Tác giả: <strong>Ban Biên Tập S54 COFFEE</strong> • Cố vấn: <strong>Công Ty TNHH Giải Pháp Tốt</strong>
-                </p>
-            </header>
+                <span>•</span>
+                <span id="article-date">02/09/2026</span>
+                <span>•</span>
+                <span id="article-read-time">4 phút đọc</span>
+            </div>
+        </header>
 
-            <!-- Authentic Content Body -->
-            <div class="s54-article-body">
-                <p>
-                    Có nhiều cách để khởi động ngày mới năng động như hít thở, thư giãn và luyện tập thể dục thể thao; trong đó, hoạt động uống cà phê là thói quen khá phổ biến. Tuy nhiên, không phải ai cũng biết được những lợi ích tuyệt vời từ ly cà phê sáng mang lại cho sức khỏe thể chất lẫn tinh thần.
-                </p>
-                <p>
-                    Các nghiên cứu khoa học uy tín đã chỉ ra rằng, dù là cà phê pha phin truyền thống hay cà phê hòa tan 100% nguyên chất, với một lượng vừa phải mỗi ngày, cà phê sẽ mang lại những lợi ích vượt trội: cải thiện độ tập trung, xoa dịu mệt mỏi, giảm đau đầu và hỗ trợ chuyển hóa mỡ thừa.
-                </p>
-
-                <blockquote class="s54-article-quote">
-                    “Các sản phẩm S54 COFFEE được sản xuất từ 100% hạt cà phê đạt chuẩn Tây Nguyên, mang tới cho bạn những ly cà phê nguyên chất, góp phần vào cuộc sống vui khoẻ của người Việt.”
-                </blockquote>
-
-                <h2>1. Nguồn Chất Chống Oxy Hóa Dồi Dào Bảo Vệ Tế Bào</h2>
-                <p>
-                    Lợi ích lớn nhất mà cà phê nguyên chất mang lại là nguồn chất chống oxy hoá dồi dào, đặc biệt là trong hạt cà phê Robusta và Arabica chưa qua tẩm ướp phụ gia hóa chất. Mỗi tách cà phê chứa hàm lượng polyphenol cao, hoạt động cùng với các khoáng chất vi lượng để giúp cơ thể và các tế bào hoạt động tối ưu, ngăn ngừa lão hóa và duy trì sức khỏe tổng thể.
-                </p>
-
-                <h2>2. Kích Hoạt Trí Nhớ & Tăng Cường Sự Tập Trung Tột Đỉnh</h2>
-                <p>
-                    Cà phê rất giàu caffeine tự nhiên – thành phần kích hoạt hệ thần kinh trung ương, giúp cải thiện chức năng nhận thức, phản xạ và trí nhớ ngắn hạn. Thưởng thức một ly cà phê đen hoặc cà phê sữa ít đường vào đầu giờ làm việc sẽ giúp bạn nhanh chóng nạp lại năng lượng và nâng cao hiệu suất làm việc.
-                </p>
-
-                <h2>3. Đẩy Lùi Cơn Đau Đầu Nhờ Tác Động Giãn Mạch Tự Nhiên</h2>
-                <p>
-                    Caffeine là một chất làm giãn mạch tự nhiên, có khả năng hỗ trợ điều hòa áp lực máu bằng cách ngăn chặn các cơ trong tĩnh mạch căng lên và thu hẹp lại. Do đó, một lượng cà phê vừa phải (1-2 ly/ngày) sẽ giúp xoa dịu những cơn đau đầu do căng thẳng làm việc.
-                </p>
-
-                <h2>4. Tăng Cường Hiệu Suất Thể Chất Cho Người Luyện Tập</h2>
-                <p>
-                    Đối với những người thường xuyên tập thể thao, gym hay vận động viên, một tách cà phê nguyên chất trước buổi tập 30 phút sẽ kích thích giải phóng adrenaline, giúp xoa dịu cảm giác mệt mỏi và nâng cao sức bền vận động rõ rệt.
-                </p>
-
-                <h2>5. Hỗ Trợ Đốt Cháy Mỡ Thừa Qua Cơ Chế Sinh Nhiệt Tự Nhiên</h2>
-                <p>
-                    Caffeine từ lâu đã được chứng minh có khả năng thúc đẩy quá trình "sinh nhiệt" (thermogenesis) – cơ chế đốt cháy calo và mỡ thừa tự nhiên của cơ thể. Để đạt hiệu quả tối ưu, bạn nên kết hợp uống cà phê rang mộc không đường với chế độ dinh dưỡng lành mạnh và uống đủ nước mỗi ngày.
-                </p>
-
-                <!-- Author Box -->
-                <div class="s54-article-author-box">
-                    <div class="s54-author-avatar">S54</div>
-                    <div>
-                        <h4 style="margin: 0 0 4px; font-size: 16px; color: #2F221A;">S54 Coffee Editorial Team</h4>
-                        <p style="margin: 0; font-size: 13px; color: #6E6259; line-height: 1.5;">
-                            Đội ngũ nghiên cứu & phát triển sản phẩm của Công ty TNHH Giải Pháp Tốt (Good Solutions Co., Ltd). Sứ mệnh mang tinh hoa cà phê Việt sạch nguyên chất đến hàng triệu người tiêu dùng.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- CTA Back & Shop -->
-                <div style="margin-top: 44px; text-align: center; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                    <a href="blogs-news.html" style="padding: 12px 24px; border: 1px solid #2F221A; color: #2F221A; text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 13px;">← Xem Tất Cả Bài Viết</a>
-                    <a href="collections-coffee.html" style="padding: 12px 24px; background: #D68E1D; color: #FFFFFF; text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 13px;">Khám Phá Cà Phê S54 →</a>
-                </div>
-
+        <!-- Article Body -->
+        <article class="s54-article-body">
+            <div id="article-lead" class="s54-article-lead">
+                Nhờ khí hậu ưu đãi, thổ nhưỡng đất đỏ bazán màu mỡ cùng tinh thần lao động cần cù của người nông dân, Việt Nam đã bứt phá trở thành một trong những cường quốc xuất khẩu cà phê hàng đầu thế giới.
             </div>
 
-        </main>
+            <div id="article-content-body">
+                <p>
+                    Ngành cà phê Việt Nam sở hữu lịch sử phát triển hơn một thế kỷ, từ những đồn điền đầu tiên tại Buôn Ma Thuột đến diện tích canh tác bạt ngàn trải rộng khắp vùng Tây Nguyên ngày nay. Nhờ đặc ân của tạo hóa về khí hậu nhiệt đới gió mùa và tầng đất bazán màu mỡ tích tụ hàng triệu năm, cây cà phê — đặc biệt là giống Robusta — sinh trưởng mạnh mẽ với hàm lượng khoáng chất và caffeine tự nhiên vượt trội.
+                </p>
+                <div class="s54-article-quote">
+                    "S54 Coffee ra đời với khát vọng nâng tầm giá trị hạt cà phê Việt, chuyển đổi từ xuất khẩu thô sang các dòng sản phẩm rang mộc nguyên chất và cà phê hòa tan thượng hạng vươn tầm thế giới."
+                </div>
+                <h2>Cam Kết Chất Lượng & Phát Triển Bền Vững</h2>
+                <p>
+                    Để duy trì vị thế vững chắc trên trường quốc tế, S54 Coffee cùng các đối tác trang trại liên tục cải tiến quy trình thu hái có chọn lọc: tỷ lệ trái chín đạt trên 95%, áp dụng phương pháp sơ chế ướt và phơi giàn trong nhà màng nhằm bảo toàn trọn vẹn hương thơm nguyên bản của hạt cà phê.
+                </p>
+                <p>
+                    Mỗi sản phẩm mang thương hiệu S54 không chỉ là một tách cà phê thơm ngon, mà còn là lời tri ân gửi đến bàn tay người nông dân Việt Nam và thông điệp lan tỏa tinh thần "New Coffee, New Income" bền vững.
+                </p>
+            </div>
+        </article>
 
-        <div id="shopify-section-footer" class="shopify-section c-section c-section__footer">
-  <footer class="c-footer s54-footer" data-footer>
+        <!-- Author Box -->
+        <div class="s54-article-author-box">
+            <img src="assets/images/s54/s54_logo.png" alt="S54 Editorial Team" />
+            <div>
+                <h4>Ban Biên Tập S54 Coffee</h4>
+                <p>Đội ngũ chuyên gia nghiên cứu và phát triển sản phẩm của S54 Coffee – Good Solutions Co., Ltd. Cam kết mang đến những tri thức chuẩn xác về cà phê nguyên chất và lan tỏa giá trị nông sản Việt.</p>
+            </div>
+        </div>
+
+        <!-- Related Articles Section -->
+        <section class="s54-related-section">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; color: #2F221A; margin: 0;">Bài Viết Cùng Chuyên Mục</h3>
+                <a href="blogs-news.html" style="font-size: 13.5px; font-weight: 700; color: #D68E1D; text-decoration: none;">Xem Tất Cả →</a>
+            </div>
+            <div class="s54-related-grid" id="related-grid">
+                <!-- Related cards injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Block -->
+    <footer class="c-footer s54-footer" data-footer>
     <div class="s54-footer__container">
       
       <!-- Top Grid: 4 Clean Columns -->
@@ -522,15 +877,15 @@
 
         <!-- Col 3: Về S54 & Dịch Vụ -->
         <div class="s54-footer__col">
-          <h4 class="s54-footer__heading">Về S54 & Dịch Vụ</h4>
+                    <h4 class="s54-footer__heading">Về S54 & Dịch Vụ</h4>
           <ul class="s54-footer__links">
             <li><a href="our-story.html">Câu Chuyện Thương Hiệu</a></li>
-            <li><a href="our-story.html">Nông Trại & Công Nghệ Rang</a></li>
+            <li><a href="blogs-news.html">Bản Tin & Tri Thức Cà Phê</a></li>
             <li><a href="wholesale.html">Cung Ứng B2B & Đại Lý</a></li>
-            <li><a href="wholesale.html">Gia Công OEM/ODM Xuất Khẩu</a></li>
-            <li><a href="wholesale.html">Chính Sách Vận Chuyển</a></li>
-            <li><a href="wholesale.html">Chính Sách Đổi Trả & Bảo Mật</a></li>
-            <li><a href="wholesale.html">Liên Hệ Hợp Tác</a></li>
+            <li><a href="policy-shipping.html">Chính Sách Vận Chuyển</a></li>
+            <li><a href="policy-returns.html">Chính Sách Đổi Trả & Bảo Hành</a></li>
+            <li><a href="policy-privacy.html">Chính Sách Bảo Mật</a></li>
+            <li><a href="contact.html">Liên Hệ Hợp Tác</a></li>
           </ul>
         </div>
 
@@ -590,13 +945,106 @@
 
     </div>
   </footer>
-</div>
-    </div>
 
+    <!-- Cart Drawer -->
+    
     <script src="assets/js/i18n.js?v=1787726992"></script>
     <script src="assets/js/main.js?v=1787726992"></script>
     <button class="c-scroll-top" id="scrollTopBtn" aria-label="Lên đầu trang">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor"/></svg>
     </button>
+
+
+    <!-- Dynamic Router Script -->
+    <script>
+    const S54_ARTICLES = [{"id": "1", "title": "Vì sao Việt Nam là cường quốc cà phê?", "category": "Tin tức", "content": "Nhờ khí hậu ưu đãi, thổ nhưỡng đất đỏ bazán màu mỡ cùng tinh thần lao động cần cù của người nông dân, Việt Nam đã bứt phá trở thành một trong những quốc gia xuất khẩu cà phê hàng đầu thế giới. Hành trình này khẳng định vị thế và chất lượng vượt trội của hạt cà phê Việt trên thị trường quốc tế.", "img_url": "https://drive.google.com/file/d/1GnQdXdi9MT4yI0Ibi-C2eU4lD1yJQnJG/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=86uxmcgaO2c", "note": "Bài viết phân tích vị thế xuất khẩu, điều kiện tự nhiên và tiềm năng của cà phê Việt Nam", "slug": "vi_sao_viet_nam_la_cuong_quoc_ca_phe", "base_filename": "news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe", "local_image": "assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.webp", "date": "02/09/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "2", "title": "Điều gì làm nên sự khác biệt của cà phê Việt Nam?", "category": "Tin tức", "content": "Sự khác biệt của cà phê Việt đến từ hương vị Robusta đậm đà đặc trưng, kết hợp cùng kỹ thuật rang xay truyền thống và văn hóa pha phin độc đáo. Chính sự tỉ mỉ trong từng khâu chế biến đã tạo nên một trải nghiệm thưởng thức mạnh mẽ, khó quên đối với mọi tín đồ cà phê.", "img_url": "https://drive.google.com/file/d/1ZfoJLkuy5LCyOFtqOQPU2Bu9WNYwTltQ/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=MJs_zH89Wkg", "note": "Bài viết truyền thông phân tích chuyên sâu các yếu tố cốt lõi tạo nên bản sắc cà phê Việt.", "slug": "ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v", "base_filename": "news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v", "local_image": "assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.webp", "date": "28/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "3", "title": "Robusta và Arabica: So sánh chi tiết", "category": "Tin tức", "content": "Trong khi Robusta nổi bật với hàm lượng caffeine cao, vị đắng đậm đà và độ sánh đặc征, thì Arabica lại chinh phục người dùng bởi hương thơm phong phú cùng vị chua thanh tinh tế. Việc hiểu rõ sự khác biệt giữa hai dòng hạt này sẽ giúp bạn dễ dàng lựa chọn gu cà phê hoàn hảo cho riêng mình.", "img_url": "https://drive.google.com/file/d/1tsf0wJZVPjCjhOmP-EiuGQkpos2MozJw/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=MJaNLns-Ios", "note": "Bài viết chia sẻ kiến thức sản phẩm giúp khách hàng phân biệt Robusta và Arabica.", "slug": "robusta_va_arabica_so_sanh_chi_tiet", "base_filename": "news_3_robusta_va_arabica_so_sanh_chi_tiet", "local_image": "assets/images/s54/news/news_3_robusta_va_arabica_so_sanh_chi_tiet.webp", "date": "25/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "4", "title": "Các vùng trồng cà phê trọng điểm của Việt Nam", "category": "Tin tức", "content": "Tây Nguyên với những thủ phủ nổi tiếng như Đắk Lắk, Lâm Đồng, Gia Lai chính là mảnh đất vàng nuôi dưỡng nên những hạt cà phê Robusta và Arabica chất lượng cao. Mỗi vùng đất mang điều kiện thổ nhưỡng riêng, góp phần tạo nên sự đa dạng và phong phú trong từng tầng hương vị.", "img_url": "https://drive.google.com/file/d/1_5brBl8yYRPCrxYD6GnF6uqWc6P6XRro/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=WxDiK3zF9e8", "note": "Bài viết tổng hợp các vùng trồng cà phê trọng điểm và đặc trưng địa lý nông sản.", "slug": "cac_vung_trong_ca_phe_trong_iem_cua_viet", "base_filename": "news_4_cac_vung_trong_ca_phe_trong_iem_cua_viet", "local_image": "assets/images/s54/news/news_4_cac_vung_trong_ca_phe_trong_iem_cua_viet.webp", "date": "22/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "5", "title": "Văn hóa cà phê của người Việt", "category": "Tin tức", "content": "Cà phê không chỉ là một thức uống quen thuộc mỗi sáng mà đã trở thành một nét văn hóa kết nối cộng đồng đầy tinh tế của người Việt. Dù là phin sữa đá lề đường hay không gian hiện đại, mỗi ly cà phê đều gắn liền với những câu chuyện đời thường và sự thong dong lắng đọng.", "img_url": "https://drive.google.com/file/d/1GnQdXdi9MT4yI0Ibi-C2eU4lD1yJQnJG/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=nMVH0CQ9XjU", "note": "Bài viết góc nhìn văn hóa về thói quen thưởng thức cà phê phin và góc phố Việt Nam.", "slug": "van_hoa_ca_phe_cua_nguoi_viet", "base_filename": "news_5_van_hoa_ca_phe_cua_nguoi_viet", "local_image": "assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.webp", "date": "18/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "6", "title": "Hành trình từ trang trại đến tách cà phê", "category": "Tin tức", "content": "Để tạo nên một tách cà phê thơm ngon trọn vị, những hạt cà phê phải trải qua hành trình chăm sóc tỉ mỉ, thu hoạch chín cây và chế biến nghiêm ngặt. Sự kết hợp giữa tâm huyết của người nông dân và công nghệ rang hiện đại chính là chìa khóa mang lại chất lượng hảo hạng.", "img_url": "https://drive.google.com/file/d/1H9USvSh7_UIMLLPuBO2rsyxP22wyqLZA/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=e2VH7zv5Lg0", "note": "Bài viết quy trình minh bạch chuỗi giá trị từ nông trại đến người tiêu dùng.", "slug": "hanh_trinh_tu_trang_trai_en_tach_ca_phe", "base_filename": "news_6_hanh_trinh_tu_trang_trai_en_tach_ca_phe", "local_image": "assets/images/s54/news/news_6_hanh_trinh_tu_trang_trai_en_tach_ca_phe.webp", "date": "15/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "7", "title": "Mùa thu hoạch cà phê tại Việt Nam", "category": "Tin tức", "content": "Khi sắc đỏ rực rỡ phủ khắp các nương nợ Tây Nguyên, mùa thu hoạch cà phê lại rộn ràng bắt đầu trong niềm vui của người trồng. Nhờ quy trình hái chọn lọc từng hạt chín, chất lượng sản phẩm luôn được đảm bảo ở mức tối ưu nhất trước khi đưa vào sản xuất.", "img_url": "https://drive.google.com/file/d/1-cQVI6gPU1iQoq7L14ge_4drAcq19lEv/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=9jt_DThkhzc", "note": "Tin tức cập nhật không khí mùa vụ thu hoạch và tiêu chuẩn hái cà phê chín.", "slug": "mua_thu_hoach_ca_phe_tai_viet_nam", "base_filename": "news_7_mua_thu_hoach_ca_phe_tai_viet_nam", "local_image": "assets/images/s54/news/news_7_mua_thu_hoach_ca_phe_tai_viet_nam.webp", "date": "12/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "8", "title": "Cà phê Việt Nam trong mắt bạn bè quốc tế", "category": "Tin tức", "content": "Cà phê phin và cà phê trứng Việt Nam đang ngày càng khẳng định sức hút mạnh mẽ, liên tục nhận được sự đón nhận và khen ngợi từ báo chí cùng thực khách quốc tế. Vị đậm đà riêng biệt đã giúp cà phê Việt trở thành điểm sáng độc đáo trên bản đồ ẩm thực toàn cầu.", "img_url": "https://drive.google.com/file/d/1dL3AqA5jYRgJw6oRbcDtZAjy5Nb9Nq1g/view?usp=drive_link", "sub_img": "https://drive.google.com/drive/folders/12iEYdmOFrMecllhZFL2SGQaeZY910fp7", "note": "Bài viết tổng hợp góc nhìn quốc tế và sự lan tỏa của ẩm thực cà phê Việt.", "slug": "ca_phe_viet_nam_trong_mat_ban_be_quoc_te", "base_filename": "news_8_ca_phe_viet_nam_trong_mat_ban_be_quoc_te", "local_image": "assets/images/s54/news/news_8_ca_phe_viet_nam_trong_mat_ban_be_quoc_te.webp", "date": "08/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "9", "title": "Tương lai của ngành cà phê Việt Nam", "category": "Tin tức", "content": "Định hướng phát triển bền vững, ứng dụng công nghệ cao và gia tăng giá trị tinh chế đang là chìa khóa cho tương lai ngành cà phê Việt. Việc chú trọng vào chất lượng thay vì lượng sẽ giúp thương hiệu cà phê Việt vươn xa và khẳng định giá trị cao hơn nữa trên thế giới.", "img_url": "https://drive.google.com/file/d/1IzJc-XIi5L5vfZz9U5OT7JZfEYJF8KT2/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=p-ydW4LPtpk", "note": "Bài viết góc nhìn chiến lược về xu hướng chế biến sâu và phát triển bền vững", "slug": "tuong_lai_cua_nganh_ca_phe_viet_nam", "base_filename": "news_9_tuong_lai_cua_nganh_ca_phe_viet_nam", "local_image": "assets/images/s54/news/news_9_tuong_lai_cua_nganh_ca_phe_viet_nam.webp", "date": "05/08/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}, {"id": "11", "title": "S54 Coffee là ai?", "category": "Blog", "content": "S54 Coffee là thương hiệu cà phê Việt năng động, chuyên cung cấp các dòng sản phẩm cà phê hạt rang và hòa tan chất lượng cao. Với tâm huyết nâng tầm nông sản Việt, chúng tôi mang đến giải pháp thưởng thức cà phê chuẩn vị, truyền năng lượng tích cực cho ngày mới.", "img_url": "https://drive.google.com/file/d/1dliT5mbeRxTShyTcOUdEEHq_71VKNTcJ/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=7PB6Tn2pyE8", "note": "Bài viết giới thiệu tổng quan thương hiệu, triết lý hoạt động và dòng sản phẩm chính.", "slug": "s54_coffee_la_ai", "base_filename": "news_11_s54_coffee_la_ai", "local_image": "assets/images/s54/news/news_11_s54_coffee_la_ai.webp", "date": "01/08/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "12", "title": "Ý nghĩa của tên gọi S54 là gì?", "category": "Blog", "content": "Tên gọi \"S54\" bắt nguồn từ sự kết hợp đầy tự hào giữa hình ảnh dải đất hình chữ S tươi đẹp và tinh thần đoàn kết của 54 dân tộc anh em. Thương hiệu ra đời với khát vọng lan tỏa bản sắc văn hóa và kết nối mọi người qua từng tách cà phê đậm đà.", "img_url": "https://drive.google.com/file/d/1KzWZKyDS6IjbWDrS6tZFFNv2QL5X7X5-/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=jzNhBBOgdF4", "note": "Câu chuyện thương hiệu giải thích nguồn gốc tên gọi S54 Coffee.", "slug": "y_nghia_cua_ten_goi_s54_la_gi", "base_filename": "news_12_y_nghia_cua_ten_goi_s54_la_gi", "local_image": "assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.webp", "date": "28/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "13", "title": "Sứ mệnh của chúng tôi", "category": "Blog", "content": "S54 Coffee cam kết mang đến những sản phẩm cà phê nguyên chất, an toàn và chuẩn vị đến tay người tiêu dùng. Đồng thời, chúng tôi luôn hướng tới mục tiêu \"New Coffee, New Income\" nhằm đồng hành cùng sự phát triển bền vững của người nông dân và cộng đồng.", "img_url": "https://drive.google.com/file/d/1KKiN4tv14QfPlHjuHmiuJ_M6aXcC5kDB/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=bIC2_Dko3xk", "note": "Bài viết công bố sứ mệnh thương hiệu và cam kết chất lượng với xã hội.", "slug": "su_menh_cua_chung_toi", "base_filename": "news_13_su_menh_cua_chung_toi", "local_image": "assets/images/s54/news/news_13_su_menh_cua_chung_toi.webp", "date": "25/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "14", "title": "Tầm nhìn chiến lược của S54", "category": "Blog", "content": "Trở thành thương hiệu cà phê Việt uy tín, sáng tạo và sẵn sàng vươn tầm quốc tế là mục tiêu dài hạn của S54 Coffee. Chúng tôi không ngừng cải tiến công nghệ và nâng cao chất lượng dịch vụ để khẳng định vị thế thương hiệu Việt trên thị trường.", "img_url": "https://drive.google.com/file/d/1DuIXoLJ8yb8b7dpmaUnUbLG8z0w6W8sc/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=8nVnuZSauE8", "note": "Bài viết công bố định hướng chiến lược và tầm nhìn vươn ra thị trường toàn cầu.", "slug": "tam_nhin_chien_luoc_cua_s54", "base_filename": "news_14_tam_nhin_chien_luoc_cua_s54", "local_image": "assets/images/s54/news/news_14_tam_nhin_chien_luoc_cua_s54.webp", "date": "20/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "15", "title": "Gặp gỡ đội ngũ S54 Coffee", "category": "Blog", "content": "Đằng sau mỗi sản phẩm S54 Coffee là tập thể những con người trẻ tuổi, đầy nhiệt huyết và cùng chung niềm đam mê cháy bỏng với cà phê Việt. Sự tận tâm và tinh thần sáng tạo không ngừng của đội ngũ chính là động lực lớn nhất giúp thương hiệu phát triển.", "img_url": "https://drive.google.com/file/d/10P2mAsAXXTCER7fwFq_DtRuOfKkfo8Ko/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=ZjBMQT0EmUI", "note": "Bài viết giới thiệu nhân sự, văn hóa doanh nghiệp và tinh thần con người S54.", "slug": "gap_go_oi_ngu_s54_coffee", "base_filename": "news_15_gap_go_oi_ngu_s54_coffee", "local_image": "assets/images/s54/news/news_15_gap_go_oi_ngu_s54_coffee.webp", "date": "15/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "16", "title": "Lý do chúng tôi bắt đầu hành trình này", "category": "Blog", "content": "Hành trình của S54 Coffee bắt đầu từ mong muốn nâng cao giá trị hạt cà phê Robusta Việt Nam và mang lại nguồn thu nhập tốt hơn cho người trồng. Chúng tôi tin rằng một tách cà phê chất lượng không chỉ làm tỉnh táo trí óc mà còn nâng tầm giá trị lao động Việt.", "img_url": "https://drive.google.com/file/d/1xg0fVUHGLwvQ1Kofby6lWS0W3PmLAiRQ/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=AHEC0eUB-WY", "note": "Câu chuyện khởi nghiệp chia sẻ động lực thành lập và trăn trở với nông sản Việt.", "slug": "ly_do_chung_toi_bat_au_hanh_trinh_nay", "base_filename": "news_16_ly_do_chung_toi_bat_au_hanh_trinh_nay", "local_image": "assets/images/s54/news/news_16_ly_do_chung_toi_bat_au_hanh_trinh_nay.webp", "date": "10/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "17", "title": "Một ngày làm việc tại S54 Coffee", "category": "Blog", "content": "Mỗi ngày tại S54 Coffee đều bắt đầu bằng hương thơm cà phê nồng nàn, sự tập trung cao độ trong khâu kiểm định và không khí làm việc tràn đầy năng lượng. Chúng tôi tỉ mỉ trong từng công đoạn nhỏ để đảm bảo từng sản phẩm ra thị trường đều đạt độ hoàn hảo cao nhất.", "img_url": "https://drive.google.com/file/d/1Ul6UnE_ORVFzQYb7HKUYBTQCY4XoFasz/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=POXlP94l-Ho", "note": "Bài viết chia sẻ hậu trường vận hành và quy trình làm việc thực tế tại S54 Coffee.", "slug": "mot_ngay_lam_viec_tai_s54_coffee", "base_filename": "news_17_mot_ngay_lam_viec_tai_s54_coffee", "local_image": "assets/images/s54/news/news_17_mot_ngay_lam_viec_tai_s54_coffee.webp", "date": "05/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "18", "title": "Xây dựng một thương hiệu cà phê toàn cầu", "category": "Blog", "content": "Để đưa thương hiệu vươn ra thế giới, S54 Coffee tập trung vào việc chuẩn hóa quy trình chất lượng, thiết kế bao bì hiện đại và số hóa kênh bán hàng. Sự kết hợp giữa bản sắc bản địa và tư duy toàn cầu là bước đi chiến lược của chúng tôi.", "img_url": "https://drive.google.com/file/d/1Urt7Tjx-9XmaP4shO7KAI25O9XzMQIwQ/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=QAgZN9WTWbo", "note": "Bài viết chia sẻ định hướng xây dựng thương hiệu theo tiêu chuẩn quốc tế.", "slug": "xay_dung_mot_thuong_hieu_ca_phe_toan_cau", "base_filename": "news_18_xay_dung_mot_thuong_hieu_ca_phe_toan_cau", "local_image": "assets/images/s54/news/news_18_xay_dung_mot_thuong_hieu_ca_phe_toan_cau.webp", "date": "01/07/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "19", "title": "Ý nghĩa đằng sau Logo của S54 Coffee", "category": "Blog", "content": "Biểu tượng logo của S54 Coffee được thiết kế tối giản nhưng giàu ý nghĩa, gửi gắm thông điệp về sự kết nối, dòng chảy năng lượng và khát vọng vươn lên. Mỗi đường nét đều thể hiện sự hiện đại, chuyên nghiệp nhưng vẫn giữ trọn linh hồn cà phê Việt.", "img_url": "https://drive.google.com/file/d/1e3gEw2lDC_3bihWRMZdy0kBfd53eWxO1/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=5ftUHFiFsmY", "note": "Bài viết phân tích ý nghĩa thiết kế logo và hệ thống nhận diện thương hiệu", "slug": "y_nghia_ang_sau_logo_cua_s54_coffee", "base_filename": "news_19_y_nghia_ang_sau_logo_cua_s54_coffee", "local_image": "assets/images/s54/news/news_19_y_nghia_ang_sau_logo_cua_s54_coffee.webp", "date": "25/06/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "20", "title": "Hành trình vươn ra thế giới bắt đầu", "category": "Blog", "content": "Bằng việc chủ động nâng cao tiêu chuẩn sản phẩm và đẩy mạnh diện diện trên nền tảng số, S54 Coffee đang từng bước đặt những gạch nối đầu tiên đưa cà phê Việt ra quốc tế. Hành trình này cần sự đồng hành và ủng hộ từ tất cả những người yêu cà phê.", "img_url": "https://drive.google.com/file/d/1QovPwMLfd6NC1NCZQSwuyeY2ndz6BCgQ/view?usp=drive_link", "sub_img": "https://www.youtube.com/watch?v=T8MfqRZlsFo", "note": "Bài viết tổng kết các cột mốc vươn ra quốc tế và thông điệp đồng hành cùng khách hàng.", "slug": "hanh_trinh_vuon_ra_the_gioi_bat_au", "base_filename": "news_20_hanh_trinh_vuon_ra_the_gioi_bat_au", "local_image": "assets/images/s54/news/news_20_hanh_trinh_vuon_ra_the_gioi_bat_au.webp", "date": "20/06/2026", "read_time": "3 phút đọc", "cat_slug": "blog", "cat_display": "Câu Chuyện S54"}, {"id": "21", "title": "Giới thiệu sản phẩm mới: máy xay cà phê bằng tay", "category": "Tin tức", "content": "Giới thiệu sản phẩm mới: máy xay cà phê bằng tay", "img_url": "https://drive.google.com/file/d/1ZAUJzrj1kkf-MhZcfXJhJ2AkZzrn-hAW/view?usp=drive_link", "sub_img": "https://drive.google.com/file/d/1ZAUJzrj1kkf-MhZcfXJhJ2AkZzrn-hAW/view?usp=drive_link", "note": "Giới thiệu sản phẩm mới: máy xay cà phê bằng tay", "slug": "gioi_thieu_san_pham_moi_may_xay_ca_phe_b", "base_filename": "news_21_gioi_thieu_san_pham_moi_may_xay_ca_phe_b", "local_image": "assets/images/s54/news/news_21_gioi_thieu_san_pham_moi_may_xay_ca_phe_b.jpg", "date": "15/06/2026", "read_time": "3 phút đọc", "cat_slug": "tin-tuc", "cat_display": "Tin Tức & Thị Trường"}];
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id') || '1';
+
+        const art = S54_ARTICLES.find(a => String(a.id) === String(articleId)) || S54_ARTICLES[0];
+
+        // Update Head Meta
+        document.title = art.title + ' | S54 COFFEE';
+        const metaDesc = document.getElementById('page-meta-desc');
+        if (metaDesc) metaDesc.setAttribute('content', art.content.slice(0, 160));
+        
+        const ogTitle = document.getElementById('og-title');
+        if (ogTitle) ogTitle.setAttribute('content', art.title + ' | S54 COFFEE');
+        const ogDesc = document.getElementById('og-desc');
+        if (ogDesc) ogDesc.setAttribute('content', art.content.slice(0, 160));
+
+        // Update Breadcrumb & Header
+        const breadcrumbTitle = document.getElementById('breadcrumb-title');
+        if (breadcrumbTitle) breadcrumbTitle.textContent = art.title;
+
+        const badge = document.getElementById('article-badge');
+        if (badge) badge.textContent = art.cat_display;
+
+        const title = document.getElementById('article-title');
+        if (title) title.textContent = art.title;
+
+        const date = document.getElementById('article-date');
+        if (date) date.textContent = art.date;
+
+        const readTime = document.getElementById('article-read-time');
+        if (readTime) readTime.textContent = art.read_time;
+
+        const img = document.getElementById('article-img');
+        if (img) {
+            img.src = art.local_image || 'assets/images/s54/blog_cup.jpg';
+            img.alt = art.title;
+        }
+
+        // Format Body Content
+        const lead = document.getElementById('article-lead');
+        if (lead) lead.textContent = art.content;
+
+        const contentBody = document.getElementById('article-content-body');
+        if (contentBody && art.id !== '1') {
+            let paragraphs = [
+                art.content,
+                "Tại S54 Coffee, chúng tôi luôn chú trọng từng công đoạn từ tuyển chọn hạt cà phê chín mọng, rang mộc theo tiêu chuẩn khắt khe, đến đóng gói bảo quản để mang lại tách cà phê đậm vị tinh tế nhất đến tay người tiêu dùng.",
+                "Sứ mệnh của S54 không chỉ dừng lại ở chất lượng tách cà phê mỗi sáng, mà còn là cam kết đồng hành lâu dài cùng cộng đồng nông dân Tây Nguyên, nâng cao giá trị chuỗi cung ứng và hiện thực hóa triết lý 'New Coffee, New Income'."
+            ];
+
+            let htmlStr = '';
+            paragraphs.forEach((p, idx) => {
+                if (idx === 1) {
+                    htmlStr += '<div class="s54-article-quote">"Mỗi tách cà phê S54 là kết tinh của tình yêu đất trời Tây Nguyên và khát vọng phụng sự cộng đồng."</div>';
+                    htmlStr += '<h2>Đồng Hành Cùng Chất Lượng & Sinh Kế Bền Vững</h2>';
+                }
+                htmlStr += '<p>' + p + '</p>';
+            });
+            contentBody.innerHTML = htmlStr;
+        }
+
+        // Render Related Articles (pick 3 other articles)
+        const relatedGrid = document.getElementById('related-grid');
+        if (relatedGrid) {
+            const others = S54_ARTICLES.filter(a => String(a.id) !== String(art.id));
+            const related = others.slice(0, 3);
+            let relatedHtml = '';
+            related.forEach(rel => {
+                const rImg = rel.local_image || 'assets/images/s54/blog_cup.jpg';
+                relatedHtml += `
+                    <a href="blog-detail.html?id=${rel.id}" class="s54-related-card">
+                        <img src="${rImg}" alt="${rel.title}" loading="lazy" />
+                        <div class="s54-related-card__content">
+                            <div class="s54-post-meta" style="margin-bottom: 6px;">
+                                <span>${rel.date}</span>
+                                <span>•</span>
+                                <span>${rel.read_time}</span>
+                            </div>
+                            <h4 class="s54-related-card__title">${rel.title}</h4>
+                        </div>
+                    </a>
+                `;
+            });
+            relatedGrid.innerHTML = relatedHtml;
+        }
+    });
+    </script>
 </body>
 </html>

@@ -14,17 +14,21 @@
 
 <link rel="stylesheet" href="{{ asset('assets/css/layouts.critical.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/layouts.theme.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=1789123000') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=1789133000') }}">
 
 <style id="s54-direct-typography-override">
 /* S54 HARMONIOUS INTER TYPOGRAPHY SYSTEM */
+@font-face {
+    font-family: 'domaine';
+    src: local('Inter');
+}
 :root {
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
 }
 
 html, body, *, *::before, *::after,
 button, input, select, textarea,
-h1, h2, h3, h4, h5, h6, p, span, a, li {
+h1, h2, h3, h4, h5, h6, p, span, a, li, div {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
 }
 
@@ -34,26 +38,107 @@ body {
     letter-spacing: -0.011em;
 }
 
-/* Headings Scale: Balanced, Modern, Refined */
-h1, .o-heading--1, .s54-hero-title, .c-hero-banner__title, .c-hero-banner__title span {
-    font-size: clamp(32px, 4.5vw, 52px) !important;
+/* 1. Global Headings Scale: Balanced & Elegant Sans-Serif Inter */
+h1, .o-heading--1, .s54-hero-title, .c-hero-banner__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(30px, 3.8vw, 44px) !important;
     font-weight: 800 !important;
     line-height: 1.15 !important;
-    letter-spacing: -0.03em !important;
+    letter-spacing: -0.025em !important;
 }
 
 h2, .o-heading--2,
-.c-product-carousel__title, .c-product-carousel__title span, .c-product-carousel__title p,
-.c-text-and-image__text-title, .c-text-and-image__text-title span, .c-text-and-image__title,
-.c-featured-video__title, .c-featured-video__title span,
-.c-featured-collections__header-title, .c-featured-collections__header-title span,
-.c-featured-collections__title, .c-product-main__title,
-.c-article-feed__title, .c-article-feed__title span,
+.c-product-carousel__title,
+.c-text-and-image__text-title, .c-text-and-image__title,
+.c-featured-video__title,
+.c-featured-collections__header-title,
+.c-featured-collections__title,
+.c-article-feed__title,
 .s54-featured-section h2 {
-    font-size: clamp(24px, 3.2vw, 36px) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(22px, 2.8vw, 32px) !important;
     font-weight: 700 !important;
     line-height: 1.25 !important;
     letter-spacing: -0.02em !important;
+}
+
+h3, .o-heading--3, .c-featured-collections__tab-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(18px, 2.2vw, 24px) !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* 2. PRODUCT DETAIL PAGE TYPOGRAPHY (Standard Luxury Scale: 24px-28px, Never 56px, Never Serif) */
+.c-product-main__title,
+h1.c-product-main__title,
+#dynamic-product-title,
+.product-detail-title,
+.c-page--product h1,
+.c-product-main h1 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(22px, 2.2vw, 28px) !important;
+    line-height: 1.28 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.015em !important;
+    color: #2F221A !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    text-transform: none !important;
+}
+
+/* Product Detail Eyebrow & Badges */
+.c-product-main__badges,
+.c-product-main__badges .o-badge,
+#dynamic-product-badge,
+.c-product-vendor {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    color: #8A7B70 !important;
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+}
+
+/* Product Detail Breadcrumb (Clean relative flow, no overlapping image) */
+.c-product-main .o-breadcrumbs {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 auto 16px auto !important;
+    padding: 16px 20px 0 !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    color: #8A7B70 !important;
+    z-index: 10 !important;
+}
+
+.c-product-main .o-breadcrumbs a {
+    color: #8A7B70 !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+}
+
+.c-product-main .o-breadcrumbs a:hover {
+    color: #D68E1D !important;
+}
+
+/* Product Detail Short Intro */
+.c-product-main__description--intro,
+.c-product-main__description p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #5A4E46 !important;
+    margin-bottom: 16px !important;
 }
 
 /* Subtitles & Section Intros */
@@ -63,24 +148,28 @@ h2, .o-heading--2,
 .c-article-feed__inner-text p,
 .c-featured-video__desc,
 .s54-featured-section p {
-    font-size: 15px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14.5px !important;
     font-weight: 400 !important;
     line-height: 1.6 !important;
     color: #6E6259 !important;
     letter-spacing: -0.005em !important;
 }
 
-/* ==========================================================================
-   CRITICAL FIX: PRODUCT CARD TITLES (Harmonious 15px Semibold, No Clunky 32px)
-   ========================================================================== */
+/* 3. PRODUCT CARD TITLES (Harmonious 14.5px Semibold Inter) */
 .s54-product-card h3,
 .s54-product-card h3 a,
+.o-product-thumbnail h2,
+.o-product-thumbnail h2 a,
 .o-product-thumbnail h3,
 .o-product-thumbnail h3 a,
 .o-product-thumbnail__title,
+h2.o-product-thumbnail__title,
+h3.o-product-thumbnail__title,
 .c-product-carousel__product-title,
 .c-product-carousel__product-title span {
-    font-size: 15px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14.5px !important;
     font-weight: 600 !important;
     line-height: 1.4 !important;
     letter-spacing: -0.01em !important;
@@ -97,13 +186,15 @@ h2, .o-heading--2,
 }
 
 .s54-product-card h3 a:hover,
+.o-product-thumbnail h2 a:hover,
 .o-product-thumbnail h3 a:hover {
     color: #D68E1D !important;
 }
 
-/* Product Card Description Clamping */
+/* Product Card Description */
 .s54-product-card p,
 .o-product-thumbnail p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12.5px !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
@@ -121,20 +212,45 @@ h2, .o-heading--2,
 /* Price Alignment */
 .o-product-thumbnail__price,
 .s54-product-card .o-product-thumbnail__price {
-    font-size: 16px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 15.5px !important;
     font-weight: 700 !important;
     color: #D68E1D !important;
     letter-spacing: -0.01em !important;
 }
 
-/* Filter Buttons */
-.s54-filter-btn {
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0 !important;
+/* 4. OTHER STOREFRONT HERO & SECTION TITLES */
+.s54-coll-hero__title,
+h1.s54-coll-hero__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(28px, 3.2vw, 38px) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
 }
 
-/* Call to Action Buttons */
+.s54-page-hero__title,
+h1.s54-page-hero__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(28px, 3.5vw, 40px) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+}
+
+.s54-cart-main-title,
+.s54-checkout-main-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: clamp(22px, 2.5vw, 28px) !important;
+    font-weight: 700 !important;
+}
+
+.s54-checkout-title,
+h2.s54-checkout-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+/* Buttons */
 .o-btn,
 .c-hero-banner__button,
 .c-text-and-image__text-button,
@@ -142,6 +258,7 @@ h2, .o-heading--2,
 .c-article-feed__button,
 .s54-product-card button,
 .o-product-thumbnail button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12.5px !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px !important;
@@ -149,6 +266,7 @@ h2, .o-heading--2,
 
 /* Topbar Announcement */
 .c-header__topbar-message {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12px !important;
     font-weight: 500 !important;
     letter-spacing: 0.01em !important;
