@@ -597,6 +597,454 @@ Shopify.SignInWithShop.User.recognized = false;</script>
     padding: 0 20px 14px 56px !important;
 }
 
+
+/* ==========================================================================
+   S54 ULTRA-LUXURY PRODUCT GALLERY & 2-COLUMN LAYOUT
+   ========================================================================== */
+
+/* Main Section: Rigid 2-Column Flex Row */
+.c-product-main {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 24px 24px 80px 24px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 48px !important;
+    box-sizing: border-box !important;
+}
+
+/* Left Column: Product Gallery */
+.s54-product-gallery,
+.c-product-main__gallery {
+    flex: 1 1 calc(54% - 24px) !important;
+    max-width: calc(54% - 24px) !important;
+    width: calc(54% - 24px) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+}
+
+/* Right Column: Product Details */
+.c-product-main__details {
+    flex: 1 1 calc(46% - 24px) !important;
+    max-width: calc(46% - 24px) !important;
+    width: calc(46% - 24px) !important;
+    background: #FAF6F1 !important;
+    border-radius: 16px !important;
+    padding: 36px 32px !important;
+    box-shadow: 0 4px 24px rgba(47, 34, 26, 0.05) !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 991px) {
+    .c-product-main {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        padding: 16px 16px 60px 16px !important;
+        gap: 32px !important;
+    }
+    .s54-product-gallery,
+    .c-product-main__gallery,
+    .c-product-main__details {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+/* Hide any legacy Keen-slider / Flickity buttons completely */
+.c-product-gallery__navigation,
+.c-product-gallery__previous,
+.c-product-gallery__next,
+.c-product-gallery__progress,
+[data-product-gallery-carousel-navigation] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* 1. Main Hero Stage */
+.s54-gallery-hero {
+    position: relative !important;
+    width: 100% !important;
+    height: 500px !important;
+    background: #FAF6F1 !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(47, 34, 26, 0.08) !important;
+    box-shadow: 0 4px 24px rgba(47, 34, 26, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    user-select: none !important;
+}
+
+@media (max-width: 767px) {
+    .s54-gallery-hero {
+        height: 380px !important;
+    }
+}
+
+/* Hero Badge Tag with Exact SVG Dimensions */
+.s54-gallery-tag {
+    position: absolute !important;
+    top: 18px !important;
+    left: 18px !important;
+    z-index: 5 !important;
+    background: #2F221A !important;
+    color: #FAF6F1 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    box-shadow: 0 2px 10px rgba(47, 34, 26, 0.2) !important;
+    pointer-events: none !important;
+}
+
+.s54-gallery-tag svg {
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    min-height: 13px !important;
+    max-width: 13px !important;
+    max-height: 13px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    color: #D68E1D !important;
+    fill: #D68E1D !important;
+}
+
+/* Zoom Trigger Button */
+.s54-gallery-zoom-action {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 5 !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(47, 34, 26, 0.1) !important;
+    color: #2F221A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 10px rgba(47, 34, 26, 0.08) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.s54-gallery-zoom-action svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    display: block !important;
+}
+
+.s54-gallery-zoom-action:hover {
+    background: #2F221A !important;
+    color: #FAF6F1 !important;
+    transform: scale(1.08) !important;
+}
+
+/* Hero Stage Inner */
+.s54-gallery-hero-inner {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 24px !important;
+    cursor: zoom-in !important;
+    box-sizing: border-box !important;
+}
+
+#s54-gallery-main-img {
+    max-width: 90% !important;
+    max-height: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    display: block !important;
+    margin: auto !important;
+    box-shadow: 0 8px 30px rgba(47, 34, 26, 0.08) !important;
+    transition: opacity 0.22s ease-in-out, transform 0.28s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.s54-gallery-hero-inner:hover #s54-gallery-main-img {
+    transform: scale(1.035) !important;
+}
+
+/* Floating Navigation Buttons */
+.s54-gallery-nav-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 6 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(47, 34, 26, 0.1) !important;
+    color: #2F221A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 16px rgba(47, 34, 26, 0.12) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.s54-gallery-nav-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    display: block !important;
+}
+
+.s54-gallery-nav-btn.prev {
+    left: 14px !important;
+}
+
+.s54-gallery-nav-btn.next {
+    right: 14px !important;
+}
+
+.s54-gallery-nav-btn:hover {
+    background: #2F221A !important;
+    color: #FAF6F1 !important;
+    transform: translateY(-50%) scale(1.08) !important;
+}
+
+@media (max-width: 767px) {
+    .s54-gallery-nav-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* Counter Badge */
+.s54-gallery-counter {
+    position: absolute !important;
+    bottom: 16px !important;
+    right: 16px !important;
+    z-index: 5 !important;
+    background: rgba(47, 34, 26, 0.82) !important;
+    backdrop-filter: blur(4px) !important;
+    color: #FAF6F1 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    padding: 4px 12px !important;
+    border-radius: 12px !important;
+    letter-spacing: 0.5px !important;
+    pointer-events: none !important;
+}
+
+/* 2. Interactive Thumbnails Strip */
+.s54-gallery-thumbs {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    padding: 2px !important;
+}
+
+.s54-gallery-thumb {
+    width: 78px !important;
+    height: 78px !important;
+    border-radius: 12px !important;
+    background: #FAF6F1 !important;
+    border: 2px solid transparent !important;
+    padding: 4px !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+}
+
+.s54-gallery-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    display: block !important;
+}
+
+.s54-gallery-thumb:hover {
+    border-color: #D68E1D !important;
+    transform: translateY(-2px) !important;
+}
+
+.s54-gallery-thumb.is-active {
+    border-color: #2F221A !important;
+    box-shadow: 0 4px 14px rgba(47, 34, 26, 0.2) !important;
+    transform: translateY(-2px) !important;
+    background: #FFFFFF !important;
+}
+
+@media (max-width: 767px) {
+    .s54-gallery-thumbs {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        padding-bottom: 8px !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .s54-gallery-thumb {
+        width: 64px !important;
+        height: 64px !important;
+    }
+}
+
+/* 3. Fullscreen Lightbox Modal */
+.s54-lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+    background: rgba(15, 10, 8, 0.94) !important;
+    backdrop-filter: blur(12px) !important;
+    display: none;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0;
+    transition: opacity 0.25s ease !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.s54-lightbox.is-open {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+.s54-lightbox-backdrop {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    cursor: pointer !important;
+}
+
+.s54-lightbox-container {
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 92vw !important;
+    max-height: 90vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.s54-lightbox-close {
+    position: fixed !important;
+    top: 24px !important;
+    right: 24px !important;
+    z-index: 10 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #FAF6F1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.s54-lightbox-close:hover {
+    background: #D68E1D !important;
+    color: #1F1611 !important;
+    transform: scale(1.08) !important;
+}
+
+.s54-lightbox-stage {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 86vw !important;
+    max-height: 78vh !important;
+}
+
+#s54-lightbox-img {
+    max-width: 100% !important;
+    max-height: 78vh !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6) !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.s54-lightbox-nav {
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #FAF6F1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.s54-lightbox-nav.prev {
+    left: 24px !important;
+}
+
+.s54-lightbox-nav.next {
+    right: 24px !important;
+}
+
+.s54-lightbox-nav:hover {
+    background: #D68E1D !important;
+    color: #1F1611 !important;
+    transform: translateY(-50%) scale(1.08) !important;
+}
+
+.s54-lightbox-footer {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #FAF6F1 !important;
+    font-size: 13px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 6px 16px !important;
+    border-radius: 20px !important;
+}
+
+.s54-lightbox-counter {
+    font-weight: 700 !important;
+    color: #D68E1D !important;
+}
 </style>
 
 <script id="shopify-cfh-end">window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
@@ -1530,85 +1978,43 @@ h2.s54-checkout-title {
   data-product-main
   data-section-id="template--15747875176623__product-main"
 >
- 
+  <div class="c-product-gallery c-product-main__gallery s54-product-gallery" id="s54-product-gallery">
+  <!-- 1. Main Hero Image Card -->
+  <div class="s54-gallery-hero" id="s54-gallery-hero">
+    <!-- Official Store Badge -->
+    <div class="s54-gallery-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="#D68E1D" stroke="#D68E1D" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      <span>100% CHÍNH HÃNG • S54 COFFEE</span>
+    </div>
 
-                        
-                        
-<div
-  class="c-product-gallery c-product-main__gallery"
-  data-product-gallery
->
+    <!-- Zoom Action (Top Right) -->
+    <button type="button" class="s54-gallery-zoom-action" id="s54-gallery-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+    </button>
 
-  <div class="c-product-gallery__inner"><div class="c-product-gallery__carousel o-carousel" data-product-gallery-carousel><div
-            class="c-product-gallery__media-container o-media-container"
-            data-media-id="28593233461423"
-          >
-            
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;">
-              <a href="assets/images/802_897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b_1024x1024.png" class="MagicZoom" x-data-options="autostart:false;" data-gallery="zoom">
-                    <img  
-                        style="max-width:100%; aspect-ratio:auto 2000 / 2000; height:auto;"
-                        width="2000"
-                        height="2000"
-                        itemprop="image" 
-                        fetchpriority="high"
-                        src="assets/images/802_897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b_1024x1024.png"
-                        srcset="assets/images/802_897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b_1024x1024.png 1x, assets/images/802_897ca77ac17dde9c0272a16e804feaf30508087451aa08bd7143e9b88c12490b_1024x1024.png 2x"
-                        sizes="(min-width: 1600px) 1600px, 100vw"
-                        alt="S54 S54 Robusta Beans" />
-              </a></div>
-              
-          </div><div
-            class="c-product-gallery__media-container o-media-container"
-            data-media-id="28592391454895"
-          >
-            
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;">
-              <a href="assets/images/794_sb_beans_1kg_cinq_s_8618f5e4-99a8-40a4-a7f8-357716d31b33_1024x1024.png" class="MagicZoom" x-data-options="autostart:false;" data-gallery="zoom">
-                    <img  
-                        style="max-width:100%; aspect-ratio:auto 2000 / 2000; height:auto;"
-                        width="2000"
-                        height="2000"
-                        itemprop="image" 
-                        fetchpriority="high"
-                        src="assets/images/794_sb_beans_1kg_cinq_s_8618f5e4-99a8-40a4-a7f8-357716d31b33_1024x1024.png"
-                        srcset="assets/images/794_sb_beans_1kg_cinq_s_8618f5e4-99a8-40a4-a7f8-357716d31b33_1024x1024.png 1x, assets/images/794_sb_beans_1kg_cinq_s_8618f5e4-99a8-40a4-a7f8-357716d31b33_1024x1024.png 2x"
-                        sizes="(min-width: 1600px) 1600px, 100vw"
-                        alt="S54 S54 Robusta Beans" />
-              </a></div>
-              
-          </div><div
-            class="c-product-gallery__media-container o-media-container"
-            data-media-id="28592391389359"
-          >
-            
-<div style="position:absolute;top:0;left:0;width:100%;height:100%;">
-              <a href="assets/images/801_sb_beans_1kg_cinq_b_6c62d10a-b7f0-4027-8c15-d6c0e7c3ee88_1024x1024.png" class="MagicZoom" x-data-options="autostart:false;" data-gallery="zoom">
-                    <img  
-                        style="max-width:100%; aspect-ratio:auto 2000 / 2000; height:auto;"
-                        width="2000"
-                        height="2000"
-                        itemprop="image" 
-                        fetchpriority="high"
-                        src="assets/images/801_sb_beans_1kg_cinq_b_6c62d10a-b7f0-4027-8c15-d6c0e7c3ee88_1024x1024.png"
-                        srcset="assets/images/801_sb_beans_1kg_cinq_b_6c62d10a-b7f0-4027-8c15-d6c0e7c3ee88_1024x1024.png 1x, assets/images/801_sb_beans_1kg_cinq_b_6c62d10a-b7f0-4027-8c15-d6c0e7c3ee88_1024x1024.png 2x"
-                        sizes="(min-width: 1600px) 1600px, 100vw"
-                        alt="S54 S54 Robusta Beans" />
-              </a></div>
-              
-          </div></div><div class="c-product-gallery__navigation" data-product-gallery-carousel-navigation>
+    <!-- Main Hero Image Display -->
+    <div class="s54-gallery-hero-inner" id="s54-gallery-hero-stage" title="Click để xem ảnh lớn">
+      <img id="s54-gallery-main-img" 
+           src="assets/images/s54/products/combo_12goi_dung_thu.jpg" 
+           alt="S54 Coffee" 
+           fetchpriority="high" />
+    </div>
 
-        <button class="c-product-gallery__previous o-btn is-square is-secondary has-icon" data-carousel-previous><svg class="o-btn__icon" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.236 8a.305.305 0 0 1-.305.305H1.466a.305.305 0 0 1 0-.61H14.93c.169 0 .305.136.305.305Z" fill="#2F221A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.716 11.543a.305.305 0 0 1-.431-.006L1.05 8.213a.305.305 0 0 1 0-.426l3.235-3.324a.305.305 0 1 1 .437.426L1.695 8l3.027 3.111a.305.305 0 0 1-.006.432Z" fill="#2F221A"/></svg></button>
+    <!-- Navigation Arrows inside card -->
+    <button type="button" class="s54-gallery-nav-btn prev" id="s54-gallery-prev" aria-label="Ảnh trước">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button type="button" class="s54-gallery-nav-btn next" id="s54-gallery-next" aria-label="Ảnh tiếp theo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
 
-        <button class="c-product-gallery__next o-btn is-square is-secondary has-icon" data-carousel-next><svg class="o-btn__icon" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.764 8c0-.168.136-.305.305-.305h13.465a.305.305 0 1 1 0 .61H1.07A.305.305 0 0 1 .764 8Z" fill="#2F221A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M11.284 4.457a.305.305 0 0 1 .431.006l3.235 3.324a.305.305 0 0 1 0 .426l-3.234 3.324a.305.305 0 0 1-.438-.426L14.305 8l-3.027-3.111a.305.305 0 0 1 .006-.432Z" fill="#2F221A"/></svg></button>
-      </div><div class="c-product-gallery__progress">
-        <div class="c-product-gallery__progress-bar">
-          <span data-product-gallery-carousel-progress></span>
-        </div>
-      </div></div>
+    <!-- Counter Badge -->
+    <div class="s54-gallery-counter" id="s54-gallery-counter">1 / 5</div>
+  </div>
+
+  <!-- 2. Interactive Thumbnails Strip -->
+  <div class="s54-gallery-thumbs" id="s54-gallery-thumbs" role="tablist" aria-label="Danh sách hình ảnh sản phẩm"></div>
 </div>
-                        
-                    
 
   <div class="c-product-main__details">
 
@@ -4695,13 +5101,36 @@ if (typeof mdApp_countryRules == 'undefined') {var mdApp_countryRules = {
 </script>
 
 </div><script src="https://cdn.shopify.com/storefront/standard-actions.js" type="module" data-source-attribution="shopify.standard_actions"></script>
+<!-- S54 Fullscreen Lightbox Modal (Placed outside main content) -->
+<div class="s54-lightbox" id="s54-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="s54-lightbox-backdrop" id="s54-lightbox-backdrop"></div>
+  <div class="s54-lightbox-container">
+    <button type="button" class="s54-lightbox-close" id="s54-lightbox-close" aria-label="Đóng (Esc)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="s54-lightbox-stage">
+      <img id="s54-lightbox-img" src="" alt="S54 Full Image" />
+    </div>
+    <button type="button" class="s54-lightbox-nav prev" id="s54-lightbox-prev" aria-label="Ảnh trước">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button type="button" class="s54-lightbox-nav next" id="s54-lightbox-next" aria-label="Ảnh tiếp theo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+    <div class="s54-lightbox-footer">
+      <span class="s54-lightbox-counter" id="s54-lightbox-counter">1 / 5</span>
+      <span class="s54-lightbox-title" id="s54-lightbox-title">S54 COFFEE</span>
+    </div>
+  </div>
+</div>
+
 <button class="c-scroll-top" id="scrollTopBtn" aria-label="Lên đầu trang">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor"/></svg>
 </button>
 
 <!-- S54 Dynamic Product Detail Router -->
 <script>
-window.S54_PRODUCTS = [{"id": 200001, "num_id": "1", "name": "Combo 5 gói cà phê hòa tan S54 dùng thử", "name_en": "S54 3in1 Instant Coffee 5-Pack Trial", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.", "short_desc_en": "S54 Coffee 3in1 instant coffee is the ideal choice for those who love rich, authentic coffee with modern convenience.", "long_desc": "Sản phẩm được sản xuất tại Việt Nam, kết hợp hài hòa giữa cà phê hòa tan – bột kem – đường, mang đến ly cà phê thơm ngon, cân bằng vị béo – ngọt – đắng, phù hợp cho mọi thời điểm trong ngày. Mỗi túi gồm các gói 19g nhỏ gọn, dễ pha, đáp ứng nhu cầu thưởng thức nhanh chóng.", "long_desc_en": "Crafted in Vietnam, harmoniously combining instant coffee, non-dairy creamer, and sugar to deliver a smooth, balanced cup with optimal richness, sweetness, and pleasant bitterness. Compact 19g sachets, quick and easy to brew anywhere.", "sale_price": "15.000 VND", "regular_price": "29.000VND", "image": "assets/images/s54/products/combo_5goi_dung_thu.jpg"}, {"id": 200002, "num_id": "2", "name": "Combo 12 gói cà phê hòa tan S54 dùng thử", "name_en": "S54 3in1 Instant Coffee 12-Pack Trial", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Combo 12 gói cà phê hòa tan 3in1 tiện lợi, tiết kiệm, phù hợp cho gia đình và văn phòng.", "short_desc_en": "Value 12-pack 3in1 instant coffee combo, perfect for daily home and office enjoyment.", "long_desc": "Sản phẩm được sản xuất tại Việt Nam, kết hợp hài hòa giữa cà phê hòa tan – bột kem – đường, mang đến ly cà phê thơm ngon, cân bằng vị béo – ngọt – đắng, phù hợp cho mọi thời điểm trong ngày.", "long_desc_en": "Crafted in Vietnam, harmoniously combining instant coffee, non-dairy creamer, and sugar to deliver a smooth, balanced cup with optimal richness, sweetness, and pleasant bitterness.", "sale_price": "35.000 VND", "regular_price": "70.000VND", "image": "assets/images/s54/products/combo_12goi_dung_thu.jpg"}, {"id": 200003, "num_id": "3", "name": "Túi cà phê hòa tan 3in1 S54 Coffee 456g", "name_en": "S54 Coffee 3in1 Instant Bag 456g", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Túi 24 gói x 19g – cà phê hòa tan 3in1 đậm đà, tiện lợi, chuẩn gu thưởng thức cà phê Việt.", "short_desc_en": "Bag of 24 sachets x 19g – rich, aromatic, and convenient 3in1 instant coffee for the whole family.", "long_desc": "Sản phẩm kết hợp hài hòa giữa cà phê hòa tan nguyên chất, bột kem không sữa và đường tinh luyện. Mỗi túi gồm 24 gói nhỏ 19g, tiện lợi pha nóng hoặc pha đá tại nhà và văn phòng.", "long_desc_en": "Harmonious blend of pure instant coffee, non-dairy creamer, and refined sugar. Each bag contains 24 convenient 19g sachets, perfect for hot or iced coffee at home and office.", "sale_price": "65.000 VND", "regular_price": "129.000VND", "image": "assets/images/s54/products/tui_3in1_456g.jpg"}, {"id": 200004, "num_id": "4", "name": "Combo 2 túi cà phê hòa tan 3in1 S54", "name_en": "S54 3in1 Instant 2-Bag Combo", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Combo 2 túi tiết kiệm – tổng 48 gói cà phê hòa tan 3in1 thượng hạng.", "short_desc_en": "Value 2-bag combo – 48 sachets x 19g authentic 3in1 instant coffee.", "long_desc": "Gói tiết kiệm 2 túi (tổng cộng 48 gói x 19g) mang đến giải pháp cà phê sạch, thơm ngon và kinh tế nhất cho người yêu cà phê mỗi ngày.", "long_desc_en": "Smart savings combo of 2 bags (48 sachets total) for coffee lovers seeking consistent daily flavor and convenience.", "sale_price": "119.000VND", "regular_price": "219.000VND", "image": "assets/images/s54/products/combo_2tui_3in1.jpg"}, {"id": 200005, "num_id": "5", "name": "Combo 3 túi cà phê hòa tan 3in1 S54", "name_en": "S54 3in1 Instant 3-Bag Combo", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Combo 3 túi siêu tiết kiệm – 72 gói cho cả gia đình và văn phòng làm việc.", "short_desc_en": "Super value 3-bag combo – 72 sachets for families and offices.", "long_desc": "Bộ 3 túi lớn với 72 gói nhỏ tiện lợi. Thưởng thức hương vị cà phê thơm béo đậm đà mỗi ngày với mức giá ưu đãi hấp dẫn nhất từ S54 Coffee.", "long_desc_en": "Best-value family bundle of 3 bags (72 sachets total). Enjoy authentic Vietnamese 3in1 instant coffee every day with maximum savings.", "sale_price": "199.000VND", "regular_price": "299.000VND", "image": "assets/images/s54/products/combo_2tui_3in1.jpg"}, {"id": 200006, "num_id": "6", "name": "Cà phê hạt rang Robusta S54 250gr", "name_en": "S54 Roasted Robusta Beans 250g", "category": "Cà phê hạt rang", "category_en": "Roasted Beans", "short_desc": "Cà phê hạt rang mộc 100% Robusta nguyên chất từ vùng đất đỏ bazan Tây Nguyên (250g).", "short_desc_en": "100% pure artisan roasted Robusta beans from the Central Highlands (250g).", "long_desc": "Cà phê hạt rang mộc S54 Robusta tuyển chọn 100% hạt chín mọng từ Đắk Lắk. Rang công nghệ Hot-Air chuẩn mộc, không tẩm bơ bắp, vị đậm mạnh tự nhiên, crema sánh mịn.", "long_desc_en": "S54 Robusta whole beans selected from 100% ripe cherries in Dak Lak. Hot-Air roasted without additives, featuring strong body, natural richness, and thick golden crema.", "sale_price": "250.000 VND", "regular_price": "150.000 VND", "image": "assets/images/s54/products/robusta_250g.jpg"}, {"id": 200007, "num_id": "7", "name": "Cà phê hạt rang Robusta S54 500gr", "name_en": "S54 Roasted Robusta Beans 500g", "category": "Cà phê hạt rang", "category_en": "Roasted Beans", "short_desc": "Cà phê hạt rang mộc 500g – đậm đà, thơm mộc, hậu vị ngọt sâu lắng.", "short_desc_en": "100% pure artisan roasted Robusta beans from the Central Highlands (500g).", "long_desc": "Dung tích 500g chuẩn cho quán cà phê và gia đình. Hạt Robusta tuyển chọn kỹ lưỡng, bảo quản túi zip cao cấp có van 1 chiều bảo vệ trọn vẹn hương thơm nguyên bản.", "long_desc_en": "Standard 500g pack ideal for cafes and connoisseurs. Premium one-way valve zipper bag protects the fresh artisan roast aroma and rich terroir flavors.", "sale_price": "225.000 VND", "regular_price": "500.000 VND", "image": "assets/images/s54/products/robusta_500g.jpg"}, {"id": 200008, "num_id": "8", "name": "Máy Xay Cà Phê Cầm Tay VBZ01-5", "name_en": "VBZ01-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Máy xay cà phê cầm tay cao cấp cối thép CNC 5 trục, điều chỉnh độ mịn linh hoạt, màu đen sang trọng.", "short_desc_en": "Premium manual coffee grinder with 5-axis CNC burr, adjustable grind size, matte black finish.", "long_desc": "Thiết kế nhỏ gọn, thân kim loại cầm chắc tay cùng cối xay CNC 5 trục gia công chính xác. Hỗ trợ xay hạt đồng đều cho cả pha Espresso, Pour Over và Phin truyền thống.", "long_desc_en": "Compact, sturdy all-metal body with high-precision 5-axis CNC burr for consistent grinds across Espresso, Pour Over, and traditional Phin drip brewing.", "sale_price": "646.000 VND", "regular_price": "950.000 VND", "image": "assets/images/s54/products/may_xay_vbz01_5.jpg"}, {"id": 200009, "num_id": "9", "name": "Máy Xay Cà Phê Cầm Tay VBZ08-5", "name_en": "VBZ08-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Lõi xay inox SUS420 CNC 5 trục, thân nhôm kim loại cao cấp, hệ thống trục kép ổn định.", "short_desc_en": "SUS420 stainless steel 5-axis CNC burr grinder, all-metal aluminum body.", "long_desc": "Dòng máy xay cao cấp nhất với lưỡi dao SUS420 siêu sắc bén đường kính 38mm. Cơ chế trục kép giúp thao tác xay nhẹ nhàng, triệt tiêu rung lắc, giữ trọn hương vị hạt.", "long_desc_en": "Flagship manual grinder featuring 38mm SUS420 CNC conical burr and dual bearing stabilization for silky, effortless grinding without particle dispersion.", "sale_price": "720.000 VND", "regular_price": "900.000 VND", "image": "assets/images/s54/products/may_xay_vbz08_5.jpg"}, {"id": 200010, "num_id": "10", "name": "Máy Xay Cà Phê Cầm Tay VBZ03-5", "name_en": "VBZ03-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Cơ chế chỉnh độ mịn bên ngoài tiện lợi, cối xay CNC thép không gỉ, thiết kế chống trượt.", "short_desc_en": "External grind size adjustment mechanism, CNC stainless steel burr, compact portable design.", "long_desc": "Nổi bật với vòng xoay chỉnh độ mịn bên ngoài thân máy không cần tháo hộp bột. Cối xay CNC 5 trục cao cấp, dễ vệ sinh và cực kỳ bền bỉ theo thời gian.", "long_desc_en": "Features an intuitive external grind adjustment dial without opening the catcher. Premium 5-axis CNC burr, easy maintenance, and outstanding long-term durability.", "sale_price": "805.000 VND", "regular_price": "1.150.000 VND", "image": "assets/images/s54/products/may_xay_vbz03_5.jpg"}, {"id": 200011, "num_id": "11", "name": "MÁY XAY CÀ PHÊ CẦM TAY VBS02-5", "name_en": "VBS02-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Cối xay CNC 5 trục xay mịn đều, không dùng điện, phù hợp du lịch và văn phòng.", "short_desc_en": "High precision 5-axis CNC burr grinder, uniform grind distribution, travel-ready.", "long_desc": "Máy xay gọn nhẹ, tay quay công thái học lực xoay êm ái. Thích hợp mang theo đi dã ngoại, du lịch hoặc sử dụng mỗi ngày tại văn phòng làm việc.", "long_desc_en": "Lightweight and travel-ready manual grinder with ergonomic handle. Ideal for outdoor adventures, office breaks, and home brewing rituals.", "sale_price": "702.000 VND", "regular_price": "900.000 VND", "image": "assets/images/s54/products/may_xay_vbs02_5.jpg"}, {"id": 200012, "num_id": "12", "name": "Máy Xay Cà Phê Cầm Tay KMDJ-HC", "name_en": "KMDJ-HC Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "40 mức điều chỉnh độ mịn, lõi gốm ceramic không sinh nhiệt, hộp bột thủy tinh trong suốt.", "short_desc_en": "40-level precise grind adjustment, high hardness ceramic burr, clear glass powder container.", "long_desc": "Trang bị lõi xay gốm cao cấp không làm nóng bột cà phê khi xay. Hộp chứa thủy tinh trong suốt sang trọng, 40 nấc chỉnh độ mịn linh hoạt cho mọi phương pháp pha.", "long_desc_en": "Equipped with ceramic conical burr preventing heat buildup and static cling. Transparent glass container with 40 precise grind settings for versatile brewing.", "sale_price": "350.000VND", "regular_price": "500.000 VND", "image": "assets/images/s54/products/may_xay_kmdj_hc.jpg"}];
+window.S54_PRODUCTS = [{"id": 200001, "num_id": "1", "name": "Combo 5 gói cà phê hòa tan S54 dùng thử", "name_en": "S54 3in1 Instant Coffee 5-Pack Trial", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.", "short_desc_en": "S54 Coffee 3in1 instant coffee is the ideal choice for those who love rich, authentic coffee with modern convenience.", "long_desc": "Sản phẩm được sản xuất tại Việt Nam, kết hợp hài hòa giữa cà phê hòa tan – bột kem – đường, mang đến ly cà phê thơm ngon, cân bằng vị béo – ngọt – đắng, phù hợp cho mọi thời điểm trong ngày. Mỗi túi gồm các gói 19g nhỏ gọn, dễ pha, đáp ứng nhu cầu thưởng thức nhanh chóng.", "long_desc_en": "Crafted in Vietnam, harmoniously combining instant coffee, non-dairy creamer, and sugar to deliver a smooth, balanced cup with optimal richness, sweetness, and pleasant bitterness. Compact 19g sachets, quick and easy to brew anywhere.", "sale_price": "15.000 VND", "regular_price": "29.000VND", "image": "assets/images/s54/products/combo_5goi_dung_thu.jpg", "gallery": ["assets/images/s54/products/combo_5goi_dung_thu.jpg", "assets/images/s54/instant_sachet.png", "assets/images/s54/instant_box.png", "assets/images/s54/blog_cup.jpg", "assets/images/s54/freeze_dried_blend.jpg"]}, {"id": 200002, "num_id": "2", "name": "Combo 12 gói cà phê hòa tan S54 dùng thử", "name_en": "S54 3in1 Instant Coffee 12-Pack Trial", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Combo 12 gói cà phê hòa tan 3in1 tiện lợi, tiết kiệm, phù hợp cho gia đình và văn phòng.", "short_desc_en": "Value 12-pack 3in1 instant coffee combo, perfect for daily home and office enjoyment.", "long_desc": "Sản phẩm được sản xuất tại Việt Nam, kết hợp hài hòa giữa cà phê hòa tan – bột kem – đường, mang đến ly cà phê thơm ngon, cân bằng vị béo – ngọt – đắng, phù hợp cho mọi thời điểm trong ngày.", "long_desc_en": "Crafted in Vietnam, harmoniously combining instant coffee, non-dairy creamer, and sugar to deliver a smooth, balanced cup with optimal richness, sweetness, and pleasant bitterness.", "sale_price": "35.000 VND", "regular_price": "70.000VND", "image": "assets/images/s54/products/combo_12goi_dung_thu.jpg", "gallery": ["assets/images/s54/products/combo_12goi_dung_thu.jpg", "assets/images/s54/instant_sachet.png", "assets/images/s54/instant_box.png", "assets/images/s54/blog_cup.jpg", "assets/images/s54/freeze_dried_blend.jpg"]}, {"id": 200003, "num_id": "3", "name": "Túi cà phê hòa tan 3in1 S54 Coffee 456g", "name_en": "S54 Coffee 3in1 Instant Bag 456g", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Túi 24 gói x 19g – cà phê hòa tan 3in1 đậm đà, tiện lợi, chuẩn gu thưởng thức cà phê Việt.", "short_desc_en": "Bag of 24 sachets x 19g – rich, aromatic, and convenient 3in1 instant coffee for the whole family.", "long_desc": "Sản phẩm kết hợp hài hòa giữa cà phê hòa tan nguyên chất, bột kem không sữa và đường tinh luyện. Mỗi túi gồm 24 gói nhỏ 19g, tiện lợi pha nóng hoặc pha đá tại nhà và văn phòng.", "long_desc_en": "Harmonious blend of pure instant coffee, non-dairy creamer, and refined sugar. Each bag contains 24 convenient 19g sachets, perfect for hot or iced coffee at home and office.", "sale_price": "65.000 VND", "regular_price": "129.000VND", "image": "assets/images/s54/products/tui_3in1_456g.jpg", "gallery": ["assets/images/s54/products/tui_3in1_456g.jpg", "assets/images/s54/instant_box.png", "assets/images/s54/instant_sachet.png", "assets/images/s54/blog_cup.jpg", "assets/images/s54/freeze_dried_blend.jpg"]}, {"id": 200004, "num_id": "4", "name": "Combo 2 túi cà phê hòa tan 3in1 S54", "name_en": "S54 3in1 Instant 2-Bag Combo", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Combo 2 túi tiết kiệm – tổng 48 gói cà phê hòa tan 3in1 thượng hạng.", "short_desc_en": "Value 2-bag combo – 48 sachets x 19g authentic 3in1 instant coffee.", "long_desc": "Gói tiết kiệm 2 túi (tổng cộng 48 gói x 19g) mang đến giải pháp cà phê sạch, thơm ngon và kinh tế nhất cho người yêu cà phê mỗi ngày.", "long_desc_en": "Smart savings combo of 2 bags (48 sachets total) for coffee lovers seeking consistent daily flavor and convenience.", "sale_price": "119.000VND", "regular_price": "219.000VND", "image": "assets/images/s54/products/combo_2tui_3in1.jpg", "gallery": ["assets/images/s54/products/combo_2tui_3in1.jpg", "assets/images/s54/products/tui_3in1_456g.jpg", "assets/images/s54/instant_box.png", "assets/images/s54/instant_sachet.png", "assets/images/s54/blog_cup.jpg"]}, {"id": 200005, "num_id": "5", "name": "Combo 3 túi cà phê hòa tan 3in1 S54", "name_en": "S54 3in1 Instant 3-Bag Combo", "category": "Cà phê hòa tan", "category_en": "Instant Coffee", "short_desc": "Combo 3 túi siêu tiết kiệm – 72 gói cho cả gia đình và văn phòng làm việc.", "short_desc_en": "Super value 3-bag combo – 72 sachets for families and offices.", "long_desc": "Bộ 3 túi lớn với 72 gói nhỏ tiện lợi. Thưởng thức hương vị cà phê thơm béo đậm đà mỗi ngày với mức giá ưu đãi hấp dẫn nhất từ S54 Coffee.", "long_desc_en": "Best-value family bundle of 3 bags (72 sachets total). Enjoy authentic Vietnamese 3in1 instant coffee every day with maximum savings.", "sale_price": "199.000VND", "regular_price": "299.000VND", "image": "assets/images/s54/products/combo_2tui_3in1.jpg", "gallery": ["assets/images/s54/products/combo_2tui_3in1.jpg", "assets/images/s54/products/tui_3in1_456g.jpg", "assets/images/s54/instant_box.png", "assets/images/s54/instant_sachet.png", "assets/images/s54/freeze_dried_blend.jpg"]}, {"id": 200006, "num_id": "6", "name": "Cà phê hạt rang Robusta S54 250gr", "name_en": "S54 Roasted Robusta Beans 250g", "category": "Cà phê hạt rang", "category_en": "Roasted Beans", "short_desc": "Cà phê hạt rang mộc 100% Robusta nguyên chất từ vùng đất đỏ bazan Tây Nguyên (250g).", "short_desc_en": "100% pure artisan roasted Robusta beans from the Central Highlands (250g).", "long_desc": "Cà phê hạt rang mộc S54 Robusta tuyển chọn 100% hạt chín mọng từ Đắk Lắk. Rang công nghệ Hot-Air chuẩn mộc, không tẩm bơ bắp, vị đậm mạnh tự nhiên, crema sánh mịn.", "long_desc_en": "S54 Robusta whole beans selected from 100% ripe cherries in Dak Lak. Hot-Air roasted without additives, featuring strong body, natural richness, and thick golden crema.", "sale_price": "250.000 VND", "regular_price": "150.000 VND", "image": "assets/images/s54/products/robusta_250g.jpg", "gallery": ["assets/images/s54/products/robusta_250g.jpg", "assets/images/s54/robusta_1.jpg", "assets/images/s54/robusta_2.jpg", "assets/images/s54/robusta_3.jpg", "assets/images/s54/arabica_beans.jpg"]}, {"id": 200007, "num_id": "7", "name": "Cà phê hạt rang Robusta S54 500gr", "name_en": "S54 Roasted Robusta Beans 500g", "category": "Cà phê hạt rang", "category_en": "Roasted Beans", "short_desc": "Cà phê hạt rang mộc 500g – đậm đà, thơm mộc, hậu vị ngọt sâu lắng.", "short_desc_en": "100% pure artisan roasted Robusta beans from the Central Highlands (500g).", "long_desc": "Dung tích 500g chuẩn cho quán cà phê và gia đình. Hạt Robusta tuyển chọn kỹ lưỡng, bảo quản túi zip cao cấp có van 1 chiều bảo vệ trọn vẹn hương thơm nguyên bản.", "long_desc_en": "Standard 500g pack ideal for cafes and connoisseurs. Premium one-way valve zipper bag protects the fresh artisan roast aroma and rich terroir flavors.", "sale_price": "225.000 VND", "regular_price": "500.000 VND", "image": "assets/images/s54/products/robusta_500g.jpg", "gallery": ["assets/images/s54/products/robusta_500g.jpg", "assets/images/s54/robusta_1.jpg", "assets/images/s54/robusta_2.jpg", "assets/images/s54/robusta_3.jpg", "assets/images/s54/arabica_beans.jpg"]}, {"id": 200008, "num_id": "8", "name": "Máy Xay Cà Phê Cầm Tay VBZ01-5", "name_en": "VBZ01-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Máy xay cà phê cầm tay cao cấp cối thép CNC 5 trục, điều chỉnh độ mịn linh hoạt, màu đen sang trọng.", "short_desc_en": "Premium manual coffee grinder with 5-axis CNC burr, adjustable grind size, matte black finish.", "long_desc": "Thiết kế nhỏ gọn, thân kim loại cầm chắc tay cùng cối xay CNC 5 trục gia công chính xác. Hỗ trợ xay hạt đồng đều cho cả pha Espresso, Pour Over và Phin truyền thống.", "long_desc_en": "Compact, sturdy all-metal body with high-precision 5-axis CNC burr for consistent grinds across Espresso, Pour Over, and traditional Phin drip brewing.", "sale_price": "646.000 VND", "regular_price": "950.000 VND", "image": "assets/images/s54/products/may_xay_vbz01_5.jpg", "gallery": ["assets/images/s54/products/may_xay_vbz01_5.jpg", "assets/images/s54/products/may_xay_vbz08_5.jpg", "assets/images/s54/products/may_xay_vbz03_5.jpg", "assets/images/s54/products/may_xay_vbs02_5.jpg"]}, {"id": 200009, "num_id": "9", "name": "Máy Xay Cà Phê Cầm Tay VBZ08-5", "name_en": "VBZ08-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Lõi xay inox SUS420 CNC 5 trục, thân nhôm kim loại cao cấp, hệ thống trục kép ổn định.", "short_desc_en": "SUS420 stainless steel 5-axis CNC burr grinder, all-metal aluminum body.", "long_desc": "Dòng máy xay cao cấp nhất với lưỡi dao SUS420 siêu sắc bén đường kính 38mm. Cơ chế trục kép giúp thao tác xay nhẹ nhàng, triệt tiêu rung lắc, giữ trọn hương vị hạt.", "long_desc_en": "Flagship manual grinder featuring 38mm SUS420 CNC conical burr and dual bearing stabilization for silky, effortless grinding without particle dispersion.", "sale_price": "720.000 VND", "regular_price": "900.000 VND", "image": "assets/images/s54/products/may_xay_vbz08_5.jpg", "gallery": ["assets/images/s54/products/may_xay_vbz08_5.jpg", "assets/images/s54/products/may_xay_vbz01_5.jpg", "assets/images/s54/products/may_xay_vbz03_5.jpg", "assets/images/s54/products/may_xay_vbs02_5.jpg"]}, {"id": 200010, "num_id": "10", "name": "Máy Xay Cà Phê Cầm Tay VBZ03-5", "name_en": "VBZ03-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Cơ chế chỉnh độ mịn bên ngoài tiện lợi, cối xay CNC thép không gỉ, thiết kế chống trượt.", "short_desc_en": "External grind size adjustment mechanism, CNC stainless steel burr, compact portable design.", "long_desc": "Nổi bật với vòng xoay chỉnh độ mịn bên ngoài thân máy không cần tháo hộp bột. Cối xay CNC 5 trục cao cấp, dễ vệ sinh và cực kỳ bền bỉ theo thời gian.", "long_desc_en": "Features an intuitive external grind adjustment dial without opening the catcher. Premium 5-axis CNC burr, easy maintenance, and outstanding long-term durability.", "sale_price": "805.000 VND", "regular_price": "1.150.000 VND", "image": "assets/images/s54/products/may_xay_vbz03_5.jpg", "gallery": ["assets/images/s54/products/may_xay_vbz03_5.jpg", "assets/images/s54/products/may_xay_vbz01_5.jpg", "assets/images/s54/products/may_xay_vbz08_5.jpg", "assets/images/s54/products/may_xay_vbs02_5.jpg"]}, {"id": 200011, "num_id": "11", "name": "MÁY XAY CÀ PHÊ CẦM TAY VBS02-5", "name_en": "VBS02-5 Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "Cối xay CNC 5 trục xay mịn đều, không dùng điện, phù hợp du lịch và văn phòng.", "short_desc_en": "High precision 5-axis CNC burr grinder, uniform grind distribution, travel-ready.", "long_desc": "Máy xay gọn nhẹ, tay quay công thái học lực xoay êm ái. Thích hợp mang theo đi dã ngoại, du lịch hoặc sử dụng mỗi ngày tại văn phòng làm việc.", "long_desc_en": "Lightweight and travel-ready manual grinder with ergonomic handle. Ideal for outdoor adventures, office breaks, and home brewing rituals.", "sale_price": "702.000 VND", "regular_price": "900.000 VND", "image": "assets/images/s54/products/may_xay_vbs02_5.jpg", "gallery": ["assets/images/s54/products/may_xay_vbs02_5.jpg", "assets/images/s54/products/may_xay_vbz01_5.jpg", "assets/images/s54/products/may_xay_vbz08_5.jpg", "assets/images/s54/products/may_xay_kmdj_hc.jpg"]}, {"id": 200012, "num_id": "12", "name": "Máy Xay Cà Phê Cầm Tay KMDJ-HC", "name_en": "KMDJ-HC Manual Coffee Grinder", "category": "Máy xay cà phê cầm tay", "category_en": "Manual Coffee Grinder", "short_desc": "40 mức điều chỉnh độ mịn, lõi gốm ceramic không sinh nhiệt, hộp bột thủy tinh trong suốt.", "short_desc_en": "40-level precise grind adjustment, high hardness ceramic burr, clear glass powder container.", "long_desc": "Trang bị lõi xay gốm cao cấp không làm nóng bột cà phê khi xay. Hộp chứa thủy tinh trong suốt sang trọng, 40 nấc chỉnh độ mịn linh hoạt cho mọi phương pháp pha.", "long_desc_en": "Equipped with ceramic conical burr preventing heat buildup and static cling. Transparent glass container with 40 precise grind settings for versatile brewing.", "sale_price": "350.000VND", "regular_price": "500.000 VND", "image": "assets/images/s54/products/may_xay_kmdj_hc.jpg", "gallery": ["assets/images/s54/products/may_xay_kmdj_hc.jpg", "assets/images/s54/products/may_xay_vbz01_5.jpg", "assets/images/s54/products/may_xay_vbz03_5.jpg", "assets/images/s54/products/may_xay_vbs02_5.jpg"]}];
 (function() {
     'use strict';
 
@@ -4766,18 +5195,194 @@ window.S54_PRODUCTS = [{"id": 200001, "num_id": "1", "name": "Combo 5 gói cà p
                 : 'Sản phẩm cà phê S54 Coffee nguyên chất thượng hạng, lưu giữ trọn vẹn hương vị mộc mạc của đất trời Tây Nguyên.');
         }
 
-        // 3. Update Gallery Images (Primary + Thumbnails)
-        const galleryImgs = document.querySelectorAll('.c-product-gallery img, .c-product-gallery__media-container img, [data-gallery] img');
-        galleryImgs.forEach(img => {
-            img.src = product.image;
-            img.srcset = product.image + ' 1x, ' + product.image + ' 2x';
-            img.alt = displayName;
-        });
+        // 3. Initialize S54 Ultra-Luxury Interactive Product Gallery
+        const galleryList = (Array.isArray(product.gallery) && product.gallery.length > 0)
+            ? product.gallery
+            : [product.image];
 
-        const galleryZooms = document.querySelectorAll('.c-product-gallery a.MagicZoom, [data-gallery="zoom"]');
-        galleryZooms.forEach(a => {
-            a.href = product.image;
-        });
+        let activeGalleryIdx = 0;
+
+        const mainImg = document.getElementById('s54-gallery-main-img');
+        const counterEl = document.getElementById('s54-gallery-counter');
+        const thumbsContainer = document.getElementById('s54-gallery-thumbs');
+        const prevBtn = document.getElementById('s54-gallery-prev');
+        const nextBtn = document.getElementById('s54-gallery-next');
+        const zoomBtn = document.getElementById('s54-gallery-zoom-btn');
+        const heroStage = document.getElementById('s54-gallery-hero-stage');
+
+        // Lightbox Elements
+        const lightbox = document.getElementById('s54-lightbox');
+        const lightboxImg = document.getElementById('s54-lightbox-img');
+        const lightboxClose = document.getElementById('s54-lightbox-close');
+        const lightboxBackdrop = document.getElementById('s54-lightbox-backdrop');
+        const lightboxPrev = document.getElementById('s54-lightbox-prev');
+        const lightboxNext = document.getElementById('s54-lightbox-next');
+        const lightboxCounter = document.getElementById('s54-lightbox-counter');
+        const lightboxTitle = document.getElementById('s54-lightbox-title');
+
+        function setGalleryIndex(idx, isSmooth) {
+            if (isSmooth === undefined) isSmooth = true;
+            if (idx < 0) idx = galleryList.length - 1;
+            if (idx >= galleryList.length) idx = 0;
+            activeGalleryIdx = idx;
+
+            const targetSrc = galleryList[activeGalleryIdx];
+
+            if (mainImg) {
+                if (isSmooth) {
+                    mainImg.style.opacity = '0.35';
+                    mainImg.style.transform = 'scale(0.97)';
+                    setTimeout(() => {
+                        mainImg.src = targetSrc;
+                        mainImg.alt = displayName + ' - Ảnh ' + (activeGalleryIdx + 1);
+                        mainImg.style.opacity = '1';
+                        mainImg.style.transform = 'scale(1)';
+                    }, 120);
+                } else {
+                    mainImg.src = targetSrc;
+                    mainImg.alt = displayName + ' - Ảnh ' + (activeGalleryIdx + 1);
+                    mainImg.style.opacity = '1';
+                    mainImg.style.transform = 'scale(1)';
+                }
+            }
+
+            if (counterEl) {
+                counterEl.textContent = (activeGalleryIdx + 1) + ' / ' + galleryList.length;
+                counterEl.style.display = galleryList.length > 1 ? 'block' : 'none';
+            }
+
+            if (thumbsContainer) {
+                const thumbs = thumbsContainer.querySelectorAll('.s54-gallery-thumb');
+                thumbs.forEach((th, i) => {
+                    if (i === activeGalleryIdx) {
+                        th.classList.add('is-active');
+                        th.setAttribute('aria-selected', 'true');
+                        try {
+                            th.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        } catch(e) {}
+                    } else {
+                        th.classList.remove('is-active');
+                        th.setAttribute('aria-selected', 'false');
+                    }
+                });
+            }
+
+            // Sync Lightbox if currently open
+            if (lightbox && lightbox.classList.contains('is-open')) {
+                if (lightboxImg) lightboxImg.src = targetSrc;
+                if (lightboxCounter) lightboxCounter.textContent = (activeGalleryIdx + 1) + ' / ' + galleryList.length;
+            }
+        }
+
+        // Render Thumbnails
+        if (thumbsContainer) {
+            thumbsContainer.innerHTML = '';
+            if (galleryList.length > 1) {
+                galleryList.forEach((src, idx) => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 's54-gallery-thumb' + (idx === 0 ? ' is-active' : '');
+                    btn.setAttribute('data-index', idx);
+                    btn.setAttribute('role', 'tab');
+                    btn.setAttribute('aria-label', (activeLang === 'en' ? 'View image ' : 'Xem hình ') + (idx + 1));
+                    btn.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+                    btn.innerHTML = `<img src="${src}" alt="${displayName} thumbnail ${idx + 1}" loading="lazy" />`;
+                    btn.addEventListener('click', () => setGalleryIndex(idx));
+                    btn.addEventListener('mouseenter', () => setGalleryIndex(idx));
+                    thumbsContainer.appendChild(btn);
+                });
+                thumbsContainer.style.display = 'flex';
+            } else {
+                thumbsContainer.style.display = 'none';
+            }
+        }
+
+        // Prev & Next Buttons
+        if (prevBtn) {
+            prevBtn.style.display = galleryList.length > 1 ? 'flex' : 'none';
+            prevBtn.onclick = (e) => {
+                e.preventDefault();
+                setGalleryIndex(activeGalleryIdx - 1);
+            };
+        }
+        if (nextBtn) {
+            nextBtn.style.display = galleryList.length > 1 ? 'flex' : 'none';
+            nextBtn.onclick = (e) => {
+                e.preventDefault();
+                setGalleryIndex(activeGalleryIdx + 1);
+            };
+        }
+
+        // Lightbox Functions
+        function openLightbox() {
+            if (!lightbox) return;
+            if (lightboxImg) lightboxImg.src = galleryList[activeGalleryIdx];
+            if (lightboxCounter) lightboxCounter.textContent = (activeGalleryIdx + 1) + ' / ' + galleryList.length;
+            if (lightboxTitle) lightboxTitle.textContent = displayName;
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        if (heroStage) heroStage.onclick = openLightbox;
+        if (zoomBtn) zoomBtn.onclick = (e) => { e.stopPropagation(); openLightbox(); };
+        if (lightboxClose) lightboxClose.onclick = closeLightbox;
+        if (lightboxBackdrop) lightboxBackdrop.onclick = closeLightbox;
+        if (lightboxPrev) lightboxPrev.onclick = (e) => { e.stopPropagation(); setGalleryIndex(activeGalleryIdx - 1); };
+        if (lightboxNext) lightboxNext.onclick = (e) => { e.stopPropagation(); setGalleryIndex(activeGalleryIdx + 1); };
+
+        // Keyboard navigation
+        if (!window._s54GalleryKeyBound) {
+            window._s54GalleryKeyBound = true;
+            window.addEventListener('keydown', (e) => {
+                const lb = document.getElementById('s54-lightbox');
+                if (lb && lb.classList.contains('is-open')) {
+                    if (e.key === 'Escape') {
+                        lb.classList.remove('is-open');
+                        document.body.style.overflow = '';
+                    }
+                    if (e.key === 'ArrowLeft') {
+                        const p = document.getElementById('s54-gallery-prev');
+                        if (p) p.click();
+                    }
+                    if (e.key === 'ArrowRight') {
+                        const n = document.getElementById('s54-gallery-next');
+                        if (n) n.click();
+                    }
+                }
+            });
+        }
+
+        // Touch Swipe on Main Stage
+        if (heroStage && !heroStage._s54SwipeBound) {
+            heroStage._s54SwipeBound = true;
+            let touchStartX = 0;
+            let touchEndX = 0;
+            heroStage.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            heroStage.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchEndX - touchStartX;
+                if (Math.abs(diff) > 40) {
+                    if (diff < 0) {
+                        setGalleryIndex(activeGalleryIdx + 1);
+                    } else {
+                        setGalleryIndex(activeGalleryIdx - 1);
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // Initialize First Image
+        setGalleryIndex(0, false);
 
         // 4. Update Prices (One-time and Subscription)
         const oneTimePriceEls = document.querySelectorAll('.o-subscription-options__option-price[data-product-money], .o-product-pricing__money, .o-product-thumbnail__price-sale');

@@ -15,12 +15,34 @@
         $images = collect([(object)['image_url' => $imgUrl]]);
     }
     
-    $firstImg = $images->first()->image_url;
-    if (!str_starts_with($firstImg, 'http') && !str_starts_with($firstImg, 'client-assets') && !str_starts_with($firstImg, 'assets')) {
-        $firstImg = asset('client-assets/' . ltrim($firstImg, '/'));
-    } elseif (!str_starts_with($firstImg, 'http')) {
-        $firstImg = asset($firstImg);
+    $galleryUrls = [];
+    foreach ($images as $img) {
+        $u = $img->image_url;
+        if (!str_starts_with($u, 'http') && !str_starts_with($u, 'client-assets') && !str_starts_with($u, 'assets')) {
+            $u = asset('client-assets/' . ltrim($u, '/'));
+        } elseif (!str_starts_with($u, 'http')) {
+            $u = asset($u);
+        }
+        $galleryUrls[] = $u;
     }
+    if (count($galleryUrls) === 1) {
+        $titleLower = mb_strtolower($title);
+        if (str_contains($titleLower, 'hòa tan') || str_contains($titleLower, 'instant') || str_contains($titleLower, 'combo')) {
+            $galleryUrls[] = asset('client-assets/images/s54/instant_3in1_1.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/instant_3in1_2.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/instant_3in1_3.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/instant_3in1_4.jpg');
+        } elseif (str_contains($titleLower, 'máy xay') || str_contains($titleLower, 'grinder')) {
+            $galleryUrls[] = asset('client-assets/images/s54/products/may_xay_vbz01_5.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/products/may_xay_vbz08_5.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/products/may_xay_vbz03_5.jpg');
+        } else {
+            $galleryUrls[] = asset('client-assets/images/s54/robusta_1.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/robusta_2.jpg');
+            $galleryUrls[] = asset('client-assets/images/s54/robusta_3.jpg');
+        }
+    }
+    $firstImg = $galleryUrls[0];
 @endphp
 
 @section('title', $title . ' — S54 COFFEE')
@@ -39,10 +61,36 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start;">
             
             {{-- Product Gallery --}}
-            <div>
-                <div style="background: #FFFFFF; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; margin-bottom: 16px;">
-                    <img id="s54-main-image" src="{{ $firstImg }}" alt="{{ $title }}" style="max-width: 100%; max-height: 400px; object-fit: contain;">
+            <div class="s54-product-gallery" style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="s54-gallery-hero" style="position: relative; width: 100%; height: 480px; background: #FAF6F1; border-radius: 16px; border: 1px solid rgba(47, 34, 26, 0.08); box-shadow: 0 4px 24px rgba(47, 34, 26, 0.05); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <div class="s54-gallery-tag" style="position: absolute; top: 18px; left: 18px; z-index: 5; background: #2F221A; color: #FAF6F1; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px;">
+                        <span>100% CHÍNH HÃNG • S54 COFFEE</span>
+                    </div>
+
+                    <div class="s54-gallery-hero-inner" id="s54-blade-hero" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 24px; cursor: pointer;">
+                        <img id="s54-main-image" src="{{ $firstImg }}" alt="{{ $title }}" style="max-width: 90%; max-height: 420px; object-fit: contain; transition: opacity 0.22s ease;">
+                    </div>
+
+                    @if(count($galleryUrls) > 1)
+                        <button type="button" class="s54-gallery-nav-btn prev" id="s54-blade-prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: 14px; z-index: 6; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.95); border: 1px solid rgba(47,34,26,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(47,34,26,0.12);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button type="button" class="s54-gallery-nav-btn next" id="s54-blade-next" style="position: absolute; top: 50%; transform: translateY(-50%); right: 14px; z-index: 6; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.95); border: 1px solid rgba(47,34,26,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(47,34,26,0.12);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                        <div class="s54-gallery-counter" id="s54-blade-counter" style="position: absolute; bottom: 16px; right: 16px; z-index: 5; background: rgba(47,34,26,0.82); color: #FAF6F1; font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600; padding: 4px 12px; border-radius: 12px;">1 / {{ count($galleryUrls) }}</div>
+                    @endif
                 </div>
+
+                @if(count($galleryUrls) > 1)
+                    <div class="s54-gallery-thumbs" id="s54-blade-thumbs" style="display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
+                        @foreach($galleryUrls as $idx => $gUrl)
+                            <button type="button" class="s54-gallery-thumb {{ $loop->first ? 'is-active' : '' }}" data-idx="{{ $idx }}" data-src="{{ $gUrl }}" style="width: 76px; height: 76px; border-radius: 12px; background: #FAF6F1; border: 2px solid {{ $loop->first ? '#2F221A' : 'transparent' }}; padding: 4px; cursor: pointer; overflow: hidden; box-sizing: border-box;">
+                                <img src="{{ $gUrl }}" alt="{{ $title }} - {{ $idx + 1 }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block;">
+                            </button>
+                        @endforeach
+                    </div>
+                @endif
             </div>
 
             {{-- Product Info & Purchase Form --}}
@@ -121,4 +169,55 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbs = document.querySelectorAll('#s54-blade-thumbs .s54-gallery-thumb');
+    const mainImg = document.getElementById('s54-main-image');
+    const counter = document.getElementById('s54-blade-counter');
+    const prevBtn = document.getElementById('s54-blade-prev');
+    const nextBtn = document.getElementById('s54-blade-next');
+    let curIdx = 0;
+
+    if (!thumbs.length || !mainImg) return;
+
+    function setIdx(idx) {
+        if (idx < 0) idx = thumbs.length - 1;
+        if (idx >= thumbs.length) idx = 0;
+        curIdx = idx;
+
+        const targetSrc = thumbs[curIdx].getAttribute('data-src');
+        mainImg.style.opacity = '0.35';
+        setTimeout(function() {
+            mainImg.src = targetSrc;
+            mainImg.style.opacity = '1';
+        }, 120);
+
+        thumbs.forEach(function(th, i) {
+            if (i === curIdx) {
+                th.classList.add('is-active');
+                th.style.borderColor = '#2F221A';
+            } else {
+                th.classList.remove('is-active');
+                th.style.borderColor = 'transparent';
+            }
+        });
+
+        if (counter) {
+            counter.textContent = (curIdx + 1) + ' / ' + thumbs.length;
+        }
+    }
+
+    thumbs.forEach(function(th, i) {
+        th.addEventListener('click', function() { setIdx(i); });
+        th.addEventListener('mouseenter', function() { setIdx(i); });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { setIdx(curIdx - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { setIdx(curIdx + 1); });
+});
+</script>
+@endpush
 @endsection
+

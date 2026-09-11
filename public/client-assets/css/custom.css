@@ -4149,3 +4149,454 @@ h2.s54-checkout-title {
 .o-subscription-options__option-badges {
     padding: 0 20px 14px 56px !important;
 }
+
+
+
+/* ==========================================================================
+   S54 ULTRA-LUXURY PRODUCT GALLERY & 2-COLUMN LAYOUT
+   ========================================================================== */
+
+/* Main Section: Rigid 2-Column Flex Row */
+.c-product-main {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 24px 24px 80px 24px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 48px !important;
+    box-sizing: border-box !important;
+}
+
+/* Left Column: Product Gallery */
+.s54-product-gallery,
+.c-product-main__gallery {
+    flex: 1 1 calc(54% - 24px) !important;
+    max-width: calc(54% - 24px) !important;
+    width: calc(54% - 24px) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+}
+
+/* Right Column: Product Details */
+.c-product-main__details {
+    flex: 1 1 calc(46% - 24px) !important;
+    max-width: calc(46% - 24px) !important;
+    width: calc(46% - 24px) !important;
+    background: #FAF6F1 !important;
+    border-radius: 16px !important;
+    padding: 36px 32px !important;
+    box-shadow: 0 4px 24px rgba(47, 34, 26, 0.05) !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 991px) {
+    .c-product-main {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        padding: 16px 16px 60px 16px !important;
+        gap: 32px !important;
+    }
+    .s54-product-gallery,
+    .c-product-main__gallery,
+    .c-product-main__details {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+/* Hide any legacy Keen-slider / Flickity buttons completely */
+.c-product-gallery__navigation,
+.c-product-gallery__previous,
+.c-product-gallery__next,
+.c-product-gallery__progress,
+[data-product-gallery-carousel-navigation] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* 1. Main Hero Stage */
+.s54-gallery-hero {
+    position: relative !important;
+    width: 100% !important;
+    height: 500px !important;
+    background: #FAF6F1 !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(47, 34, 26, 0.08) !important;
+    box-shadow: 0 4px 24px rgba(47, 34, 26, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    user-select: none !important;
+}
+
+@media (max-width: 767px) {
+    .s54-gallery-hero {
+        height: 380px !important;
+    }
+}
+
+/* Hero Badge Tag with Exact SVG Dimensions */
+.s54-gallery-tag {
+    position: absolute !important;
+    top: 18px !important;
+    left: 18px !important;
+    z-index: 5 !important;
+    background: #2F221A !important;
+    color: #FAF6F1 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    box-shadow: 0 2px 10px rgba(47, 34, 26, 0.2) !important;
+    pointer-events: none !important;
+}
+
+.s54-gallery-tag svg {
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    min-height: 13px !important;
+    max-width: 13px !important;
+    max-height: 13px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    color: #D68E1D !important;
+    fill: #D68E1D !important;
+}
+
+/* Zoom Trigger Button */
+.s54-gallery-zoom-action {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    z-index: 5 !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(47, 34, 26, 0.1) !important;
+    color: #2F221A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 10px rgba(47, 34, 26, 0.08) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.s54-gallery-zoom-action svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    display: block !important;
+}
+
+.s54-gallery-zoom-action:hover {
+    background: #2F221A !important;
+    color: #FAF6F1 !important;
+    transform: scale(1.08) !important;
+}
+
+/* Hero Stage Inner */
+.s54-gallery-hero-inner {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 24px !important;
+    cursor: zoom-in !important;
+    box-sizing: border-box !important;
+}
+
+#s54-gallery-main-img {
+    max-width: 90% !important;
+    max-height: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    display: block !important;
+    margin: auto !important;
+    box-shadow: 0 8px 30px rgba(47, 34, 26, 0.08) !important;
+    transition: opacity 0.22s ease-in-out, transform 0.28s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.s54-gallery-hero-inner:hover #s54-gallery-main-img {
+    transform: scale(1.035) !important;
+}
+
+/* Floating Navigation Buttons */
+.s54-gallery-nav-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 6 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(47, 34, 26, 0.1) !important;
+    color: #2F221A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 16px rgba(47, 34, 26, 0.12) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.s54-gallery-nav-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    display: block !important;
+}
+
+.s54-gallery-nav-btn.prev {
+    left: 14px !important;
+}
+
+.s54-gallery-nav-btn.next {
+    right: 14px !important;
+}
+
+.s54-gallery-nav-btn:hover {
+    background: #2F221A !important;
+    color: #FAF6F1 !important;
+    transform: translateY(-50%) scale(1.08) !important;
+}
+
+@media (max-width: 767px) {
+    .s54-gallery-nav-btn {
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* Counter Badge */
+.s54-gallery-counter {
+    position: absolute !important;
+    bottom: 16px !important;
+    right: 16px !important;
+    z-index: 5 !important;
+    background: rgba(47, 34, 26, 0.82) !important;
+    backdrop-filter: blur(4px) !important;
+    color: #FAF6F1 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    padding: 4px 12px !important;
+    border-radius: 12px !important;
+    letter-spacing: 0.5px !important;
+    pointer-events: none !important;
+}
+
+/* 2. Interactive Thumbnails Strip */
+.s54-gallery-thumbs {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    padding: 2px !important;
+}
+
+.s54-gallery-thumb {
+    width: 78px !important;
+    height: 78px !important;
+    border-radius: 12px !important;
+    background: #FAF6F1 !important;
+    border: 2px solid transparent !important;
+    padding: 4px !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+}
+
+.s54-gallery-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    display: block !important;
+}
+
+.s54-gallery-thumb:hover {
+    border-color: #D68E1D !important;
+    transform: translateY(-2px) !important;
+}
+
+.s54-gallery-thumb.is-active {
+    border-color: #2F221A !important;
+    box-shadow: 0 4px 14px rgba(47, 34, 26, 0.2) !important;
+    transform: translateY(-2px) !important;
+    background: #FFFFFF !important;
+}
+
+@media (max-width: 767px) {
+    .s54-gallery-thumbs {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        padding-bottom: 8px !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .s54-gallery-thumb {
+        width: 64px !important;
+        height: 64px !important;
+    }
+}
+
+/* 3. Fullscreen Lightbox Modal */
+.s54-lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+    background: rgba(15, 10, 8, 0.94) !important;
+    backdrop-filter: blur(12px) !important;
+    display: none;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0;
+    transition: opacity 0.25s ease !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.s54-lightbox.is-open {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+.s54-lightbox-backdrop {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    cursor: pointer !important;
+}
+
+.s54-lightbox-container {
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 92vw !important;
+    max-height: 90vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.s54-lightbox-close {
+    position: fixed !important;
+    top: 24px !important;
+    right: 24px !important;
+    z-index: 10 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #FAF6F1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.s54-lightbox-close:hover {
+    background: #D68E1D !important;
+    color: #1F1611 !important;
+    transform: scale(1.08) !important;
+}
+
+.s54-lightbox-stage {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 86vw !important;
+    max-height: 78vh !important;
+}
+
+#s54-lightbox-img {
+    max-width: 100% !important;
+    max-height: 78vh !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6) !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.s54-lightbox-nav {
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #FAF6F1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.s54-lightbox-nav.prev {
+    left: 24px !important;
+}
+
+.s54-lightbox-nav.next {
+    right: 24px !important;
+}
+
+.s54-lightbox-nav:hover {
+    background: #D68E1D !important;
+    color: #1F1611 !important;
+    transform: translateY(-50%) scale(1.08) !important;
+}
+
+.s54-lightbox-footer {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-top: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #FAF6F1 !important;
+    font-size: 13px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 6px 16px !important;
+    border-radius: 20px !important;
+}
+
+.s54-lightbox-counter {
+    font-weight: 700 !important;
+    color: #D68E1D !important;
+}
+
