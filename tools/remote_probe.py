@@ -6,9 +6,11 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-FTP_HOST = "203.205.31.252"
-FTP_USER = "u513776f0"
-FTP_PASS = "1~dzR0hkLJ0~tlgm"
+import os
+
+FTP_HOST = os.getenv("FTP_HOST", "203.205.31.252")
+FTP_USER = os.getenv("FTP_USER", "u513776f0")
+FTP_PASS = os.getenv("FTP_PASS", "P_eeon4WmEq5l%9k")
 
 def run_remote_php(code_str, filename="runner.php"):
     wrapped_code = f"""<?php
