@@ -210,20 +210,20 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .c-header__phone-link {
-    font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
+    gap: 7px !important;
     text-decoration: none !important;
     color: #FAF6F1 !important;
     font-size: 12.5px !important;
     font-weight: 600 !important;
-    background: rgba(229, 184, 105, 0.15) !important;
-    height: 38px !important;
-    padding: 0 14px !important;
-    border-radius: 20px !important;
-    border: 1px solid rgba(229, 184, 105, 0.35) !important;
+    background: rgba(214, 142, 29, 0.1) !important;
+    height: 32px !important;
+    padding: 0 12px !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(214, 142, 29, 0.3) !important;
     box-sizing: border-box !important;
     transition: all 0.2s ease !important;
     line-height: 1 !important;
@@ -236,15 +236,28 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     transform: translateY(-1px);
 }
 
+.c-header__phone-link svg {
+    width: 13px !important;
+    height: 13px !important;
+    max-width: 13px !important;
+    max-height: 13px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+}
+
+.c-header__phone-link:hover svg {
+    stroke: #FFFFFF !important;
+}
+
 .c-header__link.is-cart {
     position: relative !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 38px !important;
-    height: 38px !important;
-    background: rgba(229, 184, 105, 0.15) !important;
-    border: 1px solid rgba(229, 184, 105, 0.35) !important;
+    width: 34px !important;
+    height: 34px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-radius: 50% !important;
     cursor: pointer !important;
     padding: 0 !important;
@@ -261,8 +274,8 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 
 .c-header__icon.is-cart {
     stroke: #FAF6F1 !important;
-    width: 19px !important;
-    height: 19px !important;
+    width: 17px !important;
+    height: 17px !important;
     display: block !important;
     transition: stroke 0.2s ease !important;
 }
@@ -282,21 +295,24 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 
 .c-header__cart-count {
     position: absolute !important;
-    top: -4px !important;
+    top: -3px !important;
     right: -4px !important;
     background: #D68E1D !important;
     color: #FFFFFF !important;
-    font-size: 10px !important;
+    font-size: 9.5px !important;
     font-weight: 700 !important;
     border-radius: 50% !important;
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important;
-    border: 1.5px solid #2F221A !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+    border: 1.5px solid #241A14 !important;
     line-height: 1 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
 /* 4. Language Switcher on White Topbar */

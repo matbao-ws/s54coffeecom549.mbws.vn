@@ -7,7 +7,7 @@
         
         {{-- Mobile Hamburger Toggle --}}
         <button type="button" class="c-header__toggle is-mobile-only" id="s54-mobile-toggle" aria-label="Toggle Menu" style="background: none; border: none; cursor: pointer; padding: 6px; display: none; align-items: center; justify-content: center;">
-            <svg fill="none" viewBox="0 0 24 24" width="24" height="24" stroke="#FAF6F1" stroke-width="2.2" stroke-linecap="round">
+            <svg fill="none" viewBox="0 0 24 24" width="20" height="20" stroke="#FAF6F1" stroke-width="2.2" stroke-linecap="round" style="width: 20px !important; height: 20px !important; max-width: 20px !important; max-height: 20px !important; display: block; flex-shrink: 0;">
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <line x1="3" y1="12" x2="21" y2="12"/>
                 <line x1="3" y1="18" x2="21" y2="18"/>
@@ -48,10 +48,13 @@
         </nav>
 
         {{-- Right Actions: Phone Hotline, Lang Switch, Cart --}}
-        <ul class="c-header__additional" style="display: flex; align-items: center; gap: 14px; list-style: none; margin: 0; padding: 0;">
+        <ul class="c-header__additional" style="display: flex; align-items: center; gap: 12px; list-style: none; margin: 0; padding: 0;">
             <li class="c-header__additional-item is-desktop-only" style="list-style: none;">
-                <a href="tel:0974933907" class="c-header__phone-link" style="color: #FAF6F1; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 6px; font-size: 13px;">
-                    <span>📞</span> <span>0974.933.907</span>
+                <a href="tel:0974933907" class="c-header__phone-link" style="color: #FAF6F1; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; height: 32px; padding: 0 12px; border-radius: 16px; background: rgba(214, 142, 29, 0.1); border: 1px solid rgba(214, 142, 29, 0.3); transition: all 0.2s ease;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D68E1D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 13px !important; height: 13px !important; max-width: 13px !important; max-height: 13px !important; display: inline-block !important; flex-shrink: 0;">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>0974.933.907</span>
                 </a>
             </li>
             <li class="c-header__additional-item is-mobile-only" style="list-style: none;">
@@ -62,13 +65,12 @@
                 </div>
             </li>
             <li class="c-header__additional-item" style="list-style: none;">
-                <button type="button" class="c-header__link is-cart" id="s54-cart-trigger" aria-label="Cart" style="background: none; border: none; cursor: pointer; position: relative; padding: 6px; display: flex; align-items: center; justify-content: center;">
-                    <svg fill="none" viewBox="0 0 24 24" width="22" height="22" stroke="#FAF6F1" stroke-width="1.8">
-                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                        <line x1="3" y1="6" x2="21" y2="6"/>
-                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                <button type="button" class="c-header__link is-cart" id="s54-cart-trigger" aria-label="Cart" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; position: relative; padding: 0; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="c-header__icon is-cart" style="width: 17px !important; height: 17px !important; max-width: 17px !important; max-height: 17px !important; display: block !important; flex-shrink: 0;">
+                        <path d="M16 11V7a4 4 0 0 0-8 0v4"/>
+                        <path d="M5 9h14l1 12H4L5 9z"/>
                     </svg>
-                    <span class="c-header__cart-count" id="s54-cart-badge" style="position: absolute; top: -2px; right: -4px; background-color: #D68E1D; color: #FFFFFF; font-size: 10px; font-weight: 800; border-radius: 10px; padding: 1px 6px; min-width: 16px; text-align: center;">0</span>
+                    <span class="c-header__cart-count" id="s54-cart-badge" style="position: absolute; top: -3px; right: -4px; background-color: #D68E1D; color: #FFFFFF; font-size: 9.5px; font-weight: 700; border-radius: 50%; width: 16px; height: 16px; min-width: 16px; display: flex; align-items: center; justify-content: center; border: 1.5px solid #241A14; line-height: 1; padding: 0; box-sizing: border-box;">0</span>
                 </button>
             </li>
         </ul>
