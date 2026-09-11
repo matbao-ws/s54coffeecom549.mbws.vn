@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="{{ asset('assets/css/layouts.critical.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/layouts.theme.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=1789133000') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=1789143000') }}">
 
 <style id="s54-direct-typography-override">
 /* S54 HARMONIOUS INTER TYPOGRAPHY SYSTEM */

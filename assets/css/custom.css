@@ -4600,3 +4600,97 @@ h2.s54-checkout-title {
     color: #D68E1D !important;
 }
 
+/* ==========================================================================
+   S54 ULTRA-LUXURY PRODUCT STAR REVIEWS BAR (PIXEL-PERFECT)
+   ========================================================================== */
+.s54-product-reviews-bar {
+    margin: 4px 0 16px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.s54-rating-anchor {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    color: #2F221A !important;
+    cursor: pointer !important;
+    padding: 3px 0 !important;
+    border-radius: 4px !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.s54-rating-anchor:hover {
+    opacity: 0.85 !important;
+}
+
+.s54-rating-stars {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+}
+
+.s54-star-icon {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    fill: #D68E1D !important;
+    color: #D68E1D !important;
+    filter: drop-shadow(0 1px 1.5px rgba(214, 142, 29, 0.25)) !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.s54-rating-score {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #2F221A !important;
+    letter-spacing: normal !important;
+    line-height: 1 !important;
+    margin-left: 2px !important;
+}
+
+.s54-rating-sep {
+    color: #A3968C !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    user-select: none !important;
+}
+
+.s54-rating-count {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    color: #6E5E53 !important;
+    letter-spacing: normal !important;
+    line-height: 1 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px !important;
+    text-decoration-color: rgba(110, 94, 83, 0.45) !important;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease !important;
+}
+
+.s54-rating-anchor:hover .s54-rating-count {
+    color: #D68E1D !important;
+    text-decoration-color: #D68E1D !important;
+}
+
+/* Global Reset for all legacy Okendo review widgets across cards & templates */
+.oke-sr-wrapper,
+.oke-sr-wrapper span,
+.oke-sr-wrapper > span,
+.product-item__box .oke-sr-wrapper > span,
+.oke-sr-count,
+.oke-sr-count-number,
+.oke-sr-total-text {
+    letter-spacing: normal !important;
+    text-transform: none !important;
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1.4 !important;
+}
+
+
