@@ -23,7 +23,12 @@ class PageController extends Controller
             ->first();
 
         if ($page) {
-            return view('client.pages.show', compact('page'));
+            $title = is_array($page->title) ? ($page->title[$locale] ?? $page->title['vi'] ?? '') : ($page->getTranslation('title', $locale, false) ?: $page->title);
+            $metaTitle = is_array($page->meta_title) ? ($page->meta_title[$locale] ?? $page->meta_title['vi'] ?? $title) : ($page->getTranslation('meta_title', $locale, false) ?: $title);
+            $metaDescription = is_array($page->meta_description) ? ($page->meta_description[$locale] ?? $page->meta_description['vi'] ?? '') : ($page->getTranslation('meta_description', $locale, false) ?: '');
+            $html = is_array($page->published_html) ? ($page->published_html[$locale] ?? $page->published_html['vi'] ?? '') : ($page->getTranslation('published_html', $locale, false) ?: $page->published_html);
+
+            return view('client.pages.show', compact('page', 'title', 'metaTitle', 'metaDescription', 'html'));
         }
 
         abort(404);

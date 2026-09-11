@@ -17,7 +17,7 @@
         {{-- Brand Logo --}}
         <div class="c-header__brand" style="display: flex; align-items: center;">
             <a href="{{ route('client.home', ['locale' => app()->getLocale()]) }}" class="c-header__logo-link" style="text-decoration: none; display: inline-flex; align-items: center;">
-                <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px, 3vw, 28px); font-weight: 700; color: #FAF6F1; letter-spacing: 1.5px; text-transform: uppercase;">S54 COFFEE</span>
+                <span style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(22px, 3vw, 28px); font-weight: 700; color: #FAF6F1; letter-spacing: 1.5px; text-transform: uppercase;">S54 COFFEE</span>
             </a>
         </div>
 
@@ -54,8 +54,8 @@
                     <span>📞</span> <span>0974.933.907</span>
                 </a>
             </li>
-            <li class="c-header__additional-item" style="list-style: none;">
-                <div class="s54-lang-switch" style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; color: #FAF6F1;">
+            <li class="c-header__additional-item is-mobile-only" style="list-style: none;">
+                <div class="s54-lang-switch s54-mobile-lang-pill" style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; color: #FAF6F1;">
                     <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; padding: 2px 5px; border-radius: 3px;">VI</a>
                     <span style="opacity: 0.4;">|</span>
                     <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; padding: 2px 5px; border-radius: 3px;">EN</a>
@@ -78,7 +78,7 @@
     <div class="s54-mobile-overlay" id="s54-mobile-overlay">
         <div class="s54-mobile-drawer" id="s54-mobile-drawer">
             <div class="s54-mobile-drawer__header">
-                <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 700; color: #FAF6F1; letter-spacing: 1px;">S54 COFFEE</span>
+                <span style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; color: #FAF6F1; letter-spacing: 1px;">S54 COFFEE</span>
                 <button type="button" id="s54-mobile-close" aria-label="Close Menu" style="background: none; border: none; color: #FAF6F1; font-size: 24px; cursor: pointer; padding: 4px 8px; line-height: 1;">✕</button>
             </div>
 

@@ -8,7 +8,7 @@
 
 @section('content')
 <section style="background-color: #2F221A; color: #FAF6F1; padding: 60px 20px 40px; text-align: center;">
-    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; color: #FAF6F1;">
+    <h1 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; color: #FAF6F1;">
         {{ $locale === 'vi' ? 'Cẩm Nang & Câu Chuyện Cà Phê' : 'Coffee Journal & Heritage' }}
     </h1>
     <p style="color: #D6C7BC; font-size: 15px; max-width: 600px; margin: 0 auto;">
@@ -37,7 +37,7 @@
                     <div style="padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
                             <span style="font-size: 11.5px; font-weight: 700; color: #D68E1D; text-transform: uppercase;">{{ $post->published_at?->format('d/m/Y') ?? now()->format('d/m/Y') }}</span>
-                            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; margin: 8px 0 12px; line-height: 1.3;">
+                            <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; margin: 8px 0 12px; line-height: 1.3;">
                                 <a href="{{ route('client.blog.show', ['locale' => $locale, 'slug' => $post->slug]) }}" style="color: #2F221A; text-decoration: none;">
                                     {{ $pTitle }}
                                 </a>

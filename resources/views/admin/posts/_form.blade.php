@@ -166,7 +166,7 @@
                 <h4 class="card-title mb-7">{{ __('admin.posts.sections.thumbnail') }}</h4>
                 
                 <!-- Hidden file input for image select -->
-                <input type="file" name="image_file" id="post_image_file" class="d-none" accept="image/*" data-media-folder="posts">
+                <input type="file" name="image_file" id="post_image_file" class="d-none" accept="image/*" data-no-media-picker="true" data-media-folder="posts">
                 
                 <!-- Styled image preview area -->
                 <div id="post_image_preview_container" class="position-relative text-center border border-2 border-dashed rounded p-3 mb-3 cursor-pointer d-flex flex-column align-items-center justify-content-center bg-light" 

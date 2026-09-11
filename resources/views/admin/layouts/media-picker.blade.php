@@ -81,7 +81,7 @@
         let nextCursor = null;
 
         const inputFolder = (input) => input.dataset.mediaFolder || ({ image_file: 'general', avatar_file: 'avatars' }[input.name] || 'general');
-        const selectedField = (input) => input.dataset.mediaSelectedField || (input.name === 'avatar_file' ? 'avatar_url' : 'image_url');
+        const selectedField = (input) => input.dataset.mediaSelectedField || (input.name === 'avatar_file' ? 'avatar_url' : ((input.name === 'icon_file' || input.id === 'icon_file' || input.id === 'icon_file_media' || input.dataset.mediaSelectedField === 'icon') ? 'icon' : 'image_url'));
 
         function showError(message) {
             error.textContent = message;
@@ -192,14 +192,45 @@
             if (ids[1]) document.getElementById(ids[1])?.classList.add('d-none');
             if (input.id === 'image_file') document.getElementById('imagePreviewContainer')?.style.setProperty('display', 'block');
             if (input.id === 'quick_image_file') document.getElementById('quickImagePreviewWrap')?.classList.remove('d-none');
+
+            // Handle Category Icon Media Selection
+            if (input.id === 'icon_file' || input.name === 'icon_file' || input.id === 'icon_file_media' || input.dataset.mediaSelectedField === 'icon') {
+                const iconPreviewImg = document.getElementById('iconPreviewImg');
+                const iconPreviewEmoji = document.getElementById('iconPreviewEmoji');
+                const iconInput = document.getElementById('icon');
+                if (iconPreviewImg) {
+                    iconPreviewImg.src = event.detail.url;
+                    iconPreviewImg.classList.remove('d-none');
+                }
+                if (iconPreviewEmoji) iconPreviewEmoji.classList.add('d-none');
+                if (iconInput) {
+                    iconInput.value = event.detail.url;
+                    iconInput.dispatchEvent(new Event('input', { bubbles: true }));
+                    iconInput.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            }
+
         });
+
+        
+        window.__triggerMediaPickerForInput = function(targetInput) {
+            if (!targetInput) return;
+            activeInput = targetInput;
+            folder.value = inputFolder(targetInput);
+            cursors = [null];
+            pageIndex = 0;
+            loadResources();
+            modal.show();
+        };
 
         document.addEventListener('click', function (event) {
             let input = event.target.closest('input[type="file"][accept*="image"]');
+            if (input && (input.dataset.noMediaPicker === 'true' || input.hasAttribute('data-no-media-picker'))) return;
             if (!input) {
                 const label = event.target.closest('label[for]');
                 input = label ? document.getElementById(label.htmlFor) : null;
             }
+            if (input && (input.dataset.noMediaPicker === 'true' || input.hasAttribute('data-no-media-picker'))) return;
             if (!input || input.id === 'adminMediaPickerUpload' || input.closest('#adminMediaPicker')) return;
             if (input.type !== 'file' || !input.accept.includes('image')) return;
             event.preventDefault();

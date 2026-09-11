@@ -1,11 +1,11 @@
 /* ==========================================================================
    S54 COFFEE — Master Luxury Storefront Stylesheet
-   Crafted with: Cormorant Garamond + Plus Jakarta Sans
+   Crafted with: Modern Sans-Serif Inter
    Design System: Luxury Artisanal Heritage, Pixel-Perfect Layout
    ========================================================================== */
 
 /* 1. Google Web Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* 2. Base & Typography */
 html {
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2F221A;
@@ -35,14 +35,14 @@ h1, h2, h3, h4, h5, h6,
 .c-featured-collections__header-title,
 .c-product-main__title,
 .c-article-feed__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: #2F221A;
 }
 
 p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__description p {
-    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     color: #4A3E36;
     line-height: 1.65;
     font-size: 15px;
@@ -81,7 +81,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     color: #2F221A !important;
     text-decoration: none !important;
     font-weight: 600 !important;
-    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     transition: color 0.2s ease !important;
 }
 
@@ -139,7 +139,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .c-main-menu__link.is-level-1 {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     color: #FAF6F1 !important;
     text-decoration: none !important;
     font-size: 13.5px !important;
@@ -210,7 +210,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .c-header__phone-link {
-    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -317,7 +317,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     border: none;
     color: #4A3528;
     cursor: pointer;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 11px;
     font-weight: 600;
     padding: 3px 8px;
@@ -461,7 +461,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     }
 
     .c-hero-banner__title.o-heading--1 {
-        font-family: 'Cormorant Garamond', Georgia, serif !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: clamp(36px, 8vw, 52px) !important;
         line-height: 1.05 !important;
         font-weight: 600 !important;
@@ -473,7 +473,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     }
 
     .c-hero-banner__subtitle {
-        font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+        font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: 14.5px !important;
         line-height: 1.5 !important;
         font-weight: 500 !important;
@@ -492,7 +492,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
         color: #2F221A !important;
         padding: 13px 26px !important;
         border-radius: 2px !important;
-        font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+        font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: 12px !important;
         font-weight: 700 !important;
         letter-spacing: 1.5px !important;
@@ -554,7 +554,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     }
 
     .c-hero-banner__title.o-heading--1 {
-        font-family: 'Cormorant Garamond', Georgia, serif !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: clamp(40px, 4.4vw, 68px) !important;
         line-height: 1.05 !important;
         font-weight: 500 !important;
@@ -566,7 +566,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     }
 
     .c-hero-banner__subtitle {
-        font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+        font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: clamp(14.5px, 1.05vw, 16px) !important;
         line-height: 1.55 !important;
         font-weight: 400 !important;
@@ -584,7 +584,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
         color: #FAF6F1 !important;
         padding: 13px 26px !important;
         border-radius: 2px !important;
-        font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+        font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: 12px !important;
         font-weight: 700 !important;
         letter-spacing: 2px !important;
@@ -648,7 +648,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .o-product-thumbnail__title {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-weight: 600;
     font-size: 15px;
     color: #2F221A;
@@ -656,7 +656,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .o-product-thumbnail__price {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-weight: 700;
     color: #D68E1D;
     font-size: 16px;
@@ -680,7 +680,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     border: none !important;
     border-radius: 4px;
     padding: 12px 28px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 1px;
@@ -768,7 +768,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .c-cart-drawer__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 26px !important;
     font-weight: 700 !important;
     line-height: 1 !important;
@@ -810,7 +810,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .c-cart-drawer__free-shipping-text {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 13px !important;
     font-weight: 600 !important;
     color: #2F221A !important;
@@ -879,7 +879,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
 }
 
 .c-cart-drawer__item-title {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     color: #2F221A !important;
@@ -962,7 +962,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     justify-content: space-between !important;
     align-items: center !important;
     font-size: 15px !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-weight: 600 !important;
     margin-bottom: 16px !important;
     color: #2F221A !important;
@@ -981,7 +981,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     padding: 16px !important;
     text-align: center !important;
     border: none !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: 1.5px !important;
     font-size: 13.5px !important;
@@ -1009,7 +1009,7 @@ p, .o-paragraph--1, .c-text-and-image__text-paragraph, .c-product-carousel__desc
     color: #FFFFFF;
     padding: 14px 28px;
     border-radius: 40px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-weight: 600;
     font-size: 13px;
     letter-spacing: 0.5px;
@@ -1226,7 +1226,7 @@ md-footer-selector__form {
 }
 
 .c-featured-video__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(32px, 3.6vw, 48px) !important;
     line-height: 1.1 !important;
     font-weight: 500 !important;
@@ -1236,7 +1236,7 @@ md-footer-selector__form {
 }
 
 .c-featured-video__desc {
-    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 15px !important;
     line-height: 1.6 !important;
     color: #5C4A3E !important;
@@ -1252,7 +1252,7 @@ md-footer-selector__form {
     color: #FAF6F1 !important;
     padding: 13px 26px !important;
     border-radius: 2px !important;
-    font-family: 'Be Vietnam Pro', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12px !important;
     font-weight: 700 !important;
     letter-spacing: 2px !important;
@@ -1441,7 +1441,7 @@ md-footer-selector__form {
 }
 
 .s54-footer__company-name {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     letter-spacing: 0.8px !important;
@@ -1451,7 +1451,7 @@ md-footer-selector__form {
 }
 
 .s54-footer__brand-tagline {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 13px !important;
     line-height: 1.6 !important;
     color: #BDB2A7 !important;
@@ -1497,7 +1497,7 @@ md-footer-selector__form {
 /* Headings */
 .dummy-footer-heading {
 
-    font-family: 'Cormorant Garamond', serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 22px !important;
     font-weight: 600 !important;
     color: #FFFFFF !important;
@@ -1528,7 +1528,7 @@ md-footer-selector__form {
 }
 
 .s54-footer__links a {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 13px !important;
     color: #D8CEBE !important;
     text-decoration: none !important;
@@ -1543,7 +1543,7 @@ md-footer-selector__form {
 
 /* Newsletter Col */
 .s54-footer__newsletter-desc {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 13px !important;
     line-height: 1.6 !important;
     color: #BDB2A7 !important;
@@ -1576,7 +1576,7 @@ md-footer-selector__form {
     border: none !important;
     padding: 12px 16px !important;
     color: #FFFFFF !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 13px !important;
     outline: none !important;
 }
@@ -1729,7 +1729,7 @@ h1,
 .s54-hero-title,
 .c-hero-banner__title,
 .c-hero-banner__title span {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 38px !important;
     line-height: 1.1 !important;
     font-weight: 700 !important;
@@ -1771,7 +1771,7 @@ h2,
 .c-product-main__title,
 .c-article-feed__title,
 .c-article-feed__title span {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 32px !important;
     line-height: 1.2 !important;
     font-weight: 600 !important;
@@ -1807,7 +1807,7 @@ h2,
 h3,
 .o-heading--3,
 .c-featured-collections__tab-title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 22px !important;
     line-height: 1.3 !important;
     font-weight: 600 !important;
@@ -1832,7 +1832,7 @@ h4,
 .c-article-feed__card-title,
 .dummy-footer-heading {
 
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 20px !important;
     line-height: 1.35 !important;
     font-weight: 600 !important;
@@ -1856,7 +1856,7 @@ h5, h6,
 .o-heading--6,
 .o-product-thumbnail__title,
 .c-product-carousel__product-title {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 15px !important;
     line-height: 1.4 !important;
     font-weight: 600 !important;
@@ -1882,7 +1882,7 @@ h1,
 .s54-hero-title,
 .c-hero-banner__title,
 .c-hero-banner__title span {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(40px, 5.2vw, 68px) !important;
     line-height: 1.1 !important;
     font-weight: 700 !important;
@@ -1913,7 +1913,7 @@ h2,
 .c-product-main__title,
 .c-article-feed__title,
 .c-article-feed__title span {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(32px, 4vw, 56px) !important;
     line-height: 1.15 !important;
     font-weight: 600 !important;
@@ -1927,7 +1927,7 @@ h2,
 h3,
 .o-heading--3,
 .c-featured-collections__tab-title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(24px, 2.8vw, 36px) !important;
     line-height: 1.25 !important;
     font-weight: 600 !important;
@@ -1943,7 +1943,7 @@ h4,
 .c-article-feed__card-title,
 .dummy-footer-heading {
 
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(20px, 2vw, 26px) !important;
     line-height: 1.35 !important;
     font-weight: 600 !important;
@@ -1956,7 +1956,7 @@ h5, h6,
 .o-heading--6,
 .o-product-thumbnail__title,
 .c-product-carousel__product-title {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(14px, 1.2vw, 16px) !important;
     line-height: 1.4 !important;
     font-weight: 600 !important;
@@ -1981,7 +1981,7 @@ h1,
 .o-heading--1,
 .s54-hero-title,
 .c-hero-banner__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(40px, 5.2vw, 68px) !important;
     line-height: 1.1 !important;
     font-weight: 700 !important;
@@ -2002,7 +2002,7 @@ h2,
 .c-featured-video__title,
 .c-product-main__title,
 .c-article-feed__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(32px, 4vw, 56px) !important;
     line-height: 1.15 !important;
     font-weight: 600 !important;
@@ -2018,7 +2018,7 @@ h3,
 .c-product-carousel__title,
 .c-featured-collections__header-title,
 .c-featured-collections__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(24px, 2.8vw, 36px) !important;
     line-height: 1.25 !important;
     font-weight: 600 !important;
@@ -2033,7 +2033,7 @@ h4,
 .o-heading--4,
 .c-article-feed__card-title,
 .c-product-carousel__product-title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(20px, 2vw, 26px) !important;
     line-height: 1.35 !important;
     font-weight: 600 !important;
@@ -2045,7 +2045,7 @@ h5, h6,
 .o-heading--5,
 .o-heading--6,
 .o-product-thumbnail__title {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: clamp(14px, 1.2vw, 16px) !important;
     line-height: 1.4 !important;
     font-weight: 600 !important;
@@ -2154,7 +2154,7 @@ h5, h6,
 }
 
 .s54-coll-hero__title {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 52px !important;
     font-weight: 700 !important;
     color: #FFFFFF !important;
@@ -2164,7 +2164,7 @@ h5, h6,
 }
 
 .s54-coll-hero__subtitle {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 15.5px !important;
     line-height: 1.65 !important;
     color: #FAF5EE !important;
@@ -2269,7 +2269,7 @@ h5, h6,
     border: 1px solid rgba(214, 142, 29, 0.45);
     border-radius: 30px;
     color: #F4C472;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 11.5px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -2287,7 +2287,7 @@ h5, h6,
 }
 
 .s54-page-hero__title {
-    font-family: 'Cormorant Garamond', serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 54px !important;
     font-weight: 700 !important;
     line-height: 1.15 !important;
@@ -2298,7 +2298,7 @@ h5, h6,
 }
 
 .s54-page-hero__subtitle {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 1.7 !important;
@@ -2322,7 +2322,7 @@ h5, h6,
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 6px;
     color: #FAF8F5;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: 500;
     backdrop-filter: blur(10px);
@@ -2673,7 +2673,7 @@ h5, h6,
     margin: 0 auto 8px auto !important;
     background-color: #D68E1D !important;
     color: #FFFFFF !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 10.5px !important;
     font-weight: 700 !important;
     letter-spacing: 0.8px !important;
@@ -2687,7 +2687,7 @@ h5, h6,
 
 /* 4. Title - Uniform 2-Line Alignment & Brand Color On Hover */
 .o-product-thumbnail__title {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 14.5px !important;
     font-weight: 700 !important;
     line-height: 1.35 !important;
@@ -2746,7 +2746,7 @@ h5, h6,
 
 .oke-sr-count,
 .o-product-thumbnail__star-reviews span {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12px !important;
     font-weight: 600 !important;
     color: #2F221A !important;
@@ -2758,7 +2758,7 @@ h5, h6,
 .o-product-thumbnail:hover .o-product-thumbnail__excerpt,
 .o-product-thumbnail.is-hovered .o-product-thumbnail__excerpt,
 .o-product-thumbnail:hover.quickadd-disabled .o-product-thumbnail__excerpt {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 12.5px !important;
     line-height: 1.4 !important;
     color: #5C4A3E !important;
@@ -2804,7 +2804,7 @@ h5, h6,
 .o-product-thumbnail__price,
 .o-product-thumbnail:hover .o-product-thumbnail__price,
 .o-product-thumbnail.is-hovered .o-product-thumbnail__price {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2873,7 +2873,7 @@ h5, h6,
     border: 1px solid #2F221A !important;
     border-radius: 6px !important;
     padding: 10px 20px !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 11px !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
@@ -2905,39 +2905,7 @@ h5, h6,
     transform: translateY(-2px) !important;
 }
 
-/* Perfect Mobile Responsive Header & Topbar (No Overlap) */
-@media (max-width: 767px) {
-    .c-header__topbar {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 5px 12px !important;
-        gap: 8px !important;
-        flex-wrap: nowrap !important;
-        overflow: hidden !important;
-    }
-    .c-header__topbar-messages {
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-        overflow: hidden !important;
-    }
-    .c-header__topbar-message {
-        font-size: 10.5px !important;
-        display: block !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-    }
-    .c-lang-switcher--header {
-        flex-shrink: 0 !important;
-        padding: 2px 5px !important;
-        margin-left: 4px !important;
-    }
-    .c-lang-btn {
-        padding: 2px 4px !important;
-        font-size: 10px !important;
-    }
-}
+/* Mobile topbar and header rules are consolidated in Master Responsive Section below */
 
 /* Mobile Drawer Language Switcher */
 .c-lang-switcher--mobile {
@@ -2982,7 +2950,7 @@ h5, h6,
 }
 .s54-footer__heading,
 h4.s54-footer__heading {
-    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
     font-size: 22px !important;
     line-height: 1.3 !important;
     font-weight: 700 !important;
@@ -3103,3 +3071,343 @@ h4.s54-footer__heading {
     display: block !important;
     margin: 0 auto !important;
 }
+
+/* ==========================================================================
+   MASTER S54 UI PERFECTION FIXES (100% BULLETPROOF)
+   ========================================================================== */
+
+/* 1. Reset List Style & Bullets on all Menu & Header elements */
+.c-main-menu,
+ul.c-main-menu,
+.c-main-menu__list,
+.c-header__additional,
+ul.c-header__additional,
+.s54-mobile-drawer ul,
+.s54-mobile-drawer li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.c-main-menu li,
+.c-main-menu__item,
+.c-header__additional li,
+.c-header__additional-item {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+}
+
+.c-main-menu__link {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: #FAF6F1 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    padding: 8px 12px !important;
+    position: relative !important;
+    transition: color 0.25s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.c-main-menu__link:hover,
+.c-main-menu__item.is-active .c-main-menu__link {
+    color: #D68E1D !important;
+}
+
+.c-main-menu__link:after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 2px !important;
+    left: 12px !important;
+    right: 12px !important;
+    height: 2px !important;
+    background-color: #D68E1D !important;
+    transform: scaleX(0) !important;
+    transform-origin: center !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.c-main-menu__link:hover:after,
+.c-main-menu__item.is-active .c-main-menu__link:after {
+    transform: scaleX(1) !important;
+}
+
+/* 2. High-Contrast Typography in Dark Containers, Footers, and Heroes */
+.c-footer,
+.c-footer h1, .c-footer h2, .c-footer h3, .c-footer h4, .c-footer h5, .c-footer h6,
+.s54-footer,
+.s54-footer h1, .s54-footer h2, .s54-footer h3, .s54-footer h4, .s54-footer h5, .s54-footer h6,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+    color: #FFFFFF !important;
+}
+
+.c-footer p, .s54-footer p, footer p,
+.c-footer li, .s54-footer li, footer li,
+.c-footer span, .s54-footer span, footer span {
+    color: #E5DDD5 !important;
+}
+
+.c-footer a, .s54-footer a, footer a {
+    color: #BAADA1 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.c-footer a:hover, .s54-footer a:hover, footer a:hover {
+    color: #D68E1D !important;
+}
+
+.s54-page-hero,
+.s54-page-hero h1, .s54-page-hero h2, .s54-page-hero h3,
+.s54-page-hero p,
+.s54-coll-hero h1, .s54-coll-hero p {
+    color: #FFFFFF !important;
+}
+
+/* 3. Sticky Header Clearance & Scroll Margins */
+.c-header {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #2F221A !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+section, [id] {
+    scroll-margin-top: 100px !important;
+}
+
+/* 4. Responsive Mobile Topbar & Header */
+@media (max-width: 1023px) {
+    .is-desktop-only {
+        display: none !important;
+    }
+    .c-header__toggle,
+    .is-mobile-only {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .c-header__wrapper {
+        padding: 10px 16px !important;
+        gap: 10px !important;
+    }
+    .c-header__brand .c-header__logo-link span {
+        font-size: 22px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .is-mobile-only,
+    .c-header__toggle,
+    .s54-mobile-drawer,
+    .s54-mobile-overlay {
+        display: none !important;
+    }
+    .is-desktop-only {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .c-header__topbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 7px 14px !important;
+        min-height: 34px !important;
+        background-color: #241A14 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .c-header__topbar-messages {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+    }
+    .c-header__topbar-message {
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.3px !important;
+        color: #FAF6F1 !important;
+        text-align: center !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        display: inline-block !important;
+        line-height: 1.35 !important;
+        text-decoration: none !important;
+        margin: 0 auto !important;
+    }
+    /* Hide topbar language switcher on mobile to eliminate clutter and truncation */
+    .c-lang-switcher--header {
+        display: none !important;
+    }
+    .c-header__phone-link {
+        display: none !important;
+    }
+    
+    /* Main Header Bar on Mobile */
+    .c-header__inner {
+        padding: 10px 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+        background-color: #2F221A !important;
+    }
+    .c-header__logo img {
+        height: 32px !important;
+        width: auto !important;
+        max-width: 140px !important;
+        object-fit: contain !important;
+    }
+    .c-header__additional {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+    /* Header language toggle pill for quick 1-tap mobile access */
+    .s54-mobile-lang-pill {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 2px !important;
+        padding: 3px 8px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.16) !important;
+        border-radius: 12px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+    }
+    .s54-mobile-lang-pill .c-lang-btn {
+        padding: 2px 3px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: rgba(250, 246, 241, 0.65) !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        cursor: pointer !important;
+        line-height: 1 !important;
+        border-radius: 2px !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    }
+    .s54-mobile-lang-pill .c-lang-btn.is-active {
+        color: #D68E1D !important;
+        background: none !important;
+        box-shadow: none !important;
+        font-weight: 800 !important;
+    }
+    .s54-lang-sep {
+        color: rgba(255, 255, 255, 0.25) !important;
+        font-size: 10px !important;
+        user-select: none !important;
+    }
+}
+@media (min-width: 768px) {
+    .s54-mobile-lang-pill {
+        display: none !important;
+    }
+    .c-lang-switcher--header {
+        display: inline-flex !important;
+    }
+}
+
+/* 5. Mobile Slide-out Drawer Styles */
+.s54-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.s54-mobile-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.s54-mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background: #241A14;
+    z-index: 10001;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow-y: auto;
+}
+
+.s54-mobile-overlay.is-active .s54-mobile-drawer {
+    transform: translateX(0);
+}
+
+.s54-mobile-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.s54-mobile-drawer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: auto;
+}
+
+.s54-mobile-drawer__link {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #FAF6F1 !important;
+    text-decoration: none !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    transition: color 0.2s ease !important;
+}
+
+.s54-mobile-drawer__link:hover,
+.s54-mobile-drawer__link.is-active {
+    color: #D68E1D !important;
+}
+
+.s54-mobile-drawer__footer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 24px;
+}
+

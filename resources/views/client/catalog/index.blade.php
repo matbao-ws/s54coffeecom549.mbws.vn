@@ -8,7 +8,7 @@
 
 @section('content')
 <section style="background-color: #2F221A; color: #FAF6F1; padding: 60px 20px 40px; text-align: center;">
-    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; color: #FAF6F1;">
+    <h1 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; color: #FAF6F1;">
         {{ $locale === 'vi' ? 'Bộ Sưu Tập Cà Phê S54' : 'S54 Coffee Collection' }}
     </h1>
     <p style="color: #D6C7BC; font-size: 15px; max-width: 600px; margin: 0 auto;">
@@ -39,7 +39,7 @@
         {{-- Product Grid --}}
         <div class="o-products-list__products">
             @forelse($products as $prod)
-                <x-client.product-card :product="$prod" />
+                <x-client::product-card :product="$prod" />
             @empty
                 <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #8A7B70;">
                     <p style="font-size: 32px;">☕</p>

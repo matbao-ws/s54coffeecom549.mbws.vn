@@ -3,7 +3,7 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <base href="/">
 
 <script src="assets/js/cart-mock.js?v=1787726992"></script>
@@ -384,29 +384,326 @@ first.parentNode.insertBefore(script, first);
 
 <meta name="shopify-y" content="f43c5953-1938-4ce7-88bc-5561b9465968"><meta name="shopify-s" content="2ae6fdfb-8176-4204-93b1-9fba09c50c80"><meta name="new-cookie-storage-activated" content="f">
 
-    <link rel="stylesheet" href="assets/css/custom.css?v=1787726992">
+    <link rel="stylesheet" href="assets/css/custom.css?v=1789111200">
 <style id="s54-direct-typography-override">
-/* S54 DIRECT TYPOGRAPHY OVERRIDE */
+/* S54 HARMONIOUS INTER TYPOGRAPHY SYSTEM */
+html, body, *, *::before, *::after,
+button, input, select, textarea,
+h1, h2, h3, h4, h5, h6, p, span, a, li, div {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+body {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    letter-spacing: -0.011em !important;
+}
+
+h1, .o-heading--1, .s54-hero-title, .c-hero-banner__title, .c-hero-banner__title span {
+    font-size: clamp(32px, 4.5vw, 52px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em !important;
+}
+
+h2, .o-heading--2,
+.c-product-carousel__title, .c-product-carousel__title span, .c-product-carousel__title p,
+.c-text-and-image__text-title, .c-text-and-image__text-title span, .c-text-and-image__title,
+.c-featured-video__title, .c-featured-video__title span,
+.c-featured-collections__header-title, .c-featured-collections__header-title span,
+.c-featured-collections__title, .c-product-main__title,
+.c-article-feed__title, .c-article-feed__title span,
+.s54-featured-section h2 {
+    font-size: clamp(24px, 3.2vw, 36px) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.c-hero-banner__subtitle,
+.c-product-carousel__description p,
+.c-text-and-image__text-paragraph p,
+.c-article-feed__inner-text p,
+.c-featured-video__desc,
+.s54-featured-section p {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #6E6259 !important;
+    letter-spacing: -0.005em !important;
+}
+
+/* Product Card Title Fix */
+.s54-product-card h3,
+.s54-product-card h3 a,
+.o-product-thumbnail h3,
+.o-product-thumbnail h3 a,
+.o-product-thumbnail__title,
+.c-product-carousel__product-title,
+.c-product-carousel__product-title span {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.01em !important;
+    color: #1A120B !important;
+    margin: 0 0 8px 0 !important;
+    min-height: 42px !important;
+    max-height: 42px !important;
+    height: 42px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+}
+
+.s54-product-card h3 a:hover,
+.o-product-thumbnail h3 a:hover {
+    color: #D68E1D !important;
+}
+
+.s54-product-card p,
+.o-product-thumbnail p {
+    font-size: 12.5px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #6E6259 !important;
+    margin: 0 0 12px 0 !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    height: 38px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.o-product-thumbnail__price,
+.s54-product-card .o-product-thumbnail__price {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #D68E1D !important;
+    letter-spacing: -0.01em !important;
+}
+
+.s54-filter-btn {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+
+.o-btn,
+.c-hero-banner__button,
+.c-text-and-image__text-button,
+.c-product-carousel__button,
+.c-article-feed__button,
+.s54-product-card button,
+.o-product-thumbnail button {
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.c-header__topbar-message {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+</style>
+<style id="s54-mobile-header-fix">
+@media (max-width: 767px) {
+    /* Announcement Bar: Perfectly centered, clean luxury styling */
+    .c-header__topbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 8px 16px !important;
+        min-height: 36px !important;
+        background-color: #241A14 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .c-header__topbar-messages {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+    .c-header__topbar-message {
+        font-size: 11.5px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.4px !important;
+        color: #FAF6F1 !important;
+        text-align: center !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        display: inline-block !important;
+        line-height: 1.35 !important;
+        text-decoration: none !important;
+        margin: 0 auto !important;
+    }
+    /* Hide topbar language switcher on mobile - use mobile pill in header and mobile drawer instead */
+    .c-header__topbar .c-lang-switcher,
+    .c-lang-switcher--header {
+        display: none !important;
+    }
+    .c-header__phone-link {
+        display: none !important;
+    }
+
+    /* Main Header: Symmetrical, elegant, luxury coffee theme */
+    .c-header__inner {
+        padding: 10px 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        background-color: #2F221A !important;
+    }
+    .c-header__logo img {
+        height: 32px !important;
+        width: auto !important;
+        max-width: 140px !important;
+        object-fit: contain !important;
+    }
+    .c-header__additional {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+    .s54-mobile-lang-pill {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 2px !important;
+        padding: 3px 8px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.16) !important;
+        border-radius: 12px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+    }
+    .s54-mobile-lang-pill .c-lang-btn {
+        padding: 2px 4px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: rgba(250, 246, 241, 0.65) !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        cursor: pointer !important;
+        line-height: 1 !important;
+        border-radius: 2px !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    }
+    .s54-mobile-lang-pill .c-lang-btn.is-active {
+        color: #D68E1D !important;
+        background: none !important;
+        box-shadow: none !important;
+        font-weight: 800 !important;
+    }
+    .s54-lang-sep {
+        color: rgba(255, 255, 255, 0.25) !important;
+        font-size: 10px !important;
+        user-select: none !important;
+    }
+
+    /* Mobile Slide-Out Drawer Fixes: Rich Coffee Theme with No Cream Box */
+    .c-main-menu {
+        background-color: #1F1611 !important;
+        padding: 24px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        overflow-y: auto !important;
+        box-sizing: border-box !important;
+    }
+    .c-main-menu__header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding-bottom: 20px !important;
+        border-bottom: 1px solid rgba(250, 246, 241, 0.1) !important;
+        margin-bottom: 20px !important;
+    }
+    .c-main-menu__list.is-level-1 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        flex: 1 1 auto !important;
+    }
+    .c-main-menu__link.is-level-1 {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #FAF6F1 !important;
+        text-decoration: none !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 6px 0 !important;
+        transition: color 0.2s ease !important;
+    }
+    .c-main-menu__link.is-level-1:hover {
+        color: #D68E1D !important;
+    }
+    .c-main-menu__footer {
+        background-color: transparent !important;
+        border-top: 1px solid rgba(250, 246, 241, 0.12) !important;
+        padding: 20px 0 10px 0 !important;
+        margin-top: auto !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .c-lang-switcher--mobile {
+        display: flex !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+    .c-lang-switcher--mobile .c-lang-btn {
+        flex: 1 1 50% !important;
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        font-size: 12.5px !important;
+        font-weight: 700 !important;
+        border: 1px solid rgba(250, 246, 241, 0.18) !important;
+        background: rgba(250, 246, 241, 0.08) !important;
+        color: #FAF6F1 !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        text-align: center !important;
+        justify-content: center !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+    .c-lang-switcher--mobile .c-lang-btn.is-active {
+        background: #D68E1D !important;
+        border-color: #D68E1D !important;
+        color: #1F1611 !important;
+        box-shadow: 0 2px 8px rgba(214, 142, 29, 0.35) !important;
+    }
+}
 @media (min-width: 768px) {
-    h1, .o-heading--1, .s54-hero-title, .c-hero-banner__title, .c-hero-banner__title span {
-        font-size: 68px !important;
-        line-height: 1.08 !important;
+    .s54-mobile-lang-pill {
+        display: none !important;
     }
-    h2, .o-heading--2, .c-product-carousel__title, .c-product-carousel__title span, .c-product-carousel__title p,
-    .c-text-and-image__text-title, .c-text-and-image__text-title span, .c-text-and-image__title,
-    .c-featured-video__title, .c-featured-video__title span,
-    .c-featured-collections__header-title, .c-featured-collections__header-title span,
-    .c-featured-collections__title, .c-product-main__title,
-    .c-article-feed__title, .c-article-feed__title span {
-        font-size: 56px !important;
-        line-height: 1.12 !important;
-    }
-    h3, .o-heading--3, .c-featured-collections__tab-title {
-        font-size: 32px !important;
-        line-height: 1.22 !important;
+    .c-lang-switcher--header {
+        display: inline-flex !important;
     }
 }
 </style>
+
 </head>
   <!-- localization.country:Australia-->
     <body class="c-page c-page--index c-page--"><a class="u-visually-hidden" href="#MainContent">Skip to content.</a><div class="c-page__wrapper"><div id="shopify-section-header" class="shopify-section c-section c-section__header">
@@ -415,7 +712,7 @@ first.parentNode.insertBefore(script, first);
       <div class="c-header__topbar-messages">
         <a href="collections-coffee.html" class="c-header__topbar-message o-subtitle">Miễn phí vận chuyển toàn quốc cho đơn từ 599.000₫ • Hotline: 0974.933.907</a>
       </div>
-      <div class="c-lang-switcher c-lang-switcher--header" data-lang-switcher>
+      <div class="c-lang-switcher c-lang-switcher--header is-desktop-only" data-lang-switcher>
         <button type="button" class="c-lang-btn is-active" data-lang="vi" aria-label="Tiếng Việt">🇻🇳 VI</button>
         <span class="c-lang-divider">|</span>
         <button type="button" class="c-lang-btn" data-lang="en" aria-label="English">🇬🇧 EN</button>
@@ -460,6 +757,13 @@ first.parentNode.insertBefore(script, first);
             <span class="c-header__phone-icon">📞</span>
             <span class="c-header__phone-text">0974.933.907</span>
           </a>
+        </li>
+        <li class="c-header__additional-item is-mobile-only">
+          <div class="s54-mobile-lang-pill" data-lang-switcher>
+            <button type="button" class="c-lang-btn is-active" data-lang="vi" aria-label="Tiếng Việt">VI</button>
+            <span class="s54-lang-sep">|</span>
+            <button type="button" class="c-lang-btn" data-lang="en" aria-label="English">EN</button>
+          </div>
         </li>
         <li class="c-header__additional-item">
           <button type="button" class="c-header__link is-cart" data-cart-drawer-toggle aria-label="Cart">
@@ -1047,7 +1351,7 @@ first.parentNode.insertBefore(script, first);
       </button>
 
       <div class="c-featured-video__inner is-color--crema">
-        <span class="c-featured-video__tag" style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #D68E1D; margin-bottom: 12px;">Nghệ Thuật Cà Phê S54</span>
+        <span class="c-featured-video__tag" style="display: block; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #D68E1D; margin-bottom: 12px;">Nghệ Thuật Cà Phê S54</span>
         <h2 class="c-featured-video__title o-heading--2">Nghệ Thuật Chiết Xuất<br/>Tách Espresso Hoàn Hảo</h2>
         <p class="c-featured-video__desc">Khám phá phương pháp cân chỉnh nhiệt độ và áp suất để chiết xuất trọn vẹn lớp crema bồng bềnh cùng hương vị tinh tuý từ hạt cà phê S54.</p>
         <a href="our-story.html" class="c-featured-video__button o-btn is-primary is-dark has-arrow">Khám Phá Câu Chuyện S54<svg fill="none" class="o-btn__arrow c-featured-video__button-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
@@ -1060,7 +1364,7 @@ first.parentNode.insertBefore(script, first);
   <div class="o-wrapper" style="max-width: 1280px; margin: 0 auto;">
     <div style="text-align: center; margin-bottom: 40px;">
       <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">DANH MỤC TUYỂN CHỌN</span>
-      <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; color: #2F221A; margin: 0 0 16px 0;">Sản Phẩm Bán Chạy Nhất</h2>
+      <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; color: #2F221A; margin: 0 0 16px 0;">Sản Phẩm Bán Chạy Nhất</h2>
       <p style="font-size: 15px; color: #6E6259; max-width: 650px; margin: 0 auto 28px;">Khám phá các dòng cà phê hòa tan 3in1 tiện lợi, cà phê hạt rang Robusta nguyên chất và máy xay cà phê thủ công cao cấp của S54 Coffee.</p>
       
       <!-- Filter Tabs -->
@@ -1084,7 +1388,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200001" style="color: #2F221A; text-decoration: none;">Combo 5 gói cà phê hòa tan S54 dùng thử</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
@@ -1109,7 +1413,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200002" style="color: #2F221A; text-decoration: none;">Combo 12 gói cà phê hòa tan S54 dùng thử</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
@@ -1134,7 +1438,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200003" style="color: #2F221A; text-decoration: none;">Túi cà phê hòa tan 3in1 S54 Coffee 456g</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
@@ -1159,7 +1463,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200004" style="color: #2F221A; text-decoration: none;">Combo 2 túi cà phê hòa tan 3in1 S54</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
@@ -1184,7 +1488,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200005" style="color: #2F221A; text-decoration: none;">Combo 3 túi cà phê hòa tan 3in1 S54</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
@@ -1209,7 +1513,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200006" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 250gr</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê nguyên chất S54 Coffee đậm đà chuẩn vị Tây Nguyên</p>
@@ -1234,7 +1538,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200007" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 500gr</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê nguyên chất S54 Coffee đậm đà chuẩn vị Tây Nguyên</p>
@@ -1259,7 +1563,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200008" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ01-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ01-5 Cao Cấp Xay Cà Phê Nhanh Mịn Đều Điều Chỉnh Độ Mịn Pha Espresso Màu Đen</p>
@@ -1284,7 +1588,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200009" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ08-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ08-5 Lõi Xay Inox SUS420 CNC 5 Trục, Điều Chỉnh Độ Mịn, Thân Nhôm Kim Loại</p>
@@ -1309,7 +1613,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200010" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ03-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ03-5 Máy Xay Hạt Cà Phê Mini Xay Cà Phê Tại Nhà Điều Chỉnh Độ Mịn Cối Xay CNC Thiết Kế Nhỏ Gọn Màu Đen</p>
@@ -1334,7 +1638,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200011" style="color: #2F221A; text-decoration: none;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5 Cao Cấp Cối Xay CNC 5 Trục, Điều Chỉnh Độ Mịn, Xay Cà Phê Đồng Đều</p>
@@ -1359,7 +1663,7 @@ first.parentNode.insertBefore(script, first);
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
-            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
+            <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
               <a href="product-detail.html?id=200012" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay KMDJ-HC</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay KMDJ-HC Máy Xay Hạt Cà Phê Thủ Công, 40 Mức Điều Chỉnh Độ Mịn, Lõi Gốm, Hộp Bột Thủy Tinh</p>
@@ -1405,7 +1709,7 @@ first.parentNode.insertBefore(script, first);
     });
   }
   </script>
-</section><style> #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-product-thumbnail__price {font-family: 'Plus Jakarta Sans', sans-serif;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-product-thumbnail__hover__pricing {font-family: 'Plus Jakarta Sans', sans-serif;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-subtitle {font-family: 'Plus Jakarta Sans', sans-serif; text-transform: capitalize;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-swatches__swatch {padding-left: 10px;} </style></div>
+</section><style> #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-product-thumbnail__price {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-product-thumbnail__hover__pricing {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-subtitle {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-transform: capitalize;} #shopify-section-template--15747875471535__ec2a4e76-e99a-4ae6-8df1-9700dce446a2 .o-swatches__swatch {padding-left: 10px;} </style></div>
 		</wlm>
 		<div id="wlmpnf" style="display:none;">
 		<div class="page-width">
@@ -1772,7 +2076,7 @@ first.parentNode.insertBefore(script, first);
       }
   });
 </script>
-  <style> .o-swatches__swatch {padding-left: 10px;} .o-paragraph--3 {font-family: 'Plus Jakarta Sans', sans-serif;} .o-heading--6.is-alt {font-family: domaine, serif;} .c-footer__disclaimer {letter-spacing: normal; text-transform: none; font-size: 14px;}  /** style blog article links **/.c-article-content p a,.c-faq__content p a,.c-page--product .product-description a {text-decoration-line: underline; text-decoration-thickness: 1px; font-weight: bold;} .c-article-content p a:visited,.c-faq__content p a:visited,.c-page--product .product-description a:visited {color: #551a8b;} .c-article-content p a:link:active,.c-article-content p a:visited:active,.c-faq__content p a:link:active,.c-faq__content p a:visited:active,.c-article-content p a:link:active,.c-article-content p a:visited:active,.c-page--product .product-description a:link:active,.c-page--product .product-description a:visited:active {color: #ff0000;}  /** wholesale header gradient **/.c-header.is-transparent-crema:not(.is-sticky) .c-header__inner {background-image: linear-gradient( to bottom, rgba(243, 238, 232, 0.6), rgba(243, 238, 232, 0.475), rgba(243, 238, 232, 0.325), rgba(243, 238, 232, 0) );}  /* default collections page */.c-page.c-page--list-collections.c-page-- .c-header__inner {background-color: #2f221a;} .c-page.c-page--collection.c-page-- .c-hero-banner__media-container.o-media-container {background-color: #2f221a;} .c-featured-video__button-play.o-btn--square.is-play {z-index: 1 !important;} @media only screen and (min-device-width: 1100px) and (max-device-width: 100px) {.c-hero-banner__media-container {padding-bottom: min(100%, 44rem) !important; }} </style>
+  <style> .o-swatches__swatch {padding-left: 10px;} .o-paragraph--3 {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;} .o-heading--6.is-alt {font-family: domaine, serif;} .c-footer__disclaimer {letter-spacing: normal; text-transform: none; font-size: 14px;}  /** style blog article links **/.c-article-content p a,.c-faq__content p a,.c-page--product .product-description a {text-decoration-line: underline; text-decoration-thickness: 1px; font-weight: bold;} .c-article-content p a:visited,.c-faq__content p a:visited,.c-page--product .product-description a:visited {color: #551a8b;} .c-article-content p a:link:active,.c-article-content p a:visited:active,.c-faq__content p a:link:active,.c-faq__content p a:visited:active,.c-article-content p a:link:active,.c-article-content p a:visited:active,.c-page--product .product-description a:link:active,.c-page--product .product-description a:visited:active {color: #ff0000;}  /** wholesale header gradient **/.c-header.is-transparent-crema:not(.is-sticky) .c-header__inner {background-image: linear-gradient( to bottom, rgba(243, 238, 232, 0.6), rgba(243, 238, 232, 0.475), rgba(243, 238, 232, 0.325), rgba(243, 238, 232, 0) );}  /* default collections page */.c-page.c-page--list-collections.c-page-- .c-header__inner {background-color: #2f221a;} .c-page.c-page--collection.c-page-- .c-hero-banner__media-container.o-media-container {background-color: #2f221a;} .c-featured-video__button-play.o-btn--square.is-play {z-index: 1 !important;} @media only screen and (min-device-width: 1100px) and (max-device-width: 100px) {.c-hero-banner__media-container {padding-bottom: min(100%, 44rem) !important; }} </style>
 <div id="shopify-block-AZFd6aGFnS21FS1hVa__13768625480086291342" class="shopify-block shopify-app-block"><script>
   window['ShopifyForms'] = {
     ...window['ShopifyForms'],

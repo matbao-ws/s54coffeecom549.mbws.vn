@@ -5,6 +5,8 @@ AddDefaultCharset UTF-8
     SetHandler "proxy:unix:///run/plesk/plesk-php82-fpm.sock|fcgi://localhost"
 </FilesMatch>
 
+DirectoryIndex public/index.php index.php
+
 # Enable URL Rewriting for Clean URLs
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -16,46 +18,25 @@ AddDefaultCharset UTF-8
   RewriteCond %{HTTP:x-xsrf-token} .
   RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
-  # Ensure all asset requests resolve directly to assets/ directory
+  # Static asset mappings
   RewriteRule ^(.*/)?assets/(.*)$ assets/$2 [L]
   RewriteRule ^admin-assets/(.*)$ public/admin-assets/$1 [L]
   RewriteRule ^client-assets/(.*)$ public/client-assets/$1 [L]
+  RewriteRule ^storage/(.*)$ storage/app/public/$1 [L]
 
-  # Route Laravel core entrypoints (Admin, API, Auth)
-  RewriteRule ^admin(/.*)?$ public/index.php [L,QSA]
-  RewriteRule ^(vi|en)/admin(/.*)?$ public/index.php [L,QSA]
-  RewriteRule ^api(/.*)?$ public/index.php [L,QSA]
-  RewriteRule ^customer(/.*)?$ public/index.php [L,QSA]
-  RewriteRule ^login$ public/index.php [L,QSA]
-  RewriteRule ^up$ public/index.php [L]
-
-  # Redirect any product URL (/products/* or /collections/*/products/*) to product-detail.html
-  RewriteRule ^(.*/)?products(/.*)?$ product-detail.html [L,QSA]
-
-  # Redirect /collections or /collections/* to collections-coffee.html
-  RewriteRule ^collections(/.*)?$ collections-coffee.html [L,QSA]
-
-  # Redirect /pages/our-story, roasting, news, community to our-story.html
-  # Redirect /blogs, /blog, /news to blogs-news.html
-  RewriteRule ^(blogs|blog)(/news)?(/.*)?$ blogs-news.html [L,QSA]
-
-  # Redirect /pages/our-story, roasting, community, subscriptions to our-story.html
-  RewriteRule ^(pages/)?(our-story|roasting|community|brewing-guides|subscriptions)$ our-story.html [L,QSA]
-
-  # Redirect /pages/wholesale, business, contact to wholesale.html
-  RewriteRule ^(pages/)?(wholesale|business|contact)$ wholesale.html [L,QSA]
-
-  # Redirect /search to collections-coffee.html
-  RewriteRule ^search$ collections-coffee.html [L,QSA]
-
-  # Existing files and directories serve normally
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+  # Serve existing static asset files directly (images, fonts, stylesheets, scripts, videos, php runners)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteCond %{REQUEST_URI} \.(php|css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot|mp4|pdf)$ [NC]
   RewriteRule ^ - [L]
 
-  # Fallback HTML extension (.html)
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
+  # Allow explicit standalone HTML tools/checkouts if requested directly (e.g. /checkout.html)
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteCond %{REQUEST_URI} \.html$ [NC]
+  RewriteCond %{REQUEST_URI} !^/index\.html$ [NC]
+  RewriteRule ^ - [L]
+
+  # Route all other requests through Laravel
+  RewriteRule ^ public/index.php [L,QSA]
 </IfModule>
 
 # Enable Gzip Compression

@@ -35,6 +35,54 @@ header('Content-Type: text/plain; charset=utf-8');
     except Exception as e:
         return f"Error: {e}"
 
+def run_remote_cli(code_str):
+    runner_code = f"""<?php
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+header('Content-Type: text/plain; charset=utf-8');
+
+$tmpScript = __DIR__ . '/cli_' . uniqid() . '.php';
+file_put_contents($tmpScript, <?php\\n{code_str}\\n?>);
+$cmd = '/opt/plesk/php/8.2/bin/php ' . escapeshellarg($tmpScript) . ' 2>&1';
+$output = shell_exec($cmd);
+@unlink($tmpScript);
+@unlink(__FILE__);
+echo $output;
+"""
+    # Wait, avoid raw string syntax issues in php code generation:
+    runner_code = """<?php
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+header('Content-Type: text/plain; charset=utf-8');
+
+$tmpScript = __DIR__ . '/cli_' . uniqid() . '.php';
+$code = base64_decode('""" + __import__("base64").b64encode(f"<?php\n{code_str}\n".encode("utf-8")).decode("ascii") + """');
+file_put_contents($tmpScript, $code);
+$cmd = '/opt/plesk/php/8.2/bin/php ' . escapeshellarg($tmpScript) . ' 2>&1';
+$output = shell_exec($cmd);
+@unlink($tmpScript);
+@unlink(__FILE__);
+echo $output;
+"""
+    ftp = ftplib.FTP(FTP_HOST)
+    ftp.login(FTP_USER, FTP_PASS)
+    ftp.cwd("/httpdocs")
+    import io
+    filename = "cli_runner.php"
+    ftp.storbinary(f"STOR {filename}", io.BytesIO(runner_code.encode("utf-8")))
+    ftp.quit()
+
+    url = f"https://s54coffeecom549.mbws.vn/{filename}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, context=ctx, timeout=30) as resp:
+            return resp.read().decode("utf-8")
+    except urllib.error.HTTPError as e:
+        return f"HTTP {e.code}: {e.read().decode('utf-8', errors='ignore')}"
+    except Exception as e:
+        return f"Error: {e}"
+
+
 if __name__ == "__main__":
     test_code = """
 echo "PHP CLI VERSIONS:" . PHP_EOL;

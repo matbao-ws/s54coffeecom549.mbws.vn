@@ -3,7 +3,7 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(32px, 4vw, 48px); margin-bottom: 48px;">
             {{-- Column 1: Company Info --}}
             <div>
-                <h4 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 700; color: #FFFFFF !important; margin: 0 0 16px 0; letter-spacing: 1px;">
+                <h4 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 700; color: #FFFFFF !important; margin: 0 0 16px 0; letter-spacing: 1px;">
                     S54 COFFEE
                 </h4>
                 <div style="width: 44px; height: 2px; background-color: #D68E1D; margin-bottom: 18px;"></div>
@@ -34,7 +34,7 @@
 
             {{-- Column 2: About S54 --}}
             <div>
-                <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF !important; margin: 0 0 16px 0;">
+                <h4 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF !important; margin: 0 0 16px 0;">
                     {{ app()->getLocale() === 'vi' ? 'Về S54 Coffee' : 'About S54' }}
                 </h4>
                 <div style="width: 36px; height: 2px; background-color: #D68E1D; margin-bottom: 18px;"></div>
@@ -48,7 +48,7 @@
 
             {{-- Column 3: Categories --}}
             <div>
-                <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF !important; margin: 0 0 16px 0;">
+                <h4 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF !important; margin: 0 0 16px 0;">
                     {{ app()->getLocale() === 'vi' ? 'Dòng Sản Phẩm' : 'Product Lines' }}
                 </h4>
                 <div style="width: 36px; height: 2px; background-color: #D68E1D; margin-bottom: 18px;"></div>
@@ -63,7 +63,7 @@
 
             {{-- Column 4: Newsletter & Guarantee --}}
             <div>
-                <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF !important; margin: 0 0 16px 0;">
+                <h4 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF !important; margin: 0 0 16px 0;">
                     {{ app()->getLocale() === 'vi' ? 'Bản Tin & Ưu Đãi' : 'Newsletter' }}
                 </h4>
                 <div style="width: 36px; height: 2px; background-color: #D68E1D; margin-bottom: 18px;"></div>

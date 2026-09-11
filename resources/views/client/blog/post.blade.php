@@ -25,15 +25,10 @@
             <span style="font-size: 12px; color: #8A7B70;">{{ $post->published_at?->format('d/m/Y') ?? now()->format('d/m/Y') }}</span>
         </div>
         
-        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4.5vw, 44px); font-weight: 700; color: #2F221A; margin: 12px 0 24px; line-height: 1.25;">
+        <h1 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(30px, 4.5vw, 44px); font-weight: 700; color: #2F221A; margin: 12px 0 24px; line-height: 1.25;">
             {{ $pTitle }}
         </h1>
 
-        @if($pImg)
-            <div style="margin-bottom: 30px; border-radius: 8px; overflow: hidden;">
-                <img src="{{ $pImg }}" alt="{{ $pTitle }}" style="width: 100%; height: auto;">
-            </div>
-        @endif
 
         <div class="s54-article-content" style="color: #3D2E24; font-size: 16px; line-height: 1.8;">
             {!! $pContent !!}

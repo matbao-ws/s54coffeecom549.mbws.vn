@@ -10,17 +10,17 @@
 {{-- Hero Banner --}}
 <section class="s54-page-hero" style="background: radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url('{{ asset('client-assets/images/s54/story_hero_heritage.jpg') }}') center/cover no-repeat; padding: 100px 20px 80px; text-align: center; color: #FAF6F1;">
     <div class="o-wrapper" style="max-width: 960px; margin: 0 auto;">
-        <span style="display: inline-block; background: rgba(214,142,29,0.25); border: 1px solid #D68E1D; color: #F7D08A; padding: 6px 18px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px;">
+        <x-client::editable key="story.hero.badge" tag="span" style="display: inline-block; background: rgba(214,142,29,0.25); border: 1px solid #D68E1D; color: #F7D08A; padding: 6px 18px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px;">
             {{ $locale === 'vi' ? 'S54 COFFEE • VIETNAMESE COFFEE. MADE FOR THE WORLD.' : 'S54 COFFEE • VIETNAMESE COFFEE. MADE FOR THE WORLD.' }}
-        </span>
-        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5.5vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 22px; color: #FFFFFF;">
+        </x-client::editable>
+        <x-client::editable key="story.hero.title" tag="h1" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(36px, 5.5vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 22px; color: #FFFFFF;">
             {{ $locale === 'vi' ? 'Hành Trình Tinh Hoa Cà Phê Việt & Sứ Mệnh 54 Dân Tộc' : 'The Vietnamese Coffee Heritage & 54 Ethnic Unity' }}
-        </h1>
-        <p style="font-size: clamp(15px, 2vw, 17.5px); line-height: 1.7; color: #E5DDD5; max-width: 780px; margin: 0 auto; font-weight: 400;">
+        </x-client::editable>
+        <x-client::editable key="story.hero.lead" tag="p" style="font-size: clamp(15px, 2vw, 17.5px); line-height: 1.7; color: #E5DDD5; max-width: 780px; margin: 0 auto; font-weight: 400;">
             {{ $locale === 'vi' 
                 ? 'Tự hào mang tên gọi kết hợp giữa hình ảnh dải đất hình chữ S và 54 dân tộc anh em, S54 Coffee ra đời với sứ mệnh nâng tầm hạt cà phê Robusta và Arabica từ thủ phủ Tây Nguyên vươn tầm quốc tế theo phương châm "New Coffee, New Income".' 
                 : 'Named after the S-shaped Vietnamese land and 54 brotherly ethnic groups, S54 Coffee elevates Central Highlands Robusta & Arabica globally under the motto "New Coffee, New Income".' }}
-        </p>
+        </x-client::editable>
     </div>
 </section>
 
@@ -29,22 +29,22 @@
     <div class="o-wrapper" style="max-width: 1200px; margin: 0 auto;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px; align-items: center;">
             <div>
-                <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 10px;">
+                <x-client::editable key="story.intro.subtitle" tag="span" style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 10px;">
                     {{ $locale === 'vi' ? 'GIỚI THIỆU CHUNG' : 'ABOUT S54 COFFEE' }}
-                </span>
-                <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 38px); font-weight: 700; color: #2F221A; margin-bottom: 20px; line-height: 1.25;">
+                </x-client::editable>
+                <x-client::editable key="story.intro.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(28px, 4vw, 38px); font-weight: 700; color: #2F221A; margin-bottom: 20px; line-height: 1.25;">
                     {{ $locale === 'vi' ? 'Cà Phê Nguyên Bản Cho Năng Lượng & Giá Trị Bền Vững' : 'Pure Vietnamese Coffee For Energy & Sustainable Growth' }}
-                </h2>
-                <p style="color: #5C4A3E; font-size: 15.5px; line-height: 1.8; margin-bottom: 18px;">
+                </x-client::editable>
+                <x-client::editable key="story.intro.p1" tag="p" style="color: #5C4A3E; font-size: 15.5px; line-height: 1.8; margin-bottom: 18px;">
                     {{ $locale === 'vi' 
                         ? 'S54 Coffee mang đến những trải nghiệm cà phê nguyên bản, đậm đà—từ các dòng cà phê hòa tan 3in1 tiện lợi đến cà phê hạt rang chất lượng cao, lưu giữ trọn vẹn hương vị mộc mạc của đất trời Tây Nguyên.' 
                         : 'S54 Coffee delivers authentic, rich coffee experiences—from convenient 3-in-1 instant blends to premium roasted whole beans that preserve the true spirit of Central Highlands.' }}
-                </p>
-                <p style="color: #5C4A3E; font-size: 15.5px; line-height: 1.8; margin-bottom: 28px;">
+                </x-client::editable>
+                <x-client::editable key="story.intro.p2" tag="p" style="color: #5C4A3E; font-size: 15.5px; line-height: 1.8; margin-bottom: 28px;">
                     {{ $locale === 'vi' 
                         ? 'Với phương châm "New Coffee, New Income", S54 Coffee không chỉ cung cấp nguồn năng lượng tỉnh táo, sáng tạo mỗi ngày mà còn hướng tới xây dựng giá trị phát triển bền vững và cơ hội thu nhập cho cộng đồng.' 
                         : 'With our core motto "New Coffee, New Income", S54 Coffee empowers daily creative energy while creating sustainable economic opportunities for our farming community.' }}
-                </p>
+                </x-client::editable>
                 <div style="display: flex; gap: 16px; flex-wrap: wrap;">
                     <a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" style="background-color: #2F221A; color: #FAF6F1; padding: 12px 28px; border-radius: 4px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; text-decoration: none; letter-spacing: 1px;">
                         {{ $locale === 'vi' ? 'Khám Phá Sản Phẩm' : 'Explore Products' }}
@@ -66,12 +66,12 @@
 <section style="background-color: #241A14; color: #FAF6F1; padding: 90px 20px;">
     <div class="o-wrapper" style="max-width: 1200px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 12px;">
+            <x-client::editable key="story.pillars.subtitle" tag="span" style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 12px;">
                 {{ $locale === 'vi' ? 'ĐỊNH HƯỚNG CHIẾN LƯỢC' : 'STRATEGIC PILLARS' }}
-            </span>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.5vw, 44px); font-weight: 700; color: #FFFFFF;">
+            </x-client::editable>
+            <x-client::editable key="story.pillars.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(32px, 4.5vw, 44px); font-weight: 700; color: #FFFFFF;">
                 {{ $locale === 'vi' ? 'Tầm Nhìn • Sứ Mệnh • Giá Trị Cốt Lõi' : 'Vision • Mission • Core Values' }}
-            </h2>
+            </x-client::editable>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
@@ -81,14 +81,14 @@
                     <div style="width: 50px; height: 50px; background: rgba(214,142,29,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #D68E1D; font-size: 22px; margin-bottom: 20px;">
                         👁️
                     </div>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #FAF6F1; margin-bottom: 14px;">
+                    <x-client::editable key="story.vision.title" tag="h3" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 700; color: #FAF6F1; margin-bottom: 14px;">
                         {{ $locale === 'vi' ? 'Tầm Nhìn' : 'Our Vision' }}
-                    </h3>
-                    <p style="color: #D6C7BC; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+                    </x-client::editable>
+                    <x-client::editable key="story.vision.desc" tag="p" style="color: #D6C7BC; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
                         {{ $locale === 'vi' 
                             ? 'Trở thành thương hiệu cà phê Việt uy tín, vươn tầm quốc tế với các dòng sản phẩm chất lượng cao và sáng tạo.' 
                             : 'To become a globally prestigious Vietnamese coffee brand renowned for quality and innovation.' }}
-                    </p>
+                    </x-client::editable>
                 </div>
                 <div style="border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe src="https://www.youtube.com/embed/8nVnuZSauE8" title="S54 Vision" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
@@ -101,14 +101,14 @@
                     <div style="width: 50px; height: 50px; background: rgba(214,142,29,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #D68E1D; font-size: 22px; margin-bottom: 20px;">
                         🚀
                     </div>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #FAF6F1; margin-bottom: 14px;">
+                    <x-client::editable key="story.mission.title" tag="h3" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 700; color: #FAF6F1; margin-bottom: 14px;">
                         {{ $locale === 'vi' ? 'Sứ Mệnh' : 'Our Mission' }}
-                    </h3>
-                    <p style="color: #D6C7BC; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+                    </x-client::editable>
+                    <x-client::editable key="story.mission.desc" tag="p" style="color: #D6C7BC; font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
                         {{ $locale === 'vi' 
                             ? 'Mang đến tách cà phê chuẩn vị, truyền năng lượng tích cực và tạo dựng thu nhập bền vững cho cộng đồng (New Coffee, New Income).' 
                             : 'Delivering authentic coffee, inspiring positive energy, and creating sustainable incomes.' }}
-                    </p>
+                    </x-client::editable>
                 </div>
                 <div style="border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe src="https://www.youtube.com/embed/bIC2_Dko3xk" title="S54 Mission" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
@@ -121,15 +121,15 @@
                     <div style="width: 50px; height: 50px; background: rgba(214,142,29,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #D68E1D; font-size: 22px; margin-bottom: 20px;">
                         💎
                     </div>
-                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #FAF6F1; margin-bottom: 14px;">
+                    <x-client::editable key="story.values.title" tag="h3" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; font-weight: 700; color: #FAF6F1; margin-bottom: 14px;">
                         {{ $locale === 'vi' ? 'Giá Trị Cốt Lõi' : 'Core Values' }}
-                    </h3>
-                    <p style="color: #D6C7BC; font-size: 15px; line-height: 1.8; margin-bottom: 24px;">
+                    </x-client::editable>
+                    <x-client::editable key="story.values.desc" tag="div" style="color: #D6C7BC; font-size: 15px; line-height: 1.8; margin-bottom: 24px;" html>
                         <strong style="color: #F7D08A;">• Trung thực:</strong> {{ $locale === 'vi' ? 'Minh bạch nguồn gốc và chất lượng.' : 'Transparent origin & quality.' }}<br>
                         <strong style="color: #F7D08A;">• Chất lượng:</strong> {{ $locale === 'vi' ? 'Chuẩn vị nguyên bản từng mẻ rang.' : 'Authentic taste in every batch.' }}<br>
                         <strong style="color: #F7D08A;">• Cải tiến:</strong> {{ $locale === 'vi' ? 'Ứng dụng công nghệ hiện đại.' : 'Continuous product innovation.' }}<br>
                         <strong style="color: #F7D08A;">• Đồng hành:</strong> {{ $locale === 'vi' ? 'Cùng phát triển bền vững.' : 'Growing together with community.' }}
-                    </p>
+                    </x-client::editable>
                 </div>
                 <div style="border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe src="https://www.youtube.com/embed/T8MfqRZlsFo" title="S54 Core Values" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
@@ -146,7 +146,7 @@
             <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 12px;">
                 {{ $locale === 'vi' ? 'HÀNH TRÌNH PHÁT TRIỂN' : 'OUR DEVELOPMENT MILESTONES' }}
             </span>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.5vw, 44px); font-weight: 700; color: #2F221A;">
+            <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(32px, 4.5vw, 44px); font-weight: 700; color: #2F221A;">
                 {{ $locale === 'vi' ? 'Các Cột Mốc Đột Phá Của S54 Coffee' : 'Key Breakthrough Milestones' }}
             </h2>
         </div>
@@ -216,7 +216,7 @@
             <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">
                 {{ $locale === 'vi' ? 'HỆ THỐNG VĂN PHÒNG & CỬA HÀNG THỰC TẾ' : 'OUR OFFICES & COFFEE SHOPS' }}
             </span>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 38px); font-weight: 700; color: #2F221A;">
+            <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(28px, 4vw, 38px); font-weight: 700; color: #2F221A;">
                 {{ $locale === 'vi' ? 'Không Gian Trải Nghiệm S54 Coffee' : 'Experience S54 Coffee Spaces' }}
             </h2>
         </div>
@@ -252,14 +252,16 @@
 {{-- Final Quote & CTA --}}
 <section style="background-color: #241A14; color: #FAF6F1; padding: 80px 20px; text-align: center;">
     <div class="o-wrapper" style="max-width: 860px; margin: 0 auto;">
-        <span style="color: #D68E1D; font-size: 42px; font-family: 'Cormorant Garamond', serif; display: block; line-height: 1;">“</span>
-        <blockquote style="font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3.5vw, 32px); font-style: italic; line-height: 1.4; color: #FAF6F1; margin: 0 0 20px 0;">
-            {{ $locale === 'vi' 
-                ? 'Thiết lập các giải pháp tốt trong việc cung cấp Cà phê Chất lượng với mức độ dịch vụ không ai sánh kịp.' 
-                : 'Establishing premier solutions in delivering Quality Coffee with unparalleled standards of service.' }}
+        <span style="color: #D68E1D; font-size: 42px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: block; line-height: 1;">“</span>
+        <blockquote style="margin: 0 0 20px 0;">
+            <x-client::editable key="story.quote.text" tag="p" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(22px, 3.5vw, 32px); font-style: italic; line-height: 1.4; color: #FAF6F1; margin: 0;">
+                {{ $locale === 'vi' 
+                    ? 'Thiết lập các giải pháp tốt trong việc cung cấp Cà phê Chất lượng với mức độ dịch vụ không ai sánh kịp.' 
+                    : 'Establishing premier solutions in delivering Quality Coffee with unparalleled standards of service.' }}
+            </x-client::editable>
         </blockquote>
-        <cite style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #D68E1D; font-style: normal; display: block; margin-bottom: 36px;">
-            — {{ $locale === 'vi' ? 'Triết lý Good Solutions & S54 Coffee' : 'Good Solutions & S54 Coffee Philosophy' }}
+        <cite style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #D68E1D; font-style: normal; display: block; margin-bottom: 36px;">
+            — <x-client::editable key="story.quote.author" tag="span">{{ $locale === 'vi' ? 'Triết lý Good Solutions & S54 Coffee' : 'Good Solutions & S54 Coffee Philosophy' }}</x-client::editable>
         </cite>
         <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
             <a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" style="background-color: #D68E1D; color: #FFFFFF; padding: 14px 32px; border-radius: 4px; font-size: 13px; font-weight: 700; text-transform: uppercase; text-decoration: none; letter-spacing: 1px;">

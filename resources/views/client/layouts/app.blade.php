@@ -1,27 +1,37 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html class="js-unavailable" lang="{{ app()->getLocale() }}" data-country="Vietnam">
 <head>
     @include('client.partials.head')
 </head>
-<body class="s54-theme">
-    @include('client.partials.header')
+<body class="@yield('body_class', 'c-page c-page--index c-page--')">
+    <a class="u-visually-hidden" href="#MainContent">Skip to content.</a>
+    <div class="c-page__wrapper">
+        @include('client.partials.header')
 
-    <main role="main" class="o-main" id="MainContent">
-        @yield('content')
-    </main>
+        <main role="main" class="o-main" id="MainContent">
+            <div class="o-main__wrapper">
+                @yield('content')
+            </div>
+        </main>
 
-    @include('client.partials.footer')
-    @include('client.partials.cart-drawer')
+        @include('client.partials.footer')
+        @include('client.partials.cart-drawer')
+    </div>
 
     {{-- Admin Toolbar & Inline Editing Hooks --}}
     @include('client.partials.admin-bar')
     @include('client.partials.inline-blocks')
     @include('client.partials.inline-outline')
 
-    <script src="{{ asset('client-assets/js/vendor.js') }}"></script>
-    <script src="{{ asset('client-assets/js/layouts.theme.js') }}"></script>
-    <script src="{{ asset('client-assets/js/main.js') }}"></script>
-    <script src="{{ asset('client-assets/js/client-cart.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor.js') }}"></script>
+    <script src="{{ asset('assets/js/layouts.theme.js') }}"></script>
+    <script src="{{ asset('assets/js/sections.product-carousel.js') }}"></script>
+    <script src="{{ asset('assets/js/sections.article-feed.js') }}"></script>
+    <script src="{{ asset('assets/js/sections.featured-video.js') }}"></script>
+    <script src="{{ asset('assets/js/sections.featured-collections.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/client-cart.js') }}"></script>
     @stack('scripts')
 </body>
 </html>
+

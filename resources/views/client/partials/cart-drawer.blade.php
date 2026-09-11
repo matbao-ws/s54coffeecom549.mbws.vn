@@ -1,7 +1,7 @@
 <div class="s54-cart-drawer-overlay" id="s54-cart-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(36,26,20,0.6); z-index: 99998; backdrop-filter: blur(2px);"></div>
 <div class="s54-cart-drawer" id="s54-cart-drawer" style="position: fixed; top: 0; right: -450px; width: 100%; max-width: 420px; height: 100vh; background: #FAF8F5; z-index: 99999; box-shadow: -8px 0 24px rgba(0,0,0,0.15); transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column;">
     <div style="padding: 20px 24px; border-bottom: 1px solid #EBE7E1; display: flex; justify-content: space-between; align-items: center; background: #FFFFFF;">
-        <h3 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; color: #2F221A; text-transform: uppercase; letter-spacing: 0.5px;">
+        <h3 style="margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #2F221A; text-transform: uppercase; letter-spacing: 0.5px;">
             🛒 {{ app()->getLocale() === 'vi' ? 'Giỏ Hàng Của Bạn' : 'Your Cart' }} (<span id="s54-drawer-count">0</span>)
         </h3>
         <button type="button" id="s54-cart-close" style="background: none; border: none; font-size: 22px; cursor: pointer; color: #2F221A; line-height: 1;">&times;</button>

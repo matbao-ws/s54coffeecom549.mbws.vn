@@ -51,7 +51,7 @@
                     {{ $locale === 'vi' ? 'ĐỘC QUYỀN ONLINE' : 'ONLINE EXCLUSIVE' }}
                 </span>
                 
-                <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; color: #2F221A; margin-bottom: 12px; line-height: 1.2;">
+                <h1 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 34px; font-weight: 700; color: #2F221A; margin-bottom: 12px; line-height: 1.2;">
                     {{ $title }}
                 </h1>
 

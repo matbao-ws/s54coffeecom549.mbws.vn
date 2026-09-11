@@ -7,6 +7,13 @@ Route::get('/', function () {
     return redirect('/' . $defaultLocale);
 });
 
+// Root-level aliases redirecting to localized client routes
+Route::get('collections', fn () => redirect('/vi/san-pham'));
+Route::get('collections/{any?}', fn () => redirect('/vi/san-pham'))->where('any', '.*');
+Route::get('products/{slug}', fn ($slug) => redirect('/vi/san-pham/' . $slug));
+Route::get('blogs/{any?}', fn () => redirect('/vi/tin-tuc'))->where('any', '.*');
+Route::get('pages/{slug}', fn ($slug) => redirect('/vi/pages/' . $slug));
+
 Route::get('/login', fn () => redirect('/' . app(\App\Services\LanguageRegistry::class)->defaultLocale() . '/admin/login'))->name('login');
 Route::get('/api/docs', [\App\Http\Controllers\Api\PublicController::class, 'docs'])->name('api.docs');
 
