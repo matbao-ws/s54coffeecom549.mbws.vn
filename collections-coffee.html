@@ -439,7 +439,7 @@ first.parentNode.insertBefore(script, first);
 
 <meta name="shopify-y" content="3a7741b2-4e28-4556-9377-ea2f8ed9f12b"><meta name="shopify-s" content="a6ed71c8-24df-45a3-b84f-0c468becdf3e"><meta name="new-cookie-storage-activated" content="f">
 
-    <link rel="stylesheet" href="assets/css/custom.css?v=1789133000">
+    <link rel="stylesheet" href="assets/css/custom.css?v=1789144000">
 <style id="s54-direct-typography-override">
 /* S54 HARMONIOUS INTER TYPOGRAPHY SYSTEM */
 @font-face {
@@ -2544,8 +2544,9 @@ Bộ Lọc</button><div class="c-faceted-nav__filters-featured " data-filters-fe
         // ajax request catching
         (function(open) {
           XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {
+            this._url = url;
             this.addEventListener("readystatechange", function() {
-              if (this.readyState == 4 && this._url.includes("/add.js") && "" != "") {
+              if (this.readyState == 4 && this._url && this._url.includes("/add.js") && "" != "") {
                 try {
                   $.getJSON("/cart.js", function(data) {
                     var basketData = [];

@@ -7,6 +7,11 @@ Route::get('/', function () {
     return redirect('/' . $defaultLocale);
 });
 
+Route::get('index.html', function () {
+    $defaultLocale = app(\App\Services\LanguageRegistry::class)->defaultLocale() ?: 'vi';
+    return redirect('/' . $defaultLocale);
+});
+
 // Root-level aliases redirecting to localized client routes
 Route::get('collections', fn () => redirect('/vi/san-pham'));
 Route::get('collections/{any?}', fn () => redirect('/vi/san-pham'))->where('any', '.*');
