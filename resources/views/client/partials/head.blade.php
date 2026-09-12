@@ -423,6 +423,71 @@ h2.s54-checkout-title {
     font-weight: 500 !important;
     letter-spacing: 0.01em !important;
 }
+
+/* ==========================================================================
+   UNIVERSAL CONTRAST SAFEGUARDS & DARK SECTION HEADINGS (WCAG AAA)
+   ========================================================================== */
+[style*="background-color: #241A14"],
+[style*="background: #241A14"],
+[style*="background-color: #2F221A"],
+[style*="background: #2F221A"],
+[style*="background-color: #1A120B"],
+[style*="background: #1A120B"],
+.s54-page-hero,
+.s54-footer,
+.c-footer {
+    color: #FAF6F1 !important;
+}
+
+[style*="background-color: #241A14"] h1,
+[style*="background-color: #241A14"] h2,
+[style*="background-color: #241A14"] h3,
+[style*="background-color: #241A14"] h4,
+[style*="background: #241A14"] h1,
+[style*="background: #241A14"] h2,
+[style*="background: #241A14"] h3,
+[style*="background: #241A14"] h4,
+[style*="background-color: #2F221A"] h1,
+[style*="background-color: #2F221A"] h2,
+[style*="background-color: #2F221A"] h3,
+[style*="background-color: #2F221A"] h4,
+[style*="background: #2F221A"] h1,
+[style*="background: #2F221A"] h2,
+[style*="background: #2F221A"] h3,
+[style*="background: #2F221A"] h4,
+[style*="background-color: #1A120B"] h1,
+[style*="background-color: #1A120B"] h2,
+[style*="background-color: #1A120B"] h3,
+[style*="background-color: #1A120B"] h4,
+.s54-page-hero h1,
+.s54-page-hero h2,
+.s54-page-hero h3,
+.s54-footer__heading,
+h4.s54-footer__heading {
+    color: #FFFFFF !important;
+}
+
+/* Strategic Pillars & Dark Cards Headings */
+[data-block-key="story.pillars.title"] {
+    color: #FFFFFF !important;
+}
+
+[data-block-key="story.vision.title"],
+[data-block-key="story.mission.title"],
+[data-block-key="story.values.title"],
+[data-block-key="wholesale.form.title"] {
+    color: #FAF6F1 !important;
+}
+
+[data-block-key="story.vision.desc"],
+[data-block-key="story.mission.desc"],
+[data-block-key="story.values.desc"] {
+    color: #D6C7BC !important;
+}
+
+[data-block-key="wholesale.form.desc"] {
+    color: #BAADA1 !important;
+}
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -8,10 +8,10 @@
         <x-client::editable key="wholesale.hero.badge" tag="span" style="display: inline-block; background: rgba(214,142,29,0.25); border: 1px solid #D68E1D; color: #F7D08A; padding: 6px 18px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px;">
             {{ app()->getLocale() === 'vi' ? 'GIẢI PHÁP B2B & NHÀ HÀNG KHÁCH SẠN' : 'B2B & HOSPITALITY SOLUTIONS' }}
         </x-client::editable>
-        <x-client::editable key="wholesale.hero.title" tag="h1" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(38px, 6vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: #FFFFFF;">
+        <x-client::editable key="wholesale.hero.title" tag="h1" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(38px, 6vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: #FFFFFF !important;">
             {{ app()->getLocale() === 'vi' ? 'Giải Pháp Cung Ứng Cà Phê Toàn Diện Cho Doanh Nghiệp' : 'Comprehensive Coffee Solutions for Enterprise & HoReCa' }}
         </x-client::editable>
-        <x-client::editable key="wholesale.hero.lead" tag="p" style="font-size: 16px; line-height: 1.6; color: #E5DDD5; max-width: 700px; margin: 0 auto;">
+        <x-client::editable key="wholesale.hero.lead" tag="p" style="font-size: 16px; line-height: 1.6; color: #E5DDD5 !important; max-width: 700px; margin: 0 auto;">
             {{ app()->getLocale() === 'vi' ? 'Cung cấp cà phê hạt rang mộc theo yêu cầu, máy pha cà phê chuyên nghiệp và đào tạo barista chuẩn quốc tế.' : 'Custom profile roasting, commercial espresso equipment and barista training.' }}
         </x-client::editable>
     </div>
@@ -39,8 +39,8 @@
 
         {{-- B2B Contact Form --}}
         <div style="background: #241A14; color: #FAF6F1; border-radius: 12px; padding: 48px clamp(20px, 4vw, 48px); max-width: 760px; margin: 0 auto;">
-            <x-client::editable key="wholesale.form.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #FAF6F1;">Đăng Ký Tư Vấn B2B</x-client::editable>
-            <x-client::editable key="wholesale.form.desc" tag="p" style="text-align: center; color: #BAADA1; font-size: 14px; margin-bottom: 32px;">Để lại thông tin để nhận bảng giá sỉ & mẫu thử cà phê miễn phí từ chuyên gia S54.</x-client::editable>
+            <x-client::editable key="wholesale.form.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 12px; color: #FAF6F1 !important;">Đăng Ký Tư Vấn B2B</x-client::editable>
+            <x-client::editable key="wholesale.form.desc" tag="p" style="text-align: center; color: #BAADA1 !important; font-size: 14px; margin-bottom: 32px;">Để lại thông tin để nhận bảng giá sỉ & mẫu thử cà phê miễn phí từ chuyên gia S54.</x-client::editable>
             
             <form action="#" method="POST" style="display: grid; gap: 18px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">

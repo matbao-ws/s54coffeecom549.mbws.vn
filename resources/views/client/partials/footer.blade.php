@@ -34,7 +34,7 @@
 
             <!-- Col 2: Sản Phẩm & Mua Sắm -->
             <div class="s54-footer__col">
-                <h4 class="s54-footer__heading">{{ app()->getLocale() === 'vi' ? 'Sản Phẩm S54' : 'Products' }}</h4>
+                <h4 class="s54-footer__heading" style="color: #FFFFFF !important;">{{ app()->getLocale() === 'vi' ? 'Sản Phẩm S54' : 'Products' }}</h4>
                 <ul class="s54-footer__links">
                     <li><a href="{{ route('client.catalog.index', ['locale' => app()->getLocale()]) }}">{{ app()->getLocale() === 'vi' ? 'Tất Cả Sản Phẩm' : 'All Products' }}</a></li>
                     <li><a href="{{ route('client.catalog.index', ['locale' => app()->getLocale()]) }}">{{ app()->getLocale() === 'vi' ? 'S54 Robusta Rang Mộc' : 'Roasted Robusta' }}</a></li>
@@ -48,7 +48,7 @@
 
             <!-- Col 3: Về S54 & Dịch Vụ -->
             <div class="s54-footer__col">
-                <h4 class="s54-footer__heading">{{ app()->getLocale() === 'vi' ? 'Về S54 & Dịch Vụ' : 'About & Policies' }}</h4>
+                <h4 class="s54-footer__heading" style="color: #FFFFFF !important;">{{ app()->getLocale() === 'vi' ? 'Về S54 & Dịch Vụ' : 'About & Policies' }}</h4>
                 <ul class="s54-footer__links">
                     <li><a href="{{ route('client.pages.show', ['locale' => app()->getLocale(), 'slug' => 'our-story']) }}">{{ app()->getLocale() === 'vi' ? 'Câu Chuyện Thương Hiệu' : 'Our Story' }}</a></li>
                     <li><a href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}">{{ app()->getLocale() === 'vi' ? 'Bản Tin & Tri Thức Cà Phê' : 'Coffee Journal' }}</a></li>
@@ -62,7 +62,7 @@
 
             <!-- Col 4: Đăng Ký Nhận Tin & Kết Nối -->
             <div class="s54-footer__col s54-footer__col--newsletter">
-                <h4 class="s54-footer__heading">{{ app()->getLocale() === 'vi' ? 'Đăng Ký Nhận Ưu Đãi' : 'Newsletter' }}</h4>
+                <h4 class="s54-footer__heading" style="color: #FFFFFF !important;">{{ app()->getLocale() === 'vi' ? 'Đăng Ký Nhận Ưu Đãi' : 'Newsletter' }}</h4>
                 <p class="s54-footer__newsletter-desc">{{ app()->getLocale() === 'vi' ? 'Nhận ngay voucher ưu đãi 15% cho đơn hàng đầu tiên cùng cẩm nang pha chế độc quyền từ S54 Coffee.' : 'Get a 15% discount voucher for your first order and exclusive brewing recipes from S54 Coffee.' }}</p>
                 
                 <form class="s54-footer__form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận tin từ S54 Coffee!');">

@@ -8,10 +8,10 @@
 
 @section('content')
 <section style="background-color: #2F221A; color: #FAF6F1; padding: 60px 20px 40px; text-align: center;">
-    <h1 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; color: #FAF6F1;">
+    <h1 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 12px; color: #FAF6F1 !important;">
         {{ $locale === 'vi' ? 'Bộ Sưu Tập Cà Phê S54' : 'S54 Coffee Collection' }}
     </h1>
-    <p style="color: #D6C7BC; font-size: 15px; max-width: 600px; margin: 0 auto;">
+    <p style="color: #D6C7BC !important; font-size: 15px; max-width: 600px; margin: 0 auto;">
         {{ $locale === 'vi' ? '100% Cà phê nguyên chất tuyển chọn từ Đắk Lắk & Cầu Đất, rang mộc công nghệ cao.' : '100% pure artisan coffee beans from Dak Lak & Cau Dat.' }}
     </p>
 </section>
