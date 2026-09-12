@@ -108,6 +108,64 @@
     object-fit: contain !important;
     display: block !important;
   }
+
+  /* BULLETPROOF FLAG ICONS & LANGUAGE PILL CRITICAL STYLES */
+  .s54-flag-icon,
+  .s54-header-lang-pill svg,
+  .s54-topbar-lang svg,
+  .s54-mobile-drawer__footer svg,
+  .c-lang-switcher svg {
+    width: 15px !important;
+    height: 10px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    min-height: 10px !important;
+    max-height: 10px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    border-radius: 1.5px !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+  }
+  .s54-header-lang-pill {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 2px !important;
+    padding: 2px 4px !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    height: 30px !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+  }
+  .s54-header-lang-pill .s54-lang-btn {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 3px 8px !important;
+    border-radius: 12px !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    transition: all 0.2s ease !important;
+  }
+  .s54-header-lang-pill .s54-lang-btn.is-active {
+    background: #D68E1D !important;
+    color: #FFFFFF !important;
+  }
+  .s54-header-lang-pill .s54-lang-btn:not(.is-active) {
+    background: transparent !important;
+    color: rgba(250, 246, 241, 0.65) !important;
+  }
+  .s54-header-lang-pill .s54-lang-btn:not(.is-active):hover {
+    color: #FFFFFF !important;
+  }
 </style>
 
 <style id="s54-direct-typography-override">

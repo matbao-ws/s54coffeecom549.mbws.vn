@@ -85,40 +85,25 @@
                 </a>
             </li>
 
-            {{-- Desktop Header Language Switcher Pill --}}
-            <li class="c-header__additional-item is-desktop-only" style="list-style: none;">
-                <div class="s54-header-lang-pill" style="display: flex; align-items: center; gap: 2px; padding: 2px 4px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); height: 32px; box-sizing: border-box;">
-                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'transparent' }}; transition: all 0.2s ease;" title="Tiếng Việt">
-                        <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;">
+            {{-- Header Language Switcher Pill (Universal Desktop & Mobile) --}}
+            <li class="c-header__additional-item" style="list-style: none;">
+                <div class="s54-header-lang-pill" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 2px !important; padding: 2px 4px !important; border-radius: 16px !important; background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.14) !important; height: 30px !important; box-sizing: border-box !important; flex-shrink: 0 !important;">
+                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 4px !important; padding: 3px 8px !important; border-radius: 12px !important; font-size: 11.5px !important; font-weight: 700 !important; text-decoration: none !important; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }} !important; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'transparent' }} !important; transition: all 0.2s ease !important; line-height: 1 !important; white-space: nowrap !important; flex-shrink: 0 !important;" title="Tiếng Việt">
+                        <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px !important; flex-shrink: 0 !important; display: inline-block !important; vertical-align: middle !important;">
                             <rect width="30" height="20" fill="#DA251D"/>
                             <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
                         </svg>
-                        <span>VI</span>
+                        <span style="display: inline-block !important; line-height: 1 !important; font-size: 11px !important; font-weight: 700 !important;">VI</span>
                     </a>
-                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'transparent' }}; transition: all 0.2s ease;" title="English">
-                        <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;">
+                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 4px !important; padding: 3px 8px !important; border-radius: 12px !important; font-size: 11.5px !important; font-weight: 700 !important; text-decoration: none !important; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }} !important; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'transparent' }} !important; transition: all 0.2s ease !important; line-height: 1 !important; white-space: nowrap !important; flex-shrink: 0 !important;" title="English">
+                        <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px !important; flex-shrink: 0 !important; display: inline-block !important; vertical-align: middle !important; overflow: hidden !important;">
                             <rect width="60" height="40" fill="#012169"/>
                             <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>
                             <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/>
                             <path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/>
                             <path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/>
                         </svg>
-                        <span>EN</span>
-                    </a>
-                </div>
-            </li>
-
-            {{-- Mobile Header Language Switcher Pill --}}
-            <li class="c-header__additional-item is-mobile-only" style="list-style: none;">
-                <div class="s54-lang-switch s54-mobile-lang-pill" style="display: flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700; color: #FAF6F1; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);">
-                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; padding: 2px 4px;">
-                        <svg width="13" height="9" viewBox="0 0 30 20" style="border-radius: 1px; flex-shrink: 0;"><rect width="30" height="20" fill="#DA251D"/><polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/></svg>
-                        <span>VI</span>
-                    </a>
-                    <span style="opacity: 0.3;">|</span>
-                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; padding: 2px 4px;">
-                        <svg width="13" height="9" viewBox="0 0 60 40" style="border-radius: 1px; flex-shrink: 0; overflow: hidden;"><rect width="60" height="40" fill="#012169"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/><path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/></svg>
-                        <span>EN</span>
+                        <span style="display: inline-block !important; line-height: 1 !important; font-size: 11px !important; font-weight: 700 !important;">EN</span>
                     </a>
                 </div>
             </li>
