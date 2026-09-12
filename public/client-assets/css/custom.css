@@ -5268,7 +5268,7 @@ p.o-pricing.o-product-thumbnail__hover__pricing,
     width: 28px !important;
     height: 28px !important;
     fill: currentColor !important;
-    margin-left: 3px !important;
+    margin: 0 !important;
 }
 
 /* CRITICAL: When the video is playing, HIDE THE BUTTON COMPLETELY! */
@@ -5313,4 +5313,31 @@ p.o-pricing.o-product-thumbnail__hover__pricing,
         opacity: 0.85 !important;
         visibility: visible !important;
     }
+}
+
+
+/* S54 Featured Video Play Button Exact Center Alignment */
+.c-featured-video__button-play,
+.c-featured-video__button-play.o-btn--square.is-play {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+}
+
+.c-featured-video__button-play svg,
+.c-featured-video__button-play.o-btn--square.is-play svg,
+.c-featured-video__button-play .o-btn__play {
+    display: block !important;
+    width: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
+    position: static !important;
 }

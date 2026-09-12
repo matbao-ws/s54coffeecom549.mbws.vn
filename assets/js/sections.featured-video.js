@@ -18,7 +18,7 @@
             var playBtn = container.querySelector('[data-play], .c-featured-video__button-play');
             var inner = container.querySelector('.c-featured-video__inner');
 
-            var PLAY_ICON = '<svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="none" style="margin-left:3px!important;" xmlns="http://www.w3.org/2000/svg"><path d="M8 5.14v13.72a1 1 0 001.55.83l11-6.86a1 1 0 000-1.66l-11-6.86A1 1 0 008 5.14z" fill="currentColor"/></svg>';
+            var PLAY_ICON = '<svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:block!important;margin:0!important;padding:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M7 5.5a1 1 0 0 1 1.55-.83l10 6.5a1 1 0 0 1 0 1.66l-10 6.5A1 1 0 0 1 7 18.5v-13z"/></svg>';" xmlns="http://www.w3.org/2000/svg"><path d="M8 5.14v13.72a1 1 0 001.55.83l11-6.86a1 1 0 000-1.66l-11-6.86A1 1 0 008 5.14z" fill="currentColor"/></svg>';
             var PAUSE_ICON = '<svg class="o-btn__pause" viewBox="0 0 24 24" width="28" height="28" fill="none" style="margin-left:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/></svg>';
 
             function getActiveVideo() {
