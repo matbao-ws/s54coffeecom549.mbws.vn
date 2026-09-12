@@ -27,11 +27,17 @@
             
             <h3 class="o-product-thumbnail__title">{{ $title }}</h3>
             
-            <div class="o-product-thumbnail__star-reviews">
-                <div class="o-reviews__stars">
-                    <span style="color: #D68E1D; font-size: 13px;">★★★★★</span>
-                    <span style="font-size: 12px; font-weight: 600; color: #2F221A; margin-left: 4px;">4.8 (765)</span>
-                </div>
+            <div class="s54-thumb-reviews-bar" aria-label="Đánh giá 4.8 trên 5 sao (765 đánh giá)">
+              <div class="s54-thumb-stars">
+                <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>
+                <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>
+                <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>
+                <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>
+                <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>
+              </div>
+              <span class="s54-thumb-rating-score">4.8</span>
+              <span class="s54-thumb-rating-sep">•</span>
+              <span class="s54-thumb-rating-count">(765)</span>
             </div>
             
             <p class="o-product-thumbnail__excerpt">{{ $excerpt }}</p>

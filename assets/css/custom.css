@@ -4940,3 +4940,190 @@ h2.s54-checkout-title {
 
 
 
+
+
+/* ==========================================================================
+   S54 COFFEE — Product Card UX/UI Enhancements (Star Reviews & Actions)
+   ========================================================================== */
+
+/* 1. Crisp, Solid Vector Star Rating Bar */
+.s54-thumb-reviews-bar {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  margin: 6px auto 8px auto !important;
+  width: 100% !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+}
+
+.s54-thumb-stars {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 2.5px !important;
+}
+
+.s54-thumb-star {
+  display: block !important;
+  width: 13px !important;
+  height: 13px !important;
+  fill: #D68E1D !important;
+  flex-shrink: 0 !important;
+}
+
+.s54-thumb-rating-score {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #2F221A !important;
+  line-height: 1 !important;
+  margin-left: 2px !important;
+}
+
+.s54-thumb-rating-sep {
+  font-size: 11px !important;
+  color: #A58A79 !important;
+  line-height: 1 !important;
+  opacity: 0.8 !important;
+  margin: 0 1px !important;
+}
+
+.s54-thumb-rating-count {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #7B685B !important;
+  line-height: 1 !important;
+}
+
+/* Also ensure any legacy Okendo review widgets inside cards are hidden or overridden */
+.o-product-thumbnail .oke-sr-count,
+.o-product-thumbnail .oke-sr-label-text,
+.o-product-thumbnail .oke-sr-total-text {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* 2. Remove Redundant Pricing next to "THÊM VÀO GIỎ" button */
+.o-product-thumbnail__hover__pricing,
+p.o-pricing.o-product-thumbnail__hover__pricing,
+.o-pricing.o-product-thumbnail__hover__pricing {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 3. Ensure the Primary Price above the button is cleanly displayed and styled */
+.o-product-thumbnail__price {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin: 8px auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.o-product-thumbnail__price-sale {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #2F221A !important;
+  letter-spacing: 0.02em !important;
+}
+
+.o-product-thumbnail__price-compare {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #9C8979 !important;
+  text-decoration: line-through !important;
+}
+
+/* 4. Luxury Full-Width "THÊM VÀO GIỎ" Button */
+.o-product-thumbnail__hover {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.o-product-thumbnail__form {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.o-product-thumbnail__btn.o-btn,
+.o-product-thumbnail__add-btn.o-btn {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 42px !important;
+  border-radius: 24px !important;
+  background-color: #2F221A !important;
+  color: #FAF6F1 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid transparent !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 12px rgba(47, 34, 26, 0.12) !important;
+  cursor: pointer !important;
+}
+
+.o-product-thumbnail__btn.o-btn:hover,
+.o-product-thumbnail__add-btn.o-btn:hover {
+  background-color: #D68E1D !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(214, 142, 29, 0.3) !important;
+  border-color: #D68E1D !important;
+}
+
+.o-product-thumbnail__btn.o-btn:active,
+.o-product-thumbnail__add-btn.o-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(47, 34, 26, 0.2) !important;
+}
+
+/* Card inner alignment */
+.o-product-thumbnail__inner {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.o-product-thumbnail__title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  color: #2F221A !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  margin-top: 8px !important;
+  margin-bottom: 4px !important;
+  text-align: center !important;
+}
+
+.o-product-thumbnail__excerpt {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #6E5D53 !important;
+  text-align: center !important;
+  margin: 4px auto 10px auto !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
