@@ -1,30 +1,7 @@
 {{-- 1. Top Announcement Bar: Scrolls away naturally when scrolling down --}}
 <div class="c-announcement-bar" id="s54-announcement-bar" style="background-color: #241A14; color: #FAF6F1; padding: 7px clamp(16px, 4vw, 48px); font-size: 11.5px; font-weight: 600; letter-spacing: 0.3px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 100;">
-    <div style="max-width: 1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
-        <div style="flex: 1; text-align: center;">
-            <span>🔥 {{ app()->getLocale() === 'vi' ? 'MIỄN PHÍ GIAO HÀNG TOÀN QUỐC CHO ĐƠN TỪ 500.000₫ | HOTLINE: 0974.933.907' : 'FREE NATIONWIDE SHIPPING ON ORDERS OVER 500,000₫ | HOTLINE: 0974.933.907' }}</span>
-        </div>
-        {{-- Language Switcher on Topbar (Desktop) --}}
-        <div class="s54-topbar-lang is-desktop-only" style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
-            <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'rgba(255,255,255,0.06)' }}; transition: all 0.2s ease;">
-                <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;">
-                    <rect width="30" height="20" fill="#DA251D"/>
-                    <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
-                </svg>
-                <span>VI</span>
-            </a>
-            <span style="opacity: 0.3; font-size: 10px; color: #FAF6F1;">|</span>
-            <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'rgba(255,255,255,0.06)' }}; transition: all 0.2s ease;">
-                <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;">
-                    <rect width="60" height="40" fill="#012169"/>
-                    <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>
-                    <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/>
-                    <path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/>
-                    <path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/>
-                </svg>
-                <span>EN</span>
-            </a>
-        </div>
+    <div style="max-width: 1440px; margin: 0 auto; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <span>🔥 {{ app()->getLocale() === 'vi' ? 'MIỄN PHÍ GIAO HÀNG TOÀN QUỐC CHO ĐƠN TỪ 500.000₫ | HOTLINE: 0974.933.907' : 'FREE NATIONWIDE SHIPPING ON ORDERS OVER 500,000₫ | HOTLINE: 0974.933.907' }}</span>
     </div>
 </div>
 
