@@ -5,10 +5,10 @@
     $pTitle = is_array($post->title) ? ($post->title[$locale] ?? $post->title['vi'] ?? '') : ($post->getTranslation('title', $locale, false) ?: $post->title);
     $pContent = is_array($post->content) ? ($post->content[$locale] ?? $post->content['vi'] ?? '') : ($post->getTranslation('content', $locale, false) ?: $post->content);
     $pImg = $post->image_url;
-    if ($pImg && !str_starts_with($pImg, 'http') && !str_starts_with($pImg, 'client-assets') && !str_starts_with($pImg, 'assets')) {
+    if ($pImg && !str_starts_with($pImg, 'http') && !str_starts_with($pImg, 'client-assets') && !str_starts_with($pImg, 'assets') && !str_starts_with($pImg, 'storage') && !str_starts_with($pImg, '/storage')) {
         $pImg = asset('client-assets/' . ltrim($pImg, '/'));
     } elseif ($pImg && !str_starts_with($pImg, 'http')) {
-        $pImg = asset($pImg);
+        $pImg = asset(ltrim($pImg, '/'));
     }
 @endphp
 

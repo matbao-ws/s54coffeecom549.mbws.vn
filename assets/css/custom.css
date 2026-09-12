@@ -4962,14 +4962,22 @@ h2.s54-checkout-title {
 
 .s54-thumb-stars {
   display: inline-flex !important;
+  flex-direction: row !important;
   align-items: center !important;
   gap: 2.5px !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
 }
 
 .s54-thumb-star {
-  display: block !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
   width: 13px !important;
   height: 13px !important;
+  min-width: 13px !important;
+  max-width: 13px !important;
+  min-height: 13px !important;
+  max-height: 13px !important;
   fill: #D68E1D !important;
   flex-shrink: 0 !important;
 }

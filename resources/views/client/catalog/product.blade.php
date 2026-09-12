@@ -18,10 +18,10 @@
     $galleryUrls = [];
     foreach ($images as $img) {
         $u = $img->image_url;
-        if (!str_starts_with($u, 'http') && !str_starts_with($u, 'client-assets') && !str_starts_with($u, 'assets')) {
+        if (!str_starts_with($u, 'http') && !str_starts_with($u, 'client-assets') && !str_starts_with($u, 'assets') && !str_starts_with($u, 'storage') && !str_starts_with($u, '/storage')) {
             $u = asset('client-assets/' . ltrim($u, '/'));
         } elseif (!str_starts_with($u, 'http')) {
-            $u = asset($u);
+            $u = asset(ltrim($u, '/'));
         }
         $galleryUrls[] = $u;
     }
@@ -103,18 +103,18 @@
                     {{ $title }}
                 </h1>
 
-                <div class="c-product-main__star-reviews s54-product-reviews-bar" style="margin-bottom: 16px;">
-                    <a class="s54-rating-anchor" href="#okereviews-section" title="{{ $locale === 'vi' ? 'Xem đánh giá của khách hàng' : 'View customer reviews' }}" onclick="event.preventDefault(); (document.getElementById('okereviews-section') || document.getElementById('s54-reviews-section'))?.scrollIntoView({behavior:'smooth'});">
-                        <div class="s54-rating-stars" aria-label="4.8 trên 5 sao">
-                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <div class="c-product-main__star-reviews s54-product-reviews-bar" style="margin-bottom: 16px; display: inline-flex !important; flex-direction: row !important; align-items: center !important;">
+                    <a class="s54-rating-anchor" href="#okereviews-section" title="{{ $locale === 'vi' ? 'Xem đánh giá của khách hàng' : 'View customer reviews' }}" onclick="event.preventDefault(); (document.getElementById('okereviews-section') || document.getElementById('s54-reviews-section'))?.scrollIntoView({behavior:'smooth'});" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 6px !important; text-decoration: none !important;">
+                        <div class="s54-rating-stars" aria-label="4.8 trên 5 sao" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 3px !important; flex-shrink: 0 !important; white-space: nowrap !important;">
+                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16" style="width: 16px !important; height: 16px !important; min-width: 16px !important; max-width: 16px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16" style="width: 16px !important; height: 16px !important; min-width: 16px !important; max-width: 16px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16" style="width: 16px !important; height: 16px !important; min-width: 16px !important; max-width: 16px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16" style="width: 16px !important; height: 16px !important; min-width: 16px !important; max-width: 16px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg class="s54-star-icon" viewBox="0 0 24 24" width="16" height="16" style="width: 16px !important; height: 16px !important; min-width: 16px !important; max-width: 16px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                         </div>
-                        <span class="s54-rating-score">4.8</span>
-                        <span class="s54-rating-sep">•</span>
-                        <span class="s54-rating-count">527 {{ $locale === 'vi' ? 'đánh giá' : 'reviews' }}</span>
+                        <span class="s54-rating-score" style="font-family: 'Inter', sans-serif !important; font-size: 14.5px !important; font-weight: 700 !important; color: #2F221A !important; line-height: 1 !important; margin-left: 2px !important;">4.8</span>
+                        <span class="s54-rating-sep" style="color: #A3968C !important; font-size: 13px !important; line-height: 1 !important;">•</span>
+                        <span class="s54-rating-count" style="font-family: 'Inter', sans-serif !important; font-size: 13.5px !important; font-weight: 500 !important; color: #7B685B !important; line-height: 1 !important;">527 {{ $locale === 'vi' ? 'đánh giá' : 'reviews' }}</span>
                     </a>
                 </div>
 

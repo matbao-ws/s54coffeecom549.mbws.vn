@@ -24,10 +24,10 @@
                     $pTitle = is_array($post->title) ? ($post->title[$locale] ?? $post->title['vi'] ?? '') : ($post->getTranslation('title', $locale, false) ?: $post->title);
                     $pSummary = is_array($post->summary) ? ($post->summary[$locale] ?? $post->summary['vi'] ?? '') : ($post->getTranslation('summary', $locale, false) ?: $post->summary);
                     $pImg = $post->image_url ?: 'client-assets/images/s54/story_roasting_master.jpg';
-                    if (!str_starts_with($pImg, 'http') && !str_starts_with($pImg, 'client-assets') && !str_starts_with($pImg, 'assets')) {
+                    if (!str_starts_with($pImg, 'http') && !str_starts_with($pImg, 'client-assets') && !str_starts_with($pImg, 'assets') && !str_starts_with($pImg, 'storage') && !str_starts_with($pImg, '/storage')) {
                         $pImg = asset('client-assets/' . ltrim($pImg, '/'));
                     } elseif (!str_starts_with($pImg, 'http')) {
-                        $pImg = asset($pImg);
+                        $pImg = asset(ltrim($pImg, '/'));
                     }
                 @endphp
                 <article style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column;">

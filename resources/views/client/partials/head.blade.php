@@ -14,7 +14,101 @@
 
 <link rel="stylesheet" href="{{ asset('assets/css/layouts.critical.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/layouts.theme.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=1789199000') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=' . (file_exists(public_path('assets/css/custom.css')) ? filemtime(public_path('assets/css/custom.css')) : '1789209999')) }}">
+
+<style id="s54-thumb-reviews-critical">
+  /* BULLETPROOF REVIEW STARS & PRODUCT CARD CRITICAL STYLES */
+  .s54-thumb-reviews-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    margin: 6px auto 8px auto !important;
+    width: 100% !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+  }
+  .s54-thumb-stars {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 2.5px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  .s54-thumb-star {
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    min-height: 13px !important;
+    max-width: 13px !important;
+    max-height: 13px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    fill: #D68E1D !important;
+    flex-shrink: 0 !important;
+  }
+  .s54-thumb-rating-score {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #2F221A !important;
+    line-height: 1 !important;
+    margin-left: 2px !important;
+  }
+  .s54-thumb-rating-sep {
+    font-size: 11px !important;
+    color: #A58A79 !important;
+    line-height: 1 !important;
+    opacity: 0.8 !important;
+    margin: 0 1px !important;
+  }
+  .s54-thumb-rating-count {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #7B685B !important;
+    line-height: 1 !important;
+  }
+  .s54-product-reviews-bar,
+  .s54-rating-anchor {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-decoration: none !important;
+  }
+  .s54-rating-stars {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 3px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  .s54-star-icon {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    fill: #D68E1D !important;
+    flex-shrink: 0 !important;
+  }
+  .o-product-thumbnail__image-container {
+    background-color: #FAF8F5 !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .o-product-thumbnail__image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+</style>
 
 <style id="s54-direct-typography-override">
 /* S54 HARMONIOUS INTER TYPOGRAPHY SYSTEM */
