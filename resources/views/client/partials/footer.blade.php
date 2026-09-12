@@ -78,13 +78,15 @@
                     <span class="s54-footer__social-title">{{ app()->getLocale() === 'vi' ? 'Kết Nối Với Chúng Tôi:' : 'Connect With Us:' }}</span>
                     <div class="s54-footer__social-icons">
                         <a href="https://www.facebook.com/S54COFFEE" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="Facebook">
-                            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
                         </a>
                         <a href="https://zalo.me/0974933907" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="Zalo">
                             <span style="font-weight: 800; font-size: 11px;">Zalo</span>
                         </a>
                         <a href="https://www.youtube.com/@S54COFFEE" target="_blank" rel="noopener" class="s54-footer__social-btn" aria-label="YouTube">
-                            <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" style="display: block;">
+                                <path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.78C18.25 5 12 5 12 5s-6.25 0-7.81.41A2.51 2.51 0 0 0 2.42 7.19C2 8.76 2 12 2 12s0 3.24.42 4.81a2.51 2.51 0 0 0 1.77 1.78C5.75 19 12 19 12 19s6.25 0 7.81-.41a2.51 2.51 0 0 0 1.77-1.78C22 15.24 22 12 22 12s0-3.24-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -108,9 +110,24 @@
             </div>
 
             <div class="c-lang-switcher c-lang-switcher--footer" data-lang-switcher>
-                <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="c-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" aria-label="Tiếng Việt">🇻🇳 Tiếng Việt</a>
+                <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="c-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" aria-label="Tiếng Việt" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
+                    <svg class="s54-flag-icon" width="16" height="11" viewBox="0 0 30 20" style="width: 16px !important; height: 11px !important; min-width: 16px !important; max-width: 16px !important; min-height: 11px !important; max-height: 11px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;">
+                        <rect width="30" height="20" fill="#DA251D"/>
+                        <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
+                    </svg>
+                    <span>Tiếng Việt</span>
+                </a>
                 <span class="c-lang-divider">|</span>
-                <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="c-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" aria-label="English">🇬🇧 English</a>
+                <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="c-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" aria-label="English" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
+                    <svg class="s54-flag-icon" width="16" height="11" viewBox="0 0 60 40" style="width: 16px !important; height: 11px !important; min-width: 16px !important; max-width: 16px !important; min-height: 11px !important; max-height: 11px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;">
+                        <rect width="60" height="40" fill="#012169"/>
+                        <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>
+                        <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/>
+                        <path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/>
+                        <path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/>
+                    </svg>
+                    <span>English</span>
+                </a>
             </div>
         </div>
 

@@ -1,8 +1,35 @@
-<header class="c-header c-header--solid" contenteditable="false">
-    <div class="c-announcement-bar" style="background-color: #241A14; color: #FAF6F1; text-align: center; padding: 6px 16px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255,255,255,0.06);">
-        <span>🔥 {{ app()->getLocale() === 'vi' ? 'MIỄN PHÍ GIAO HÀNG TOÀN QUỐC CHO ĐƠN TỪ 500.000₫ | HOTLINE: 0974.933.907' : 'FREE NATIONWIDE SHIPPING ON ORDERS OVER 500,000₫ | HOTLINE: 0974.933.907' }}</span>
+{{-- 1. Top Announcement Bar: Scrolls away naturally when scrolling down --}}
+<div class="c-announcement-bar" id="s54-announcement-bar" style="background-color: #241A14; color: #FAF6F1; padding: 7px clamp(16px, 4vw, 48px); font-size: 11.5px; font-weight: 600; letter-spacing: 0.3px; border-bottom: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 100;">
+    <div style="max-width: 1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="flex: 1; text-align: center;">
+            <span>🔥 {{ app()->getLocale() === 'vi' ? 'MIỄN PHÍ GIAO HÀNG TOÀN QUỐC CHO ĐƠN TỪ 500.000₫ | HOTLINE: 0974.933.907' : 'FREE NATIONWIDE SHIPPING ON ORDERS OVER 500,000₫ | HOTLINE: 0974.933.907' }}</span>
+        </div>
+        {{-- Language Switcher on Topbar (Desktop) --}}
+        <div class="s54-topbar-lang is-desktop-only" style="display: flex; align-items: center; gap: 4px; flex-shrink: 0;">
+            <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'rgba(255,255,255,0.06)' }}; transition: all 0.2s ease;">
+                <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;">
+                    <rect width="30" height="20" fill="#DA251D"/>
+                    <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
+                </svg>
+                <span>VI</span>
+            </a>
+            <span style="opacity: 0.3; font-size: 10px; color: #FAF6F1;">|</span>
+            <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'rgba(255,255,255,0.06)' }}; transition: all 0.2s ease;">
+                <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;">
+                    <rect width="60" height="40" fill="#012169"/>
+                    <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>
+                    <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/>
+                    <path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/>
+                    <path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/>
+                </svg>
+                <span>EN</span>
+            </a>
+        </div>
     </div>
-    
+</div>
+
+{{-- 2. Main Sticky Header: Sticks to top: 0 when scrolling --}}
+<header class="c-header c-header--solid" id="s54-sticky-header" contenteditable="false" style="position: sticky; top: 0; z-index: 1000; background-color: #2F221A; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);">
     <div class="c-header__wrapper o-wrapper" style="display: flex; align-items: center; justify-content: space-between; padding: 12px clamp(16px, 4vw, 48px); max-width: 1440px; margin: 0 auto; gap: 16px;">
         
         {{-- Mobile Hamburger Toggle --}}
@@ -48,7 +75,7 @@
         </nav>
 
         {{-- Right Actions: Phone Hotline, Lang Switch, Cart --}}
-        <ul class="c-header__additional" style="display: flex; align-items: center; gap: 12px; list-style: none; margin: 0; padding: 0;">
+        <ul class="c-header__additional" style="display: flex; align-items: center; gap: 10px; list-style: none; margin: 0; padding: 0;">
             <li class="c-header__additional-item is-desktop-only" style="list-style: none;">
                 <a href="tel:0974933907" class="c-header__phone-link" style="color: #FAF6F1; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; height: 32px; padding: 0 12px; border-radius: 16px; background: rgba(214, 142, 29, 0.1); border: 1px solid rgba(214, 142, 29, 0.3); transition: all 0.2s ease;">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D68E1D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 13px !important; height: 13px !important; max-width: 13px !important; max-height: 13px !important; display: inline-block !important; flex-shrink: 0;">
@@ -57,13 +84,46 @@
                     <span>0974.933.907</span>
                 </a>
             </li>
-            <li class="c-header__additional-item is-mobile-only" style="list-style: none;">
-                <div class="s54-lang-switch s54-mobile-lang-pill" style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; color: #FAF6F1;">
-                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; padding: 2px 5px; border-radius: 3px;">VI</a>
-                    <span style="opacity: 0.4;">|</span>
-                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; padding: 2px 5px; border-radius: 3px;">EN</a>
+
+            {{-- Desktop Header Language Switcher Pill --}}
+            <li class="c-header__additional-item is-desktop-only" style="list-style: none;">
+                <div class="s54-header-lang-pill" style="display: flex; align-items: center; gap: 2px; padding: 2px 4px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); height: 32px; box-sizing: border-box;">
+                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'transparent' }}; transition: all 0.2s ease;" title="Tiếng Việt">
+                        <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;">
+                            <rect width="30" height="20" fill="#DA251D"/>
+                            <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
+                        </svg>
+                        <span>VI</span>
+                    </a>
+                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 12px; font-size: 11.5px; font-weight: 700; text-decoration: none; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'transparent' }}; transition: all 0.2s ease;" title="English">
+                        <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;">
+                            <rect width="60" height="40" fill="#012169"/>
+                            <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>
+                            <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/>
+                            <path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/>
+                            <path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/>
+                        </svg>
+                        <span>EN</span>
+                    </a>
                 </div>
             </li>
+
+            {{-- Mobile Header Language Switcher Pill --}}
+            <li class="c-header__additional-item is-mobile-only" style="list-style: none;">
+                <div class="s54-lang-switch s54-mobile-lang-pill" style="display: flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700; color: #FAF6F1; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);">
+                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; padding: 2px 4px;">
+                        <svg width="13" height="9" viewBox="0 0 30 20" style="border-radius: 1px; flex-shrink: 0;"><rect width="30" height="20" fill="#DA251D"/><polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/></svg>
+                        <span>VI</span>
+                    </a>
+                    <span style="opacity: 0.3;">|</span>
+                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; padding: 2px 4px;">
+                        <svg width="13" height="9" viewBox="0 0 60 40" style="border-radius: 1px; flex-shrink: 0; overflow: hidden;"><rect width="60" height="40" fill="#012169"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/><path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/></svg>
+                        <span>EN</span>
+                    </a>
+                </div>
+            </li>
+
+            {{-- Cart Button --}}
             <li class="c-header__additional-item" style="list-style: none;">
                 <button type="button" class="c-header__link is-cart" id="s54-cart-trigger" aria-label="Cart" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; position: relative; padding: 0; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="c-header__icon is-cart" style="width: 17px !important; height: 17px !important; max-width: 17px !important; max-height: 17px !important; display: block !important; flex-shrink: 0;">
@@ -112,8 +172,14 @@
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-size: 12px; color: #BAADA1; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Ngôn ngữ:</span>
                     <div style="display: flex; gap: 8px; font-weight: 700; font-size: 12px;">
-                        <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; padding: 4px 10px; background: rgba(255,255,255,0.08); border-radius: 4px;">🇻🇳 VI</a>
-                        <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#D68E1D' : '#FAF6F1' }}; text-decoration: none; padding: 4px 10px; background: rgba(255,255,255,0.08); border-radius: 4px;">🇬🇧 EN</a>
+                        <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : '#FAF6F1' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'rgba(255,255,255,0.08)' }}; text-decoration: none; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;">
+                            <svg width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;"><rect width="30" height="20" fill="#DA251D"/><polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/></svg>
+                            <span>VI</span>
+                        </a>
+                        <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : '#FAF6F1' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'rgba(255,255,255,0.08)' }}; text-decoration: none; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;">
+                            <svg width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;"><rect width="60" height="40" fill="#012169"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/><path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/></svg>
+                            <span>EN</span>
+                        </a>
                     </div>
                 </div>
             </div>

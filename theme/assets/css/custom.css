@@ -4788,6 +4788,8 @@ h2.s54-checkout-title {
         width: 100% !important;
         height: 100% !important;
     }
+}
+
 /* ==========================================================================
    S54 COFFEE COLLECTION FILTER & DRAWER STYLES
    ========================================================================== */
@@ -5341,3 +5343,201 @@ p.o-pricing.o-product-thumbnail__hover__pricing,
     flex-shrink: 0 !important;
     position: static !important;
 }
+
+/* ==========================================================================
+   S54 REFINEMENTS: HEADER SCROLL, FLAGS, FOOTER ICONS & BACK-TO-TOP
+   ========================================================================== */
+
+/* 1. Header Topbar Scrolls Naturally / Main Header Remains Sticky */
+.c-announcement-bar,
+.c-header__topbar {
+    position: relative !important;
+    top: auto !important;
+    z-index: 99 !important;
+    background-color: #241A14 !important;
+}
+
+.c-header,
+.c-header--solid,
+#s54-sticky-header {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #2F221A !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* 2. Flag Icons & Language Switchers */
+.s54-flag-icon,
+.c-lang-switcher svg,
+.c-lang-switcher--footer svg,
+.c-lang-btn svg,
+.s54-header-lang-pill svg,
+.s54-topbar-lang svg,
+.s54-mobile-drawer__footer svg {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    border-radius: 1.5px !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+    object-fit: contain !important;
+}
+
+/* Header flags */
+.s54-topbar-lang svg,
+.s54-header-lang-pill svg,
+.s54-mobile-drawer__footer svg {
+    width: 15px !important;
+    height: 10px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    min-height: 10px !important;
+    max-height: 10px !important;
+    margin: 0 !important;
+}
+
+/* Footer flags */
+.c-lang-switcher--footer svg,
+.c-lang-switcher svg {
+    width: 16px !important;
+    height: 11px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    min-height: 11px !important;
+    max-height: 11px !important;
+    margin: 0 !important;
+}
+
+.s54-lang-btn {
+    cursor: pointer !important;
+    user-select: none !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: all 0.2s ease !important;
+}
+
+.s54-lang-btn:hover {
+    color: #FFFFFF !important;
+    background: rgba(214, 142, 29, 0.6) !important;
+}
+
+.c-lang-switcher--footer .c-lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+}
+
+/* 3. Footer Social Icons - Precision Proportions (No Clipping/Bloating) */
+.s54-footer__social-icons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.s54-footer__social-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(214, 142, 29, 0.3) !important;
+    color: #FAF6F1 !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.s54-footer__social-btn svg {
+    display: block !important;
+    flex-shrink: 0 !important;
+    max-width: 17px !important;
+    max-height: 17px !important;
+    margin: 0 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.s54-footer__social-btn:hover {
+    background: #D68E1D !important;
+    border-color: #D68E1D !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2.5px) !important;
+    box-shadow: 0 4px 14px rgba(214, 142, 29, 0.4) !important;
+}
+
+.s54-footer__social-btn:hover svg {
+    transform: scale(1.08) !important;
+}
+
+/* 4. Luxury Floating Back-To-Top Button */
+.s54-back-to-top {
+    position: fixed !important;
+    bottom: 28px !important;
+    right: 28px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background-color: #2F221A !important;
+    border: 1.5px solid #D68E1D !important;
+    color: #D68E1D !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(214, 142, 29, 0.2) !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(16px) scale(0.9) !important;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+    outline: none !important;
+    padding: 0 !important;
+}
+
+.s54-back-to-top.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+.s54-back-to-top:hover {
+    background-color: #D68E1D !important;
+    color: #FFFFFF !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 24px rgba(214, 142, 29, 0.45) !important;
+}
+
+.s54-back-to-top:active {
+    transform: translateY(-1px) scale(0.98) !important;
+}
+
+.s54-back-to-top svg {
+    display: block !important;
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.s54-back-to-top:hover svg {
+    transform: translateY(-2px) !important;
+}
+
+@media (max-width: 768px) {
+    .s54-back-to-top {
+        bottom: 20px !important;
+        right: 18px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
