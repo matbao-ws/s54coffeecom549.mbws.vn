@@ -13,11 +13,19 @@ class HtmlSanitizer
     {
         $cachePath = storage_path('app/htmlpurifier');
         if (! is_dir($cachePath)) {
-            mkdir($cachePath, 0750, true);
+            @mkdir($cachePath, 0777, true);
+        }
+        if (is_dir($cachePath) && ! is_writable($cachePath)) {
+            @chmod($cachePath, 0777);
         }
 
         $config = HTMLPurifier_Config::createDefault();
-        $config->set('Cache.SerializerPath', $cachePath);
+        if (is_dir($cachePath) && is_writable($cachePath)) {
+            $config->set('Cache.SerializerPath', $cachePath);
+        } else {
+            $config->set('Cache.DefinitionImpl', null);
+        }
+
         $config->set('HTML.Allowed', 'p[class],br,hr,b,strong,i,em,u,s,small,sub,sup,ul,ol,li,blockquote,h1,h2,h3,h4,h5,h6,a[href|title|rel|target],img[src|alt|title|width|height|class],table[class],thead,tbody,tfoot,tr,th[colspan|rowspan|scope],td[colspan|rowspan],pre,code,span[class],div[class]');
         $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true, 'mailto' => true]);
         $config->set('AutoFormat.RemoveEmpty', true);
