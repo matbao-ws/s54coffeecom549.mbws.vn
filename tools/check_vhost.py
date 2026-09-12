@@ -1,4 +1,7 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from tools.remote_probe import run_remote_php
+
 
 code = """
 echo "=== VHOST CONFIG CHECK ===" . PHP_EOL;

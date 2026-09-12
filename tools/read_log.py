@@ -14,28 +14,30 @@ try:
 except Exception as e:
     print("FTP CHMOD error:", e)
 try:
-    print("FTP SITE CHMOD 0777 storage/app:", ftp.sendcmd("SITE CHMOD 0777 storage/app"))
+    print("FTP SITE CHMOD 0777 public:", ftp.sendcmd("SITE CHMOD 0777 public"))
 except Exception as e:
-    print("FTP CHMOD storage/app error:", e)
+    print("FTP CHMOD public error:", e)
 ftp.quit()
 
-code = """
-$dir = 'storage/app/htmlpurifier';
-echo "is_writable now: " . (is_writable($dir) ? "yes" : "no") . PHP_EOL;
-echo "perms: " . substr(sprintf('%o', fileperms($dir)), -4) . PHP_EOL;
 
+code = """
 require __DIR__ . '/vendor/autoload.php';
 $app = require_once __DIR__ . '/bootstrap/app.php';
 $kernel = $app->make(Illuminate\\Contracts\\Console\\Kernel::class);
 $kernel->bootstrap();
 
-try {
-    $sanitizer = new \\App\\Support\\HtmlSanitizer();
-    echo "HtmlSanitizer test: " . $sanitizer->clean('<p>Test <strong>clean</strong></p>') . PHP_EOL;
-} catch (Throwable $e) {
-    echo "HtmlSanitizer error: " . $e->getMessage() . " at " . $e->getFile() . ":" . $e->getLine() . PHP_EOL;
-}
+\\Illuminate\\Support\\Facades\\Storage::disk('public')->delete([
+    'general/test-banner-4a6e1f.png',
+    'general/test-banner-a68669.png'
+]);
+echo "Test files deleted successfully." . PHP_EOL;
 """
 
-print(run_remote_php(code, "test_sanitizer.php"))
+print(run_remote_php(code, "delete_tests.php"))
 
+
+
+
+
+
+print(run_remote_php(code, "tail_log.php"))

@@ -18,11 +18,12 @@ DirectoryIndex public/index.php index.php
   RewriteCond %{HTTP:x-xsrf-token} .
   RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
-  # Static asset mappings
+# Static asset mappings
   RewriteRule ^(.*/)?assets/(.*)$ assets/$2 [L]
   RewriteRule ^admin-assets/(.*)$ public/admin-assets/$1 [L]
   RewriteRule ^client-assets/(.*)$ public/client-assets/$1 [L]
-  RewriteRule ^storage/(.*)$ storage/app/public/$1 [L]
+  RewriteRule ^storage/(?!app/public/)(.*)$ storage/app/public/$1 [L]
+
 
   # Serve existing static asset files directly (images, fonts, stylesheets, scripts, videos, php runners)
   RewriteCond %{REQUEST_FILENAME} -f
