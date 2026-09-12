@@ -515,17 +515,7 @@
             if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); scrollTarget.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); });
         });
 
-        // Video Controller
-        document.querySelectorAll('[data-play], .c-featured-video__button-play').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const container = btn.closest('.c-featured-video__media-container') || btn.parentElement;
-                const video = container.querySelector('video');
-                if (video) {
-                    if (video.paused) { video.play(); btn.style.opacity = '0'; }
-                    else { video.pause(); btn.style.opacity = '1'; }
-                }
-            });
-        });
+        // Video Controller synced with native video events handled by sections.featured-video.js
 
         // Newsletter Form
         document.querySelectorAll('form[action*="contact"], .c-newsletter-form').forEach(form => {

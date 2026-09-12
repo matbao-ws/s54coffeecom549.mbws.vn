@@ -1,2 +1,189 @@
 
 .c-featured-video{position:relative}.c-featured-video__media{width:100%;height:100%}.c-featured-video__media.has-mobile{display:none}.c-featured-video__media-container{position:relative;padding-bottom:600px}.c-featured-video__button-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:1px solid #faf6f1;margin:auto;transition:all .6s ease}.c-featured-video__button-play.is-desktop{display:none}.c-featured-video__button-play.is-hidden{opacity:0;pointer-events:none}.c-featured-video__inner{max-width:18rem;position:absolute;margin-left:1.5rem;transition:all .6s ease}.c-featured-video__inner.is-hidden{opacity:0;pointer-events:none}.c-featured-video__inner.is-color--milk{color:#faf6f1}.c-featured-video__title,.c-featured-video__title p{font-family:'Inter',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-size:3.125rem;letter-spacing:-.0625rem;line-height:1;margin-bottom:2rem}@media only screen and (min-width:1100px){.c-featured-video__title,.c-featured-video__title p{font-size:4.5rem}}@media only screen and (min-width:1650px){.c-featured-video__title,.c-featured-video__title p{font-size:6rem;letter-spacing:-.12rem}}.c-featured-video__title p,.c-featured-video__title p p{font-family:inherit;font-size:inherit;line-height:inherit;letter-spacing:inherit}.c-featured-video__paragraph{padding-right:2rem}.c-featured-video__button{margin-top:1.5rem}.c-featured-video__button.o-btn.is-primary .c-featured-video__button-arrow.o-btn__arrow{margin-left:1rem}.c-featured-video__button-play.o-btn--square.is-play{border-radius:50%;background:#fff;width:5.5rem;height:5.5rem}.c-featured-video__button-play.o-btn--square.is-play svg{width:2rem;padding-left:.25rem}.c-featured-video__button-play.o-btn--square.is-play svg path{fill:#8a6e4b}@media only screen and (min-width:750px){.c-featured-video__inner{max-width:22rem}}@media only screen and (min-width:1100px){.c-featured-video{padding-right:11.563rem;padding-left:11.563rem}.c-featured-video__media.is-mobile{display:none}.c-featured-video__media.has-mobile{display:block}.c-featured-video__media-container{padding-bottom:56%}.c-featured-video__button-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}.c-featured-video__button-play.is-mobile{display:none}.c-featured-video__button-play.is-desktop{display:block}.c-featured-video__inner{max-width:38rem;position:absolute;margin:0;top:1.2rem;left:3.5rem}.c-featured-video__inner.is-wide{max-width:50%}.c-featured-video__paragraph{padding-right:8rem}.c-featured-video__button{margin-top:3rem}.c-featured-video__button.o-btn.is-primary .c-featured-video__button-arrow.o-btn__arrow{margin-left:6rem}.c-featured-video__button-play.o-btn--square.is-play{height:9.5rem;width:9.5rem}.c-featured-video__button-play.o-btn--square.is-play:hover{background:rgba(47,34,26,.4)}.c-featured-video__button-play.o-btn--square.is-play svg{width:3.25rem}}
+
+
+/* ==========================================================================
+   S54 COFFEE — Featured Video Modern UX/UI Player (Hiding button when playing)
+   ========================================================================== */
+
+.c-featured-video {
+    position: relative !important;
+    background-color: #F3EEE8 !important;
+    padding: 3.5rem 0 !important;
+    width: 100% !important;
+}
+
+.c-featured-video__wrapper {
+    max-width: 1360px !important;
+    margin: 0 auto !important;
+    padding: 0 clamp(16px, 3.5vw, 48px) !important;
+    box-sizing: border-box !important;
+}
+
+.c-featured-video__media-container {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 480px !important;
+    max-height: 600px !important;
+    height: 58vh !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background-color: #2F221A !important;
+    box-shadow: 0 16px 40px rgba(47, 34, 26, 0.12) !important;
+    cursor: pointer !important;
+}
+
+.c-featured-video__media {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    z-index: 1 !important;
+}
+
+/* Semi-transparent dark luxury overlay when paused to make text and play button readable */
+.c-featured-video__media-container::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(90deg, rgba(47, 34, 26, 0.75) 0%, rgba(47, 34, 26, 0.35) 50%, rgba(47, 34, 26, 0.2) 100%) !important;
+    z-index: 2 !important;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    pointer-events: none !important;
+}
+
+/* When playing: fade out the dark gradient overlay so video colors are 100% natural */
+.c-featured-video__media-container.is-playing::before {
+    opacity: 0 !important;
+}
+
+/* Text overlay */
+.c-featured-video__inner {
+    position: absolute !important;
+    top: 50% !important;
+    left: clamp(28px, 5vw, 72px) !important;
+    transform: translateY(-50%) !important;
+    max-width: 480px !important;
+    width: calc(100% - 120px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 5 !important;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s !important;
+    pointer-events: auto !important;
+}
+
+.c-featured-video__inner.is-color--crema {
+    color: #FAF6F1 !important;
+}
+
+.c-featured-video__inner .c-featured-video__title {
+    color: #FAF6F1 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.c-featured-video__inner .c-featured-video__desc {
+    color: #E2D7CC !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* When playing: smoothly hide the text overlay */
+.c-featured-video__media-container.is-playing .c-featured-video__inner,
+.c-featured-video__inner.is-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-45%) !important;
+    pointer-events: none !important;
+}
+
+/* Play/Pause Button */
+.c-featured-video__button-play {
+    position: absolute !important;
+    top: 50% !important;
+    right: clamp(40px, 12vw, 180px) !important;
+    left: unset !important;
+    transform: translateY(-50%) scale(1) !important;
+    width: 76px !important;
+    height: 76px !important;
+    border-radius: 50% !important;
+    background: rgba(47, 34, 26, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 2px solid #D68E1D !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 0 6px rgba(214, 142, 29, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    color: #FAF6F1 !important;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s, box-shadow 0.2s !important;
+    box-sizing: border-box !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.c-featured-video__button-play:hover {
+    background: #D68E1D !important;
+    border-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+    transform: translateY(-50%) scale(1.08) !important;
+    box-shadow: 0 12px 36px rgba(214, 142, 29, 0.5), 0 0 0 10px rgba(214, 142, 29, 0.25) !important;
+}
+
+/* Play button icon */
+.c-featured-video__button-play svg {
+    display: block !important;
+    width: 28px !important;
+    height: 28px !important;
+    fill: currentColor !important;
+    margin-left: 3px !important;
+}
+
+/* CRITICAL: When the video is playing, HIDE THE BUTTON COMPLETELY! */
+.c-featured-video__media-container.is-playing .c-featured-video__button-play,
+.c-featured-video__button-play.is-hidden,
+.c-featured-video__button-play[data-state="playing"] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(-50%) scale(0.7) !important;
+}
+
+/* When the video is playing, if the user hovers over the video container, show a sleek subtle pause indicator */
+.c-featured-video__media-container.is-playing:hover .c-featured-video__button-play {
+    opacity: 0.85 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(-50%) scale(0.9) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 1099px) {
+    .c-featured-video__button-play {
+        right: 50% !important;
+        left: unset !important;
+        transform: translate(50%, -50%) scale(1) !important;
+        width: 64px !important;
+        height: 64px !important;
+    }
+    .c-featured-video__button-play:hover {
+        transform: translate(50%, -50%) scale(1.06) !important;
+    }
+    .c-featured-video__media-container.is-playing .c-featured-video__button-play,
+    .c-featured-video__button-play.is-hidden,
+    .c-featured-video__button-play[data-state="playing"] {
+        transform: translate(50%, -50%) scale(0.7) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    .c-featured-video__media-container.is-playing:hover .c-featured-video__button-play {
+        transform: translate(50%, -50%) scale(0.9) !important;
+        opacity: 0.85 !important;
+        visibility: visible !important;
+    }
+}
