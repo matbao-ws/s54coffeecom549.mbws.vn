@@ -33,207 +33,51 @@
     </x-client::editable><a href="/collections/all-coffee-products" 
           class="c-product-carousel__button o-btn is-primary is-dark has-arrow">Tất Cả Sản Phẩm<svg fill="none" class="o-btn__arrow c-product-carousel__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
 </a></div>
-    <div class="c-product-carousel__products" data-carousel><a href="/collections/coffee-beans" class="c-product-carousel__product" data-carousel-tile>
-          
-            <div class="c-product-carousel__product-image-container o-media-container">
-<picture><source
-        data-w="&quot;120x&quot;"
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"alt="Cà Phê Hạt"/><source
-        data-w="&quot;140x&quot;"
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"alt="Cà Phê Hạt"/><source
-        data-w="&quot;200x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"alt="Cà Phê Hạt"/><source
-        data-w="&quot;380x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"alt="Cà Phê Hạt"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_1.jpg, assets/images/s54/robusta_1.jpg 2x"alt="Cà Phê Hạt"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/robusta_1.jpg"
-      width="500"alt="Cà Phê Hạt"
-      class="c-product-carousel__product-image o-media "
-      
-    />
-  </picture>
-            </div>
-          
-            <h6 class="c-product-carousel__product-title o-heading--6">Cà Phê Hạt Rang</h6>
-          
-        </a><a href="collections-coffee.html?category=instant" class="c-product-carousel__product" data-carousel-tile>
-          
-            <div class="c-product-carousel__product-image-container o-media-container">
-<picture><source
-        data-w="&quot;120x&quot;"
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Sữa Hòa Tan 3in1"/><source
-        data-w="&quot;140x&quot;"
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Sữa Hòa Tan 3in1"/><source
-        data-w="&quot;200x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Sữa Hòa Tan 3in1"/><source
-        data-w="&quot;380x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Sữa Hòa Tan 3in1"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Sữa Hòa Tan 3in1"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/instant_3in1_1.jpg"
-      width="500"alt="Cà Phê Sữa Hòa Tan 3in1"
-      class="c-product-carousel__product-image o-media "
-      
-    />
-  </picture>
-            </div>
-          
-            <h6 class="c-product-carousel__product-title o-heading--6">Combo Dùng Thử</h6>
-          
-        </a><a href="/collections/ground-coffee" class="c-product-carousel__product" data-carousel-tile>
-          
-            <div class="c-product-carousel__product-image-container o-media-container">
-<picture><source
-        data-w="&quot;120x&quot;"
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Cà Phê Xay"/><source
-        data-w="&quot;140x&quot;"
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Cà Phê Xay"/><source
-        data-w="&quot;200x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Cà Phê Xay"/><source
-        data-w="&quot;380x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Cà Phê Xay"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Cà Phê Xay"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/robusta_2.jpg"
-      width="500"alt="Cà Phê Xay"
-      class="c-product-carousel__product-image o-media "
-      
-    />
-  </picture>
-            </div>
-          
-            <h6 class="c-product-carousel__product-title o-heading--6">Cà Phê Hòa Tan</h6>
-          
-        </a><a href="/collections/instant-coffee" class="c-product-carousel__product" data-carousel-tile>
-          
-            <div class="c-product-carousel__product-image-container o-media-container">
-<picture><source
-        data-w="&quot;120x&quot;"
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Hòa Tan"/><source
-        data-w="&quot;140x&quot;"
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Hòa Tan"/><source
-        data-w="&quot;200x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Hòa Tan"/><source
-        data-w="&quot;380x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Hòa Tan"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_1.jpg, assets/images/s54/instant_3in1_1.jpg 2x"alt="Cà Phê Hòa Tan"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/instant_3in1_1.jpg"
-      width="500"alt="Cà Phê Hòa Tan"
-      class="c-product-carousel__product-image o-media "
-      
-    />
-  </picture>
-            </div>
-          
-            <h6 class="c-product-carousel__product-title o-heading--6">Cà Phê Hòa Tan</h6>
-          
-        </a><a href="collections-coffee.html?category=grinder" class="c-product-carousel__product" data-carousel-tile>
-          
-            <div class="c-product-carousel__product-image-container o-media-container">
-<picture><source
-        data-w="&quot;120x&quot;"
-        media="(max-width:320px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Máy Xay Cà Phê"/><source
-        data-w="&quot;140x&quot;"
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Máy Xay Cà Phê"/><source
-        data-w="&quot;200x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Máy Xay Cà Phê"/><source
-        data-w="&quot;380x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Máy Xay Cà Phê"/><source
-        media="(min-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_2.jpg, assets/images/s54/robusta_2.jpg 2x"alt="Máy Xay Cà Phê"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/robusta_2.jpg"
-      width="500"alt="Máy Xay Cà Phê"
-      class="c-product-carousel__product-image o-media "
-      
-    />
-  </picture>
-            </div>
-          
-            <h6 class="c-product-carousel__product-title o-heading--6">Máy Xay Cà Phê</h6>
-          
-        </a></div>
+    <div class="c-product-carousel__products" data-carousel>
+      {{-- 1. Túi Cà Phê Hòa Tan 456gr --}}
+      <a href="product-detail.html?id=200003" class="c-product-carousel__product" data-carousel-tile>
+        <div class="c-product-carousel__product-image-container o-media-container">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/products/tui_3in1_456g.png') }}, {{ asset('assets/images/s54/products/tui_3in1_456g.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/tui_3in1_456g.png') }}" width="500" alt="Túi Cà Phê Hòa Tan 456gr" class="c-product-carousel__product-image o-media" />
+          </picture>
+        </div>
+        <h6 class="c-product-carousel__product-title o-heading--6">Túi Cà Phê Hòa Tan 456gr</h6>
+      </a>
+
+      {{-- 2. Cà Phê Hạt Rang --}}
+      <a href="product-detail.html?id=200007" class="c-product-carousel__product" data-carousel-tile>
+        <div class="c-product-carousel__product-image-container o-media-container">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/products/robusta_500g.png') }}, {{ asset('assets/images/s54/products/robusta_500g.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/robusta_500g.png') }}" width="500" alt="Cà Phê Hạt Rang" class="c-product-carousel__product-image o-media" />
+          </picture>
+        </div>
+        <h6 class="c-product-carousel__product-title o-heading--6">Cà Phê Hạt Rang</h6>
+      </a>
+
+      {{-- 3. Combo 12 Gói Dùng Thử --}}
+      <a href="product-detail.html?id=200002" class="c-product-carousel__product" data-carousel-tile>
+        <div class="c-product-carousel__product-image-container o-media-container">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }}, {{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }}" width="500" alt="Combo 12 Gói Cà Phê Hòa Tan Dùng Thử" class="c-product-carousel__product-image o-media" />
+          </picture>
+        </div>
+        <h6 class="c-product-carousel__product-title o-heading--6">Combo 12 Gói Cà Phê Hòa Tan Dùng Thử</h6>
+      </a>
+
+      {{-- 4. Máy Xay Cà Phê --}}
+      <a href="product-detail.html?id=200008" class="c-product-carousel__product" data-carousel-tile>
+        <div class="c-product-carousel__product-image-container o-media-container">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }}, {{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }}" width="500" alt="Máy Xay Cà Phê" class="c-product-carousel__product-image o-media" />
+          </picture>
+        </div>
+        <h6 class="c-product-carousel__product-title o-heading--6">Máy Xay Cà Phê</h6>
+      </a>
+    </div>
     <a class="c-product-carousel__control c-product-carousel__control--prev" data-carousel-prev>
       <svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
     </a>
@@ -249,7 +93,7 @@
     is-rounded
     is-position--left is-mobile-position--left"
   >
-    <x-client::editable-image key="home.story.image" src="{{ asset('assets/images/s54/roasting_facility.png') }}" alt="Quy trình rang xay hiện đại S54 Coffee" class="c-text-and-image__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+    <x-client::editable-image key="home.story.image" src="{{ asset('assets/images/s54/s54_story_blend_intro.png') }}" alt="S54 Coffee – Đổi Mới Trong Từng Tách Cà Phê Việt" class="c-text-and-image__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   <div class="c-text-and-image__text-container">
     <div class="c-text-and-image__text-inner"><x-client::editable key="home.story.title" tag="h2" class="c-text-and-image__text-title o-heading--2">
       S54 Coffee –<em> </em>Đổi Mới Trong Từng Tách Cà Phê Việt
@@ -270,212 +114,83 @@
         class="c-article-feed__button o-btn is-primary is-dark has-arrow is-desktop">Xem Tất Cả<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
 </a></div>
 
-    <div class="c-article-feed__inner-feed" data-carousel><a 
-  href="blog-detail.html?id=1"
-  class="o-article-tile" data-carousel-tile><div class="o-article-tile__image-wrap">
-<picture><source
-        data-w="&quot;500x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/blog_cup.jpg, assets/images/s54/blog_cup.jpg 2x"alt="5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết"/><source
-        data-w="&quot;750x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/blog_cup.jpg, assets/images/s54/blog_cup.jpg 2x"alt="5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết"/><source
-        data-w="&quot;1000x&quot;"
-        media="(max-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/blog_cup.jpg, assets/images/s54/blog_cup.jpg 2x"alt="5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết"/><source
-        media="(min-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/blog_cup.jpg, assets/images/s54/blog_cup.jpg 2x"alt="5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/blog_cup.jpg"
-      width="1024"alt="5 Lợi Ích Tuyệt Vời Của Việc Uống Cà Phê Có Thể Bạn Chưa Biết"
-      class="o-article-tile__image "
-      
-    />
-  </picture></div>
+    <div class="c-article-feed__inner-feed" data-carousel>
+      {{-- Card 1: Vì Sao Việt Nam Là Cường Quốc Cà Phê? --}}
+      <a href="blog-detail.html?id=1" class="o-article-tile" data-carousel-tile>
+        <div class="o-article-tile__image-wrap">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }}, {{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }}" width="1024" alt="Vì Sao Việt Nam Là Cường Quốc Cà Phê Thế Giới?" class="o-article-tile__image" />
+          </picture>
+        </div>
+        <div class="o-article-tile__detail">
+          <div class="o-article-tile__detail-inner">
+            <span class="o-article-tile__detail-tag o-subtitle">Tin Tức</span>
+            <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
+          </div>
+          <div class="o-article-tile__detail-separator"></div>
+          <h6 class="o-article-tile__detail-title">Vì Sao Việt Nam Là Cường Quốc Cà Phê Thế Giới?</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+        </div>
+      </a>
 
-<div class="o-article-tile__detail">
-  <div class="o-article-tile__detail-inner">
-    
-      <span class="o-article-tile__detail-tag o-subtitle">Tin Tức</span>
-      <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
-    
-  </div>
-  <div class="o-article-tile__detail-separator"></div>
-  
-    <h6 class="o-article-tile__detail-title">
-      Vì Sao Việt Nam Là Cường Quốc Cà Phê?
-    </h6>
-  
+      {{-- Card 2: Ý Nghĩa Của Tên Gọi S54 Là Gì? --}}
+      <a href="blog-detail.html?id=12" class="o-article-tile" data-carousel-tile>
+        <div class="o-article-tile__image-wrap">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }}, {{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }}" width="1024" alt="Ý Nghĩa Của Tên Gọi S54 Là Gì?" class="o-article-tile__image" />
+          </picture>
+        </div>
+        <div class="o-article-tile__detail">
+          <div class="o-article-tile__detail-inner">
+            <span class="o-article-tile__detail-tag o-subtitle">Câu Chuyện S54</span>
+            <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
+          </div>
+          <div class="o-article-tile__detail-separator"></div>
+          <h6 class="o-article-tile__detail-title">Ý Nghĩa Của Tên Gọi S54 Là Gì?</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+        </div>
+      </a>
 
-    <div class="o-article-tile__detail-read-time o-type--1">
-8 phút đọc</div>
-  
-</div>
-</a><a 
-  href="blog-detail.html?id=12"
-  class="o-article-tile" data-carousel-tile><div class="o-article-tile__image-wrap">
-<picture>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/018_VittoriaSL_0462.jpg, assets/images/018_VittoriaSL_0462.jpg 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/018_VittoriaSL_0462.jpg, assets/images/018_VittoriaSL_0462.jpg 2x"/>
-      
-<source
-        media="(max-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/018_VittoriaSL_0462.jpg, assets/images/018_VittoriaSL_0462.jpg 2x"/><source
-        media="(min-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/018_VittoriaSL_0462.jpg, assets/images/018_VittoriaSL_0462.jpg 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/018_VittoriaSL_0462.jpg"
-      width="1024"
-      
-      class="o-article-tile__image"
-      
-    />
-  </picture></div>
+      {{-- Card 3: Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam? --}}
+      <a href="blog-detail.html?id=2" class="o-article-tile" data-carousel-tile>
+        <div class="o-article-tile__image-wrap">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }}, {{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }}" width="1024" alt="Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?" class="o-article-tile__image" />
+          </picture>
+        </div>
+        <div class="o-article-tile__detail">
+          <div class="o-article-tile__detail-inner">
+            <span class="o-article-tile__detail-tag o-subtitle">Kiến Thức Cà Phê</span>
+            <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
+          </div>
+          <div class="o-article-tile__detail-separator"></div>
+          <h6 class="o-article-tile__detail-title">Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+        </div>
+      </a>
 
-<div class="o-article-tile__detail">
-  <div class="o-article-tile__detail-inner">
-    
-      <span class="o-article-tile__detail-tag o-subtitle">Tin Tức</span>
-      <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
-    
-  </div>
-  <div class="o-article-tile__detail-separator"></div>
-  
-    <h6 class="o-article-tile__detail-title">
-      Triết Lý “NEW COFFEE, NEW INCOME” & Hơn Cả Cà Phê
-    </h6>
-  
-
-    <div class="o-article-tile__detail-read-time o-type--1">
-10 phút đọc</div>
-  
-</div>
-</a><a 
-  href="blog-detail.html?id=2"
-  class="o-article-tile" data-carousel-tile><div class="o-article-tile__image-wrap">
-<picture><source
-        data-w="&quot;500x&quot;"
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_2.jpg, assets/images/s54/instant_3in1_2.jpg 2x"alt="Bí Quyết Phân Biệt Cà Phê Rang Mộc Nguyên Chất & Cà Phê Pha Tạp"/><source
-        data-w="&quot;750x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_2.jpg, assets/images/s54/instant_3in1_2.jpg 2x"alt="Bí Quyết Phân Biệt Cà Phê Rang Mộc Nguyên Chất & Cà Phê Pha Tạp"/><source
-        data-w="&quot;1000x&quot;"
-        media="(max-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_2.jpg, assets/images/s54/instant_3in1_2.jpg 2x"alt="Bí Quyết Phân Biệt Cà Phê Rang Mộc Nguyên Chất & Cà Phê Pha Tạp"/><source
-        media="(min-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/instant_3in1_2.jpg, assets/images/s54/instant_3in1_2.jpg 2x"alt="Bí Quyết Phân Biệt Cà Phê Rang Mộc Nguyên Chất & Cà Phê Pha Tạp"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/instant_3in1_2.jpg"
-      width="1024"alt="Bí Quyết Phân Biệt Cà Phê Rang Mộc Nguyên Chất & Cà Phê Pha Tạp"
-      class="o-article-tile__image "
-      
-    />
-  </picture></div>
-
-<div class="o-article-tile__detail">
-  <div class="o-article-tile__detail-inner">
-    
-      <span class="o-article-tile__detail-tag o-subtitle">Coffee Blog</span>
-      <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
-    
-  </div>
-  <div class="o-article-tile__detail-separator"></div>
-  
-    <h6 class="o-article-tile__detail-title">
-      Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?
-    </h6>
-  
-
-    <div class="o-article-tile__detail-read-time o-type--1">
-13 phút đọc</div>
-  
-</div>
-</a><a 
-  href="blog-detail.html?id=11"
-  class="o-article-tile" data-carousel-tile><div class="o-article-tile__image-wrap">
-<picture>
-      
-<source
-        media="(max-width:500px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_3.jpg, assets/images/s54/robusta_3.jpg 2x"/>
-      
-<source
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_3.jpg, assets/images/s54/robusta_3.jpg 2x"/>
-      
-<source
-        media="(max-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_3.jpg, assets/images/s54/robusta_3.jpg 2x"/><source
-        media="(min-width:1000px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/robusta_3.jpg, assets/images/s54/robusta_3.jpg 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/robusta_3.jpg"
-      width="1024"
-      
-      class="o-article-tile__image"
-      
-    />
-  </picture></div>
-
-<div class="o-article-tile__detail">
-  <div class="o-article-tile__detail-inner">
-    
-  </div>
-  <div class="o-article-tile__detail-separator"></div>
-  
-    <h6 class="o-article-tile__detail-title">
-      S54 Coffee Là Ai?
-    </h6>
-  
-
-    <div class="o-article-tile__detail-read-time o-type--1">
-1 phút đọc</div>
-  
-</div>
-</a></div>
+      {{-- Card 4: S54 Coffee Là Ai? --}}
+      <a href="blog-detail.html?id=11" class="o-article-tile" data-carousel-tile>
+        <div class="o-article-tile__image-wrap">
+          <picture>
+            <source srcset="{{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }}, {{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }} 2x" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }}" width="1024" alt="S54 Coffee Là Ai? Hành Trình Từ Những Hạt Cà Phê Việt" class="o-article-tile__image" />
+          </picture>
+        </div>
+        <div class="o-article-tile__detail">
+          <div class="o-article-tile__detail-inner">
+            <span class="o-article-tile__detail-tag o-subtitle">Thương Hiệu</span>
+            <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
+          </div>
+          <div class="o-article-tile__detail-separator"></div>
+          <h6 class="o-article-tile__detail-title">S54 Coffee Là Ai? Hành Trình Hạt Cà Phê Việt</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+        </div>
+      </a>
+    </div>
 
     <div class="c-article-feed__control c-article-feed__control--prev" data-carousel-prev>
       <svg fill="none" class="o-btn__arrow c-article-feed__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
