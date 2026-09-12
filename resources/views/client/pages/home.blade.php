@@ -5,9 +5,57 @@
 @section('content')
 <div id="shopify-section-template--15747875471535__hero_banner_d3Tacb" class="shopify-section c-section c-section__hero-banner">
 
-<link href="assets/css/sections.hero-banner.css" rel="stylesheet" type="text/css" media="all" /><section class="c-hero-banner is-large is-homepage">
+<link href="{{ asset('assets/css/sections.hero-banner.css') }}" rel="stylesheet" type="text/css" media="all" />
+<style id="s54-hero-banner-exact-ratio">
+  /* S54 Homepage Hero Banner - Rendered Exact 1651 x 600 Ratio (36.3416%) - Zero Cropping */
+  .c-section.c-section__hero-banner {
+    margin-bottom: 0 !important;
+  }
+  .c-hero-banner.is-homepage {
+    margin: 0 0 2rem 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    display: block !important;
+  }
+  .c-hero-banner.is-homepage .c-hero-banner__media-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-bottom: calc(600 / 1651 * 100%) !important; /* 36.34161% - exact 1651x600 ratio */
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .c-hero-banner.is-homepage .c-hero-banner__media {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  .c-hero-banner.is-homepage .c-hero-banner__container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+  }
+</style>
+<section class="c-hero-banner is-large is-homepage">
   <div class="c-hero-banner__media-container o-media-container">
-    <x-client::editable-image key="home.hero.banner" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}" alt="S54 Coffee – Vietnamese Coffee. Made for the World." class="c-hero-banner__media o-media has-mobile" style="width: 100%; height: 100%; object-fit: cover;" />
+    @php
+      $heroBannerVer = @filemtime(public_path('client-assets/images/s54/hero_banner_s54.png')) 
+        ?: (@filemtime(base_path('assets/images/s54/hero_banner_s54.png')) ?: 1789212000);
+    @endphp
+    <x-client::editable-image key="home.hero.banner" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}?v={{ $heroBannerVer }}" alt="S54 Coffee – Vietnamese Coffee. Made for the World." class="c-hero-banner__media o-media" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" />
+
     <div class="c-hero-banner__container">
       <div class="c-hero-banner__overlay" style="opacity: 0; pointer-events: none;">
         <x-client::editable key="home.hero.title" tag="h1" class="c-hero-banner__title o-heading--1">

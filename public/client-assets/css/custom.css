@@ -5614,3 +5614,51 @@ h4.s54-footer__heading {
 [data-block-key="wholesale.form.desc"] {
     color: #BAADA1 !important;
 }
+
+/* ==========================================================================
+   S54 Homepage Hero Banner — Exact 1651 x 600 Rendered Ratio (Zero Cropping)
+   ========================================================================== */
+.c-section.c-section__hero-banner {
+    margin-bottom: 0 !important;
+}
+
+.c-hero-banner.is-homepage {
+    margin: 0 0 2rem 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    display: block !important;
+}
+
+.c-hero-banner.is-homepage .c-hero-banner__media-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-bottom: calc(600 / 1651 * 100%) !important; /* 36.34161% - exact 1651x600 ratio */
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.c-hero-banner.is-homepage .c-hero-banner__media {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+.c-hero-banner.is-homepage .c-hero-banner__container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+}
+
