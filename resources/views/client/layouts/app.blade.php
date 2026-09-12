@@ -30,14 +30,18 @@
         </svg>
     </button>
 
-    <script src="{{ asset('assets/js/vendor.js') }}"></script>
-    <script src="{{ asset('assets/js/layouts.theme.js') }}"></script>
-    <script src="{{ asset('assets/js/sections.product-carousel.js') }}"></script>
-    <script src="{{ asset('assets/js/sections.article-feed.js') }}"></script>
-    <script src="{{ asset('assets/js/sections.featured-video.js') }}"></script>
-    <script src="{{ asset('assets/js/sections.featured-collections.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script src="{{ asset('assets/js/client-cart.js') }}"></script>
+    @php
+        $jsVer = @filemtime(base_path('assets/js/layouts.theme.js')) 
+            ?: (@filemtime(public_path('assets/js/layouts.theme.js')) ?: 1789299999);
+    @endphp
+    <script src="{{ asset('assets/js/vendor.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/layouts.theme.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/sections.product-carousel.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/sections.article-feed.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/sections.featured-video.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/sections.featured-collections.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/client-cart.js') }}?v={{ $jsVer }}"></script>
     <script>
     (function() {
         var btn = document.getElementById('s54-back-to-top');

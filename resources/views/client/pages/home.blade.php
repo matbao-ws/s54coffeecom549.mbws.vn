@@ -7,11 +7,7 @@
 
 <link href="assets/css/sections.hero-banner.css" rel="stylesheet" type="text/css" media="all" /><section class="c-hero-banner is-large is-homepage">
   <div class="c-hero-banner__media-container o-media-container">
-    <picture>
-      <source media="(max-width:750px)" srcset="assets/images/s54/hero_banner_s54.png">
-      <source media="(min-width:751px)" srcset="assets/images/s54/hero_banner_s54.png">
-      <img src="assets/images/s54/hero_banner_s54.png" alt="S54 Coffee – Vietnamese Coffee. Made for the World. Original Vietnamese 3-in-1 Instant Coffee Mix" class="c-hero-banner__media o-media has-mobile" />
-    </picture>
+    <x-client::editable-image key="home.hero.banner" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}" alt="S54 Coffee – Vietnamese Coffee. Made for the World." class="c-hero-banner__media o-media has-mobile" style="width: 100%; height: 100%; object-fit: cover;" />
     <div class="c-hero-banner__container">
       <div class="c-hero-banner__overlay" style="opacity: 0; pointer-events: none;">
         <x-client::editable key="home.hero.title" tag="h1" class="c-hero-banner__title o-heading--1">
@@ -253,74 +249,7 @@
     is-rounded
     is-position--left is-mobile-position--left"
   >
-<picture><source
-        data-w="&quot;1x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        data-w="&quot;750x&quot;"
-        media="(max-width:1100px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        data-w="&quot;1100x&quot;"
-        media="(max-width:1350px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        data-w="&quot;1350x&quot;"
-        media="(max-width:1650px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        media="(min-width:1650px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/roasting_facility.png"
-      width="1650"
-      class="c-text-and-image__media o-media
-        has-mobile
- "
-      
-    />
-  </picture>
-<picture><source
-        data-w="&quot;374x&quot;"
-        media="(max-width:374px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        data-w="&quot;450x&quot;"
-        media="(max-width:450px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        data-w="&quot;750x&quot;"
-        media="(max-width:750px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        data-w="&quot;1100x&quot;"
-        media="(max-width:1100px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><source
-        media="(min-width:1100px)"
-        loading="lazy"
-        
-        srcset="assets/images/s54/roasting_facility.png, assets/images/s54/roasting_facility.png 2x"/><img
-      loading="lazy"
-      
-      src="assets/images/s54/roasting_facility.png"
-      width="1"
-      class="c-text-and-image__media o-media is-mobile "
-      
-    />
-  </picture></div>
+    <x-client::editable-image key="home.story.image" src="{{ asset('assets/images/s54/roasting_facility.png') }}" alt="Quy trình rang xay hiện đại S54 Coffee" class="c-text-and-image__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   <div class="c-text-and-image__text-container">
     <div class="c-text-and-image__text-inner"><x-client::editable key="home.story.title" tag="h2" class="c-text-and-image__text-title o-heading--2">
       S54 Coffee –<em> </em>Đổi Mới Trong Từng Tách Cà Phê Việt

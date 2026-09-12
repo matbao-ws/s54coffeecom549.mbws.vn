@@ -155,7 +155,7 @@
             {{-- Milestone 1 --}}
             <div class="c-stories__story-block">
                 <div class="c-stories__story-block-image">
-                    <img src="{{ asset('client-assets/images/s54/story_farm_origin.jpg') }}" alt="Nghiên cứu & phát triển cà phê S54" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
+                    <x-client::editable-image key="story.milestone.1.image" src="{{ asset('client-assets/images/s54/story_farm_origin.jpg') }}" alt="Nghiên cứu & phát triển cà phê S54" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; height: auto;" />
                 </div>
                 <div class="c-stories__story-block-text">
                     <div class="c-stories__story-block-year">Cột Mốc 1</div>
@@ -173,7 +173,7 @@
             {{-- Milestone 2 --}}
             <div class="c-stories__story-block is-reversed">
                 <div class="c-stories__story-block-image">
-                    <img src="{{ asset('client-assets/images/s54/s54_cafe_nhabe_1.jpg') }}" alt="Mở rộng hệ thống phân phối S54 Coffee" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
+                    <x-client::editable-image key="story.milestone.2.image" src="{{ asset('client-assets/images/s54/s54_cafe_nhabe_1.jpg') }}" alt="Mở rộng hệ thống phân phối S54 Coffee" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; height: auto;" />
                 </div>
                 <div class="c-stories__story-block-text">
                     <div class="c-stories__story-block-year">Cột Mốc 2</div>
@@ -191,7 +191,7 @@
             {{-- Milestone 3 --}}
             <div class="c-stories__story-block">
                 <div class="c-stories__story-block-image">
-                    <img src="{{ asset('client-assets/images/s54/s54_office_vinhome_2.jpg') }}" alt="Số hóa thương hiệu S54 Coffee" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
+                    <x-client::editable-image key="story.milestone.3.image" src="{{ asset('client-assets/images/s54/s54_office_vinhome_2.jpg') }}" alt="Số hóa thương hiệu S54 Coffee" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; height: auto;" />
                 </div>
                 <div class="c-stories__story-block-text">
                     <div class="c-stories__story-block-year">Cột Mốc 3</div>
@@ -223,7 +223,7 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
             <div style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-                <img src="{{ asset('client-assets/images/s54/s54_office_vinhome_1.jpg') }}" alt="Văn phòng S54 Coffee Vinhomes Grand Park" style="width: 100%; height: 240px; object-fit: cover;">
+                <x-client::editable-image key="story.gallery.1.image" src="{{ asset('client-assets/images/s54/s54_office_vinhome_1.jpg') }}" alt="Văn phòng S54 Coffee Vinhomes Grand Park" style="width: 100%; height: 240px; object-fit: cover;" />
                 <div style="padding: 16px 20px;">
                     <strong style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">Văn Phòng S54 Coffee</strong>
                     <span style="color: #8A7B70; font-size: 13px;">The Manhattan, Vinhomes Grand Park, TP. Thủ Đức</span>
@@ -231,7 +231,7 @@
             </div>
 
             <div style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-                <img src="{{ asset('client-assets/images/s54/s54_office_vinhome_3.jpg') }}" alt="Khu làm việc S54 Coffee" style="width: 100%; height: 240px; object-fit: cover;">
+                <x-client::editable-image key="story.gallery.2.image" src="{{ asset('client-assets/images/s54/s54_office_vinhome_3.jpg') }}" alt="Khu làm việc S54 Coffee" style="width: 100%; height: 240px; object-fit: cover;" />
                 <div style="padding: 16px 20px;">
                     <strong style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">Trụ Sở Điều Hành</strong>
                     <span style="color: #8A7B70; font-size: 13px;">Không gian làm việc sáng tạo & đào tạo barista</span>
@@ -239,7 +239,7 @@
             </div>
 
             <div style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-                <img src="{{ asset('client-assets/images/s54/s54_cafe_nhabe_2.jpg') }}" alt="Quán Cafe S54 tại Nhà Bè" style="width: 100%; height: 240px; object-fit: cover;">
+                <x-client::editable-image key="story.gallery.3.image" src="{{ asset('client-assets/images/s54/s54_cafe_nhabe_2.jpg') }}" alt="Quán Cafe S54 tại Nhà Bè" style="width: 100%; height: 240px; object-fit: cover;" />
                 <div style="padding: 16px 20px;">
                     <strong style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">Quán Cafe S54 Coffee</strong>
                     <span style="color: #8A7B70; font-size: 13px;">Điểm trải nghiệm cà phê nguyên bản tại Nhà Bè, TP.HCM</span>

@@ -13,11 +13,17 @@ Route::get('index.html', function () {
 });
 
 // Root-level aliases redirecting to localized client routes
-Route::get('collections', fn () => redirect('/vi/san-pham'));
-Route::get('collections/{any?}', fn () => redirect('/vi/san-pham'))->where('any', '.*');
-Route::get('products/{slug}', fn ($slug) => redirect('/vi/san-pham/' . $slug));
-Route::get('blogs/{any?}', fn () => redirect('/vi/tin-tuc'))->where('any', '.*');
-Route::get('pages/{slug}', fn ($slug) => redirect('/vi/pages/' . $slug));
+Route::get('collections', fn () => redirect('/vi/san-pham', 301));
+Route::get('collections/{any?}', fn () => redirect('/vi/san-pham', 301))->where('any', '.*');
+Route::get('collections-coffee.html', fn () => redirect('/vi/san-pham', 301));
+Route::get('products/{slug}', fn ($slug) => redirect('/vi/san-pham/' . $slug, 301));
+Route::get('blogs/{any?}', fn () => redirect('/vi/tin-tuc', 301))->where('any', '.*');
+Route::get('pages/{slug}', fn ($slug) => redirect('/vi/pages/' . $slug, 301));
+Route::get('wholesale.html', fn () => redirect('/vi/pages/wholesale', 301));
+Route::get('wholesale', fn () => redirect('/vi/pages/wholesale', 301));
+Route::get('our-story.html', fn () => redirect('/vi/pages/our-story', 301));
+Route::get('our-story', fn () => redirect('/vi/pages/our-story', 301));
+Route::get('contact.html', fn () => redirect('/vi/pages/wholesale#contact', 301));
 
 Route::get('/login', fn () => redirect('/' . app(\App\Services\LanguageRegistry::class)->defaultLocale() . '/admin/login'))->name('login');
 Route::get('/api/docs', [\App\Http\Controllers\Api\PublicController::class, 'docs'])->name('api.docs');

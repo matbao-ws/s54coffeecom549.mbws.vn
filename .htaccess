@@ -30,6 +30,12 @@ DirectoryIndex public/index.php index.php
   RewriteCond %{REQUEST_URI} \.(php|css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot|mp4|pdf)$ [NC]
   RewriteRule ^ - [L]
 
+  # Explicit 301 redirects for legacy static HTML files to canonical Laravel client routes
+  RewriteRule ^wholesale\.html$ /vi/pages/wholesale [R=301,L]
+  RewriteRule ^our-story\.html$ /vi/pages/our-story [R=301,L]
+  RewriteRule ^contact\.html$ /vi/pages/wholesale#contact [R=301,L]
+  RewriteRule ^collections-coffee\.html$ /vi/san-pham [R=301,L]
+
   # Allow explicit standalone HTML tools/checkouts if requested directly (e.g. /checkout.html)
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteCond %{REQUEST_URI} \.html$ [NC]

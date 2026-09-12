@@ -12,9 +12,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="{{ asset('assets/css/layouts.critical.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/layouts.theme.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/custom.css?v=' . (file_exists(public_path('assets/css/custom.css')) ? filemtime(public_path('assets/css/custom.css')) : '1789209999')) }}">
+@php
+    $criticalCssVer = @filemtime(base_path('assets/css/layouts.critical.css')) 
+        ?: (@filemtime(public_path('assets/css/layouts.critical.css')) ?: 1789299999);
+    $themeCssVer = @filemtime(base_path('assets/css/layouts.theme.css')) 
+        ?: (@filemtime(public_path('assets/css/layouts.theme.css')) ?: 1789299999);
+    $customCssVer = @filemtime(base_path('assets/css/custom.css')) 
+        ?: (@filemtime(public_path('assets/css/custom.css')) ?: 1789299999);
+@endphp
+<link rel="stylesheet" href="{{ asset('assets/css/layouts.critical.css') }}?v={{ $criticalCssVer }}">
+<link rel="stylesheet" href="{{ asset('assets/css/layouts.theme.css') }}?v={{ $themeCssVer }}">
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}?v={{ $customCssVer }}">
 
 <style id="s54-thumb-reviews-critical">
   /* BULLETPROOF REVIEW STARS & PRODUCT CARD CRITICAL STYLES */
