@@ -14,9 +14,10 @@
     $title = is_array($product->name) ? ($product->name[$locale] ?? $product->name['vi'] ?? '') : ($product->getTranslation('name', $locale, false) ?: $product->name);
     $excerpt = is_array($product->short_description) ? ($product->short_description[$locale] ?? $product->short_description['vi'] ?? '') : ($product->getTranslation('short_description', $locale, false) ?: $product->short_description ?: 'Cà phê rang mộc thượng hạng S54');
     $badge = $locale === 'vi' ? 'ĐỘC QUYỀN ONLINE' : 'ONLINE EXCLUSIVE';
+    $catSlug = $product->category?->slug ?? '';
 @endphp
 
-<div class="o-product-thumbnail o-products-list__product c-featured-collections__product" data-product-id="{{ $product->id }}">
+<div {{ $attributes->merge(['class' => 'o-product-thumbnail o-products-list__product c-featured-collections__product s54-product-card']) }} data-product-id="{{ $product->id }}" data-category="{{ $catSlug }}">
     <div class="o-product-thumbnail__inner">
         <a href="{{ route('client.products.show', ['locale' => $locale, 'slug' => $product->slug]) }}" class="o-product-thumbnail__link">
             <div class="o-product-thumbnail__image-container">

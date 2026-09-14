@@ -17,7 +17,6 @@ class HomeController extends Controller
         $featuredProducts = $this->productQuery
             ->listing()
             ->with(['images', 'variants', 'category'])
-            ->take(8)
             ->get();
 
         $latestPosts = \App\Models\Post::where('is_active', true)
