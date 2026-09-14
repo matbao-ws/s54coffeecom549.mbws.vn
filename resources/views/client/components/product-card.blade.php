@@ -51,7 +51,7 @@
             <div class="o-product-thumbnail__hover">
                 <button type="button" class="o-product-thumbnail__add-btn s54-quick-add-btn" 
                         data-product-id="{{ $product->id }}" 
-                        data-variant-id="{{ $defaultVariant?->id ?? $product->id }}"
+                        data-variant-id="{{ $defaultVariant?->id ?? '' }}"
                         data-product-name="{{ $title }}"
                         data-product-price="{{ $minPrice }}"
                         data-product-image="{{ $thumbnail }}">

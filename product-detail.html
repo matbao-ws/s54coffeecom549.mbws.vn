@@ -1,13 +1,20 @@
 <!DOCTYPE HTML>
 <html class="js-unavailable" lang="vi" data-country="Vietnam">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <base href="/">
-
-<script src="assets/js/cart-mock.js?v=1787726992"></script>
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get('id');
+        var map = {
+          '200003': '/vi/san-pham/tui-ca-phe-hoa-tan-3in1-s54-coffee-456g',
+          '200007': '/vi/san-pham/ca-phe-hat-rang-robusta-s54-500gr',
+          '200002': '/vi/san-pham/combo-12-goi-ca-phe-hoa-tan-s54-dung-thu',
+          '200008': '/vi/san-pham/may-xay-ca-phe-cam-tay-vbz01-5'
+        };
+        var target = map[id] || '/vi/san-pham';
+        window.location.replace(target);
+      })();
+    </script>
 
     
       

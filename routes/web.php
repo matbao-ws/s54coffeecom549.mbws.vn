@@ -24,6 +24,16 @@ Route::get('wholesale', fn () => redirect('/vi/pages/wholesale', 301));
 Route::get('our-story.html', fn () => redirect('/vi/pages/our-story', 301));
 Route::get('our-story', fn () => redirect('/vi/pages/our-story', 301));
 Route::get('contact.html', fn () => redirect('/vi/pages/wholesale#contact', 301));
+Route::get('product-detail.html', function (\Illuminate\Http\Request $request) {
+    $id = (string) $request->query('id');
+    $map = [
+        '200003' => '/vi/san-pham/tui-ca-phe-hoa-tan-3in1-s54-coffee-456g',
+        '200007' => '/vi/san-pham/ca-phe-hat-rang-robusta-s54-500gr',
+        '200002' => '/vi/san-pham/combo-12-goi-ca-phe-hoa-tan-s54-dung-thu',
+        '200008' => '/vi/san-pham/may-xay-ca-phe-cam-tay-vbz01-5',
+    ];
+    return redirect($map[$id] ?? '/vi/san-pham', 301);
+});
 
 // Cart & Checkout Aliases
 Route::get('cart', fn () => redirect('/vi/cart', 301));

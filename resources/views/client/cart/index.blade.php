@@ -147,14 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const line = price * qty;
             subtotal += line;
             const itemKey = it.key || it.id || idx;
+            const itemTitle = it.title || it.name || 'S54 Coffee';
+            const itemImg = it.image || '{{ asset('client-assets/images/s54/products/tui_3in1_456g.jpg') }}';
 
             html += `
                 <tr style="border-bottom: 1px solid #F0EBE5;">
                     <td style="padding: 18px 20px; vertical-align: middle;">
                         <div style="display: flex; align-items: center; gap: 16px;">
-                            <img src="${it.image || '{{ asset('assets/images/s54/products/tui_3in1_456g.jpg') }}'}" alt="${it.title}" style="width: 64px; height: 64px; object-fit: contain; border-radius: 8px; border: 1px solid #EBE7E1; background: #FAF8F5; flex-shrink: 0;">
+                            <img src="${itemImg}" alt="${itemTitle}" style="width: 64px; height: 64px; object-fit: contain; border-radius: 8px; border: 1px solid #EBE7E1; background: #FAF8F5; flex-shrink: 0;">
                             <div>
-                                <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 700; color: #2F221A;">${it.title}</h4>
+                                <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 700; color: #2F221A;">${itemTitle}</h4>
                                 ${it.variant_title ? `<span style="font-size: 12px; color: #8A7B70;">${it.variant_title}</span>` : ''}
                             </div>
                         </div>

@@ -159,7 +159,7 @@
 
                     <button type="button" id="s54-detail-add-btn" 
                             data-product-id="{{ $product->id }}" 
-                            data-variant-id="{{ $defaultVariant?->id ?? $product->id }}"
+                            data-variant-id="{{ $defaultVariant?->id ?? '' }}"
                             data-product-name="{{ $title }}"
                             data-product-price="{{ $minPrice }}"
                             data-product-image="{{ $firstImg }}"
@@ -226,6 +226,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (prevBtn) prevBtn.addEventListener('click', function() { setIdx(curIdx - 1); });
     if (nextBtn) nextBtn.addEventListener('click', function() { setIdx(curIdx + 1); });
+
+    // Variant selection
+    const variantBtns = document.querySelectorAll('.s54-variant-btn');
+    const detailAddBtn = document.getElementById('s54-detail-add-btn');
+    const priceDisplay = document.querySelector('.s54-product-price-main') || document.querySelector('.o-product-thumbnail__price');
+
+    variantBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            variantBtns.forEach(function(b) {
+                b.classList.remove('is-selected');
+                b.style.borderColor = '#D0C8C0';
+                b.style.background = '#FFFFFF';
+                b.style.color = '#2F221A';
+            });
+            this.classList.add('is-selected');
+            this.style.borderColor = '#2F221A';
+            this.style.background = '#2F221A';
+            this.style.color = '#FAF6F1';
+
+            const varId = this.dataset.variantId;
+            const varPrice = this.dataset.variantPrice;
+            const varPriceFormatted = this.dataset.variantPriceFormatted;
+
+            if (detailAddBtn) {
+                detailAddBtn.dataset.variantId = varId || '';
+                detailAddBtn.dataset.productPrice = varPrice || '';
+            }
+            if (priceDisplay && varPriceFormatted) {
+                priceDisplay.textContent = varPriceFormatted;
+            }
+        });
+    });
 });
 </script>
 @endpush

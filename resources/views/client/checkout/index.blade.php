@@ -191,11 +191,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const isVi = '{{ $locale }}' === 'vi';
     const FREE_SHIP_THRESHOLD = 500000;
-    const SHIPPING_FEE = 30000;
+    const SHIPPING_FEE = {{ (float) ($shippingFee ?? 0) }};
 
     function formatVND(n) {
         return new Intl.NumberFormat('vi-VN').format(Math.round(n)) + '₫';
     }
+
+    let currentGrandTotal = 0;
 
     function renderSummary() {
         const cart = window.S54Cart ? window.S54Cart.getCart() : { items: [], total_price: 0 };
@@ -218,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtotalEl.textContent = '0₫';
             shippingEl.textContent = '0₫';
             totalEl.textContent = '0₫';
+            currentGrandTotal = 0;
             return;
         }
 
@@ -229,12 +232,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const price = it.price || 0;
             const line = price * qty;
             subtotal += line;
+            const itemTitle = it.title || it.name || 'S54 Coffee';
+            const itemImg = it.image || '{{ asset('client-assets/images/s54/products/tui_3in1_456g.jpg') }}';
 
             html += `
                 <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #F0EBE5;">
-                    <img src="${it.image || '{{ asset('assets/images/s54/products/tui_3in1_456g.jpg') }}'}" alt="${it.title}" style="width: 48px; height: 48px; object-fit: contain; border-radius: 6px; border: 1px solid #EBE7E1; background: #FAF8F5; flex-shrink: 0;">
+                    <img src="${itemImg}" alt="${itemTitle}" style="width: 48px; height: 48px; object-fit: contain; border-radius: 6px; border: 1px solid #EBE7E1; background: #FAF8F5; flex-shrink: 0;">
                     <div style="flex: 1; min-width: 0;">
-                        <h4 style="margin: 0 0 2px 0; font-size: 13px; font-weight: 600; color: #2F221A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${it.title}</h4>
+                        <h4 style="margin: 0 0 2px 0; font-size: 13px; font-weight: 600; color: #2F221A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${itemTitle}</h4>
                         <div style="font-size: 12px; color: #8A7B70;">${formatVND(price)} &times; ${qty}</div>
                     </div>
                     <div style="font-size: 13.5px; font-weight: 700; color: #2F221A; white-space: nowrap;">${formatVND(line)}</div>
@@ -244,11 +249,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         container.innerHTML = html;
         const shipping = subtotal >= FREE_SHIP_THRESHOLD ? 0 : SHIPPING_FEE;
-        const grandTotal = subtotal + shipping;
+        currentGrandTotal = subtotal + shipping;
 
         subtotalEl.textContent = formatVND(subtotal);
         shippingEl.textContent = shipping === 0 ? (isVi ? 'Miễn phí' : 'Free') : formatVND(shipping);
-        totalEl.textContent = formatVND(grandTotal);
+        totalEl.textContent = formatVND(currentGrandTotal);
     }
 
     // Payment method radio selection styling
@@ -295,8 +300,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const payMethodRadio = document.querySelector('input[name="payment_method"]:checked');
             const payMethod = payMethodRadio ? payMethodRadio.value : 'cod';
 
-            // Attempt POST to public API
-            let orderCode = 'S54-' + Math.floor(100000 + Math.random() * 900000);
+            const payloadItems = items.map(it => {
+                const itemObj = {
+                    product_id: parseInt(it.id || it.product_id, 10) || 1,
+                    quantity: parseInt(it.quantity, 10) || 1
+                };
+                if (it.variant_id && parseInt(it.variant_id, 10) && parseInt(it.variant_id, 10) !== itemObj.product_id) {
+                    itemObj.variant_id = parseInt(it.variant_id, 10);
+                }
+                if (Array.isArray(it.option_value_ids) && it.option_value_ids.length > 0) {
+                    itemObj.option_value_ids = it.option_value_ids;
+                }
+                return itemObj;
+            });
+
+            let orderCode = '';
+            let apiError = null;
             try {
                 const payload = {
                     customer_name: name,
@@ -305,11 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     shipping_address: fullAddress,
                     payment_method: payMethod,
                     notes: notes,
-                    items: items.map(it => ({
-                        product_id: parseInt(it.id || it.product_id, 10) || 1,
-                        variant_id: it.variant_id ? parseInt(it.variant_id, 10) : null,
-                        quantity: parseInt(it.quantity, 10) || 1
-                    }))
+                    items: payloadItems
                 };
 
                 const res = await fetch('/api/public/orders/checkout', {
@@ -323,11 +338,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 const data = await res.json();
-                if (data.success && data.data && (data.data.order_code || data.data.code)) {
-                    orderCode = data.data.order_code || data.data.code;
+                if (res.ok && data.success && data.data) {
+                    orderCode = data.data.order_number || data.data.code || data.data.order_code;
+                } else {
+                    let errMsg = data.message || (isVi ? 'Không thể hoàn tất đơn hàng. Vui lòng thử lại.' : 'Could not complete order. Please try again.');
+                    if (data.errors && typeof data.errors === 'object') {
+                        const firstKey = Object.keys(data.errors)[0];
+                        if (firstKey && data.errors[firstKey] && data.errors[firstKey][0]) {
+                            errMsg = data.errors[firstKey][0];
+                        }
+                    }
+                    apiError = errMsg;
                 }
             } catch (err) {
-                console.warn('[Checkout] API fallback', err);
+                console.error('[Checkout] API call exception', err);
+                apiError = isVi ? 'Lỗi kết nối máy chủ khi tạo đơn. Vui lòng thử lại.' : 'Server connection error. Please try again.';
+            }
+
+            if (apiError) {
+                alert(apiError);
+                btnSubmit.disabled = false;
+                btnSubmit.textContent = isVi ? 'XÁC NHẬN ĐẶT HÀNG' : 'PLACE ORDER NOW';
+                return;
+            }
+
+            if (!orderCode) {
+                orderCode = 'S54-' + Math.floor(100000 + Math.random() * 900000);
             }
 
             // Display success modal
@@ -335,12 +371,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const payInstructions = document.getElementById('modal-payment-instructions');
             if (payMethod === 'bank_transfer') {
                 payInstructions.style.display = 'block';
+                const vietQrUrl = `https://img.vietqr.io/image/MB-0974933907-compact2.png?amount=${currentGrandTotal}&addInfo=${encodeURIComponent(orderCode)}&accountName=CONG%20TY%20TNHH%20GIAI%20PHAP%20TOT`;
                 payInstructions.innerHTML = `
-                    <strong>Thông tin chuyển khoản:</strong><br>
-                    • Ngân hàng: <strong>MB Bank (Ngân hàng Quân Đội)</strong><br>
-                    • Số tài khoản: <strong>0974933907</strong><br>
-                    • Tên chủ tài khoản: <strong>CÔNG TY CỔ PHẦN S54 COFFEE</strong><br>
-                    • Nội dung CK: <strong>${orderCode} - ${phone}</strong>
+                    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                        <img src="${vietQrUrl}" alt="VietQR" style="width: 130px; height: 130px; border-radius: 8px; border: 1px solid #EBE7E1; background: #FFFFFF; object-fit: contain; flex-shrink: 0;">
+                        <div style="flex: 1; min-width: 180px; font-size: 13px; line-height: 1.6;">
+                            <strong style="color: #2F221A; font-size: 13.5px;">Thông tin chuyển khoản VietQR:</strong><br>
+                            • Ngân hàng: <strong>MB Bank (Ngân hàng Quân Đội)</strong><br>
+                            • Số tài khoản: <strong>0974933907</strong><br>
+                            • Chủ tài khoản: <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong><br>
+                            • Số tiền: <strong style="color: #D68E1D;">${formatVND(currentGrandTotal)}</strong><br>
+                            • Nội dung CK: <strong style="color: #2F221A; background: #FFF3D6; padding: 1px 6px; border-radius: 3px;">${orderCode}</strong>
+                        </div>
+                    </div>
                 `;
             } else {
                 payInstructions.style.display = 'none';

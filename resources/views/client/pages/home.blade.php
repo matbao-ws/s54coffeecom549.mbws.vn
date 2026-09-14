@@ -1,5 +1,9 @@
 @extends('client.layouts.app')
 
+@php
+    $locale = app()->getLocale();
+@endphp
+
 @section('title', 'S54 COFFEE — Tinh Hoa Cà Phê Việt | New Coffee, New Income')
 
 @section('content')
@@ -64,7 +68,7 @@
         <x-client::editable key="home.hero.subtitle" tag="p" class="c-hero-banner__subtitle is-size--large">
         Discover bold Vietnamese coffee, crafted for modern coffee lovers.
       </x-client::editable>
-        <a href="collections-coffee.html" class="c-hero-banner__button has-margin-top-small o-btn is-primary is-dark has-arrow">
+        <a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" class="c-hero-banner__button has-margin-top-small o-btn is-primary is-dark has-arrow">
           MUA SẮM NGAY
           <svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
         </a>
@@ -78,12 +82,12 @@
       <span>Khám Phá <em><br/></em>Dòng Sản Phẩm S54</span>
     </x-client::editable><x-client::editable key="home.carousel.desc" tag="div" class="c-product-carousel__description">
       <p>“S54 Coffee – Đổi mới trong từng tách cà phê Việt. Tuyển chọn khắt khe hạt Robusta và Arabica hảo hạng từ Tây Nguyên.”<br/><strong><br/>Mr. Paul Hieu (CEO) & Tony Hoan (Founder)</strong></p>
-    </x-client::editable><a href="/collections/all-coffee-products" 
+    </x-client::editable><a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" 
           class="c-product-carousel__button o-btn is-primary is-dark has-arrow">Tất Cả Sản Phẩm<svg fill="none" class="o-btn__arrow c-product-carousel__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
 </a></div>
     <div class="c-product-carousel__products" data-carousel>
       {{-- 1. Túi Cà Phê Hòa Tan 456gr --}}
-      <a href="product-detail.html?id=200003" class="c-product-carousel__product" data-carousel-tile>
+      <a href="{{ route('client.products.show', ['locale' => $locale, 'slug' => 'tui-ca-phe-hoa-tan-3in1-s54-coffee-456g']) }}" class="c-product-carousel__product" data-carousel-tile>
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/tui_3in1_456g.png') }}, {{ asset('assets/images/s54/products/tui_3in1_456g.png') }} 2x" />
@@ -94,7 +98,7 @@
       </a>
 
       {{-- 2. Cà Phê Hạt Rang --}}
-      <a href="product-detail.html?id=200007" class="c-product-carousel__product" data-carousel-tile>
+      <a href="{{ route('client.products.show', ['locale' => $locale, 'slug' => 'ca-phe-hat-rang-robusta-s54-500gr']) }}" class="c-product-carousel__product" data-carousel-tile>
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/robusta_500g.png') }}, {{ asset('assets/images/s54/products/robusta_500g.png') }} 2x" />
@@ -105,7 +109,7 @@
       </a>
 
       {{-- 3. Combo 12 Gói Dùng Thử --}}
-      <a href="product-detail.html?id=200002" class="c-product-carousel__product" data-carousel-tile>
+      <a href="{{ route('client.products.show', ['locale' => $locale, 'slug' => 'combo-12-goi-ca-phe-hoa-tan-s54-dung-thu']) }}" class="c-product-carousel__product" data-carousel-tile>
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }}, {{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }} 2x" />
@@ -116,7 +120,7 @@
       </a>
 
       {{-- 4. Máy Xay Cà Phê --}}
-      <a href="product-detail.html?id=200008" class="c-product-carousel__product" data-carousel-tile>
+      <a href="{{ route('client.products.show', ['locale' => $locale, 'slug' => 'may-xay-ca-phe-cam-tay-vbz01-5']) }}" class="c-product-carousel__product" data-carousel-tile>
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }}, {{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }} 2x" />
@@ -147,7 +151,7 @@
       S54 Coffee –<em> </em>Đổi Mới Trong Từng Tách Cà Phê Việt
     </x-client::editable><x-client::editable key="home.story.desc" tag="div" class="c-text-and-image__text-paragraph o-paragraph--1">
       <p>Tuyển chọn khắt khe những hạt Robusta và Arabica hảo hạng từ thủ phủ Tây Nguyên, S54 Coffee ứng dụng quy trình chế biến hiện đại để giữ trọn hương vị đậm đà, thơm ngon đặc trưng. Với tinh thần "New Coffee, New Income", chúng tôi không chỉ mang đến một tách cà phê tỉnh táo mỗi ngày mà còn truyền nguồn năng lượng tích cực và đồng hành cùng sự phát triển bền vững của cộng đồng.</p>
-    </x-client::editable><div class="c-text-and-image__buttons"><a href="our-story.html" 
+    </x-client::editable><div class="c-text-and-image__buttons"><a href="{{ route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story']) }}" 
               class="c-text-and-image__text-button o-btn is-primary has-arrow is-dark">Về Chúng Tôi<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
             </a></div></div>
   </div>
