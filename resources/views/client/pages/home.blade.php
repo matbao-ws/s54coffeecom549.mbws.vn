@@ -320,17 +320,17 @@
     <!-- Product Grid: 4 columns on desktop, 2 on mobile -->
     <div id="s54-home-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-bottom: 48px;">
       
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="23" class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">BÁN CHẠY NHẤT</span>
-              <a href="product-detail.html?id=200001" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/combo-12-goi-ca-phe-hoa-tan-s54-dung-thu" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/combo_5goi_dung_thu.jpg" alt="Combo 5 gói cà phê hòa tan S54 dùng thử" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200001" style="color: #2F221A; text-decoration: none;">Combo 5 gói cà phê hòa tan S54 dùng thử</a>
+              <a href="/{{ $locale }}/san-pham/combo-12-goi-ca-phe-hoa-tan-s54-dung-thu" style="color: #2F221A; text-decoration: none;">Combo 5 gói cà phê hòa tan S54 dùng thử</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
           </div>
@@ -339,23 +339,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">15.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">29.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="23" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="23" class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">BÁN CHẠY NHẤT</span>
-              <a href="product-detail.html?id=200002" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/combo-12-goi-ca-phe-hoa-tan-s54-dung-thu" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/combo_12goi_dung_thu.jpg" alt="Combo 12 gói cà phê hòa tan S54 dùng thử" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200002" style="color: #2F221A; text-decoration: none;">Combo 12 gói cà phê hòa tan S54 dùng thử</a>
+              <a href="/{{ $locale }}/san-pham/combo-12-goi-ca-phe-hoa-tan-s54-dung-thu" style="color: #2F221A; text-decoration: none;">Combo 12 gói cà phê hòa tan S54 dùng thử</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
           </div>
@@ -364,23 +364,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">35.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">70.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="23" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="22" class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">BÁN CHẠY NHẤT</span>
-              <a href="product-detail.html?id=200003" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/tui-ca-phe-hoa-tan-3in1-s54-coffee-456g" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/tui_3in1_456g.jpg" alt="Túi cà phê hòa tan 3in1 S54 Coffee 456g" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200003" style="color: #2F221A; text-decoration: none;">Túi cà phê hòa tan 3in1 S54 Coffee 456g</a>
+              <a href="/{{ $locale }}/san-pham/tui-ca-phe-hoa-tan-3in1-s54-coffee-456g" style="color: #2F221A; text-decoration: none;">Túi cà phê hòa tan 3in1 S54 Coffee 456g</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
           </div>
@@ -389,23 +389,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">65.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">129.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="22" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="10" class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hòa tan</span>
-              <a href="product-detail.html?id=200004" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/combo-2-tui-ca-phe-hoa-tan-3in1-s54" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/combo_2tui_3in1.jpg" alt="Combo 2 túi cà phê hòa tan 3in1 S54" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200004" style="color: #2F221A; text-decoration: none;">Combo 2 túi cà phê hòa tan 3in1 S54</a>
+              <a href="/{{ $locale }}/san-pham/combo-2-tui-ca-phe-hoa-tan-3in1-s54" style="color: #2F221A; text-decoration: none;">Combo 2 túi cà phê hòa tan 3in1 S54</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
           </div>
@@ -414,23 +414,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">119.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">219.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="10" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="10" class="o-product-thumbnail s54-product-card" data-category="Cà phê hòa tan" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hòa tan</span>
-              <a href="product-detail.html?id=200005" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/combo-2-tui-ca-phe-hoa-tan-3in1-s54" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/combo_2tui_3in1.jpg" alt="Combo 3 túi cà phê hòa tan 3in1 S54" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200005" style="color: #2F221A; text-decoration: none;">Combo 3 túi cà phê hòa tan 3in1 S54</a>
+              <a href="/{{ $locale }}/san-pham/combo-2-tui-ca-phe-hoa-tan-3in1-s54" style="color: #2F221A; text-decoration: none;">Combo 3 túi cà phê hòa tan 3in1 S54</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê hòa tan 3in1 S54 Coffee là lựa chọn lý tưởng cho những ai yêu thích hương vị cà phê tiện lợi nhưng vẫn đậm đà.</p>
           </div>
@@ -439,23 +439,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">199.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">299.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="10" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hạt rang" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="12" class="o-product-thumbnail s54-product-card" data-category="Cà phê hạt rang" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hạt rang</span>
-              <a href="product-detail.html?id=200006" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/ca-phe-hat-rang-robusta-s54-250gr" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/robusta_250g.jpg" alt="Cà phê hạt rang Robusta S54 250gr" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200006" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 250gr</a>
+              <a href="/{{ $locale }}/san-pham/ca-phe-hat-rang-robusta-s54-250gr" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 250gr</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê nguyên chất S54 Coffee đậm đà chuẩn vị Tây Nguyên</p>
           </div>
@@ -464,23 +464,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">250.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">150.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="12" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Cà phê hạt rang" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="13" class="o-product-thumbnail s54-product-card" data-category="Cà phê hạt rang" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Cà phê hạt rang</span>
-              <a href="product-detail.html?id=200007" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/ca-phe-hat-rang-robusta-s54-500gr" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/robusta_500g.jpg" alt="Cà phê hạt rang Robusta S54 500gr" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200007" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 500gr</a>
+              <a href="/{{ $locale }}/san-pham/ca-phe-hat-rang-robusta-s54-500gr" style="color: #2F221A; text-decoration: none;">Cà phê hạt rang Robusta S54 500gr</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Cà phê nguyên chất S54 Coffee đậm đà chuẩn vị Tây Nguyên</p>
           </div>
@@ -489,23 +489,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">225.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">500.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="13" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="14" class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
-              <a href="product-detail.html?id=200008" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbz01-5" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/may_xay_vbz01_5.jpg" alt="Máy Xay Cà Phê Cầm Tay VBZ01-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200008" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ01-5</a>
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbz01-5" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ01-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ01-5 Cao Cấp Xay Cà Phê Nhanh Mịn Đều Điều Chỉnh Độ Mịn Pha Espresso Màu Đen</p>
           </div>
@@ -514,23 +514,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">646.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">950.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="14" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="15" class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
-              <a href="product-detail.html?id=200009" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbz08-5" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/may_xay_vbz08_5.jpg" alt="Máy Xay Cà Phê Cầm Tay VBZ08-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200009" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ08-5</a>
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbz08-5" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ08-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ08-5 Lõi Xay Inox SUS420 CNC 5 Trục, Điều Chỉnh Độ Mịn, Thân Nhôm Kim Loại</p>
           </div>
@@ -539,23 +539,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">720.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">900.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="15" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="16" class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
-              <a href="product-detail.html?id=200010" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbz03-5" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/may_xay_vbz03_5.jpg" alt="Máy Xay Cà Phê Cầm Tay VBZ03-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200010" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ03-5</a>
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbz03-5" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay VBZ03-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay VBZ03-5 Máy Xay Hạt Cà Phê Mini Xay Cà Phê Tại Nhà Điều Chỉnh Độ Mịn Cối Xay CNC Thiết Kế Nhỏ Gọn Màu Đen</p>
           </div>
@@ -564,23 +564,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">805.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">1.150.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="16" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="17" class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
-              <a href="product-detail.html?id=200011" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbs02-5" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/may_xay_vbs02_5.jpg" alt="MÁY XAY CÀ PHÊ CẦM TAY VBS02-5" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200011" style="color: #2F221A; text-decoration: none;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5</a>
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-vbs02-5" style="color: #2F221A; text-decoration: none;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">MÁY XAY CÀ PHÊ CẦM TAY VBS02-5 Cao Cấp Cối Xay CNC 5 Trục, Điều Chỉnh Độ Mịn, Xay Cà Phê Đồng Đều</p>
           </div>
@@ -589,23 +589,23 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">702.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">900.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="17" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>
         </div>
     
-        <div class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
+        <div data-product-id="18" class="o-product-thumbnail s54-product-card" data-category="Máy xay cà phê cầm tay" style="background: #FFFFFF; border-radius: 8px; border: 1px solid #EBE7E1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.03);">
           <div>
             <div style="position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 6px; background: #FAF8F5; margin-bottom: 14px;">
               <span style="position: absolute; top: 10px; left: 10px; z-index: 2; background: #D68E1D; color: #FFFFFF; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Máy xay cà phê cầm tay</span>
-              <a href="product-detail.html?id=200012" style="display: block; width: 100%; height: 100%;">
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-kmdj-hc" style="display: block; width: 100%; height: 100%;">
                 <img src="assets/images/s54/products/may_xay_kmdj_hc.jpg" alt="Máy Xay Cà Phê Cầm Tay KMDJ-HC" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
               </a>
             </div>
             <div style="color: #D68E1D; font-size: 13px; margin-bottom: 4px;">★★★★★ <span style="color: #8A7B70; font-size: 12px;">(4.9)</span></div>
             <h3 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; line-height: 1.4; margin: 0 0 8px 0;">
-              <a href="product-detail.html?id=200012" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay KMDJ-HC</a>
+              <a href="/{{ $locale }}/san-pham/may-xay-ca-phe-cam-tay-kmdj-hc" style="color: #2F221A; text-decoration: none;">Máy Xay Cà Phê Cầm Tay KMDJ-HC</a>
             </h3>
             <p style="font-size: 12.5px; color: #6E6259; line-height: 1.5; margin: 0 0 14px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Máy Xay Cà Phê Cầm Tay KMDJ-HC Máy Xay Hạt Cà Phê Thủ Công, 40 Mức Điều Chỉnh Độ Mịn, Lõi Gốm, Hộp Bột Thủy Tinh</p>
           </div>
@@ -614,7 +614,7 @@
               <span class="o-product-thumbnail__price" style="font-size: 17px; font-weight: 700; color: #D68E1D;">350.000₫</span>
               <span style="font-size: 13px; color: #A89F91; text-decoration: line-through;">500.000₫</span>
             </div>
-            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+            <button type="button" class="o-btn is-primary is-dark is-smaller" data-add-to-cart data-product-id="18" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 10px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
               THÊM VÀO GIỎ
             </button>
           </div>

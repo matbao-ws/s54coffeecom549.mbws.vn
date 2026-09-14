@@ -854,11 +854,36 @@ document.addEventListener('DOMContentLoaded', function() {
             const payMethod = payMethodRadio ? payMethodRadio.value : 'cod';
 
             const payloadItems = items.map(it => {
+                let pid = parseInt(it.id || it.product_id, 10) || 22;
+                const legacyMap = {
+                    200001: 23, 200002: 23, 200003: 22, 200004: 10,
+                    200005: 10, 200006: 12, 200007: 13, 200008: 14,
+                    200009: 15, 200010: 16, 200011: 17, 200012: 18,
+                    100001: 23, 100002: 22, 100003: 10, 100004: 12,
+                    100005: 13, 100006: 14, 100007: 15, 100008: 16,
+                    100009: 17, 100010: 18
+                };
+                if (legacyMap[pid]) {
+                    pid = legacyMap[pid];
+                } else if (pid > 1000) {
+                    const t = (it.title || it.name || '').toLowerCase();
+                    if (t.includes('12 gói') || t.includes('dùng thử') || t.includes('5 gói')) pid = 23;
+                    else if (t.includes('456g') || t.includes('túi')) pid = 22;
+                    else if (t.includes('combo 2')) pid = 10;
+                    else if (t.includes('250g')) pid = 12;
+                    else if (t.includes('500g')) pid = 13;
+                    else if (t.includes('vbz01')) pid = 14;
+                    else if (t.includes('vbz08')) pid = 15;
+                    else if (t.includes('vbz03')) pid = 16;
+                    else if (t.includes('vbs02')) pid = 17;
+                    else if (t.includes('kmdj')) pid = 18;
+                    else pid = 22;
+                }
                 const itemObj = {
-                    product_id: parseInt(it.id || it.product_id, 10) || 1,
+                    product_id: pid,
                     quantity: parseInt(it.quantity, 10) || 1
                 };
-                if (it.variant_id && parseInt(it.variant_id, 10) && parseInt(it.variant_id, 10) !== itemObj.product_id) {
+                if (it.variant_id && parseInt(it.variant_id, 10) && parseInt(it.variant_id, 10) !== itemObj.product_id && parseInt(it.variant_id, 10) < 1000) {
                     itemObj.variant_id = parseInt(it.variant_id, 10);
                 }
                 if (Array.isArray(it.option_value_ids) && it.option_value_ids.length > 0) {

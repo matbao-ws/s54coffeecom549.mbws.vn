@@ -63,7 +63,36 @@
             } catch(e) {}
         }
 
+        var mockToDbMap = {
+            200001: 23, 200002: 23, 200003: 22, 200004: 10,
+            200005: 10, 200006: 12, 200007: 13, 200008: 14,
+            200009: 15, 200010: 16, 200011: 17, 200012: 18,
+            100001: 23, 100002: 22, 100003: 10, 100004: 12,
+            100005: 13, 100006: 14, 100007: 15, 100008: 16,
+            100009: 17, 100010: 18
+        };
+
         rawList.forEach(function(it) {
+            var rawId = parseInt(it.id || it.product_id, 10);
+            if (mockToDbMap[rawId]) {
+                it.id = mockToDbMap[rawId];
+                it.product_id = mockToDbMap[rawId];
+            } else if (rawId > 1000 || isNaN(rawId)) {
+                var lower = (it.title || it.name || '').toLowerCase();
+                var resolvedId = 22;
+                if (lower.includes('12 gói') || lower.includes('dùng thử') || lower.includes('5 gói')) resolvedId = 23;
+                else if (lower.includes('456g') || lower.includes('túi')) resolvedId = 22;
+                else if (lower.includes('combo 2')) resolvedId = 10;
+                else if (lower.includes('250g')) resolvedId = 12;
+                else if (lower.includes('500g')) resolvedId = 13;
+                else if (lower.includes('vbz01')) resolvedId = 14;
+                else if (lower.includes('vbz08')) resolvedId = 15;
+                else if (lower.includes('vbz03')) resolvedId = 16;
+                else if (lower.includes('vbs02')) resolvedId = 17;
+                else if (lower.includes('kmdj')) resolvedId = 18;
+                it.id = resolvedId;
+                it.product_id = resolvedId;
+            }
             var t = it.title || it.name || 'S54 Coffee';
             it.title = t;
             it.name = t;
@@ -126,7 +155,33 @@
             if (!item) return;
             var cleanTitle = (item.title || item.name || 'S54 Cà Phê').trim();
             var price = sanitizePrice(item.price);
-            var id = item.id || item.product_id || Date.now();
+            var id = parseInt(item.id || item.product_id, 10) || 22;
+
+            var mockToDbMap = {
+                200001: 23, 200002: 23, 200003: 22, 200004: 10,
+                200005: 10, 200006: 12, 200007: 13, 200008: 14,
+                200009: 15, 200010: 16, 200011: 17, 200012: 18,
+                100001: 23, 100002: 22, 100003: 10, 100004: 12,
+                100005: 13, 100006: 14, 100007: 15, 100008: 16,
+                100009: 17, 100010: 18
+            };
+            if (mockToDbMap[id]) {
+                id = mockToDbMap[id];
+            } else if (id > 1000) {
+                var lower = cleanTitle.toLowerCase();
+                if (lower.includes('12 gói') || lower.includes('dùng thử') || lower.includes('5 gói')) id = 23;
+                else if (lower.includes('456g') || lower.includes('túi')) id = 22;
+                else if (lower.includes('combo 2')) id = 10;
+                else if (lower.includes('250g')) id = 12;
+                else if (lower.includes('500g')) id = 13;
+                else if (lower.includes('vbz01')) id = 14;
+                else if (lower.includes('vbz08')) id = 15;
+                else if (lower.includes('vbz03')) id = 16;
+                else if (lower.includes('vbs02')) id = 17;
+                else if (lower.includes('kmdj')) id = 18;
+                else id = 22;
+            }
+
             var variantId = item.variant_id || item.variantId || id;
             var qty = parseInt(item.quantity, 10) || 1;
             var image = item.image || item.image_url || '';
@@ -299,14 +354,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         updateCartUI();
 
-        // Cart trigger button (Header & any link)
+        // Cart trigger button (Header icon ONLY - NEVER intercept direct cart page links!)
         document.addEventListener('click', function(e) {
-            var cartTrigger = e.target.closest('#s54-cart-trigger, [data-cart-drawer-toggle], .is-cart, a[href*="/cart.html"], a[href$="/cart"]');
-            if (cartTrigger && !cartTrigger.classList.contains('c-cart-drawer__view-cart')) {
-                // If it's a direct link to cart page on cart/checkout pages, allow normal navigation
-                if (window.location.pathname.endsWith('/cart') || window.location.pathname.endsWith('/checkout')) {
-                    return;
-                }
+            if (e.target.closest('#s54-view-cart-link, .s54-direct-cart-link, .c-cart-drawer__view-cart, #s54-cart-drawer a')) {
+                // Direct link inside drawer to view cart or checkout - ALWAYS allow normal navigation!
+                return;
+            }
+            var cartTrigger = e.target.closest('#s54-cart-trigger, [data-cart-drawer-toggle], .c-header__cart, .c-icon-cart');
+            if (cartTrigger) {
                 e.preventDefault();
                 openDrawer();
             }

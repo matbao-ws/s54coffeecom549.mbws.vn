@@ -290,22 +290,52 @@
             let title = 'S54 Robusta Cà Phê Rang Mộc Thượng Hạng';
             let price = 35000;
             let img = 'assets/images/s54/products/tui_3in1_456g.jpg';
-            let id = Date.now();
             let qty = 1;
             let url = 'product-detail.html';
 
             // 1. Extract ID & URL
+            let id = targetEl.getAttribute('data-product-id') || 
+                     card.getAttribute('data-product-id') || 
+                     null;
+
             const idInput = card.querySelector('input[name="id"], [data-product-select]');
-            if (idInput && idInput.value) {
+            if (!id && idInput && idInput.value) {
                 const parsedId = parseInt(idInput.value, 10);
                 if (!isNaN(parsedId)) id = parsedId;
             }
-            const linkEl = card.querySelector('a[href*="id="], a.o-product-thumbnail__link, a.c-product-card__link');
+            const linkEl = card.querySelector('a[href*="id="], a.o-product-thumbnail__link, a.c-product-card__link, a[href*="/san-pham/"]');
             if (linkEl) {
                 const href = linkEl.getAttribute('href') || '';
                 if (href) url = href;
-                const m = href.match(/id=([0-9]+)/);
-                if (m && id === Date.now()) id = parseInt(m[1], 10);
+                if (!id) {
+                    const m = href.match(/id=([0-9]+)/);
+                    if (m) id = parseInt(m[1], 10);
+                }
+            }
+
+            const mockToDbMap = {
+                200001: 23, 200002: 23, 200003: 22, 200004: 10,
+                200005: 10, 200006: 12, 200007: 13, 200008: 14,
+                200009: 15, 200010: 16, 200011: 17, 200012: 18,
+                100001: 23, 100002: 22, 100003: 10, 100004: 12,
+                100005: 13, 100006: 14, 100007: 15, 100008: 16,
+                100009: 17, 100010: 18
+            };
+            if (id && mockToDbMap[id]) {
+                id = mockToDbMap[id];
+            } else if (!id || isNaN(id) || id > 1000) {
+                const lowerTitle = (card.textContent || '').toLowerCase();
+                if (lowerTitle.includes('12 gói') || lowerTitle.includes('dùng thử') || lowerTitle.includes('5 gói')) id = 23;
+                else if (lowerTitle.includes('456g') || lowerTitle.includes('túi')) id = 22;
+                else if (lowerTitle.includes('combo 2')) id = 10;
+                else if (lowerTitle.includes('250g')) id = 12;
+                else if (lowerTitle.includes('500g')) id = 13;
+                else if (lowerTitle.includes('vbz01')) id = 14;
+                else if (lowerTitle.includes('vbz08')) id = 15;
+                else if (lowerTitle.includes('vbz03')) id = 16;
+                else if (lowerTitle.includes('vbs02')) id = 17;
+                else if (lowerTitle.includes('kmdj')) id = 18;
+                else id = 22;
             }
 
             // 2. Extract Title
@@ -421,8 +451,13 @@
 
     // Capture-phase Global Click Listener
     document.addEventListener('click', function(e) {
+        // Explicit navigation link to cart page - ALWAYS allow browser to navigate!
+        if (e.target.closest('#s54-view-cart-link, .s54-direct-cart-link, .c-cart-drawer__view-cart, #s54-cart-drawer a, a[href*="/checkout"]')) {
+            return;
+        }
+
         // 1. Cart Icon in Header
-        const cartToggle = e.target.closest('[data-cart-drawer-toggle], .c-header__cart, a[href*="/cart"], .c-icon-cart, [data-cart-trigger], .c-header__icon--cart, .is-cart');
+        const cartToggle = e.target.closest('#s54-cart-trigger, [data-cart-drawer-toggle], .c-header__cart, .c-icon-cart, [data-cart-trigger], .c-header__icon--cart, .is-cart');
         if (cartToggle) {
             e.preventDefault();
             e.stopPropagation();

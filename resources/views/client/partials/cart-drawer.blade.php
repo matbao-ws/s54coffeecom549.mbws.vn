@@ -38,7 +38,7 @@
         <button type="button" id="s54-checkout-btn" style="width: 100%; background: #2F221A; color: #FAF6F1; border: none; padding: 14px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s;">
             {{ app()->getLocale() === 'vi' ? 'Tiến Hành Thanh Toán' : 'Proceed to Checkout' }}
         </button>
-        <a href="{{ route('client.cart', ['locale' => app()->getLocale()]) }}" style="display: block; text-align: center; margin-top: 12px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline;">
+        <a href="{{ route('client.cart', ['locale' => app()->getLocale()]) }}" id="s54-view-cart-link" class="s54-direct-cart-link c-cart-drawer__view-cart" onclick="window.location.href='{{ route('client.cart', ['locale' => app()->getLocale()]) }}';" style="display: block; text-align: center; margin-top: 12px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline; cursor: pointer;">
             {{ app()->getLocale() === 'vi' ? 'Xem Giỏ Hàng Chi Tiết' : 'View Cart Details' }}
         </a>
     </div>
