@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div style="display: flex; align-items: center; gap: 16px;">
                             <img src="${itemImg}" alt="${itemTitle}" style="width: 64px; height: 64px; object-fit: contain; border-radius: 8px; border: 1px solid #EBE7E1; background: #FAF8F5; flex-shrink: 0;">
                             <div>
-                                <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 700; color: #2F221A;">${itemTitle}</h4>
+                                <div style="margin: 0 0 4px 0; font-size: 13.5px; font-weight: 600; color: #2F221A; line-height: 1.35;">${itemTitle}</div>
                                 ${it.variant_title ? `<span style="font-size: 12px; color: #8A7B70;">${it.variant_title}</span>` : ''}
                             </div>
                         </div>

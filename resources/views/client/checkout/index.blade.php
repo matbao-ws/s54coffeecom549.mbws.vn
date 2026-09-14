@@ -8,20 +8,20 @@
 
 @section('content')
 <style>
-/* Scoped Checkout Styles to Guarantee Pixel-Perfect Alignment & Typography */
+/* Scoped Checkout Styles - Refined, Proportional Typography (Zero Huge Headings) */
 .s54-checkout-wrapper {
     background-color: #FAF8F5;
-    padding: clamp(24px, 3.5vw, 40px) 16px clamp(60px, 6vw, 90px);
+    padding: clamp(20px, 3vw, 36px) 16px clamp(48px, 5vw, 72px);
     min-height: 75vh;
 }
 .s54-checkout-container {
-    max-width: 1140px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 .s54-checkout-breadcrumb {
-    font-size: 13px;
+    font-size: 12.5px;
     color: #8A7B70;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 .s54-checkout-breadcrumb a {
     color: #8A7B70;
@@ -31,35 +31,35 @@
     color: #D68E1D;
 }
 .s54-checkout-header {
-    margin-bottom: 26px;
+    margin-bottom: 22px;
 }
 h1.s54-checkout-page-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-    font-size: clamp(22px, 2.4vw, 28px) !important;
-    font-weight: 800 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
     color: #2F221A !important;
-    margin: 0 0 6px 0 !important;
-    letter-spacing: -0.02em !important;
-    line-height: 1.25 !important;
+    margin: 0 0 4px 0 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.3 !important;
 }
 .s54-checkout-page-desc {
-    font-size: 13.5px !important;
-    color: #6E6259 !important;
+    font-size: 13px !important;
+    color: #7A6F66 !important;
     margin: 0 !important;
-    line-height: 1.5 !important;
+    line-height: 1.4 !important;
 }
 
 /* Two-column layout */
 .s54-checkout-grid {
     display: grid;
-    grid-template-columns: 1.18fr 0.82fr;
-    gap: 28px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
     align-items: start;
 }
-@media (max-width: 900px) {
+@media (max-width: 880px) {
     .s54-checkout-grid {
         grid-template-columns: 1fr !important;
-        gap: 24px !important;
+        gap: 20px !important;
     }
 }
 
@@ -67,38 +67,37 @@ h1.s54-checkout-page-title {
 .s54-checkout-card {
     background: #FFFFFF;
     border: 1px solid #EBE7E1;
-    border-radius: 12px;
-    padding: clamp(20px, 3vw, 30px);
-    box-shadow: 0 4px 18px rgba(47, 34, 26, 0.03);
+    border-radius: 10px;
+    padding: clamp(16px, 2.5vw, 24px);
+    box-shadow: 0 2px 12px rgba(47, 34, 26, 0.03);
 }
 
 /* Step Header */
 .s54-step-header {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
-    margin: 0 0 20px 0 !important;
-    padding-bottom: 12px !important;
-    border-bottom: 1.5px solid #F0EBE5 !important;
+    gap: 10px !important;
+    margin: 0 0 16px 0 !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #F0EBE5 !important;
 }
 .s54-step-num {
-    width: 26px !important;
-    height: 26px !important;
-    min-width: 26px !important;
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
     border-radius: 50% !important;
     background: #2F221A !important;
     color: #FAF6F1 !important;
-    font-size: 13px !important;
+    font-size: 11.5px !important;
     font-weight: 700 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     flex-shrink: 0 !important;
-    box-shadow: 0 2px 5px rgba(47,34,26,0.15);
 }
 h2.s54-step-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-    font-size: 15px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
     color: #2F221A !important;
     text-transform: uppercase !important;
@@ -108,38 +107,38 @@ h2.s54-step-title {
     padding: 0 !important;
 }
 
-/* Form Fields & Alignment */
+/* Form Fields */
 .s54-form-row {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 16px !important;
-    margin-bottom: 15px !important;
+    gap: 14px !important;
+    margin-bottom: 13px !important;
     align-items: start !important;
 }
-@media (max-width: 640px) {
+@media (max-width: 600px) {
     .s54-form-row {
         grid-template-columns: 1fr !important;
-        gap: 15px !important;
+        gap: 13px !important;
     }
 }
 .s54-form-group {
     display: flex !important;
     flex-direction: column !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 13px !important;
 }
 .s54-field-cell {
     display: flex !important;
     flex-direction: column !important;
 }
 .s54-field-label {
-    font-size: 13px !important;
+    font-size: 12.5px !important;
     font-weight: 600 !important;
     color: #3F332A !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 5px !important;
     display: flex !important;
     align-items: center !important;
     gap: 3px !important;
-    line-height: 1.3 !important;
+    line-height: 1.25 !important;
 }
 .s54-field-label .req {
     color: #C2410C !important;
@@ -149,139 +148,139 @@ h2.s54-step-title {
 .s54-textarea {
     width: 100% !important;
     background: #FFFFFF !important;
-    border: 1.5px solid #D8D0C7 !important;
-    border-radius: 8px !important;
+    border: 1px solid #D5CDC4 !important;
+    border-radius: 6px !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     color: #2F221A !important;
     box-sizing: border-box !important;
-    transition: all 0.2s ease !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
 }
 .s54-input {
-    height: 44px !important;
-    padding: 0 14px !important;
+    height: 40px !important;
+    padding: 0 12px !important;
 }
 .s54-textarea {
-    padding: 10px 14px !important;
-    min-height: 70px !important;
+    padding: 9px 12px !important;
+    min-height: 64px !important;
     resize: vertical !important;
 }
 .s54-input:focus,
 .s54-textarea:focus {
     border-color: #2F221A !important;
-    box-shadow: 0 0 0 3px rgba(47, 34, 26, 0.08) !important;
+    box-shadow: 0 0 0 2.5px rgba(47, 34, 26, 0.08) !important;
     outline: none !important;
 }
 
-/* Payment Method Cards */
+/* Payment Methods */
 .s54-pay-options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 .s54-pay-option {
-    border: 1.5px solid #E5DFD7;
+    border: 1px solid #E2DBD2;
     background: #FFFFFF;
-    border-radius: 10px;
-    padding: 14px 16px;
+    border-radius: 8px;
+    padding: 12px 14px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 .s54-pay-option:hover {
-    border-color: #C5BAAD;
+    border-color: #C0B4A6;
 }
 .s54-pay-option.is-selected {
     border-color: #2F221A;
     background: #FAF6F1;
-    box-shadow: 0 2px 10px rgba(47, 34, 26, 0.05);
+    box-shadow: 0 1px 6px rgba(47, 34, 26, 0.04);
 }
 .s54-pay-option-top {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
 }
 .s54-pay-option input[type="radio"] {
     accent-color: #2F221A;
-    margin-top: 3px;
-    width: 18px;
-    height: 18px;
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
 }
 .s54-pay-option-title {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13.5px;
+    font-weight: 600;
     color: #2F221A;
     margin-bottom: 2px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
 }
 .s54-pay-badge {
     background: #EFE6D8;
     color: #8C5B14;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 12px;
+    padding: 1px 7px;
+    border-radius: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 .s54-pay-option-desc {
-    font-size: 12.5px;
+    font-size: 12px;
     color: #6E6259;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
-/* Inline VietQR Box */
+/* Inline VietQR */
 .s54-inline-qr-card {
     display: none;
-    margin-top: 10px;
-    padding: 16px;
+    margin-top: 8px;
+    padding: 12px 14px;
     background: #FFFFFF;
     border: 1px dashed #CBBBAA;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 .s54-inline-qr-content {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
     flex-wrap: wrap;
 }
 .s54-inline-qr-img {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     object-fit: contain;
     background: #FFFFFF;
     border: 1px solid #EBE7E1;
-    border-radius: 8px;
-    padding: 4px;
+    border-radius: 6px;
+    padding: 3px;
     flex-shrink: 0;
 }
 .s54-inline-qr-info {
     flex: 1;
-    min-width: 180px;
-    font-size: 13px;
+    min-width: 160px;
+    font-size: 12.5px;
     color: #3F332A;
-    line-height: 1.6;
+    line-height: 1.55;
 }
 .s54-copy-btn {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    padding: 2px 8px;
-    font-size: 11.5px;
+    gap: 3px;
+    padding: 1px 7px;
+    font-size: 11px;
     font-weight: 600;
     color: #2F221A;
     background: #EFE9E2;
     border: 1px solid #D8CFC5;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
-    margin-left: 6px;
+    margin-left: 5px;
     transition: background 0.15s;
 }
 .s54-copy-btn:hover {
@@ -294,22 +293,19 @@ h2.s54-step-title {
     background-color: #2F221A !important;
     color: #FAF6F1 !important;
     border: none !important;
-    padding: 15px 24px !important;
-    border-radius: 8px !important;
+    padding: 13px 20px !important;
+    border-radius: 6px !important;
     font-family: 'Inter', sans-serif !important;
-    font-size: 14px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
-    letter-spacing: 0.8px !important;
+    letter-spacing: 0.6px !important;
     text-transform: uppercase !important;
     cursor: pointer !important;
-    transition: background 0.2s ease, transform 0.1s ease !important;
-    box-shadow: 0 4px 14px rgba(47, 34, 26, 0.18) !important;
+    transition: background 0.2s ease !important;
+    box-shadow: 0 2px 10px rgba(47, 34, 26, 0.12) !important;
 }
 .s54-btn-submit:hover {
     background-color: #453327 !important;
-}
-.s54-btn-submit:active {
-    transform: scale(0.99) !important;
 }
 .s54-btn-submit:disabled {
     background-color: #8C827A !important;
@@ -320,9 +316,9 @@ h2.s54-step-title {
 .s54-summary-card {
     background: #FFFFFF;
     border: 1px solid #EBE7E1;
-    border-radius: 12px;
-    padding: clamp(20px, 3vw, 26px);
-    box-shadow: 0 4px 18px rgba(47, 34, 26, 0.03);
+    border-radius: 10px;
+    padding: clamp(16px, 2.5vw, 22px);
+    box-shadow: 0 2px 12px rgba(47, 34, 26, 0.03);
     position: sticky;
     top: 90px;
 }
@@ -330,45 +326,45 @@ h2.s54-step-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #F0EBE5;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 h3.s54-summary-title {
     font-family: 'Inter', sans-serif !important;
-    font-size: 15px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
     color: #2F221A !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 0.4px !important;
     margin: 0 !important;
 }
 .s54-summary-count {
-    font-size: 13px;
+    font-size: 12px;
     color: #8A7B70;
-    font-weight: 600;
+    font-weight: 500;
 }
 .s54-summary-items {
     max-height: 280px;
     overflow-y: auto;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     padding-right: 4px;
 }
 .s54-summary-item {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid #F3EEE8;
+    padding: 9px 0;
+    border-bottom: 1px solid #F5F0EA;
 }
 .s54-summary-item:last-child {
     border-bottom: none;
 }
 .s54-summary-item-img {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
-    border-radius: 6px;
+    border-radius: 5px;
     border: 1px solid #EBE7E1;
     background: #FAF8F5;
     flex-shrink: 0;
@@ -377,22 +373,26 @@ h3.s54-summary-title {
     flex: 1;
     min-width: 0;
 }
-.s54-summary-item-title {
-    margin: 0 0 2px 0;
-    font-size: 13px;
-    font-weight: 600;
-    color: #2F221A;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.s54-summary-item-name {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: #2F221A !important;
+    line-height: 1.35 !important;
+    margin: 0 0 2px 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    word-break: break-word !important;
 }
 .s54-summary-item-sub {
-    font-size: 12px;
+    font-size: 11.5px;
     color: #8A7B70;
 }
 .s54-summary-item-total {
-    font-size: 13.5px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 600;
     color: #2F221A;
     white-space: nowrap;
 }
@@ -400,15 +400,15 @@ h3.s54-summary-title {
 /* Totals */
 .s54-summary-totals {
     border-top: 1px solid #F0EBE5;
-    padding-top: 14px;
-    margin-bottom: 16px;
+    padding-top: 12px;
+    margin-bottom: 14px;
 }
 .s54-total-row {
     display: flex;
     justify-content: space-between;
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: #6E6259;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .s54-total-row strong {
     color: #2F221A;
@@ -418,27 +418,28 @@ h3.s54-summary-title {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 14.5px;
+    font-weight: 700;
     color: #2F221A;
-    padding-top: 14px;
+    padding-top: 10px;
     border-top: 1.5px solid #EBE7E1;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 .s54-grand-total-amount {
     color: #D68E1D;
-    font-size: 20px;
+    font-size: 17px;
+    font-weight: 800;
 }
 .s54-trust-box {
     background: #FAF8F5;
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 12px;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 11.5px;
     color: #5C4A3E;
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
-/* Toast copied notice */
+/* Toast */
 .s54-copy-toast {
     display: none;
     position: fixed;
@@ -447,9 +448,9 @@ h3.s54-summary-title {
     transform: translateX(-50%);
     background: #2F221A;
     color: #FFFFFF;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 9px 18px;
     border-radius: 20px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.2);
     z-index: 999999;
@@ -482,7 +483,7 @@ h3.s54-summary-title {
             <form id="s54-checkout-form" class="s54-checkout-card">
                 
                 {{-- Step 1: Shipping Info --}}
-                <div style="margin-bottom: 28px;">
+                <div style="margin-bottom: 24px;">
                     <div class="s54-step-header">
                         <span class="s54-step-num">1</span>
                         <h2 class="s54-step-title">{{ $locale === 'vi' ? 'Thông Tin Giao Hàng' : 'Shipping Information' }}</h2>
@@ -552,7 +553,7 @@ h3.s54-summary-title {
                 </div>
 
                 {{-- Step 2: Payment Method --}}
-                <div style="margin-bottom: 24px;">
+                <div style="margin-bottom: 22px;">
                     <div class="s54-step-header">
                         <span class="s54-step-num">2</span>
                         <h2 class="s54-step-title">{{ $locale === 'vi' ? 'Phương Thức Thanh Toán' : 'Payment Method' }}</h2>
@@ -594,16 +595,16 @@ h3.s54-summary-title {
                                 <div class="s54-inline-qr-content">
                                     <img id="inline-qr-image" class="s54-inline-qr-img" src="https://img.vietqr.io/image/MB-0974933907-compact2.png?amount=0&addInfo=S54%20COFFEE&accountName=CONG%20TY%20TNHH%20GIAI%20PHAP%20TOT" alt="Mã VietQR S54 Coffee">
                                     <div class="s54-inline-qr-info">
-                                        <div style="font-weight: 700; color: #2F221A; margin-bottom: 4px; font-size: 13.5px;">
+                                        <div style="font-weight: 700; color: #2F221A; margin-bottom: 4px; font-size: 13px;">
                                             {{ $locale === 'vi' ? 'Thông tin tài khoản chính thức:' : 'Official Bank Details:' }}
                                         </div>
                                         <div>• Ngân hàng: <strong>MBBank (Ngân hàng Quân Đội)</strong></div>
-                                        <div>• Số tài khoản: <strong id="stk-val" style="color: #2F221A; font-size: 14px;">0974933907</strong>
+                                        <div>• Số tài khoản: <strong id="stk-val" style="color: #2F221A; font-size: 13.5px;">0974933907</strong>
                                             <button type="button" class="s54-copy-btn" id="btn-copy-stk">📋 {{ $locale === 'vi' ? 'Sao chép' : 'Copy' }}</button>
                                         </div>
                                         <div>• Chủ tài khoản: <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong></div>
-                                        <div>• Số tiền thanh toán: <strong id="inline-qr-amount" style="color: #D68E1D; font-size: 14px;">0₫</strong></div>
-                                        <div style="margin-top: 6px; font-size: 12px; color: #8A7B70; font-style: italic;">
+                                        <div>• Số tiền thanh toán: <strong id="inline-qr-amount" style="color: #D68E1D; font-size: 13.5px;">0₫</strong></div>
+                                        <div style="margin-top: 5px; font-size: 11.5px; color: #8A7B70; font-style: italic;">
                                             {{ $locale === 'vi' ? '* Bạn có thể quét mã QR ngay bây giờ hoặc sau khi bấm Xác nhận đặt hàng. Đơn hàng sẽ được xử lý ngay sau khi chuyển khoản.' : '* You can scan now or after clicking Place Order. Your order is processed immediately.' }}
                                         </div>
                                     </div>
@@ -664,25 +665,25 @@ h3.s54-summary-title {
 
 {{-- Order Success Modal --}}
 <div id="s54-order-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(36,26,20,0.7); z-index: 99999; align-items: center; justify-content: center; backdrop-filter: blur(3px); padding: 16px; box-sizing: border-box;">
-    <div style="background: #FFFFFF; border-radius: 16px; max-width: 520px; width: 100%; padding: 32px 24px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.25); max-height: 90vh; overflow-y: auto;">
-        <div style="width: 58px; height: 58px; background: #EBF7EE; color: #2E7D32; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 16px;">✓</div>
-        <h2 style="font-size: 20px !important; font-weight: 800 !important; color: #2F221A !important; margin: 0 0 8px 0 !important; text-transform: none !important;">
+    <div style="background: #FFFFFF; border-radius: 14px; max-width: 500px; width: 100%; padding: 28px 22px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.25); max-height: 90vh; overflow-y: auto;">
+        <div style="width: 52px; height: 52px; background: #EBF7EE; color: #2E7D32; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 14px;">✓</div>
+        <h2 style="font-size: 18px !important; font-weight: 800 !important; color: #2F221A !important; margin: 0 0 6px 0 !important; text-transform: none !important;">
             {{ $locale === 'vi' ? 'Đặt Hàng Thành Công!' : 'Order Placed Successfully!' }}
         </h2>
-        <p style="font-size: 13.5px; color: #6E6259; line-height: 1.5; margin: 0 0 18px 0;">
+        <p style="font-size: 13px; color: #6E6259; line-height: 1.5; margin: 0 0 16px 0;">
             {{ $locale === 'vi' ? 'Cảm ơn Quý khách đã tin tưởng S54 Coffee. Mã đơn hàng của Quý khách là:' : 'Thank you for choosing S54 Coffee. Your Order ID is:' }}<br>
-            <strong id="modal-order-code" style="font-size: 19px; color: #D68E1D; display: inline-block; margin-top: 5px; letter-spacing: 0.5px;">S54-000000</strong>
+            <strong id="modal-order-code" style="font-size: 18px; color: #D68E1D; display: inline-block; margin-top: 4px; letter-spacing: 0.5px;">S54-000000</strong>
         </p>
 
         {{-- Bank Transfer Instructions inside Modal --}}
-        <div id="modal-payment-instructions" style="background: #FAF8F5; border: 1px solid #EBE7E1; border-radius: 10px; padding: 16px; font-size: 13px; color: #4A3E36; text-align: left; margin-bottom: 20px; line-height: 1.6; display: none;">
+        <div id="modal-payment-instructions" style="background: #FAF8F5; border: 1px solid #EBE7E1; border-radius: 8px; padding: 14px; font-size: 12.5px; color: #4A3E36; text-align: left; margin-bottom: 18px; line-height: 1.55; display: none;">
             {{-- Injected dynamically --}}
         </div>
 
-        <p style="font-size: 12.5px; color: #8A7B70; margin: 0 0 20px 0;">
+        <p style="font-size: 12px; color: #8A7B70; margin: 0 0 18px 0;">
             {{ $locale === 'vi' ? 'Chuyên viên S54 sẽ liên hệ qua số điện thoại để xác nhận đơn và gửi hàng trong thời gian sớm nhất.' : 'Our customer support team will contact you shortly to confirm delivery.' }}
         </p>
-        <a href="{{ route('client.home', ['locale' => $locale]) }}" style="display: inline-block; width: 100%; background: #2F221A; color: #FFFFFF; padding: 14px 20px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; box-sizing: border-box;">
+        <a href="{{ route('client.home', ['locale' => $locale]) }}" style="display: inline-block; width: 100%; background: #2F221A; color: #FFFFFF; padding: 12px 20px; border-radius: 6px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; text-decoration: none; box-sizing: border-box;">
             {{ $locale === 'vi' ? 'Về Trang Chủ S54' : 'Return to Home' }}
         </a>
     </div>
@@ -726,9 +727,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (items.length === 0) {
             container.innerHTML = `
-                <div style="text-align: center; padding: 24px 10px; color: #8A7B70;">
-                    <p style="margin-bottom: 12px; font-size: 13.5px;">${isVi ? 'Giỏ hàng của bạn đang trống.' : 'Your cart is empty.'}</p>
-                    <a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" style="color: #D68E1D; font-weight: 700; text-decoration: underline;">${isVi ? 'Chọn sản phẩm ngay' : 'Browse products'}</a>
+                <div style="text-align: center; padding: 22px 10px; color: #8A7B70;">
+                    <p style="margin-bottom: 10px; font-size: 13px;">${isVi ? 'Giỏ hàng của bạn đang trống.' : 'Your cart is empty.'}</p>
+                    <a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" style="color: #D68E1D; font-weight: 700; text-decoration: underline; font-size: 13px;">${isVi ? 'Chọn sản phẩm ngay' : 'Browse products'}</a>
                 </div>
             `;
             subtotalEl.textContent = '0₫';
@@ -754,7 +755,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="s54-summary-item">
                     <img src="${itemImg}" alt="${itemTitle}" class="s54-summary-item-img">
                     <div class="s54-summary-item-info">
-                        <h4 class="s54-summary-item-title">${itemTitle}</h4>
+                        <div class="s54-summary-item-name">${itemTitle}</div>
                         <div class="s54-summary-item-sub">${formatVND(price)} &times; ${qty}</div>
                     </div>
                     <div class="s54-summary-item-total">${formatVND(line)}</div>
@@ -778,7 +779,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     payOptions.forEach(function(opt) {
         opt.addEventListener('click', function(e) {
-            // Prevent duplicate triggers if clicking directly on copy button
             if (e.target && e.target.closest('.s54-copy-btn')) return;
 
             payOptions.forEach(function(o) {
@@ -926,10 +926,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 payInstructions.style.display = 'block';
                 const vietQrUrl = `https://img.vietqr.io/image/MB-0974933907-compact2.png?amount=${currentGrandTotal}&addInfo=${encodeURIComponent(orderCode)}&accountName=CONG%20TY%20TNHH%20GIAI%20PHAP%20TOT`;
                 payInstructions.innerHTML = `
-                    <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-                        <img src="${vietQrUrl}" alt="VietQR S54 Coffee" style="width: 130px; height: 130px; border-radius: 8px; border: 1px solid #EBE7E1; background: #FFFFFF; object-fit: contain; flex-shrink: 0;">
-                        <div style="flex: 1; min-width: 180px; font-size: 13px; line-height: 1.6;">
-                            <strong style="color: #2F221A; font-size: 13.5px;">Quét mã VietQR chuyển khoản nhanh:</strong><br>
+                    <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+                        <img src="${vietQrUrl}" alt="VietQR S54 Coffee" style="width: 120px; height: 120px; border-radius: 6px; border: 1px solid #EBE7E1; background: #FFFFFF; object-fit: contain; flex-shrink: 0;">
+                        <div style="flex: 1; min-width: 170px; font-size: 12.5px; line-height: 1.55;">
+                            <strong style="color: #2F221A; font-size: 13px;">Quét mã VietQR chuyển khoản nhanh:</strong><br>
                             • Ngân hàng: <strong>MB Bank (Ngân hàng Quân Đội)</strong><br>
                             • Số tài khoản: <strong>0974933907</strong><br>
                             • Chủ tài khoản: <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong><br>
