@@ -35,6 +35,8 @@ DirectoryIndex public/index.php index.php
   RewriteRule ^our-story\.html$ /vi/pages/our-story [R=301,L]
   RewriteRule ^contact\.html$ /vi/pages/wholesale#contact [R=301,L]
   RewriteRule ^collections-coffee\.html$ /vi/san-pham [R=301,L]
+  RewriteRule ^(.*/)?checkout\.html$ /vi/checkout [R=301,L]
+  RewriteRule ^(.*/)?cart\.html$ /vi/cart [R=301,L]
 
   # Allow explicit standalone HTML tools/checkouts if requested directly (e.g. /checkout.html)
   RewriteCond %{REQUEST_FILENAME} -f

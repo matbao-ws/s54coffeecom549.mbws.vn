@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Client\BlogController;
+use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\Client\CategoryController;
 use App\Http\Controllers\Client\CatalogController;
+use App\Http\Controllers\Client\CheckoutController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\PageController;
 use App\Http\Controllers\Client\PostCategoryController;
@@ -10,6 +12,17 @@ use Illuminate\Support\Facades\Route;
 
 // Storefront Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Shopping Cart & Checkout
+Route::get('cart', [CartController::class, 'index'])->name('cart');
+Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
+
+// Legacy & Relative URL redirects to ensure no 404s
+Route::get('cart.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
+Route::get('checkout.html', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
+Route::get('san-pham/cart.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
+Route::get('san-pham/checkout.html', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
+
 
 // Catalog / Products
 Route::get('san-pham', [CatalogController::class, 'index'])->name('catalog.index');

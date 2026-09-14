@@ -25,6 +25,14 @@ Route::get('our-story.html', fn () => redirect('/vi/pages/our-story', 301));
 Route::get('our-story', fn () => redirect('/vi/pages/our-story', 301));
 Route::get('contact.html', fn () => redirect('/vi/pages/wholesale#contact', 301));
 
+// Cart & Checkout Aliases
+Route::get('cart', fn () => redirect('/vi/cart', 301));
+Route::get('cart.html', fn () => redirect('/vi/cart', 301));
+Route::get('checkout', fn () => redirect('/vi/checkout', 301));
+Route::get('checkout.html', fn () => redirect('/vi/checkout', 301));
+Route::get('{any}/checkout.html', fn () => redirect('/vi/checkout', 301))->where('any', '.*');
+Route::get('{any}/cart.html', fn () => redirect('/vi/cart', 301))->where('any', '.*');
+
 Route::get('/login', fn () => redirect('/' . app(\App\Services\LanguageRegistry::class)->defaultLocale() . '/admin/login'))->name('login');
 Route::get('/api/docs', [\App\Http\Controllers\Api\PublicController::class, 'docs'])->name('api.docs');
 

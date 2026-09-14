@@ -34,14 +34,17 @@
         $jsVer = @filemtime(base_path('assets/js/layouts.theme.js')) 
             ?: (@filemtime(public_path('assets/js/layouts.theme.js')) ?: 1789299999);
     @endphp
+    <script>
+        window.S54_LOCALE = '{{ app()->getLocale() }}';
+    </script>
     <script src="{{ asset('assets/js/vendor.js') }}?v={{ $jsVer }}"></script>
     <script src="{{ asset('assets/js/layouts.theme.js') }}?v={{ $jsVer }}"></script>
     <script src="{{ asset('assets/js/sections.product-carousel.js') }}?v={{ $jsVer }}"></script>
     <script src="{{ asset('assets/js/sections.article-feed.js') }}?v={{ $jsVer }}"></script>
     <script src="{{ asset('assets/js/sections.featured-video.js') }}?v={{ $jsVer }}"></script>
     <script src="{{ asset('assets/js/sections.featured-collections.js') }}?v={{ $jsVer }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}?v={{ $jsVer }}"></script>
     <script src="{{ asset('assets/js/client-cart.js') }}?v={{ $jsVer }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}?v={{ $jsVer }}"></script>
     <script>
     (function() {
         var btn = document.getElementById('s54-back-to-top');

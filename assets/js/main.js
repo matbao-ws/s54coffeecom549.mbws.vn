@@ -93,14 +93,14 @@
                         <span class="c-cart-drawer__subtotal-amount">0₫</span>
                     </div>
                     <button class="c-cart-drawer__checkout-btn">${_t('cart_checkout')}</button>
-                    <a href="cart.html" class="c-cart-drawer__view-cart" style="display: block; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline;">${_t('cart_view_cart')}</a>
+                    <a href="/${(window.S54_LOCALE || 'vi')}/cart" class="c-cart-drawer__view-cart" style="display: block; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 600; color: #6E6259; text-decoration: underline;">${_t('cart_view_cart')}</a>
                 </div>
             `;
             document.body.appendChild(drawer);
 
             drawer.querySelector('.c-cart-drawer__close').addEventListener('click', closeCartDrawer);
             drawer.querySelector('.c-cart-drawer__checkout-btn').addEventListener('click', () => {
-                window.location.href = 'checkout.html';
+                window.location.href = '/' + (window.S54_LOCALE || 'vi') + '/checkout';
             });
 
             drawer.addEventListener('click', (e) => {
@@ -168,9 +168,7 @@
                 const shopBtn = cartBody.querySelector('.c-cart-drawer__shop-btn');
                 if (shopBtn) shopBtn.addEventListener('click', () => {
                     closeCartDrawer();
-                    if (!window.location.href.includes('collections-coffee')) {
-                        window.location.href = 'collections-coffee.html';
-                    }
+                    window.location.href = '/' + (window.S54_LOCALE || 'vi') + '/san-pham';
                 });
             } else {
                 cartBody.innerHTML = items.map(item => {
@@ -212,6 +210,15 @@
     }
 
     function openCartDrawer() {
+        if (document.getElementById('s54-cart-drawer')) {
+            var s54drawer = document.getElementById('s54-cart-drawer');
+            var s54overlay = document.getElementById('s54-cart-overlay');
+            if (s54drawer) s54drawer.style.right = '0';
+            if (s54overlay) s54overlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            if (typeof window.updateCartUI === 'function') window.updateCartUI();
+            return;
+        }
         ensureCartDrawer();
         const drawer = document.querySelector('.c-cart-drawer');
         const overlay = document.querySelector('.c-cart-drawer__overlay');
@@ -222,6 +229,14 @@
     }
 
     function closeCartDrawer() {
+        if (document.getElementById('s54-cart-drawer')) {
+            var s54drawer = document.getElementById('s54-cart-drawer');
+            var s54overlay = document.getElementById('s54-cart-overlay');
+            if (s54drawer) s54drawer.style.right = '-450px';
+            if (s54overlay) s54overlay.style.display = 'none';
+            document.body.style.overflow = '';
+            return;
+        }
         const drawer = document.querySelector('.c-cart-drawer');
         const overlay = document.querySelector('.c-cart-drawer__overlay');
         if (drawer) drawer.classList.remove('is-open');
