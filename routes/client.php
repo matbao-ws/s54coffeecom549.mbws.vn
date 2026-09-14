@@ -22,6 +22,10 @@ Route::get('cart.html', fn (string $locale) => redirect()->route('client.cart', 
 Route::get('checkout.html', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
 Route::get('san-pham/cart.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
 Route::get('san-pham/checkout.html', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
+Route::get('wholesale', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'wholesale'], 301));
+Route::get('wholesale.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'wholesale'], 301));
+Route::get('our-story', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story'], 301));
+Route::get('our-story.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story'], 301));
 
 
 // Catalog / Products

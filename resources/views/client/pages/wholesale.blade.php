@@ -18,7 +18,7 @@
       
     ">
         <x-client::editable key="wholesale.hero.title" tag="h1" class="c-hero-banner__title o-heading--2">
-        {{ app()->getLocale() === 'vi' ? 'Tại Sao Chọn S54 Cho Giải Pháp Cà Phê Bán Sỉ & Doanh Nghiệp?' : 'Why Partner with S54 for Wholesale & Enterprise Coffee Solutions?' }}
+        {{ app()->getLocale() === 'vi' ? 'Bán Sỉ & Doanh Nghiệp?' : 'Wholesale & Enterprise Solutions' }}
       </x-client::editable>
       
       
@@ -30,51 +30,106 @@
         </a></div>
   </div>
 </section><style> 
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner {
+    margin: 0 !important;
+    position: relative !important;
+  }
   #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__media-container {
-    padding-bottom: min(42vw, 480px) !important;
-    min-height: 400px !important;
+    padding-bottom: min(48vw, 580px) !important;
+    min-height: 500px !important;
+    position: relative !important;
   } 
   #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__overlay {
+    position: absolute !important;
     top: 50% !important;
+    transform: translateY(calc(-50% + 35px)) !important;
+    max-width: 48rem !important;
+    left: clamp(24px, 6vw, 90px) !important;
+    right: auto !important;
     bottom: auto !important;
-    transform: translateY(-50%) !important;
-    max-width: 46rem !important;
-    left: clamp(20px, 5.5vw, 80px) !important;
     margin: 0 !important;
     z-index: 2 !important;
   }
-  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__title {
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__title,
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee h1.c-hero-banner__title {
     margin-top: 0 !important;
     color: #2F221A !important;
-    font-size: clamp(24px, 3vw, 38px) !important;
-    font-weight: 700 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 14px !important;
+    font-size: clamp(30px, 3.4vw, 44px) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+    letter-spacing: -0.02em !important;
     text-shadow: none !important;
   }
-  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__subtitle {
-    color: #4A3A2F !important;
-    font-size: clamp(14px, 1.15vw, 16px) !important;
-    line-height: 1.55 !important;
-    max-width: 36rem !important;
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__subtitle,
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee p.c-hero-banner__subtitle {
+    color: #332319 !important;
+    font-size: clamp(15.5px, 1.3vw, 17.5px) !important;
+    font-weight: 500 !important;
+    line-height: 1.65 !important;
+    max-width: 38rem !important;
     margin-top: 0 !important;
-    margin-bottom: 22px !important;
+    margin-bottom: 26px !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7) !important;
   }
   #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__button {
     margin-top: 0 !important;
+    background-color: #2F221A !important;
+    color: #FAF6F1 !important;
+    padding: 13px 28px !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 14px rgba(47, 34, 26, 0.2) !important;
+    border: none !important;
+  }
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__button:hover {
+    background-color: #D68E1D !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(214, 142, 29, 0.35) !important;
+  }
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__button svg path {
+    fill: #FAF6F1 !important;
+    transition: fill 0.25s ease !important;
+  }
+  #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__button:hover svg path {
+    fill: #FFFFFF !important;
   }
   @media (max-width: 767px) {
     #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__media-container {
-      padding-bottom: 95% !important;
-      min-height: 380px !important;
+      padding-bottom: 110% !important;
+      min-height: 420px !important;
     }
     #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__overlay {
       top: auto !important;
-      bottom: 2rem !important;
+      bottom: 28px !important;
       transform: none !important;
-      left: 20px !important;
-      right: 20px !important;
-      max-width: calc(100% - 40px) !important;
+      left: 18px !important;
+      right: 18px !important;
+      max-width: calc(100% - 36px) !important;
+    }
+    #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__title,
+    #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee h1.c-hero-banner__title {
+      font-size: 26px !important;
+      line-height: 1.25 !important;
+      margin-bottom: 12px !important;
+    }
+    #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__subtitle,
+    #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee p.c-hero-banner__subtitle {
+      font-size: 14.5px !important;
+      line-height: 1.55 !important;
+      margin-bottom: 18px !important;
+    }
+    #shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee .c-hero-banner__button {
+      padding: 11px 22px !important;
+      font-size: 12px !important;
     }
   }
 </style></div><div id="shopify-section-template--15837242130607__text_and_image2_yKDnz9" class="shopify-section c-section__text-and-image2"><link href="{{ asset('assets/css/sections.text-and-image2.css') }}?v={{ @filemtime(base_path('assets/css/sections.text-and-image2.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><section class="c-text-and-image2"><div class="c-text-and-image2__content is-curve  "

@@ -38,20 +38,6 @@ header('Content-Type: text/plain; charset=utf-8');
         return f"Error: {e}"
 
 def run_remote_cli(code_str):
-    runner_code = f"""<?php
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
-header('Content-Type: text/plain; charset=utf-8');
-
-$tmpScript = __DIR__ . '/cli_' . uniqid() . '.php';
-file_put_contents($tmpScript, <?php\\n{code_str}\\n?>);
-$cmd = '/opt/plesk/php/8.2/bin/php ' . escapeshellarg($tmpScript) . ' 2>&1';
-$output = shell_exec($cmd);
-@unlink($tmpScript);
-@unlink(__FILE__);
-echo $output;
-"""
-    # Wait, avoid raw string syntax issues in php code generation:
     runner_code = """<?php
 ini_set('display_errors', '1');
 error_reporting(E_ALL);

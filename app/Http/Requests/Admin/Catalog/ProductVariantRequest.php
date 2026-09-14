@@ -17,7 +17,8 @@ class ProductVariantRequest extends FormRequest
 
     public function rules(): array
     {
-        $variantId = $this->route('variant')?->id;
+        $variantParam = $this->route('variant');
+        $variantId = is_object($variantParam) ? ($variantParam->id ?? null) : $variantParam;
 
         return [
             ...$this->localizedStringRules('name', false, 255),
@@ -28,7 +29,7 @@ class ProductVariantRequest extends FormRequest
             'price' => ['nullable', 'numeric', 'min:0'],
             'compare_at_price' => ['nullable', 'numeric', 'min:0'],
             'cost_price' => ['nullable', 'numeric', 'min:0'],
-            'image_url' => ['nullable', 'url', 'max:2048'],
+            'image_url' => ['nullable', 'string', 'max:2048'],
             'weight_grams' => ['nullable', 'integer', 'min:0'],
             'stock_quantity' => ['required', 'integer', 'min:0'],
             'is_active' => ['nullable', 'boolean'],

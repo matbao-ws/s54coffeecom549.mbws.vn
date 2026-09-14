@@ -23,7 +23,7 @@ class ProductOptionRequest extends FormRequest
             'groups.*.values.*.id' => ['nullable', 'integer'],
             'groups.*.values.*.label' => ['required', 'array'],
             'groups.*.values.*.color_hex' => ['nullable', 'string', 'max:20'],
-            'groups.*.values.*.image_url' => ['nullable', 'url', 'max:2048'],
+            'groups.*.values.*.image_url' => ['nullable', 'string', 'max:2048'],
             'groups.*.values.*.is_active' => ['nullable', 'boolean'],
         ];
 

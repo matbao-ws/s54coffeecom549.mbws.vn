@@ -17,7 +17,8 @@ class ProductRequest extends FormRequest
 
     public function rules(): array
     {
-        $productId = $this->route('product')?->id;
+        $productParam = $this->route('product');
+        $productId = is_object($productParam) ? ($productParam->id ?? null) : $productParam;
         $excludeVariantFields = Rule::excludeIf(! $this->boolean('has_variants'));
 
         return [
@@ -33,7 +34,7 @@ class ProductRequest extends FormRequest
             'image_url' => ['nullable', 'string', 'max:255'],
             'image_file' => ['nullable', 'file', 'image', 'max:5120'],
             'gallery_images' => ['nullable', 'array', 'max:20'],
-            'gallery_images.*' => ['nullable', 'url', 'max:2048'],
+            'gallery_images.*' => ['nullable', 'string', 'max:2048'],
             'price' => ['required', 'numeric', 'min:0'],
             'compare_at_price' => ['nullable', 'numeric', 'min:0'],
             'cost_price' => ['nullable', 'numeric', 'min:0'],
@@ -51,7 +52,7 @@ class ProductRequest extends FormRequest
             'variant_groups.*.values.*.id' => [$excludeVariantFields, 'nullable', 'integer'],
             'variant_groups.*.values.*.label' => [$excludeVariantFields, 'required', 'array'],
             'variant_groups.*.values.*.color_hex' => [$excludeVariantFields, 'nullable', 'string', 'max:20'],
-            'variant_groups.*.values.*.image_url' => [$excludeVariantFields, 'nullable', 'url', 'max:2048'],
+            'variant_groups.*.values.*.image_url' => [$excludeVariantFields, 'nullable', 'string', 'max:2048'],
             'variant_groups.*.values.*.is_active' => [$excludeVariantFields, 'nullable', 'boolean'],
             ...$this->variantTranslationRules($excludeVariantFields),
         ];
