@@ -9,7 +9,7 @@
 @endif
 
 {{-- ── SEO: Google & Bing Verification ──────────────────────── --}}
-<meta name="google-site-verification" content="YzB2MVZGpdPUcap83JsNqyX0DB3r8MGefp53gwTZWuo">
+<meta name="google-site-verification" content="E_Wy0KrvO4AM-AuJJ01FoFDCwC0CJXqm">
 <meta name="msvalidate.01" content="@yield('bing_verification', '')">
 
 {{-- ── SEO: Canonical URL ───────────────────────────────────── --}}
