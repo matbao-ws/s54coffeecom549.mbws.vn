@@ -46,6 +46,66 @@
 @endphp
 
 @section('title', $title . ' — S54 COFFEE')
+@section('meta_description', Str::limit(strip_tags($shortDesc ?: $desc), 160))
+@section('og_title', $title . ' — S54 COFFEE')
+@section('og_description', Str::limit(strip_tags($shortDesc ?: $desc), 200))
+@section('og_image', $firstImg)
+@section('og_type', 'product')
+
+@push('jsonld')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": @json($title),
+    "description": @json(Str::limit(strip_tags($shortDesc ?: $desc), 500)),
+    "image": @json($galleryUrls),
+    "brand": {
+        "@type": "Brand",
+        "name": "S54 COFFEE"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "{{ url()->current() }}",
+        "priceCurrency": "VND",
+        "price": "{{ $minPrice }}",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+            "@type": "Organization",
+            "name": "S54 COFFEE"
+        }
+    },
+    "sku": @json($product->sku ?? ''),
+    "category": @json($product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : 'Cà Phê')
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "{{ $locale === 'vi' ? 'Trang Chủ' : 'Home' }}",
+            "item": "{{ route('client.home', ['locale' => $locale]) }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ $locale === 'vi' ? 'Sản Phẩm' : 'Products' }}",
+            "item": "{{ route('client.catalog.index', ['locale' => $locale]) }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": @json($title),
+            "item": "{{ url()->current() }}"
+        }
+    ]
+}
+</script>
+@endpush
 
 @section('content')
 <section style="background-color: #FAF8F5; padding: 50px 20px 80px;">

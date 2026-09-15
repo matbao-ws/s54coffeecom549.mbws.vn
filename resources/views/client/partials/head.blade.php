@@ -8,6 +8,75 @@
     <meta name="description" content="S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1 và giải pháp B2B toàn diện.">
 @endif
 
+{{-- ── SEO: Google & Bing Verification ──────────────────────── --}}
+<meta name="google-site-verification" content="YzB2MVZGpdPUcap83JsNqyX0DB3r8MGefp53gwTZWuo">
+<meta name="msvalidate.01" content="@yield('bing_verification', '')">
+
+{{-- ── SEO: Canonical URL ───────────────────────────────────── --}}
+<link rel="canonical" href="@yield('canonical_url', url()->current())">
+
+{{-- ── SEO: Open Graph (Facebook, Zalo) ─────────────────────── --}}
+@php
+    $ogTitle = View::yieldContent('og_title') ?: View::yieldContent('title', 'S54 COFFEE — Tinh Hoa Cà Phê Việt');
+    $ogDesc  = View::yieldContent('og_description') ?: View::yieldContent('meta_description', 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1 và giải pháp B2B toàn diện.');
+    $ogImage = View::yieldContent('og_image') ?: asset('assets/images/s54/hero_banner_s54.png');
+    $ogType  = View::yieldContent('og_type') ?: 'website';
+@endphp
+<meta property="og:type" content="{{ $ogType }}">
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $ogDesc }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:site_name" content="S54 COFFEE">
+<meta property="og:locale" content="{{ app()->getLocale() === 'vi' ? 'vi_VN' : 'en_US' }}">
+
+{{-- ── SEO: Twitter Card ────────────────────────────────────── --}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $ogTitle }}">
+<meta name="twitter:description" content="{{ $ogDesc }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+
+{{-- ── SEO: Favicon ─────────────────────────────────────────── --}}
+<link rel="icon" type="image/png" href="{{ asset('client-assets/images/s54/s54_favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('client-assets/images/s54/s54_favicon.png') }}">
+
+{{-- ── SEO: JSON-LD Organization Schema ─────────────────────── --}}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "S54 COFFEE",
+    "legalName": "Công Ty TNHH Giải Pháp Tốt (Good Solutions Co., Ltd.)",
+    "url": "{{ url('/') }}",
+    "logo": "{{ asset('client-assets/images/s54/s54_logo.png') }}",
+    "description": "S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1.",
+    "foundingDate": "2012",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Số 35, Đường T8, Manhattan, Vinhomes Grand Park, Phường Long Bình",
+        "addressLocality": "TP. Thủ Đức",
+        "addressRegion": "TP. Hồ Chí Minh",
+        "addressCountry": "VN"
+    },
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "telephone": "+84-974-933-907",
+            "contactType": "customer service",
+            "availableLanguage": ["Vietnamese", "English"]
+        }
+    ],
+    "sameAs": [
+        "https://www.facebook.com/S54COFFEE",
+        "https://www.youtube.com/@S54COFFEE",
+        "https://zalo.me/0974933907"
+    ]
+}
+</script>
+
+{{-- ── SEO: Page-specific JSON-LD (Products, Articles, Breadcrumbs) ── --}}
+@stack('jsonld')
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">

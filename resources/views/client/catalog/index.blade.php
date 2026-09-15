@@ -5,6 +5,7 @@
 @endphp
 
 @section('title', ($locale === 'vi' ? 'Tất Cả Sản Phẩm Cà Phê S54 — Cà Phê Hạt Rang Mộc & Hòa Tan' : 'All S54 Coffee Products — Artisan Roasted Beans & Instant'))
+@section('meta_description', ($locale === 'vi' ? 'Khám phá bộ sưu tập cà phê S54 COFFEE: cà phê hòa tan 3in1, cà phê hạt rang Robusta nguyên chất, combo dùng thử, và máy xay cà phê cầm tay cao cấp.' : 'Explore S54 COFFEE collection: 3-in-1 instant coffee, roasted Robusta beans, trial combos, and premium manual coffee grinders.'))
 
 @section('content')
 <section style="background-color: #2F221A; color: #FAF6F1; padding: 60px 20px 40px; text-align: center;">

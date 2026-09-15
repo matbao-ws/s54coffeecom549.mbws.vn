@@ -2,6 +2,30 @@
 
 use Illuminate\Support\Facades\Route;
 
+// ── SEO: Dynamic Sitemap & Robots.txt ─────────────────────────
+Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])
+    ->name('sitemap');
+
+Route::get('robots.txt', function () {
+    $sitemapUrl = url('/sitemap.xml');
+    $content = <<<ROBOTS
+User-agent: *
+Allow: /
+
+# Block admin, API, and internal paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /login
+Disallow: /customer/
+Disallow: /payment/
+Disallow: /storage/
+
+# Sitemap
+Sitemap: {$sitemapUrl}
+ROBOTS;
+    return response($content, 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+})->name('robots');
+
 Route::get('/', function () {
     $defaultLocale = app(\App\Services\LanguageRegistry::class)->defaultLocale() ?: 'vi';
     return redirect('/' . $defaultLocale);

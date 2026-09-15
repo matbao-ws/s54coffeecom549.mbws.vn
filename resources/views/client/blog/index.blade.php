@@ -5,6 +5,7 @@
 @endphp
 
 @section('title', ($locale === 'vi' ? 'Cẩm Nang Cà Phê & Tin Tức S54 Coffee' : 'S54 Coffee Journal & Brewing Guides'))
+@section('meta_description', ($locale === 'vi' ? 'Cẩm nang cà phê S54: kiến thức pha chế, bí quyết bảo quản hạt, câu chuyện thương hiệu và tin tức mới nhất từ S54 COFFEE.' : 'S54 Coffee journal: brewing techniques, bean preservation tips, brand stories and latest news from S54 COFFEE.'))
 
 @section('content')
 <section style="background-color: #2F221A; color: #FAF6F1; padding: 60px 20px 40px; text-align: center;">
