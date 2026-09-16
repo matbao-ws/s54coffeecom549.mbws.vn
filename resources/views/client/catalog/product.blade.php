@@ -54,56 +54,56 @@
 
 @push('jsonld')
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": @json($title),
-    "description": @json(Str::limit(strip_tags($shortDesc ?: $desc), 500)),
-    "image": @json($galleryUrls),
-    "brand": {
-        "@type": "Brand",
-        "name": "S54 COFFEE"
-    },
-    "offers": {
-        "@type": "Offer",
-        "url": "{{ url()->current() }}",
-        "priceCurrency": "VND",
-        "price": "{{ $minPrice }}",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-            "@type": "Organization",
-            "name": "S54 COFFEE"
-        }
-    },
-    "sku": @json($product->sku ?? ''),
-    "category": @json($product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : 'Cà Phê')
-}
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'Product',
+    'name' => $title,
+    'description' => Str::limit(strip_tags($shortDesc ?: $desc), 500),
+    'image' => $galleryUrls,
+    'brand' => [
+        '@type' => 'Brand',
+        'name' => 'S54 COFFEE',
+    ],
+    'offers' => [
+        '@type' => 'Offer',
+        'url' => url()->current(),
+        'priceCurrency' => 'VND',
+        'price' => (string) $minPrice,
+        'availability' => 'https://schema.org/InStock',
+        'seller' => [
+            '@type' => 'Organization',
+            'name' => 'S54 COFFEE',
+        ],
+    ],
+    'sku' => $product->sku ?? '',
+    'category' => $product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : 'Cà Phê',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "{{ $locale === 'vi' ? 'Trang Chủ' : 'Home' }}",
-            "item": "{{ route('client.home', ['locale' => $locale]) }}"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "{{ $locale === 'vi' ? 'Sản Phẩm' : 'Products' }}",
-            "item": "{{ route('client.catalog.index', ['locale' => $locale]) }}"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": @json($title),
-            "item": "{{ url()->current() }}"
-        }
-    ]
-}
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => $locale === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => route('client.home', ['locale' => $locale]),
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => $locale === 'vi' ? 'Sản Phẩm' : 'Products',
+            'item' => route('client.catalog.index', ['locale' => $locale]),
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 3,
+            'name' => $title,
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 @endpush
 

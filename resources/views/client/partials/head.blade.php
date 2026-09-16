@@ -42,36 +42,36 @@
 
 {{-- ── SEO: JSON-LD Organization Schema ─────────────────────── --}}
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "S54 COFFEE",
-    "legalName": "Công Ty TNHH Giải Pháp Tốt (Good Solutions Co., Ltd.)",
-    "url": "{{ url('/') }}",
-    "logo": "{{ asset('client-assets/images/s54/s54_logo.png') }}",
-    "description": "S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1.",
-    "foundingDate": "2012",
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Số 35, Đường T8, Manhattan, Vinhomes Grand Park, Phường Long Bình",
-        "addressLocality": "TP. Thủ Đức",
-        "addressRegion": "TP. Hồ Chí Minh",
-        "addressCountry": "VN"
-    },
-    "contactPoint": [
-        {
-            "@type": "ContactPoint",
-            "telephone": "+84-974-933-907",
-            "contactType": "customer service",
-            "availableLanguage": ["Vietnamese", "English"]
-        }
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => 'S54 COFFEE',
+    'legalName' => 'Công Ty TNHH Giải Pháp Tốt (Good Solutions Co., Ltd.)',
+    'url' => url('/'),
+    'logo' => asset('client-assets/images/s54/s54_logo.png'),
+    'description' => 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1.',
+    'foundingDate' => '2012',
+    'address' => [
+        '@type' => 'PostalAddress',
+        'streetAddress' => 'Số 35, Đường T8, Manhattan, Vinhomes Grand Park, Phường Long Bình',
+        'addressLocality' => 'TP. Thủ Đức',
+        'addressRegion' => 'TP. Hồ Chí Minh',
+        'addressCountry' => 'VN',
     ],
-    "sameAs": [
-        "https://www.facebook.com/S54COFFEE",
-        "https://www.youtube.com/@S54COFFEE",
-        "https://zalo.me/0974933907"
-    ]
-}
+    'contactPoint' => [
+        [
+            '@type' => 'ContactPoint',
+            'telephone' => '+84-974-933-907',
+            'contactType' => 'customer service',
+            'availableLanguage' => ['Vietnamese', 'English'],
+        ],
+    ],
+    'sameAs' => [
+        'https://www.facebook.com/S54COFFEE',
+        'https://www.youtube.com/@S54COFFEE',
+        'https://zalo.me/0974933907',
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 
 {{-- ── SEO: Page-specific JSON-LD (Products, Articles, Breadcrumbs) ── --}}

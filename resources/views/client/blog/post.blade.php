@@ -23,57 +23,57 @@
 
 @push('jsonld')
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": @json($pTitle),
-    "description": @json(Str::limit(strip_tags(is_array($post->summary) ? ($post->summary[$locale] ?? $post->summary['vi'] ?? '') : ($post->getTranslation('summary', $locale, false) ?: $post->summary)), 300)),
-    "image": @json($pImg ?: asset('assets/images/s54/hero_banner_s54.png')),
-    "author": {
-        "@type": "Organization",
-        "name": "S54 COFFEE"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "S54 COFFEE",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "{{ asset('client-assets/images/s54/s54_logo.png') }}"
-        }
-    },
-    "datePublished": "{{ $post->published_at?->toIso8601String() ?? now()->toIso8601String() }}",
-    "dateModified": "{{ $post->updated_at?->toIso8601String() ?? now()->toIso8601String() }}",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ url()->current() }}"
-    }
-}
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'Article',
+    'headline' => $pTitle,
+    'description' => Str::limit(strip_tags(is_array($post->summary) ? ($post->summary[$locale] ?? $post->summary['vi'] ?? '') : ($post->getTranslation('summary', $locale, false) ?: $post->summary)), 300),
+    'image' => $pImg ?: asset('assets/images/s54/hero_banner_s54.png'),
+    'author' => [
+        '@type' => 'Organization',
+        'name' => 'S54 COFFEE',
+    ],
+    'publisher' => [
+        '@type' => 'Organization',
+        'name' => 'S54 COFFEE',
+        'logo' => [
+            '@type' => 'ImageObject',
+            'url' => asset('client-assets/images/s54/s54_logo.png'),
+        ],
+    ],
+    'datePublished' => $post->published_at?->toIso8601String() ?? now()->toIso8601String(),
+    'dateModified' => $post->updated_at?->toIso8601String() ?? now()->toIso8601String(),
+    'mainEntityOfPage' => [
+        '@type' => 'WebPage',
+        '@id' => url()->current(),
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-        {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "{{ $locale === 'vi' ? 'Trang Chủ' : 'Home' }}",
-            "item": "{{ route('client.home', ['locale' => $locale]) }}"
-        },
-        {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "{{ $locale === 'vi' ? 'Tin Tức' : 'Blog' }}",
-            "item": "{{ route('client.blog.index', ['locale' => $locale]) }}"
-        },
-        {
-            "@type": "ListItem",
-            "position": 3,
-            "name": @json($pTitle),
-            "item": "{{ url()->current() }}"
-        }
-    ]
-}
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => $locale === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => route('client.home', ['locale' => $locale]),
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => $locale === 'vi' ? 'Tin Tức' : 'Blog',
+            'item' => route('client.blog.index', ['locale' => $locale]),
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 3,
+            'name' => $pTitle,
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 @endpush
 
