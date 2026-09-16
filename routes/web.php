@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 // ── SEO: Dynamic Sitemap & Robots.txt ─────────────────────────
-Route::get('sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])
+Route::match(['GET', 'HEAD'], 'sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])
     ->name('sitemap');
+Route::match(['GET', 'HEAD'], '{any}sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index'])
+    ->where('any', '.*');
 
 Route::get('robots.txt', function () {
     $sitemapUrl = url('/sitemap.xml');

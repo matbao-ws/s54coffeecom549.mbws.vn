@@ -26,8 +26,8 @@ DirectoryIndex public/index.php index.php
 
 
   # SEO: Route sitemap.xml and robots.txt through Laravel for dynamic generation
-  RewriteRule ^sitemap\.xml$ public/index.php [L,QSA]
-  RewriteRule ^robots\.txt$ public/index.php [L,QSA]
+  RewriteRule ^/*sitemap\.xml$ public/index.php [L,QSA]
+  RewriteRule ^/*robots\.txt$ public/index.php [L,QSA]
 
   # Serve existing static asset files directly (images, fonts, stylesheets, scripts, videos, php runners)
   RewriteCond %{REQUEST_FILENAME} -f
