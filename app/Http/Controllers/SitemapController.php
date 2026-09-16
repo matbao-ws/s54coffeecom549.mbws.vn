@@ -20,7 +20,7 @@ class SitemapController extends Controller
      */
     public function index(): Response
     {
-        $baseUrl = rtrim(config('app.url'), '/');
+        $baseUrl = rtrim(request()->getSchemeAndHttpHost() ?: config('app.url'), '/');
         $locale  = 'vi'; // Primary locale
 
         $urls = [];
