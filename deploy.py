@@ -27,7 +27,7 @@ except Exception:
 
 FTP_HOST = "203.205.31.252"
 FTP_USER = "u513776f0"
-FTP_PASS = "1~dzR0hkLJ0~tlgm"
+FTP_PASS = "mOpq4_~GpnF4uxm1"
 REMOTE_DIR = "/httpdocs"
 DOMAIN = "s54coffeecom549.mbws.vn"
 
