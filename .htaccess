@@ -18,6 +18,11 @@ DirectoryIndex public/index.php index.php
   RewriteCond %{HTTP:x-xsrf-token} .
   RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
+  # SEO: 301 Permanent Redirect from staging domain to official domain s54coffee.com
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteCond %{REQUEST_URI} !^/google[0-9a-f]+\.html$ [NC]
+  RewriteRule ^(.*)$ https://s54coffee.com/$1 [R=301,L]
+
 # Static asset mappings
   RewriteRule ^(.*/)?assets/(.*)$ assets/$2 [L]
   RewriteRule ^admin-assets/(.*)$ public/admin-assets/$1 [L]

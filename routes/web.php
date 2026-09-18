@@ -9,7 +9,7 @@ Route::match(['GET', 'HEAD'], '{any}sitemap.xml', [\App\Http\Controllers\Sitemap
     ->where('any', '.*');
 
 Route::get('robots.txt', function () {
-    $sitemapUrl = url('/sitemap.xml');
+    $sitemapUrl = 'https://s54coffee.com/sitemap.xml';
     $content = <<<ROBOTS
 User-agent: *
 Allow: /

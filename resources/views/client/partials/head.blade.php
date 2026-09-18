@@ -12,8 +12,16 @@
 <meta name="google-site-verification" content="E_Wy0KrvO4AM-AuJJ01FoFDCwC0CJXqm">
 <meta name="msvalidate.01" content="@yield('bing_verification', '')">
 
-{{-- ── SEO: Canonical URL ───────────────────────────────────── --}}
-<link rel="canonical" href="@yield('canonical_url', url()->current())">
+{{-- ── SEO: Canonical URL (Always point to official domain s54coffee.com) ── --}}
+@php
+    $canonicalBase = 'https://s54coffee.com';
+    $canonicalPath = request()->getRequestUri();
+    if (!$canonicalPath || $canonicalPath === '/') {
+        $canonicalPath = '/' . app()->getLocale();
+    }
+    $canonicalUrl = View::yieldContent('canonical_url') ?: ($canonicalBase . $canonicalPath);
+@endphp
+<link rel="canonical" href="{{ $canonicalUrl }}">
 
 {{-- ── SEO: Open Graph (Facebook, Zalo) ─────────────────────── --}}
 @php
@@ -26,7 +34,7 @@
 <meta property="og:title" content="{{ $ogTitle }}">
 <meta property="og:description" content="{{ $ogDesc }}">
 <meta property="og:image" content="{{ $ogImage }}">
-<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:url" content="{{ $canonicalUrl }}">
 <meta property="og:site_name" content="S54 COFFEE">
 <meta property="og:locale" content="{{ app()->getLocale() === 'vi' ? 'vi_VN' : 'en_US' }}">
 
@@ -36,9 +44,24 @@
 <meta name="twitter:description" content="{{ $ogDesc }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
 
-{{-- ── SEO: Favicon ─────────────────────────────────────────── --}}
-<link rel="icon" type="image/png" href="{{ asset('client-assets/images/s54/s54_favicon.png') }}">
-<link rel="apple-touch-icon" href="{{ asset('client-assets/images/s54/s54_favicon.png') }}">
+{{-- ── SEO: Favicon & App Icons (Standard + High-Res Multiples of 48px for Google) ── --}}
+<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ asset('client-assets/images/s54/s54_favicon_48.png') }}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('client-assets/images/s54/s54_favicon_96.png') }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ asset('client-assets/images/s54/s54_favicon_192.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('client-assets/images/s54/s54_apple_touch_icon.png') }}">
+
+{{-- ── SEO: JSON-LD WebSite Schema (Controls Site Name on Google Search) ── --}}
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'WebSite',
+    'name' => 'S54 COFFEE',
+    'alternateName' => ['S54 Coffee', 'S54Coffee', 'Cà Phê S54'],
+    'url' => 'https://s54coffee.com/',
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
 
 {{-- ── SEO: JSON-LD Organization Schema ─────────────────────── --}}
 <script type="application/ld+json">
@@ -47,8 +70,9 @@
     '@type' => 'Organization',
     'name' => 'S54 COFFEE',
     'legalName' => 'Công Ty TNHH Giải Pháp Tốt (Good Solutions Co., Ltd.)',
-    'url' => url('/'),
-    'logo' => asset('client-assets/images/s54/s54_logo.png'),
+    'url' => 'https://s54coffee.com/',
+    'logo' => asset('client-assets/images/s54/s54_favicon_512.png'),
+    'image' => asset('client-assets/images/s54/s54_logo.png'),
     'description' => 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1.',
     'foundingDate' => '2012',
     'address' => [
