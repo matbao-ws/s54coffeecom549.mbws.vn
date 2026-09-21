@@ -19,6 +19,7 @@ class SettingController extends Controller
         private readonly CloudinaryService $cloudinaryService,
         private readonly MultilingualSettings $multilingual,
         private readonly LanguageRegistry $languages,
+        private readonly \App\Services\SiteContentService $siteContent,
     ) {}
 
     /**
@@ -28,8 +29,18 @@ class SettingController extends Controller
     {
         $settings = ProjectSetting::query()->get()->pluck('setting_value', 'setting_key');
 
+        $videoBlocks = [
+            'story_intro' => $this->siteContent->video('story.intro.video', 'https://www.youtube.com/embed/7PB6Tn2pyE8'),
+            'story_vision' => $this->siteContent->video('story.vision.video', 'https://www.youtube.com/embed/8nVnuZSauE8'),
+            'story_mission' => $this->siteContent->video('story.mission.video', 'https://www.youtube.com/embed/bIC2_Dko3xk'),
+            'story_values' => $this->siteContent->video('story.values.video', 'https://www.youtube.com/embed/T8MfqRZlsFo'),
+            'wholesale_testimonials' => $this->siteContent->video('wholesale.testimonials.video', 'assets/images/695_1616455d94684594acbf7eb51378dc5c.HD-720p-1.6Mbps-11675358.mp4', 'assets/images/590_9082be5215a852be1026974487789ffc_2000x.png'),
+            'home_featured' => $this->siteContent->video('home.featured.video', 'assets/media/espresso_brew_desktop.mp4', 'assets/images/s54/espresso_brewtorial_desktop.jpg'),
+        ];
+
         return view('admin.settings.index', [
             'settings' => $settings,
+            'videoBlocks' => $videoBlocks,
             'multilingualSettings' => $this->multilingual->get(),
             'contentLanguages' => auth()->user()?->isSuperAdmin()
                 ? Language::query()->where('is_active', true)->orderBy('sort_order')->orderBy('id')->get()
@@ -75,6 +86,10 @@ class SettingController extends Controller
             // Embed code validation
             'embed_header' => 'nullable|string',
             'embed_footer' => 'nullable|string',
+            // Videos validation
+            'videos' => 'nullable|array',
+            'videos.*.url' => 'nullable|string|max:1000',
+            'videos.*.poster' => 'nullable|string|max:1000',
         ];
 
         if ($request->user()?->isSuperAdmin()) {
@@ -157,6 +172,40 @@ class SettingController extends Controller
                 ['setting_key' => 'favicon_url'],
                 ['setting_value' => $faviconUrl]
             );
+        }
+
+        // Save website video settings
+        if ($request->has('videos') && is_array($request->input('videos'))) {
+            $locale = app()->getLocale();
+            $userId = $request->user()?->id;
+            $allowedKeys = [
+                'story.intro.video',
+                'story.vision.video',
+                'story.mission.video',
+                'story.values.video',
+                'wholesale.testimonials.video',
+                'home.featured.video',
+            ];
+
+            foreach ($request->input('videos') as $vKey => $vData) {
+                if (in_array($vKey, $allowedKeys, true) && is_array($vData)) {
+                    $url = trim($vData['url'] ?? '');
+                    $poster = trim($vData['poster'] ?? '');
+
+                    $valToStore = json_encode([
+                        'url' => $url,
+                        'poster' => $poster,
+                    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+                    $this->siteContent->updateLocale(
+                        $vKey,
+                        \App\Models\SiteBlock::TYPE_VIDEO,
+                        $locale,
+                        $valToStore,
+                        $userId
+                    );
+                }
+            }
         }
 
         if ($request->user()?->isSuperAdmin()) {

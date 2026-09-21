@@ -471,6 +471,8 @@
             </aside>
         @endcan
 
+        @include('client.partials.video-modal')
+
         <script>
         document.addEventListener('DOMContentLoaded', function () {
             const toggleButton = document.getElementById('client-inline-edit-button');
@@ -1040,15 +1042,20 @@
                     button.addEventListener('click', function () {
                         if (!selectedImage) return;
                         const target = selectedImage;
+                        if (typeof target.onSelect === 'function') {
+                            target.onSelect(resource.secure_url);
+                            closeMediaPicker();
+                            return;
+                        }
                         // Snapshot before the src changes, so Huỷ restores the
                         // image that was there.
-                        if (target.hasAttribute('data-block-key')) markRegionDirty(target);
-                        target.setAttribute('src', resource.secure_url);
+                        if (target.hasAttribute && target.hasAttribute('data-block-key')) markRegionDirty(target);
+                        if (target.setAttribute) target.setAttribute('src', resource.secure_url);
                         // A stale srcset would keep winning over the new src.
-                        target.removeAttribute('srcset');
+                        if (target.removeAttribute) target.removeAttribute('srcset');
                         closeMediaPicker();
                         // Waits for Save like every other change.
-                        if (!target.hasAttribute('data-block-key')) markDirty();
+                        if (target.hasAttribute && !target.hasAttribute('data-block-key')) markDirty();
                     });
                     mediaGrid.appendChild(button);
                 });
@@ -1170,6 +1177,242 @@
              * content element would let the theme's modal open on top of the
              * media picker; preventDefault alone does not stop it either.
              * Capturing at the document lets us stop the event before it ever
+            /*
+             * Front-end Inline Video Editor Modal logic
+             */
+            let activeVideoRegion = null;
+            const videoModal = document.getElementById('client-inline-video-editor');
+            const videoUrlInput = document.getElementById('client-video-url-input');
+            const videoPosterInput = document.getElementById('client-video-poster-input');
+            const videoTitleLabel = document.getElementById('client-video-editor-badge');
+            const videoIframePreview = document.getElementById('client-video-preview-iframe');
+            const videoPlayerPreview = document.getElementById('client-video-preview-player');
+            const videoEmptyPreview = document.getElementById('client-video-preview-empty');
+            const videoTypeIndicator = document.getElementById('client-video-type-indicator');
+            const videoSaveBtn = document.getElementById('client-video-save-btn');
+            const videoCancelBtn = document.getElementById('client-video-cancel-btn');
+            const videoCloseBtn = document.getElementById('client-video-editor-close');
+            const videoRestoreBtn = document.getElementById('client-video-restore-btn');
+            const videoStatusMsg = document.getElementById('client-video-status-message');
+            const videoPickMediaBtn = document.getElementById('client-video-pick-media-btn');
+
+            function parseVideoUrl(input) {
+                if (!input) return { type: 'empty', url: '', youtubeId: null };
+                input = input.trim();
+                const iframeMatch = input.match(/<iframe[^>]+src=["']([^"']+)["']/i);
+                if (iframeMatch) input = iframeMatch[1];
+                
+                const ytMatch = input.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i);
+                if (ytMatch && ytMatch[1]) {
+                    return {
+                        type: 'youtube',
+                        youtubeId: ytMatch[1],
+                        embedUrl: 'https://www.youtube.com/embed/' + ytMatch[1] + '?autoplay=0&rel=0',
+                        thumbnailUrl: 'https://img.youtube.com/vi/' + ytMatch[1] + '/hqdefault.jpg'
+                    };
+                }
+                return {
+                    type: 'direct',
+                    url: input
+                };
+            }
+
+            function updateVideoPreview() {
+                if (!videoUrlInput) return;
+                const parsed = parseVideoUrl(videoUrlInput.value);
+                const poster = videoPosterInput ? videoPosterInput.value.trim() : '';
+
+                if (parsed.type === 'empty') {
+                    if (videoIframePreview) { videoIframePreview.style.display = 'none'; videoIframePreview.src = ''; }
+                    if (videoPlayerPreview) { videoPlayerPreview.style.display = 'none'; videoPlayerPreview.src = ''; }
+                    if (videoEmptyPreview) videoEmptyPreview.style.display = 'block';
+                    if (videoTypeIndicator) {
+                        videoTypeIndicator.textContent = 'Chưa có link';
+                        videoTypeIndicator.style.background = '#F1F5F9';
+                        videoTypeIndicator.style.color = '#64748B';
+                    }
+                } else if (parsed.type === 'youtube') {
+                    if (videoPlayerPreview) { videoPlayerPreview.style.display = 'none'; videoPlayerPreview.src = ''; }
+                    if (videoEmptyPreview) videoEmptyPreview.style.display = 'none';
+                    if (videoIframePreview) {
+                        videoIframePreview.style.display = 'block';
+                        if (videoIframePreview.src !== parsed.embedUrl) {
+                            videoIframePreview.src = parsed.embedUrl;
+                        }
+                    }
+                    if (videoTypeIndicator) {
+                        videoTypeIndicator.textContent = 'YouTube Video';
+                        videoTypeIndicator.style.background = '#FEE2E2';
+                        videoTypeIndicator.style.color = '#B91C1C';
+                    }
+                } else {
+                    if (videoIframePreview) { videoIframePreview.style.display = 'none'; videoIframePreview.src = ''; }
+                    if (videoEmptyPreview) videoEmptyPreview.style.display = 'none';
+                    if (videoPlayerPreview) {
+                        videoPlayerPreview.style.display = 'block';
+                        if (poster) videoPlayerPreview.poster = poster;
+                        if (videoPlayerPreview.src !== parsed.url) {
+                            videoPlayerPreview.src = parsed.url;
+                        }
+                    }
+                    if (videoTypeIndicator) {
+                        videoTypeIndicator.textContent = 'File Video (MP4/WebM)';
+                        videoTypeIndicator.style.background = '#D1FAE5';
+                        videoTypeIndicator.style.color = '#047857';
+                    }
+                }
+            }
+
+            function openVideoEditorFor(region) {
+                if (!videoModal) return;
+                activeVideoRegion = region;
+                const currentUrl = region.getAttribute('data-video-url') || '';
+                const currentPoster = region.getAttribute('data-poster-url') || '';
+                const title = region.getAttribute('data-video-title') || 'Video';
+
+                if (videoTitleLabel) videoTitleLabel.textContent = 'Vị trí: ' + title;
+                if (videoUrlInput) videoUrlInput.value = currentUrl;
+                if (videoPosterInput) videoPosterInput.value = currentPoster;
+                if (videoStatusMsg) videoStatusMsg.style.display = 'none';
+
+                updateVideoPreview();
+                videoModal.style.display = 'flex';
+                videoModal.setAttribute('aria-hidden', 'false');
+                if (videoUrlInput) videoUrlInput.focus();
+            }
+
+            function closeVideoEditor() {
+                if (!videoModal) return;
+                videoModal.style.display = 'none';
+                videoModal.setAttribute('aria-hidden', 'true');
+                if (videoIframePreview) {
+                    videoIframePreview.src = '';
+                    videoIframePreview.style.display = 'none';
+                }
+                if (videoPlayerPreview) {
+                    videoPlayerPreview.src = '';
+                    videoPlayerPreview.style.display = 'none';
+                }
+                activeVideoRegion = null;
+            }
+
+            async function saveVideoChanges() {
+                if (!activeVideoRegion) return;
+                const key = activeVideoRegion.getAttribute('data-block-key');
+                const url = videoUrlInput ? videoUrlInput.value.trim() : '';
+                const poster = videoPosterInput ? videoPosterInput.value.trim() : '';
+
+                const saveSpinner = document.getElementById('client-video-save-spinner');
+                if (saveSpinner) saveSpinner.style.display = 'inline-block';
+                if (videoSaveBtn) videoSaveBtn.disabled = true;
+
+                try {
+                    const response = await fetch(blockUrl, {
+                        method: 'PATCH',
+                        credentials: 'same-origin',
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': csrfToken,
+                        },
+                        body: JSON.stringify({
+                            key: key,
+                            type: 'video',
+                            content_locale: contentLocale,
+                            value: JSON.stringify({ url: url, poster: poster }),
+                        }),
+                    });
+                    const payload = await response.json();
+                    if (!response.ok || !payload.success) {
+                        throw new Error(payload.message || 'Không thể lưu video.');
+                    }
+
+                    // Update active region attributes and DOM
+                    activeVideoRegion.setAttribute('data-video-url', url);
+                    activeVideoRegion.setAttribute('data-poster-url', poster);
+
+                    const parsed = parseVideoUrl(url);
+                    const iframe = activeVideoRegion.querySelector('iframe');
+                    const videoTags = activeVideoRegion.querySelectorAll('video');
+
+                    if (parsed.type === 'youtube') {
+                        if (iframe) {
+                            iframe.src = 'https://www.youtube.com/embed/' + parsed.youtubeId + '?autoplay=0&rel=0';
+                            iframe.style.display = '';
+                        }
+                        videoTags.forEach(function(v) { v.style.display = 'none'; });
+                    } else if (parsed.type === 'direct') {
+                        if (iframe) iframe.style.display = 'none';
+                        videoTags.forEach(function(v) {
+                            v.style.display = '';
+                            if (poster) v.poster = poster;
+                            const source = v.querySelector('source');
+                            if (source) source.src = url;
+                            v.src = url;
+                            v.load();
+                        });
+                    }
+
+                    setStatus('Đã lưu video thành công!');
+                    closeVideoEditor();
+                } catch (err) {
+                    if (videoStatusMsg) {
+                        videoStatusMsg.textContent = err.message || 'Lỗi khi lưu video.';
+                        videoStatusMsg.style.display = 'block';
+                        videoStatusMsg.style.background = '#FEE2E2';
+                        videoStatusMsg.style.color = '#B91C1C';
+                    }
+                } finally {
+                    if (saveSpinner) saveSpinner.style.display = 'none';
+                    if (videoSaveBtn) videoSaveBtn.disabled = false;
+                }
+            }
+
+            function restoreVideoDefault() {
+                if (!activeVideoRegion) return;
+                const defaultUrl = activeVideoRegion.getAttribute('data-default-url') || '';
+                const defaultPoster = activeVideoRegion.getAttribute('data-default-poster') || '';
+                if (videoUrlInput) videoUrlInput.value = defaultUrl;
+                if (videoPosterInput) videoPosterInput.value = defaultPoster;
+                updateVideoPreview();
+                saveVideoChanges();
+            }
+
+            if (videoUrlInput) {
+                videoUrlInput.addEventListener('input', updateVideoPreview);
+                videoUrlInput.addEventListener('paste', function() { setTimeout(updateVideoPreview, 50); });
+            }
+            if (videoPosterInput) {
+                videoPosterInput.addEventListener('input', updateVideoPreview);
+            }
+            if (videoSaveBtn) videoSaveBtn.addEventListener('click', saveVideoChanges);
+            if (videoCancelBtn) videoCancelBtn.addEventListener('click', closeVideoEditor);
+            if (videoCloseBtn) videoCloseBtn.addEventListener('click', closeVideoEditor);
+            if (videoRestoreBtn) videoRestoreBtn.addEventListener('click', restoreVideoDefault);
+            if (videoPickMediaBtn) {
+                videoPickMediaBtn.addEventListener('click', function() {
+                    openMediaPickerFor({
+                        onSelect: function(url) {
+                            if (videoPosterInput) videoPosterInput.value = url;
+                            updateVideoPreview();
+                        }
+                    });
+                });
+            }
+            if (videoModal) {
+                videoModal.addEventListener('click', function(e) {
+                    if (e.target === videoModal) closeVideoEditor();
+                });
+            }
+
+            /*
+             * Capture phase, on document, is the only placement that works on a
+             * real theme. Theme markup wraps content in elements carrying their
+             * own handlers — lightboxes, tab switchers, video modals, often as
+             * inline onclick — and those run on the way *up*. Listening on the
+             * content element would let the theme's modal open on top of the
+             * media picker; preventDefault alone does not stop it either.
+             * Capturing at the document lets us stop the event before it ever
              * reaches the theme's listeners.
              *
              * @param {?function(HTMLImageElement)} onImage  null when the admin
@@ -1187,8 +1430,11 @@
                         if (region.getAttribute('contenteditable') === 'true') return;
 
                         stopEverything(event);
-                        if (region.getAttribute('data-block-type') === 'image') {
+                        const bType = region.getAttribute('data-block-type');
+                        if (bType === 'image') {
                             if (onImage) onImage(region);
+                        } else if (bType === 'video') {
+                            openVideoEditorFor(region);
                         } else {
                             openRegion(region);
                         }
@@ -1236,9 +1482,14 @@
                 // media permission, so reaching here means the click will work.
                 // Plain words, no glyph: this is set through textContent, and an
                 // emoji renders as a different picture on every platform.
-                hint.textContent = element.getAttribute('data-block-type') === 'image'
-                    ? 'Đổi ảnh'
-                    : 'Sửa nội dung';
+                const bType = element.getAttribute('data-block-type');
+                if (bType === 'image') {
+                    hint.textContent = 'Đổi ảnh';
+                } else if (bType === 'video') {
+                    hint.textContent = 'Đổi video: ' + (element.getAttribute('data-video-title') || 'Video');
+                } else {
+                    hint.textContent = 'Sửa nội dung';
+                }
                 const rect = element.getBoundingClientRect();
                 hint.style.top = Math.max(4, rect.top - 26) + 'px';
                 hint.style.left = Math.max(4, rect.left) + 'px';

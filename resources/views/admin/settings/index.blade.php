@@ -255,6 +255,12 @@
                 <span>{{ __('admin.settings.tabs.embed') }}</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="tab" href="#videos-pane" role="tab">
+                <span><i class="ti ti-video fs-4"></i></span>
+                <span>Quản lý Video</span>
+            </a>
+        </li>
     </ul>
 
     <!-- Form -->
@@ -757,6 +763,250 @@
                                     placeholder="{{ __('admin.settings.embed.placeholder') }}">{{ old('embed_footer', $settings->get('embed_footer')) }}</textarea>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quản lý Video Pane -->
+            <div class="tab-pane fade" id="videos-pane" role="tabpanel">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div>
+                                <h5 class="card-title fw-semibold text-dark mb-1">
+                                    <i class="ti ti-video text-primary me-2 fs-5"></i> Cấu hình Video Toàn Website
+                                </h5>
+                                <p class="text-muted mb-0 small">
+                                    Tùy chỉnh linh hoạt tất cả video trên website. Hỗ trợ link YouTube (thường, rút gọn, shorts, embed) hoặc link video MP4.
+                                </p>
+                            </div>
+                        </div>
+
+                        {{-- Phần 1: Trang Giới Thiệu (Our Story) --}}
+                        <div class="p-3 mb-4 rounded" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+                            <h6 class="fw-bold text-dark mb-3 d-flex align-items-center">
+                                <span class="badge bg-primary me-2">1</span> Trang Giới Thiệu (Câu Chuyện S54 - Our Story)
+                            </h6>
+                            <div class="row g-3">
+                                {{-- 1.1 Video Giới Thiệu Chính --}}
+                                <div class="col-md-12 mb-3">
+                                    <div class="card border border-primary-subtle shadow-none">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-7">
+                                                    <label class="form-label fw-semibold text-dark">
+                                                        Video Giới Thiệu S54 Coffee (Video chính đầu trang)
+                                                    </label>
+                                                    <div class="input-group mb-2">
+                                                        <span class="input-group-text"><i class="ti ti-brand-youtube text-danger"></i></span>
+                                                        <input type="text" class="form-control text-dark" 
+                                                            name="videos[story.intro.video][url]" 
+                                                            id="video_story_intro_url"
+                                                            value="{{ old('videos.story.intro.video.url', $videoBlocks['story_intro']['url'] ?? '') }}"
+                                                            placeholder="https://www.youtube.com/watch?v=... hoặc link video MP4"
+                                                            oninput="updateAdminVideoPreview('story_intro', this.value)"
+                                                        >
+                                                    </div>
+                                                    <small class="text-muted d-block">Mặc định: <code>https://www.youtube.com/embed/7PB6Tn2pyE8</code> (S54 Coffee Là Ai?)</small>
+                                                </div>
+                                                <div class="col-lg-5 text-center mt-3 mt-lg-0">
+                                                    <div id="preview_story_intro" style="position: relative; width: 100%; max-width: 320px; height: 180px; margin: 0 auto; background: #000; border-radius: 8px; overflow: hidden;">
+                                                        @if(!empty($videoBlocks['story_intro']['is_youtube']))
+                                                            <iframe src="{{ $videoBlocks['story_intro']['embed_url'] }}" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                                                        @else
+                                                            <video src="{{ $videoBlocks['story_intro']['url'] }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- 1.2 Video Tầm Nhìn --}}
+                                <div class="col-md-4">
+                                    <div class="card h-100 border shadow-none">
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <div>
+                                                <label class="form-label fw-semibold text-dark">
+                                                    👁️ Video Tầm Nhìn Chiến Lược
+                                                </label>
+                                                <input type="text" class="form-control form-control-sm text-dark mb-2" 
+                                                    name="videos[story.vision.video][url]" 
+                                                    id="video_story_vision_url"
+                                                    value="{{ old('videos.story.vision.video.url', $videoBlocks['story_vision']['url'] ?? '') }}"
+                                                    placeholder="Link YouTube hoặc MP4..."
+                                                    oninput="updateAdminVideoPreview('story_vision', this.value)"
+                                                >
+                                                <small class="text-muted d-block mb-3">Mặc định: YouTube ID <code>8nVnuZSauE8</code></small>
+                                            </div>
+                                            <div id="preview_story_vision" style="position: relative; width: 100%; height: 140px; background: #000; border-radius: 6px; overflow: hidden;">
+                                                @if(!empty($videoBlocks['story_vision']['is_youtube']))
+                                                    <iframe src="{{ $videoBlocks['story_vision']['embed_url'] }}" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                                                @else
+                                                    <video src="{{ $videoBlocks['story_vision']['url'] }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- 1.3 Video Sứ Mệnh --}}
+                                <div class="col-md-4">
+                                    <div class="card h-100 border shadow-none">
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <div>
+                                                <label class="form-label fw-semibold text-dark">
+                                                    🚀 Video Sứ Mệnh S54 Coffee
+                                                </label>
+                                                <input type="text" class="form-control form-control-sm text-dark mb-2" 
+                                                    name="videos[story.mission.video][url]" 
+                                                    id="video_story_mission_url"
+                                                    value="{{ old('videos.story.mission.video.url', $videoBlocks['story_mission']['url'] ?? '') }}"
+                                                    placeholder="Link YouTube hoặc MP4..."
+                                                    oninput="updateAdminVideoPreview('story_mission', this.value)"
+                                                >
+                                                <small class="text-muted d-block mb-3">Mặc định: YouTube ID <code>bIC2_Dko3xk</code></small>
+                                            </div>
+                                            <div id="preview_story_mission" style="position: relative; width: 100%; height: 140px; background: #000; border-radius: 6px; overflow: hidden;">
+                                                @if(!empty($videoBlocks['story_mission']['is_youtube']))
+                                                    <iframe src="{{ $videoBlocks['story_mission']['embed_url'] }}" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                                                @else
+                                                    <video src="{{ $videoBlocks['story_mission']['url'] }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- 1.4 Video Giá Trị Cốt Lõi --}}
+                                <div class="col-md-4">
+                                    <div class="card h-100 border shadow-none">
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <div>
+                                                <label class="form-label fw-semibold text-dark">
+                                                    💎 Video Giá Trị Cốt Lõi
+                                                </label>
+                                                <input type="text" class="form-control form-control-sm text-dark mb-2" 
+                                                    name="videos[story.values.video][url]" 
+                                                    id="video_story_values_url"
+                                                    value="{{ old('videos.story.values.video.url', $videoBlocks['story_values']['url'] ?? '') }}"
+                                                    placeholder="Link YouTube hoặc MP4..."
+                                                    oninput="updateAdminVideoPreview('story_values', this.value)"
+                                                >
+                                                <small class="text-muted d-block mb-3">Mặc định: YouTube ID <code>T8MfqRZlsFo</code></small>
+                                            </div>
+                                            <div id="preview_story_values" style="position: relative; width: 100%; height: 140px; background: #000; border-radius: 6px; overflow: hidden;">
+                                                @if(!empty($videoBlocks['story_values']['is_youtube']))
+                                                    <iframe src="{{ $videoBlocks['story_values']['embed_url'] }}" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                                                @else
+                                                    <video src="{{ $videoBlocks['story_values']['url'] }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Phần 2: Trang Khách Hàng B2B / Wholesale --}}
+                        <div class="p-3 mb-4 rounded" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+                            <h6 class="fw-bold text-dark mb-3 d-flex align-items-center">
+                                <span class="badge bg-success me-2">2</span> Trang Khách Hàng Doanh Nghiệp (Wholesale)
+                            </h6>
+                            <div class="card border border-success-subtle shadow-none">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7">
+                                            <label class="form-label fw-semibold text-dark">
+                                                Video Lời Chứng Thực / Đối Tác B2B
+                                            </label>
+                                            <div class="input-group mb-2">
+                                                <span class="input-group-text"><i class="ti ti-video"></i></span>
+                                                <input type="text" class="form-control text-dark" 
+                                                    name="videos[wholesale.testimonials.video][url]" 
+                                                    id="video_wholesale_url"
+                                                    value="{{ old('videos.wholesale.testimonials.video.url', $videoBlocks['wholesale_testimonials']['url'] ?? '') }}"
+                                                    placeholder="Link YouTube hoặc link video MP4..."
+                                                    oninput="updateAdminVideoPreview('wholesale', this.value)"
+                                                >
+                                            </div>
+                                            <label class="form-label fw-semibold text-dark mt-2 mb-1 small">
+                                                Ảnh bìa Video (Poster)
+                                            </label>
+                                            <div class="input-group mb-2">
+                                                <input type="text" class="form-control form-control-sm text-dark" 
+                                                    name="videos[wholesale.testimonials.video][poster]" 
+                                                    id="video_wholesale_poster"
+                                                    value="{{ old('videos.wholesale.testimonials.video.poster', $videoBlocks['wholesale_testimonials']['custom_poster'] ?? '') }}"
+                                                    placeholder="Đường dẫn ảnh bìa poster..."
+                                                >
+                                            </div>
+                                            <small class="text-muted d-block">Video mặc định là clip đầu bếp Johnny 400 Gradi. Quý khách có thể thay bằng video YouTube giới thiệu đối tác S54 Coffee.</small>
+                                        </div>
+                                        <div class="col-lg-5 text-center mt-3 mt-lg-0">
+                                            <div id="preview_wholesale" style="position: relative; width: 100%; max-width: 320px; height: 180px; margin: 0 auto; background: #000; border-radius: 8px; overflow: hidden;">
+                                                @if(!empty($videoBlocks['wholesale_testimonials']['is_youtube']))
+                                                    <iframe src="{{ $videoBlocks['wholesale_testimonials']['embed_url'] }}" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                                                @else
+                                                    <video src="{{ $videoBlocks['wholesale_testimonials']['url'] }}" poster="{{ $videoBlocks['wholesale_testimonials']['poster'] }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Phần 3: Trang Chủ (Homepage) --}}
+                        <div class="p-3 mb-3 rounded" style="background-color: #f8fafc; border: 1px solid #e2e8f0;">
+                            <h6 class="fw-bold text-dark mb-3 d-flex align-items-center">
+                                <span class="badge bg-warning text-dark me-2">3</span> Trang Chủ (Homepage)
+                            </h6>
+                            <div class="card border border-warning-subtle shadow-none">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7">
+                                            <label class="form-label fw-semibold text-dark">
+                                                Video Nghệ Thuật Cà Phê S54 (Khối Espresso Hoàn Hảo)
+                                            </label>
+                                            <div class="input-group mb-2">
+                                                <span class="input-group-text"><i class="ti ti-coffee"></i></span>
+                                                <input type="text" class="form-control text-dark" 
+                                                    name="videos[home.featured.video][url]" 
+                                                    id="video_home_url"
+                                                    value="{{ old('videos.home.featured.video.url', $videoBlocks['home_featured']['url'] ?? '') }}"
+                                                    placeholder="Link YouTube hoặc link video MP4..."
+                                                    oninput="updateAdminVideoPreview('home', this.value)"
+                                                >
+                                            </div>
+                                            <label class="form-label fw-semibold text-dark mt-2 mb-1 small">
+                                                Ảnh bìa Video (Poster)
+                                            </label>
+                                            <div class="input-group mb-2">
+                                                <input type="text" class="form-control form-control-sm text-dark" 
+                                                    name="videos[home.featured.video][poster]" 
+                                                    id="video_home_poster"
+                                                    value="{{ old('videos.home.featured.video.poster', $videoBlocks['home_featured']['custom_poster'] ?? '') }}"
+                                                    placeholder="Đường dẫn ảnh bìa poster..."
+                                                >
+                                            </div>
+                                            <small class="text-muted d-block">Video mặc định là clip chiết xuất Espresso. Có thể thay bằng video quy trình rang xay, pha chế hoặc giới thiệu showroom S54.</small>
+                                        </div>
+                                        <div class="col-lg-5 text-center mt-3 mt-lg-0">
+                                            <div id="preview_home" style="position: relative; width: 100%; max-width: 320px; height: 180px; margin: 0 auto; background: #000; border-radius: 8px; overflow: hidden;">
+                                                @if(!empty($videoBlocks['home_featured']['is_youtube']))
+                                                    <iframe src="{{ $videoBlocks['home_featured']['embed_url'] }}" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                                                @else
+                                                    <video src="{{ $videoBlocks['home_featured']['url'] }}" poster="{{ $videoBlocks['home_featured']['poster'] }}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1406,8 +1656,25 @@
                             }
                         }
                     }
-                });
             }
+
+            // Admin Video Preview Function
+            window.updateAdminVideoPreview = function(key, input) {
+                const box = document.getElementById('preview_' + key);
+                if (!box) return;
+                input = (input || '').trim();
+                const iframeMatch = input.match(/<iframe[^>]+src=["']([^"']+)["']/i);
+                if (iframeMatch) input = iframeMatch[1];
+
+                const ytMatch = input.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i);
+                if (ytMatch && ytMatch[1]) {
+                    box.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytMatch[1]}?autoplay=0&rel=0" style="width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>`;
+                } else if (input) {
+                    box.innerHTML = `<video src="${input}" controls style="width: 100%; height: 100%; object-fit: cover;"></video>`;
+                } else {
+                    box.innerHTML = `<div class="d-flex align-items-center justify-content-center h-100 text-muted small">Chưa có video</div>`;
+                }
+            };
         });
     </script>
 @endpush

@@ -255,33 +255,70 @@
 </section>
 
 </div><div id="shopify-section-template--15747875471535__69efaa66-8022-49b4-a52c-fb59d87d3c72" class="shopify-section c-section c-section__featured-video">
+@php
+    $homeVideo = app(\App\Services\SiteContentService::class)->video(
+        'home.featured.video',
+        'assets/media/espresso_brew_desktop.mp4',
+        'assets/images/s54/espresso_brewtorial_desktop.jpg'
+    );
+    $canEdit = (bool) auth()->user()?->canEditClientContent();
+@endphp
 <link href="assets/css/sections.featured-video.css?v=1789150000" rel="stylesheet" type="text/css" media="all" /><script src="assets/js/sections.featured-video.js?v=1789150000" type="text/javascript" defer="defer"></script><section class="c-featured-video">
   <div class="c-featured-video__wrapper">
-    <div class="c-featured-video__media-container o-media-container">
-      <video
-        playsinline
-        loop
-        title="Play Video"
-        class="c-featured-video__media o-media has-mobile"
-        poster="assets/images/s54/espresso_brewtorial_desktop.jpg"
-        data-video
-      >
-        <source src="assets/media/espresso_brew_desktop.mp4" type="video/mp4">
-      </video>
-      <video
-        playsinline
-        loop
-        title="Play Video"
-        class="c-featured-video__media o-media is-mobile"
-        poster="assets/images/s54/espresso_brewtorial_mobile.jpg"
-        data-video
-      >
-        <source src="assets/media/espresso_brew_mobile.mp4" type="video/mp4">
-      </video>
-      
-      <button class="o-btn--square is-play c-featured-video__button-play" data-play aria-label="Phát video">
-        <svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:block!important;margin:0!important;padding:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M7 5.5a1 1 0 0 1 1.55-.83l10 6.5a1 1 0 0 1 0 1.66l-10 6.5A1 1 0 0 1 7 18.5v-13z"/></svg>
-      </button>
+    <div
+      class="c-featured-video__media-container o-media-container"
+      @if($canEdit)
+        data-block-key="home.featured.video"
+        data-block-type="video"
+        data-video-url="{{ $homeVideo['url'] }}"
+        data-poster-url="{{ $homeVideo['custom_poster'] ?? '' }}"
+        data-default-url="assets/media/espresso_brew_desktop.mp4"
+        data-default-poster="assets/images/s54/espresso_brewtorial_desktop.jpg"
+        data-video-title="Video Nghệ Thuật Cà Phê Espresso"
+        data-is-youtube="{{ $homeVideo['is_youtube'] ? 'true' : 'false' }}"
+      @endif
+    >
+      @if($homeVideo['is_youtube'])
+        <div class="c-featured-video__media o-media has-mobile" style="position: absolute; inset: 0; background: url('{{ $homeVideo['poster'] }}') center/cover no-repeat; z-index: 1;"></div>
+        <div class="c-featured-video__media o-media is-mobile" style="position: absolute; inset: 0; background: url('{{ $homeVideo['poster'] }}') center/cover no-repeat; z-index: 1;"></div>
+        <iframe
+          id="home-youtube-iframe"
+          data-src="{{ $homeVideo['embed_url'] }}?autoplay=1&rel=0"
+          src=""
+          title="Video Nghệ Thuật Cà Phê S54"
+          style="display: none; position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 3;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <button class="o-btn--square is-play c-featured-video__button-play" aria-label="Phát video" onclick="var frame=this.parentElement.querySelector('#home-youtube-iframe'); if(frame){ frame.src=frame.dataset.src; frame.style.display='block'; this.parentElement.classList.add('is-playing'); }">
+          <svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:block!important;margin:0!important;padding:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M7 5.5a1 1 0 0 1 1.55-.83l10 6.5a1 1 0 0 1 0 1.66l-10 6.5A1 1 0 0 1 7 18.5v-13z"/></svg>
+        </button>
+      @else
+        <video
+          playsinline
+          loop
+          title="Play Video"
+          class="c-featured-video__media o-media has-mobile"
+          poster="{{ $homeVideo['poster'] }}"
+          data-video
+        >
+          <source src="{{ $homeVideo['url'] }}" type="video/mp4">
+        </video>
+        <video
+          playsinline
+          loop
+          title="Play Video"
+          class="c-featured-video__media o-media is-mobile"
+          poster="{{ $homeVideo['poster'] }}"
+          data-video
+        >
+          <source src="{{ $homeVideo['url'] }}" type="video/mp4">
+        </video>
+        
+        <button class="o-btn--square is-play c-featured-video__button-play" data-play aria-label="Phát video">
+          <svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:block!important;margin:0!important;padding:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M7 5.5a1 1 0 0 1 1.55-.83l10 6.5a1 1 0 0 1 0 1.66l-10 6.5A1 1 0 0 1 7 18.5v-13z"/></svg>
+        </button>
+      @endif
 
       <div class="c-featured-video__inner is-color--crema">
         <span class="c-featured-video__tag" style="display: block; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #D68E1D; margin-bottom: 12px;">Nghệ Thuật Cà Phê S54</span>

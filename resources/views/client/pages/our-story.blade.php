@@ -54,9 +54,13 @@
 
             {{-- Video Frame --}}
             <div style="background: #FFFFFF; padding: 12px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
-                    <iframe src="https://www.youtube.com/embed/7PB6Tn2pyE8" title="S54 Coffee Introduction" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <x-client::editable-video
+                    key="story.intro.video"
+                    title="Video Giới Thiệu S54 Coffee"
+                    default-url="https://www.youtube.com/embed/7PB6Tn2pyE8"
+                    aspect-ratio="56.25%"
+                    border-radius="8px"
+                />
             </div>
         </div>
     </div>
@@ -90,9 +94,13 @@
                             : 'To become a globally prestigious Vietnamese coffee brand renowned for quality and innovation.' }}
                     </x-client::editable>
                 </div>
-                <div style="border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe src="https://www.youtube.com/embed/8nVnuZSauE8" title="S54 Vision" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
-                </div>
+                <x-client::editable-video
+                    key="story.vision.video"
+                    title="Video Tầm Nhìn Chiến Lược"
+                    default-url="https://www.youtube.com/embed/8nVnuZSauE8"
+                    aspect-ratio="56.25%"
+                    border-radius="8px"
+                />
             </div>
 
             {{-- Mission Card --}}
@@ -110,9 +118,13 @@
                             : 'Delivering authentic coffee, inspiring positive energy, and creating sustainable incomes.' }}
                     </x-client::editable>
                 </div>
-                <div style="border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe src="https://www.youtube.com/embed/bIC2_Dko3xk" title="S54 Mission" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
-                </div>
+                <x-client::editable-video
+                    key="story.mission.video"
+                    title="Video Sứ Mệnh S54 Coffee"
+                    default-url="https://www.youtube.com/embed/bIC2_Dko3xk"
+                    aspect-ratio="56.25%"
+                    border-radius="8px"
+                />
             </div>
 
             {{-- Core Values Card --}}
@@ -131,9 +143,13 @@
                         <strong style="color: #F7D08A;">• Đồng hành:</strong> {{ $locale === 'vi' ? 'Cùng phát triển bền vững.' : 'Growing together with community.' }}
                     </x-client::editable>
                 </div>
-                <div style="border-radius: 8px; overflow: hidden; position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe src="https://www.youtube.com/embed/T8MfqRZlsFo" title="S54 Core Values" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
-                </div>
+                <x-client::editable-video
+                    key="story.values.video"
+                    title="Video Giá Trị Cốt Lõi"
+                    default-url="https://www.youtube.com/embed/T8MfqRZlsFo"
+                    aspect-ratio="56.25%"
+                    border-radius="8px"
+                />
             </div>
         </div>
     </div>

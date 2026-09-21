@@ -246,35 +246,70 @@ Four minute read</div>
         {{ app()->getLocale() === 'vi' ? 'Khách Hàng & Đối Tác Nói Gì Về Chúng Tôi' : 'What Our Partners Say About Us' }}
       </x-client::editable>
       
-      <div class="c-testimonial__video-container o-media-container"><video
-    
-    playsinline
-    loop
-    
-    onclick="this.paused ? this.play() : this.pause()"
-    title="Play"
-    
-    class="c-testimonial__video o-media is-desktop "
-    poster="{{ asset('assets/images/590_9082be5215a852be1026974487789ffc_2000x.png') }}"data-video
-  >
+      @php
+          $wholesaleVideo = app(\App\Services\SiteContentService::class)->video(
+              'wholesale.testimonials.video',
+              asset('assets/images/695_1616455d94684594acbf7eb51378dc5c.HD-720p-1.6Mbps-11675358.mp4'),
+              asset('assets/images/590_9082be5215a852be1026974487789ffc_2000x.png')
+          );
+          $canEdit = (bool) auth()->user()?->canEditClientContent();
+      @endphp
 
-    <source src="{{ asset('assets/images/695_1616455d94684594acbf7eb51378dc5c.HD-720p-1.6Mbps-11675358.mp4') }}" type="video/mp4">
-  </video>
-<video
-    
-    playsinline
-    loop
-    
-    onclick="this.paused ? this.play() : this.pause()"
-    title="Play"
-    
-    class="c-testimonial__video o-media is-mobile "
-    poster="{{ asset('assets/images/784_9082be5215a852be1026974487789ffc_750x.png') }}"data-video
-  >
-
-    <source src="{{ asset('assets/images/587_5f62561f2b974655a55d5d351833f56e.HD-1080p-3.3Mbps-27388133.mp4') }}" type="video/mp4">
-  </video>
-<button type="button" class="c-testimonial__play-button" aria-label="Play" data-play><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40"><path fill="#AC8A62" d="M30.939 18.024 10.17 5.347a2.236 2.236 0 0 0-2.322-.043 2.279 2.279 0 0 0-1.182 2.005V32.69a2.279 2.279 0 0 0 1.182 2.005 2.236 2.236 0 0 0 2.322-.043L30.94 21.976a2.306 2.306 0 0 0 0-3.952Z"/></svg></button>
+      <div
+          class="c-testimonial__video-container o-media-container"
+          @if($canEdit)
+              data-block-key="wholesale.testimonials.video"
+              data-block-type="video"
+              data-video-url="{{ $wholesaleVideo['url'] }}"
+              data-poster-url="{{ $wholesaleVideo['custom_poster'] ?? '' }}"
+              data-default-url="{{ asset('assets/images/695_1616455d94684594acbf7eb51378dc5c.HD-720p-1.6Mbps-11675358.mp4') }}"
+              data-default-poster="{{ asset('assets/images/590_9082be5215a852be1026974487789ffc_2000x.png') }}"
+              data-video-title="Video Lời Chứng Thực Khách Hàng / Đối Tác"
+              data-is-youtube="{{ $wholesaleVideo['is_youtube'] ? 'true' : 'false' }}"
+          @endif
+      >
+        @if($wholesaleVideo['is_youtube'])
+          <div class="c-testimonial__video o-media is-desktop" style="background: url('{{ $wholesaleVideo['poster'] }}') center/cover no-repeat; position: absolute; inset: 0;"></div>
+          <div class="c-testimonial__video o-media is-mobile" style="background: url('{{ $wholesaleVideo['poster'] }}') center/cover no-repeat; position: absolute; inset: 0;"></div>
+          <iframe
+            id="wholesale-youtube-iframe"
+            data-src="{{ $wholesaleVideo['embed_url'] }}?autoplay=1&rel=0"
+            src=""
+            title="Video Đối Tác S54 Coffee"
+            style="display: none; position: absolute; top:0; left:0; width: 100%; height: 100%; border:0; z-index: 3;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <button type="button" class="c-testimonial__play-button" aria-label="Play" onclick="var frame=this.parentElement.querySelector('#wholesale-youtube-iframe'); if(frame){ frame.src=frame.dataset.src; frame.style.display='block'; this.closest('.c-testimonial').classList.add('is-playing'); }">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40"><path fill="#AC8A62" d="M30.939 18.024 10.17 5.347a2.236 2.236 0 0 0-2.322-.043 2.279 2.279 0 0 0-1.182 2.005V32.69a2.279 2.279 0 0 0 1.182 2.005 2.236 2.236 0 0 0 2.322-.043L30.94 21.976a2.306 2.306 0 0 0 0-3.952Z"/></svg>
+          </button>
+        @else
+          <video
+            playsinline
+            loop
+            onclick="this.paused ? this.play() : this.pause()"
+            title="Play"
+            class="c-testimonial__video o-media is-desktop"
+            poster="{{ $wholesaleVideo['poster'] }}"
+            data-video
+          >
+            <source src="{{ $wholesaleVideo['url'] }}" type="video/mp4">
+          </video>
+          <video
+            playsinline
+            loop
+            onclick="this.paused ? this.play() : this.pause()"
+            title="Play"
+            class="c-testimonial__video o-media is-mobile"
+            poster="{{ $wholesaleVideo['poster'] }}"
+            data-video
+          >
+            <source src="{{ $wholesaleVideo['url'] }}" type="video/mp4">
+          </video>
+          <button type="button" class="c-testimonial__play-button" aria-label="Play" data-play>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 40"><path fill="#AC8A62" d="M30.939 18.024 10.17 5.347a2.236 2.236 0 0 0-2.322-.043 2.279 2.279 0 0 0-1.182 2.005V32.69a2.279 2.279 0 0 0 1.182 2.005 2.236 2.236 0 0 0 2.322-.043L30.94 21.976a2.306 2.306 0 0 0 0-3.952Z"/></svg>
+          </button>
+        @endif
       </div>
 
       <div class="c-testimonial__carousel"><svg class="c-testimonial__carousel-quote" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 32"><path fill="#B1A79B" d="M11.054 31.07c-3.506-.081-6.075-1.427-7.706-4.036C1.717 24.424.9 21.325.9 17.737c0-3.996.897-7.584 2.691-10.765C5.468 3.71 7.874 1.386 10.81 0c1.63 0 2.65 1.06 3.058 3.18-2.528 1.713-4.24 3.344-5.138 4.893-.897 1.468-1.345 3.262-1.345 5.383-.082 2.283.937 3.384 3.058 3.302h1.835c1.875 0 3.384.612 4.525 1.835 1.142 1.224 1.713 2.895 1.713 5.016 0 2.364-.734 4.2-2.202 5.504-1.386 1.305-3.14 1.957-5.26 1.957Zm22.386 0c-3.507-.081-6.076-1.427-7.707-4.036-1.63-2.61-2.446-5.709-2.446-9.297 0-3.996.897-7.584 2.69-10.765C27.855 3.71 30.26 1.386 33.196 0c1.63 0 2.65 1.06 3.058 3.18-2.528 1.713-4.24 3.344-5.138 4.893-.897 1.468-1.345 3.262-1.345 5.383-.082 2.283.938 3.384 3.058 3.302h1.835c1.876 0 3.384.612 4.526 1.835 1.142 1.224 1.712 2.895 1.712 5.016 0 2.364-.734 4.2-2.202 5.504-1.386 1.305-3.14 1.957-5.26 1.957Z"/></svg><div class="c-testimonial__carousel-slides"  data-carousel ><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">My passion for pizza is exactly the same as [S54’s] passion for their coffee.</p><h6>Johnny, 400 Gradi</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">When we want to do something new and exciting, I always know I have a great support network with S54.</p><h6>Shane Delia, Maha</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">It’s got the flair, it’s got the taste and it’s always consistent. That’s very important in our business.</p><h6>Serge, Urban Express</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">We wouldn't have had the growth we have over the past 18 months without the help of the team.</p><h6>Acacia, Bobbin Head Bakery Owner</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">To say that the team at S54 have been an integral part of our growth is a vast understatement.</p><h6>Matthew El-Bayeh, Els Cafe & Bar</h6></div></div><button class="c-testimonial__carousel-nav is-prev" aria-label="Previous" data-carousel-prev><svg fill="none"class="" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m23.8535 12c0 .2761-.2238.5-.5.5h-22.05404c-.27614 0-.499999-.2239-.499999-.5s.223859-.5.499999-.5h22.05404c.2762 0 .5.2239.5.5z"/><path d="m6.62211 17.8027c-.19791.1926-.51447.1882-.70704-.0097l-5.297293-5.4444c-.188849-.1941-.188849-.5033 0-.6974l5.297293-5.44443c.19257-.19792.50913-.20225.70704-.00969.19792.19257.20226.50913.00969.70705l-4.95804 5.09577 4.95804 5.0958c.19257.1979.18823.5144-.00969.707z"/></g></svg></button>

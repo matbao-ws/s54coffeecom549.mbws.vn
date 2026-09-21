@@ -16,7 +16,9 @@ class SiteBlock extends Model
 
     public const TYPE_IMAGE = 'image';
 
-    public const TYPES = [self::TYPE_TEXT, self::TYPE_HTML, self::TYPE_IMAGE];
+    public const TYPE_VIDEO = 'video';
+
+    public const TYPES = [self::TYPE_TEXT, self::TYPE_HTML, self::TYPE_IMAGE, self::TYPE_VIDEO];
 
     /**
      * Semantic wrapper an editor may choose from the inline toolbar.

@@ -52,6 +52,66 @@ class SiteContentService
     }
 
     /**
+     * Retrieve parsed video data (url, poster, is_youtube, youtube_id, embed_url, etc.)
+     *
+     * @return array{key: string, raw: ?string, url: string, poster: ?string, custom_poster: ?string, is_youtube: bool, youtube_id: ?string, embed_url: ?string}
+     */
+    public function video(string $key, ?string $defaultUrl = null, ?string $defaultPoster = null, ?string $locale = null): array
+    {
+        $raw = $this->value($key, $locale);
+        $url = $defaultUrl ?? '';
+        $poster = $defaultPoster;
+
+        if ($raw !== null && $raw !== '') {
+            $decoded = json_decode($raw, true);
+            if (is_array($decoded)) {
+                $url = $decoded['url'] ?? $decoded['video_url'] ?? $url;
+                if (! empty($decoded['poster']) || ! empty($decoded['poster_url'])) {
+                    $poster = $decoded['poster'] ?? $decoded['poster_url'];
+                }
+            } else {
+                $url = $raw;
+            }
+        }
+
+        // Support separate poster block key if set (e.g. key . '.poster')
+        $posterOverride = $this->value($key . '.poster', $locale);
+        if ($posterOverride) {
+            $poster = $posterOverride;
+        }
+
+        // Clean and parse URL
+        $url = trim($url);
+        if (preg_match('/<iframe[^>]+src=["\']([^"\']+)["\']/i', $url, $m)) {
+            $url = $m[1];
+        }
+
+        $youtubeId = null;
+        if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i', $url, $matches)) {
+            $youtubeId = $matches[1];
+        }
+
+        $isYoutube = ! empty($youtubeId);
+        $embedUrl = $isYoutube ? "https://www.youtube.com/embed/{$youtubeId}" : null;
+        $youtubeThumbnail = $isYoutube ? "https://img.youtube.com/vi/{$youtubeId}/hqdefault.jpg" : null;
+
+        if ($poster) {
+            $poster = MediaUrl::resolve($poster);
+        }
+
+        return [
+            'key' => $key,
+            'raw' => $raw,
+            'url' => $url,
+            'poster' => $poster ?: $youtubeThumbnail,
+            'custom_poster' => $poster,
+            'is_youtube' => $isYoutube,
+            'youtube_id' => $youtubeId,
+            'embed_url' => $embedUrl,
+        ];
+    }
+
+    /**
      * True when an admin emptied this region on purpose, so it renders nothing.
      *
      * The signal is the presence of the locale key, not its contents.
@@ -214,6 +274,7 @@ class SiteContentService
             SiteBlock::TYPE_HTML => $this->htmlSanitizer->clean(trim($value)),
             // Stored relative so the reference survives an APP_URL change.
             SiteBlock::TYPE_IMAGE => (string) MediaUrl::toStorable(trim($value)),
+            SiteBlock::TYPE_VIDEO => trim($value),
             default => trim($value),
         };
     }
