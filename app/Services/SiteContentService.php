@@ -40,9 +40,15 @@ class SiteContentService
         }
 
         $translations = $block->rawTranslations();
-        $stored = $translations[$locale]
-            ?? $translations[$this->languages->fallbackLocale()]
-            ?? null;
+        $stored = $translations[$locale] ?? null;
+
+        // Media blocks (images, videos) can safely fall back to the default locale
+        // if not specifically defined for the active locale. For text and html,
+        // missing translations must return null so that the Blade template's
+        // localized default slot or fallback can take effect instead of leaking Vietnamese.
+        if ($stored === null && ($block->type === SiteBlock::TYPE_IMAGE || $block->type === SiteBlock::TYPE_VIDEO)) {
+            $stored = $translations[$this->languages->fallbackLocale()] ?? null;
+        }
 
         if (! is_string($stored) || $stored === '') {
             return null;

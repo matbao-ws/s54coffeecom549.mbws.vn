@@ -20,6 +20,8 @@ Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
 // Legacy & Relative URL redirects to ensure no 404s
 Route::get('cart.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
 Route::get('checkout.html', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
+Route::get('gio-hang', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
+Route::get('thanh-toan', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
 Route::get('san-pham/cart.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
 Route::get('san-pham/checkout.html', fn (string $locale) => redirect()->route('client.checkout', ['locale' => $locale], 301));
 Route::get('wholesale', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'wholesale'], 301));

@@ -4,7 +4,7 @@
     $locale = app()->getLocale();
 @endphp
 
-@section('title', 'S54 COFFEE — Tinh Hoa Cà Phê Việt | New Coffee, New Income')
+@section('title', $locale === 'vi' ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt | New Coffee, New Income' : 'S54 COFFEE — Essence of Vietnamese Coffee | New Coffee, New Income')
 
 @section('content')
 <div id="shopify-section-template--15747875471535__hero_banner_d3Tacb" class="shopify-section c-section c-section__hero-banner">
@@ -72,13 +72,13 @@
     <div class="c-hero-banner__container">
       <div class="c-hero-banner__overlay" style="opacity: 0; pointer-events: none;">
         <x-client::editable key="home.hero.title" tag="h1" class="c-hero-banner__title o-heading--1">
-        Vietnamese Coffee. Made for the World.
+        {{ $locale === 'vi' ? 'S54 COFFEE – ĐẬM VỊ ĐAM MÊ' : 'Vietnamese Coffee. Made for the World.' }}
       </x-client::editable>
         <x-client::editable key="home.hero.subtitle" tag="p" class="c-hero-banner__subtitle is-size--large">
-        Discover bold Vietnamese coffee, crafted for modern coffee lovers.
+        {{ $locale === 'vi' ? 'Khám phá hương vị cà phê mộc đậm đà, chuẩn mực quốc tế từ S54 Coffee.' : 'Discover bold Vietnamese coffee, crafted for modern coffee lovers.' }}
       </x-client::editable>
         <a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" class="c-hero-banner__button has-margin-top-small o-btn is-primary is-dark has-arrow">
-          MUA SẮM NGAY
+          {{ $locale === 'vi' ? 'MUA SẮM NGAY' : 'SHOP NOW' }}
           <svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
         </a>
       </div>
@@ -88,11 +88,11 @@
 <link href="assets/css/sections.product-carousel.css" rel="stylesheet" type="text/css" media="all" /><script src="assets/js/sections.product-carousel.js" type="text/javascript" defer="defer"></script><section class="c-product-carousel" data-product-carousel>
   <div class="c-product-carousel__inner">
     <div class="c-product-carousel__header"><x-client::editable key="home.carousel.title" tag="h2" class="c-product-carousel__title o-heading--2">
-      <span>Khám Phá <em><br/></em>Dòng Sản Phẩm S54</span>
+      <span>{{ $locale === 'vi' ? 'Khám Phá' : 'Discover' }} <em><br/></em>{{ $locale === 'vi' ? 'Dòng Sản Phẩm S54' : 'S54 Coffee Collection' }}</span>
     </x-client::editable><x-client::editable key="home.carousel.desc" tag="div" class="c-product-carousel__description">
-      <p>“S54 Coffee – Đổi mới trong từng tách cà phê Việt. Tuyển chọn khắt khe hạt Robusta và Arabica hảo hạng từ Tây Nguyên.”<br/><strong><br/>Mr. Paul Hieu (CEO) & Tony Hoan (Founder)</strong></p>
+      <p>{{ $locale === 'vi' ? '“S54 Coffee – Đổi mới trong từng tách cà phê Việt. Tuyển chọn khắt khe hạt Robusta và Arabica hảo hạng từ Tây Nguyên.”' : '“S54 Coffee – Innovation in every Vietnamese cup. Rigorously selected premium Robusta and Arabica from the Central Highlands.”' }}<br/><strong><br/>Mr. Paul Hieu (CEO) & Tony Hoan (Founder)</strong></p>
     </x-client::editable><a href="{{ route('client.catalog.index', ['locale' => $locale]) }}" 
-          class="c-product-carousel__button o-btn is-primary is-dark has-arrow">Tất Cả Sản Phẩm<svg fill="none" class="o-btn__arrow c-product-carousel__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
+          class="c-product-carousel__button o-btn is-primary is-dark has-arrow">{{ $locale === 'vi' ? 'Tất Cả Sản Phẩm' : 'All Products' }}<svg fill="none" class="o-btn__arrow c-product-carousel__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
 </a></div>
     <div class="c-product-carousel__products" data-carousel>
       {{-- 1. Túi Cà Phê Hòa Tan 456gr --}}
@@ -100,10 +100,10 @@
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/tui_3in1_456g.png') }}, {{ asset('assets/images/s54/products/tui_3in1_456g.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/products/tui_3in1_456g.png') }}" width="500" alt="Túi Cà Phê Hòa Tan 456gr" class="c-product-carousel__product-image o-media" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/tui_3in1_456g.png') }}" width="500" alt="{{ $locale === 'vi' ? 'Túi Cà Phê Hòa Tan 456gr' : 'S54 Instant Coffee Bag 456g' }}" class="c-product-carousel__product-image o-media" />
           </picture>
         </div>
-        <h6 class="c-product-carousel__product-title o-heading--6">Túi Cà Phê Hòa Tan 456gr</h6>
+        <h6 class="c-product-carousel__product-title o-heading--6">{{ $locale === 'vi' ? 'Túi Cà Phê Hòa Tan 456gr' : 'S54 Instant Coffee Bag 456g' }}</h6>
       </a>
 
       {{-- 2. Cà Phê Hạt Rang --}}
@@ -111,10 +111,10 @@
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/robusta_500g.png') }}, {{ asset('assets/images/s54/products/robusta_500g.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/products/robusta_500g.png') }}" width="500" alt="Cà Phê Hạt Rang" class="c-product-carousel__product-image o-media" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/robusta_500g.png') }}" width="500" alt="{{ $locale === 'vi' ? 'Cà Phê Hạt Rang' : 'Roasted Whole Beans' }}" class="c-product-carousel__product-image o-media" />
           </picture>
         </div>
-        <h6 class="c-product-carousel__product-title o-heading--6">Cà Phê Hạt Rang</h6>
+        <h6 class="c-product-carousel__product-title o-heading--6">{{ $locale === 'vi' ? 'Cà Phê Hạt Rang' : 'Roasted Whole Beans' }}</h6>
       </a>
 
       {{-- 3. Combo 12 Gói Dùng Thử --}}
@@ -122,10 +122,10 @@
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }}, {{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }}" width="500" alt="Combo 12 Gói Cà Phê Hòa Tan Dùng Thử" class="c-product-carousel__product-image o-media" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/combo_12goi_dung_thu.png') }}" width="500" alt="{{ $locale === 'vi' ? 'Combo 12 Gói Cà Phê Hòa Tan Dùng Thử' : '12-Sachet Trial Pack' }}" class="c-product-carousel__product-image o-media" />
           </picture>
         </div>
-        <h6 class="c-product-carousel__product-title o-heading--6">Combo 12 Gói Cà Phê Hòa Tan Dùng Thử</h6>
+        <h6 class="c-product-carousel__product-title o-heading--6">{{ $locale === 'vi' ? 'Combo 12 Gói Cà Phê Hòa Tan Dùng Thử' : '12-Sachet Trial Pack' }}</h6>
       </a>
 
       {{-- 4. Máy Xay Cà Phê --}}
@@ -133,10 +133,10 @@
         <div class="c-product-carousel__product-image-container o-media-container">
           <picture>
             <source srcset="{{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }}, {{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }}" width="500" alt="Máy Xay Cà Phê" class="c-product-carousel__product-image o-media" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/products/may_xay_vbz01_5.png') }}" width="500" alt="{{ $locale === 'vi' ? 'Máy Xay Cà Phê' : 'Manual Coffee Grinder' }}" class="c-product-carousel__product-image o-media" />
           </picture>
         </div>
-        <h6 class="c-product-carousel__product-title o-heading--6">Máy Xay Cà Phê</h6>
+        <h6 class="c-product-carousel__product-title o-heading--6">{{ $locale === 'vi' ? 'Máy Xay Cà Phê' : 'Manual Coffee Grinder' }}</h6>
       </a>
     </div>
     <a class="c-product-carousel__control c-product-carousel__control--prev" data-carousel-prev>
@@ -157,98 +157,98 @@
     <x-client::editable-image key="home.story.image" src="{{ asset('assets/images/s54/s54_story_blend_intro.png') }}" alt="S54 Coffee – Đổi Mới Trong Từng Tách Cà Phê Việt" class="c-text-and-image__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   <div class="c-text-and-image__text-container">
     <div class="c-text-and-image__text-inner"><x-client::editable key="home.story.title" tag="h2" class="c-text-and-image__text-title o-heading--2">
-      S54 Coffee –<em> </em>Đổi Mới Trong Từng Tách Cà Phê Việt
+      {{ $locale === 'vi' ? 'S54 Coffee – Đổi Mới Trong Từng Tách Cà Phê Việt' : 'S54 Coffee – Innovation in Every Vietnamese Cup' }}
     </x-client::editable><x-client::editable key="home.story.desc" tag="div" class="c-text-and-image__text-paragraph o-paragraph--1">
-      <p>Tuyển chọn khắt khe những hạt Robusta và Arabica hảo hạng từ thủ phủ Tây Nguyên, S54 Coffee ứng dụng quy trình chế biến hiện đại để giữ trọn hương vị đậm đà, thơm ngon đặc trưng. Với tinh thần "New Coffee, New Income", chúng tôi không chỉ mang đến một tách cà phê tỉnh táo mỗi ngày mà còn truyền nguồn năng lượng tích cực và đồng hành cùng sự phát triển bền vững của cộng đồng.</p>
+      <p>{{ $locale === 'vi' ? 'Tuyển chọn khắt khe những hạt Robusta và Arabica hảo hạng từ thủ phủ Tây Nguyên, S54 Coffee ứng dụng quy trình chế biến hiện đại để giữ trọn hương vị đậm đà, thơm ngon đặc trưng. Với tinh thần "New Coffee, New Income", chúng tôi không chỉ mang đến một tách cà phê tỉnh táo mỗi ngày mà còn truyền nguồn năng lượng tích cực và đồng hành cùng sự phát triển bền vững của cộng đồng.' : 'Rigorously selecting premium Robusta and Arabica beans from the Central Highlands, S54 Coffee applies modern processing techniques to preserve full-bodied, distinctive aroma and taste. Guided by our "New Coffee, New Income" vision, we bring not only an invigorating daily brew but also positive energy and sustainable community empowerment.' }}</p>
     </x-client::editable><div class="c-text-and-image__buttons"><a href="{{ route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story']) }}" 
-              class="c-text-and-image__text-button o-btn is-primary has-arrow is-dark">Về Chúng Tôi<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
+              class="c-text-and-image__text-button o-btn is-primary has-arrow is-dark">{{ $locale === 'vi' ? 'Về Chúng Tôi' : 'About Us' }}<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
             </a></div></div>
   </div>
 </section></div><div id="shopify-section-template--15747875471535__44232c0b-23d6-4254-84bb-0820ac045df1" class="shopify-section c-section c-section__article-feed"><link href="assets/css/sections.article-feed.css" rel="stylesheet" type="text/css" media="all" /><script src="assets/js/sections.article-feed.js" type="text/javascript" defer="defer"></script><section class="c-article-feed" data-article-carousel>
   <div class="c-article-feed__inner">
 
     <div class="c-article-feed__inner-text"><x-client::editable key="home.articles.title" tag="h2" class="c-article-feed__title o-heading--2">
-      Tin Tức & Blog Mới Nhất
+      {{ $locale === 'vi' ? 'Tin Tức & Blog Mới Nhất' : 'Latest News & Stories' }}
     </x-client::editable><x-client::editable key="home.articles.desc" tag="div" class="c-article c-text-and-image__text-paragraph o-paragraph--1">
-      <p>Cập nhật những tin tức, câu chuyện và kiến thức cà phê mới nhất từ S54 Coffee.</p>
-    </x-client::editable><a href="blogs-news.html" 
-        class="c-article-feed__button o-btn is-primary is-dark has-arrow is-desktop">Xem Tất Cả<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
+      <p>{{ $locale === 'vi' ? 'Cập nhật những tin tức, câu chuyện và kiến thức cà phê mới nhất từ S54 Coffee.' : 'Stay updated with the latest news, stories, and coffee insights from S54 Coffee.' }}</p>
+    </x-client::editable><a href="{{ route('client.blog.index', ['locale' => $locale]) }}" 
+        class="c-article-feed__button o-btn is-primary is-dark has-arrow is-desktop">{{ $locale === 'vi' ? 'Xem Tất Cả' : 'View All' }}<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
 </a></div>
 
     <div class="c-article-feed__inner-feed" data-carousel>
       {{-- Card 1: Vì Sao Việt Nam Là Cường Quốc Cà Phê? --}}
-      <a href="blog-detail.html?id=1" class="o-article-tile" data-carousel-tile>
+      <a href="{{ route('client.blog.show', ['locale' => $locale, 'slug' => 'vi-sao-viet-nam-la-cuong-quoc-ca-phe']) }}" class="o-article-tile" data-carousel-tile>
         <div class="o-article-tile__image-wrap">
           <picture>
             <source srcset="{{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }}, {{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }}" width="1024" alt="Vì Sao Việt Nam Là Cường Quốc Cà Phê Thế Giới?" class="o-article-tile__image" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_1_vi_sao_viet_nam_la_cuong_quoc_ca_phe.png') }}" width="1024" alt="{{ $locale === 'vi' ? 'Vì Sao Việt Nam Là Cường Quốc Cà Phê Thế Giới?' : 'Why is Vietnam a Global Coffee Powerhouse?' }}" class="o-article-tile__image" />
           </picture>
         </div>
         <div class="o-article-tile__detail">
           <div class="o-article-tile__detail-inner">
-            <span class="o-article-tile__detail-tag o-subtitle">Tin Tức</span>
+            <span class="o-article-tile__detail-tag o-subtitle">{{ $locale === 'vi' ? 'Tin Tức' : 'News' }}</span>
             <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
           </div>
           <div class="o-article-tile__detail-separator"></div>
-          <h6 class="o-article-tile__detail-title">Vì Sao Việt Nam Là Cường Quốc Cà Phê Thế Giới?</h6>
-          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+          <h6 class="o-article-tile__detail-title">{{ $locale === 'vi' ? 'Vì Sao Việt Nam Là Cường Quốc Cà Phê Thế Giới?' : 'Why is Vietnam a Global Coffee Powerhouse?' }}</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">{{ $locale === 'vi' ? '3 phút đọc' : '3 min read' }}</div>
         </div>
       </a>
 
       {{-- Card 2: Ý Nghĩa Của Tên Gọi S54 Là Gì? --}}
-      <a href="blog-detail.html?id=12" class="o-article-tile" data-carousel-tile>
+      <a href="{{ route('client.blog.show', ['locale' => $locale, 'slug' => 'y-nghia-cua-ten-goi-s54-la-gi']) }}" class="o-article-tile" data-carousel-tile>
         <div class="o-article-tile__image-wrap">
           <picture>
             <source srcset="{{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }}, {{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }}" width="1024" alt="Ý Nghĩa Của Tên Gọi S54 Là Gì?" class="o-article-tile__image" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_12_y_nghia_cua_ten_goi_s54_la_gi.png') }}" width="1024" alt="{{ $locale === 'vi' ? 'Ý Nghĩa Của Tên Gọi S54 Là Gì?' : 'What is the True Meaning Behind the Name S54?' }}" class="o-article-tile__image" />
           </picture>
         </div>
         <div class="o-article-tile__detail">
           <div class="o-article-tile__detail-inner">
-            <span class="o-article-tile__detail-tag o-subtitle">Câu Chuyện S54</span>
+            <span class="o-article-tile__detail-tag o-subtitle">{{ $locale === 'vi' ? 'Câu Chuyện S54' : 'S54 Story' }}</span>
             <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
           </div>
           <div class="o-article-tile__detail-separator"></div>
-          <h6 class="o-article-tile__detail-title">Ý Nghĩa Của Tên Gọi S54 Là Gì?</h6>
-          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+          <h6 class="o-article-tile__detail-title">{{ $locale === 'vi' ? 'Ý Nghĩa Của Tên Gọi S54 Là Gì?' : 'What is the True Meaning Behind the Name S54?' }}</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">{{ $locale === 'vi' ? '3 phút đọc' : '3 min read' }}</div>
         </div>
       </a>
 
       {{-- Card 3: Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam? --}}
-      <a href="blog-detail.html?id=2" class="o-article-tile" data-carousel-tile>
+      <a href="{{ route('client.blog.show', ['locale' => $locale, 'slug' => 'dieu-gi-lam-nen-su-khac-biet-cua-ca-phe-viet-nam']) }}" class="o-article-tile" data-carousel-tile>
         <div class="o-article-tile__image-wrap">
           <picture>
             <source srcset="{{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }}, {{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }}" width="1024" alt="Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?" class="o-article-tile__image" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_2_ieu_gi_lam_nen_su_khac_biet_cua_ca_phe_v.png') }}" width="1024" alt="{{ $locale === 'vi' ? 'Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?' : 'What Makes Vietnamese Coffee Truly Unique?' }}" class="o-article-tile__image" />
           </picture>
         </div>
         <div class="o-article-tile__detail">
           <div class="o-article-tile__detail-inner">
-            <span class="o-article-tile__detail-tag o-subtitle">Kiến Thức Cà Phê</span>
+            <span class="o-article-tile__detail-tag o-subtitle">{{ $locale === 'vi' ? 'Kiến Thức Cà Phê' : 'Coffee Knowledge' }}</span>
             <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
           </div>
           <div class="o-article-tile__detail-separator"></div>
-          <h6 class="o-article-tile__detail-title">Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?</h6>
-          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+          <h6 class="o-article-tile__detail-title">{{ $locale === 'vi' ? 'Điều Gì Làm Nên Sự Khác Biệt Của Cà Phê Việt Nam?' : 'What Makes Vietnamese Coffee Truly Unique?' }}</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">{{ $locale === 'vi' ? '3 phút đọc' : '3 min read' }}</div>
         </div>
       </a>
 
       {{-- Card 4: S54 Coffee Là Ai? --}}
-      <a href="blog-detail.html?id=11" class="o-article-tile" data-carousel-tile>
+      <a href="{{ route('client.blog.show', ['locale' => $locale, 'slug' => 's54-coffee-la-ai']) }}" class="o-article-tile" data-carousel-tile>
         <div class="o-article-tile__image-wrap">
           <picture>
             <source srcset="{{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }}, {{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }} 2x" />
-            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }}" width="1024" alt="S54 Coffee Là Ai? Hành Trình Từ Những Hạt Cà Phê Việt" class="o-article-tile__image" />
+            <img loading="lazy" src="{{ asset('assets/images/s54/news/news_11_s54_coffee_la_ai.png') }}" width="1024" alt="{{ $locale === 'vi' ? 'S54 Coffee Là Ai? Hành Trình Từ Những Hạt Cà Phê Việt' : 'Who is S54 Coffee? The Story of Community-Driven Coffee' }}" class="o-article-tile__image" />
           </picture>
         </div>
         <div class="o-article-tile__detail">
           <div class="o-article-tile__detail-inner">
-            <span class="o-article-tile__detail-tag o-subtitle">Thương Hiệu</span>
+            <span class="o-article-tile__detail-tag o-subtitle">{{ $locale === 'vi' ? 'Thương Hiệu' : 'Brand' }}</span>
             <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
           </div>
           <div class="o-article-tile__detail-separator"></div>
-          <h6 class="o-article-tile__detail-title">S54 Coffee Là Ai? Hành Trình Hạt Cà Phê Việt</h6>
-          <div class="o-article-tile__detail-read-time o-type--1">3 phút đọc</div>
+          <h6 class="o-article-tile__detail-title">{{ $locale === 'vi' ? 'S54 Coffee Là Ai? Hành Trình Hạt Cà Phê Việt' : 'Who is S54 Coffee? The Story of Community-Driven Coffee' }}</h6>
+          <div class="o-article-tile__detail-read-time o-type--1">{{ $locale === 'vi' ? '3 phút đọc' : '3 min read' }}</div>
         </div>
       </a>
     </div>
@@ -258,8 +258,8 @@
     </div>
     <div class="c-article-feed__control c-article-feed__control--next" data-carousel-next>
       <svg fill="none" class="o-btn__arrow c-article-feed__control-arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
-    </div><a href="blogs-news.html" 
-      class="c-article-feed__button o-btn is-primary is-dark has-arrow is-mobile">Xem Tất Cả<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
+    </div><a href="{{ route('client.blog.index', ['locale' => $locale]) }}" 
+      class="c-article-feed__button o-btn is-primary is-dark has-arrow is-mobile">{{ $locale === 'vi' ? 'Xem Tất Cả' : 'View All' }}<svg fill="none" class="o-btn__arrow" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
 </a></div>
 </section>
 
@@ -324,20 +324,20 @@
           <source src="{{ $homeVideo['url'] }}" type="video/mp4">
         </video>
         
-        <button class="o-btn--square is-play c-featured-video__button-play" data-play aria-label="Phát video">
+        <button class="o-btn--square is-play c-featured-video__button-play" data-play aria-label="{{ $locale === 'vi' ? 'Phát video' : 'Play video' }}">
           <svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:block!important;margin:0!important;padding:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M7 5.5a1 1 0 0 1 1.55-.83l10 6.5a1 1 0 0 1 0 1.66l-10 6.5A1 1 0 0 1 7 18.5v-13z"/></svg>
         </button>
       @endif
 
       <div class="c-featured-video__inner is-color--crema">
-        <span class="c-featured-video__tag" style="display: block; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #D68E1D; margin-bottom: 12px;">Nghệ Thuật Cà Phê S54</span>
+        <span class="c-featured-video__tag" style="display: block; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #D68E1D; margin-bottom: 12px;">{{ $locale === 'vi' ? 'Nghệ Thuật Cà Phê S54' : 'Art of S54 Coffee' }}</span>
         <x-client::editable key="home.video.title" tag="h2" class="c-featured-video__title o-heading--2">
-          Nghệ Thuật Chiết Xuất<br/>Tách Espresso Hoàn Hảo
+          {!! $locale === 'vi' ? 'Nghệ Thuật Chiết Xuất<br/>Tách Espresso Hoàn Hảo' : 'Art of Extraction<br/>The Perfect Espresso Cup' !!}
         </x-client::editable>
         <x-client::editable key="home.video.desc" tag="p" class="c-featured-video__desc">
-          Khám phá phương pháp cân chỉnh nhiệt độ và áp suất để chiết xuất trọn vẹn lớp crema bồng bềnh cùng hương vị tinh tuý từ hạt cà phê S54.
+          {{ $locale === 'vi' ? 'Khám phá phương pháp cân chỉnh nhiệt độ và áp suất để chiết xuất trọn vẹn lớp crema bồng bềnh cùng hương vị tinh tuý từ hạt cà phê S54.' : 'Discover the balance of temperature and pressure to extract a rich crema and refined flavors from S54 coffee beans.' }}
         </x-client::editable>
-        <a href="our-story.html" class="c-featured-video__button o-btn is-primary is-dark has-arrow">Khám Phá Câu Chuyện S54<svg fill="none" class="o-btn__arrow c-featured-video__button-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
+        <a href="{{ route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story']) }}" class="c-featured-video__button o-btn is-primary is-dark has-arrow">{{ $locale === 'vi' ? 'Khám Phá Câu Chuyện S54' : 'Discover S54 Story' }}<svg fill="none" class="o-btn__arrow c-featured-video__button-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
         </a>
       </div>
     </div>
@@ -346,12 +346,12 @@
 <link href="assets/css/sections.featured-collections.css" rel="stylesheet" type="text/css" media="all" /><script src="assets/js/sections.featured-collections.js" type="text/javascript" defer="defer"></script><section class="c-featured-collections s54-featured-section" style="background-color: #FAF8F5; padding: 80px 20px;">
   <div class="o-wrapper" style="max-width: 1280px; margin: 0 auto;">
     <div style="text-align: center; margin-bottom: 40px;">
-      <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">DANH MỤC TUYỂN CHỌN</span>
+      <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">{{ $locale === 'vi' ? 'DANH MỤC TUYỂN CHỌN' : 'CURATED COLLECTION' }}</span>
       <x-client::editable key="home.products.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; color: #2F221A; margin: 0 0 16px 0;">
-        Sản Phẩm Bán Chạy Nhất
+        {{ $locale === 'vi' ? 'Sản Phẩm Bán Chạy Nhất' : 'Best-Selling Products' }}
       </x-client::editable>
       <x-client::editable key="home.products.subtitle" tag="p" style="font-size: 15px; color: #6E6259; max-width: 650px; margin: 0 auto 28px;">
-        Khám phá các dòng cà phê hòa tan 3in1 tiện lợi, cà phê hạt rang Robusta nguyên chất và máy xay cà phê thủ công cao cấp của S54 Coffee.
+        {{ $locale === 'vi' ? 'Khám phá các dòng cà phê hòa tan 3in1 tiện lợi, cà phê hạt rang Robusta nguyên chất và máy xay cà phê thủ công cao cấp của S54 Coffee.' : 'Discover convenient 3in1 instant coffee, pure roasted Robusta whole beans, and premium manual coffee grinders by S54 Coffee.' }}
       </x-client::editable>
       
       <!-- Filter Tabs -->

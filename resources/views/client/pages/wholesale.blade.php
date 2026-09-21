@@ -280,7 +280,7 @@
               data-poster-url="{{ $wholesaleVideo['custom_poster'] ?? '' }}"
               data-default-url="{{ asset('assets/images/695_1616455d94684594acbf7eb51378dc5c.HD-720p-1.6Mbps-11675358.mp4') }}"
               data-default-poster="{{ asset('assets/images/590_9082be5215a852be1026974487789ffc_2000x.png') }}"
-              data-video-title="Video Lời Chứng Thực Khách Hàng / Đối Tác"
+              data-video-title="{{ app()->getLocale() === 'vi' ? 'Video Lời Chứng Thực Khách Hàng / Đối Tác' : 'Customer & Partner Testimonial Video' }}"
               data-is-youtube="{{ $wholesaleVideo['is_youtube'] ? 'true' : 'false' }}"
           @endif
       >
@@ -291,7 +291,7 @@
             id="wholesale-youtube-iframe"
             data-src="{{ $wholesaleVideo['embed_url'] }}?autoplay=1&rel=0"
             src=""
-            title="Video Đối Tác S54 Coffee"
+            title="{{ app()->getLocale() === 'vi' ? 'Video Đối Tác S54 Coffee' : 'S54 Coffee Partner Video' }}"
             style="display: none; position: absolute; top:0; left:0; width: 100%; height: 100%; border:0; z-index: 3;"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
@@ -578,8 +578,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: fd.get('contact[full-name]'),
                 phone: fd.get('contact[phone]'),
                 email: fd.get('contact[email]') || '',
-                service_type: 'Hợp tác đại lý / Bán sỉ B2B',
-                message: (fd.get('contact[business-name]') ? 'Doanh nghiệp: ' + fd.get('contact[business-name]') + '. ' : '') + (fd.get('contact[enquiry]') || ''),
+                service_type: '{{ app()->getLocale() === "vi" ? "Hợp tác đại lý / Bán sỉ B2B" : "Wholesale & B2B Inquiry" }}',
+                message: (fd.get('contact[business-name]') ? '{{ app()->getLocale() === "vi" ? "Doanh nghiệp: " : "Business: " }}' + fd.get('contact[business-name]') + '. ' : '') + (fd.get('contact[enquiry]') || ''),
             };
             fetch('/api/public/contact', {
                 method: 'POST',

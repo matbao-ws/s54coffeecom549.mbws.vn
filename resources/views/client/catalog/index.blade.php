@@ -14,8 +14,8 @@
 <section class="s54-catalog-hero" style="background: {{ $catalogBanner ? "radial-gradient(circle at center, rgba(47,34,26,0.82) 0%, rgba(26,18,14,0.95) 100%), url('{$catalogBanner}') center/cover no-repeat" : '#2F221A' }}; color: #FAF6F1; padding: 70px 20px 50px; text-align: center; position: relative;">
     @if($canEdit)
         <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
-            <button type="button" class="s54-edit-banner-trigger" data-block-key="catalog.hero.banner" data-block-type="image" src="{{ $catalogBanner }}" title="Click để thay đổi ảnh nền banner Cửa hàng" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <span>📷 Đổi ảnh banner</span>
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="catalog.hero.banner" data-block-type="image" src="{{ $catalogBanner }}" title="{{ $locale === 'vi' ? 'Click để thay đổi ảnh nền banner Cửa hàng' : 'Click to change Catalog banner' }}" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 {{ $locale === 'vi' ? 'Đổi ảnh banner' : 'Change banner' }}</span>
             </button>
         </div>
     @endif

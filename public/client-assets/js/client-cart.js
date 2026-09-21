@@ -80,8 +80,8 @@
             } else if (rawId > 1000 || isNaN(rawId)) {
                 var lower = (it.title || it.name || '').toLowerCase();
                 var resolvedId = 22;
-                if (lower.includes('12 gói') || lower.includes('dùng thử') || lower.includes('5 gói')) resolvedId = 23;
-                else if (lower.includes('456g') || lower.includes('túi')) resolvedId = 22;
+                if (lower.includes('12 gói') || lower.includes('dùng thử') || lower.includes('5 gói') || lower.includes('trial') || lower.includes('12 sachets')) resolvedId = 23;
+                else if (lower.includes('456g') || lower.includes('túi') || lower.includes('bag') || lower.includes('24 sachets')) resolvedId = 22;
                 else if (lower.includes('combo 2')) resolvedId = 10;
                 else if (lower.includes('250g')) resolvedId = 12;
                 else if (lower.includes('500g')) resolvedId = 13;
@@ -153,7 +153,7 @@
         },
         addItem: function(item) {
             if (!item) return;
-            var cleanTitle = (item.title || item.name || 'S54 Cà Phê').trim();
+            var cleanTitle = (item.title || item.name || (getLocale() === 'vi' ? 'S54 Cà Phê' : 'S54 Coffee')).trim();
             var price = sanitizePrice(item.price);
             var id = parseInt(item.id || item.product_id, 10) || 22;
 
@@ -169,8 +169,8 @@
                 id = mockToDbMap[id];
             } else if (id > 1000) {
                 var lower = cleanTitle.toLowerCase();
-                if (lower.includes('12 gói') || lower.includes('dùng thử') || lower.includes('5 gói')) id = 23;
-                else if (lower.includes('456g') || lower.includes('túi')) id = 22;
+                if (lower.includes('12 gói') || lower.includes('dùng thử') || lower.includes('5 gói') || lower.includes('trial') || lower.includes('12 sachets')) id = 23;
+                else if (lower.includes('456g') || lower.includes('túi') || lower.includes('bag') || lower.includes('24 sachets')) id = 22;
                 else if (lower.includes('combo 2')) id = 10;
                 else if (lower.includes('250g')) id = 12;
                 else if (lower.includes('500g')) id = 13;
@@ -182,13 +182,15 @@
                 else id = 22;
             }
 
-            var variantId = item.variant_id || item.variantId || id;
             var qty = parseInt(item.quantity, 10) || 1;
-            var image = item.image || item.image_url || '';
+            var variantId = item.variant_id || item.variantId || null;
+            var image = item.image || item.featured_image || null;
 
             var existing = itemsState.find(function(i) {
-                return (String(i.id) === String(id) && String(i.variant_id || i.variantId) === String(variantId)) ||
-                       (i.title === cleanTitle && String(i.variant_id || i.variantId) === String(variantId));
+                if (variantId && i.variant_id) {
+                    return String(i.id) === String(id) && String(i.variant_id) === String(variantId);
+                }
+                return String(i.id) === String(id);
             });
 
             if (existing) {
@@ -210,7 +212,7 @@
 
             persist();
             openDrawer();
-            showToast('✓ Đã thêm "' + cleanTitle + '" vào giỏ hàng');
+            showToast(getLocale() === 'vi' ? '✓ Đã thêm "' + cleanTitle + '" vào giỏ hàng' : '✓ Added "' + cleanTitle + '" to cart');
         },
         updateQuantity: function(keyOrId, newQty) {
             var q = parseInt(newQty, 10);

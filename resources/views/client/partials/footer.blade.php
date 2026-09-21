@@ -5,10 +5,18 @@
     $footerSettings = $settings->get('footer_settings', []);
     $contactSettings = $settings->get('contact', []);
 
+    $reqUri = request()->getRequestUri();
+    $switchViUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
+        ? preg_replace('#^/(vi|en)(/|\?|$)#', '/vi$2', $reqUri)
+        : ('/vi' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
+    $switchEnUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
+        ? preg_replace('#^/(vi|en)(/|\?|$)#', '/en$2', $reqUri)
+        : ('/en' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
+
     $companyName = $site->value('footer.company_name') 
         ?? ($footerSettings['company_name'] ?? null) 
         ?? ($settings->get('company_name') ?? null) 
-        ?? 'CÔNG TY TNHH GIẢI PHÁP TỐT';
+        ?? ($locale === 'vi' ? 'CÔNG TY TNHH GIẢI PHÁP TỐT' : 'GOOD SOLUTIONS CO., LTD');
 
     $tagline = $site->value('footer.tagline') 
         ?? ($footerSettings['tagline'] ?? null) 
@@ -143,10 +151,10 @@
                     <x-client::editable key="footer.newsletter_desc" tag="span">{{ $newsletterDesc }}</x-client::editable>
                 </p>
                 
-                <form class="s54-footer__form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận tin từ S54 Coffee!');">
+                <form class="s54-footer__form" onsubmit="event.preventDefault(); alert('{{ $locale === 'vi' ? 'Cảm ơn bạn đã đăng ký nhận tin từ S54 Coffee!' : 'Thank you for subscribing to S54 Coffee!' }}');">
                     <div class="s54-footer__input-wrap">
                         <input type="email" class="s54-footer__input" placeholder="{{ $locale === 'vi' ? 'Nhập địa chỉ email của bạn...' : 'Your email address...' }}" required />
-                        <button type="submit" class="s54-footer__submit-btn" aria-label="Đăng ký">
+                        <button type="submit" class="s54-footer__submit-btn" aria-label="{{ $locale === 'vi' ? 'Đăng ký nhận tin' : 'Subscribe to newsletter' }}">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </button>
                     </div>
@@ -188,7 +196,7 @@
             </div>
 
             <div class="c-lang-switcher c-lang-switcher--footer" data-lang-switcher>
-                <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="c-lang-btn {{ $locale === 'vi' ? 'is-active' : '' }}" aria-label="Tiếng Việt" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
+                <a href="{{ $switchViUrl }}" class="c-lang-btn {{ $locale === 'vi' ? 'is-active' : '' }}" aria-label="Tiếng Việt" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
                     <svg class="s54-flag-icon" width="16" height="11" viewBox="0 0 30 20" style="width: 16px !important; height: 11px !important; min-width: 16px !important; max-width: 16px !important; min-height: 11px !important; max-height: 11px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;">
                         <rect width="30" height="20" fill="#DA251D"/>
                         <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
@@ -196,7 +204,7 @@
                     <span>Tiếng Việt</span>
                 </a>
                 <span class="c-lang-divider">|</span>
-                <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="c-lang-btn {{ $locale === 'en' ? 'is-active' : '' }}" aria-label="English" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
+                <a href="{{ $switchEnUrl }}" class="c-lang-btn {{ $locale === 'en' ? 'is-active' : '' }}" aria-label="English" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 6px !important;">
                     <svg class="s54-flag-icon" width="16" height="11" viewBox="0 0 60 40" style="width: 16px !important; height: 11px !important; min-width: 16px !important; max-width: 16px !important; min-height: 11px !important; max-height: 11px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;">
                         <rect width="60" height="40" fill="#012169"/>
                         <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>

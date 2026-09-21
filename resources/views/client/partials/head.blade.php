@@ -1,11 +1,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>@yield('title', 'S54 COFFEE — Cà Phê Rang Xay & Hòa Tan Thượng Hạng | Good Solutions')</title>
+@php
+    $headLocale = app()->getLocale();
+    $defaultTitle = $headLocale === 'vi' 
+        ? 'S54 COFFEE — Cà Phê Rang Xay & Hòa Tan Thượng Hạng | Good Solutions' 
+        : 'S54 COFFEE — Premium Artisan Roasted & Instant Coffee | Good Solutions';
+    $defaultMetaDesc = $headLocale === 'vi'
+        ? 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1 và giải pháp B2B toàn diện.'
+        : 'S54 COFFEE - Premium artisan coffee brand by Good Solutions Co., Ltd. Pure roasted whole beans, 3in1 instant coffee, and comprehensive B2B solutions.';
+    $defaultOgTitle = $headLocale === 'vi' ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt' : 'S54 COFFEE — The Essence of Vietnamese Coffee';
+@endphp
+<title>@yield('title', $defaultTitle)</title>
 @hasSection('meta_description')
     <meta name="description" content="@yield('meta_description')">
 @else
-    <meta name="description" content="S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1 và giải pháp B2B toàn diện.">
+    <meta name="description" content="{{ $defaultMetaDesc }}">
 @endif
 
 {{-- ── SEO: Google & Bing Verification ──────────────────────── --}}
@@ -25,8 +35,8 @@
 
 {{-- ── SEO: Open Graph (Facebook, Zalo) ─────────────────────── --}}
 @php
-    $ogTitle = View::yieldContent('og_title') ?: View::yieldContent('title', 'S54 COFFEE — Tinh Hoa Cà Phê Việt');
-    $ogDesc  = View::yieldContent('og_description') ?: View::yieldContent('meta_description', 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1 và giải pháp B2B toàn diện.');
+    $ogTitle = View::yieldContent('og_title') ?: View::yieldContent('title', $defaultOgTitle);
+    $ogDesc  = View::yieldContent('og_description') ?: View::yieldContent('meta_description', $defaultMetaDesc);
     $ogImage = View::yieldContent('og_image') ?: asset('assets/images/s54/hero_banner_s54.png');
     $ogType  = View::yieldContent('og_type') ?: 'website';
 @endphp
@@ -36,7 +46,7 @@
 <meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:url" content="{{ $canonicalUrl }}">
 <meta property="og:site_name" content="S54 COFFEE">
-<meta property="og:locale" content="{{ app()->getLocale() === 'vi' ? 'vi_VN' : 'en_US' }}">
+<meta property="og:locale" content="{{ $headLocale === 'vi' ? 'vi_VN' : 'en_US' }}">
 
 {{-- ── SEO: Twitter Card ────────────────────────────────────── --}}
 <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +83,9 @@
     'url' => 'https://s54coffee.com/',
     'logo' => asset('client-assets/images/s54/s54_favicon_512.png'),
     'image' => asset('client-assets/images/s54/s54_logo.png'),
-    'description' => 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1.',
+    'description' => $headLocale === 'vi' 
+        ? 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1.'
+        : 'S54 COFFEE - Premium artisan coffee brand by Good Solutions Co., Ltd. Providing pure roasted whole beans and 3in1 instant coffee.',
     'foundingDate' => '2012',
     'address' => [
         '@type' => 'PostalAddress',

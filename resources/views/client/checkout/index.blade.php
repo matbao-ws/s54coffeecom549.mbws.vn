@@ -593,17 +593,17 @@ h3.s54-summary-title {
                             {{-- Inline VietQR Details Box --}}
                             <div id="s54-inline-vietqr" class="s54-inline-qr-card">
                                 <div class="s54-inline-qr-content">
-                                    <img id="inline-qr-image" class="s54-inline-qr-img" src="https://img.vietqr.io/image/MB-0974933907-compact2.png?amount=0&addInfo=S54%20COFFEE&accountName=CONG%20TY%20TNHH%20GIAI%20PHAP%20TOT" alt="Mã VietQR S54 Coffee">
+                                    <img id="inline-qr-image" class="s54-inline-qr-img" src="https://img.vietqr.io/image/MB-0974933907-compact2.png?amount=0&addInfo=S54%20COFFEE&accountName=CONG%20TY%20TNHH%20GIAI%20PHAP%20TOT" alt="{{ $locale === 'vi' ? 'Mã VietQR S54 Coffee' : 'VietQR S54 Coffee Code' }}">
                                     <div class="s54-inline-qr-info">
                                         <div style="font-weight: 700; color: #2F221A; margin-bottom: 4px; font-size: 13px;">
                                             {{ $locale === 'vi' ? 'Thông tin tài khoản chính thức:' : 'Official Bank Details:' }}
                                         </div>
-                                        <div>• Ngân hàng: <strong>MBBank (Ngân hàng Quân Đội)</strong></div>
-                                        <div>• Số tài khoản: <strong id="stk-val" style="color: #2F221A; font-size: 13.5px;">0974933907</strong>
+                                        <div>• {{ $locale === 'vi' ? 'Ngân hàng:' : 'Bank:' }} <strong>MBBank (Ngân hàng Quân Đội)</strong></div>
+                                        <div>• {{ $locale === 'vi' ? 'Số tài khoản:' : 'Account Number:' }} <strong id="stk-val" style="color: #2F221A; font-size: 13.5px;">0974933907</strong>
                                             <button type="button" class="s54-copy-btn" id="btn-copy-stk">📋 {{ $locale === 'vi' ? 'Sao chép' : 'Copy' }}</button>
                                         </div>
-                                        <div>• Chủ tài khoản: <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong></div>
-                                        <div>• Số tiền thanh toán: <strong id="inline-qr-amount" style="color: #D68E1D; font-size: 13.5px;">0₫</strong></div>
+                                        <div>• {{ $locale === 'vi' ? 'Chủ tài khoản:' : 'Account Holder:' }} <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong></div>
+                                        <div>• {{ $locale === 'vi' ? 'Số tiền thanh toán:' : 'Payment Amount:' }} <strong id="inline-qr-amount" style="color: #D68E1D; font-size: 13.5px;">0₫</strong></div>
                                         <div style="margin-top: 5px; font-size: 11.5px; color: #8A7B70; font-style: italic;">
                                             {{ $locale === 'vi' ? '* Bạn có thể quét mã QR ngay bây giờ hoặc sau khi bấm Xác nhận đặt hàng. Đơn hàng sẽ được xử lý ngay sau khi chuyển khoản.' : '* You can scan now or after clicking Place Order. Your order is processed immediately.' }}
                                         </div>
@@ -624,7 +624,7 @@ h3.s54-summary-title {
             <div class="s54-summary-card">
                 <div class="s54-summary-header">
                     <h3 class="s54-summary-title">
-                        {{ $locale === 'vi' ? 'Đơn Hàng Của Bạn' : 'Order Summary' }}
+                        {{ $locale === 'vi' ? 'Đơn Hàng Của Bạn' : 'Your Order Summary' }}
                     </h3>
                     <span id="checkout-summary-count" class="s54-summary-count">(0 {{ $locale === 'vi' ? 'sản phẩm' : 'items' }})</span>
                 </div>
@@ -652,9 +652,9 @@ h3.s54-summary-title {
 
                 {{-- Trust Badges --}}
                 <div class="s54-trust-box">
-                    <div style="margin-bottom: 4px;">✓ <strong>{{ $locale === 'vi' ? '100% Cà phê nguyên chất:' : '100% Pure Coffee:' }}</strong> Không phụ gia, không tẩm ướp.</div>
-                    <div style="margin-bottom: 4px;">✓ <strong>{{ $locale === 'vi' ? 'Đổi trả miễn phí:' : 'Free Returns:' }}</strong> Trong vòng 7 ngày nếu lỗi sản xuất.</div>
-                    <div>📞 <strong>Hotline hỗ trợ:</strong> <a href="tel:0974933907" style="color: #2F221A; font-weight: 700; text-decoration: none;">0974.933.907</a></div>
+                    <div style="margin-bottom: 4px;">✓ <strong>{{ $locale === 'vi' ? '100% Cà phê nguyên chất:' : '100% Pure Coffee:' }}</strong> {{ $locale === 'vi' ? 'Không phụ gia, không tẩm ướp.' : 'No additives, 100% natural.' }}</div>
+                    <div style="margin-bottom: 4px;">✓ <strong>{{ $locale === 'vi' ? 'Đổi trả miễn phí:' : 'Free Returns:' }}</strong> {{ $locale === 'vi' ? 'Trong vòng 7 ngày nếu lỗi sản xuất.' : 'Within 7 days for manufacturing defects.' }}</div>
+                    <div>📞 <strong>{{ $locale === 'vi' ? 'Hotline hỗ trợ:' : 'Support Hotline:' }}</strong> <a href="tel:0974933907" style="color: #2F221A; font-weight: 700; text-decoration: none;">0974.933.907</a></div>
                 </div>
             </div>
 
@@ -689,7 +689,7 @@ h3.s54-summary-title {
     </div>
 </div>
 
-<div id="s54-copy-toast" class="s54-copy-toast">✓ Đã sao chép số tài khoản</div>
+<div id="s54-copy-toast" class="s54-copy-toast">{{ $locale === 'vi' ? '✓ Đã sao chép số tài khoản' : '✓ Account number copied' }}</div>
 @endsection
 
 @push('scripts')
@@ -840,7 +840,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const btnSubmit = document.getElementById('btn-submit-order');
             btnSubmit.disabled = true;
-            btnSubmit.textContent = isVi ? 'Đang xử lý đặt hàng...' : 'Processing...';
+            btnSubmit.textContent = '{{ $locale === "vi" ? "Đang xử lý đặt hàng..." : "Processing..." }}';
 
             const name = document.getElementById('cust-name').value.trim();
             const phone = document.getElementById('cust-phone').value.trim();
@@ -867,8 +867,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     pid = legacyMap[pid];
                 } else if (pid > 1000) {
                     const t = (it.title || it.name || '').toLowerCase();
-                    if (t.includes('12 gói') || t.includes('dùng thử') || t.includes('5 gói')) pid = 23;
-                    else if (t.includes('456g') || t.includes('túi')) pid = 22;
+                    if (t.includes('12 gói') || t.includes('dùng thử') || t.includes('5 gói') || t.includes('trial') || t.includes('12 sachets')) pid = 23;
+                    else if (t.includes('456g') || t.includes('túi') || t.includes('bag') || t.includes('24 sachets')) pid = 22;
                     else if (t.includes('combo 2')) pid = 10;
                     else if (t.includes('250g')) pid = 12;
                     else if (t.includes('500g')) pid = 13;
@@ -919,7 +919,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (res.ok && data.success && data.data) {
                     orderCode = data.data.order_number || data.data.code || data.data.order_code;
                 } else {
-                    let errMsg = data.message || (isVi ? 'Không thể hoàn tất đơn hàng. Vui lòng thử lại.' : 'Could not complete order. Please try again.');
+                    let errMsg = data.message || '{{ $locale === "vi" ? "Không thể hoàn tất đơn hàng. Vui lòng thử lại." : "Could not complete order. Please try again." }}';
                     if (data.errors && typeof data.errors === 'object') {
                         const firstKey = Object.keys(data.errors)[0];
                         if (firstKey && data.errors[firstKey] && data.errors[firstKey][0]) {
@@ -930,13 +930,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } catch (err) {
                 console.error('[Checkout] API call exception', err);
-                apiError = isVi ? 'Lỗi kết nối máy chủ khi tạo đơn. Vui lòng thử lại.' : 'Server connection error. Please try again.';
+                apiError = '{{ $locale === "vi" ? "Lỗi kết nối máy chủ khi tạo đơn. Vui lòng thử lại." : "Server connection error. Please try again." }}';
             }
 
             if (apiError) {
                 alert(apiError);
                 btnSubmit.disabled = false;
-                btnSubmit.textContent = isVi ? 'XÁC NHẬN ĐẶT HÀNG' : 'PLACE ORDER NOW';
+                btnSubmit.textContent = '{{ $locale === "vi" ? "XÁC NHẬN ĐẶT HÀNG" : "PLACE ORDER NOW" }}';
                 return;
             }
 
@@ -954,12 +954,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
                         <img src="${vietQrUrl}" alt="VietQR S54 Coffee" style="width: 120px; height: 120px; border-radius: 6px; border: 1px solid #EBE7E1; background: #FFFFFF; object-fit: contain; flex-shrink: 0;">
                         <div style="flex: 1; min-width: 170px; font-size: 12.5px; line-height: 1.55;">
-                            <strong style="color: #2F221A; font-size: 13px;">Quét mã VietQR chuyển khoản nhanh:</strong><br>
-                            • Ngân hàng: <strong>MB Bank (Ngân hàng Quân Đội)</strong><br>
-                            • Số tài khoản: <strong>0974933907</strong><br>
-                            • Chủ tài khoản: <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong><br>
-                            • Số tiền: <strong style="color: #D68E1D;">${formatVND(currentGrandTotal)}</strong><br>
-                            • Nội dung chuyển khoản: <strong style="color: #2F221A; background: #FFF3D6; padding: 2px 6px; border-radius: 4px; border: 1px solid #EAD8B0;">${orderCode}</strong>
+                            <strong style="color: #2F221A; font-size: 13px;">${isVi ? 'Quét mã VietQR chuyển khoản nhanh:' : 'Scan VietQR to pay via bank transfer:'}</strong><br>
+                            • ${isVi ? 'Ngân hàng:' : 'Bank:'} <strong>MB Bank (Ngân hàng Quân Đội)</strong><br>
+                            • ${isVi ? 'Số tài khoản:' : 'Account Number:'} <strong>0974933907</strong><br>
+                            • ${isVi ? 'Chủ tài khoản:' : 'Account Holder:'} <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong><br>
+                            • ${isVi ? 'Số tiền:' : 'Amount:'} <strong style="color: #D68E1D;">${formatVND(currentGrandTotal)}</strong><br>
+                            • ${isVi ? 'Nội dung CK:' : 'Transfer Reference:'} <strong style="color: #2F221A; background: #FFF3D6; padding: 2px 6px; border-radius: 4px; border: 1px solid #EAD8B0;">${orderCode}</strong>
                         </div>
                     </div>
                 `;

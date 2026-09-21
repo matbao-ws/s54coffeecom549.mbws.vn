@@ -57,6 +57,16 @@
         </nav>
 
         {{-- Right Actions: Phone Hotline, Lang Switch, Cart --}}
+@php
+    $reqUri = request()->getRequestUri();
+    $switchViUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
+        ? preg_replace('#^/(vi|en)(/|\?|$)#', '/vi$2', $reqUri)
+        : ('/vi' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
+    $switchEnUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
+        ? preg_replace('#^/(vi|en)(/|\?|$)#', '/en$2', $reqUri)
+        : ('/en' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
+@endphp
+
         <ul class="c-header__additional" style="display: flex; align-items: center; gap: 10px; list-style: none; margin: 0; padding: 0;">
             <li class="c-header__additional-item is-desktop-only" style="list-style: none;">
                 <a href="tel:0974933907" class="c-header__phone-link" style="color: #FAF6F1; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; height: 32px; padding: 0 12px; border-radius: 16px; background: rgba(214, 142, 29, 0.1); border: 1px solid rgba(214, 142, 29, 0.3); transition: all 0.2s ease;">
@@ -70,14 +80,14 @@
             {{-- Header Language Switcher Pill (Universal Desktop & Mobile) --}}
             <li class="c-header__additional-item" style="list-style: none;">
                 <div class="s54-header-lang-pill" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 2px !important; padding: 2px 4px !important; border-radius: 16px !important; background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.14) !important; height: 30px !important; box-sizing: border-box !important; flex-shrink: 0 !important;">
-                    <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 4px !important; padding: 3px 8px !important; border-radius: 12px !important; font-size: 11.5px !important; font-weight: 700 !important; text-decoration: none !important; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }} !important; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'transparent' }} !important; transition: all 0.2s ease !important; line-height: 1 !important; white-space: nowrap !important; flex-shrink: 0 !important;" title="Tiếng Việt">
+                    <a href="{{ $switchViUrl }}" class="s54-lang-btn {{ app()->getLocale() === 'vi' ? 'is-active' : '' }}" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 4px !important; padding: 3px 8px !important; border-radius: 12px !important; font-size: 11.5px !important; font-weight: 700 !important; text-decoration: none !important; color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }} !important; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'transparent' }} !important; transition: all 0.2s ease !important; line-height: 1 !important; white-space: nowrap !important; flex-shrink: 0 !important;" title="Tiếng Việt">
                         <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px !important; flex-shrink: 0 !important; display: inline-block !important; vertical-align: middle !important;">
                             <rect width="30" height="20" fill="#DA251D"/>
                             <polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/>
                         </svg>
                         <span style="display: inline-block !important; line-height: 1 !important; font-size: 11px !important; font-weight: 700 !important;">VI</span>
                     </a>
-                    <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 4px !important; padding: 3px 8px !important; border-radius: 12px !important; font-size: 11.5px !important; font-weight: 700 !important; text-decoration: none !important; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }} !important; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'transparent' }} !important; transition: all 0.2s ease !important; line-height: 1 !important; white-space: nowrap !important; flex-shrink: 0 !important;" title="English">
+                    <a href="{{ $switchEnUrl }}" class="s54-lang-btn {{ app()->getLocale() === 'en' ? 'is-active' : '' }}" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 4px !important; padding: 3px 8px !important; border-radius: 12px !important; font-size: 11.5px !important; font-weight: 700 !important; text-decoration: none !important; color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : 'rgba(250,246,241,0.65)' }} !important; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'transparent' }} !important; transition: all 0.2s ease !important; line-height: 1 !important; white-space: nowrap !important; flex-shrink: 0 !important;" title="English">
                         <svg class="s54-flag-icon" width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px !important; flex-shrink: 0 !important; display: inline-block !important; vertical-align: middle !important; overflow: hidden !important;">
                             <rect width="60" height="40" fill="#012169"/>
                             <path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/>
@@ -141,13 +151,13 @@
                     <span>📞</span> <span>Hotline: 0974.933.907</span>
                 </a>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 12px; color: #BAADA1; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Ngôn ngữ:</span>
+                    <span style="font-size: 12px; color: #BAADA1; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">{{ app()->getLocale() === 'vi' ? 'Ngôn ngữ:' : 'Language:' }}</span>
                     <div style="display: flex; gap: 8px; font-weight: 700; font-size: 12px;">
-                        <a href="{{ url('/vi' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : '#FAF6F1' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'rgba(255,255,255,0.08)' }}; text-decoration: none; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;">
+                        <a href="{{ $switchViUrl }}" style="color: {{ app()->getLocale() === 'vi' ? '#FFFFFF' : '#FAF6F1' }}; background: {{ app()->getLocale() === 'vi' ? '#D68E1D' : 'rgba(255,255,255,0.08)' }}; text-decoration: none; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;">
                             <svg width="15" height="10" viewBox="0 0 30 20" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle;"><rect width="30" height="20" fill="#DA251D"/><polygon points="15,4 16.35,8.15 20.71,8.15 17.18,10.71 18.53,14.85 15,12.29 11.47,14.85 12.82,10.71 9.29,8.15 13.65,8.15" fill="#FFFF00"/></svg>
                             <span>VI</span>
                         </a>
-                        <a href="{{ url('/en' . substr(request()->getRequestUri(), 3)) }}" style="color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : '#FAF6F1' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'rgba(255,255,255,0.08)' }}; text-decoration: none; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;">
+                        <a href="{{ $switchEnUrl }}" style="color: {{ app()->getLocale() === 'en' ? '#FFFFFF' : '#FAF6F1' }}; background: {{ app()->getLocale() === 'en' ? '#D68E1D' : 'rgba(255,255,255,0.08)' }}; text-decoration: none; padding: 5px 10px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;">
                             <svg width="15" height="10" viewBox="0 0 60 40" style="width: 15px !important; height: 10px !important; min-width: 15px !important; max-width: 15px !important; min-height: 10px !important; max-height: 10px !important; border-radius: 1.5px; flex-shrink: 0; display: inline-block; vertical-align: middle; overflow: hidden;"><rect width="60" height="40" fill="#012169"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#FFFFFF" stroke-width="8"/><path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0 v40 M0 20 h60" stroke="#FFFFFF" stroke-width="12"/><path d="M30 0 v40 M0 20 h60" stroke="#C8102E" stroke-width="6"/></svg>
                             <span>EN</span>
                         </a>

@@ -4,7 +4,7 @@
         <h3 style="margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; color: #2F221A; text-transform: uppercase; letter-spacing: 0.5px;">
             🛒 {{ app()->getLocale() === 'vi' ? 'Giỏ Hàng Của Bạn' : 'Your Cart' }} (<span id="s54-drawer-count">0</span>)
         </h3>
-        <button type="button" id="s54-cart-close" style="background: none; border: none; font-size: 22px; cursor: pointer; color: #2F221A; line-height: 1;" aria-label="Đóng">&times;</button>
+        <button type="button" id="s54-cart-close" style="background: none; border: none; font-size: 22px; cursor: pointer; color: #2F221A; line-height: 1;" aria-label="{{ app()->getLocale() === 'vi' ? 'Đóng' : 'Close' }}">&times;</button>
     </div>
 
     {{-- Free Shipping Bar --}}

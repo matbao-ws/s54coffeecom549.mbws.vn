@@ -22,7 +22,7 @@
         <main id="client-page-{{ $page->id }}"
               @if(auth()->user()?->canEditClientContent()) data-client-editable-root @endif
               translate="no" class="notranslate" style="line-height: 1.8; color: #4A3A2F; font-size: 15px; background: #FFFFFF; padding: clamp(24px, 4vw, 48px); border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #EAE2D8;">
-            {!! $html ?: '<p style="color: #8A7B70; text-align: center;">Nội dung trang đang được cập nhật.</p>' !!}
+            {!! $html ?: '<p style="color: #8A7B70; text-align: center;">' . (app()->getLocale() === 'vi' ? 'Nội dung trang đang được cập nhật.' : 'This page content is currently being updated.') . '</p>' !!}
         </main>
     </div>
 @endsection

@@ -66,7 +66,7 @@
                     style="position: absolute; top:0; left:0; width: 100%; height: 100%; object-fit: cover;"
                 >
                     <source src="{{ $url }}" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ phát video.
+                    {{ app()->getLocale() === 'vi' ? 'Trình duyệt của bạn không hỗ trợ phát video.' : 'Your browser does not support the video tag.' }}
                 </video>
             </div>
         @endif

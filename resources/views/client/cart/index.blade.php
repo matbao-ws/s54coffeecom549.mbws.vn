@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (emptyBox) emptyBox.style.display = 'block';
             if (filledBox) filledBox.style.display = 'none';
             if (freeshipBar) freeshipBar.style.width = '0%';
-            if (freeshipMsg) freeshipMsg.textContent = isVi ? 'Thêm sản phẩm để nhận ưu đãi MIỄN PHÍ VẬN CHUYỂN toàn quốc' : 'Add items for free shipping';
+            if (freeshipMsg) freeshipMsg.textContent = '{{ $locale === "vi" ? "Thêm sản phẩm để nhận ưu đãi MIỄN PHÍ VẬN CHUYỂN toàn quốc" : "Add items to qualify for FREE nationwide shipping" }}';
             return;
         }
 
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${formatVND(line)}
                     </td>
                     <td style="padding: 18px 20px; vertical-align: middle; text-align: right;">
-                        <button type="button" class="btn-qty-mod" data-key="${itemKey}" data-qty="0" aria-label="Xóa" style="background: none; border: none; font-size: 18px; color: #A3968C; cursor: pointer; padding: 4px 8px; line-height: 1;">&times;</button>
+                        <button type="button" class="btn-qty-mod" data-key="${itemKey}" data-qty="0" aria-label="${isVi ? 'Xóa' : 'Remove'}" style="background: none; border: none; font-size: 18px; color: #A3968C; cursor: pointer; padding: 4px 8px; line-height: 1;">&times;</button>
                     </td>
                 </tr>
             `;
@@ -188,11 +188,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Free shipping progress calculation
         if (freeshipMsg && freeshipBar) {
             if (subtotal >= FREE_SHIP_THRESHOLD) {
-                freeshipMsg.innerHTML = isVi ? '🎉 <strong>Chúc mừng! Bạn đã được MIỄN PHÍ VẬN CHUYỂN toàn quốc!</strong>' : '🎉 <strong>Congratulations! You qualify for FREE Delivery!</strong>';
+                freeshipMsg.innerHTML = '{!! $locale === "vi" ? "🎉 <strong>Chúc mừng! Bạn đã được MIỄN PHÍ VẬN CHUYỂN toàn quốc!</strong>" : "🎉 <strong>Congratulations! You qualify for FREE Delivery!</strong>" !!}';
                 freeshipBar.style.width = '100%';
             } else {
                 const diff = FREE_SHIP_THRESHOLD - subtotal;
-                freeshipMsg.innerHTML = isVi ? `Thêm <strong>${formatVND(diff)}</strong> nữa để được <strong>MIỄN PHÍ VẬN CHUYỂN</strong> toàn quốc!` : `Add <strong>${formatVND(diff)}</strong> more for <strong>FREE Shipping</strong>!`;
+                freeshipMsg.innerHTML = '{!! $locale === "vi" ? "Thêm <strong>" : "Add <strong>" !!}' + formatVND(diff) + '{!! $locale === "vi" ? "</strong> nữa để được <strong>MIỄN PHÍ VẬN CHUYỂN</strong> toàn quốc!" : "</strong> more for <strong>FREE Shipping</strong>!" !!}';
                 freeshipBar.style.width = Math.min(100, Math.max(8, (subtotal / FREE_SHIP_THRESHOLD) * 100)) + '%';
             }
         }

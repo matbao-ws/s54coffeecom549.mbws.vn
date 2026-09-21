@@ -13,7 +13,7 @@
     $companyName = $site->value('footer.company_name') 
         ?? ($footerSettings['company_name'] ?? null) 
         ?? ($settings->get('company_name') ?? null) 
-        ?? 'CÔNG TY TNHH GIẢI PHÁP TỐT';
+        ?? ($locale === 'vi' ? 'CÔNG TY TNHH GIẢI PHÁP TỐT' : 'GOOD SOLUTIONS CO., LTD');
 
     $tagline = $site->value('footer.tagline') 
         ?? ($footerSettings['tagline'] ?? null) 
@@ -54,8 +54,8 @@
     <section class="s54-page-hero" style="background: radial-gradient(circle at center, rgba(47,34,26,0.82) 0%, rgba(26,18,14,0.95) 100%), url('{{ $contactBanner }}') center/cover no-repeat; padding: 90px 20px 70px; text-align: center; color: #FAF6F1; position: relative;">
         @if($canEditBanner)
             <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
-                <button type="button" class="s54-edit-banner-trigger" data-block-key="contact.hero.banner" data-block-type="image" src="{{ $contactBanner }}" title="Click để thay đổi ảnh nền banner trang Liên Hệ" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                    <span>📷 Đổi ảnh banner</span>
+                <button type="button" class="s54-edit-banner-trigger" data-block-key="contact.hero.banner" data-block-type="image" src="{{ $contactBanner }}" title="{{ $locale === 'vi' ? 'Click để thay đổi ảnh nền banner trang Liên Hệ' : 'Click to change Contact banner' }}" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                    <span>📷 {{ $locale === 'vi' ? 'Đổi ảnh banner' : 'Change banner' }}</span>
                 </button>
             </div>
         @endif
@@ -115,7 +115,7 @@
                                 </div>
                                 <div>
                                     <strong style="display: block; font-size: 13.5px; color: #2F221A; margin-bottom: 3px;">
-                                        Hotline Tư Vấn / Đặt Hàng
+                                        {{ $locale === 'vi' ? 'Hotline Tư Vấn / Đặt Hàng' : 'Consultation / Order Hotline' }}
                                     </strong>
                                     <span style="font-size: 14px; color: #5C4A3E; font-weight: 600;">
                                         <x-client::editable key="footer.hotline" tag="span">{{ $hotline }}</x-client::editable>
@@ -130,7 +130,7 @@
                                 </div>
                                 <div>
                                     <strong style="display: block; font-size: 13.5px; color: #2F221A; margin-bottom: 3px;">
-                                        Email Hợp Tác & Chăm Sóc Khách Hàng
+                                        {{ $locale === 'vi' ? 'Email Hợp Tác & Chăm Sóc Khách Hàng' : 'Partnership & Support Email' }}
                                     </strong>
                                     <a href="mailto:{{ $email }}" style="font-size: 14px; color: #D68E1D; text-decoration: none; font-weight: 500;">
                                         <x-client::editable key="footer.email" tag="span">{{ $email }}</x-client::editable>
@@ -145,7 +145,7 @@
                                 </div>
                                 <div>
                                     <strong style="display: block; font-size: 13.5px; color: #2F221A; margin-bottom: 3px;">
-                                        Website Chính Thức
+                                        {{ $locale === 'vi' ? 'Website Chính Thức' : 'Official Website' }}
                                     </strong>
                                     <a href="https://{{ ltrim($website, 'https://') }}" target="_blank" rel="noopener" style="font-size: 14px; color: #D68E1D; text-decoration: none; font-weight: 500;">
                                         <x-client::editable key="footer.website" tag="span">{{ $website }}</x-client::editable>
@@ -267,7 +267,7 @@
                 </div>
                 <div style="width: 100%; height: 420px; background: #eee;">
                     <iframe 
-                        title="Bản đồ chỉ đường S54 Coffee - Manhattan Vinhomes Grand Park"
+                        title="{{ $locale === 'vi' ? 'Bản đồ chỉ đường S54 Coffee - Manhattan Vinhomes Grand Park' : 'S54 Coffee Location Map - Manhattan Vinhomes Grand Park' }}"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.443670984857!2d106.8400000!3d10.8450000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175211993444445%3A0x2a00000000000000!2sVinhomes%20Grand%20Park%20Manhattan!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s" 
                         width="100%" 
                         height="420" 
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 phone: formData.get('phone'),
                 email: formData.get('email') || '',
                 message: formData.get('message'),
-                service_type: formData.get('meta[service_type]') || 'Tư vấn chung',
+                service_type: formData.get('meta[service_type]') || '{{ $locale === "vi" ? "Tư vấn chung" : "General Inquiry" }}',
             };
 
             fetch('/api/public/contact', {

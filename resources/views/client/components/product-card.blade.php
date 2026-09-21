@@ -12,7 +12,8 @@
     }
     
     $title = is_array($product->name) ? ($product->name[$locale] ?? $product->name['vi'] ?? '') : ($product->getTranslation('name', $locale, false) ?: $product->name);
-    $excerpt = is_array($product->short_description) ? ($product->short_description[$locale] ?? $product->short_description['vi'] ?? '') : ($product->getTranslation('short_description', $locale, false) ?: $product->short_description ?: 'Cà phê rang mộc thượng hạng S54');
+    $defaultExcerpt = $locale === 'vi' ? 'Cà phê rang mộc thượng hạng S54' : 'Premium artisan roasted S54 coffee';
+    $excerpt = is_array($product->short_description) ? ($product->short_description[$locale] ?? ($locale === 'vi' ? ($product->short_description['vi'] ?? $defaultExcerpt) : $defaultExcerpt)) : ($product->getTranslation('short_description', $locale, false) ?: $defaultExcerpt);
     $badge = $locale === 'vi' ? 'ĐỘC QUYỀN ONLINE' : 'ONLINE EXCLUSIVE';
     $catSlug = $product->category?->slug ?? '';
 @endphp
@@ -28,7 +29,7 @@
             
             <h3 class="o-product-thumbnail__title">{{ $title }}</h3>
             
-            <div class="s54-thumb-reviews-bar" aria-label="Đánh giá 4.8 trên 5 sao (765 đánh giá)" style="display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: center !important; gap: 5px !important; margin: 6px auto 8px auto !important; width: 100% !important; line-height: 1 !important;">
+            <div class="s54-thumb-reviews-bar" aria-label="{{ $locale === 'vi' ? 'Đánh giá 4.8 trên 5 sao (765 đánh giá)' : 'Rated 4.8 out of 5 stars (765 reviews)' }}" style="display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: center !important; gap: 5px !important; margin: 6px auto 8px auto !important; width: 100% !important; line-height: 1 !important;">
               <div class="s54-thumb-stars" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 2.5px !important; flex-shrink: 0 !important; white-space: nowrap !important;">
                 <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" style="width: 13px !important; height: 13px !important; min-width: 13px !important; max-width: 13px !important; min-height: 13px !important; max-height: 13px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>
                 <svg class="s54-thumb-star" viewBox="0 0 20 20" fill="#D68E1D" width="13" height="13" style="width: 13px !important; height: 13px !important; min-width: 13px !important; max-width: 13px !important; min-height: 13px !important; max-height: 13px !important; display: inline-block !important; vertical-align: middle !important; fill: #D68E1D !important; flex-shrink: 0 !important;" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.8 2.6-5.3z"/></svg>

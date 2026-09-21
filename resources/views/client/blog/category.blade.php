@@ -18,7 +18,7 @@
     @if($posts->isEmpty())
         <div class="client-shell client-empty">
             <x-client::editable key="blog.category.empty" tag="p">
-                Chuyên mục này chưa có bài viết nào.
+                {{ app()->getLocale() === 'vi' ? 'Chuyên mục này chưa có bài viết nào.' : 'No articles found in this category.' }}
             </x-client::editable>
         </div>
     @else

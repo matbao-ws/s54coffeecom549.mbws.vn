@@ -14,8 +14,8 @@
 <section class="s54-blog-hero" style="background: radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url('{{ $blogBanner }}') center/cover no-repeat; padding: 80px 20px 60px; text-align: center; color: #FAF6F1; position: relative;">
     @if($canEdit)
         <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
-            <button type="button" class="s54-edit-banner-trigger" data-block-key="blog.hero.banner" data-block-type="image" src="{{ $blogBanner }}" title="Click để thay đổi ảnh nền banner trang Cẩm nang" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <span>📷 Đổi ảnh banner</span>
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="blog.hero.banner" data-block-type="image" src="{{ $blogBanner }}" title="{{ $locale === 'vi' ? 'Click để thay đổi ảnh nền banner trang Cẩm nang' : 'Click to change Journal banner' }}" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 {{ $locale === 'vi' ? 'Đổi ảnh banner' : 'Change banner' }}</span>
             </button>
         </div>
     @endif
