@@ -169,12 +169,12 @@
 <section class="c-stories" style="background-color: #FAF8F5; padding: 90px 20px;">
     <div class="o-wrapper" style="max-width: 1100px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 12px;">
+            <x-client::editable key="story.milestones.subtitle" tag="span" style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 12px;">
                 {{ $locale === 'vi' ? 'HÀNH TRÌNH PHÁT TRIỂN' : 'OUR DEVELOPMENT MILESTONES' }}
-            </span>
-            <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(32px, 4.5vw, 44px); font-weight: 700; color: #2F221A;">
+            </x-client::editable>
+            <x-client::editable key="story.milestones.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(32px, 4.5vw, 44px); font-weight: 700; color: #2F221A;">
                 {{ $locale === 'vi' ? 'Các Cột Mốc Đột Phá Của S54 Coffee' : 'Key Breakthrough Milestones' }}
-            </h2>
+            </x-client::editable>
         </div>
 
         <div class="c-stories__story">
@@ -184,15 +184,17 @@
                     <x-client::editable-image key="story.milestone.1.image" src="{{ asset('client-assets/images/s54/story_farm_origin.jpg') }}" alt="Nghiên cứu & phát triển cà phê S54" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; height: auto;" />
                 </div>
                 <div class="c-stories__story-block-text">
-                    <div class="c-stories__story-block-year">Cột Mốc 1</div>
-                    <h3 class="c-stories__story-block-title">
+                    <x-client::editable key="story.milestone.1.year" tag="div" class="c-stories__story-block-year">
+                        {{ $locale === 'vi' ? 'Cột Mốc 1' : 'Milestone 1' }}
+                    </x-client::editable>
+                    <x-client::editable key="story.milestone.1.title" tag="h3" class="c-stories__story-block-title">
                         {{ $locale === 'vi' ? 'Nghiên Cứu & Phát Triển Chuẩn Vị Tây Nguyên' : 'R&D and Authentic Taste Formulation' }}
-                    </h3>
-                    <p class="c-stories__story-block-body">
+                    </x-client::editable>
+                    <x-client::editable key="story.milestone.1.body" tag="p" class="c-stories__story-block-body">
                         {{ $locale === 'vi' 
                             ? 'Nghiên cứu và phát triển thành công dòng sản phẩm cà phê hòa tan 3in1 tiện lợi & cà phê hạt rang chất lượng cao chuẩn vị thủ phủ Tây Nguyên.' 
                             : 'Successfully formulated authentic instant 3-in-1 and premium roasted whole beans from Central Highlands.' }}
-                    </p>
+                    </x-client::editable>
                 </div>
             </div>
 
@@ -202,15 +204,17 @@
                     <x-client::editable-image key="story.milestone.2.image" src="{{ asset('client-assets/images/s54/s54_cafe_nhabe_1.jpg') }}" alt="Mở rộng hệ thống phân phối S54 Coffee" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; height: auto;" />
                 </div>
                 <div class="c-stories__story-block-text">
-                    <div class="c-stories__story-block-year">Cột Mốc 2</div>
-                    <h3 class="c-stories__story-block-title">
+                    <x-client::editable key="story.milestone.2.year" tag="div" class="c-stories__story-block-year">
+                        {{ $locale === 'vi' ? 'Cột Mốc 2' : 'Milestone 2' }}
+                    </x-client::editable>
+                    <x-client::editable key="story.milestone.2.title" tag="h3" class="c-stories__story-block-title">
                         {{ $locale === 'vi' ? 'Mở Rộng Hệ Thống Phân Phối & Lan Tỏa Thương Hiệu' : 'Expanding Distribution & Brand Outreach' }}
-                    </h3>
-                    <p class="c-stories__story-block-body">
+                    </x-client::editable>
+                    <x-client::editable key="story.milestone.2.body" tag="p" class="c-stories__story-block-body">
                         {{ $locale === 'vi' 
                             ? 'Mở rộng hệ thống phân phối, phát triển chuỗi cửa hàng trải nghiệm và định hình thông điệp thương hiệu S54 Coffee "New Coffee, New Income".' 
                             : 'Expanded commercial distribution networks and established the brand message "New Coffee, New Income".' }}
-                    </p>
+                    </x-client::editable>
                 </div>
             </div>
 
@@ -220,15 +224,17 @@
                     <x-client::editable-image key="story.milestone.3.image" src="{{ asset('client-assets/images/s54/s54_office_vinhome_2.jpg') }}" alt="Số hóa thương hiệu S54 Coffee" loading="lazy" style="border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); width: 100%; height: auto;" />
                 </div>
                 <div class="c-stories__story-block-text">
-                    <div class="c-stories__story-block-year">Cột Mốc 3</div>
-                    <h3 class="c-stories__story-block-title">
+                    <x-client::editable key="story.milestone.3.year" tag="div" class="c-stories__story-block-year">
+                        {{ $locale === 'vi' ? 'Cột Mốc 3' : 'Milestone 3' }}
+                    </x-client::editable>
+                    <x-client::editable key="story.milestone.3.title" tag="h3" class="c-stories__story-block-title">
                         {{ $locale === 'vi' ? 'Số Hóa Thương Hiệu & Nền Tảng Đa Kênh Hiện Đại' : 'Digital Transformation & Omnichannel Commerce' }}
-                    </h3>
-                    <p class="c-stories__story-block-body">
+                    </x-client::editable>
+                    <x-client::editable key="story.milestone.3.body" tag="p" class="c-stories__story-block-body">
                         {{ $locale === 'vi' 
                             ? 'Số hóa toàn diện thương hiệu, hoàn thiện website bán hàng chuyên nghiệp, tích hợp Core Admin quản trị hiện đại và mở rộng kết nối đối tác quốc tế.' 
                             : 'Fully digitized brand operations with a professional e-commerce platform and modern Core Admin backend.' }}
-                    </p>
+                    </x-client::editable>
                 </div>
             </div>
         </div>
@@ -239,36 +245,36 @@
 <section style="background-color: #F3EEE8; padding: 80px 20px;">
     <div class="o-wrapper" style="max-width: 1200px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 48px;">
-            <span style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">
+            <x-client::editable key="story.gallery.subtitle" tag="span" style="color: #D68E1D; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px;">
                 {{ $locale === 'vi' ? 'HỆ THỐNG VĂN PHÒNG & CỬA HÀNG THỰC TẾ' : 'OUR OFFICES & COFFEE SHOPS' }}
-            </span>
-            <h2 style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(28px, 4vw, 38px); font-weight: 700; color: #2F221A;">
+            </x-client::editable>
+            <x-client::editable key="story.gallery.title" tag="h2" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: clamp(28px, 4vw, 38px); font-weight: 700; color: #2F221A;">
                 {{ $locale === 'vi' ? 'Không Gian Trải Nghiệm S54 Coffee' : 'Experience S54 Coffee Spaces' }}
-            </h2>
+            </x-client::editable>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
             <div style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
                 <x-client::editable-image key="story.gallery.1.image" src="{{ asset('client-assets/images/s54/s54_office_vinhome_1.jpg') }}" alt="Văn phòng S54 Coffee Vinhomes Grand Park" style="width: 100%; height: 240px; object-fit: cover;" />
                 <div style="padding: 16px 20px;">
-                    <strong style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">Văn Phòng S54 Coffee</strong>
-                    <span style="color: #8A7B70; font-size: 13px;">The Manhattan, Vinhomes Grand Park, TP. Thủ Đức</span>
+                    <x-client::editable key="story.gallery.1.title" tag="strong" style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">{{ $locale === 'vi' ? 'Văn Phòng S54 Coffee' : 'S54 Coffee Corporate Office' }}</x-client::editable>
+                    <x-client::editable key="story.gallery.1.desc" tag="span" style="color: #8A7B70; font-size: 13px; display: block;">{{ $locale === 'vi' ? 'The Manhattan, Vinhomes Grand Park, TP. Thủ Đức' : 'The Manhattan, Vinhomes Grand Park, Thu Duc City' }}</x-client::editable>
                 </div>
             </div>
 
             <div style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
                 <x-client::editable-image key="story.gallery.2.image" src="{{ asset('client-assets/images/s54/s54_office_vinhome_3.jpg') }}" alt="Khu làm việc S54 Coffee" style="width: 100%; height: 240px; object-fit: cover;" />
                 <div style="padding: 16px 20px;">
-                    <strong style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">Trụ Sở Điều Hành</strong>
-                    <span style="color: #8A7B70; font-size: 13px;">Không gian làm việc sáng tạo & đào tạo barista</span>
+                    <x-client::editable key="story.gallery.2.title" tag="strong" style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">{{ $locale === 'vi' ? 'Trụ Sở Điều Hành' : 'Operations Headquarters' }}</x-client::editable>
+                    <x-client::editable key="story.gallery.2.desc" tag="span" style="color: #8A7B70; font-size: 13px; display: block;">{{ $locale === 'vi' ? 'Không gian làm việc sáng tạo & đào tạo barista' : 'Creative workspace & barista training center' }}</x-client::editable>
                 </div>
             </div>
 
             <div style="background: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
                 <x-client::editable-image key="story.gallery.3.image" src="{{ asset('client-assets/images/s54/s54_cafe_nhabe_2.jpg') }}" alt="Quán Cafe S54 tại Nhà Bè" style="width: 100%; height: 240px; object-fit: cover;" />
                 <div style="padding: 16px 20px;">
-                    <strong style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">Quán Cafe S54 Coffee</strong>
-                    <span style="color: #8A7B70; font-size: 13px;">Điểm trải nghiệm cà phê nguyên bản tại Nhà Bè, TP.HCM</span>
+                    <x-client::editable key="story.gallery.3.title" tag="strong" style="color: #2F221A; font-size: 14.5px; display: block; margin-bottom: 4px;">{{ $locale === 'vi' ? 'Quán Cafe S54 Coffee' : 'S54 Coffee House' }}</x-client::editable>
+                    <x-client::editable key="story.gallery.3.desc" tag="span" style="color: #8A7B70; font-size: 13px; display: block;">{{ $locale === 'vi' ? 'Điểm trải nghiệm cà phê nguyên bản tại Nhà Bè, TP.HCM' : 'Authentic coffee experience destination in Nha Be, HCMC' }}</x-client::editable>
                 </div>
             </div>
         </div>

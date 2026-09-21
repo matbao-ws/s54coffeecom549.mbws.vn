@@ -155,7 +155,13 @@
     <div class="c-text-and-image2__text-content">
       <x-client::editable key="wholesale.intro.title" tag="h2" class="c-text-and-image2__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Chương Trình Đối Tác & Đại Lý Cà Phê S54' : 'S54 Wholesale Partner & Franchise Program' }}
-      </x-client::editable><div class="c-text-and-image2__description o-paragraph--1"><p class="o-paragraph--1" >S54 Coffee tự hào cung cấp các dòng cà phê hạt rang mộc nguyên chất và giải pháp pha chế chuyên nghiệp hàng đầu tại Việt Nam.</p><p class="o-paragraph--1" >Our wholesale coffee partner program is designed to offer more than just <a href="{{ route('client.catalog.index', ['locale' => app()->getLocale()]) }}" title="Khám phá các dòng cà phê hạt cao cấp S54">nguồn hạt cà phê thượng hạng</a> – it’s about empowering our partners with unparalleled levels of support.</p><p class="o-paragraph--1" >Dù doanh nghiệp của bạn là chuỗi nhà hàng khách sạn cao cấp, quán cà phê độc lập hay văn phòng công ty, S54 Coffee luôn đồng hành mang đến giải pháp tối ưu từ nguồn hạt chất lượng cao, máy pha chuyên nghiệp đến đào tạo barista chuẩn mực.</p></div></div>
+      </x-client::editable>
+      <x-client::editable key="wholesale.intro.desc" tag="div" class="c-text-and-image2__description o-paragraph--1" html>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'S54 Coffee tự hào cung cấp các dòng cà phê hạt rang mộc nguyên chất và giải pháp pha chế chuyên nghiệp hàng đầu tại Việt Nam.' : 'S54 Coffee proudly delivers premium roasted coffee beans and leading professional brewing solutions across Vietnam.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'Chương trình đối tác cà phê bán sỉ của chúng tôi được thiết kế nhằm đem lại nhiều hơn một nguồn cung cấp hạt cà phê thượng hạng – đó là sự đồng hành và hỗ trợ toàn diện vượt trội dành cho quý khách hàng.' : 'Our wholesale coffee partner program is designed to offer more than just premium coffee beans – it’s about empowering our partners with unparalleled levels of strategic support.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'Dù doanh nghiệp của bạn là chuỗi nhà hàng khách sạn cao cấp, quán cà phê độc lập hay văn phòng công ty, S54 Coffee luôn đồng hành mang đến giải pháp tối ưu từ nguồn hạt chất lượng cao, máy pha chuyên nghiệp đến đào tạo barista chuẩn mực.' : 'Whether your business is a luxury hotel restaurant chain, an independent cafe, or a corporate office, S54 Coffee stands beside you with tailored solutions from specialty beans to commercial equipment and barista training.' }}</p>
+      </x-client::editable>
+    </div>
   </div><div class="c-text-and-image2__content is-box is-reverse"
   style="--var-image-height: 66.66666666666666%;
     --var-image-height-mobile: 66.66666666666666%;
@@ -173,12 +179,27 @@
   <div class="c-text-and-image2__text-content">
     <x-client::editable key="wholesale.coffee.title" tag="h2" class="c-text-and-image2__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Nguồn Cà Phê Nguyên Chất S54' : 'Pure Artisan Coffee Sourcing by S54' }}
-      </x-client::editable><div class="c-text-and-image2__description o-paragraph--1"><p class="o-paragraph--1" >At the core of our operation lies a singular vision – scouring the globe for the finest premium beans to craft the world’s most exceptional coffees. We’ve been doing it for over 65 years.</p><p class="o-paragraph--1" >These days, our expertise is supported by our state-of-the-art roastery in Sydney.</p><p class="o-paragraph--1" >Our quality process involves 23 stages allowing us to scientifically analyse crucial variables such as the moisture content of green beans, acidity, pH, density, brix, total dissolved solids, and caffeine levels. This precision, combined with sensory testing, provides a comprehensive understanding of every blend, enabling us to replicate our coffees with unrivalled consistency.</p><p class="o-paragraph--1" >You can always trust our coffee.</p></div></div>
+      </x-client::editable>
+    <x-client::editable key="wholesale.coffee.desc" tag="div" class="c-text-and-image2__description o-paragraph--1" html>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'Tại S54 Coffee, triết lý cốt lõi của chúng tôi là tìm kiếm và tuyển chọn những hạt cà phê Robusta và Arabica hảo hạng nhất từ thủ phủ Tây Nguyên và Cầu Đất - Đà Lạt.' : 'At S54 Coffee, our core philosophy is selecting the finest Robusta and Arabica beans directly from Vietnam\'s renowned Central Highlands and Cau Dat - Da Lat.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'Hệ thống rang xay công nghệ hiện đại cùng quy trình kiểm soát nhiệt độ nghiêm ngặt giúp từng mẻ cà phê giữ trọn hương vị nguyên bản đặc trưng.' : 'Our modern roasting technology and rigorous temperature profiling ensure every batch retains its distinctive authentic aroma and body.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'Quy trình kiểm soát chất lượng chuẩn mực phân tích kỹ lưỡng độ ẩm, độ chua, hương thơm và mức độ hòa tan, mang lại sự đồng nhất tuyệt đối cho từng mẻ rang giao tới quý đối tác.' : 'A rigorous quality control process analyzes moisture content, acidity, aroma balance, and extraction yield to guarantee unmatched consistency in every order.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' ? 'Bạn hoàn toàn có thể an tâm gửi trọn niềm tin vào chất lượng cà phê S54.' : 'You can always trust the pure quality of S54 Coffee.' }}</p>
+    </x-client::editable>
+  </div>
 </div></section><style> @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__text_and_image2_yKDnz9 p {font-size: 17px; }} #shopify-section-template--15837242130607__text_and_image2_yKDnz9 p {line-height: normal;} #shopify-section-template--15837242130607__text_and_image2_yKDnz9 p {letter-spacing: 0px;} #shopify-section-template--15837242130607__text_and_image2_yKDnz9 p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__case_studies_MeFkF8" class="shopify-section"><link href="{{ asset('assets/css/sections.case-studies.css') }}?v={{ @filemtime(base_path('assets/css/sections.case-studies.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><script src="{{ asset('assets/images/773_sections.case-studies.js') }}?v=1789299999" type="text/javascript" defer="defer"></script><section class="c-case-studies" data-case-studies>
     <div class="c-case-studies__content">
       <x-client::editable key="wholesale.partners.title" tag="h2" class="c-case-studies__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Đối Tác Tiêu Biểu' : 'Featured HoReCa & Enterprise Partners' }}
-      </x-client::editable><p class="c-case-studies__description o-paragraph--1">Read more about out customer stories and our joint efforts to support business growth.</p><a class="c-case-studies__cta o-btn is-primary is-dark" href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}" title="Read more">Read more<svg fill="none" class="" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg></a></div>
+      </x-client::editable>
+      <x-client::editable key="wholesale.partners.desc" tag="p" class="c-case-studies__description o-paragraph--1">
+        {{ app()->getLocale() === 'vi' ? 'Khám phá câu chuyện hợp tác thành công cùng các đối tác F&B tiêu biểu và giải pháp đồng hành phát triển kinh doanh từ S54 Coffee.' : 'Discover successful case studies and our collaborative efforts to support business growth with S54 Coffee.' }}
+      </x-client::editable>
+      <a class="c-case-studies__cta o-btn is-primary is-dark" href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}" title="{{ app()->getLocale() === 'vi' ? 'Xem thêm' : 'Read more' }}">
+        <x-client::editable key="wholesale.partners.cta" tag="span">{{ app()->getLocale() === 'vi' ? 'Xem thêm' : 'Read more' }}</x-client::editable>
+        <svg fill="none" class="" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg>
+      </a>
+    </div>
 
     <div class="c-case-studies__articles" data-carousel><div class="c-case-studies__article"><a 
   href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}"
@@ -187,21 +208,16 @@
 
 <div class="o-article-tile__detail">
   <div class="o-article-tile__detail-inner">
-    
-      <span class="o-article-tile__detail-tag o-subtitle">customer highlights</span>
+      <span class="o-article-tile__detail-tag o-subtitle"><x-client::editable key="wholesale.case1.tag" tag="span">{{ app()->getLocale() === 'vi' ? 'Điểm Nhấn Khách Hàng' : 'customer highlights' }}</x-client::editable></span>
       <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
-    
   </div>
   <div class="o-article-tile__detail-separator"></div>
-  
     <h6 class="o-article-tile__detail-title">
-      L'Americano Espresso Bar
+      <x-client::editable key="wholesale.case1.title" tag="span">L'Americano Espresso Bar</x-client::editable>
     </h6>
-  
-
     <div class="o-article-tile__detail-read-time o-type--1">
-Four minute read</div>
-  
+      <x-client::editable key="wholesale.case1.readtime" tag="span">{{ app()->getLocale() === 'vi' ? '4 phút đọc' : 'Four minute read' }}</x-client::editable>
+    </div>
 </div>
 </a></div><div class="c-case-studies__article"><a 
   href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}"
@@ -210,21 +226,16 @@ Four minute read</div>
 
 <div class="o-article-tile__detail">
   <div class="o-article-tile__detail-inner">
-    
-      <span class="o-article-tile__detail-tag o-subtitle">customer highlights</span>
+      <span class="o-article-tile__detail-tag o-subtitle"><x-client::editable key="wholesale.case2.tag" tag="span">{{ app()->getLocale() === 'vi' ? 'Điểm Nhấn Khách Hàng' : 'customer highlights' }}</x-client::editable></span>
       <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
-    
   </div>
   <div class="o-article-tile__detail-separator"></div>
-  
     <h6 class="o-article-tile__detail-title">
-      Bobbin Head Bakery
+      <x-client::editable key="wholesale.case2.title" tag="span">Bobbin Head Bakery</x-client::editable>
     </h6>
-  
-
     <div class="o-article-tile__detail-read-time o-type--1">
-Three minute read</div>
-  
+      <x-client::editable key="wholesale.case2.readtime" tag="span">{{ app()->getLocale() === 'vi' ? '3 phút đọc' : 'Three minute read' }}</x-client::editable>
+    </div>
 </div>
 </a></div><div class="c-case-studies__article"><a 
   href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}"
@@ -233,21 +244,16 @@ Three minute read</div>
 
 <div class="o-article-tile__detail">
   <div class="o-article-tile__detail-inner">
-    
-      <span class="o-article-tile__detail-tag o-subtitle">customer highlights</span>
+      <span class="o-article-tile__detail-tag o-subtitle"><x-client::editable key="wholesale.case3.tag" tag="span">{{ app()->getLocale() === 'vi' ? 'Điểm Nhấn Khách Hàng' : 'customer highlights' }}</x-client::editable></span>
       <span><svg fill="none" class="o-article-tile__circle-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#AC8A62"/></svg></span>
-    
   </div>
   <div class="o-article-tile__detail-separator"></div>
-  
     <h6 class="o-article-tile__detail-title">
-      ELS Cafe & Bar
+      <x-client::editable key="wholesale.case3.title" tag="span">ELS Cafe & Bar</x-client::editable>
     </h6>
-  
-
     <div class="o-article-tile__detail-read-time o-type--1">
-Four minute read</div>
-  
+      <x-client::editable key="wholesale.case3.readtime" tag="span">{{ app()->getLocale() === 'vi' ? '4 phút đọc' : 'Four minute read' }}</x-client::editable>
+    </div>
 </div>
 </a></div></div>
   </section><style> #shopify-section-template--15837242130607__case_studies_MeFkF8 .c-case-studies {padding-top: 40px;} @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__case_studies_MeFkF8 p {font-size: 17px; }} #shopify-section-template--15837242130607__case_studies_MeFkF8 p {line-height: normal;} #shopify-section-template--15837242130607__case_studies_MeFkF8 p {letter-spacing: 0px;} #shopify-section-template--15837242130607__case_studies_MeFkF8 p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__testimonial_bGPPtH" class="shopify-section c-section__testimonial"><link href="{{ asset('assets/css/sections.testimonial.css') }}?v={{ @filemtime(base_path('assets/css/sections.testimonial.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><script src="{{ asset('assets/images/732_sections.testimonial.js') }}?v=1789299999" type="text/javascript" defer="defer"></script><section class="c-testimonial" data-testimonials>
@@ -322,33 +328,37 @@ Four minute read</div>
         @endif
       </div>
 
-      <div class="c-testimonial__carousel"><svg class="c-testimonial__carousel-quote" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 32"><path fill="#B1A79B" d="M11.054 31.07c-3.506-.081-6.075-1.427-7.706-4.036C1.717 24.424.9 21.325.9 17.737c0-3.996.897-7.584 2.691-10.765C5.468 3.71 7.874 1.386 10.81 0c1.63 0 2.65 1.06 3.058 3.18-2.528 1.713-4.24 3.344-5.138 4.893-.897 1.468-1.345 3.262-1.345 5.383-.082 2.283.937 3.384 3.058 3.302h1.835c1.875 0 3.384.612 4.525 1.835 1.142 1.224 1.713 2.895 1.713 5.016 0 2.364-.734 4.2-2.202 5.504-1.386 1.305-3.14 1.957-5.26 1.957Zm22.386 0c-3.507-.081-6.076-1.427-7.707-4.036-1.63-2.61-2.446-5.709-2.446-9.297 0-3.996.897-7.584 2.69-10.765C27.855 3.71 30.26 1.386 33.196 0c1.63 0 2.65 1.06 3.058 3.18-2.528 1.713-4.24 3.344-5.138 4.893-.897 1.468-1.345 3.262-1.345 5.383-.082 2.283.938 3.384 3.058 3.302h1.835c1.876 0 3.384.612 4.526 1.835 1.142 1.224 1.712 2.895 1.712 5.016 0 2.364-.734 4.2-2.202 5.504-1.386 1.305-3.14 1.957-5.26 1.957Z"/></svg><div class="c-testimonial__carousel-slides"  data-carousel ><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">My passion for pizza is exactly the same as [S54’s] passion for their coffee.</p><h6>Johnny, 400 Gradi</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">When we want to do something new and exciting, I always know I have a great support network with S54.</p><h6>Shane Delia, Maha</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">It’s got the flair, it’s got the taste and it’s always consistent. That’s very important in our business.</p><h6>Serge, Urban Express</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">We wouldn't have had the growth we have over the past 18 months without the help of the team.</p><h6>Acacia, Bobbin Head Bakery Owner</h6></div><div class="c-testimonial__carousel-slide o-heading--5"><p class="o-heading--5">To say that the team at S54 have been an integral part of our growth is a vast understatement.</p><h6>Matthew El-Bayeh, Els Cafe & Bar</h6></div></div><button class="c-testimonial__carousel-nav is-prev" aria-label="Previous" data-carousel-prev><svg fill="none"class="" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m23.8535 12c0 .2761-.2238.5-.5.5h-22.05404c-.27614 0-.499999-.2239-.499999-.5s.223859-.5.499999-.5h22.05404c.2762 0 .5.2239.5.5z"/><path d="m6.62211 17.8027c-.19791.1926-.51447.1882-.70704-.0097l-5.297293-5.4444c-.188849-.1941-.188849-.5033 0-.6974l5.297293-5.44443c.19257-.19792.50913-.20225.70704-.00969.19792.19257.20226.50913.00969.70705l-4.95804 5.09577 4.95804 5.0958c.19257.1979.18823.5144-.00969.707z"/></g></svg></button>
+      <div class="c-testimonial__carousel"><svg class="c-testimonial__carousel-quote" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 32"><path fill="#B1A79B" d="M11.054 31.07c-3.506-.081-6.075-1.427-7.706-4.036C1.717 24.424.9 21.325.9 17.737c0-3.996.897-7.584 2.691-10.765C5.468 3.71 7.874 1.386 10.81 0c1.63 0 2.65 1.06 3.058 3.18-2.528 1.713-4.24 3.344-5.138 4.893-.897 1.468-1.345 3.262-1.345 5.383-.082 2.283.937 3.384 3.058 3.302h1.835c1.875 0 3.384.612 4.525 1.835 1.142 1.224 1.713 2.895 1.713 5.016 0 2.364-.734 4.2-2.202 5.504-1.386 1.305-3.14 1.957-5.26 1.957Zm22.386 0c-3.507-.081-6.076-1.427-7.707-4.036-1.63-2.61-2.446-5.709-2.446-9.297 0-3.996.897-7.584 2.69-10.765C27.855 3.71 30.26 1.386 33.196 0c1.63 0 2.65 1.06 3.058 3.18-2.528 1.713-4.24 3.344-5.138 4.893-.897 1.468-1.345 3.262-1.345 5.383-.082 2.283.938 3.384 3.058 3.302h1.835c1.876 0 3.384.612 4.526 1.835 1.142 1.224 1.712 2.895 1.712 5.016 0 2.364-.734 4.2-2.202 5.504-1.386 1.305-3.14 1.957-5.26 1.957Z"/></svg><div class="c-testimonial__carousel-slides"  data-carousel ><div class="c-testimonial__carousel-slide o-heading--5"><x-client::editable key="wholesale.testimonial.1.quote" tag="p" class="o-heading--5">{{ app()->getLocale() === 'vi' ? 'Đam mê của tôi dành cho món bánh pizza cũng giống như sự đam mê và tận tâm của S54 dành cho từng hạt cà phê.' : 'My passion for gourmet food is exactly the same as S54’s passion for their coffee.' }}</x-client::editable><h6><x-client::editable key="wholesale.testimonial.1.author" tag="span">{{ app()->getLocale() === 'vi' ? 'Johnny — Chuỗi 400 Gradi' : 'Johnny, 400 Gradi' }}</x-client::editable></h6></div><div class="c-testimonial__carousel-slide o-heading--5"><x-client::editable key="wholesale.testimonial.2.quote" tag="p" class="o-heading--5">{{ app()->getLocale() === 'vi' ? 'Khi chúng tôi muốn thử nghiệm menu đồ uống mới mẻ, tôi luôn an tâm vì có đội ngũ chuyên môn S54 hỗ trợ đắc lực.' : 'When we want to do something new and exciting, I always know I have a great support network with S54.' }}</x-client::editable><h6><x-client::editable key="wholesale.testimonial.2.author" tag="span">{{ app()->getLocale() === 'vi' ? 'Shane Delia — Maha' : 'Shane Delia, Maha' }}</x-client::editable></h6></div><div class="c-testimonial__carousel-slide o-heading--5"><x-client::editable key="wholesale.testimonial.3.quote" tag="p" class="o-heading--5">{{ app()->getLocale() === 'vi' ? 'Hương vị đậm đà chuẩn gu người Việt, độ ổn định tuyệt đối giữa các mẻ rang—điều tối quan trọng với chuỗi quán.' : 'It’s got the flair, it’s got the taste and it’s always consistent. That’s very important in our business.' }}</x-client::editable><h6><x-client::editable key="wholesale.testimonial.3.author" tag="span">{{ app()->getLocale() === 'vi' ? 'Serge — Urban Express' : 'Serge, Urban Express' }}</x-client::editable></h6></div><div class="c-testimonial__carousel-slide o-heading--5"><x-client::editable key="wholesale.testimonial.4.quote" tag="p" class="o-heading--5">{{ app()->getLocale() === 'vi' ? 'Chúng tôi khó có thể đạt được mức tăng trưởng doanh thu ấn tượng trong 18 tháng qua nếu không có sự đồng hành của S54.' : 'We wouldn\'t have had the growth we have over the past 18 months without the help of the team.' }}</x-client::editable><h6><x-client::editable key="wholesale.testimonial.4.author" tag="span">{{ app()->getLocale() === 'vi' ? 'Acacia — Đại diện Bobbin Head Bakery' : 'Acacia, Bobbin Head Bakery Owner' }}</x-client::editable></h6></div><div class="c-testimonial__carousel-slide o-heading--5"><x-client::editable key="wholesale.testimonial.5.quote" tag="p" class="o-heading--5">{{ app()->getLocale() === 'vi' ? 'Nói rằng S54 Coffee là một phần không thể thiếu trong sự thành công và mở rộng của quán chúng tôi là hoàn toàn chính xác.' : 'To say that the team at S54 have been an integral part of our growth is a vast understatement.' }}</x-client::editable><h6><x-client::editable key="wholesale.testimonial.5.author" tag="span">{{ app()->getLocale() === 'vi' ? 'Matthew El-Bayeh — Els Cafe & Bar' : 'Matthew El-Bayeh, Els Cafe & Bar' }}</x-client::editable></h6></div></div><button class="c-testimonial__carousel-nav is-prev" aria-label="Previous" data-carousel-prev><svg fill="none"class="" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m23.8535 12c0 .2761-.2238.5-.5.5h-22.05404c-.27614 0-.499999-.2239-.499999-.5s.223859-.5.499999-.5h22.05404c.2762 0 .5.2239.5.5z"/><path d="m6.62211 17.8027c-.19791.1926-.51447.1882-.70704-.0097l-5.297293-5.4444c-.188849-.1941-.188849-.5033 0-.6974l5.297293-5.44443c.19257-.19792.50913-.20225.70704-.00969.19792.19257.20226.50913.00969.70705l-4.95804 5.09577 4.95804 5.0958c.19257.1979.18823.5144-.00969.707z"/></g></svg></button>
 
           <button class="c-testimonial__carousel-nav is-next" aria-label="Next" data-carousel-next><svg fill="none" class="" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#2f221a" fill-rule="evenodd"><path d="m.146118 12c0-.2761.223858-.5.5-.5h22.054082c.2761 0 .5.2239.5.5s-.2239.5-.5.5h-22.054082c-.276142 0-.5-.2239-.5-.5z"/><path d="m17.3776 6.1973c.198-.19257.5145-.18823.7071.00969l5.2973 5.44441c.1888.1941.1888.5033 0 .6974l-5.2973 5.4444c-.1926.1979-.5091.2023-.7071.0097-.1979-.1926-.2022-.5091-.0096-.707l4.958-5.0958-4.958-5.09576c-.1926-.19792-.1883-.51447.0096-.70704z"/></g></svg></button></div>
     </div>
   </section><style> #shopify-section-template--15837242130607__testimonial_bGPPtH .c-testimonial__carousel {padding-bottom: 10px;} </style></div><div id="shopify-section-template--15837242130607__custom_content2_TrcmMW" class="shopify-section c-section__custom-content2"><link href="{{ asset('assets/css/sections.custom-content2.css') }}?v={{ @filemtime(base_path('assets/css/sections.custom-content2.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><section class="c-custom-content2">
-    <div class="c-custom-content2__contents"><h2 class="c-custom-content2__heading o-heading--3"
+    <div class="c-custom-content2__contents"><x-client::editable key="wholesale.training.title" tag="h2" class="c-custom-content2__heading o-heading--3"
                 style="
                   --var-heading-max-width: 904px;
                   --var-heading-width: 45.2%;
                 "
-              >{{ app()->getLocale() === 'vi' ? 'Đào Tạo Barista & Chuyển Giao Công Nghệ Pha Chế' : 'Barista Training & Tech Transfer' }}</h2><div class="c-custom-content2__paragraph o-paragraph--1"
+              >{{ app()->getLocale() === 'vi' ? 'Đào Tạo Barista & Chuyển Giao Công Nghệ Pha Chế' : 'Barista Training & Tech Transfer' }}</x-client::editable><x-client::editable key="wholesale.training.p1" tag="div" class="c-custom-content2__paragraph o-paragraph--1"
                 style="
                   --var-paragraph-max-width: 762px;
                   --var-paragraph-width: 38.1%;
                 "
-              ><p class='o-paragraph--1' >A truly exceptional cup of coffee is the result of meticulous attention to detail, from bean selection to the art and science of roasting. Yet, it’s the skill and dedication of the barista that truly brings coffee to life.</p></div><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.training.image" src="{{ asset('assets/images/660_5-wholesale-page-image-barista-training-3_1528x.png') }}" alt="Đào Tạo Barista Chuyên Nghiệp" class="c-custom-content2__image o-media" style="width: 100%; height: auto; object-fit: cover;" /></div><h2 class="c-custom-content2__heading o-heading--5"
+                html
+              ><p class='o-paragraph--1'>{{ app()->getLocale() === 'vi' ? 'Một tách cà phê hoàn hảo là kết quả của sự tỉ mỉ đến từng chi tiết: từ khâu chọn lọc hạt mộc, công thức phối trộn cho đến nghệ thuật rang xay chuẩn xác. Nhưng chính kỹ năng và đam mê của người Barista mới thực sự thổi hồn vào từng ly cà phê.' : 'A truly exceptional cup of coffee is the result of meticulous attention to detail, from bean selection to the art and science of roasting. Yet, it’s the skill and dedication of the barista that truly brings coffee to life.' }}</p></x-client::editable><div class="c-custom-content2__image-container o-media-container">
+<x-client::editable-image key="wholesale.training.image" src="{{ asset('assets/images/660_5-wholesale-page-image-barista-training-3_1528x.png') }}" alt="Đào Tạo Barista Chuyên Nghiệp" class="c-custom-content2__image o-media" style="width: 100%; height: auto; object-fit: cover;" /></div><x-client::editable key="wholesale.training.heading2" tag="h2" class="c-custom-content2__heading o-heading--5"
                 style="
                   --var-heading-max-width: 904px;
                   --var-heading-width: 45.2%;
                 "
-              >Chúng tôi hiểu rằng kỹ năng của Barista quyết định trực tiếp đến trải nghiệm và sự trung thành của khách hàng.</h2><div class="c-custom-content2__paragraph o-paragraph--1"
+              >{{ app()->getLocale() === 'vi' ? 'Chúng tôi hiểu rằng kỹ năng của Barista quyết định trực tiếp đến trải nghiệm và sự trung thành của khách hàng.' : 'We understand that the skill of the barista directly defines customer experience and loyalty.' }}</x-client::editable><x-client::editable key="wholesale.training.p2" tag="div" class="c-custom-content2__paragraph o-paragraph--1"
                 style="
                   --var-paragraph-max-width: 904px;
                   --var-paragraph-width: 45.2%;
                 "
-              ><p class='o-paragraph--1' >That’s why we’re committed to providing comprehensive training programs, available on-site or at our dedicated coffee training centres around the country.<br/><br/>We offer barista certification courses, training resources and specialised one-on-one training to all our partners. Your team will go deep into the nuances of espresso preparation, understanding all the variables that impact extraction including grind size, temperature, extraction time, weight, tamping and other controllable variables, to deliver consistent, exceptional coffee.<br/><br/>For experienced baristas who don’t require training, we offer opportunities to represent S54 COFFEE as ambassadors providing promotional opportunities for your venue.</p></div></div>
+                html
+              ><p class='o-paragraph--1'>{{ app()->getLocale() === 'vi' 
+                ? 'Đó là lý do S54 Coffee cung cấp các chương trình đào tạo pha chế toàn diện ngay tại quán của bạn hoặc tại trung tâm trải nghiệm của S54.<br/><br/>Chúng tôi đào tạo kỹ năng chiết xuất espresso, cân chỉnh độ mịn cối xay, kiểm soát nhiệt độ, thời gian chiết xuất và nghệ thuật tạo bọt sữa latte art chuẩn mực.<br/><br/>Đội ngũ của bạn sẽ làm chủ hoàn toàn quy trình pha chế để mang lại những tách cà phê xuất sắc, đồng nhất cho từng khách hàng mỗi ngày.' 
+                : 'That’s why we’re committed to providing comprehensive training programs, available on-site or at our dedicated coffee training centres.<br/><br/>We offer barista certification courses, training resources and specialised one-on-one training to all our partners. Your team will go deep into espresso preparation nuances to deliver consistent, exceptional coffee.' }}</p></x-client::editable></div>
   </section><style> @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__custom_content2_TrcmMW p {font-size: 17px; }} #shopify-section-template--15837242130607__custom_content2_TrcmMW p {line-height: normal;} #shopify-section-template--15837242130607__custom_content2_TrcmMW p {letter-spacing: 0px;} #shopify-section-template--15837242130607__custom_content2_TrcmMW p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__text_and_image2_38fDe8" class="shopify-section c-section__text-and-image2"><link href="{{ asset('assets/css/sections.text-and-image2.css') }}?v={{ @filemtime(base_path('assets/css/sections.text-and-image2.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><section class="c-text-and-image2"><div class="c-text-and-image2__content is-curve is-reverse "
     style="--var-image-mobile-position: 100%;
       --var-content-gap: 6.41025641025641%;
@@ -362,7 +372,9 @@ Four minute read</div>
     <div class="c-text-and-image2__text-content">
       <x-client::editable key="wholesale.equipment.title" tag="h2" class="c-text-and-image2__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Thiết Bị & Máy Pha Cà Phê Chuyên Nghiệp' : 'Commercial Espresso Machines & Equipment' }}
-      </x-client::editable><div class="c-text-and-image2__description o-paragraph--1"><p class="o-paragraph--1" >We supply an extensive range of state-of-the-art coffee equipment from Faema through our exclusive partnership of over 50 years, as well as La Marzocco, Mahlkonig and many more. Our commercial machines hold stable temperatures to the group heads, keep consistent pressure and rarely break down. If they do, we have technicians available anytime, day or night. <br/></p></div></div>
+      </x-client::editable><x-client::editable key="wholesale.equipment.desc" tag="div" class="c-text-and-image2__description o-paragraph--1" html><p class="o-paragraph--1">{{ app()->getLocale() === 'vi' 
+        ? 'S54 Coffee cung cấp đầy đủ các dòng máy pha và máy xay cà phê thương mại cao cấp từ các thương hiệu nổi tiếng thế giới như Faema, La Marzocco, Nuova Simonelli, Mahlkönig... Máy vận hành bền bỉ, kiểm soát nhiệt độ và áp suất chiết xuất tối ưu. Đội ngũ kỹ thuật viên S54 luôn sẵn sàng bảo trì, bảo dưỡng nhanh chóng 24/7 giúp quán của bạn luôn vận hành thông suốt.<br/>' 
+        : 'We supply an extensive range of state-of-the-art coffee equipment from Faema, La Marzocco, Mahlkonig and many more. Our commercial machines hold stable temperatures, keep consistent pressure, supported by technicians available 24/7.<br/>' }}</p></x-client::editable></div>
   </div><div class="c-text-and-image2__content is-box "
   style="--var-image-height: 66.66666666666666%;
     --var-image-height-mobile: 65.4434250764526%;
@@ -380,31 +392,35 @@ Four minute read</div>
   <div class="c-text-and-image2__text-content">
     <x-client::editable key="wholesale.signage.title" tag="h2" class="c-text-and-image2__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Thiết Kế Quầy Bar & Bộ Nhận Diện Thương Hiệu' : 'Bespoke Bar Design & Brand Identity Signage' }}
-      </x-client::editable><div class="c-text-and-image2__description o-paragraph--1"><p class="o-paragraph--1" >The S54 brand is a symbol of coffee excellence, but we know each customer has their own unique style. That’s why we customise our signage to each venue to complement the overall aesthetic. Our designers work closely with you and your team to understand your objectives and deliver considered solutions with  a team of professional sign writers and manufacturers.</p></div></div>
+      </x-client::editable><x-client::editable key="wholesale.signage.desc" tag="div" class="c-text-and-image2__description o-paragraph--1" html><p class="o-paragraph--1">{{ app()->getLocale() === 'vi' 
+        ? 'Thương hiệu S54 Coffee là biểu tượng của tinh hoa cà phê Việt, nhưng chúng tôi hiểu mỗi đối tác đều có phong cách và định vị riêng. Chúng tôi hỗ trợ tư vấn thiết kế quầy bar tối ưu công năng thao tác, cung cấp ấn phẩm nhận diện thương hiệu, bảng hiệu và vật phẩm POSM sang trọng hài hòa với không gian quán của bạn.' 
+        : 'The S54 brand is a symbol of coffee excellence, but we know each venue has its own unique style. That’s why we customise our signage to each venue to complement the overall aesthetic with bespoke design solutions.' }}</p></x-client::editable></div>
 </div></section><style> @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__text_and_image2_38fDe8 p {font-size: 17px; }} #shopify-section-template--15837242130607__text_and_image2_38fDe8 p {line-height: normal;} #shopify-section-template--15837242130607__text_and_image2_38fDe8 p {letter-spacing: 0px;} #shopify-section-template--15837242130607__text_and_image2_38fDe8 p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__custom_content2_aNydhQ" class="shopify-section c-section__custom-content2"><link href="{{ asset('assets/css/sections.custom-content2.css') }}?v={{ @filemtime(base_path('assets/css/sections.custom-content2.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><section class="c-custom-content2">
-    <div class="c-custom-content2__contents"><h2 class="c-custom-content2__heading o-heading--3"
+    <div class="c-custom-content2__contents"><x-client::editable key="wholesale.marketing.title" tag="h2" class="c-custom-content2__heading o-heading--3"
                 style="
                   --var-heading-max-width: 904px;
                   --var-heading-width: 45.2%;
                 "
-              >Marketing for<br />
-hospitality businesses</h2><div class="c-custom-content2__paragraph o-paragraph--1"
+              >{{ app()->getLocale() === 'vi' ? 'Giải Pháp Marketing & Phát Triển Chuỗi F&B' : 'Marketing Solutions for F&B Businesses' }}</x-client::editable><x-client::editable key="wholesale.marketing.desc" tag="div" class="c-custom-content2__paragraph o-paragraph--1"
                 style="
                   --var-paragraph-max-width: 912px;
                   --var-paragraph-width: 45.6%;
                 "
-              ><p class='o-paragraph--1' >From humble beginnings in 1958, we’ve been a part of Australia’s hospitality industry. From supplying Sydney’s first cafes and restaurants with our freshly roasted Arabica coffees to driving the growth of cafe culture throughout the dynamic decades of the 1970s and 80s, we’ve played a pivotal role in shaping Australia’s famous coffee culture.<br/> <br/>But hospitality is tough. Operators face an array of challenges that test their resilience and adaptability. We understand that success in this environment hinges on a number of factors beyond just the quality of the coffee you serve.<br/><br/>We operate like a hospitality marketing and design agency providing clients all over the world with naming ideation, brand and logo development supported by local marketing strategies to maximise awareness at launch.</p></div><div class="c-custom-content2__four-column-images"><div class="c-custom-content2__image-container o-media-container">
+                html
+              ><p class='o-paragraph--1'>{{ app()->getLocale() === 'vi' 
+                ? 'Ngành F&B luôn nhiều cơ hội nhưng cũng đầy thách thức. Một quán cà phê thành công không chỉ dựa vào hạt cà phê ngon, mà còn phụ thuộc vào chiến lược định vị thương hiệu, trải nghiệm khách hàng và phương thức truyền thông hiệu quả.<br/> <br/>S54 Coffee đồng hành cùng bạn với vai trò một đơn vị tư vấn giải pháp toàn diện: từ định hướng concept quán, phát triển menu thức uống theo xu hướng, đến kế hoạch truyền thông khai trương thu hút khách hàng.<br/><br/>Chúng tôi giúp bạn tối ưu chi phí vận hành và xây dựng tập khách hàng trung thành ngay từ ngày đầu hoạt động.' 
+                : 'Operating in F&B is competitive and demanding. Business success hinges not just on great coffee beans, but on strategic brand positioning, memorable customer experiences, and impactful marketing.<br/> <br/>S54 Coffee collaborates with your business as a comprehensive strategic advisor: from concept ideation and trendy beverage menu development to launch marketing campaigns.<br/><br/>We help you optimize operational efficiency and cultivate a loyal customer base from day one.' }}</p></x-client::editable><div class="c-custom-content2__four-column-images"><div class="c-custom-content2__image-container o-media-container">
 <x-client::editable-image key="wholesale.marketing.img1" src="{{ asset('assets/images/675_31b815765f2a5ae0f271cfe5c81376c8_601x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
 <x-client::editable-image key="wholesale.marketing.img2" src="{{ asset('assets/images/634_ec3348801f419324b007358ae6a705ec_374x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
 <x-client::editable-image key="wholesale.marketing.img3" src="{{ asset('assets/images/729_LL-VITTORIA-CAFES-13_601x.jpg') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.marketing.img4" src="{{ asset('assets/images/754_450738cd7d6780bf6a0c9ddcd4bb3487_374x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div></div><h2 class="c-custom-content2__heading o-heading--5"
+<x-client::editable-image key="wholesale.marketing.img4" src="{{ asset('assets/images/754_450738cd7d6780bf6a0c9ddcd4bb3487_374x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div></div><x-client::editable key="wholesale.marketing.support_title" tag="h2" class="c-custom-content2__heading o-heading--5"
                 style="
                   --var-heading-max-width: 1017px;
                   --var-heading-width: 50.85%;
                 "
-              ><center>S54 Coffee và Good Solutions không chỉ là nhà cung ứng hạt cà phê. Chúng tôi là người bạn đồng hành chiến lược, mang đến giải pháp toàn diện giúp quán cà phê và doanh nghiệp của bạn tăng trưởng bền vững. <br />
-<br />
-Our support covers:</center></h2><ul class="c-custom-content2__list"><li class="c-custom-content2__list-item">Advertising</li><li class="c-custom-content2__list-item">Shop Fit Outs</li><li class="c-custom-content2__list-item">Service Flow</li><li class="c-custom-content2__list-item">Labour</li><li class="c-custom-content2__list-item">Training</li><li class="c-custom-content2__list-item">Thiết Bị & Máy Pha Cà Phê Chuyên Nghiệp</li><li class="c-custom-content2__list-item">Publicity</li><li class="c-custom-content2__list-item">Events &amp; Sponsorships</li></ul></div>
+              ><center>{{ app()->getLocale() === 'vi' 
+                ? 'S54 Coffee và Good Solutions không chỉ là nhà cung ứng hạt cà phê. Chúng tôi là người bạn đồng hành chiến lược, mang đến giải pháp toàn diện giúp quán cà phê và doanh nghiệp của bạn tăng trưởng bền vững.' 
+                : 'S54 Coffee & Good Solutions are more than suppliers. We are strategic partners providing end-to-end solutions for sustainable business growth.' }}</center></x-client::editable><ul class="c-custom-content2__list"><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list1" tag="span">{{ app()->getLocale() === 'vi' ? 'Truyền Thông & Quảng Cáo' : 'Advertising' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list2" tag="span">{{ app()->getLocale() === 'vi' ? 'Thiết Kế & Thi Công Không Gian' : 'Shop Fit Outs' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list3" tag="span">{{ app()->getLocale() === 'vi' ? 'Quy Trình Vận Hành Quầy Bar' : 'Service Flow' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list4" tag="span">{{ app()->getLocale() === 'vi' ? 'Tối Ưu Nhân Sự & Đào Tạo' : 'Labour & Training' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list5" tag="span">{{ app()->getLocale() === 'vi' ? 'Menu Pha Chế & Công Thức Độc Quyền' : 'Signature Menu' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list6" tag="span">{{ app()->getLocale() === 'vi' ? 'Thiết Bị & Máy Pha Cà Phê Chuyên Nghiệp' : 'Commercial Equipment' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list7" tag="span">{{ app()->getLocale() === 'vi' ? 'Bộ Nhận Diện Thương Hiệu POSM' : 'Publicity & POSM' }}</x-client::editable></li><li class="c-custom-content2__list-item"><x-client::editable key="wholesale.marketing.list8" tag="span">{{ app()->getLocale() === 'vi' ? 'Sự Kiện & Tài Trợ Đồng Hành' : 'Events & Sponsorships' }}</x-client::editable></li></ul></div>
   </section><style> @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__custom_content2_aNydhQ p {font-size: 17px; }} #shopify-section-template--15837242130607__custom_content2_aNydhQ p {line-height: normal;} #shopify-section-template--15837242130607__custom_content2_aNydhQ p {letter-spacing: 0px;} #shopify-section-template--15837242130607__custom_content2_aNydhQ p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__text_and_image2_BbQmzn" class="shopify-section c-section__text-and-image2"><link href="{{ asset('assets/css/sections.text-and-image2.css') }}?v={{ @filemtime(base_path('assets/css/sections.text-and-image2.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><section class="c-text-and-image2"><div class="c-text-and-image2__content is-box "
   style="--var-image-height: 66.66666666666666%;
     --var-image-height-mobile: 66.66666666666666%;
@@ -422,7 +438,9 @@ Our support covers:</center></h2><ul class="c-custom-content2__list"><li class="
   <div class="c-text-and-image2__text-content">
     <x-client::editable key="wholesale.community.title" tag="h2" class="c-text-and-image2__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Thương Hiệu Vì Cộng Đồng & Nông Dân Việt' : 'Community Brand & Vietnamese Coffee Farmers' }}
-      </x-client::editable><div class="c-text-and-image2__description o-paragraph--1"><p class="o-paragraph--1" >We believe in playing a role in the community. We actively support charities and support industry events that celebrate art, hospitality and food. If you’ve been anywhere in Australia, there’s a good chance you’ve seen one of our carts pumping out the complete coffee menu with a healthy dose of latte art. Partnering with us means joining a network that thrives on mutual support and shared success.</p></div></div>
+      </x-client::editable><x-client::editable key="wholesale.community.desc" tag="div" class="c-text-and-image2__description o-paragraph--1" html><p class="o-paragraph--1">{{ app()->getLocale() === 'vi' 
+        ? 'S54 Coffee gắn liền với thông điệp "New Coffee, New Income" – nâng tầm hạt cà phê Việt và cải thiện sinh kế cho bà con nông dân vùng trồng Tây Nguyên. Chúng tôi cam kết bao tiêu nông sản đạt chuẩn, hỗ trợ kỹ thuật canh tác bền vững và tham gia các hoạt động thiện nguyện, lan tỏa giá trị nhân văn của hạt cà phê Việt tới mọi miền đất nước và vươn ra thế giới.' 
+        : 'S54 Coffee is rooted in the "New Coffee, New Income" mission – elevating Vietnamese coffee quality while improving farmers\' livelihoods in the Central Highlands. We commit to sustainable fair-trade sourcing and active community development to spread the pride of Vietnamese coffee globally.' }}</p></x-client::editable></div>
 </div><div class="c-text-and-image2__content is-curve is-reverse "
     style="--var-image-mobile-position: 100%;
       --var-content-gap: 6.303418803418803%;
@@ -436,7 +454,19 @@ Our support covers:</center></h2><ul class="c-custom-content2__list"><li class="
     <div class="c-text-and-image2__text-content">
       <x-client::editable key="wholesale.family.title" tag="h2" class="c-text-and-image2__title o-heading--3">
         {{ app()->getLocale() === 'vi' ? 'Doanh Nghiệp Uy Tín & Cam Kết Dài Lâu' : 'Trusted Enterprise & Long-term Partnership' }}
-      </x-client::editable><div class="c-text-and-image2__description o-paragraph--1"><p class="o-paragraph--1" >Với triết lý 'Tinh Hoa Cà Phê Việt', chúng tôi kiên định với sứ mệnh bảo tồn và nâng tầm giá trị hạt cà phê Robusta & Arabica nguyên bản của Việt Nam, xây dựng mối quan hệ đối tác bền vững và minh bạch.</p><p class="o-paragraph--1" >A privately held, third-generation family business with the scale to compete against the largest food companies in the world. If you’re serious about coffee, we think there’s no better partner to have in your corner.</p><p class="o-paragraph--1" >Rất hân hạnh được đồng hành và hợp tác cùng Quý đối tác.</p></div></div>
+      </x-client::editable>
+      <x-client::editable key="wholesale.family.desc" tag="div" class="c-text-and-image2__description o-paragraph--1" html>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' 
+          ? 'Với triết lý \'Tinh Hoa Cà Phê Việt\', chúng tôi kiên định với sứ mệnh bảo tồn và nâng tầm giá trị hạt cà phê Robusta & Arabica nguyên bản của Việt Nam, xây dựng mối quan hệ đối tác bền vững và minh bạch.' 
+          : 'With the philosophy of \'Essence of Vietnamese Coffee\', we stay steadfast in our mission to preserve and elevate authentic Vietnamese Robusta & Arabica, fostering sustainable and transparent partnerships.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' 
+          ? 'Là một doanh nghiệp tận tâm và luôn hướng tới sự chuyên nghiệp dài lâu, S54 Coffee tự hào có đủ năng lực cung ứng sản lượng lớn, ổn định cho chuỗi quán cà phê, khách sạn và các đối tác thương mại lớn.' 
+          : 'With solid enterprise capability, S54 Coffee reliably supplies large volume orders for cafe chains, luxury hotels, and corporate enterprises.' }}</p>
+        <p class="o-paragraph--1">{{ app()->getLocale() === 'vi' 
+          ? 'Rất hân hạnh được đồng hành và hợp tác cùng Quý đối tác.' 
+          : 'We look forward to forging a long-lasting partnership with your enterprise.' }}</p>
+      </x-client::editable>
+    </div>
   </div></section><style> @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__text_and_image2_BbQmzn p {font-size: 17px; }} #shopify-section-template--15837242130607__text_and_image2_BbQmzn p {line-height: normal;} #shopify-section-template--15837242130607__text_and_image2_BbQmzn p {letter-spacing: 0px;} #shopify-section-template--15837242130607__text_and_image2_BbQmzn p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__contact_form_gGc7Va" class="shopify-section c-section c-section__contact"><link href="{{ asset('assets/css/sections.contact-form.css') }}?v={{ @filemtime(base_path('assets/css/sections.contact-form.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><script src="{{ asset('assets/images/605_sections.contact-form.js') }}?v=1789299999" type="text/javascript" defer="defer"></script><section class="c-contact">
   <div class="c-contact__media-container o-media-container">
 <x-client::editable-image key="wholesale.contact.banner" src="{{ asset('assets/images/747_11-wholesale-page-image-get-in-touch_1650x.jpg') }}" alt="Liên Hệ Hợp Tác S54 Coffee" class="c-contact__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
@@ -445,37 +475,39 @@ Our support covers:</center></h2><ul class="c-custom-content2__list"><li class="
       <x-client::editable key="wholesale.contact.title" tag="h3" class="o-heading--3 c-contact__form-title">
         {{ app()->getLocale() === 'vi' ? 'Liên Hệ Hợp Tác Ngay Hôm Nay' : 'Get in Touch with S54 Today' }}
       </x-client::editable>
-      <p class="o-type--1 c-contact__form-subtitle">Share some details and we’ll be in touch.</p>
+      <x-client::editable key="wholesale.contact.subtitle" tag="p" class="o-type--1 c-contact__form-subtitle">
+        {{ app()->getLocale() === 'vi' ? 'Vui lòng chia sẻ thông tin nhu cầu của bạn, đội ngũ chuyên viên S54 Coffee sẽ liên hệ tư vấn trong thời gian sớm nhất.' : 'Share some details and our S54 specialists will be in touch promptly.' }}
+      </x-client::editable>
 <form method="post" action="{{ route('client.pages.show', ['locale' => app()->getLocale(), 'slug' => 'wholesale']) }}#contact" id="contact" accept-charset="UTF-8" class="c-contact__form">
       @csrf<input type="hidden" name="form_type" value="contact" /><input type="hidden" name="utf8" value="✓" /><div class="c-contact__form-content">
       
       <div class="c-contact__form-input-group">
         <div style="display: none">
-        <label class="c-contact__form-label" for="contact-method">How would you prefer to be contacted?</label>
+        <label class="c-contact__form-label" for="contact-method">{{ app()->getLocale() === 'vi' ? 'Phương thức liên hệ ưu tiên?' : 'How would you prefer to be contacted?' }}</label>
         <input type="checkbox" name="contact[contact_method_email]" id="email"><label for="email">Email</label>
-        <input type="checkbox" name="contact[contact_method_phone]" id="phone"><label for="phone">Số Điện Thoại</label>
+        <input type="checkbox" name="contact[contact_method_phone]" id="phone"><label for="phone">{{ app()->getLocale() === 'vi' ? 'Số Điện Thoại' : 'Phone' }}</label>
       </div>
       <div class="c-contact__form-input-group">
         <input
-          class="c-contact__form-input o-input "
+          class="c-contact__form-input o-input"
           name="contact[email]"
-          placeholder="Email"
+          placeholder="{{ app()->getLocale() === 'vi' ? 'Email *' : 'Email *' }}"
           required
           type="email"
           value=""
-          required
         >
           <input
             class="c-contact__form-input o-input"
             name="contact[phone]"
-            placeholder="Số Điện Thoại"
+            placeholder="{{ app()->getLocale() === 'vi' ? 'Số Điện Thoại *' : 'Phone Number *' }}"
             type="text"
             value=""
+            required
           >
           <input
             class="c-contact__form-input o-input"
             name="contact[full-name]"
-            placeholder="Họ và Tên"
+            placeholder="{{ app()->getLocale() === 'vi' ? 'Họ và Tên *' : 'Full Name *' }}"
             type="text"
             value=""
             required
@@ -483,42 +515,44 @@ Our support covers:</center></h2><ul class="c-custom-content2__list"><li class="
           <input
             class="c-contact__form-input o-input"
             name="contact[business-name]"
-            placeholder="Tên Doanh Nghiệp / Chuỗi Quán"
+            placeholder="{{ app()->getLocale() === 'vi' ? 'Tên Doanh Nghiệp / Chuỗi Quán *' : 'Business / Cafe Name *' }}"
             type="text"
             value=""
             required
           >
-              <input
+          <input
             class="c-contact__form-input o-input"
             name="contact[enquiry]"
-            placeholder="Your Enquiry"
+            placeholder="{{ app()->getLocale() === 'vi' ? 'Nhu cầu hợp tác (Số lượng hạt, máy pha, nhượng quyền...)' : 'Your Inquiry (Volume, machines, partnership...)' }}"
             type="text"
             value=""
             required
           >
       </div>
         <div class="c-contact__form-input-group contact-day">
-          <label class="c-contact__form-label" for="contact-day">What are the best days to contact you?</label>
-          <input type="checkbox" name="contact[contact_day_monday]" id="monday"><label for="monday">Mon</label>
-          <input type="checkbox" name="contact[contact_day_tuesday]" id="tuesday"><label for="tuesday">Tues</label>
-          <input type="checkbox" name="contact[contact_day_wednesday]" id="wednesday"><label for="wednesday">Wed</label>
-          <input type="checkbox" name="contact[contact_day_thursday]" id="thursday"><label for="thursday">Thur</label>
-          <input type="checkbox" name="contact[contact_day_friday]" id="friday"><label for="friday">Fri</label>
-          <input type="checkbox" name="contact[contact_day_saturday]" id="saturday"><label for="saturday">Sat</label>
-          <input type="checkbox" name="contact[contact_day_sunday]" id="sunday"><label for="sunday">Sun</label>
+          <label class="c-contact__form-label" for="contact-day">{{ app()->getLocale() === 'vi' ? 'Ngày thuận tiện nhất để liên hệ với bạn?' : 'What are the best days to contact you?' }}</label>
+          <input type="checkbox" name="contact[contact_day_monday]" id="monday"><label for="monday">{{ app()->getLocale() === 'vi' ? 'T2' : 'Mon' }}</label>
+          <input type="checkbox" name="contact[contact_day_tuesday]" id="tuesday"><label for="tuesday">{{ app()->getLocale() === 'vi' ? 'T3' : 'Tue' }}</label>
+          <input type="checkbox" name="contact[contact_day_wednesday]" id="wednesday"><label for="wednesday">{{ app()->getLocale() === 'vi' ? 'T4' : 'Wed' }}</label>
+          <input type="checkbox" name="contact[contact_day_thursday]" id="thursday"><label for="thursday">{{ app()->getLocale() === 'vi' ? 'T5' : 'Thu' }}</label>
+          <input type="checkbox" name="contact[contact_day_friday]" id="friday"><label for="friday">{{ app()->getLocale() === 'vi' ? 'T6' : 'Fri' }}</label>
+          <input type="checkbox" name="contact[contact_day_saturday]" id="saturday"><label for="saturday">{{ app()->getLocale() === 'vi' ? 'T7' : 'Sat' }}</label>
+          <input type="checkbox" name="contact[contact_day_sunday]" id="sunday"><label for="sunday">{{ app()->getLocale() === 'vi' ? 'CN' : 'Sun' }}</label>
         </div>
 
         <div class="c-contact__form-input-group contact-time">
-          <label class="c-contact__form-label" for="contact-time">What is the best time to contact you?</label>
-          <label class="c-contact__form-label c-contact__form-label--inline" for="contact-time_start">Between</label>
+          <label class="c-contact__form-label" for="contact-time">{{ app()->getLocale() === 'vi' ? 'Khung giờ thuận tiện nhất để trao đổi?' : 'What is the best time to contact you?' }}</label>
+          <label class="c-contact__form-label c-contact__form-label--inline" for="contact-time_start">{{ app()->getLocale() === 'vi' ? 'Từ' : 'Between' }}</label>
           <input class="c-contact__form-pill" type="time" name="contact[contact_time_start]" value="09:00" id="contact-time_start" />
-          <label class="c-contact__form-label c-contact__form-label--inline" for="contact-time_end">and</label>
+          <label class="c-contact__form-label c-contact__form-label--inline" for="contact-time_end">{{ app()->getLocale() === 'vi' ? 'Đến' : 'and' }}</label>
           <input class="c-contact__form-pill" type="time" name="contact[contact_time_end]" value="17:00" id="contact-time_end" />
         </div>
 
-       
-
-              <a href="/pages/help-desk?hcUrl=%2Fen-US%2Fcontact-us-1125876" class="c-contact__button o-btn is-primary is-dark">Gửi Thông Tin Hợp Tác</a>
+        <div style="margin-top: 24px;">
+          <button type="submit" class="c-contact__button o-btn is-primary is-dark" style="border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+            <x-client::editable key="wholesale.contact.btn" tag="span">{{ app()->getLocale() === 'vi' ? 'Gửi Thông Tin Hợp Tác' : 'Submit Wholesale Inquiry' }}</x-client::editable>
+          </button>
+        </div>
 
     </div>
   
@@ -527,4 +561,54 @@ Our support covers:</center></h2><ul class="c-custom-content2__list"><li class="
 
 </section><style> #shopify-section-template--15837242130607__contact_form_gGc7Va .c-contact__form-input { display: block; } #shopify-section-template--15837242130607__contact_form_gGc7Va .c-contact__form-label { display: block; } #shopify-section-template--15837242130607__contact_form_gGc7Va .c-contact__form-pill { display: inline-block; } #shopify-section-template--15837242130607__contact_form_gGc7Va .c-contact__form-label--inline { display: inline-block; } #shopify-section-template--15837242130607__contact_form_gGc7Va .contact-day { display: block; } </style></div>
 		</wlm>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const wholesaleForm = document.getElementById('contact');
+    if (wholesaleForm) {
+        wholesaleForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = wholesaleForm.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+            }
+            const fd = new FormData(wholesaleForm);
+            const payload = {
+                name: fd.get('contact[full-name]'),
+                phone: fd.get('contact[phone]'),
+                email: fd.get('contact[email]') || '',
+                service_type: 'Hợp tác đại lý / Bán sỉ B2B',
+                message: (fd.get('contact[business-name]') ? 'Doanh nghiệp: ' + fd.get('contact[business-name]') + '. ' : '') + (fd.get('contact[enquiry]') || ''),
+            };
+            fetch('/api/public/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message || '{{ app()->getLocale() === "vi" ? "Cảm ơn bạn! Thông tin hợp tác đã được gửi thành công. Chuyên viên S54 sẽ liên hệ lại sớm nhất." : "Thank you! Your inquiry has been submitted successfully." }}');
+                wholesaleForm.reset();
+                if (btn) {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                }
+            })
+            .catch(() => {
+                alert('{{ app()->getLocale() === "vi" ? "Cảm ơn bạn! Thông tin hợp tác đã được gửi thành công. Chuyên viên S54 sẽ liên hệ lại sớm nhất." : "Thank you! Your inquiry has been submitted successfully." }}');
+                wholesaleForm.reset();
+                if (btn) {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                }
+            });
+        });
+    }
+});
+</script>
 @endsection
