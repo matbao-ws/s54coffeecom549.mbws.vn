@@ -17,8 +17,8 @@
   <div class="c-hero-banner__media-container o-media-container aa" style="position: relative;">
     @if($canEditBanner)
         <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
-            <button type="button" class="s54-edit-banner-trigger" data-block-key="wholesale.hero.banner" data-block-type="image" src="{{ asset('assets/images/785_1-wholesale-page-banner-desktop-2_2560x.jpg') }}" title="Click để thay đổi ảnh banner trang Bán sỉ & Doanh nghiệp" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <span>📷 Đổi ảnh banner</span>
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="wholesale.hero.banner" data-block-type="image" src="{{ asset('assets/images/785_1-wholesale-page-banner-desktop-2_2560x.jpg') }}" title="{{ app()->getLocale() === 'vi' ? 'Click để thay đổi ảnh banner trang Bán sỉ & Doanh nghiệp' : 'Click to change Wholesale banner' }}" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 {{ app()->getLocale() === 'vi' ? 'Đổi ảnh banner' : 'Change banner' }}</span>
             </button>
         </div>
     @endif

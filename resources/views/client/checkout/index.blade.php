@@ -598,7 +598,7 @@ h3.s54-summary-title {
                                         <div style="font-weight: 700; color: #2F221A; margin-bottom: 4px; font-size: 13px;">
                                             {{ $locale === 'vi' ? 'Thông tin tài khoản chính thức:' : 'Official Bank Details:' }}
                                         </div>
-                                        <div>• {{ $locale === 'vi' ? 'Ngân hàng:' : 'Bank:' }} <strong>MBBank (Ngân hàng Quân Đội)</strong></div>
+                                        <div>• {{ $locale === 'vi' ? 'Ngân hàng:' : 'Bank:' }} <strong>{{ $locale === 'vi' ? 'MB Bank (Ngân hàng Quân Đội)' : 'MB Bank (Military Bank)' }}</strong></div>
                                         <div>• {{ $locale === 'vi' ? 'Số tài khoản:' : 'Account Number:' }} <strong id="stk-val" style="color: #2F221A; font-size: 13.5px;">0974933907</strong>
                                             <button type="button" class="s54-copy-btn" id="btn-copy-stk">📋 {{ $locale === 'vi' ? 'Sao chép' : 'Copy' }}</button>
                                         </div>
@@ -955,7 +955,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${vietQrUrl}" alt="VietQR S54 Coffee" style="width: 120px; height: 120px; border-radius: 6px; border: 1px solid #EBE7E1; background: #FFFFFF; object-fit: contain; flex-shrink: 0;">
                         <div style="flex: 1; min-width: 170px; font-size: 12.5px; line-height: 1.55;">
                             <strong style="color: #2F221A; font-size: 13px;">${isVi ? 'Quét mã VietQR chuyển khoản nhanh:' : 'Scan VietQR to pay via bank transfer:'}</strong><br>
-                            • ${isVi ? 'Ngân hàng:' : 'Bank:'} <strong>MB Bank (Ngân hàng Quân Đội)</strong><br>
+                            • ${isVi ? 'Ngân hàng:' : 'Bank:'} <strong>${isVi ? 'MB Bank (Ngân hàng Quân Đội)' : 'MB Bank (Military Bank)'}</strong><br>
                             • ${isVi ? 'Số tài khoản:' : 'Account Number:'} <strong>0974933907</strong><br>
                             • ${isVi ? 'Chủ tài khoản:' : 'Account Holder:'} <strong>CÔNG TY TNHH GIẢI PHÁP TỐT</strong><br>
                             • ${isVi ? 'Số tiền:' : 'Amount:'} <strong style="color: #D68E1D;">${formatVND(currentGrandTotal)}</strong><br>

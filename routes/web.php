@@ -53,6 +53,13 @@ Route::get('contact.html', fn () => redirect('/vi/lien-he', 301));
 Route::get('contact', fn () => redirect('/vi/lien-he', 301));
 Route::get('lien-he', fn () => redirect('/vi/lien-he', 301));
 Route::get('lien-he.html', fn () => redirect('/vi/lien-he', 301));
+Route::get('policy-privacy.html', fn () => redirect('/vi/pages/chinh-sach-bao-mat', 301));
+Route::get('policy-shipping.html', fn () => redirect('/vi/pages/chinh-sach-van-chuyen', 301));
+Route::get('policy-returns.html', fn () => redirect('/vi/pages/chinh-sach-doi-tra', 301));
+Route::get('blogs-news.html', fn () => redirect('/vi/tin-tuc', 301));
+Route::get('blog-detail.html', fn () => redirect('/vi/tin-tuc', 301));
+Route::get('order-tracking.html', fn () => redirect('/vi/cart', 301));
+Route::get('order-success.html', fn () => redirect('/vi/cart', 301));
 Route::get('product-detail.html', function (\Illuminate\Http\Request $request) {
     $id = (string) $request->query('id');
     $map = [
@@ -67,8 +74,10 @@ Route::get('product-detail.html', function (\Illuminate\Http\Request $request) {
 // Cart & Checkout Aliases
 Route::get('cart', fn () => redirect('/vi/cart', 301));
 Route::get('cart.html', fn () => redirect('/vi/cart', 301));
+Route::get('gio-hang', fn () => redirect('/vi/cart', 301));
 Route::get('checkout', fn () => redirect('/vi/checkout', 301));
 Route::get('checkout.html', fn () => redirect('/vi/checkout', 301));
+Route::get('thanh-toan', fn () => redirect('/vi/checkout', 301));
 Route::get('{any}/checkout.html', fn () => redirect('/vi/checkout', 301))->where('any', '.*');
 Route::get('{any}/cart.html', fn () => redirect('/vi/cart', 301))->where('any', '.*');
 

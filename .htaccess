@@ -40,6 +40,12 @@ DirectoryIndex public/index.php index.php
   RewriteRule ^ - [L]
 
   # Explicit 301 redirects for legacy static HTML files to canonical Laravel client routes
+  RewriteRule ^gio-hang/?$ /vi/cart [R=301,L]
+  RewriteRule ^thanh-toan/?$ /vi/checkout [R=301,L]
+  RewriteRule ^en/cart\.html$ /en/cart [R=301,L]
+  RewriteRule ^en/checkout\.html$ /en/checkout [R=301,L]
+  RewriteRule ^en/gio-hang/?$ /en/cart [R=301,L]
+  RewriteRule ^en/thanh-toan/?$ /en/checkout [R=301,L]
   RewriteRule ^wholesale\.html$ /vi/pages/wholesale [R=301,L]
   RewriteRule ^our-story\.html$ /vi/pages/our-story [R=301,L]
   RewriteRule ^contact\.html$ /vi/lien-he [R=301,L]
@@ -47,6 +53,13 @@ DirectoryIndex public/index.php index.php
   RewriteRule ^lien-he\.html$ /vi/lien-he [R=301,L]
   RewriteRule ^lien-he$ /vi/lien-he [R=301,L]
   RewriteRule ^collections-coffee\.html$ /vi/san-pham [R=301,L]
+  RewriteRule ^blogs-news\.html$ /vi/tin-tuc [R=301,L]
+  RewriteRule ^blog-detail\.html$ /vi/tin-tuc [R=301,L]
+  RewriteRule ^policy-privacy\.html$ /vi/pages/chinh-sach-bao-mat [R=301,L]
+  RewriteRule ^policy-shipping\.html$ /vi/pages/chinh-sach-van-chuyen [R=301,L]
+  RewriteRule ^policy-returns\.html$ /vi/pages/chinh-sach-doi-tra [R=301,L]
+  RewriteRule ^order-tracking\.html$ /vi/cart [R=301,L]
+  RewriteRule ^order-success\.html$ /vi/cart [R=301,L]
   RewriteRule ^(.*/)?checkout\.html$ /vi/checkout [R=301,L]
   RewriteRule ^(.*/)?cart\.html$ /vi/cart [R=301,L]
 

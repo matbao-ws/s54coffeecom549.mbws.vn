@@ -31,6 +31,27 @@ Route::get('our-story.html', fn (string $locale) => redirect()->route('client.pa
 Route::get('contact', fn (string $locale) => redirect()->route('client.contact', ['locale' => $locale], 301));
 Route::get('contact.html', fn (string $locale) => redirect()->route('client.contact', ['locale' => $locale], 301));
 Route::get('lien-he.html', fn (string $locale) => redirect()->route('client.contact', ['locale' => $locale], 301));
+Route::get('policy-privacy.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'chinh-sach-bao-mat'], 301));
+Route::get('policy-shipping.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'chinh-sach-van-chuyen'], 301));
+Route::get('policy-returns.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'chinh-sach-doi-tra'], 301));
+Route::get('blogs-news.html', fn (string $locale) => redirect()->route('client.blog.index', ['locale' => $locale], 301));
+Route::get('blog-detail.html', fn (string $locale) => redirect()->route('client.blog.index', ['locale' => $locale], 301));
+Route::get('collections-coffee.html', fn (string $locale) => redirect()->route('client.catalog.index', ['locale' => $locale], 301));
+Route::get('order-tracking.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
+Route::get('order-success.html', fn (string $locale) => redirect()->route('client.cart', ['locale' => $locale], 301));
+Route::get('product-detail.html', function (\Illuminate\Http\Request $request, string $locale) {
+    $id = (string) $request->query('id');
+    $map = [
+        '200003' => 'tui-ca-phe-hoa-tan-3in1-s54-coffee-456g',
+        '200007' => 'ca-phe-hat-rang-robusta-s54-500gr',
+        '200002' => 'combo-12-goi-ca-phe-hoa-tan-s54-dung-thu',
+        '200008' => 'may-xay-ca-phe-cam-tay-vbz01-5',
+    ];
+    $slug = $map[$id] ?? null;
+    return $slug
+        ? redirect()->route('client.products.show', ['locale' => $locale, 'slug' => $slug], 301)
+        : redirect()->route('client.catalog.index', ['locale' => $locale], 301);
+});
 
 // Contact Page
 Route::get('lien-he', [PageController::class, 'contact'])->name('contact');

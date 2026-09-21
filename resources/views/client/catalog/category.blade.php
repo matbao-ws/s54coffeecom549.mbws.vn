@@ -19,7 +19,7 @@
     @if($products->isEmpty())
         <div class="client-shell client-empty">
             <x-client::editable key="catalog.category.empty" tag="p">
-                Danh mục này chưa có sản phẩm nào.
+                {{ app()->getLocale() === 'vi' ? 'Danh mục này chưa có sản phẩm nào.' : 'No products found in this category.' }}
             </x-client::editable>
         </div>
     @else

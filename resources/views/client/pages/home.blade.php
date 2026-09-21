@@ -62,8 +62,8 @@
     @endphp
     @if($canEditHomeBanner)
         <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
-            <button type="button" class="s54-edit-banner-trigger" data-block-key="home.hero.banner" data-block-type="image" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}" title="Click để thay đổi ảnh banner Trang Chủ" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-                <span>📷 Đổi ảnh banner</span>
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="home.hero.banner" data-block-type="image" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}" title="{{ $locale === 'vi' ? 'Click để thay đổi ảnh banner Trang Chủ' : 'Click to change Home banner' }}" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 {{ $locale === 'vi' ? 'Đổi ảnh banner' : 'Change banner' }}</span>
             </button>
         </div>
     @endif
@@ -283,7 +283,7 @@
         data-poster-url="{{ $homeVideo['custom_poster'] ?? '' }}"
         data-default-url="assets/media/espresso_brew_desktop.mp4"
         data-default-poster="assets/images/s54/espresso_brewtorial_desktop.jpg"
-        data-video-title="Video Nghệ Thuật Cà Phê Espresso"
+        data-video-title="{{ $locale === 'vi' ? 'Video Nghệ Thuật Cà Phê Espresso' : 'Espresso Artistry Video' }}"
         data-is-youtube="{{ $homeVideo['is_youtube'] ? 'true' : 'false' }}"
       @endif
     >
@@ -294,12 +294,12 @@
           id="home-youtube-iframe"
           data-src="{{ $homeVideo['embed_url'] }}?autoplay=1&rel=0"
           src=""
-          title="Video Nghệ Thuật Cà Phê S54"
+          title="{{ $locale === 'vi' ? 'Video Nghệ Thuật Cà Phê S54' : 'S54 Coffee Artistry Video' }}"
           style="display: none; position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 3;"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
-        <button class="o-btn--square is-play c-featured-video__button-play" aria-label="Phát video" onclick="var frame=this.parentElement.querySelector('#home-youtube-iframe'); if(frame){ frame.src=frame.dataset.src; frame.style.display='block'; this.parentElement.classList.add('is-playing'); }">
+        <button class="o-btn--square is-play c-featured-video__button-play" aria-label="{{ $locale === 'vi' ? 'Phát video' : 'Play video' }}" onclick="var frame=this.parentElement.querySelector('#home-youtube-iframe'); if(frame){ frame.src=frame.dataset.src; frame.style.display='block'; this.parentElement.classList.add('is-playing'); }">
           <svg class="o-btn__play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:block!important;margin:0!important;padding:0!important;" xmlns="http://www.w3.org/2000/svg"><path d="M7 5.5a1 1 0 0 1 1.55-.83l10 6.5a1 1 0 0 1 0 1.66l-10 6.5A1 1 0 0 1 7 18.5v-13z"/></svg>
         </button>
       @else
