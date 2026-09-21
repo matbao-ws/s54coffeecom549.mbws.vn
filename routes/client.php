@@ -59,6 +59,8 @@ Route::get('collections', fn (string $locale) => redirect()->route('client.catal
 Route::get('collections/{any?}', fn (string $locale) => redirect()->route('client.catalog.index', ['locale' => $locale]))->where('any', '.*');
 Route::get('products/{slug}', fn (string $locale, string $slug) => redirect()->route('client.products.show', ['locale' => $locale, 'slug' => $slug]));
 Route::get('blogs/{any?}', fn (string $locale) => redirect()->route('client.blog.index', ['locale' => $locale]))->where('any', '.*');
+Route::get('blog', fn (string $locale) => redirect()->route('client.blog.index', ['locale' => $locale]));
+Route::get('blog/{any?}', fn (string $locale) => redirect()->route('client.blog.index', ['locale' => $locale]))->where('any', '.*');
 
 // Sandbox for inline editing
 if (app()->environment(['local', 'testing'])) {

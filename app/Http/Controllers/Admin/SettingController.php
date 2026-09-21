@@ -77,7 +77,7 @@ class SettingController extends Controller
             'blog_hero' => [
                 'image_key' => 'blog.hero.banner',
                 'name' => 'Banner Cẩm Nang & Tin Tức (Blog)',
-                'page' => '/blog',
+                'page' => '/tin-tuc',
                 'url' => $this->siteContent->image('blog.hero.banner', asset('client-assets/images/s54/story_roasting_master.jpg')),
                 'default_image' => asset('client-assets/images/s54/story_roasting_master.jpg'),
                 'title_key' => 'blog.hero.title',
