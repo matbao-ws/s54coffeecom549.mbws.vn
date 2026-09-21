@@ -7,12 +7,22 @@
 <wlm class="wlm-content">
 		  <div id="shopify-section-template--15837242130607__426604da-c2e3-4dda-8755-b11c855308ee" class="shopify-section c-section c-section__hero-banner">
 
+@php
+    $canEditBanner = (bool) (auth()->user()?->canEditClientContent() && auth()->user()->can('media.view'));
+@endphp
 <link href="{{ asset('assets/css/sections.hero-banner.css') }}?v={{ @filemtime(base_path('assets/css/sections.hero-banner.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><section class="c-hero-banner is-large
     
     ">
       
-  <div class="c-hero-banner__media-container o-media-container aa">
-    <div class="c-hero-banner__image_overlay"></div>
+  <div class="c-hero-banner__media-container o-media-container aa" style="position: relative;">
+    @if($canEditBanner)
+        <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="wholesale.hero.banner" data-block-type="image" src="{{ asset('assets/images/785_1-wholesale-page-banner-desktop-2_2560x.jpg') }}" title="Click để thay đổi ảnh banner trang Bán sỉ & Doanh nghiệp" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 Đổi ảnh banner</span>
+            </button>
+        </div>
+    @endif
+    <div class="c-hero-banner__image_overlay" style="pointer-events: none !important;"></div>
 <x-client::editable-image key="wholesale.hero.banner" src="{{ asset('assets/images/785_1-wholesale-page-banner-desktop-2_2560x.jpg') }}" alt="S54 Coffee B2B Wholesale Solutions" class="c-hero-banner__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /><div class="c-hero-banner__overlay is-medium is-vertical-bottom
       s-overlay--left is-colour-default--mobile is-colour-dark--desktop
       

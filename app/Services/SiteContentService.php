@@ -52,6 +52,16 @@ class SiteContentService
     }
 
     /**
+     * Retrieve resolved image URL or default if empty.
+     */
+    public function image(string $key, ?string $defaultUrl = null, ?string $locale = null): string
+    {
+        $val = $this->value($key, $locale);
+
+        return ($val !== null && $val !== '') ? $val : ($defaultUrl ?? '');
+    }
+
+    /**
      * Retrieve parsed video data (url, poster, is_youtube, youtube_id, embed_url, etc.)
      *
      * @return array{key: string, raw: ?string, url: string, poster: ?string, custom_poster: ?string, is_youtube: bool, youtube_id: ?string, embed_url: ?string}

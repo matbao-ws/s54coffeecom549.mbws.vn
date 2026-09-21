@@ -38,9 +38,70 @@ class SettingController extends Controller
             'home_featured' => $this->siteContent->video('home.featured.video', 'assets/media/espresso_brew_desktop.mp4', 'assets/images/s54/espresso_brewtorial_desktop.jpg'),
         ];
 
+        $bannerBlocks = [
+            'home_hero' => [
+                'image_key' => 'home.hero.banner',
+                'name' => 'Banner Trang Chủ (Homepage)',
+                'page' => '/',
+                'url' => $this->siteContent->image('home.hero.banner', asset('assets/images/s54/hero_banner_s54.png')),
+                'default_image' => asset('assets/images/s54/hero_banner_s54.png'),
+                'title_key' => 'home.hero.title',
+                'title' => $this->siteContent->value('home.hero.title') ?? 'Vietnamese Coffee. Made for the World.',
+                'subtitle_key' => 'home.hero.subtitle',
+                'subtitle' => $this->siteContent->value('home.hero.subtitle') ?? 'Discover bold Vietnamese coffee, crafted for modern coffee lovers.',
+            ],
+            'story_hero' => [
+                'image_key' => 'story.hero.banner',
+                'name' => 'Banner Trang Giới Thiệu (Our Story)',
+                'page' => '/our-story',
+                'url' => $this->siteContent->image('story.hero.banner', asset('client-assets/images/s54/story_hero_heritage.jpg')),
+                'default_image' => asset('client-assets/images/s54/story_hero_heritage.jpg'),
+                'badge_key' => 'story.hero.badge',
+                'badge' => $this->siteContent->value('story.hero.badge') ?? 'S54 COFFEE • VIETNAMESE COFFEE. MADE FOR THE WORLD.',
+                'title_key' => 'story.hero.title',
+                'title' => $this->siteContent->value('story.hero.title') ?? 'Hành Trình Tinh Hoa Cà Phê Việt & Sứ Mệnh 54 Dân Tộc',
+                'subtitle_key' => 'story.hero.lead',
+                'subtitle' => $this->siteContent->value('story.hero.lead') ?? 'Tự hào mang tên gọi kết hợp giữa hình ảnh dải đất hình chữ S và 54 dân tộc anh em, S54 Coffee ra đời với sứ mệnh nâng tầm hạt cà phê Robusta và Arabica từ thủ phủ Tây Nguyên vươn tầm quốc tế theo phương châm "New Coffee, New Income".',
+            ],
+            'wholesale_hero' => [
+                'image_key' => 'wholesale.hero.banner',
+                'name' => 'Banner Bán Sỉ & Khách Hàng Doanh Nghiệp (Wholesale B2B)',
+                'page' => '/wholesale',
+                'url' => $this->siteContent->image('wholesale.hero.banner', asset('assets/images/785_1-wholesale-page-banner-desktop-2_2560x.jpg')),
+                'default_image' => asset('assets/images/785_1-wholesale-page-banner-desktop-2_2560x.jpg'),
+                'title_key' => 'wholesale.hero.title',
+                'title' => $this->siteContent->value('wholesale.hero.title') ?? 'Bán Sỉ & Doanh Nghiệp?',
+                'subtitle_key' => 'wholesale.hero.subtitle',
+                'subtitle' => $this->siteContent->value('wholesale.hero.subtitle') ?? 'Chúng tôi không chỉ là nhà cung cấp cà phê, chúng tôi là đối tác chiến lược mang đến giải pháp toàn diện và hỗ trợ vượt trội cho doanh nghiệp của bạn.',
+            ],
+            'blog_hero' => [
+                'image_key' => 'blog.hero.banner',
+                'name' => 'Banner Cẩm Nang & Tin Tức (Blog)',
+                'page' => '/blog',
+                'url' => $this->siteContent->image('blog.hero.banner', asset('client-assets/images/s54/story_roasting_master.jpg')),
+                'default_image' => asset('client-assets/images/s54/story_roasting_master.jpg'),
+                'title_key' => 'blog.hero.title',
+                'title' => $this->siteContent->value('blog.hero.title') ?? 'Cẩm Nang & Câu Chuyện Cà Phê',
+                'subtitle_key' => 'blog.hero.subtitle',
+                'subtitle' => $this->siteContent->value('blog.hero.subtitle') ?? 'Kiến thức pha chế, bí quyết bảo quản và hành trình khám phá các vùng trồng cà phê Việt Nam.',
+            ],
+            'catalog_hero' => [
+                'image_key' => 'catalog.hero.banner',
+                'name' => 'Banner Cửa Hàng / Bộ Sưu Tập (Shop / Catalog)',
+                'page' => '/collections',
+                'url' => $this->siteContent->image('catalog.hero.banner', ''),
+                'default_image' => '',
+                'title_key' => 'catalog.hero.title',
+                'title' => $this->siteContent->value('catalog.hero.title') ?? 'Bộ Sưu Tập Cà Phê S54',
+                'subtitle_key' => 'catalog.hero.subtitle',
+                'subtitle' => $this->siteContent->value('catalog.hero.subtitle') ?? '100% Cà phê nguyên chất tuyển chọn từ Đắk Lắk & Cầu Đất, rang mộc công nghệ cao.',
+            ],
+        ];
+
         return view('admin.settings.index', [
             'settings' => $settings,
             'videoBlocks' => $videoBlocks,
+            'bannerBlocks' => $bannerBlocks,
             'multilingualSettings' => $this->multilingual->get(),
             'contentLanguages' => auth()->user()?->isSuperAdmin()
                 ? Language::query()->where('is_active', true)->orderBy('sort_order')->orderBy('id')->get()
@@ -202,6 +263,62 @@ class SettingController extends Controller
                         \App\Models\SiteBlock::TYPE_VIDEO,
                         $locale,
                         $valToStore,
+                        $userId
+                    );
+                }
+            }
+        }
+
+        if ($request->has('banners') && is_array($request->input('banners'))) {
+            $userId = $request->user()?->id;
+            $locale = app()->getLocale();
+            $allowedKeys = [
+                'home.hero.banner', 'home.hero.title', 'home.hero.subtitle',
+                'story.hero.banner', 'story.hero.badge', 'story.hero.title', 'story.hero.lead',
+                'wholesale.hero.banner', 'wholesale.hero.title', 'wholesale.hero.subtitle',
+                'blog.hero.banner', 'blog.hero.title', 'blog.hero.subtitle',
+                'catalog.hero.banner', 'catalog.hero.title', 'catalog.hero.subtitle',
+            ];
+
+            foreach ($request->input('banners') as $bItem) {
+                if (! is_array($bItem)) continue;
+
+                if (! empty($bItem['image_key']) && in_array($bItem['image_key'], $allowedKeys, true) && isset($bItem['image_url'])) {
+                    $this->siteContent->updateLocale(
+                        $bItem['image_key'],
+                        \App\Models\SiteBlock::TYPE_IMAGE,
+                        $locale,
+                        trim($bItem['image_url']),
+                        $userId
+                    );
+                }
+
+                if (! empty($bItem['badge_key']) && in_array($bItem['badge_key'], $allowedKeys, true) && isset($bItem['badge'])) {
+                    $this->siteContent->updateLocale(
+                        $bItem['badge_key'],
+                        \App\Models\SiteBlock::TYPE_TEXT,
+                        $locale,
+                        trim($bItem['badge']),
+                        $userId
+                    );
+                }
+
+                if (! empty($bItem['title_key']) && in_array($bItem['title_key'], $allowedKeys, true) && isset($bItem['title'])) {
+                    $this->siteContent->updateLocale(
+                        $bItem['title_key'],
+                        \App\Models\SiteBlock::TYPE_TEXT,
+                        $locale,
+                        trim($bItem['title']),
+                        $userId
+                    );
+                }
+
+                if (! empty($bItem['subtitle_key']) && in_array($bItem['subtitle_key'], $allowedKeys, true) && isset($bItem['subtitle'])) {
+                    $this->siteContent->updateLocale(
+                        $bItem['subtitle_key'],
+                        \App\Models\SiteBlock::TYPE_TEXT,
+                        $locale,
+                        trim($bItem['subtitle']),
                         $userId
                     );
                 }

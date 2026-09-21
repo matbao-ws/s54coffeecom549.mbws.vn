@@ -31,7 +31,8 @@
     position: relative !important;
     overflow: hidden !important;
   }
-  .c-hero-banner.is-homepage .c-hero-banner__media {
+  .c-hero-banner.is-homepage .c-hero-banner__media,
+  .c-hero-banner.is-homepage img.c-hero-banner__media {
     display: block !important;
     position: absolute !important;
     top: 0 !important;
@@ -53,11 +54,19 @@
   }
 </style>
 <section class="c-hero-banner is-large is-homepage">
-  <div class="c-hero-banner__media-container o-media-container">
+  <div class="c-hero-banner__media-container o-media-container" style="position: relative;">
     @php
       $heroBannerVer = @filemtime(public_path('client-assets/images/s54/hero_banner_s54.png')) 
         ?: (@filemtime(base_path('assets/images/s54/hero_banner_s54.png')) ?: 1789212000);
+      $canEditHomeBanner = (bool) (auth()->user()?->canEditClientContent() && auth()->user()->can('media.view'));
     @endphp
+    @if($canEditHomeBanner)
+        <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="home.hero.banner" data-block-type="image" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}" title="Click để thay đổi ảnh banner Trang Chủ" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 Đổi ảnh banner</span>
+            </button>
+        </div>
+    @endif
     <x-client::editable-image key="home.hero.banner" src="{{ asset('assets/images/s54/hero_banner_s54.png') }}?v={{ $heroBannerVer }}" alt="S54 Coffee – Vietnamese Coffee. Made for the World." class="c-hero-banner__media o-media" style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" />
 
     <div class="c-hero-banner__container">

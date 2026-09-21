@@ -261,6 +261,12 @@
                 <span>Quản lý Video</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="tab" href="#banners-pane" role="tab">
+                <span><i class="ti ti-photo fs-4"></i></span>
+                <span>Quản lý Banner</span>
+            </a>
+        </li>
     </ul>
 
     <!-- Form -->
@@ -1011,6 +1017,172 @@
                 </div>
             </div>
 
+            <!-- Quản lý Banner Pane -->
+            <div class="tab-pane fade" id="banners-pane" role="tabpanel">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+                            <div>
+                                <h5 class="card-title fw-semibold text-dark mb-1">
+                                    <i class="ti ti-photo text-primary me-2 fs-5"></i> Quản Lý Hero Banner Toàn Website
+                                </h5>
+                                <p class="text-muted mb-0 small">
+                                    Tùy chỉnh ảnh hero banner, tiêu đề và mô tả hiển thị ở đầu các trang quan trọng. Xem trước trực tiếp theo thời gian thực.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            @foreach($bannerBlocks as $key => $banner)
+                            <div class="col-12">
+                                <div class="card border shadow-none mb-3" style="background-color: #fafbfd;">
+                                    <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap justify-content-between align-items-center gap-2">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="badge bg-primary-subtle text-primary fw-bold fs-3">#{{ $loop->iteration }}</span>
+                                            <h6 class="fw-bold text-dark mb-0 fs-4">{{ $banner['name'] }}</h6>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <a href="{{ url($banner['page']) }}" target="_blank" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1">
+                                                <i class="ti ti-external-link"></i> <span>Xem trang</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row g-4 align-items-stretch">
+                                            {{-- Cột bên trái: Cấu hình Input --}}
+                                            <div class="col-lg-7 d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <input type="hidden" name="banners[{{ $key }}][image_key]" value="{{ $banner['image_key'] }}">
+                                                    <input type="hidden" name="banners[{{ $key }}][title_key]" value="{{ $banner['title_key'] }}">
+                                                    <input type="hidden" name="banners[{{ $key }}][subtitle_key]" value="{{ $banner['subtitle_key'] }}">
+                                                    @if(isset($banner['badge_key']))
+                                                        <input type="hidden" name="banners[{{ $key }}][badge_key]" value="{{ $banner['badge_key'] }}">
+                                                    @endif
+
+                                                    {{-- Đường dẫn ảnh Banner --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold text-dark d-flex justify-content-between align-items-center">
+                                                            <span><i class="ti ti-photo me-1"></i> Ảnh Hero Banner</span>
+                                                            @if(!empty($banner['default_image']))
+                                                                <button type="button" class="btn btn-link btn-sm text-decoration-none p-0 text-muted" 
+                                                                    onclick="resetAdminBannerImage('{{ $key }}', '{{ $banner['default_image'] }}')">
+                                                                    <i class="ti ti-rotate-clockwise"></i> Khôi phục ảnh gốc
+                                                                </button>
+                                                            @endif
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control text-dark banner-url-input" 
+                                                                name="banners[{{ $key }}][image_url]" 
+                                                                id="banner_{{ $key }}_url"
+                                                                value="{{ old("banners.{$key}.image_url", $banner['url']) }}"
+                                                                placeholder="https://... hoặc chọn ảnh từ thư viện"
+                                                                oninput="updateAdminBannerPreview('{{ $key }}', this.value)"
+                                                            >
+                                                            <input type="file" class="d-none" id="banner_{{ $key }}_file" accept="image/*" 
+                                                                data-media-folder="banners" 
+                                                                data-media-selected-field="banners[{{ $key }}][image_url]">
+                                                            <button type="button" class="btn btn-outline-primary d-flex align-items-center gap-1"
+                                                                onclick="document.getElementById('banner_{{ $key }}_file').click()">
+                                                                <i class="ti ti-folder-open"></i> Thư viện ảnh
+                                                            </button>
+                                                        </div>
+                                                        <div class="form-text text-muted small mt-1">
+                                                            Kích thước đề xuất: <code>1920x800px</code> hoặc <code>2560x1080px</code> (tỷ lệ chuẩn ~ 21:9 hoặc 16:7). Hỗ trợ JPG, PNG, WebP.
+                                                        </div>
+                                                    </div>
+
+                                                    @if(isset($banner['badge_key']))
+                                                    {{-- Nhãn Badge (cho Story) --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold text-dark">
+                                                            <i class="ti ti-tag me-1"></i> Nhãn tiêu đề (Badge)
+                                                        </label>
+                                                        <input type="text" class="form-control text-dark" 
+                                                            name="banners[{{ $key }}][badge]" 
+                                                            id="banner_{{ $key }}_badge"
+                                                            value="{{ old("banners.{$key}.badge", $banner['badge'] ?? '') }}"
+                                                            placeholder="Nhập nhãn badge..."
+                                                            oninput="updateAdminBannerBadge('{{ $key }}', this.value)"
+                                                        >
+                                                    </div>
+                                                    @endif
+
+                                                    {{-- Tiêu đề Banner --}}
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-semibold text-dark">
+                                                            <i class="ti ti-heading me-1"></i> Tiêu đề chính (Heading)
+                                                        </label>
+                                                        <input type="text" class="form-control text-dark" 
+                                                            name="banners[{{ $key }}][title]" 
+                                                            id="banner_{{ $key }}_title"
+                                                            value="{{ old("banners.{$key}.title", $banner['title']) }}"
+                                                            placeholder="Nhập tiêu đề banner..."
+                                                            oninput="updateAdminBannerTitle('{{ $key }}', this.value)"
+                                                        >
+                                                    </div>
+
+                                                    {{-- Phụ đề / Mô tả --}}
+                                                    <div class="mb-2">
+                                                        <label class="form-label fw-semibold text-dark">
+                                                            <i class="ti ti-align-left me-1"></i> Phụ đề / Mô tả ngắn (Subtitle)
+                                                        </label>
+                                                        <textarea class="form-control text-dark" 
+                                                            name="banners[{{ $key }}][subtitle]" 
+                                                            id="banner_{{ $key }}_subtitle" 
+                                                            rows="2"
+                                                            placeholder="Nhập phụ đề hoặc đoạn giới thiệu..."
+                                                            oninput="updateAdminBannerSubtitle('{{ $key }}', this.value)">{{ old("banners.{$key}.subtitle", $banner['subtitle']) }}</textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="pt-2 text-muted small border-top mt-3">
+                                                    <i class="ti ti-info-circle me-1 text-primary"></i> <em>Mẹo:</em> Khi đăng nhập quyền Admin, bạn cũng có thể mở trực tiếp trang web ngoài frontend và bấm <strong>"📷 Đổi ảnh banner"</strong> để thay ảnh ngay tức thì!
+                                                </div>
+                                            </div>
+
+                                            {{-- Cột bên phải: Live Preview --}}
+                                            <div class="col-lg-5">
+                                                <label class="form-label fw-semibold text-dark mb-2">
+                                                    <i class="ti ti-device-desktop me-1"></i> Xem trước trực tiếp (Live Preview)
+                                                </label>
+                                                <div class="rounded-3 overflow-hidden shadow-sm position-relative border" 
+                                                    style="background: #1e1b18; height: 260px; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end;">
+                                                    {{-- Ảnh nền Preview --}}
+                                                    <img id="preview_banner_img_{{ $key }}" 
+                                                        src="{{ $banner['url'] ?: 'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%232c2520\'/></svg>' }}" 
+                                                        alt="{{ $banner['name'] }}"
+                                                        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s;"
+                                                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100\' height=\'100\' fill=\'%232c2520\'/></svg>'"
+                                                    >
+                                                    {{-- Lớp phủ gradient --}}
+                                                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%); pointer-events: none;"></div>
+                                                    
+                                                    {{-- Nội dung text đè lên --}}
+                                                    <div class="position-relative p-3 text-white" style="z-index: 2;">
+                                                        @if(isset($banner['badge_key']))
+                                                            <div id="preview_banner_badge_{{ $key }}" class="badge bg-warning text-dark mb-1 fs-1" style="max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                                {{ $banner['badge'] ?? '' }}
+                                                            </div>
+                                                        @endif
+                                                        <h6 id="preview_banner_title_{{ $key }}" class="text-white fw-bold mb-1 fs-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8); line-height: 1.2;">
+                                                            {{ $banner['title'] }}
+                                                        </h6>
+                                                        <p id="preview_banner_subtitle_{{ $key }}" class="text-white-50 mb-0 fs-1" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-shadow: 0 1px 2px rgba(0,0,0,0.8); line-height: 1.3;">
+                                                            {{ $banner['subtitle'] }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Sticky Save Button -->
@@ -1675,6 +1847,62 @@
                     box.innerHTML = `<div class="d-flex align-items-center justify-content-center h-100 text-muted small">Chưa có video</div>`;
                 }
             };
+
+            // Admin Banner Helpers & Preview Functions
+            window.updateAdminBannerPreview = function(key, url) {
+                const img = document.getElementById('preview_banner_img_' + key);
+                if (img) {
+                    url = (url || '').trim();
+                    if (url) {
+                        img.src = url;
+                    }
+                }
+            };
+
+            window.updateAdminBannerTitle = function(key, title) {
+                const el = document.getElementById('preview_banner_title_' + key);
+                if (el) el.textContent = title;
+            };
+
+            window.updateAdminBannerSubtitle = function(key, subtitle) {
+                const el = document.getElementById('preview_banner_subtitle_' + key);
+                if (el) el.textContent = subtitle;
+            };
+
+            window.updateAdminBannerBadge = function(key, badge) {
+                const el = document.getElementById('preview_banner_badge_' + key);
+                if (el) el.textContent = badge;
+            };
+
+            window.resetAdminBannerImage = function(key, defaultUrl) {
+                const input = document.getElementById('banner_' + key + '_url');
+                if (input) {
+                    input.value = defaultUrl;
+                    updateAdminBannerPreview(key, defaultUrl);
+                }
+            };
+
+            // Listen for media picker selection on banner file inputs
+            document.addEventListener('media:selected', function (event) {
+                const input = event.target;
+                if (input && input.id && input.id.startsWith('banner_') && input.id.endsWith('_file')) {
+                    const key = input.id.replace('banner_', '').replace('_file', '');
+                    updateAdminBannerPreview(key, event.detail.url);
+                }
+            });
+
+            // Hash tab persistence (URL hash)
+            if (window.location.hash) {
+                const tabTrigger = document.querySelector(`a[data-bs-toggle="tab"][href="${window.location.hash}"]`);
+                if (tabTrigger) {
+                    new bootstrap.Tab(tabTrigger).show();
+                }
+            }
+            document.querySelectorAll('a[data-bs-toggle="tab"]').forEach(function (tabEl) {
+                tabEl.addEventListener('shown.bs.tab', function (e) {
+                    history.replaceState(null, null, e.target.getAttribute('href'));
+                });
+            });
         });
     </script>
 @endpush

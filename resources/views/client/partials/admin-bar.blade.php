@@ -249,6 +249,8 @@
                 outline: 1px dashed rgba(93, 135, 255, .55) !important;
                 outline-offset: 2px !important;
                 cursor: text !important;
+            }
+            [data-block-key]:not(img):not([data-block-type="image"]):not([data-block-type="video"]) {
                 position: relative !important;
             }
             [data-block-key]:hover {
@@ -787,7 +789,13 @@
                 }
                 dirtyRegions.forEach(function (snapshot, element) {
                     if (snapshot.type === 'image') {
-                        if (snapshot.src !== null) element.setAttribute('src', snapshot.src);
+                        if (snapshot.src !== null) {
+                            element.setAttribute('src', snapshot.src);
+                            const heroSection = element.closest ? element.closest('.s54-page-hero, .s54-blog-hero, .s54-catalog-hero, .c-hero-banner, section') : null;
+                            if (heroSection) {
+                                heroSection.style.setProperty('background', 'radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url("' + snapshot.src + '") center/cover no-repeat', 'important');
+                            }
+                        }
                     } else {
                         element.innerHTML = snapshot.html;
                     }
@@ -1053,6 +1061,22 @@
                         if (target.setAttribute) target.setAttribute('src', resource.secure_url);
                         // A stale srcset would keep winning over the new src.
                         if (target.removeAttribute) target.removeAttribute('srcset');
+
+                        // If target is inside or is a hero banner section, update background image or sibling img
+                        const heroSection = target.closest ? target.closest('.s54-page-hero, .s54-blog-hero, .s54-catalog-hero, .c-hero-banner, section') : null;
+                        if (heroSection) {
+                            const bg = heroSection.getAttribute('style') || '';
+                            if (bg.includes('url') || heroSection.classList.contains('s54-page-hero') || heroSection.classList.contains('s54-blog-hero') || heroSection.classList.contains('s54-catalog-hero')) {
+                                heroSection.style.setProperty('background', 'radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url("' + resource.secure_url + '") center/cover no-repeat', 'important');
+                            }
+                            const heroImg = heroSection.querySelector('img[data-block-key]');
+                            if (heroImg && heroImg !== target) {
+                                markRegionDirty(heroImg);
+                                heroImg.setAttribute('src', resource.secure_url);
+                                if (heroImg.removeAttribute) heroImg.removeAttribute('srcset');
+                            }
+                        }
+
                         closeMediaPicker();
                         // Waits for Save like every other change.
                         if (target.hasAttribute && !target.hasAttribute('data-block-key')) markDirty();
@@ -1415,6 +1439,14 @@
              */
             function interceptClicks(onImage) {
                 document.addEventListener('click', function (event) {
+                    const bannerTrigger = event.target.closest('.s54-edit-banner-trigger');
+                    if (bannerTrigger) {
+                        stopEverything(event);
+                        if (!editModeOn) enableEditMode();
+                        if (onImage) onImage(bannerTrigger);
+                        return;
+                    }
+
                     if (!editModeOn) return;
 
                     const region = event.target.closest('[data-block-key]');
@@ -1478,7 +1510,8 @@
                 // emoji renders as a different picture on every platform.
                 const bType = element.getAttribute('data-block-type');
                 if (bType === 'image') {
-                    hint.textContent = 'Đổi ảnh';
+                    const bKey = element.getAttribute('data-block-key') || '';
+                    hint.textContent = bKey.includes('banner') ? 'Đổi ảnh Hero Banner' : 'Đổi ảnh';
                 } else if (bType === 'video') {
                     hint.textContent = 'Đổi video: ' + (element.getAttribute('data-video-title') || 'Video');
                 } else {

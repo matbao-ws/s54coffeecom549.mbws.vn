@@ -2,14 +2,24 @@
 
 @php
     $locale = app()->getLocale();
+    $site = app(\App\Services\SiteContentService::class);
+    $storyBanner = $site->image('story.hero.banner', asset('client-assets/images/s54/story_hero_heritage.jpg'));
+    $canEdit = (bool) (auth()->user()?->canEditClientContent() && auth()->user()->can('media.view'));
 @endphp
 
 @section('title', ($locale === 'vi' ? 'Câu Chuyện S54 Coffee — Tinh Hoa Cà Phê Việt & Hành Trình Vươn Tầm' : 'Our Story — S54 Coffee Heritage & Vision'))
 
 @section('content')
 {{-- Hero Banner --}}
-<section class="s54-page-hero" style="background: radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url('{{ asset('client-assets/images/s54/story_hero_heritage.jpg') }}') center/cover no-repeat; padding: 100px 20px 80px; text-align: center; color: #FAF6F1;">
-    <div class="o-wrapper" style="max-width: 960px; margin: 0 auto;">
+<section class="s54-page-hero" style="background: radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url('{{ $storyBanner }}') center/cover no-repeat; padding: 100px 20px 80px; text-align: center; color: #FAF6F1; position: relative;">
+    @if($canEdit)
+        <div style="position: absolute; top: 16px; right: 20px; z-index: 10;">
+            <button type="button" class="s54-edit-banner-trigger" data-block-key="story.hero.banner" data-block-type="image" src="{{ $storyBanner }}" title="Click để thay đổi ảnh nền banner trang Giới thiệu" style="background: rgba(31,41,55,0.9); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <span>📷 Đổi ảnh banner</span>
+            </button>
+        </div>
+    @endif
+    <div class="o-wrapper" style="max-width: 960px; margin: 0 auto; position: relative; z-index: 1;">
         <x-client::editable key="story.hero.badge" tag="span" style="display: inline-block; background: rgba(214,142,29,0.25); border: 1px solid #D68E1D; color: #F7D08A; padding: 6px 18px; border-radius: 20px; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px;">
             {{ $locale === 'vi' ? 'S54 COFFEE • VIETNAMESE COFFEE. MADE FOR THE WORLD.' : 'S54 COFFEE • VIETNAMESE COFFEE. MADE FOR THE WORLD.' }}
         </x-client::editable>
