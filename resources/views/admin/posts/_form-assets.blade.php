@@ -248,7 +248,9 @@
                 formData.append('folder', 'posts');
                 formData.append('image_only', '1');
 
-                const defaultAlt = (titleInput ? titleInput.value.trim() : '') || 'Ảnh minh họa bài viết';
+                const tabPane = targetEditor.root.closest('.tab-pane');
+                const localeTitleInput = tabPane ? tabPane.querySelector('[data-i18n-field="title"]') : null;
+                const defaultAlt = (localeTitleInput ? localeTitleInput.value.trim() : '') || (titleInput ? titleInput.value.trim() : '') || 'Ảnh minh họa bài viết';
                 const range = targetEditor.getSelection(true) || { index: targetEditor.getLength(), length: 0 };
 
                 fetch('{{ route("admin.media.upload") }}', {
@@ -315,7 +317,9 @@
                 const toolbar = editor.getModule('toolbar');
                 if (toolbar) {
                     toolbar.addHandler('image', function() {
-                        const defaultAlt = (titleInput ? titleInput.value.trim() : '') || 'Ảnh bài viết';
+                        const tabPane = editorElement.closest('.tab-pane');
+                        const localeTitleInput = tabPane ? tabPane.querySelector('[data-i18n-field="title"]') : null;
+                        const defaultAlt = (localeTitleInput ? localeTitleInput.value.trim() : '') || (titleInput ? titleInput.value.trim() : '') || 'Ảnh bài viết';
                         if (typeof window.openMediaPicker === 'function') {
                             window.openMediaPicker({
                                 folder: 'posts',

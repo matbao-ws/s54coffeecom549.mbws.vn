@@ -144,6 +144,33 @@
                 });
                 editorElement.__quill = quill;
 
+                // Configure Quill Toolbar Image Handler
+                const toolbar = quill.getModule('toolbar');
+                if (toolbar) {
+                    toolbar.addHandler('image', function() {
+                        if (typeof window.openMediaPicker === 'function') {
+                            window.openMediaPicker({
+                                folder: 'products',
+                                onSelect: function(url) {
+                                    const range = quill.getSelection(true) || { index: quill.getLength(), length: 0 };
+                                    quill.insertEmbed(range.index, 'image', url, 'user');
+                                    quill.setSelection(range.index + 1, 0, 'silent');
+                                    isDirty = true;
+                                    if (target) target.value = quill.root.innerHTML;
+                                }
+                            });
+                        } else {
+                            let url = prompt('Nhập đường dẫn hình ảnh (URL):', '');
+                            if (url) {
+                                const range = quill.getSelection(true) || { index: quill.getLength(), length: 0 };
+                                quill.insertEmbed(range.index, 'image', url, 'user');
+                                quill.setSelection(range.index + 1, 0, 'silent');
+                                if (target) target.value = quill.root.innerHTML;
+                            }
+                        }
+                    });
+                }
+
                 quill.on('text-change', function() {
                     isDirty = true;
                     if (target) {
