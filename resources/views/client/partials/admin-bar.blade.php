@@ -1170,14 +1170,6 @@
             @endcan
 
             /*
-             * Capture phase, on document, is the only placement that works on a
-             * real theme. Theme markup wraps content in elements carrying their
-             * own handlers — lightboxes, tab switchers, video modals, often as
-             * inline onclick — and those run on the way *up*. Listening on the
-             * content element would let the theme's modal open on top of the
-             * media picker; preventDefault alone does not stop it either.
-             * Capturing at the document lets us stop the event before it ever
-            /*
              * Front-end Inline Video Editor Modal logic
              */
             let activeVideoRegion = null;
