@@ -188,7 +188,7 @@ class SettingController extends Controller
             'footer.*' => 'nullable|string|max:1000',
         ];
 
-        if ($request->user()?->isSuperAdmin()) {
+        if ($request->user()?->isSuperAdmin() && $request->has('multilingual')) {
             $rules = [
                 ...$rules,
                 'multilingual.enabled' => ['required', 'boolean'],
@@ -424,7 +424,7 @@ class SettingController extends Controller
             }
         }
 
-        if ($request->user()?->isSuperAdmin()) {
+        if ($request->user()?->isSuperAdmin() && isset($validated['multilingual'])) {
             $this->multilingual->update($validated['multilingual']);
             $this->languages->forget();
         }
