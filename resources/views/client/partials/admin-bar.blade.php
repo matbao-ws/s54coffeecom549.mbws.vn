@@ -1383,12 +1383,14 @@
             if (videoRestoreBtn) videoRestoreBtn.addEventListener('click', restoreVideoDefault);
             if (videoPickMediaBtn) {
                 videoPickMediaBtn.addEventListener('click', function() {
-                    openMediaPickerFor({
-                        onSelect: function(url) {
-                            if (videoPosterInput) videoPosterInput.value = url;
-                            updateVideoPreview();
-                        }
-                    });
+                    if (typeof openMediaPickerFor === 'function') {
+                        openMediaPickerFor({
+                            onSelect: function(url) {
+                                if (videoPosterInput) videoPosterInput.value = url;
+                                updateVideoPreview();
+                            }
+                        });
+                    }
                 });
             }
             if (videoModal) {
