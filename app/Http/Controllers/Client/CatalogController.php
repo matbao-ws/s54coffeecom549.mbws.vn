@@ -40,6 +40,23 @@ class CatalogController extends Controller
             abort(404);
         }
 
-        return view('client.catalog.product', compact('product'));
+        $relatedProducts = \App\Models\Product::where('is_active', true)
+            ->where('id', '!=', $product->id)
+            ->when($product->category_id, fn($q) => $q->where('category_id', $product->category_id))
+            ->with(['images', 'variants'])
+            ->take(4)
+            ->get();
+
+        if ($relatedProducts->count() < 4) {
+            $more = \App\Models\Product::where('is_active', true)
+                ->where('id', '!=', $product->id)
+                ->whereNotIn('id', $relatedProducts->pluck('id'))
+                ->with(['images', 'variants'])
+                ->take(4 - $relatedProducts->count())
+                ->get();
+            $relatedProducts = $relatedProducts->concat($more);
+        }
+
+        return view('client.catalog.product', compact('product', 'relatedProducts'));
     }
 }
