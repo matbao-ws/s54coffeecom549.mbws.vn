@@ -42,7 +42,10 @@ DirectoryIndex public/index.php index.php
   # Explicit 301 redirects for legacy static HTML files to canonical Laravel client routes
   RewriteRule ^wholesale\.html$ /vi/pages/wholesale [R=301,L]
   RewriteRule ^our-story\.html$ /vi/pages/our-story [R=301,L]
-  RewriteRule ^contact\.html$ /vi/pages/wholesale#contact [R=301,L]
+  RewriteRule ^contact\.html$ /vi/lien-he [R=301,L]
+  RewriteRule ^contact$ /vi/lien-he [R=301,L]
+  RewriteRule ^lien-he\.html$ /vi/lien-he [R=301,L]
+  RewriteRule ^lien-he$ /vi/lien-he [R=301,L]
   RewriteRule ^collections-coffee\.html$ /vi/san-pham [R=301,L]
   RewriteRule ^(.*/)?checkout\.html$ /vi/checkout [R=301,L]
   RewriteRule ^(.*/)?cart\.html$ /vi/cart [R=301,L]
