@@ -26,6 +26,12 @@ Route::get('wholesale', fn (string $locale) => redirect()->route('client.pages.s
 Route::get('wholesale.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'wholesale'], 301));
 Route::get('our-story', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story'], 301));
 Route::get('our-story.html', fn (string $locale) => redirect()->route('client.pages.show', ['locale' => $locale, 'slug' => 'our-story'], 301));
+Route::get('contact', fn (string $locale) => redirect()->route('client.contact', ['locale' => $locale], 301));
+Route::get('contact.html', fn (string $locale) => redirect()->route('client.contact', ['locale' => $locale], 301));
+Route::get('lien-he.html', fn (string $locale) => redirect()->route('client.contact', ['locale' => $locale], 301));
+
+// Contact Page
+Route::get('lien-he', [PageController::class, 'contact'])->name('contact');
 
 
 // Catalog / Products

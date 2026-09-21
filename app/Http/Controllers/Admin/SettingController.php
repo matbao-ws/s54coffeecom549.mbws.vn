@@ -96,12 +96,44 @@ class SettingController extends Controller
                 'subtitle_key' => 'catalog.hero.subtitle',
                 'subtitle' => $this->siteContent->value('catalog.hero.subtitle') ?? '100% Cà phê nguyên chất tuyển chọn từ Đắk Lắk & Cầu Đất, rang mộc công nghệ cao.',
             ],
+            'contact_hero' => [
+                'image_key' => 'contact.hero.banner',
+                'name' => 'Banner Trang Liên Hệ (Contact Us)',
+                'page' => '/vi/lien-he',
+                'url' => $this->siteContent->image('contact.hero.banner', asset('client-assets/images/s54/story_hero_heritage.jpg')),
+                'default_image' => asset('client-assets/images/s54/story_hero_heritage.jpg'),
+                'badge_key' => 'contact.hero.badge',
+                'badge' => $this->siteContent->value('contact.hero.badge') ?? 'KẾT NỐI VỚI CHÚNG TÔI • S54 COFFEE',
+                'title_key' => 'contact.hero.title',
+                'title' => $this->siteContent->value('contact.hero.title') ?? 'Liên Hệ & Hợp Tác Cùng S54 Coffee',
+                'subtitle_key' => 'contact.hero.lead',
+                'subtitle' => $this->siteContent->value('contact.hero.lead') ?? 'Quý khách hàng, đối tác đại lý hoặc doanh nghiệp có nhu cầu tư vấn sản phẩm, gia công OEM hoặc trải nghiệm cà phê trực tiếp xin vui lòng kết nối với chúng tôi qua thông tin bên dưới.',
+            ],
         ];
+
+        $rawFooter = $settings->get('footer_settings');
+        $footerSettings = is_array($rawFooter) ? $rawFooter : [];
+        $footerDefaults = [
+            'company_name' => 'CÔNG TY TNHH GIẢI PHÁP TỐT',
+            'tagline' => '"New Coffee, New Income" — Tinh hoa cà phê Việt vang danh thương trường từ năm 2017',
+            'address' => 'Số 32, Đường 16, Manhattan, Vinhomes Grand Park, Phường Long Bình, TP. Thủ Đức, TP. Hồ Chí Minh',
+            'hotline' => '0911.833.911 - 0933.873.873',
+            'email' => 'info@goodsolutions.com.vn',
+            'website' => 'goodsolutions.com.vn',
+            'website_url' => 'https://goodsolutions.com.vn',
+            'col2_title' => 'Sản Phẩm S54',
+            'col3_title' => 'Về S54 & Dịch Vụ',
+            'col4_title' => 'Đăng Ký Nhận Ưu Đãi',
+            'newsletter_desc' => 'Nhận ngay voucher ưu đãi 15% cho đơn hàng đầu tiên cùng cẩm nang pha chế độc quyền từ S54 Coffee.',
+            'copyright' => '© ' . date('Y') . ' <strong>S54 COFFEE</strong> by <strong>Good Solutions Co., Ltd</strong>. Giữ toàn quyền bản quyền.',
+        ];
+        $footerSettings = array_merge($footerDefaults, array_filter($footerSettings, fn ($v) => $v !== null && $v !== ''));
 
         return view('admin.settings.index', [
             'settings' => $settings,
             'videoBlocks' => $videoBlocks,
             'bannerBlocks' => $bannerBlocks,
+            'footerSettings' => $footerSettings,
             'multilingualSettings' => $this->multilingual->get(),
             'contentLanguages' => auth()->user()?->isSuperAdmin()
                 ? Language::query()->where('is_active', true)->orderBy('sort_order')->orderBy('id')->get()
@@ -151,6 +183,9 @@ class SettingController extends Controller
             'videos' => 'nullable|array',
             'videos.*.url' => 'nullable|string|max:1000',
             'videos.*.poster' => 'nullable|string|max:1000',
+            // Footer validation
+            'footer' => 'nullable|array',
+            'footer.*' => 'nullable|string|max:1000',
         ];
 
         if ($request->user()?->isSuperAdmin()) {
@@ -278,6 +313,7 @@ class SettingController extends Controller
                 'wholesale.hero.banner', 'wholesale.hero.title', 'wholesale.hero.subtitle',
                 'blog.hero.banner', 'blog.hero.title', 'blog.hero.subtitle',
                 'catalog.hero.banner', 'catalog.hero.title', 'catalog.hero.subtitle',
+                'contact.hero.banner', 'contact.hero.badge', 'contact.hero.title', 'contact.hero.lead',
             ];
 
             foreach ($request->input('banners') as $bItem) {
@@ -325,6 +361,69 @@ class SettingController extends Controller
             }
         }
 
+        // Save footer settings and synchronize with site_blocks & contact info
+        if ($request->has('footer') && is_array($request->input('footer'))) {
+            $footerInput = $request->input('footer');
+            ProjectSetting::updateOrCreate(
+                ['setting_key' => 'footer_settings'],
+                ['setting_value' => $footerInput]
+            );
+
+            if (! empty($footerInput['company_name'])) {
+                ProjectSetting::updateOrCreate(
+                    ['setting_key' => 'company_name'],
+                    ['setting_value' => $footerInput['company_name']]
+                );
+            }
+
+            $currentContact = ProjectSetting::where('setting_key', 'contact')->value('setting_value');
+            $contactArr = is_array($currentContact) ? $currentContact : (is_string($currentContact) ? json_decode($currentContact, true) : []);
+            if (! is_array($contactArr)) {
+                $contactArr = [];
+            }
+            if (! empty($footerInput['hotline'])) {
+                $contactArr['phone'] = $footerInput['hotline'];
+            }
+            if (! empty($footerInput['email'])) {
+                $contactArr['email'] = $footerInput['email'];
+            }
+            if (! empty($footerInput['address'])) {
+                $contactArr['address'] = $footerInput['address'];
+            }
+            ProjectSetting::updateOrCreate(
+                ['setting_key' => 'contact'],
+                ['setting_value' => $contactArr]
+            );
+
+            $locale = app()->getLocale();
+            $userId = $request->user()?->id;
+            $footerBlockMap = [
+                'company_name' => 'footer.company_name',
+                'tagline' => 'footer.tagline',
+                'address' => 'footer.address',
+                'hotline' => 'footer.hotline',
+                'email' => 'footer.email',
+                'website' => 'footer.website',
+                'col2_title' => 'footer.col2_title',
+                'col3_title' => 'footer.col3_title',
+                'col4_title' => 'footer.col4_title',
+                'newsletter_desc' => 'footer.newsletter_desc',
+                'copyright' => 'footer.copyright',
+            ];
+
+            foreach ($footerBlockMap as $fField => $fBlockKey) {
+                if (isset($footerInput[$fField])) {
+                    $this->siteContent->updateLocale(
+                        $fBlockKey,
+                        \App\Models\SiteBlock::TYPE_TEXT,
+                        $locale,
+                        trim($footerInput[$fField]),
+                        $userId
+                    );
+                }
+            }
+        }
+
         if ($request->user()?->isSuperAdmin()) {
             $this->multilingual->update($validated['multilingual']);
             $this->languages->forget();
@@ -338,6 +437,7 @@ class SettingController extends Controller
                 'social_links',
                 'embed_header',
                 'embed_footer',
+                $request->has('footer') ? 'footer_settings' : null,
                 $request->user()?->isSuperAdmin() ? 'multilingual' : null,
                 ($request->hasFile('logo') || filled($validated['logo_url'] ?? null)) ? 'logo_url' : null,
                 ($request->hasFile('favicon') || filled($validated['favicon_url'] ?? null)) ? 'favicon_url' : null,

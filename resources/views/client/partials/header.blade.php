@@ -48,6 +48,11 @@
                         <span>{{ app()->getLocale() === 'vi' ? 'Cẩm Nang Cà Phê' : 'Journal' }}</span>
                     </a>
                 </li>
+                <li class="c-main-menu__item {{ request()->routeIs('client.contact*') || request()->is('*lien-he*') || request()->is('*contact*') ? 'is-active' : '' }}" style="list-style: none; margin: 0; padding: 0;">
+                    <a href="{{ route('client.contact', ['locale' => app()->getLocale()]) }}" class="c-main-menu__link" style="color: #FAF6F1; text-decoration: none; font-size: 14px; font-weight: 500;">
+                        <span>{{ app()->getLocale() === 'vi' ? 'Liên Hệ' : 'Contact' }}</span>
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -123,6 +128,10 @@
                 </a>
                 <a href="{{ route('client.blog.index', ['locale' => app()->getLocale()]) }}" class="s54-mobile-drawer__link {{ request()->routeIs('client.blog.*') ? 'is-active' : '' }}">
                     <span>📰 {{ app()->getLocale() === 'vi' ? 'Cẩm Nang Cà Phê' : 'Coffee Journal' }}</span>
+                    <span>→</span>
+                </a>
+                <a href="{{ route('client.contact', ['locale' => app()->getLocale()]) }}" class="s54-mobile-drawer__link {{ request()->routeIs('client.contact*') || request()->is('*lien-he*') || request()->is('*contact*') ? 'is-active' : '' }}">
+                    <span>📍 {{ app()->getLocale() === 'vi' ? 'Liên Hệ' : 'Contact Us' }}</span>
                     <span>→</span>
                 </a>
             </nav>

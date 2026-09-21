@@ -8,6 +8,11 @@ use Illuminate\View\View;
 
 class PageController extends Controller
 {
+    public function contact(string $locale): View
+    {
+        return view('client.pages.contact');
+    }
+
     public function show(string $locale, string $slug): View
     {
         if ($slug === 'our-story') {
@@ -16,6 +21,10 @@ class PageController extends Controller
 
         if ($slug === 'wholesale') {
             return view('client.pages.wholesale');
+        }
+
+        if ($slug === 'lien-he' || $slug === 'contact') {
+            return view('client.pages.contact');
         }
 
         $page = Page::where('slug', $slug)

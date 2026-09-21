@@ -49,7 +49,10 @@ Route::get('wholesale.html', fn () => redirect('/vi/pages/wholesale', 301));
 Route::get('wholesale', fn () => redirect('/vi/pages/wholesale', 301));
 Route::get('our-story.html', fn () => redirect('/vi/pages/our-story', 301));
 Route::get('our-story', fn () => redirect('/vi/pages/our-story', 301));
-Route::get('contact.html', fn () => redirect('/vi/pages/wholesale#contact', 301));
+Route::get('contact.html', fn () => redirect('/vi/lien-he', 301));
+Route::get('contact', fn () => redirect('/vi/lien-he', 301));
+Route::get('lien-he', fn () => redirect('/vi/lien-he', 301));
+Route::get('lien-he.html', fn () => redirect('/vi/lien-he', 301));
 Route::get('product-detail.html', function (\Illuminate\Http\Request $request) {
     $id = (string) $request->query('id');
     $map = [

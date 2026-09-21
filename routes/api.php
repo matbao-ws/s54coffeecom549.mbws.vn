@@ -43,19 +43,16 @@ Route::prefix('public')->middleware('apiLocale')->group(function () {
         ]);
 
         try {
-            Mail::to(config('mail.seller'))->send(new ContactInquiryMail($inquiry));
-        } catch (Exception $e) {
+            if (config('mail.seller')) {
+                Mail::to(config('mail.seller'))->send(new ContactInquiryMail($inquiry));
+            }
+        } catch (\Throwable $e) {
             Log::error('Contact form email failed: '.$e->getMessage());
-
-            return response()->json([
-                'success' => false,
-                'message' => 'Không thể gửi yêu cầu vào lúc này. Vui lòng thử lại sau.',
-            ], 500);
         }
 
         return response()->json([
             'success' => true,
-            'message' => 'Yêu cầu báo giá của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất!',
+            'message' => 'Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất!',
         ]);
     })->middleware('throttle:public-contact');
 

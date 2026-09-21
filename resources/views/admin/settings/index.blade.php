@@ -267,6 +267,12 @@
                 <span>Quản lý Banner</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" data-bs-toggle="tab" href="#footer-pane" role="tab">
+                <span><i class="ti ti-layout-bottombar fs-4"></i></span>
+                <span>Quản lý Chân trang (Footer)</span>
+            </a>
+        </li>
     </ul>
 
     <!-- Form -->
@@ -1183,6 +1189,284 @@
                 </div>
             </div>
 
+            <!-- Quản lý Chân trang (Footer) Pane -->
+            <div class="tab-pane fade" id="footer-pane" role="tabpanel">
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom flex-wrap gap-3">
+                            <div>
+                                <h5 class="card-title fw-semibold text-dark mb-1">
+                                    <i class="ti ti-layout-bottombar text-primary me-2 fs-5"></i> Quản Lý Thông Tin Chân Trang (Footer)
+                                </h5>
+                                <p class="text-muted mb-0 small">
+                                    Tùy chỉnh toàn diện thông tin pháp nhân doanh nghiệp, địa chỉ, hotline, email, website và tiêu đề các cột footer. Dữ liệu được đồng bộ đồng thời ra cả Front-end Inline Editor.
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <button type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1" id="resetFooterBtn">
+                                    <i class="ti ti-rotate-clockwise"></i> <span>Khôi phục thông tin mẫu S54</span>
+                                </button>
+                                <a href="{{ url('/vi') }}" target="_blank" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
+                                    <i class="ti ti-external-link"></i> <span>Xem Chân Trang Ngoài Web</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            {{-- Cột trái: Các trường nhập thông tin --}}
+                            <div class="col-lg-7">
+                                {{-- Nhóm 1: Thông tin pháp nhân & Liên hệ --}}
+                                <div class="card border shadow-none mb-4" style="background-color: #fafbfd;">
+                                    <div class="card-header bg-white border-bottom py-3">
+                                        <h6 class="fw-bold text-dark mb-0 fs-4">
+                                            <i class="ti ti-building me-1 text-primary"></i> 1. Thông Tin Doanh Nghiệp & Liên Hệ (Cột 1)
+                                        </h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold text-dark" for="footer_company_name">
+                                                Tên Công Ty Pháp Nhân <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control text-dark footer-input" 
+                                                name="footer[company_name]" id="footer_company_name" 
+                                                value="{{ old('footer.company_name', $footerSettings['company_name'] ?? 'CÔNG TY TNHH GIẢI PHÁP TỐT') }}" 
+                                                placeholder="Ví dụ: CÔNG TY TNHH GIẢI PHÁP TỐT"
+                                                oninput="updateFooterLivePreview('company_name', this.value)" required>
+                                            <div class="form-text">Hiển thị nổi bật in hoa tại cột thương hiệu của chân trang.</div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold text-dark" for="footer_tagline">
+                                                Slogan / Khẩu Hiệu Chân Trang
+                                            </label>
+                                            <textarea class="form-control text-dark footer-input" rows="2"
+                                                name="footer[tagline]" id="footer_tagline" 
+                                                placeholder='Ví dụ: "New Coffee, New Income" — Tinh hoa cà phê Việt vang danh thương trường từ năm 2017'
+                                                oninput="updateFooterLivePreview('tagline', this.value)">{{ old('footer.tagline', $footerSettings['tagline'] ?? '"New Coffee, New Income" — Tinh hoa cà phê Việt vang danh thương trường từ năm 2017') }}</textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold text-dark" for="footer_address">
+                                                <i class="ti ti-map-pin me-1 text-danger"></i> Địa Chỉ Trụ Sở / Showroom <span class="text-danger">*</span>
+                                            </label>
+                                            <textarea class="form-control text-dark footer-input" rows="2"
+                                                name="footer[address]" id="footer_address" 
+                                                placeholder="Ví dụ: Số 32, Đường 16, Manhattan, Vinhomes Grand Park, Phường Long Bình, TP. Thủ Đức, TP. Hồ Chí Minh"
+                                                oninput="updateFooterLivePreview('address', this.value)" required>{{ old('footer.address', $footerSettings['address'] ?? 'Số 32, Đường 16, Manhattan, Vinhomes Grand Park, Phường Long Bình, TP. Thủ Đức, TP. Hồ Chí Minh') }}</textarea>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-semibold text-dark" for="footer_hotline">
+                                                    <i class="ti ti-phone me-1 text-success"></i> Hotline Tư Vấn / Bán Hàng <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control text-dark footer-input" 
+                                                    name="footer[hotline]" id="footer_hotline" 
+                                                    value="{{ old('footer.hotline', $footerSettings['hotline'] ?? '0911.833.911 - 0933.873.873') }}" 
+                                                    placeholder="Ví dụ: 0911.833.911 - 0933.873.873"
+                                                    oninput="updateFooterLivePreview('hotline', this.value)" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-semibold text-dark" for="footer_email">
+                                                    <i class="ti ti-mail me-1 text-primary"></i> Email Liên Hệ & CSKH <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="email" class="form-control text-dark footer-input" 
+                                                    name="footer[email]" id="footer_email" 
+                                                    value="{{ old('footer.email', $footerSettings['email'] ?? 'info@goodsolutions.com.vn') }}" 
+                                                    placeholder="Ví dụ: info@goodsolutions.com.vn"
+                                                    oninput="updateFooterLivePreview('email', this.value)" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-semibold text-dark" for="footer_website">
+                                                    <i class="ti ti-world me-1 text-info"></i> Tên Miền Website Hiển Thị
+                                                </label>
+                                                <input type="text" class="form-control text-dark footer-input" 
+                                                    name="footer[website]" id="footer_website" 
+                                                    value="{{ old('footer.website', $footerSettings['website'] ?? 'goodsolutions.com.vn') }}" 
+                                                    placeholder="Ví dụ: goodsolutions.com.vn"
+                                                    oninput="updateFooterLivePreview('website', this.value)">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-semibold text-dark" for="footer_website_url">
+                                                    <i class="ti ti-link me-1 text-secondary"></i> Đường Dẫn URL Website
+                                                </label>
+                                                <input type="text" class="form-control text-dark footer-input" 
+                                                    name="footer[website_url]" id="footer_website_url" 
+                                                    value="{{ old('footer.website_url', $footerSettings['website_url'] ?? 'https://goodsolutions.com.vn') }}" 
+                                                    placeholder="Ví dụ: https://goodsolutions.com.vn"
+                                                    oninput="updateFooterLivePreview('website_url', this.value)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Nhóm 2: Tiêu đề Cột 2 & Cột 3 --}}
+                                <div class="card border shadow-none mb-4" style="background-color: #fafbfd;">
+                                    <div class="card-header bg-white border-bottom py-3">
+                                        <h6 class="fw-bold text-dark mb-0 fs-4">
+                                            <i class="ti ti-columns me-1 text-primary"></i> 2. Tiêu Đề Các Nhóm Liên Kết (Cột 2 & Cột 3)
+                                        </h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-semibold text-dark" for="footer_col2_title">
+                                                    Tiêu Đề Cột 2 (Sản phẩm)
+                                                </label>
+                                                <input type="text" class="form-control text-dark footer-input" 
+                                                    name="footer[col2_title]" id="footer_col2_title" 
+                                                    value="{{ old('footer.col2_title', $footerSettings['col2_title'] ?? 'Sản Phẩm S54') }}" 
+                                                    placeholder="Ví dụ: Sản Phẩm S54"
+                                                    oninput="updateFooterLivePreview('col2_title', this.value)">
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-semibold text-dark" for="footer_col3_title">
+                                                    Tiêu Đề Cột 3 (Về S54 & Dịch vụ)
+                                                </label>
+                                                <input type="text" class="form-control text-dark footer-input" 
+                                                    name="footer[col3_title]" id="footer_col3_title" 
+                                                    value="{{ old('footer.col3_title', $footerSettings['col3_title'] ?? 'Về S54 & Dịch Vụ') }}" 
+                                                    placeholder="Ví dụ: Về S54 & Dịch Vụ"
+                                                    oninput="updateFooterLivePreview('col3_title', this.value)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Nhóm 3: Cột 4 & Bản quyền cuối trang --}}
+                                <div class="card border shadow-none mb-3" style="background-color: #fafbfd;">
+                                    <div class="card-header bg-white border-bottom py-3">
+                                        <h6 class="fw-bold text-dark mb-0 fs-4">
+                                            <i class="ti ti-copyright me-1 text-primary"></i> 3. Ưu Đãi Nhận Tin (Cột 4) & Bản Quyền
+                                        </h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold text-dark" for="footer_col4_title">
+                                                Tiêu Đề Cột 4 (Nhận ưu đãi)
+                                            </label>
+                                            <input type="text" class="form-control text-dark footer-input" 
+                                                name="footer[col4_title]" id="footer_col4_title" 
+                                                value="{{ old('footer.col4_title', $footerSettings['col4_title'] ?? 'Đăng Ký Nhận Ưu Đãi') }}" 
+                                                placeholder="Ví dụ: Đăng Ký Nhận Ưu Đãi"
+                                                oninput="updateFooterLivePreview('col4_title', this.value)">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold text-dark" for="footer_newsletter_desc">
+                                                Đoạn Giới Thiệu Ưu Đãi
+                                            </label>
+                                            <textarea class="form-control text-dark footer-input" rows="2"
+                                                name="footer[newsletter_desc]" id="footer_newsletter_desc" 
+                                                placeholder="Ví dụ: Nhận ngay voucher ưu đãi 15% cho đơn hàng đầu tiên..."
+                                                oninput="updateFooterLivePreview('newsletter_desc', this.value)">{{ old('footer.newsletter_desc', $footerSettings['newsletter_desc'] ?? 'Nhận ngay voucher ưu đãi 15% cho đơn hàng đầu tiên cùng cẩm nang pha chế độc quyền từ S54 Coffee.') }}</textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-semibold text-dark" for="footer_copyright">
+                                                Dòng Chữ Bản Quyền Cuối Trang (Copyright)
+                                            </label>
+                                            <input type="text" class="form-control text-dark footer-input" 
+                                                name="footer[copyright]" id="footer_copyright" 
+                                                value="{{ old('footer.copyright', $footerSettings['copyright'] ?? ('© ' . date('Y') . ' S54 COFFEE by Good Solutions Co., Ltd. Giữ toàn quyền bản quyền.')) }}" 
+                                                placeholder="Ví dụ: © 2026 S54 COFFEE by Good Solutions Co., Ltd. Giữ toàn quyền bản quyền."
+                                                oninput="updateFooterLivePreview('copyright', this.value)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Cột phải: Live Preview giao diện Footer thực tế --}}
+                            <div class="col-lg-5">
+                                <div class="sticky-top" style="top: 20px; z-index: 5;">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <span class="fw-bold text-dark fs-3">
+                                            <i class="ti ti-eye text-primary me-1"></i> Xem Trước Chân Trang (Live Preview)
+                                        </span>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle">
+                                            Đồng bộ tức thì
+                                        </span>
+                                    </div>
+
+                                    <div class="border rounded-3 p-3 text-white" style="background-color: #2F221A; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);">
+                                        {{-- Logo & Brand Info --}}
+                                        <div class="mb-3 pb-3 border-bottom" style="border-color: rgba(255,255,255,0.12) !important;">
+                                            <img src="{{ asset('client-assets/images/s54/s54_logo.png') }}" alt="S54 Logo" style="height: 26px; width: auto; margin-bottom: 8px; display: block;">
+                                            <p id="preview_footer_company_name" class="fw-bold mb-1" style="color: #FAF6F1; font-size: 13px; letter-spacing: 0.3px;">
+                                                {{ $footerSettings['company_name'] ?? 'CÔNG TY TNHH GIẢI PHÁP TỐT' }}
+                                            </p>
+                                            <p id="preview_footer_tagline" class="text-white-50 mb-2 fst-italic" style="font-size: 11px; line-height: 1.4;">
+                                                {{ $footerSettings['tagline'] ?? '"New Coffee, New Income" — Tinh hoa cà phê Việt vang danh thương trường từ năm 2017' }}
+                                            </p>
+
+                                            <div class="d-flex flex-column gap-1" style="font-size: 11.5px; color: #D1C7BD;">
+                                                <div class="d-flex gap-2">
+                                                    <span>📍</span>
+                                                    <span id="preview_footer_address">{{ $footerSettings['address'] ?? 'Số 32, Đường 16, Manhattan, Vinhomes Grand Park, Phường Long Bình, TP. Thủ Đức, TP. Hồ Chí Minh' }}</span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <span>📞</span>
+                                                    <span>Hotline: <strong id="preview_footer_hotline" style="color: #D68E1D;">{{ $footerSettings['hotline'] ?? '0911.833.911 - 0933.873.873' }}</strong></span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <span>✉️</span>
+                                                    <span>Email: <span id="preview_footer_email" style="color: #FAF6F1;">{{ $footerSettings['email'] ?? 'info@goodsolutions.com.vn' }}</span></span>
+                                                </div>
+                                                <div class="d-flex gap-2">
+                                                    <span>🌐</span>
+                                                    <span>Website: <span id="preview_footer_website" style="color: #D68E1D;">{{ $footerSettings['website'] ?? 'goodsolutions.com.vn' }}</span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- Columns titles preview --}}
+                                        <div class="row g-2 mb-3 pb-2 border-bottom" style="border-color: rgba(255,255,255,0.12) !important;">
+                                            <div class="col-6">
+                                                <span class="d-block fw-bold mb-1" id="preview_footer_col2_title" style="color: #FFFFFF;">
+                                                    {{ $footerSettings['col2_title'] ?? 'Sản Phẩm S54' }}
+                                                </span>
+                                                <ul class="list-unstyled mb-0" style="font-size: 10.5px; color: #BAADA1;">
+                                                    <li>• S54 Robusta Mộc</li>
+                                                    <li>• S54 Arabica Cầu Đất</li>
+                                                    <li>• Hòa Tan 3in1 (456g)</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="d-block fw-bold mb-1" id="preview_footer_col3_title" style="color: #FFFFFF;">
+                                                    {{ $footerSettings['col3_title'] ?? 'Về S54 & Dịch Vụ' }}
+                                                </span>
+                                                <ul class="list-unstyled mb-0" style="font-size: 10.5px; color: #BAADA1;">
+                                                    <li>• Câu Chuyện Thương Hiệu</li>
+                                                    <li>• Cung Ứng B2B & Đại Lý</li>
+                                                    <li>• Liên Hệ Hợp Tác</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        {{-- Newsletter preview --}}
+                                        <div class="mb-3 pb-2 border-bottom" style="border-color: rgba(255,255,255,0.12) !important;">
+                                            <span class="d-block fw-bold mb-1" id="preview_footer_col4_title" style="color: #FFFFFF;">
+                                                {{ $footerSettings['col4_title'] ?? 'Đăng Ký Nhận Ưu Đãi' }}
+                                            </span>
+                                            <p id="preview_footer_newsletter_desc" class="mb-2" style="font-size: 10.5px; color: #BAADA1; line-height: 1.3;">
+                                                {{ $footerSettings['newsletter_desc'] ?? 'Nhận ngay voucher ưu đãi 15% cho đơn hàng đầu tiên...' }}
+                                            </p>
+                                        </div>
+
+                                        {{-- Bottom copyright preview --}}
+                                        <div style="font-size: 10px; color: #BAADA1; text-align: center;" id="preview_footer_copyright">
+                                            {!! $footerSettings['copyright'] ?? ('© ' . date('Y') . ' S54 COFFEE by Good Solutions Co., Ltd. Giữ toàn quyền bản quyền.') !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Sticky Save Button -->
@@ -1890,6 +2174,56 @@
                     updateAdminBannerPreview(key, event.detail.url);
                 }
             });
+
+            // Footer Live Preview & Reset Helpers
+            window.updateFooterLivePreview = function(field, val) {
+                const previewEl = document.getElementById('preview_footer_' + field);
+                if (previewEl) {
+                    if (field === 'copyright') {
+                        previewEl.innerHTML = val;
+                    } else {
+                        previewEl.textContent = val;
+                    }
+                }
+            };
+
+            const resetFooterBtn = document.getElementById('resetFooterBtn');
+            if (resetFooterBtn) {
+                resetFooterBtn.addEventListener('click', function () {
+                    const defaults = {
+                        company_name: 'CÔNG TY TNHH GIẢI PHÁP TỐT',
+                        tagline: '"New Coffee, New Income" — Tinh hoa cà phê Việt vang danh thương trường từ năm 2017',
+                        address: 'Số 32, Đường 16, Manhattan, Vinhomes Grand Park, Phường Long Bình, TP. Thủ Đức, TP. Hồ Chí Minh',
+                        hotline: '0911.833.911 - 0933.873.873',
+                        email: 'info@goodsolutions.com.vn',
+                        website: 'goodsolutions.com.vn',
+                        website_url: 'https://goodsolutions.com.vn',
+                        col2_title: 'Sản Phẩm S54',
+                        col3_title: 'Về S54 & Dịch Vụ',
+                        col4_title: 'Đăng Ký Nhận Ưu Đãi',
+                        newsletter_desc: 'Nhận ngay voucher ưu đãi 15% cho đơn hàng đầu tiên cùng cẩm nang pha chế độc quyền từ S54 Coffee.',
+                        copyright: '© 2026 S54 COFFEE by Good Solutions Co., Ltd. Giữ toàn quyền bản quyền.'
+                    };
+
+                    Object.keys(defaults).forEach(function(k) {
+                        const input = document.getElementById('footer_' + k);
+                        if (input) {
+                            input.value = defaults[k];
+                            updateFooterLivePreview(k, defaults[k]);
+                        }
+                    });
+
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Đã điền thông tin mẫu S54',
+                            text: 'Thông tin chuẩn S54 Coffee đã được điền. Vui lòng bấm "Lưu cấu hình" để áp dụng lên toàn website.',
+                            timer: 2500,
+                            showConfirmButton: false
+                        });
+                    }
+                });
+            }
 
             // Hash tab persistence (URL hash)
             if (window.location.hash) {
