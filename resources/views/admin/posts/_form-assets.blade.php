@@ -200,6 +200,89 @@
             Font.whitelist = ['sans-serif', 'serif', 'monospace', 'arial', 'georgia', 'impact', 'tahoma', 'times-new-roman', 'verdana', 'quicksand', 'roboto'];
             Quill.register(Font, true);
 
+            // Register custom image format supporting alt, title, class, and style for SEO
+            const BaseImage = Quill.import('formats/image');
+            class CustomImage extends BaseImage {
+                static create(value) {
+                    const src = typeof value === 'object' ? (value.src || value.url) : value;
+                    const node = super.create(src);
+                    if (typeof value === 'object') {
+                        if (value.alt) node.setAttribute('alt', value.alt);
+                        if (value.title) node.setAttribute('title', value.title);
+                        if (value.class) node.setAttribute('class', value.class);
+                        if (value.style) node.setAttribute('style', value.style);
+                    }
+                    if (!node.getAttribute('class')) {
+                        node.setAttribute('class', 'img-fluid rounded my-3');
+                    }
+                    return node;
+                }
+                static formats(domNode) {
+                    return {
+                        alt: domNode.getAttribute('alt') || '',
+                        title: domNode.getAttribute('title') || '',
+                        class: domNode.getAttribute('class') || '',
+                        style: domNode.getAttribute('style') || '',
+                    };
+                }
+                format(name, value) {
+                    if (['alt', 'title', 'class', 'style', 'width', 'height'].includes(name)) {
+                        if (value) {
+                            this.domNode.setAttribute(name, value);
+                        } else {
+                            this.domNode.removeAttribute(name);
+                        }
+                    } else {
+                        super.format(name, value);
+                    }
+                }
+            }
+            CustomImage.blotName = 'image';
+            CustomImage.tagName = 'IMG';
+            Quill.register(CustomImage, true);
+
+            // Helper to upload image file and insert to Quill
+            function uploadAndInsertQuillImage(targetEditor, targetTextarea, file) {
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('folder', 'posts');
+                formData.append('image_only', '1');
+
+                const defaultAlt = (titleInput ? titleInput.value.trim() : '') || 'Ảnh minh họa bài viết';
+                const range = targetEditor.getSelection(true) || { index: targetEditor.getLength(), length: 0 };
+
+                fetch('{{ route("admin.media.upload") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: formData
+                })
+                .then(function(res) {
+                    if (!res.ok) throw new Error('Tải ảnh lên thất bại.');
+                    return res.json();
+                })
+                .then(function(data) {
+                    if (data.success && data.url) {
+                        targetEditor.insertEmbed(range.index, 'image', {
+                            src: data.url,
+                            alt: defaultAlt,
+                            class: 'img-fluid rounded my-3'
+                        }, 'user');
+                        targetEditor.setSelection(range.index + 1, 0, 'silent');
+                        isDirty = true;
+                        targetTextarea.value = targetEditor.root.innerHTML;
+                        if (targetEditor === quill) analyzeSEO();
+                    } else {
+                        alert(data.message || 'Tải ảnh thất bại');
+                    }
+                })
+                .catch(function(err) {
+                    alert('Lỗi tải ảnh: ' + err.message);
+                });
+            }
+
             // Quill initialization
             let quill = null;
             const contentInput = document.getElementById('content_input');
@@ -227,6 +310,88 @@
                 });
                 editorElement.__quill = editor;
                 if (editorElement.id === 'content_editor') quill = editor;
+
+                // Configure Quill Toolbar Image Handler
+                const toolbar = editor.getModule('toolbar');
+                if (toolbar) {
+                    toolbar.addHandler('image', function() {
+                        const defaultAlt = (titleInput ? titleInput.value.trim() : '') || 'Ảnh bài viết';
+                        if (typeof window.openMediaPicker === 'function') {
+                            window.openMediaPicker({
+                                folder: 'posts',
+                                onSelect: function(url) {
+                                    let alt = prompt('Nhập mô tả ảnh (Thẻ Alt hỗ trợ chuẩn SEO):', defaultAlt);
+                                    if (alt === null) return; // user cancelled
+                                    alt = alt.trim() || defaultAlt;
+
+                                    const range = editor.getSelection(true) || { index: editor.getLength(), length: 0 };
+                                    editor.insertEmbed(range.index, 'image', {
+                                        src: url,
+                                        alt: alt,
+                                        class: 'img-fluid rounded my-3'
+                                    }, 'user');
+                                    editor.setSelection(range.index + 1, 0, 'silent');
+                                    isDirty = true;
+                                    target.value = editor.root.innerHTML;
+                                    if (editorElement.id === 'content_editor') analyzeSEO();
+                                }
+                            });
+                        } else {
+                            let url = prompt('Nhập đường dẫn hình ảnh (URL):', '');
+                            if (url) {
+                                let alt = prompt('Nhập mô tả ảnh (Thẻ Alt cho SEO):', defaultAlt) || defaultAlt;
+                                const range = editor.getSelection(true) || { index: editor.getLength(), length: 0 };
+                                editor.insertEmbed(range.index, 'image', { src: url, alt: alt, class: 'img-fluid rounded my-3' }, 'user');
+                                editor.setSelection(range.index + 1, 0, 'silent');
+                                target.value = editor.root.innerHTML;
+                                if (editorElement.id === 'content_editor') analyzeSEO();
+                            }
+                        }
+                    });
+                }
+
+                // Handle image clipboard paste (Ctrl+V)
+                editor.root.addEventListener('paste', function(e) {
+                    const clipboardData = e.clipboardData || window.clipboardData;
+                    if (!clipboardData || !clipboardData.items) return;
+
+                    for (let i = 0; i < clipboardData.items.length; i++) {
+                        const item = clipboardData.items[i];
+                        if (item.type.indexOf('image') !== -1) {
+                            e.preventDefault();
+                            const file = item.getAsFile();
+                            if (file) {
+                                uploadAndInsertQuillImage(editor, target, file);
+                            }
+                            break;
+                        }
+                    }
+                });
+
+                // Handle image drag & drop
+                editor.root.addEventListener('drop', function(e) {
+                    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                        const file = e.dataTransfer.files[0];
+                        if (file && file.type.startsWith('image/')) {
+                            e.preventDefault();
+                            uploadAndInsertQuillImage(editor, target, file);
+                        }
+                    }
+                });
+
+                // Click on image to update Alt text
+                editor.root.addEventListener('click', function(e) {
+                    if (e.target && e.target.tagName === 'IMG') {
+                        const img = e.target;
+                        const currentAlt = img.getAttribute('alt') || '';
+                        const newAlt = prompt('Chỉnh sửa mô tả ảnh (Thẻ Alt SEO):', currentAlt);
+                        if (newAlt !== null) {
+                            img.setAttribute('alt', newAlt.trim());
+                            target.value = editor.root.innerHTML;
+                            if (editorElement.id === 'content_editor') analyzeSEO();
+                        }
+                    }
+                });
 
                 editor.on('text-change', function() {
                     isDirty = true;
@@ -271,11 +436,77 @@
                 }
             });
 
-            // Local Preview Uploader for Featured Image
+            // Featured Image (Thumbnail) Handlers
             const fileInput = document.getElementById('post_image_file');
             const previewImg = document.getElementById('post_image_preview');
             const placeholder = document.getElementById('post_image_placeholder');
             const container = document.getElementById('post_image_preview_container');
+            const postImageUrlInput = document.getElementById('post_image_url');
+            const btnSelectMedia = document.getElementById('btn_select_media_image');
+            const btnUploadLocal = document.getElementById('btn_upload_local_image');
+            const btnRemoveImage = document.getElementById('btn_remove_post_image');
+
+            function setPostImage(url) {
+                if (postImageUrlInput) postImageUrlInput.value = url;
+                if (previewImg) {
+                    previewImg.src = url;
+                    previewImg.classList.remove('d-none');
+                }
+                if (placeholder) placeholder.classList.add('d-none');
+                if (btnRemoveImage) btnRemoveImage.classList.remove('d-none');
+                isDirty = true;
+            }
+
+            function clearPostImage() {
+                if (postImageUrlInput) postImageUrlInput.value = '';
+                if (fileInput) fileInput.value = '';
+                if (previewImg) {
+                    previewImg.src = '#';
+                    previewImg.classList.add('d-none');
+                }
+                if (placeholder) placeholder.classList.remove('d-none');
+                if (btnRemoveImage) btnRemoveImage.classList.add('d-none');
+                isDirty = true;
+            }
+
+            if (btnSelectMedia) {
+                btnSelectMedia.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (typeof window.openMediaPicker === 'function') {
+                        window.openMediaPicker({
+                            folder: 'posts',
+                            onSelect: function(url) {
+                                setPostImage(url);
+                            }
+                        });
+                    }
+                });
+            }
+
+            if (container) {
+                container.addEventListener('click', function(e) {
+                    if (btnSelectMedia) {
+                        btnSelectMedia.click();
+                    } else if (fileInput) {
+                        fileInput.click();
+                    }
+                });
+            }
+
+            if (btnUploadLocal && fileInput) {
+                btnUploadLocal.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    fileInput.click();
+                });
+            }
+
+            if (btnRemoveImage) {
+                btnRemoveImage.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    clearPostImage();
+                });
+            }
 
             if (fileInput && previewImg) {
                 fileInput.addEventListener('change', function(e) {
@@ -284,6 +515,7 @@
                         previewImg.src = URL.createObjectURL(file);
                         previewImg.classList.remove('d-none');
                         if (placeholder) placeholder.classList.add('d-none');
+                        if (btnRemoveImage) btnRemoveImage.classList.remove('d-none');
                         isDirty = true;
                     }
                 });

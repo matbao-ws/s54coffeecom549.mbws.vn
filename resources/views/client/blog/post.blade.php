@@ -21,6 +21,29 @@
 @endif
 @section('og_type', 'article')
 
+@push('styles')
+<style>
+    .s54-article-content img {
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 8px;
+        display: block;
+        margin: 24px auto;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+    .s54-article-content figure {
+        margin: 24px auto;
+        text-align: center;
+    }
+    .s54-article-content figcaption {
+        font-size: 13.5px;
+        color: #8A7B70;
+        margin-top: 8px;
+        font-style: italic;
+    }
+</style>
+@endpush
+
 @push('jsonld')
 <script type="application/ld+json">
 {!! json_encode([

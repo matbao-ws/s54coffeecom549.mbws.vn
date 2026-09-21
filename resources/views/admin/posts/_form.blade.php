@@ -163,26 +163,40 @@
         <!-- Thumbnail Card -->
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-7">{{ __('admin.posts.sections.thumbnail') }}</h4>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="card-title mb-0">{{ __('admin.posts.sections.thumbnail') }}</h4>
+                    <button type="button" class="btn btn-sm btn-outline-danger py-1 px-2 {{ ($post->image_url || old('image_url')) ? '' : 'd-none' }}" id="btn_remove_post_image" title="Xóa ảnh đại diện">
+                        <i class="ti ti-trash me-1"></i>Xóa ảnh
+                    </button>
+                </div>
                 
-                <!-- Hidden file input for image select -->
+                <!-- Hidden inputs for image selection -->
+                <input type="hidden" name="image_url" id="post_image_url" value="{{ old('image_url', $post->image_url) }}">
                 <input type="file" name="image_file" id="post_image_file" class="d-none" accept="image/*" data-no-media-picker="true" data-media-folder="posts">
                 
                 <!-- Styled image preview area -->
                 <div id="post_image_preview_container" class="position-relative text-center border border-2 border-dashed rounded p-3 mb-3 cursor-pointer d-flex flex-column align-items-center justify-content-center bg-light" 
-                     style="min-height: 180px; cursor: pointer; border-style: dashed !important;" 
-                     onclick="document.getElementById('post_image_file').click()">
+                     style="min-height: 180px; cursor: pointer; border-style: dashed !important;">
                      
-                    <img id="post_image_preview" src="{{ $post->image_url ?: '#' }}" 
-                         class="img-fluid rounded {{ $post->image_url ? '' : 'd-none' }}" 
+                    <img id="post_image_preview" src="{{ old('image_url', $post->image_url) ?: '#' }}" 
+                         class="img-fluid rounded {{ (old('image_url', $post->image_url)) ? '' : 'd-none' }}" 
                          style="max-height: 150px; object-fit: contain;">
                      
-                    <div id="post_image_placeholder" class="text-center py-3 {{ $post->image_url ? 'd-none' : '' }}">
+                    <div id="post_image_placeholder" class="text-center py-3 {{ (old('image_url', $post->image_url)) ? 'd-none' : '' }}">
                         <iconify-icon icon="solar:gallery-add-bold-duotone" class="fs-20 text-muted mb-2"></iconify-icon>
                         <div class="text-muted small">{{ __('admin.posts.placeholders.image_help') }}</div>
                     </div>
                 </div>
-                <p class="fs-2 text-center mb-0">{{ __('admin.posts.placeholders.image_types') }}</p>
+
+                <div class="d-flex gap-2 mb-2">
+                    <button type="button" class="btn btn-outline-primary btn-sm flex-fill" id="btn_select_media_image">
+                        <i class="ti ti-photo me-1"></i>Chọn từ thư viện
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm flex-fill" id="btn_upload_local_image">
+                        <i class="ti ti-upload me-1"></i>Tải từ máy tính
+                    </button>
+                </div>
+                <p class="fs-2 text-center mb-0 text-muted">{{ __('admin.posts.placeholders.image_types') }}</p>
             </div>
         </div>
 

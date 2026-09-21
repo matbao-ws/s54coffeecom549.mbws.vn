@@ -143,6 +143,17 @@
         }
 
         function select(url) {
+            if (window.__activeMediaPickerOptions && typeof window.__activeMediaPickerOptions.onSelect === 'function') {
+                const callback = window.__activeMediaPickerOptions.onSelect;
+                window.__activeMediaPickerOptions = null;
+                if (modalElement.contains(document.activeElement)) {
+                    document.activeElement.blur();
+                }
+                modal.hide();
+                callback(url);
+                return;
+            }
+
             if (!activeInput) return;
             const form = activeInput.closest('form');
             if (form) {
@@ -212,29 +223,39 @@
 
         });
 
-        
-        window.__triggerMediaPickerForInput = function(targetInput) {
-            if (!targetInput) return;
-            activeInput = targetInput;
-            folder.value = inputFolder(targetInput);
+        window.openMediaPicker = function(options) {
+            options = options || {};
+            window.__activeMediaPickerOptions = options;
+            activeInput = options.input || null;
+            if (options.folder) {
+                folder.value = options.folder;
+            } else if (activeInput) {
+                folder.value = inputFolder(activeInput);
+            }
             cursors = [null];
             pageIndex = 0;
             loadResources();
             modal.show();
         };
 
+        window.__triggerMediaPickerForInput = function(targetInput) {
+            if (!targetInput) return;
+            window.openMediaPicker({ input: targetInput, folder: inputFolder(targetInput) });
+        };
+
         document.addEventListener('click', function (event) {
             let input = event.target.closest('input[type="file"][accept*="image"]');
-            if (input && (input.dataset.noMediaPicker === 'true' || input.hasAttribute('data-no-media-picker'))) return;
+            if (input && (input.dataset.noMediaPicker === 'true' || input.hasAttribute('data-no-media-picker') || input.classList.contains('ql-image'))) return;
             if (!input) {
                 const label = event.target.closest('label[for]');
                 input = label ? document.getElementById(label.htmlFor) : null;
             }
-            if (input && (input.dataset.noMediaPicker === 'true' || input.hasAttribute('data-no-media-picker'))) return;
+            if (input && (input.dataset.noMediaPicker === 'true' || input.hasAttribute('data-no-media-picker') || input.classList.contains('ql-image'))) return;
             if (!input || input.id === 'adminMediaPickerUpload' || input.closest('#adminMediaPicker')) return;
             if (input.type !== 'file' || !input.accept.includes('image')) return;
             event.preventDefault();
             event.stopImmediatePropagation();
+            window.__activeMediaPickerOptions = null;
             activeInput = input;
             folder.value = inputFolder(input);
             cursors = [null];
@@ -266,7 +287,10 @@
             clearError();
             const data = new FormData();
             data.append('file', upload.files[0]);
-            data.append('folder', activeInput ? inputFolder(activeInput) : 'general');
+            const targetFolder = (folder.value && folder.value !== 'all') 
+                ? folder.value 
+                : (window.__activeMediaPickerOptions?.folder || (activeInput ? inputFolder(activeInput) : 'general'));
+            data.append('folder', targetFolder);
             data.append('image_only', '1');
             fetch('{{ route('admin.media.upload') }}', {
                 method: 'POST',
