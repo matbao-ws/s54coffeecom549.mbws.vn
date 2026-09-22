@@ -27,7 +27,7 @@
 >
     @if($canEdit)
         <button type="button" class="client-list-remove" data-client-list-remove
-                title="Xóa mục này" aria-label="Xóa mục này">
+                title="{{ app()->getLocale() === 'vi' ? 'Xóa mục này' : 'Remove this item' }}" aria-label="{{ app()->getLocale() === 'vi' ? 'Xóa mục này' : 'Remove this item' }}">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg>
         </button>
     @endif

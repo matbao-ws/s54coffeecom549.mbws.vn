@@ -89,9 +89,9 @@
     'foundingDate' => '2012',
     'address' => [
         '@type' => 'PostalAddress',
-        'streetAddress' => 'Số 35, Đường T8, Manhattan, Vinhomes Grand Park, Phường Long Bình',
-        'addressLocality' => 'TP. Thủ Đức',
-        'addressRegion' => 'TP. Hồ Chí Minh',
+        'streetAddress' => $headLocale === 'vi' ? 'Số 35, Đường T8, Manhattan, Vinhomes Grand Park, Phường Long Bình' : 'No. 35, T8 Street, Manhattan, Vinhomes Grand Park, Long Binh Ward',
+        'addressLocality' => $headLocale === 'vi' ? 'TP. Thủ Đức' : 'Thu Duc City',
+        'addressRegion' => $headLocale === 'vi' ? 'TP. Hồ Chí Minh' : 'Ho Chi Minh City',
         'addressCountry' => 'VN',
     ],
     'contactPoint' => [

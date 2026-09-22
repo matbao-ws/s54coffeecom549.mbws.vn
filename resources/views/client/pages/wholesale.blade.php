@@ -149,7 +149,7 @@
   >
     <div class="c-text-and-image2__image-wrapper">
       <div class="c-text-and-image2__image-container o-media-container">
-<x-client::editable-image key="wholesale.intro.image" src="{{ asset('assets/images/667_LA_V_92_RGB_1_1141x.jpg') }}" alt="Chương Trình Đối Tác & Đại Lý Cà Phê S54" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.intro.image" src="{{ asset('assets/images/667_LA_V_92_RGB_1_1141x.jpg') }}" alt="{{ app()->getLocale() === 'vi' ? 'Chương Trình Đối Tác & Đại Lý Cà Phê S54' : 'S54 Wholesale Partner & Franchise Program' }}" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
     </div>
 
     <div class="c-text-and-image2__text-content">
@@ -173,7 +173,7 @@
 >
   <div class="c-text-and-image2__image-wrapper">
     <div class="c-text-and-image2__image-container o-media-container">
-<x-client::editable-image key="wholesale.coffee.image" src="{{ asset('assets/images/604_3-wholesale-image-our-coffee-3_746x.png') }}" alt="Nguồn Cà Phê Nguyên Chất S54" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.coffee.image" src="{{ asset('assets/images/604_3-wholesale-image-our-coffee-3_746x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Nguồn Cà Phê Nguyên Chất S54' : 'Pure Artisan Coffee Sourcing by S54' }}" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   </div>
 
   <div class="c-text-and-image2__text-content">
@@ -345,7 +345,7 @@
                 "
                 html
               ><p class='o-paragraph--1'>{{ app()->getLocale() === 'vi' ? 'Một tách cà phê hoàn hảo là kết quả của sự tỉ mỉ đến từng chi tiết: từ khâu chọn lọc hạt mộc, công thức phối trộn cho đến nghệ thuật rang xay chuẩn xác. Nhưng chính kỹ năng và đam mê của người Barista mới thực sự thổi hồn vào từng ly cà phê.' : 'A truly exceptional cup of coffee is the result of meticulous attention to detail, from bean selection to the art and science of roasting. Yet, it’s the skill and dedication of the barista that truly brings coffee to life.' }}</p></x-client::editable><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.training.image" src="{{ asset('assets/images/660_5-wholesale-page-image-barista-training-3_1528x.png') }}" alt="Đào Tạo Barista Chuyên Nghiệp" class="c-custom-content2__image o-media" style="width: 100%; height: auto; object-fit: cover;" /></div><x-client::editable key="wholesale.training.heading2" tag="h2" class="c-custom-content2__heading o-heading--5"
+<x-client::editable-image key="wholesale.training.image" src="{{ asset('assets/images/660_5-wholesale-page-image-barista-training-3_1528x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Đào Tạo Barista Chuyên Nghiệp' : 'Professional Barista Training' }}" class="c-custom-content2__image o-media" style="width: 100%; height: auto; object-fit: cover;" /></div><x-client::editable key="wholesale.training.heading2" tag="h2" class="c-custom-content2__heading o-heading--5"
                 style="
                   --var-heading-max-width: 904px;
                   --var-heading-width: 45.2%;
@@ -366,7 +366,7 @@
   >
     <div class="c-text-and-image2__image-wrapper">
       <div class="c-text-and-image2__image-container o-media-container">
-<x-client::editable-image key="wholesale.equipment.image" src="{{ asset('assets/images/722_6-wholesale-page-image-equipment_1141x.png') }}" alt="Thiết Bị & Máy Pha Cà Phê Chuyên Nghiệp" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.equipment.image" src="{{ asset('assets/images/722_6-wholesale-page-image-equipment_1141x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Thiết Bị & Máy Pha Cà Phê Chuyên Nghiệp' : 'Commercial Espresso Machines & Equipment' }}" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
     </div>
 
     <div class="c-text-and-image2__text-content">
@@ -386,7 +386,7 @@
 >
   <div class="c-text-and-image2__image-wrapper">
     <div class="c-text-and-image2__image-container o-media-container">
-<x-client::editable-image key="wholesale.signage.image" src="{{ asset('assets/images/711_7-wholesale-page-image-bespoke-signage_746x.png') }}" alt="Thiết Kế Quầy Bar & Bộ Nhận Diện Thương Hiệu" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.signage.image" src="{{ asset('assets/images/711_7-wholesale-page-image-bespoke-signage_746x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Thiết Kế Quầy Bar & Bộ Nhận Diện Thương Hiệu' : 'Bespoke Bar Design & Brand Identity Signage' }}" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   </div>
 
   <div class="c-text-and-image2__text-content">
@@ -410,10 +410,10 @@
               ><p class='o-paragraph--1'>{{ app()->getLocale() === 'vi' 
                 ? 'Ngành F&B luôn nhiều cơ hội nhưng cũng đầy thách thức. Một quán cà phê thành công không chỉ dựa vào hạt cà phê ngon, mà còn phụ thuộc vào chiến lược định vị thương hiệu, trải nghiệm khách hàng và phương thức truyền thông hiệu quả.<br/> <br/>S54 Coffee đồng hành cùng bạn với vai trò một đơn vị tư vấn giải pháp toàn diện: từ định hướng concept quán, phát triển menu thức uống theo xu hướng, đến kế hoạch truyền thông khai trương thu hút khách hàng.<br/><br/>Chúng tôi giúp bạn tối ưu chi phí vận hành và xây dựng tập khách hàng trung thành ngay từ ngày đầu hoạt động.' 
                 : 'Operating in F&B is competitive and demanding. Business success hinges not just on great coffee beans, but on strategic brand positioning, memorable customer experiences, and impactful marketing.<br/> <br/>S54 Coffee collaborates with your business as a comprehensive strategic advisor: from concept ideation and trendy beverage menu development to launch marketing campaigns.<br/><br/>We help you optimize operational efficiency and cultivate a loyal customer base from day one.' }}</p></x-client::editable><div class="c-custom-content2__four-column-images"><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.marketing.img1" src="{{ asset('assets/images/675_31b815765f2a5ae0f271cfe5c81376c8_601x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.marketing.img2" src="{{ asset('assets/images/634_ec3348801f419324b007358ae6a705ec_374x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.marketing.img3" src="{{ asset('assets/images/729_LL-VITTORIA-CAFES-13_601x.jpg') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
-<x-client::editable-image key="wholesale.marketing.img4" src="{{ asset('assets/images/754_450738cd7d6780bf6a0c9ddcd4bb3487_374x.png') }}" alt="Marketing F&B" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div></div><x-client::editable key="wholesale.marketing.support_title" tag="h2" class="c-custom-content2__heading o-heading--5"
+<x-client::editable-image key="wholesale.marketing.img1" src="{{ asset('assets/images/675_31b815765f2a5ae0f271cfe5c81376c8_601x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Giải Pháp Marketing F&B S54' : 'S54 F&B Marketing Solutions' }}" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
+<x-client::editable-image key="wholesale.marketing.img2" src="{{ asset('assets/images/634_ec3348801f419324b007358ae6a705ec_374x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Tư Vấn Thương Hiệu F&B' : 'F&B Brand Consulting' }}" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
+<x-client::editable-image key="wholesale.marketing.img3" src="{{ asset('assets/images/729_LL-VITTORIA-CAFES-13_601x.jpg') }}" alt="{{ app()->getLocale() === 'vi' ? 'Không Gian Quán Cà Phê Đối Tác' : 'Partner Coffee Shop Space' }}" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div><div class="c-custom-content2__image-container o-media-container">
+<x-client::editable-image key="wholesale.marketing.img4" src="{{ asset('assets/images/754_450738cd7d6780bf6a0c9ddcd4bb3487_374x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Bộ Nhận Diện Thương Hiệu S54 Coffee' : 'S54 Coffee Brand Identity' }}" class="c-custom-content2__image o-media" style="width: 100%; height: auto;" /></div></div><x-client::editable key="wholesale.marketing.support_title" tag="h2" class="c-custom-content2__heading o-heading--5"
                 style="
                   --var-heading-max-width: 1017px;
                   --var-heading-width: 50.85%;
@@ -432,7 +432,7 @@
 >
   <div class="c-text-and-image2__image-wrapper">
     <div class="c-text-and-image2__image-container o-media-container">
-<x-client::editable-image key="wholesale.community.image" src="{{ asset('assets/images/643_9-wholesale-page-image-community-brand-2_746x.png') }}" alt="Thương Hiệu Vì Cộng Đồng & Nông Dân Việt" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.community.image" src="{{ asset('assets/images/643_9-wholesale-page-image-community-brand-2_746x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Thương Hiệu Vì Cộng Đồng & Nông Dân Việt' : 'Community Brand & Vietnamese Coffee Farmers' }}" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   </div>
 
   <div class="c-text-and-image2__text-content">
@@ -448,7 +448,7 @@
   >
     <div class="c-text-and-image2__image-wrapper">
       <div class="c-text-and-image2__image-container o-media-container">
-<x-client::editable-image key="wholesale.family.image" src="{{ asset('assets/images/712_10-wholesale-page-image-family-business_1141x.png') }}" alt="Doanh Nghiệp Uy Tín & Cam Kết Dài Lâu" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.family.image" src="{{ asset('assets/images/712_10-wholesale-page-image-family-business_1141x.png') }}" alt="{{ app()->getLocale() === 'vi' ? 'Doanh Nghiệp Uy Tín & Cam Kết Dài Lâu' : 'Trusted Enterprise & Long-term Partnership' }}" class="c-text-and-image2__image o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
     </div>
 
     <div class="c-text-and-image2__text-content">
@@ -469,7 +469,7 @@
     </div>
   </div></section><style> @media screen and (max-width: 767px) {#shopify-section-template--15837242130607__text_and_image2_BbQmzn p {font-size: 17px; }} #shopify-section-template--15837242130607__text_and_image2_BbQmzn p {line-height: normal;} #shopify-section-template--15837242130607__text_and_image2_BbQmzn p {letter-spacing: 0px;} #shopify-section-template--15837242130607__text_and_image2_BbQmzn p {font-weight: 500;} </style></div><div id="shopify-section-template--15837242130607__contact_form_gGc7Va" class="shopify-section c-section c-section__contact"><link href="{{ asset('assets/css/sections.contact-form.css') }}?v={{ @filemtime(base_path('assets/css/sections.contact-form.css')) ?: 1789299999 }}" rel="stylesheet" type="text/css" media="all" /><script src="{{ asset('assets/images/605_sections.contact-form.js') }}?v=1789299999" type="text/javascript" defer="defer"></script><section class="c-contact">
   <div class="c-contact__media-container o-media-container">
-<x-client::editable-image key="wholesale.contact.banner" src="{{ asset('assets/images/747_11-wholesale-page-image-get-in-touch_1650x.jpg') }}" alt="Liên Hệ Hợp Tác S54 Coffee" class="c-contact__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+<x-client::editable-image key="wholesale.contact.banner" src="{{ asset('assets/images/747_11-wholesale-page-image-get-in-touch_1650x.jpg') }}" alt="{{ app()->getLocale() === 'vi' ? 'Liên Hệ Hợp Tác S54 Coffee' : 'Contact S54 Coffee Partnership' }}" class="c-contact__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   <div class="c-contact__form-container">
     <div class="c-contact__form-inner">
       <x-client::editable key="wholesale.contact.title" tag="h3" class="o-heading--3 c-contact__form-title">

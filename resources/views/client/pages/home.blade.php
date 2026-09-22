@@ -154,7 +154,7 @@
     is-rounded
     is-position--left is-mobile-position--left"
   >
-    <x-client::editable-image key="home.story.image" src="{{ asset('assets/images/s54/s54_story_blend_intro.png') }}" alt="S54 Coffee – Đổi Mới Trong Từng Tách Cà Phê Việt" class="c-text-and-image__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
+    <x-client::editable-image key="home.story.image" src="{{ asset('assets/images/s54/s54_story_blend_intro.png') }}" alt="{{ $locale === 'vi' ? 'S54 Coffee – Đổi Mới Trong Từng Tách Cà Phê Việt' : 'S54 Coffee – Innovation in Every Vietnamese Cup' }}" class="c-text-and-image__media o-media" style="width: 100%; height: 100%; object-fit: cover;" /></div>
   <div class="c-text-and-image__text-container">
     <div class="c-text-and-image__text-inner"><x-client::editable key="home.story.title" tag="h2" class="c-text-and-image__text-title o-heading--2">
       {{ $locale === 'vi' ? 'S54 Coffee – Đổi Mới Trong Từng Tách Cà Phê Việt' : 'S54 Coffee – Innovation in Every Vietnamese Cup' }}

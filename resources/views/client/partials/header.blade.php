@@ -10,7 +10,7 @@
     <div class="c-header__wrapper o-wrapper" style="display: flex; align-items: center; justify-content: space-between; padding: 12px clamp(16px, 4vw, 48px); max-width: 1440px; margin: 0 auto; gap: 16px;">
         
         {{-- Mobile Hamburger Toggle --}}
-        <button type="button" class="c-header__toggle is-mobile-only" id="s54-mobile-toggle" aria-label="Toggle Menu" style="background: none; border: none; cursor: pointer; padding: 6px; display: none; align-items: center; justify-content: center;">
+        <button type="button" class="c-header__toggle is-mobile-only" id="s54-mobile-toggle" aria-label="{{ app()->getLocale() === 'vi' ? 'Mở menu' : 'Toggle Menu' }}" style="background: none; border: none; cursor: pointer; padding: 6px; display: none; align-items: center; justify-content: center;">
             <svg fill="none" viewBox="0 0 24 24" width="20" height="20" stroke="#FAF6F1" stroke-width="2.2" stroke-linecap="round" style="width: 20px !important; height: 20px !important; max-width: 20px !important; max-height: 20px !important; display: block; flex-shrink: 0;">
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <line x1="3" y1="12" x2="21" y2="12"/>
@@ -102,7 +102,7 @@
 
             {{-- Cart Button --}}
             <li class="c-header__additional-item" style="list-style: none;">
-                <button type="button" class="c-header__link is-cart" id="s54-cart-trigger" aria-label="Cart" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; position: relative; padding: 0; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
+                <button type="button" class="c-header__link is-cart" id="s54-cart-trigger" aria-label="{{ app()->getLocale() === 'vi' ? 'Giỏ hàng' : 'Cart' }}" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; position: relative; padding: 0; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease;">
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FAF6F1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="c-header__icon is-cart" style="width: 17px !important; height: 17px !important; max-width: 17px !important; max-height: 17px !important; display: block !important; flex-shrink: 0;">
                         <path d="M16 11V7a4 4 0 0 0-8 0v4"/>
                         <path d="M5 9h14l1 12H4L5 9z"/>
@@ -120,7 +120,7 @@
                 <a href="{{ route('client.home', ['locale' => app()->getLocale()]) }}" title="S54 COFFEE" style="display: inline-flex; align-items: center; text-decoration: none;">
                     <img src="{{ asset('client-assets/images/s54/s54_logo.png') }}" alt="S54 COFFEE" width="140" height="30" style="height: 30px; width: auto; max-width: 140px; object-fit: contain; display: block;" />
                 </a>
-                <button type="button" id="s54-mobile-close" aria-label="Close Menu" style="background: none; border: none; color: #FAF6F1; font-size: 24px; cursor: pointer; padding: 4px 8px; line-height: 1;">✕</button>
+                <button type="button" id="s54-mobile-close" aria-label="{{ app()->getLocale() === 'vi' ? 'Đóng menu' : 'Close Menu' }}" style="background: none; border: none; color: #FAF6F1; font-size: 24px; cursor: pointer; padding: 4px 8px; line-height: 1;">✕</button>
             </div>
 
             <nav class="s54-mobile-drawer__nav">
