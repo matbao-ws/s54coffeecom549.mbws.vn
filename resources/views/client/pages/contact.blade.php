@@ -312,7 +312,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'X-Locale': '{{ $locale }}',
+                    'Accept-Language': '{{ $locale }}'
                 },
                 body: JSON.stringify(payload)
             })

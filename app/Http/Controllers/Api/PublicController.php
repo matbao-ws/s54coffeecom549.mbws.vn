@@ -182,7 +182,7 @@ class PublicController extends Controller
         $product = $this->productQuery->findActiveDetail((string) $idOrSlug);
 
         if (! $product) {
-            return ApiResponse::error('Sản phẩm không tồn tại.', 404);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Product not found.' : 'Sản phẩm không tồn tại.', 404);
         }
 
         return ApiResponse::success(new PublicProductResource($product));
@@ -240,7 +240,7 @@ class PublicController extends Controller
     {
         $post = $this->localizedSlugs->find(Post::class, $idOrSlug, app()->getLocale());
         if (! $post || ! $post->is_active || ($post->published_at && $post->published_at->isFuture())) {
-            return ApiResponse::error('Bài viết không tồn tại.', 404);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Article not found.' : 'Bài viết không tồn tại.', 404);
         }
 
         $post->load(['localizedSlugs', 'category.localizedSlugs']);
@@ -280,7 +280,7 @@ class PublicController extends Controller
     {
         $page = $this->localizedSlugs->find(Page::class, $idOrSlug, app()->getLocale());
         if (! $page || ! $page->is_active || ! $page->published_at || $page->published_at->isFuture()) {
-            return ApiResponse::error('Trang không tồn tại.', 404);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Page not found.' : 'Trang không tồn tại.', 404);
         }
 
         $page->load('localizedSlugs');
@@ -299,7 +299,7 @@ class PublicController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return ApiResponse::error('Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'The given data was invalid.' : 'Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
         }
 
         $code = strtoupper($request->input('code'));
@@ -308,33 +308,33 @@ class PublicController extends Controller
         $voucher = Voucher::query()->where('code', $code)->first();
 
         if (! $voucher) {
-            return ApiResponse::error('Mã giảm giá không tồn tại.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Voucher does not exist.' : 'Mã giảm giá không tồn tại.', 422);
         }
 
         if (! $voucher->is_active) {
-            return ApiResponse::error('Mã giảm giá đã bị khóa.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Voucher is locked.' : 'Mã giảm giá đã bị khóa.', 422);
         }
 
         $now = now();
         if ($voucher->start_date && $voucher->start_date->isAfter($now)) {
-            return ApiResponse::error('Chương trình giảm giá chưa bắt đầu.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Promotion has not started yet.' : 'Chương trình giảm giá chưa bắt đầu.', 422);
         }
         if ($voucher->end_date && $voucher->end_date->isBefore($now)) {
-            return ApiResponse::error('Mã giảm giá đã hết hạn sử dụng.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Voucher has expired.' : 'Mã giảm giá đã hết hạn sử dụng.', 422);
         }
 
         if ($voucher->quantity !== null && $voucher->used_count >= $voucher->quantity) {
-            return ApiResponse::error('Mã giảm giá đã hết lượt sử dụng.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Voucher usage limit reached.' : 'Mã giảm giá đã hết lượt sử dụng.', 422);
         }
 
         $apiUser = $request->user('sanctum');
         $customerId = ($apiUser && $apiUser->role_id === null) ? $apiUser->id : null;
         if ($voucher->reachedPerUserLimit($customerId, null)) {
-            return ApiResponse::error('Bạn đã sử dụng hết số lượt cho phép của mã giảm giá này.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'You have reached the usage limit for this voucher.' : 'Bạn đã sử dụng hết số lượt cho phép của mã giảm giá này.', 422);
         }
 
         if ($subtotal < (float) $voucher->min_order_amount) {
-            return ApiResponse::error('Đơn hàng chưa đạt giá trị tối thiểu để áp dụng mã này.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Order subtotal does not meet the minimum amount for this voucher.' : 'Đơn hàng chưa đạt giá trị tối thiểu để áp dụng mã này.', 422);
         }
 
         $discount = $voucher->calculateDiscount($subtotal);
@@ -398,7 +398,7 @@ class PublicController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return ApiResponse::error('Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'The given data was invalid.' : 'Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
         }
 
         $paymentMethod = PaymentMethod::query()
@@ -407,7 +407,7 @@ class PublicController extends Controller
             ->first();
 
         if (! $paymentMethod) {
-            return ApiResponse::error('Phương thức thanh toán chưa được kích hoạt hoặc không tồn tại.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Selected payment method is inactive or not found.' : 'Phương thức thanh toán chưa được kích hoạt hoặc không tồn tại.', 422);
         }
         $paymentFeature = $paymentMethod->method_code === 'cod' ? 'cod_order' : 'online_payment';
         if (! $this->features->enabled($paymentFeature)) {
@@ -417,12 +417,12 @@ class PublicController extends Controller
             return ApiResponse::error($this->features->unavailableMessage(), 403);
         }
         if ($paymentMethod->type === 'connected' && ! in_array($paymentMethod->method_code, ['vnpay', SePayService::METHOD_CODE], true)) {
-            return ApiResponse::error('Cổng thanh toán này chưa được tích hợp cho checkout.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'This payment gateway is not integrated for checkout.' : 'Cổng thanh toán này chưa được tích hợp cho checkout.', 422);
         }
         // Checked before the order exists: an unpayable SePay order would otherwise
         // have to be created, stock-deducted and then rolled back.
         if ($paymentMethod->method_code === SePayService::METHOD_CODE && ! app(SePayService::class)->isConfigured($paymentMethod)) {
-            return ApiResponse::error('Cổng thanh toán SePay chưa được cấu hình đầy đủ.', 422);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'SePay payment gateway is not configured properly.' : 'Cổng thanh toán SePay chưa được cấu hình đầy đủ.', 422);
         }
 
         $shipping = app(ShippingService::class)->getSettings();
@@ -432,7 +432,7 @@ class PublicController extends Controller
 
         $apiUser = $request->user('sanctum');
         if ($apiUser && $apiUser->role_id !== null) {
-            return ApiResponse::error('Tài khoản quản trị không thể dùng để tạo đơn hàng khách.', 403);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Admin account cannot be used for guest checkout.' : 'Tài khoản quản trị không thể dùng để tạo đơn hàng khách.', 403);
         }
 
         $customerId = $apiUser?->id;
@@ -443,14 +443,14 @@ class PublicController extends Controller
                 foreach ($request->input('items') as $item) {
                     $product = Product::query()->lockForUpdate()->find($item['product_id']);
                     if (! $product || ! $product->is_active) {
-                        throw new \DomainException("Sản phẩm ID {$item['product_id']} không tồn tại hoặc đã ngừng kinh doanh.");
+                        throw new \DomainException(app()->getLocale() === 'en' ? "Product ID {$item['product_id']} does not exist or is inactive." : "Sản phẩm ID {$item['product_id']} không tồn tại hoặc đã ngừng kinh doanh.");
                     }
 
                     $variant = null;
                     if ($product->usesVariantInventory()) {
                         $variant = $this->variantResolver->resolve($product, $item['option_value_ids'] ?? [], true);
                     } elseif (! empty($item['variant_id'])) {
-                        throw new \DomainException('API mới không nhận variant_id trực tiếp. Hãy gửi option_value_ids để chọn SKU.');
+                        throw new \DomainException(app()->getLocale() === 'en' ? 'Please supply option_value_ids to select SKU.' : 'API mới không nhận variant_id trực tiếp. Hãy gửi option_value_ids để chọn SKU.');
                     }
 
                     $quantity = (int) $item['quantity'];
@@ -509,7 +509,7 @@ class PublicController extends Controller
         } catch (\Throwable $e) {
             Log::error('Checkout transaction failed: '.$e->getMessage());
 
-            return ApiResponse::error('Có lỗi xảy ra khi tạo đơn hàng. Vui lòng thử lại.', 500);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'An error occurred while creating your order. Please try again.' : 'Có lỗi xảy ra khi tạo đơn hàng. Vui lòng thử lại.', 500);
         }
 
         $paymentUrl = null;
@@ -545,7 +545,7 @@ class PublicController extends Controller
                     Log::error('Could not roll back failed VNPAY checkout: '.$ex->getMessage());
                 }
 
-                return ApiResponse::error('Không thể khởi tạo giao dịch thanh toán VNPAY. Vui lòng cấu hình các trường TMN Code, Hash Secret hoặc thử lại sau.', 422);
+                return ApiResponse::error(app()->getLocale() === 'en' ? 'Could not initialize VNPAY payment transaction. Please configure TMN Code and Hash Secret or try again.' : 'Không thể khởi tạo giao dịch thanh toán VNPAY. Vui lòng cấu hình các trường TMN Code, Hash Secret hoặc thử lại sau.', 422);
             }
         }
 
@@ -570,7 +570,7 @@ class PublicController extends Controller
             $responseData['payment'] = $instructions;
         }
 
-        return ApiResponse::success($responseData, 'Đặt hàng thành công.');
+        return ApiResponse::success($responseData, app()->getLocale() === 'en' ? 'Order placed successfully.' : 'Đặt hàng thành công.');
     }
 
     /**
@@ -584,7 +584,7 @@ class PublicController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return ApiResponse::error('Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'The given data was invalid.' : 'Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
         }
 
         $orderNumber = $request->input('order_number');
@@ -600,7 +600,7 @@ class PublicController extends Controller
             ->first();
 
         if (! $order) {
-            return ApiResponse::error('Đơn hàng không tồn tại hoặc thông tin xác thực không đúng.', 404);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Order not found or authentication details are incorrect.' : 'Đơn hàng không tồn tại hoặc thông tin xác thực không đúng.', 404);
         }
 
         return ApiResponse::success(new PublicOrderResource($order));
@@ -618,7 +618,7 @@ class PublicController extends Controller
             ->latest()
             ->paginate(10);
 
-        return ApiResponse::success(PublicOrderResource::collection($orders->items()), 'Lấy lịch sử đơn hàng thành công.', [
+        return ApiResponse::success(PublicOrderResource::collection($orders->items()), app()->getLocale() === 'en' ? 'Order history retrieved successfully.' : 'Lấy lịch sử đơn hàng thành công.', [
             'current_page' => $orders->currentPage(),
             'last_page' => $orders->lastPage(),
             'per_page' => $orders->perPage(),
@@ -639,7 +639,7 @@ class PublicController extends Controller
             ->first();
 
         if (! $order) {
-            return ApiResponse::error('Không tìm thấy đơn hàng.', 404);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Order not found.' : 'Không tìm thấy đơn hàng.', 404);
         }
 
         return ApiResponse::success(new PublicOrderResource($order));
@@ -656,7 +656,7 @@ class PublicController extends Controller
         }
 
         if (! $product) {
-            return ApiResponse::error('Sản phẩm không tồn tại.', 404);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Product not found.' : 'Sản phẩm không tồn tại.', 404);
         }
 
         $user = $request->user('sanctum');
@@ -678,7 +678,7 @@ class PublicController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return ApiResponse::error('Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'The given data was invalid.' : 'Dữ liệu không hợp lệ.', 422, $validator->errors()->toArray());
         }
 
         $customerName = $request->input('customer_name') ?: ($user ? $user->name : null);
@@ -709,7 +709,7 @@ class PublicController extends Controller
         }
 
         if (! $hasPurchased) {
-            return ApiResponse::error('Bạn chỉ có thể đánh giá sản phẩm sau khi đã mua hàng.', 403);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'You can only review a product after purchasing it.' : 'Bạn chỉ có thể đánh giá sản phẩm sau khi đã mua hàng.', 403);
         }
 
         $review = DB::transaction(function () use ($product, $user, $customerName, $customerEmail, $request) {
@@ -744,10 +744,10 @@ class PublicController extends Controller
         });
 
         if (! $review) {
-            return ApiResponse::error('Bạn đã gửi đánh giá cho sản phẩm này.', 409);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'You have already submitted a review for this product.' : 'Bạn đã gửi đánh giá cho sản phẩm này.', 409);
         }
 
-        return ApiResponse::success(new PublicReviewResource($review), 'Gửi đánh giá thành công.');
+        return ApiResponse::success(new PublicReviewResource($review), app()->getLocale() === 'en' ? 'Review submitted successfully.' : 'Gửi đánh giá thành công.');
     }
 
     /**
@@ -795,18 +795,18 @@ class PublicController extends Controller
         }
 
         if (! $verified) {
-            return ApiResponse::error('Chữ ký VNPAY không hợp lệ.', 400, ['payment' => 'invalid']);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Invalid VNPAY signature.' : 'Chữ ký VNPAY không hợp lệ.', 400, ['payment' => 'invalid']);
         }
 
         if (! $order) {
-            return ApiResponse::error('Không tìm thấy đơn hàng.', 404, ['payment' => $outcome]);
+            return ApiResponse::error(app()->getLocale() === 'en' ? 'Order not found.' : 'Không tìm thấy đơn hàng.', 404, ['payment' => $outcome]);
         }
 
         return ApiResponse::success([
             'payment' => $outcome,
             'response_code' => $responseCode,
             'order' => new PublicOrderResource($order),
-        ], $outcome === 'success' ? 'Thanh toán thành công.' : 'Thanh toán chưa hoàn tất hoặc đã bị hủy.');
+        ], $outcome === 'success' ? (app()->getLocale() === 'en' ? 'Payment successful.' : 'Thanh toán thành công.') : (app()->getLocale() === 'en' ? 'Payment incomplete or cancelled.' : 'Thanh toán chưa hoàn tất hoặc đã bị hủy.'));
     }
 
     /**

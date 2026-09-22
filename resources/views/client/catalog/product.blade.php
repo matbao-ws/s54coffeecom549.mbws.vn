@@ -148,7 +148,7 @@
         ],
     ],
     'sku' => $product->sku ?? '',
-    'category' => $product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : 'Cà Phê',
+    'category' => $product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : ($locale === 'vi' ? 'Cà Phê' : 'Coffee'),
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
 <script type="application/ld+json">
@@ -388,7 +388,7 @@
                             </tr>
                             <tr style="border-bottom: 1px solid #EBE7E1;">
                                 <td style="padding: 14px 20px; font-weight: 700; color: #2F221A; background: #F3EEE8;">{{ $locale === 'vi' ? 'Danh mục' : 'Category' }}</td>
-                                <td style="padding: 14px 20px; color: #5C4A3E;">{{ $product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : ($isGrinder ? 'Máy Xay Cà Phê' : 'Cà Phê') }}</td>
+                                <td style="padding: 14px 20px; color: #5C4A3E;">{{ $product->category ? ($product->category->getTranslation('name', $locale, false) ?: $product->category->name) : ($isGrinder ? ($locale === 'vi' ? 'Máy Xay Cà Phê' : 'Coffee Grinder') : ($locale === 'vi' ? 'Cà Phê' : 'Coffee')) }}</td>
                             </tr>
                             @if($isGrinder)
                                 <tr style="border-bottom: 1px solid #EBE7E1;">

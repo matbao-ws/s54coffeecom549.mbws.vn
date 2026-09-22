@@ -29,7 +29,7 @@ Route::prefix('public')->middleware('apiLocale')->group(function () {
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
-                'message' => 'Dữ liệu không hợp lệ.',
+                'message' => app()->getLocale() === 'en' ? 'The given data was invalid.' : 'Dữ liệu không hợp lệ.',
                 'errors' => $validator->errors(),
             ], 422);
         }
@@ -52,7 +52,9 @@ Route::prefix('public')->middleware('apiLocale')->group(function () {
 
         return response()->json([
             'success' => true,
-            'message' => 'Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất!',
+            'message' => app()->getLocale() === 'en'
+                ? 'Your inquiry has been sent successfully. We will get back to you shortly!'
+                : 'Yêu cầu của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm nhất!',
         ]);
     })->middleware('throttle:public-contact');
 

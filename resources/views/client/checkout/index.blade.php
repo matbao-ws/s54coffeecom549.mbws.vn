@@ -910,7 +910,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || ''
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '',
+                        'X-Locale': '{{ $locale }}',
+                        'Accept-Language': '{{ $locale }}'
                     },
                     body: JSON.stringify(payload)
                 });
