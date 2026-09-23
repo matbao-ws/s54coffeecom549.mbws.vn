@@ -20,7 +20,7 @@
             justify-content: center !important;
             padding: 24px !important;
             position: fixed !important;
-            z-index: 2147483646 !important;
+            z-index: 2147483648 !important;
         }
 
         #client-media-picker.is-open {

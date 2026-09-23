@@ -1,6 +1,6 @@
 @can('pages.update')
 {{-- Video Editor Modal for Front-end Inline Editing --}}
-<aside id="client-inline-video-editor" class="client-video-editor-backdrop" aria-hidden="true" style="display: none;">
+<aside id="client-inline-video-editor" class="client-video-editor-backdrop" aria-hidden="true">
     <div class="client-video-editor-dialog" role="dialog" aria-modal="true" aria-labelledby="client-video-editor-title">
         {{-- Header --}}
         <div class="client-video-editor-head">
@@ -110,12 +110,15 @@
     inset: 0 !important;
     background: rgba(15, 23, 42, 0.7) !important;
     backdrop-filter: blur(4px) !important;
-    z-index: 2147483646 !important;
-    display: flex !important;
+    z-index: 2147483645 !important;
+    display: none !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 16px !important;
     box-sizing: border-box !important;
+}
+.client-video-editor-backdrop.is-open {
+    display: flex !important;
 }
 .client-video-editor-dialog {
     background: #FFFFFF !important;

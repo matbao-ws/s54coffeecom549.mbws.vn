@@ -310,7 +310,7 @@
                 justify-content: center !important;
                 padding: 24px !important;
                 position: fixed !important;
-                z-index: 2147483646 !important;
+                z-index: 2147483648 !important;
             }
             #client-inline-media-picker.is-open {
                 display: flex !important;
@@ -1292,14 +1292,14 @@
                 if (videoStatusMsg) videoStatusMsg.style.display = 'none';
 
                 updateVideoPreview();
-                videoModal.style.display = 'flex';
+                videoModal.classList.add('is-open');
                 videoModal.setAttribute('aria-hidden', 'false');
                 if (videoUrlInput) videoUrlInput.focus();
             }
 
             function closeVideoEditor() {
                 if (!videoModal) return;
-                videoModal.style.display = 'none';
+                videoModal.classList.remove('is-open');
                 videoModal.setAttribute('aria-hidden', 'true');
                 if (videoIframePreview) {
                     videoIframePreview.src = '';
@@ -1422,6 +1422,19 @@
                     if (e.target === videoModal) closeVideoEditor();
                 });
             }
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' || e.key === 'Esc') {
+                    if (typeof isMediaPickerOpen === 'function' && isMediaPickerOpen()) {
+                        closeMediaPicker();
+                        return;
+                    }
+                    if (videoModal && videoModal.classList.contains('is-open')) {
+                        closeVideoEditor();
+                        return;
+                    }
+                }
+            });
 
             /*
              * Capture phase, on document, is the only placement that works on a
