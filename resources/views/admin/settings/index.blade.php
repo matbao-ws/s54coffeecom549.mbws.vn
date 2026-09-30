@@ -766,12 +766,17 @@
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label class="form-label fw-semibold text-dark" for="embed_header">{{ __('admin.settings.embed.header') }}</label>
-                                <textarea class="form-control text-dark font-monospace" id="embed_header" name="embed_header" rows="8" 
+                                <textarea class="form-control text-dark font-monospace" id="embed_header" name="embed_header" rows="6" 
                                     placeholder="{{ __('admin.settings.embed.placeholder') }}">{{ old('embed_header', $settings->get('embed_header')) }}</textarea>
+                            </div>
+                            <div class="col-md-12 mb-4">
+                                <label class="form-label fw-semibold text-dark" for="embed_body">{{ __('admin.settings.embed.body') }}</label>
+                                <textarea class="form-control text-dark font-monospace" id="embed_body" name="embed_body" rows="4" 
+                                    placeholder="{{ __('admin.settings.embed.placeholder') }}">{{ old('embed_body', $settings->get('embed_body')) }}</textarea>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label class="form-label fw-semibold text-dark" for="embed_footer">{{ __('admin.settings.embed.footer') }}</label>
-                                <textarea class="form-control text-dark font-monospace" id="embed_footer" name="embed_footer" rows="8" 
+                                <textarea class="form-control text-dark font-monospace" id="embed_footer" name="embed_footer" rows="6" 
                                     placeholder="{{ __('admin.settings.embed.placeholder') }}">{{ old('embed_footer', $settings->get('embed_footer')) }}</textarea>
                             </div>
                         </div>

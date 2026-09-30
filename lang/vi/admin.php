@@ -721,7 +721,8 @@ return [
         ],
         'embed' => [
             'title' => 'Cấu hình Mã nhúng',
-            'header' => 'Mã nhúng Header (Chèn trước thẻ </head>)',
+            'header' => 'Mã nhúng Header (Chèn trong thẻ <head>)',
+            'body' => 'Mã nhúng Body (Chèn ngay sau thẻ <body>, dùng cho GTM noscript)',
             'footer' => 'Mã nhúng Footer (Chèn trước thẻ </body>)',
             'placeholder' => 'Dán đoạn mã script (e.g. <script>...</script>) tại đây',
         ],

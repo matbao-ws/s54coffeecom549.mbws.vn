@@ -718,7 +718,8 @@ return [
         ],
         'embed' => [
             'title' => 'Embed Code Configuration',
-            'header' => 'Header Embed Code (Inserted before </head>)',
+            'header' => 'Header Embed Code (Inserted inside <head>)',
+            'body' => 'Body Embed Code (Inserted right after <body>, for GTM noscript)',
             'footer' => 'Footer Embed Code (Inserted before </body>)',
             'placeholder' => 'Paste your script tag (e.g. <script>...</script>) here',
         ],

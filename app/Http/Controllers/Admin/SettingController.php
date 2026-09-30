@@ -178,6 +178,7 @@ class SettingController extends Controller
             'social_links.custom.*.url' => 'nullable|string|max:1000',
             // Embed code validation
             'embed_header' => 'nullable|string',
+            'embed_body' => 'nullable|string',
             'embed_footer' => 'nullable|string',
             // Videos validation
             'videos' => 'nullable|array',
@@ -241,6 +242,11 @@ class SettingController extends Controller
         ProjectSetting::updateOrCreate(
             ['setting_key' => 'embed_header'],
             ['setting_value' => $validated['embed_header'] ?? '']
+        );
+
+        ProjectSetting::updateOrCreate(
+            ['setting_key' => 'embed_body'],
+            ['setting_value' => $validated['embed_body'] ?? '']
         );
 
         ProjectSetting::updateOrCreate(
@@ -436,6 +442,7 @@ class SettingController extends Controller
                 'seo',
                 'social_links',
                 'embed_header',
+                'embed_body',
                 'embed_footer',
                 $request->has('footer') ? 'footer_settings' : null,
                 $request->user()?->isSuperAdmin() ? 'multilingual' : null,

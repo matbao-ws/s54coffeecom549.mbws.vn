@@ -1,9 +1,28 @@
 <!doctype html>
 <html class="js-unavailable" lang="{{ app()->getLocale() }}" data-country="Vietnam">
 <head>
+    @if(!empty($siteBranding['embed_header']))
+        {!! $siteBranding['embed_header'] !!}
+    @else
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W6K85LZR');</script>
+        <!-- End Google Tag Manager -->
+    @endif
     @include('client.partials.head')
 </head>
 <body class="@yield('body_class', 'c-page c-page--index c-page--')">
+    @if(!empty($siteBranding['embed_body']))
+        {!! $siteBranding['embed_body'] !!}
+    @else
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6K85LZR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    @endif
     <a class="u-visually-hidden" href="#MainContent">Skip to content.</a>
     <div class="c-page__wrapper">
         @include('client.partials.header')
@@ -69,6 +88,9 @@
     })();
     </script>
     @stack('scripts')
+    @if(!empty($siteBranding['embed_footer']))
+        {!! $siteBranding['embed_footer'] !!}
+    @endif
 </body>
 </html>
 

@@ -22,7 +22,7 @@ class SiteBranding
         }
 
         $settings = ProjectSetting::query()
-            ->whereIn('setting_key', ['shop_name', 'logo_url', 'favicon_url', 'contact'])
+            ->whereIn('setting_key', ['shop_name', 'logo_url', 'favicon_url', 'contact', 'embed_header', 'embed_body', 'embed_footer'])
             ->pluck('setting_value', 'setting_key');
 
         $contact = $settings->get('contact');
@@ -33,6 +33,9 @@ class SiteBranding
             'admin_logo_url' => asset('matbao-ws-logo.png'),
             'favicon_url' => $this->assetUrl($settings->get('favicon_url'), 'admin-assets/images/logos/favicon.png'),
             'contact' => is_array($contact) ? $contact : [],
+            'embed_header' => (string) ($settings->get('embed_header') ?? ''),
+            'embed_body' => (string) ($settings->get('embed_body') ?? ''),
+            'embed_footer' => (string) ($settings->get('embed_footer') ?? ''),
         ];
     }
 
