@@ -47,7 +47,7 @@
         </div>
 
         @if($products->hasPages())
-            <div class="client-shell client-pagination">{{ $products->links() }}</div>
+            <div class="client-shell client-pagination" style="display: flex; justify-content: center; width: 100%;">{{ $products->links('client.partials.pagination') }}</div>
         @endif
     @endif
 @endsection

@@ -63,8 +63,8 @@
 
         {{-- Pagination --}}
         @if(method_exists($products, 'links'))
-            <div style="margin-top: 50px; display: flex; justify-content: center;">
-                {{ $products->links() }}
+            <div style="margin-top: 50px; display: flex; justify-content: center; width: 100%;">
+                {{ $products->links('client.partials.pagination') }}
             </div>
         @endif
     </div>

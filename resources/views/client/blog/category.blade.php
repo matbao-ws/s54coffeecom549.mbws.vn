@@ -50,7 +50,7 @@
         </div>
 
         @if($posts->hasPages())
-            <div class="client-shell client-pagination">{{ $posts->links() }}</div>
+            <div class="client-shell client-pagination" style="display: flex; justify-content: center; width: 100%;">{{ $posts->links('client.partials.pagination') }}</div>
         @endif
     @endif
 @endsection

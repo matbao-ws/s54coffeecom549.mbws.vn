@@ -72,8 +72,8 @@
         </div>
 
         @if(method_exists($posts, 'links'))
-            <div style="margin-top: 50px; display: flex; justify-content: center;">
-                {{ $posts->links() }}
+            <div style="margin-top: 50px; display: flex; justify-content: center; width: 100%;">
+                {{ $posts->links('client.partials.pagination') }}
             </div>
         @endif
     </div>

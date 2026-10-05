@@ -5662,3 +5662,112 @@ h4.s54-footer__heading {
     pointer-events: none !important;
 }
 
+/* ==========================================================================
+   S54 STOREFRONT LUXURY PAGINATION STYLES
+   ========================================================================== */
+.s54-pagination {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin: 40px auto 20px !important;
+    width: 100% !important;
+}
+
+.s54-pagination__info {
+    font-size: 13.5px !important;
+    color: #6E6259 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    text-align: center !important;
+}
+
+.s54-pagination__list,
+ul.s54-pagination__list {
+    display: flex !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+.s54-pagination__item,
+li.s54-pagination__item {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.s54-pagination__item::before,
+li.s54-pagination__item::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* Fallback styling for any default Laravel Bootstrap paginator on storefront */
+.client-pagination nav .d-sm-none,
+nav.d-flex .d-sm-none {
+    display: none !important;
+}
+
+.client-pagination nav ul.pagination,
+nav.d-flex ul.pagination {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+.client-pagination nav ul.pagination li,
+nav.d-flex ul.pagination li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.client-pagination nav ul.pagination li::before,
+nav.d-flex ul.pagination li::before {
+    display: none !important;
+    content: none !important;
+}
+
+.client-pagination .page-item .page-link,
+nav.d-flex .page-item .page-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    padding: 0 14px !important;
+    border-radius: 6px !important;
+    border: 1px solid #EBE7E1 !important;
+    background: #FFFFFF !important;
+    color: #2F221A !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03) !important;
+}
+
+.client-pagination .page-item.active .page-link,
+nav.d-flex .page-item.active .page-link {
+    background: #2F221A !important;
+    border-color: #2F221A !important;
+    color: #FAF6F1 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 10px rgba(47,34,26,0.2) !important;
+}
+
+
