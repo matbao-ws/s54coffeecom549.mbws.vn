@@ -40,7 +40,7 @@
                                 headers: {
                                     'Accept': 'application/json',
                                     'Content-Type': 'application/json',
-                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '',
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '{{ csrf_token() }}',
                                 },
                                 body: JSON.stringify({ source_locale: sourceLocale, target_locale: targetLocale, fields, formats }),
                             });
@@ -48,12 +48,26 @@
                             if (!response.ok) throw new Error(payload.message || 'Không thể dịch nội dung.');
 
                             targets.forEach(function (element) {
-                                const value = payload.data?.fields?.[element.dataset.i18nField];
+                                let value = payload.data?.fields?.[element.dataset.i18nField];
                                 if (typeof value !== 'string') return;
+                                if (element.dataset.i18nField === 'slug' && value.trim()) {
+                                    value = value.toLowerCase()
+                                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                                        .replace(/[đĐ]/g, 'd')
+                                        .replace(/[^a-z0-9]+/g, '-')
+                                        .replace(/^-+|-+$/g, '');
+                                }
                                 element.value = value;
                                 const editor = document.querySelector(`.catalog-quill[data-target="${element.id}"]`);
-                                if (editor && editor.__quill) editor.__quill.root.innerHTML = value;
+                                if (editor && editor.__quill) {
+                                    if (editor.__quill.clipboard && typeof editor.__quill.clipboard.dangerouslyPasteHTML === 'function') {
+                                        editor.__quill.clipboard.dangerouslyPasteHTML(value);
+                                    } else {
+                                        editor.__quill.root.innerHTML = value;
+                                    }
+                                }
                                 element.dispatchEvent(new Event('input', { bubbles: true }));
+                                element.dispatchEvent(new Event('change', { bubbles: true }));
                             });
                         } catch (error) {
                             window.alert(error.message || 'Không thể dịch nội dung.');
