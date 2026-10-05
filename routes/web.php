@@ -28,15 +28,11 @@ ROBOTS;
     return response($content, 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
 })->name('robots');
 
-Route::get('/', function () {
-    $defaultLocale = app(\App\Services\LanguageRegistry::class)->defaultLocale() ?: 'vi';
-    return redirect('/' . $defaultLocale);
-});
+// ── SEO: Root Homepage Direct 200 OK (Critical for Google Site Name extraction) ──
+Route::get('/', [\App\Http\Controllers\Client\HomeController::class, 'index'])
+    ->name('client.root');
 
-Route::get('index.html', function () {
-    $defaultLocale = app(\App\Services\LanguageRegistry::class)->defaultLocale() ?: 'vi';
-    return redirect('/' . $defaultLocale);
-});
+Route::get('index.html', fn () => redirect('/', 301));
 
 // Root-level aliases redirecting to localized client routes
 Route::get('collections', fn () => redirect('/vi/san-pham', 301));

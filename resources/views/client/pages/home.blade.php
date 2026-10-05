@@ -7,6 +7,7 @@
 @section('title', $locale === 'vi' ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt | New Coffee, New Income' : 'S54 COFFEE — Essence of Vietnamese Coffee | New Coffee, New Income')
 
 @section('content')
+<h1 class="u-visually-hidden">{{ $locale === 'vi' ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt | New Coffee, New Income' : 'S54 COFFEE — The Essence of Vietnamese Coffee | New Coffee, New Income' }}</h1>
 <div id="shopify-section-template--15747875471535__hero_banner_d3Tacb" class="shopify-section c-section c-section__hero-banner">
 
 <link href="{{ asset('assets/css/sections.hero-banner.css') }}" rel="stylesheet" type="text/css" media="all" />

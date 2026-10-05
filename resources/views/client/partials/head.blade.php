@@ -26,8 +26,8 @@
 @php
     $canonicalBase = 'https://s54coffee.com';
     $canonicalPath = request()->getRequestUri();
-    if (!$canonicalPath || $canonicalPath === '/') {
-        $canonicalPath = '/' . app()->getLocale();
+    if (!$canonicalPath || $canonicalPath === '/' || $canonicalPath === '/vi') {
+        $canonicalPath = '/';
     }
     $canonicalUrl = View::yieldContent('canonical_url') ?: ($canonicalBase . $canonicalPath);
 @endphp
@@ -62,7 +62,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('client-assets/images/s54/s54_favicon_192.png') }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('client-assets/images/s54/s54_apple_touch_icon.png') }}">
 
-{{-- ── SEO: JSON-LD WebSite Schema (Controls Site Name on Google Search) ── --}}
+{{-- ── SEO: JSON-LD WebSite Schema (Homepage ONLY - Controls Site Name on Google Search) ── --}}
+@php
+    $isHomePage = request()->is('/') || request()->is('vi') || request()->is('en') || request()->routeIs('client.home') || request()->routeIs('client.root');
+@endphp
+@if($isHomePage)
 <script type="application/ld+json">
 {!! json_encode([
     '@' . 'context' => 'https://schema.org',
@@ -72,6 +76,7 @@
     'url' => 'https://s54coffee.com/',
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>
+@endif
 
 {{-- ── SEO: JSON-LD Organization Schema ─────────────────────── --}}
 <script type="application/ld+json">
