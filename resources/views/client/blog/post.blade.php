@@ -69,6 +69,12 @@
     'mainEntityOfPage' => [
         '@type' => 'WebPage',
         '@id' => url()->current(),
+        'isPartOf' => [
+            '@type' => 'WebSite',
+            '@id' => 'https://s54coffee.com/#website',
+            'name' => 'S54 COFFEE',
+            'url' => 'https://s54coffee.com/',
+        ],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://s54coffeecom549.mbws.vn/sitemap.xml
+Sitemap: https://s54coffee.com/sitemap.xml

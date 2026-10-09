@@ -25,12 +25,20 @@ class SitemapController extends Controller
 
         $urls = [];
 
-        // ── Homepage ──────────────────────────────────────────────
+        // ── Canonical Homepage Root ───────────────────────────────
+        $urls[] = [
+            'loc'        => $baseUrl . '/',
+            'lastmod'    => now()->toDateString(),
+            'changefreq' => 'daily',
+            'priority'   => '1.0',
+        ];
+
+        // ── Primary Locale Homepage ───────────────────────────────
         $urls[] = [
             'loc'        => $baseUrl . '/' . $locale,
             'lastmod'    => now()->toDateString(),
             'changefreq' => 'daily',
-            'priority'   => '1.0',
+            'priority'   => '0.9',
         ];
 
         // ── Catalog Index ─────────────────────────────────────────
