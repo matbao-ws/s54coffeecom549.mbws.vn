@@ -4,14 +4,18 @@
 @php
     $headLocale = app()->getLocale();
     $defaultTitle = $headLocale === 'vi' 
-        ? 'S54 COFFEE — Cà Phê Rang Xay & Hòa Tan Thượng Hạng | Good Solutions' 
-        : 'S54 COFFEE — Premium Artisan Roasted & Instant Coffee | Good Solutions';
+        ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt | New Coffee, New Income' 
+        : 'S54 COFFEE — Premium Artisan Roasted & Instant Coffee';
     $defaultMetaDesc = $headLocale === 'vi'
         ? 'S54 COFFEE - Thương hiệu cà phê thượng hạng thuộc Good Solutions Co., Ltd. Cung cấp cà phê rang mộc nguyên chất, cà phê hòa tan 3in1 và giải pháp B2B toàn diện.'
         : 'S54 COFFEE - Premium artisan coffee brand by Good Solutions Co., Ltd. Pure roasted whole beans, 3in1 instant coffee, and comprehensive B2B solutions.';
     $defaultOgTitle = $headLocale === 'vi' ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt' : 'S54 COFFEE — The Essence of Vietnamese Coffee';
+    $rawPageTitle = trim(View::yieldContent('title', $defaultTitle));
+    $finalPageTitle = (!str_contains($rawPageTitle, 'S54 COFFEE') && !str_contains($rawPageTitle, 'S54 Coffee'))
+        ? ($rawPageTitle . ' — S54 COFFEE')
+        : $rawPageTitle;
 @endphp
-<title>@yield('title', $defaultTitle)</title>
+<title>{{ $finalPageTitle }}</title>
 @hasSection('meta_description')
     <meta name="description" content="@yield('meta_description')">
 @else
@@ -32,6 +36,11 @@
     $canonicalUrl = View::yieldContent('canonical_url') ?: ($canonicalBase . $canonicalPath);
 @endphp
 <link rel="canonical" href="{{ $canonicalUrl }}">
+@if($canonicalPath === '/')
+<link rel="alternate" hreflang="vi" href="https://s54coffee.com/">
+<link rel="alternate" hreflang="en" href="https://s54coffee.com/en">
+<link rel="alternate" hreflang="x-default" href="https://s54coffee.com/">
+@endif
 
 {{-- ── SEO: Open Graph (Facebook, Zalo) ─────────────────────── --}}
 @php
@@ -47,6 +56,10 @@
 <meta property="og:url" content="{{ $canonicalUrl }}">
 <meta property="og:site_name" content="S54 COFFEE">
 <meta property="og:locale" content="{{ $headLocale === 'vi' ? 'vi_VN' : 'en_US' }}">
+
+{{-- ── SEO: Brand / Site Name Hints for Search Engines ──────── --}}
+<meta name="application-name" content="S54 COFFEE">
+<meta name="apple-mobile-web-app-title" content="S54 COFFEE">
 
 {{-- ── SEO: Twitter Card ────────────────────────────────────── --}}
 <meta name="twitter:card" content="summary_large_image">
@@ -69,7 +82,7 @@
     '@type' => 'WebSite',
     '@id' => 'https://s54coffee.com/#website',
     'name' => 'S54 COFFEE',
-    'alternateName' => ['S54 Coffee', 'S54Coffee', 'Cà Phê S54'],
+    'alternateName' => ['S54 Coffee', 'S54Coffee', 'Cà Phê S54', 's54coffee.com', 'www.s54coffee.com'],
     'url' => 'https://s54coffee.com/',
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
 </script>

@@ -7,7 +7,30 @@
     $canEdit = (bool) (auth()->user()?->canEditClientContent() && auth()->user()->can('media.view'));
 @endphp
 
-@section('title', ($locale === 'vi' ? 'Câu Chuyện S54 Coffee — Tinh Hoa Cà Phê Việt & Hành Trình Vươn Tầm' : 'Our Story — S54 Coffee Heritage & Vision'))
+@section('title', ($locale === 'vi' ? 'Câu Chuyện S54 Coffee — Tinh Hoa Cà Phê Việt | S54 COFFEE' : 'Our Story — S54 Coffee Heritage | S54 COFFEE'))
+
+@push('jsonld')
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => $locale === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => 'https://s54coffee.com/',
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => $locale === 'vi' ? 'Câu Chuyện S54' : 'Our Story',
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
 
 @section('content')
 {{-- Hero Banner --}}

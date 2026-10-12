@@ -1,7 +1,30 @@
 @extends('client.layouts.app')
 
-@section('title', app()->getLocale() === 'vi' ? 'Tại Sao Chọn S54 Cho Giải Pháp Cà Phê Bán Sỉ & Doanh Nghiệp' : 'B2B & Enterprise Coffee Solutions — S54 Coffee')
+@section('title', app()->getLocale() === 'vi' ? 'Giải Pháp Cà Phê Bán Sỉ & Doanh Nghiệp | S54 COFFEE' : 'B2B & Enterprise Coffee Solutions | S54 COFFEE')
 @section('meta_description', app()->getLocale() === 'vi' ? 'Giải pháp cung ứng cà phê bán sỉ, rang xay theo yêu cầu OEM, thiết bị máy pha chuyên nghiệp và đào tạo barista chuẩn quốc tế từ S54 Coffee.' : 'Wholesale coffee supplier, OEM roasting, commercial espresso equipment and certified barista training from S54 Coffee.')
+
+@push('jsonld')
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => app()->getLocale() === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => 'https://s54coffee.com/',
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => app()->getLocale() === 'vi' ? 'Giải Pháp B2B' : 'Wholesale',
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
 
 @section('content')
 <wlm class="wlm-content">

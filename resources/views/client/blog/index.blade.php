@@ -7,8 +7,31 @@
     $canEdit = (bool) (auth()->user()?->canEditClientContent() && auth()->user()->can('media.view'));
 @endphp
 
-@section('title', ($locale === 'vi' ? 'Cẩm Nang Cà Phê & Tin Tức S54 Coffee' : 'S54 Coffee Journal & Brewing Guides'))
+@section('title', ($locale === 'vi' ? 'Cẩm Nang Cà Phê & Tin Tức | S54 COFFEE' : 'Coffee Journal & Brewing Guides | S54 COFFEE'))
 @section('meta_description', ($locale === 'vi' ? 'Cẩm nang cà phê S54: kiến thức pha chế, bí quyết bảo quản hạt, câu chuyện thương hiệu và tin tức mới nhất từ S54 COFFEE.' : 'S54 Coffee journal: brewing techniques, bean preservation tips, brand stories and latest news from S54 COFFEE.'))
+
+@push('jsonld')
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => $locale === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => 'https://s54coffee.com/',
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => $locale === 'vi' ? 'Cẩm Nang Cà Phê' : 'Journal',
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
 
 @section('content')
 <section class="s54-blog-hero" style="background: radial-gradient(circle at center, rgba(47,34,26,0.85) 0%, rgba(26,18,14,0.96) 100%), url('{{ $blogBanner }}') center/cover no-repeat; padding: 80px 20px 60px; text-align: center; color: #FAF6F1; position: relative;">

@@ -43,10 +43,33 @@
         ?? 'goodsolutions.com.vn';
 @endphp
 
-@section('title', $locale === 'vi' ? 'Liên Hệ S54 Coffee — CÔNG TY TNHH GIẢI PHÁP TỐT' : 'Contact S54 Coffee — Good Solutions Co., Ltd')
+@section('title', $locale === 'vi' ? 'Liên Hệ S54 Coffee — Cà Phê Thượng Hạng | S54 COFFEE' : 'Contact S54 Coffee — Premium Artisan Coffee | S54 COFFEE')
 @section('meta_description', $locale === 'vi' 
     ? 'Liên hệ S54 Coffee - ' . $companyName . '. Hotline: ' . $hotline . '. Địa chỉ: ' . $address 
     : 'Contact S54 Coffee - ' . $companyName . '. Hotline: ' . $hotline . '. Address: ' . $address)
+
+@push('jsonld')
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => $locale === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => 'https://s54coffee.com/',
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => $locale === 'vi' ? 'Liên Hệ' : 'Contact',
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
 
 @section('content')
 <main class="s54-contact-page">

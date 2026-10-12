@@ -7,8 +7,31 @@
     $canEdit = (bool) (auth()->user()?->canEditClientContent() && auth()->user()->can('media.view'));
 @endphp
 
-@section('title', ($locale === 'vi' ? 'Tất Cả Sản Phẩm Cà Phê S54 — Cà Phê Hạt Rang Mộc & Hòa Tan' : 'All S54 Coffee Products — Artisan Roasted Beans & Instant'))
+@section('title', ($locale === 'vi' ? 'Tất Cả Sản Phẩm Cà Phê | S54 COFFEE' : 'All Coffee Products | S54 COFFEE'))
 @section('meta_description', ($locale === 'vi' ? 'Khám phá bộ sưu tập cà phê S54 COFFEE: cà phê hòa tan 3in1, cà phê hạt rang Robusta nguyên chất, combo dùng thử, và máy xay cà phê cầm tay cao cấp.' : 'Explore S54 COFFEE collection: 3-in-1 instant coffee, roasted Robusta beans, trial combos, and premium manual coffee grinders.'))
+
+@push('jsonld')
+<script type="application/ld+json">
+{!! json_encode([
+    '@' . 'context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        [
+            '@type' => 'ListItem',
+            'position' => 1,
+            'name' => $locale === 'vi' ? 'Trang Chủ' : 'Home',
+            'item' => 'https://s54coffee.com/',
+        ],
+        [
+            '@type' => 'ListItem',
+            'position' => 2,
+            'name' => $locale === 'vi' ? 'Sản Phẩm' : 'Products',
+            'item' => url()->current(),
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endpush
 
 @section('content')
 <section class="s54-catalog-hero" style="background: {{ $catalogBanner ? "radial-gradient(circle at center, rgba(47,34,26,0.82) 0%, rgba(26,18,14,0.95) 100%), url('{$catalogBanner}') center/cover no-repeat" : '#2F221A' }}; color: #FAF6F1; padding: 70px 20px 50px; text-align: center; position: relative;">
