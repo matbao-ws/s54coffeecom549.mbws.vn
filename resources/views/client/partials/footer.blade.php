@@ -9,6 +9,9 @@
     $switchViUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
         ? preg_replace('#^/(vi|en)(/|\?|$)#', '/vi$2', $reqUri)
         : ('/vi' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
+    if ($switchViUrl === '/vi' || $switchViUrl === '/vi/') {
+        $switchViUrl = '/';
+    }
     $switchEnUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
         ? preg_replace('#^/(vi|en)(/|\?|$)#', '/en$2', $reqUri)
         : ('/en' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
@@ -80,7 +83,7 @@
             
             <!-- Col 1: Brand Identity & Legal Info -->
             <div class="s54-footer__col s54-footer__col--brand">
-                <a href="{{ route('client.home', ['locale' => $locale]) }}" class="s54-footer__logo-link" title="S54 COFFEE">
+                <a href="{{ $locale === 'vi' ? '/' : route('client.home', ['locale' => 'en']) }}" class="s54-footer__logo-link" title="S54 COFFEE">
                     <img src="{{ asset('client-assets/images/s54/s54_logo.png') }}" alt="S54 COFFEE" class="s54-footer__logo-img" width="180" height="38" />
                 </a>
                 <p class="s54-footer__company-name">

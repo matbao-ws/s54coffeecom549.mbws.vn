@@ -22,10 +22,19 @@ DirectoryIndex public/index.php index.php
   RewriteCond %{HTTP_HOST} ^www\.s54coffee\.com$ [NC]
   RewriteRule ^(.*)$ https://s54coffee.com/$1 [R=301,L]
 
+  # SEO: 301 Permanent Redirect from staging domain homepage (both / and /vi) directly to root
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteCond %{REQUEST_URI} ^/(vi/?)?$ [NC]
+  RewriteRule ^ https://s54coffee.com/ [R=301,L]
+
   # SEO: 301 Permanent Redirect from staging domain to official domain s54coffee.com
   RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
   RewriteCond %{REQUEST_URI} !^/google[0-9a-f]+\.html$ [NC]
   RewriteRule ^(.*)$ https://s54coffee.com/$1 [R=301,L]
+
+  # SEO: 301 Redirect duplicate /vi or /vi/ directly to canonical root /
+  RewriteCond %{HTTP_HOST} ^(www\.)?s54coffee\.com$ [NC]
+  RewriteRule ^vi/?$ https://s54coffee.com/ [R=301,L]
 
 # Static asset mappings
   RewriteRule ^(.*/)?assets/(.*)$ assets/$2 [L]

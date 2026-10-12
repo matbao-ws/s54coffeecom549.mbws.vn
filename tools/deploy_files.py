@@ -5,7 +5,7 @@ from pathlib import Path
 
 FTP_HOST = "203.205.31.252"
 FTP_USER = "u513776f0"
-FTP_PASS = "mOpq4_~GpnF4uxm1"
+FTP_PASS = "29^lqXrJhT&9ueef"
 REMOTE_DIR = "/httpdocs"
 
 BASE_DIR = Path(__file__).resolve().parent.parent

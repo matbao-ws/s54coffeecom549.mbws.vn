@@ -9,6 +9,10 @@
     RewriteCond %{HTTP_HOST} ^www\.s54coffee\.com$ [NC]
     RewriteRule ^(.*)$ https://s54coffee.com/$1 [R=301,L]
 
+    # SEO: 301 Redirect duplicate /vi or /vi/ directly to canonical root /
+    RewriteCond %{HTTP_HOST} ^(www\.)?s54coffee\.com$ [NC]
+    RewriteRule ^vi/?$ https://s54coffee.com/ [R=301,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

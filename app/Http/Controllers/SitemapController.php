@@ -33,14 +33,6 @@ class SitemapController extends Controller
             'priority'   => '1.0',
         ];
 
-        // ── Primary Locale Homepage ───────────────────────────────
-        $urls[] = [
-            'loc'        => $baseUrl . '/' . $locale,
-            'lastmod'    => now()->toDateString(),
-            'changefreq' => 'daily',
-            'priority'   => '0.9',
-        ];
-
         // ── Catalog Index ─────────────────────────────────────────
         $urls[] = [
             'loc'        => $baseUrl . '/' . $locale . '/san-pham',

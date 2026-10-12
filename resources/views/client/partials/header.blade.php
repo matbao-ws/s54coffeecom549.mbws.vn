@@ -20,7 +20,7 @@
 
         {{-- Brand Logo --}}
         <div class="c-header__brand" style="display: flex; align-items: center;">
-            <a href="{{ route('client.home', ['locale' => app()->getLocale()]) }}" class="c-header__logo-link c-header__logo" title="S54 COFFEE" style="text-decoration: none; display: inline-flex; align-items: center;">
+            <a href="{{ app()->getLocale() === 'vi' ? '/' : route('client.home', ['locale' => 'en']) }}" class="c-header__logo-link c-header__logo" title="S54 COFFEE" style="text-decoration: none; display: inline-flex; align-items: center;">
                 <img src="{{ asset('client-assets/images/s54/s54_logo.png') }}" alt="S54 COFFEE" width="180" height="38" class="c-header__logo-img" style="height: 38px; width: auto; max-width: 180px; object-fit: contain; display: block;" />
             </a>
         </div>
@@ -62,6 +62,9 @@
     $switchViUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
         ? preg_replace('#^/(vi|en)(/|\?|$)#', '/vi$2', $reqUri)
         : ('/vi' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
+    if ($switchViUrl === '/vi' || $switchViUrl === '/vi/') {
+        $switchViUrl = '/';
+    }
     $switchEnUrl = preg_match('#^/(vi|en)(/|\?|$)#', $reqUri)
         ? preg_replace('#^/(vi|en)(/|\?|$)#', '/en$2', $reqUri)
         : ('/en' . (str_starts_with($reqUri, '/') ? $reqUri : '/' . $reqUri));
@@ -117,7 +120,7 @@
     <div class="s54-mobile-overlay" id="s54-mobile-overlay">
         <div class="s54-mobile-drawer" id="s54-mobile-drawer">
             <div class="s54-mobile-drawer__header">
-                <a href="{{ route('client.home', ['locale' => app()->getLocale()]) }}" title="S54 COFFEE" style="display: inline-flex; align-items: center; text-decoration: none;">
+                <a href="{{ app()->getLocale() === 'vi' ? '/' : route('client.home', ['locale' => 'en']) }}" title="S54 COFFEE" style="display: inline-flex; align-items: center; text-decoration: none;">
                     <img src="{{ asset('client-assets/images/s54/s54_logo.png') }}" alt="S54 COFFEE" width="140" height="30" style="height: 30px; width: auto; max-width: 140px; object-fit: contain; display: block;" />
                 </a>
                 <button type="button" id="s54-mobile-close" aria-label="{{ app()->getLocale() === 'vi' ? 'Đóng menu' : 'Close Menu' }}" style="background: none; border: none; color: #FAF6F1; font-size: 24px; cursor: pointer; padding: 4px 8px; line-height: 1;">✕</button>
