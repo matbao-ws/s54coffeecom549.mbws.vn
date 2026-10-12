@@ -11,13 +11,14 @@
         : 'S54 COFFEE - Premium artisan coffee brand by Good Solutions Co., Ltd. Pure roasted whole beans, 3in1 instant coffee, and comprehensive B2B solutions.';
     $defaultOgTitle = $headLocale === 'vi' ? 'S54 COFFEE — Tinh Hoa Cà Phê Việt' : 'S54 COFFEE — The Essence of Vietnamese Coffee';
     $rawPageTitle = trim(View::yieldContent('title', $defaultTitle));
+    $rawPageTitle = html_entity_decode($rawPageTitle, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $finalPageTitle = (!str_contains($rawPageTitle, 'S54 COFFEE') && !str_contains($rawPageTitle, 'S54 Coffee'))
         ? ($rawPageTitle . ' — S54 COFFEE')
         : $rawPageTitle;
 @endphp
 <title>{{ $finalPageTitle }}</title>
 @hasSection('meta_description')
-    <meta name="description" content="@yield('meta_description')">
+    <meta name="description" content="{{ html_entity_decode(trim(View::yieldContent('meta_description')), ENT_QUOTES | ENT_HTML5, 'UTF-8') }}">
 @else
     <meta name="description" content="{{ $defaultMetaDesc }}">
 @endif
@@ -44,8 +45,8 @@
 
 {{-- ── SEO: Open Graph (Facebook, Zalo) ─────────────────────── --}}
 @php
-    $ogTitle = View::yieldContent('og_title') ?: View::yieldContent('title', $defaultOgTitle);
-    $ogDesc  = View::yieldContent('og_description') ?: View::yieldContent('meta_description', $defaultMetaDesc);
+    $ogTitle = html_entity_decode(View::yieldContent('og_title') ?: View::yieldContent('title', $defaultOgTitle), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $ogDesc  = html_entity_decode(View::yieldContent('og_description') ?: View::yieldContent('meta_description', $defaultMetaDesc), ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $ogImage = View::yieldContent('og_image') ?: asset('assets/images/s54/hero_banner_s54.png');
     $ogType  = View::yieldContent('og_type') ?: 'website';
 @endphp
