@@ -98,7 +98,7 @@
               <div class="sidebarmenu">
                   <div class="brand-logo d-flex align-items-center nav-logo">
                       <a href="{{ route('admin.dashboard') }}" class="text-nowrap logo-img d-flex align-items-center">
-                          <img src="{{ $siteBranding['admin_logo_url'] }}" width="150" alt="MatBaoWS" class="img-fluid">
+                          <img src="{{ $siteBranding['admin_logo_url'] }}" width="150" alt="{{ $siteBranding['name'] }}" class="img-fluid">
                       </a>
                   </div>
 

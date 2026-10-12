@@ -1,4 +1,9 @@
 User-agent: *
+Disallow: /admin
+Disallow: /admin/
+Disallow: /login
+Disallow: /password/
+Disallow: /api/
 Allow: /
 
 Sitemap: https://s54coffee.com/sitemap.xml

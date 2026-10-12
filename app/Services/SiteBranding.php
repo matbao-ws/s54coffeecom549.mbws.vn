@@ -28,10 +28,10 @@ class SiteBranding
         $contact = $settings->get('contact');
 
         return $this->branding = [
-            'name' => $this->textValue($settings->get('shop_name')) ?: config('app.name', 'Laravel Ecommerce Core'),
-            'logo_url' => $this->assetUrl($settings->get('logo_url'), 'matbao-ws-logo.png'),
-            'admin_logo_url' => asset('matbao-ws-logo.png'),
-            'favicon_url' => $this->assetUrl($settings->get('favicon_url'), 'admin-assets/images/logos/favicon.png'),
+            'name' => $this->textValue($settings->get('shop_name')) ?: config('app.name', 'S54 COFFEE'),
+            'logo_url' => $this->assetUrl($settings->get('logo_url'), 'client-assets/images/s54/s54_logo.png'),
+            'admin_logo_url' => asset('client-assets/images/s54/s54_logo.png'),
+            'favicon_url' => $this->assetUrl($settings->get('favicon_url'), 'client-assets/images/s54/s54_favicon_48.png'),
             'contact' => is_array($contact) ? $contact : [],
             'embed_header' => (string) ($settings->get('embed_header') ?? ''),
             'embed_body' => (string) ($settings->get('embed_body') ?? ''),

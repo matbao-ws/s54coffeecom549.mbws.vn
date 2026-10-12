@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="{{ $siteBranding['favicon_url'] }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/css/core-controls.css') }}">
@@ -40,7 +41,7 @@
                                     <div class="col-lg-11">
                                         <div class="card-body">
                                             <a href="{{ route('admin.login') }}" class="text-nowrap logo-img d-block mb-4 w-100">
-                                                <img src="{{ $siteBranding['admin_logo_url'] }}" width="140" class="dark-logo" alt="MatBaoWS">
+                                                <img src="{{ $siteBranding['admin_logo_url'] }}" width="140" class="dark-logo" alt="{{ $siteBranding['name'] }}">
                                             </a>
                                             <p class="text-muted">{{ __('auth.forgot.description') }}</p>
 
