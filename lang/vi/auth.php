@@ -25,7 +25,7 @@ return [
         'slides' => [
             [
                 'title' => 'Vận hành website hiệu quả hơn',
-                'description' => 'Theo dõi dự án, quản lý dịch vụ và phối hợp công việc nhanh chóng, đồng bộ và bảo mật cùng MATBAO WS.',
+                'description' => 'Theo dõi đơn hàng, quản trị sản phẩm và vận hành cửa hàng trực tuyến nhanh chóng, đồng bộ cùng S54 COFFEE.',
             ],
             [
                 'title' => 'Linh hoạt theo từng nhu cầu',
