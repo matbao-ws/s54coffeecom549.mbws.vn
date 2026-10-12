@@ -62,7 +62,7 @@ class AdminAuthTest extends TestCase
 
         $this->get('/vi/admin/login')
             ->assertOk()
-            ->assertSee('/matbao-ws-logo.png')
+            ->assertSee('/client-assets/images/s54/s54_logo.png')
             ->assertDontSee('https://cdn.example.test/settings/store-logo.png');
     }
 
