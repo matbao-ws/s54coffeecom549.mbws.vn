@@ -27,6 +27,22 @@ DirectoryIndex public/index.php index.php
   RewriteCond %{REQUEST_URI} ^/(vi/?)?$ [NC]
   RewriteRule ^ https://s54coffee.com/ [R=301,L]
 
+  # SEO: 301 Direct 1-hop mappings from staging domain to canonical paths
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteRule ^(lien-he|contact(\.html)?)$ https://s54coffee.com/vi/lien-he [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteRule ^(blogs?-news(\.html)?|blog-detail(\.html)?|blogs?)$ https://s54coffee.com/vi/tin-tuc [R=301,L,QSA]
+
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteRule ^(collections(-coffee(\.html)?)?|san-pham(\.html)?)$ https://s54coffee.com/vi/san-pham [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteRule ^(our-story(\.html)?)$ https://s54coffee.com/vi/pages/our-story [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
+  RewriteRule ^(wholesale(\.html)?)$ https://s54coffee.com/vi/pages/wholesale [R=301,L]
+
   # SEO: 301 Permanent Redirect from staging domain to official domain s54coffee.com
   RewriteCond %{HTTP_HOST} ^s54coffeecom549\.mbws\.vn$ [NC]
   RewriteCond %{REQUEST_URI} !^/google[0-9a-f]+\.html$ [NC]

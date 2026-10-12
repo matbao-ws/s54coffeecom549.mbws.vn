@@ -32,7 +32,7 @@ ROBOTS;
 Route::get('/', [\App\Http\Controllers\Client\HomeController::class, 'index'])
     ->name('client.root');
 
-Route::get('index.html', fn () => redirect('/', 301));
+Route::get('index.html', fn () => redirect('https://s54coffee.com/', 301));
 
 // Root-level aliases redirecting to localized client routes
 Route::get('collections', fn () => redirect('/vi/san-pham', 301));
